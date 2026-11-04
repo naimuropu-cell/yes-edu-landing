@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideoShowcase();
   initDemoModal();
   initLanguageSwitcher();
+  initBentoTabs();
+  initFaqAccordion();
 });
 
 /* ==========================================================================
@@ -51,7 +53,6 @@ function initNavbar() {
 function initPricingCalculator() {
   const slider = document.getElementById('studentRangeSlider');
   const studentCountDisplay = document.getElementById('studentCountDisplay');
-  const studentCountDisplayBn = document.getElementById('studentCountDisplayBn');
 
   // Tier Displays
   const starterPrice = document.getElementById('starterPriceDisplay');
@@ -66,14 +67,12 @@ function initPricingCalculator() {
   if (!slider) return;
 
   function updatePrices() {
+    const isBn = localStorage.getItem('yes_edu_lang') === 'bn';
     const students = parseInt(slider.value, 10);
 
     // Format numbers
     if (studentCountDisplay) {
-      studentCountDisplay.textContent = students.toLocaleString();
-    }
-    if (studentCountDisplayBn) {
-      studentCountDisplayBn.textContent = toBengaliNumber(students);
+      studentCountDisplay.textContent = isBn ? toBengaliNumber(students) : students.toLocaleString();
     }
 
     // Calculations based on pricing tiers from proposal PDF
@@ -81,21 +80,22 @@ function initPricingCalculator() {
     const proTotal = students * 8;
     const enterpriseTotal = students * 12;
 
-    if (starterPrice) starterPrice.textContent = `৳${starterTotal.toLocaleString()}`;
-    if (proPrice) proPrice.textContent = `৳${proTotal.toLocaleString()}`;
-    if (enterprisePrice) enterprisePrice.textContent = `৳${enterpriseTotal.toLocaleString()}`;
+    if (starterPrice) starterPrice.textContent = isBn ? `৳${toBengaliNumber(starterTotal)}` : `৳${starterTotal.toLocaleString()}`;
+    if (proPrice) proPrice.textContent = isBn ? `৳${toBengaliNumber(proTotal)}` : `৳${proTotal.toLocaleString()}`;
+    if (enterprisePrice) enterprisePrice.textContent = isBn ? `৳${toBengaliNumber(enterpriseTotal)}` : `৳${enterpriseTotal.toLocaleString()}`;
 
     // Estimated Value Saved
     const paperSavings = Math.round(students * 18);
     const uncollectedRecovered = Math.round(students * 35);
     const hoursSaved = Math.round(students * 0.08);
 
-    if (savedPaper) savedPaper.textContent = `৳${paperSavings.toLocaleString()}`;
-    if (savedDues) savedDues.textContent = `৳${uncollectedRecovered.toLocaleString()}`;
-    if (savedHours) savedHours.textContent = `${hoursSaved} hrs/mo`;
+    if (savedPaper) savedPaper.textContent = isBn ? `৳${toBengaliNumber(paperSavings)}` : `৳${paperSavings.toLocaleString()}`;
+    if (savedDues) savedDues.textContent = isBn ? `৳${toBengaliNumber(uncollectedRecovered)}` : `৳${uncollectedRecovered.toLocaleString()}`;
+    if (savedHours) savedHours.textContent = isBn ? `${toBengaliNumber(hoursSaved)} ঘণ্টা/মাস` : `${hoursSaved} hrs/mo`;
   }
 
   slider.addEventListener('input', updatePrices);
+  window.addEventListener('yesEduLangChanged', updatePrices);
   updatePrices();
 }
 
@@ -952,6 +952,7 @@ function initLanguageSwitcher() {
       document.body.classList.remove('font-bn');
     }
     localStorage.setItem('yes_edu_lang', lang);
+    window.dispatchEvent(new CustomEvent('yesEduLangChanged', { detail: { lang } }));
   }
 
   if (langToggleBtn) {
@@ -964,5 +965,55 @@ function initLanguageSwitcher() {
 
   // Initial apply
   applyLanguage(currentLang);
+}
+
+/* ==========================================================================
+   7. Bento Grid Tab Switcher
+   ========================================================================== */
+function initBentoTabs() {
+  const tabBtns = document.querySelectorAll('.bento-tab-btn');
+  const tabPanels = document.querySelectorAll('.bento-tab-panel');
+  if (!tabBtns.length) return;
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-tab');
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      tabPanels.forEach(panel => {
+        if (panel.getAttribute('data-panel') === target) {
+          panel.classList.remove('hidden');
+        } else {
+          panel.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   8. FAQ Accordion Controller
+   ========================================================================== */
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-accordion-item');
+  if (!faqItems.length) return;
+
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      faqItems.forEach(other => {
+        if (other !== item) other.classList.remove('open');
+      });
+      if (isOpen) {
+        item.classList.remove('open');
+      } else {
+        item.classList.add('open');
+      }
+    });
+  });
 }
 

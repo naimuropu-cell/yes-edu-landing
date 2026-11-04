@@ -1135,3 +1135,250 @@ a {
     padding: 20px;
   }
 }
+
+/* ==========================================================================
+   Human Pro Designer Pattern: Bento Grids, Conversion Cards & FAQ
+   ========================================================================== */
+
+/* Bento Grid System */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.bento-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: #a7f3d0;
+  box-shadow: 0 20px 40px -10px rgba(5, 150, 105, 0.12), 0 0 0 1px rgba(16, 185, 129, 0.15);
+}
+
+.bento-span-8 {
+  grid-column: span 8;
+}
+
+.bento-span-4 {
+  grid-column: span 4;
+}
+
+.bento-span-6 {
+  grid-column: span 6;
+}
+
+.bento-span-12 {
+  grid-column: span 12;
+}
+
+@media (max-width: 1024px) {
+  .bento-span-8,
+  .bento-span-4,
+  .bento-span-6 {
+    grid-column: span 12;
+  }
+}
+
+/* Pro Badge Pills */
+.pro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.pro-badge-emerald {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.pro-badge-amber {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.pro-badge-sky {
+  background: #f0f9ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.pro-badge-purple {
+  background: #faf5ff;
+  color: #7e22ce;
+  border: 1px solid #e9d5ff;
+}
+
+/* Conversion Psychology / CRO Cards */
+.cro-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  transition: all 0.25s ease;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.cro-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
+}
+
+.cro-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+}
+
+/* FAQ Accordion Styling */
+.faq-accordion-item {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-xs);
+}
+
+.faq-accordion-item:hover {
+  border-color: #cbd5e1;
+}
+
+.faq-question-btn {
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-headline);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: color 0.2s ease;
+}
+
+.faq-question-btn:hover {
+  color: #059669;
+}
+
+.faq-answer-content {
+  padding: 0 24px 22px 24px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  display: none;
+}
+
+.faq-accordion-item.open {
+  border-color: #a7f3d0;
+  box-shadow: 0 8px 24px -6px rgba(5, 150, 105, 0.1);
+}
+
+.faq-accordion-item.open .faq-answer-content {
+  display: block;
+}
+
+.faq-accordion-item.open .faq-icon-arrow {
+  transform: rotate(180deg);
+  color: #059669;
+}
+
+.faq-icon-arrow {
+  transition: transform 0.25s ease, color 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* Testimonial Cards */
+.testimonial-card-pro {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+.testimonial-card-pro:hover {
+  transform: translateY(-4px);
+  border-color: #a7f3d0;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Interactive Tab Buttons for Bento Showcase */
+.bento-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #64748b;
+  border: 1px solid var(--border-medium);
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.bento-tab-btn:hover {
+  background: #f8fafc;
+  color: var(--text-headline);
+  border-color: #94a3b8;
+}
+
+.bento-tab-btn.active {
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #059669;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
+}
+
+/* Authentic Bengali Font Polish */
+body.font-bn {
+  font-family: var(--font-bangla);
+  line-height: 1.6;
+}
+
+body.font-bn h1,
+body.font-bn h2,
+body.font-bn h3,
+body.font-bn h4 {
+  font-family: var(--font-bangla);
+  line-height: 1.35;
+}
