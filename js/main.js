@@ -16,33 +16,58 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. Navbar & Mobile Menu
+   1. Navbar & Mobile Menu (Floating Capsule with Dropdowns)
    ========================================================================== */
 function initNavbar() {
+  const floatingNav = document.getElementById('floatingNavWrapper');
   const navbar = document.getElementById('mainNavbar');
   const mobileToggle = document.getElementById('mobileMenuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
+  const dropdownTrigger = document.getElementById('modulesDropdownTrigger');
 
-  // Scroll effect
+  // Scroll effect on floating capsule
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
+    if (window.scrollY > 30) {
+      if (floatingNav) floatingNav.classList.add('scrolled');
+      if (navbar) navbar.classList.add('scrolled');
     } else {
-      navbar.classList.remove('scrolled');
+      if (floatingNav) floatingNav.classList.remove('scrolled');
+      if (navbar) navbar.classList.remove('scrolled');
     }
   });
 
   // Mobile Menu Toggle
   if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileMenu.classList.toggle('hidden');
     });
 
-    const mobileLinks = mobileMenu.querySelectorAll('a');
+    const mobileLinks = mobileMenu.querySelectorAll('a, button');
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
       });
+    });
+  }
+
+  // Dropdown click support on touch / tablet
+  if (dropdownTrigger) {
+    const triggerBtn = dropdownTrigger.querySelector('button');
+    if (triggerBtn) {
+      triggerBtn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          dropdownTrigger.classList.toggle('open');
+        }
+      });
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownTrigger.contains(e.target)) {
+        dropdownTrigger.classList.remove('open');
+      }
     });
   }
 }
@@ -934,6 +959,8 @@ function initDemoModal() {
    ========================================================================== */
 function initLanguageSwitcher() {
   const langToggleBtn = document.getElementById('langToggleBtn');
+  const langEnBtn = document.getElementById('langEnBtn');
+  const langBnBtn = document.getElementById('langBnBtn');
   let currentLang = localStorage.getItem('yes_edu_lang') || 'en';
 
   function applyLanguage(lang) {
@@ -944,15 +971,35 @@ function initLanguageSwitcher() {
       enElements.forEach(el => el.classList.add('hidden'));
       bnElements.forEach(el => el.classList.remove('hidden'));
       if (langToggleBtn) langToggleBtn.textContent = 'English';
+      if (langBnBtn) langBnBtn.classList.add('active');
+      if (langEnBtn) langEnBtn.classList.remove('active');
       document.body.classList.add('font-bn');
     } else {
       enElements.forEach(el => el.classList.remove('hidden'));
       bnElements.forEach(el => el.classList.add('hidden'));
       if (langToggleBtn) langToggleBtn.textContent = 'বাংলা';
+      if (langEnBtn) langEnBtn.classList.add('active');
+      if (langBnBtn) langBnBtn.classList.remove('active');
       document.body.classList.remove('font-bn');
     }
     localStorage.setItem('yes_edu_lang', lang);
     window.dispatchEvent(new CustomEvent('yesEduLangChanged', { detail: { lang } }));
+  }
+
+  if (langEnBtn) {
+    langEnBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      currentLang = 'en';
+      applyLanguage(currentLang);
+    });
+  }
+
+  if (langBnBtn) {
+    langBnBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      currentLang = 'bn';
+      applyLanguage(currentLang);
+    });
   }
 
   if (langToggleBtn) {

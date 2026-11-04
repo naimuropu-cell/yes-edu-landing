@@ -53,123 +53,276 @@
 <body class="bg-[#f8fafc] text-slate-800 selection:bg-emerald-100 selection:text-emerald-900">
 
   <!-- 1. Top Institutional Utility Bar -->
-  <header class="bg-white border-b border-slate-200 py-2 px-4 relative z-50 text-xs text-slate-600">
+  <header class="bg-white border-b border-slate-200 py-1.5 px-4 relative z-40 text-xs text-slate-600">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-6">
         <a href="tel:+8801838790573" class="inline-flex items-center gap-1.5 font-semibold text-emerald-700 hover:text-emerald-800">
           <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           <span class="lang-en">Direct Hotline: +880 1838-790573</span>
-          <span class="lang-bn hidden">সরাসরি হটলাইন: ০১৮৩৮-৭৯০৫৭৩</span>
+          <span class="lang-bn hidden">হটলাইন: ০১৮৩৮-৭৯০৫৭৩</span>
         </a>
         <span class="hidden md:inline-flex items-center gap-1.5 text-slate-500">
           <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <span class="lang-en">Corporate Office: House 43, Road 14, Nikunja-2, Khilkhet, Dhaka-1229</span>
-          <span class="lang-bn hidden">কর্পোরেট হেড অফিস: বাড়ি ৪৩, রোড ১৪, নিকুঞ্জ-২, খিলক্ষেত, ঢাকা-১২২৯</span>
+          <span class="lang-en">Nikunja-2, Khilkhet, Dhaka-1229</span>
+          <span class="lang-bn hidden">নিকুঞ্জ-২, খিলক্ষেত, ঢাকা-১২২৯</span>
         </span>
       </div>
 
       <div class="flex items-center gap-4">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-semibold">
+        <span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-semibold">
           <span class="pulse-dot-light"></span>
           <span class="lang-en">99.9% Uptime SLA • AWS Cloud</span>
-          <span class="lang-bn hidden">৯৯.৯% আপটাইম • সিকিউর এডব্লিউএস ক্লাউড</span>
+          <span class="lang-bn hidden">৯৯.৯% আপটাইম • এডব্লিউএস ক্লাউড</span>
         </span>
-
-        <!-- Language Switcher Button -->
-        <button id="langToggleBtn" class="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300 transition" aria-label="Toggle Language">
-          বাংলা
-        </button>
+        <span class="text-xs text-slate-300 hidden sm:inline">|</span>
+        <a href="#matrix" class="text-xs font-semibold text-slate-600 hover:text-emerald-700 flex items-center gap-1">
+          <span class="lang-en">Package Specs (2026)</span>
+          <span class="lang-bn hidden">প্যাকেজ বিবরণী</span>
+          <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- 2. Sticky Light Glass Navbar -->
-  <nav id="mainNavbar" class="light-glass-nav sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+  <!-- 2. Concept 1: Modern SaaS Floating Glass Capsule Navbar (Linear / Stripe Style) -->
+  <div id="floatingNavWrapper" class="floating-nav-wrapper">
+    <nav id="mainNavbar" class="floating-glass-capsule">
+      <div class="flex items-center justify-between">
         
-        <!-- Brand Logo -->
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-            </svg>
-          </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <span class="text-xl font-extrabold tracking-tight text-slate-900">YES <span class="text-emerald-600">EDU</span></span>
-              <span class="text-[10px] uppercase font-bold tracking-widest bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded border border-emerald-300">ERP 2026</span>
+        <!-- Brand & System Status -->
+        <div class="flex items-center gap-3">
+          <a href="#" class="flex items-center gap-2.5 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
             </div>
-            <p class="text-[11px] text-slate-500 font-medium">
-              <span class="lang-en">Institutional Campus Platform</span>
-              <span class="lang-bn hidden">স্মার্ট শিক্ষা প্রতিষ্ঠান ইআরপি</span>
-            </p>
-          </div>
-        </a>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-lg font-extrabold tracking-tight text-slate-900">YES <span class="text-emerald-600">EDU</span></span>
+                <span class="text-[9px] uppercase font-bold tracking-widest bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded border border-emerald-300">ERP</span>
+              </div>
+            </div>
+          </a>
 
-        <!-- Desktop Navigation Links -->
+          <!-- Live Status Pill -->
+          <div class="hidden xl:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="lang-en font-mono">Live Sync</span>
+            <span class="lang-bn hidden font-mono">লাইভ সিঙ্ক</span>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation Links Cluster -->
         <div class="hidden lg:flex items-center gap-1">
-          <a href="#whyUs" class="nav-link">
-            <span class="lang-en">Why YES EDU</span>
+          
+          <!-- Modules Mega Menu Trigger -->
+          <div class="nav-dropdown-trigger" id="modulesDropdownTrigger">
+            <button class="nav-capsule-link group" type="button" aria-expanded="false">
+              <span class="lang-en">Modules</span>
+              <span class="lang-bn hidden">মডিউলসমূহ</span>
+              <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-600 transition-transform dropdown-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+
+            <!-- 2-Column Mega Dropdown Menu -->
+            <div class="nav-dropdown-menu">
+              <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-100 px-2">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                  <span class="lang-en">Core Campus Architecture</span>
+                  <span class="lang-bn hidden">মূল প্রাতিষ্ঠানিক মডিউল</span>
+                </span>
+                <span class="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold border border-emerald-200">9 MODULES ACTIVE</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2">
+                
+                <!-- 1. Academic & Exams -->
+                <a href="#features" class="dropdown-item-card">
+                  <div class="dropdown-item-icon bg-emerald-100 text-emerald-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-xs text-slate-900 block">
+                      <span class="lang-en">Academic & Exams</span>
+                      <span class="lang-bn hidden">একাডেমিক ও পরীক্ষা</span>
+                    </span>
+                    <span class="text-[11px] text-slate-500 block leading-tight">
+                      <span class="lang-en">Tabulation, GPA & AI Questions</span>
+                      <span class="lang-bn hidden">ট্যাবুলেশন, জিপিএ ও এআই প্রশ্ন</span>
+                    </span>
+                  </div>
+                </a>
+
+                <!-- 2. bKash & Fees -->
+                <a href="#features" class="dropdown-item-card">
+                  <div class="dropdown-item-icon bg-amber-100 text-amber-700 font-bold">
+                    ৳
+                  </div>
+                  <div>
+                    <span class="font-bold text-xs text-slate-900 block">
+                      <span class="lang-en">bKash & Fees</span>
+                      <span class="lang-bn hidden">বিকাশ ও ফি আদায়</span>
+                    </span>
+                    <span class="text-[11px] text-slate-500 block leading-tight">
+                      <span class="lang-en">1-Tap SMS Links & Zero Dues</span>
+                      <span class="lang-bn hidden">১-ট্যাপ এসএমএস ও বকেয়া শূন্য</span>
+                    </span>
+                  </div>
+                </a>
+
+                <!-- 3. Biometric & SMS -->
+                <a href="#features" class="dropdown-item-card">
+                  <div class="dropdown-item-icon bg-sky-100 text-sky-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-xs text-slate-900 block">
+                      <span class="lang-en">Biometric Gateway</span>
+                      <span class="lang-bn hidden">বায়োমেট্রিক গেটওয়ে</span>
+                    </span>
+                    <span class="text-[11px] text-slate-500 block leading-tight">
+                      <span class="lang-en">ZKTeco Sync & 3s Parent SMS</span>
+                      <span class="lang-bn hidden">জেডকেটেকো ও ৩ সে. এসএমএস</span>
+                    </span>
+                  </div>
+                </a>
+
+                <!-- 4. Madrasa Waqf & Lillah -->
+                <a href="#features" class="dropdown-item-card">
+                  <div class="dropdown-item-icon bg-purple-100 text-purple-700">
+                    🕌
+                  </div>
+                  <div>
+                    <span class="font-bold text-xs text-slate-900 block">
+                      <span class="lang-en">Madrasa Waqf & Lillah</span>
+                      <span class="lang-bn hidden">মাদ্রাসার ওয়াকফ ও লিল্লাহ</span>
+                    </span>
+                    <span class="text-[11px] text-slate-500 block leading-tight">
+                      <span class="lang-en">Shariah Ledger & Donor Receipts</span>
+                      <span class="lang-bn hidden">পৃথক লেজার ও দাতা এসএমএস</span>
+                    </span>
+                  </div>
+                </a>
+
+                <!-- 5. Hostel & Transport -->
+                <a href="#features" class="dropdown-item-card">
+                  <div class="dropdown-item-icon bg-blue-100 text-blue-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-xs text-slate-900 block">
+                      <span class="lang-en">Hostel & Bus Fleet</span>
+                      <span class="lang-bn hidden">হোস্টেল ও বাস বহর</span>
+                    </span>
+                    <span class="text-[11px] text-slate-500 block leading-tight">
+                      <span class="lang-en">Bed Matrix & Live Bus GPS</span>
+                      <span class="lang-bn hidden">সিট বণ্টন ও জিপিএস ট্র্যাকিং</span>
+                    </span>
+                  </div>
+                </a>
+
+                <!-- 6. Executive BI & CMS -->
+                <a href="#features" class="dropdown-item-card">
+                  <div class="dropdown-item-icon bg-teal-100 text-teal-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-xs text-slate-900 block">
+                      <span class="lang-en">Executive BI & CMS</span>
+                      <span class="lang-bn hidden">কন্ট্রোল ড্যাশবোর্ড ও সিএমএস</span>
+                    </span>
+                    <span class="text-[11px] text-slate-500 block leading-tight">
+                      <span class="lang-en">Principal BI & School Website</span>
+                      <span class="lang-bn hidden">অধ্যক্ষ বিআই ও স্কুল ওয়েবসাইট</span>
+                    </span>
+                  </div>
+                </a>
+
+              </div>
+
+              <!-- Dropdown Footer -->
+              <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs px-2">
+                <span class="text-slate-500">
+                  <span class="lang-en">Ref: YB-EDU-PKG-2026</span>
+                  <span class="lang-bn hidden">রেফারেন্স: YB-EDU-২০২৬</span>
+                </span>
+                <a href="#features" class="font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
+                  <span class="lang-en">Explore All 9 Modules →</span>
+                  <span class="lang-bn hidden">সবগুলো ৯টি মডিউল দেখুন →</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Capsule Links -->
+          <a href="#whyUs" class="nav-capsule-link">
+            <span class="lang-en">Why Us</span>
             <span class="lang-bn hidden">কেন ইয়েস এডু</span>
           </a>
-          <a href="#features" class="nav-link">
-            <span class="lang-en">9 Modules</span>
-            <span class="lang-bn hidden">৯টি মডিউল</span>
-          </a>
-          <a href="#videoShowcase" class="nav-link">
+          <a href="#videoShowcase" class="nav-capsule-link">
             <span class="lang-en">Video Tour</span>
             <span class="lang-bn hidden">ভিডিও ডেমো</span>
           </a>
-          <a href="#animatedStory" class="nav-link">
-            <span class="lang-en">Story</span>
-            <span class="lang-bn hidden">বাস্তব গল্প</span>
-          </a>
-          <a href="#calculator" class="nav-link">
+          <a href="#calculator" class="nav-capsule-link">
             <span class="lang-en">Pricing & ROI</span>
             <span class="lang-bn hidden">মূল্য ও সঞ্চয়</span>
           </a>
-          <a href="#testimonials" class="nav-link">
+          <a href="#testimonials" class="nav-capsule-link">
             <span class="lang-en">Reviews</span>
-            <span class="lang-bn hidden">গ্রাহক মতামত</span>
+            <span class="lang-bn hidden">মতামত</span>
           </a>
-          <a href="#faq" class="nav-link">
+          <a href="#faq" class="nav-capsule-link">
             <span class="lang-en">FAQ</span>
             <span class="lang-bn hidden">প্রশ্নোত্তর</span>
           </a>
         </div>
 
-        <!-- Action CTAs -->
-        <div class="hidden sm:flex items-center gap-3">
-          <a href="https://wa.me/8801838790573?text=Salam,%20I%20am%20interested%20in%20YES%20EDU%20ERP%20for%20my%20Institution." target="_blank" class="btn-secondary text-xs px-3.5 py-2.5">
+        <!-- Action CTAs & Segmented Language Switcher -->
+        <div class="flex items-center gap-2.5">
+          
+          <!-- Segmented Language Switcher Pill -->
+          <div class="lang-segment-pill" title="Language Switcher">
+            <button id="langEnBtn" class="lang-segment-btn active" type="button">EN</button>
+            <button id="langBnBtn" class="lang-segment-btn" type="button">বাংলা</button>
+            <button id="langToggleBtn" class="hidden" type="button" aria-hidden="true"></button>
+          </div>
+
+          <!-- WhatsApp Quick Contact -->
+          <a href="https://wa.me/8801838790573?text=Salam,%20I%20am%20interested%20in%20YES%20EDU%20ERP%20for%20my%20Institution." target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold shadow-xs transition" title="Chat on WhatsApp">
             <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
-            WhatsApp
+            <span class="hidden md:inline">WhatsApp</span>
           </a>
-          <button class="btn-primary trigger-demo-modal text-xs px-4 py-2.5">
+
+          <!-- Primary CTA Button -->
+          <button class="btn-primary trigger-demo-modal text-xs px-4 py-2 rounded-full shadow-sm">
             <span class="lang-en">Book Live Demo</span>
-            <span class="lang-bn hidden">ফ্রি ডেমো বুক করুন</span>
+            <span class="lang-bn hidden">ফ্রি ডেমো নিন</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobileMenuToggle" class="lg:hidden p-2 rounded-full text-slate-600 hover:text-slate-900 hover:bg-slate-100" aria-label="Open Mobile Menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
           </button>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button id="mobileMenuToggle" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100" aria-label="Open Mobile Menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
-        </button>
       </div>
 
-      <!-- Mobile Dropdown Menu -->
-      <div id="mobileMenu" class="hidden lg:hidden pb-6 pt-2 border-t border-slate-200 space-y-2">
-        <a href="#whyUs" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">Why YES EDU</a>
-        <a href="#features" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">9 Modules</a>
-        <a href="#videoShowcase" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">Video Tour</a>
-        <a href="#animatedStory" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">Story</a>
-        <a href="#calculator" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">Pricing & ROI</a>
-        <a href="#testimonials" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">Reviews</a>
-        <a href="#faq" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">FAQ</a>
-        <button class="w-full btn-primary trigger-demo-modal text-sm mt-3">Book In-Campus Demo</button>
+      <!-- Mobile Dropdown Floating Sheet -->
+      <div id="mobileMenu" class="hidden lg:hidden mt-3 pt-3 border-t border-slate-200/80 space-y-1.5 px-2 pb-2">
+        <a href="#whyUs" class="block px-3 py-2 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100">Why YES EDU</a>
+        <a href="#features" class="block px-3 py-2 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100">9 Modules</a>
+        <a href="#videoShowcase" class="block px-3 py-2 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100">Video Tour</a>
+        <a href="#animatedStory" class="block px-3 py-2 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100">Story</a>
+        <a href="#calculator" class="block px-3 py-2 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100">Pricing & ROI</a>
+        <a href="#testimonials" class="block px-3 py-2 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100">Reviews</a>
+        <a href="#faq" class="block px-3 py-2 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100">FAQ</a>
+        <div class="pt-2 border-t border-slate-100 flex gap-2">
+          <a href="https://wa.me/8801838790573" target="_blank" class="w-1/2 btn-secondary text-xs text-center justify-center py-2.5">WhatsApp</a>
+          <button class="w-1/2 btn-primary trigger-demo-modal text-xs text-center justify-center py-2.5">Book Demo</button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   <!-- 3. Senior UI/UX Light Hero Section with 3D Campus -->
   <section class="relative pt-12 pb-20 px-4 sm:px-6 lg:px-8 bg-light-mesh bg-dot-pattern">

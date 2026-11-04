@@ -1382,3 +1382,179 @@ body.font-bn h4 {
   font-family: var(--font-bangla);
   line-height: 1.35;
 }
+
+/* ==========================================================================
+   Concept 1: Modern SaaS Floating Glass Capsule Navbar (Linear / Stripe Style)
+   ========================================================================== */
+
+.floating-nav-wrapper {
+  position: sticky;
+  top: 14px;
+  z-index: 50;
+  padding: 0 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-glass-capsule {
+  max-width: 1240px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 9999px;
+  padding: 8px 18px;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-nav-wrapper.scrolled .floating-glass-capsule {
+  background: rgba(255, 255, 255, 0.97);
+  border-color: rgba(203, 213, 225, 0.95);
+  box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(5, 150, 105, 0.12);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .floating-glass-capsule {
+    border-radius: 20px;
+    padding: 10px 16px;
+  }
+}
+
+/* Nav Link Pill */
+.nav-capsule-link {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #475569;
+  padding: 8px 13px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.nav-capsule-link:hover {
+  color: #047857;
+  background: #ecfdf5;
+}
+
+/* Mega Dropdown Menu */
+.nav-dropdown-trigger {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 580px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 24px 50px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 60;
+}
+
+.nav-dropdown-trigger:hover .nav-dropdown-menu,
+.nav-dropdown-trigger:focus-within .nav-dropdown-menu,
+.nav-dropdown-trigger.open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-trigger:hover .dropdown-chevron,
+.nav-dropdown-trigger.open .dropdown-chevron {
+  transform: rotate(180deg);
+  color: #059669;
+}
+
+.dropdown-chevron {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+}
+
+/* Dropdown Item Card */
+.dropdown-item-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.dropdown-item-card:hover {
+  background: #f8fafc;
+  border-color: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+.dropdown-item-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+/* Segmented Language Switcher Pill */
+.lang-segment-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  gap: 2px;
+}
+
+.lang-segment-btn {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-segment-btn:hover {
+  color: #0f172a;
+}
+
+.lang-segment-btn.active {
+  background: #ffffff;
+  color: #047857;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
