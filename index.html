@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YES EDU — Unified Campus Management & Automation Platform | All-in-One ERP</title>
+  <meta name="description" content="YES EDU: Premier Education Management & ERP Software in Bangladesh for Schools, Colleges & Madrasas. Biometric attendance, bKash fee automation, AI Teacher Assistant, and Waqf tracking.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Hind Siliguri (Bengali) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            },
+            amberBrand: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Three.js 3D WebGL Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Custom Styles: Senior UI/UX Designer Light Theme -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#f8fafc] text-slate-800 selection:bg-emerald-100 selection:text-emerald-900">
+
+  <!-- 1. Top Institutional Utility Bar -->
+  <header class="bg-white border-b border-slate-200 py-2 px-4 relative z-50 text-xs text-slate-600">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-6">
+        <a href="tel:+8801838790573" class="inline-flex items-center gap-1.5 font-semibold text-emerald-700 hover:text-emerald-800">
+          <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Direct Hotline: +880 1838-790573
+        </a>
+        <span class="hidden md:inline-flex items-center gap-1.5 text-slate-500">
+          <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Corporate Office: House 43, Road 14, Nikunja-2, Khilkhet, Dhaka-1229
+        </span>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-semibold">
+          <span class="pulse-dot-light"></span>
+          99.9% Uptime SLA • AWS Cloud
+        </span>
+
+        <!-- Language Switcher Button -->
+        <button id="langToggleBtn" class="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300 transition">
+          বাংলা
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Sticky Light Glass Navbar -->
+  <nav id="mainNavbar" class="light-glass-nav sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-xl font-extrabold tracking-tight text-slate-900">YES <span class="text-emerald-600">EDU</span></span>
+              <span class="text-[10px] uppercase font-bold tracking-widest bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded border border-emerald-300">ERP 2026</span>
+            </div>
+            <p class="text-[11px] text-slate-500 font-medium">Institutional Management Platform</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="#features" class="nav-link">
+            <span class="lang-en">9 Modules</span>
+            <span class="lang-bn hidden">৯টি মডিউল</span>
+          </a>
+          <a href="#animatedStory" class="nav-link text-emerald-700 font-semibold">
+            <span class="lang-en">Story Transformation</span>
+            <span class="lang-bn hidden">সফলতার গল্প</span>
+          </a>
+          <a href="#videoShowcase" class="nav-link">
+            <span class="lang-en">Video Tour</span>
+            <span class="lang-bn hidden">ভিডিও ডেমো</span>
+          </a>
+          <a href="#calculator" class="nav-link">
+            <span class="lang-en">Pricing Calculator</span>
+            <span class="lang-bn hidden">মূল্য ক্যালকুলেটর</span>
+          </a>
+          <a href="#matrix" class="nav-link">
+            <span class="lang-en">Comparison Matrix</span>
+            <span class="lang-bn hidden">তুলনামূলক চার্ট</span>
+          </a>
+          <a href="#onboarding" class="nav-link">
+            <span class="lang-en">4-Stage Roadmap</span>
+            <span class="lang-bn hidden">বাস্তবায়ন ধাপ</span>
+          </a>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="https://wa.me/8801838790573?text=Salam,%20I%20am%20interested%20in%20YES%20EDU%20ERP%20for%20my%20Institution." target="_blank" class="btn-secondary text-xs px-3.5 py-2.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+            WhatsApp
+          </a>
+          <button class="btn-primary trigger-demo-modal text-xs px-4 py-2.5">
+            <span class="lang-en">Book Live Demo</span>
+            <span class="lang-bn hidden">ফ্রি ডেমো বুক করুন</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuToggle" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden pb-6 pt-2 border-t border-slate-200 space-y-2">
+        <a href="#features" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">9 Modules</a>
+        <a href="#animatedStory" class="block px-3 py-2 rounded-md text-sm text-emerald-700 font-semibold hover:bg-slate-100">Story Transformation</a>
+        <a href="#videoShowcase" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">Video Tour</a>
+        <a href="#calculator" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">Pricing Calculator</a>
+        <a href="#matrix" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">Comparison Matrix</a>
+        <a href="#onboarding" class="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-100">4-Stage Onboarding</a>
+        <button class="w-full btn-primary trigger-demo-modal text-sm mt-3">Book In-Campus Demo</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 3. Senior UI/UX Light Hero Section with 3D Campus -->
+  <section class="relative pt-12 pb-20 px-4 sm:px-6 lg:px-8 bg-light-mesh bg-dot-pattern">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copy & Actions -->
+        <div class="lg:col-span-6 space-y-6 z-10 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 badge-pill-emerald shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+            <span>DIGITAL TRANSFORMATION FOR SCHOOLS & MADRASAS</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.15] text-slate-900">
+            Unified Campus<br>
+            Management &<br>
+            <span class="text-emerald-600">Automation Platform</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <span class="lang-en">
+              YES EDU provides an integrated digital ecosystem covering website CMS, student lifecycle, academic routines, examination grading, fee automation, double-entry accounting, biometric attendance, and AI-powered teacher assistance.
+            </span>
+            <span class="lang-bn hidden">
+              বাংলাদেশি স্কুল, কলেজ ও মাদ্রাসার জন্য পূর্ণাঙ্গ ক্লাউড ইআরপি। বায়োমেট্রিক উপস্থিতি, স্বয়ংক্রিয় বিকাশ ফি আদায়, এনসিটিবি এআই শিক্ষক সহকারী এবং ওয়াকফ ও লিল্লাহ ফান্ড পরিচালনার নির্ভরযোগ্য প্ল্যাটফর্ম।
+            </span>
+          </p>
+
+          <!-- Key Value Metric Cards in Light Mode -->
+          <div class="grid grid-cols-3 gap-3 pt-1 max-w-md mx-auto lg:mx-0 text-left">
+            <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+              <span class="block text-xl font-extrabold text-emerald-700">৳৫ - ৳১২</span>
+              <span class="text-xs text-slate-500 font-medium">/ student / mo</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+              <span class="block text-xl font-extrabold text-amber-600">99.9%</span>
+              <span class="text-xs text-slate-500 font-medium">AWS Cloud SLA</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+              <span class="block text-xl font-extrabold text-sky-600">48 Hours</span>
+              <span class="text-xs text-slate-500 font-medium">Full Onboarding</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
+            <a href="#calculator" class="btn-primary">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>Calculate Pricing (৳5 - ৳12)</span>
+            </a>
+            <a href="#videoShowcase" class="btn-secondary">
+              <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <span>Watch Video Tour</span>
+            </a>
+          </div>
+
+          <!-- Sign-Off Assurance -->
+          <p class="text-xs text-slate-500 flex items-center justify-center lg:justify-start gap-2 pt-1 font-medium">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Billed monthly based on active enrolled student count. Dedicated staff training included with all tiers.
+          </p>
+        </div>
+
+        <!-- Right Column: Interactive 3D Campus Canvas in Bright Light Mode -->
+        <div class="lg:col-span-6 relative">
+          <div class="hero-canvas-container-light" id="hero3dCanvasContainer">
+            <canvas id="hero3dCanvas"></canvas>
+
+            <!-- Hologram 1: Biometric Gateway -->
+            <div class="floating-badge-light badge-top-left">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <div>
+                <span class="font-bold text-slate-900 block text-xs">Biometric Gate Sync</span>
+                <span class="text-slate-500 text-[11px]">Instant Parent SMS in 3s</span>
+              </div>
+            </div>
+
+            <!-- Hologram 2: Fee Automation -->
+            <div class="floating-badge-light badge-bottom-left">
+              <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs">৳</div>
+              <div>
+                <span class="font-bold text-slate-900 block text-xs">Automated Fee Collection</span>
+                <span class="text-slate-500 text-[11px]">bKash, Nagad & Bank Gateway</span>
+              </div>
+            </div>
+
+            <!-- Hologram 3: AI Teacher Assistant -->
+            <div class="floating-badge-light badge-top-right">
+              <div class="w-7 h-7 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-xs">AI</div>
+              <div>
+                <span class="font-bold text-slate-900 block text-xs">Teacher Assistant AI V2</span>
+                <span class="text-slate-500 text-[11px]">NCTB Syllabus Question Maker</span>
+              </div>
+            </div>
+
+            <!-- Hologram 4: Waqf & Donation -->
+            <div class="floating-badge-light badge-bottom-right">
+              <div class="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs">🕌</div>
+              <div>
+                <span class="font-bold text-slate-900 block text-xs">Donation & Waqf Fund</span>
+                <span class="text-slate-500 text-[11px]">Madrasa & Lillah Audit Ready</span>
+              </div>
+            </div>
+
+            <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-mono tracking-wider bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-slate-200 shadow-xs pointer-events-none">
+              INTERACTIVE 3D • MOVE CURSOR TO ROTATE
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Institutional Trust & Standards Bar -->
+  <section class="py-8 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-xs uppercase tracking-wider font-bold text-slate-400 mb-6">
+        Engineered for Bangladesh Education Ecosystem & Madrasa Standards
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 items-center justify-center text-center">
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center">
+          <span class="text-emerald-700 font-bold text-sm">NCTB Syllabus</span>
+          <span class="text-[11px] text-slate-500">Curriculum Trained AI</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center">
+          <span class="text-amber-700 font-bold text-sm">Madrasa Board</span>
+          <span class="text-[11px] text-slate-500">Qawmi & Aliya Compatible</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center">
+          <span class="text-sky-700 font-bold text-sm">bKash & Nagad</span>
+          <span class="text-[11px] text-slate-500">Direct Payment Gateway</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center">
+          <span class="text-purple-700 font-bold text-sm">ZKTeco Biometric</span>
+          <span class="text-[11px] text-slate-500">Hardware Direct API</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center col-span-2 sm:col-span-1">
+          <span class="text-blue-700 font-bold text-sm">AWS & VPS Cloud</span>
+          <span class="text-[11px] text-slate-500">99.9% Uptime Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Animated Story Section in Clean Light Theme -->
+  <section id="animatedStory" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+          <span>REAL PROBLEM TO SUCCESS STORY IN ERP</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          A Tale of Two Campuses: <span class="text-emerald-700">The Struggle vs The Cloud</span>
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Experience what happens inside an institution during the 4 critical moments of the day — from manual register book chaos to 100% automated peace of mind.
+        </p>
+
+        <!-- Scenario Switcher -->
+        <div class="inline-flex p-1.5 rounded-xl bg-white border border-slate-200 shadow-sm gap-1 mt-4">
+          <button id="scenarioMadrasaBtn" class="px-5 py-2 rounded-lg text-xs font-bold transition bg-emerald-600 text-white shadow-sm flex items-center gap-2">
+            <span>🕌 Madrasa Scenario</span>
+          </button>
+          <button id="scenarioSchoolBtn" class="px-5 py-2 rounded-lg text-xs font-bold transition text-slate-600 bg-transparent hover:text-slate-900 flex items-center gap-2">
+            <span>🏫 School & College Scenario</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Time of Day Stations Nav -->
+      <div class="flex justify-center mb-10 overflow-x-auto pb-2">
+        <div class="story-timeline-nav-light">
+          <button class="story-time-btn-light active">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>08:30 AM • Gate & Attendance</span>
+          </button>
+          <button class="story-time-btn-light">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>11:30 AM • Teachers & AI Routine</span>
+          </button>
+          <button class="story-time-btn-light">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>02:00 PM • Fees & Waqf Ledger</span>
+          </button>
+          <button class="story-time-btn-light">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>05:00 PM • Committee & BI Analytics</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Split Story Card: Before vs After -->
+      <div class="split-story-card-light max-w-5xl mx-auto shadow-lg">
+        <div class="story-scene-container">
+          
+          <!-- Column 1: The Manual Headache (Before) -->
+          <div class="story-col-before-light flex flex-col justify-between">
+            <div>
+              <span id="storyBeforeBadge" class="story-tag-badge story-tag-before-light">
+                ❌ হস্তচালিত খাতা ও অনিশ্চয়তা
+              </span>
+              <h3 id="storyBeforeHeading" class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+                ২০+ মিনিট হাজিরায় নষ্ট, অভিভাবকের দুশ্চিন্তা
+              </h3>
+              <p id="storyBeforeText" class="text-sm text-slate-600 leading-relaxed mb-6">
+                হাতে লেখা হাজিরা খাতায় প্রতিদিন ২৫ মিনিট নষ্ট। কোনো ছাত্র অনুপস্থিত থাকলে অভিভাবক জানতে পারেন না। দুশ্চিন্তায় অফিসে ঘনঘন অভিভাবকের ফোন কল আসে।
+              </p>
+            </div>
+
+            <div id="storyBeforeVisual" class="my-4">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="pt-4 border-t border-red-200 text-xs text-red-600 font-semibold">
+              <span id="storyBeforeMetrics">সময় অপচয়: ২৫ মিনিট / ক্লাস | অনুপস্থিতি ট্র্যাকিং: শূন্য</span>
+            </div>
+          </div>
+
+          <!-- Column 2: The YES EDU Transformation (After) -->
+          <div class="story-col-after-light flex flex-col justify-between">
+            <div>
+              <span id="storyAfterBadge" class="story-tag-badge story-tag-after-light">
+                ✅ YES EDU বায়োমেট্রিক ও ইনস্ট্যান্ট SMS
+              </span>
+              <h3 id="storyAfterHeading" class="text-xl sm:text-2xl font-bold text-emerald-800 mb-3">
+                ৩ সেকেন্ডে ফিঙ্গারপ্রিন্ট পাঞ্চ ও স্বয়ংক্রিয় SMS
+              </h3>
+              <p id="storyAfterText" class="text-sm text-slate-700 leading-relaxed mb-6">
+                ZKTeco গেটওয়েতে ফিঙ্গারপ্রিন্ট বা ফেস ডিটেকশনের সাথে সাথে অভিভাবকের মোবাইলে SMS চলে যায়: 'আপনার সন্তান মুহাম্মদ তানভীর সকাল ৮:৩০ এ মাদ্রাসায় প্রবেশ করেছে।' শতভাগ নিরাপত্তা ও আস্থা।
+              </p>
+            </div>
+
+            <div id="storyAfterVisual" class="my-4">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="pt-4 border-t border-emerald-200 text-xs text-emerald-700 font-semibold">
+              <span id="storyAfterMetrics">সময় সাশ্রয়: ৯৫% | ইনস্ট্যান্ট SMS ডেলিভারি: ৩ সেকেন্ড</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Interactive Before/After Drag Slider Showcase -->
+      <div class="max-w-3xl mx-auto mt-12 text-center">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-3">
+          Interactive Drag Slider: Slide Between The Past & The Future
+        </p>
+        
+        <div id="storyCompareContainer" class="compare-container-light mx-auto">
+          <!-- Background: Old Manual Paper Era -->
+          <div class="compare-layer-light bg-gradient-to-r from-red-50 to-amber-50 p-8 flex flex-col items-center justify-center text-center">
+            <span class="text-red-700 font-bold text-xs uppercase tracking-widest mb-1">MANUAL REGISTER ERA</span>
+            <h4 class="text-2xl font-bold text-slate-900 mb-2">Paper Khatas & Lost Receipts</h4>
+            <p class="text-xs text-slate-600 max-w-sm">Hours wasted on handwriting, unpaid tuition fees, and untracked Waqf donations.</p>
+          </div>
+
+          <!-- Overlay: Automated YES EDU Cloud Layer -->
+          <div id="storyCompareAfterLayer" class="compare-layer-light compare-after-layer-light bg-gradient-to-r from-emerald-50 to-teal-50 p-8 flex flex-col items-center justify-center text-center">
+            <div class="w-full">
+              <span class="text-emerald-700 font-bold text-xs uppercase tracking-widest mb-1">YES EDU CLOUD ERA</span>
+              <h4 class="text-2xl font-bold text-emerald-900 mb-2">Automated Digital Campus</h4>
+              <p class="text-xs text-slate-700 max-w-sm">Instant biometric SMS, bKash automated fees, and NCTB AI Teacher Assistant.</p>
+            </div>
+          </div>
+
+          <!-- Draggable Handle Knob -->
+          <div id="storyCompareHandle" class="compare-handle-light">
+            <div class="compare-handle-knob-light">
+              <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. Video Showcase Theatre in Clean Modern Bezel -->
+  <section id="videoShowcase" class="py-24 px-4 sm:px-6 lg:px-8 bg-white relative border-t border-slate-200">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-bold">
+          <span>ANIMATED VIDEO TOUR & INTERACTIVE LIVE DEMO</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          See <span class="text-emerald-700">YES EDU</span> In Action
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Click any feature chapter below to see how our biometric hardware sync, bKash fee gateway, and NCTB AI engine work in real time.
+        </p>
+
+        <!-- Chapter Selectors (4 Distinct Parts) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 pt-3">
+          <button class="video-chapter-pill-light active" data-part="0">Part 1: Biometric Gate Sync (0s)</button>
+          <button class="video-chapter-pill-light" data-part="1">Part 2: bKash Fee Automation (10s)</button>
+          <button class="video-chapter-pill-light" data-part="2">Part 3: NCTB Teacher AI (20s)</button>
+          <button class="video-chapter-pill-light" data-part="3">Part 4: Madrasa Waqf & Hostel (30s)</button>
+        </div>
+      </div>
+
+      <!-- High-Tech Cinema Frame Container with Active Video Player & Studio Lighting (White BG) -->
+      <div class="max-w-4xl mx-auto video-theater-frame-light">
+        <!-- Ambient Backlight Glow that shifts pastel color per scene -->
+        <div id="videoAmbientGlow" class="video-ambient-glow" style="background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);"></div>
+
+        <div class="video-screen-light relative" id="mainVideoScreen">
+          
+          <!-- Studio Header Bar -->
+          <div class="video-studio-header">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+              <span class="text-[11px] font-mono text-slate-500 ml-2 hidden sm:inline">YES EDU 2.0 • Animated Campus Studio</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="videoStudioPartIndicator" class="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">PART 1 OF 4 (10s)</span>
+            </div>
+          </div>
+
+          <!-- Simulated Live Video Canvas/Screen with Crisp White Background -->
+          <div id="videoSimulationFrame" class="h-full relative overflow-hidden bg-white">
+            <!-- Active Video Scenes will be rendered here dynamically with white bg studio lighting -->
+          </div>
+
+          <!-- Video Control Bar (Bottom Overlay in Light Theme) -->
+          <div id="videoControlsBar" class="video-controls-bar">
+            <!-- Clickable Progress Track -->
+            <div id="videoProgressTrack" class="video-progress-track">
+              <div id="videoProgressFill" class="video-progress-fill"></div>
+            </div>
+
+            <!-- Controls Buttons Row -->
+            <div class="flex items-center justify-between text-slate-800 text-xs pt-1">
+              <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Previous Part (10s back) -->
+                <button id="videoPrevPartBtn" class="text-slate-600 hover:text-emerald-600 p-1 transition" title="Previous Part">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                </button>
+
+                <!-- Play / Pause -->
+                <button id="videoBottomPlayBtn" class="text-slate-800 hover:text-emerald-600 p-1 transition" title="Play/Pause">
+                  <svg id="videoPlayIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  <svg id="videoPauseIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+
+                <!-- Next Part (10s forward) -->
+                <button id="videoNextPartBtn" class="text-slate-600 hover:text-emerald-600 p-1 transition" title="Next Part">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                </button>
+
+                <button id="videoSoundBtn" class="hover:text-emerald-600 p-1 text-slate-600 transition" title="Mute/Unmute Audio">
+                  <svg id="videoSoundOnIcon" class="w-4 h-4 hidden text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                  <svg id="videoSoundOffIcon" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
+                </button>
+
+                <!-- Current Time / Duration -->
+                <span class="font-mono text-[11px] text-slate-700 font-bold">
+                  <span id="videoCurrentTimeDisplay">0:00</span> / <span id="videoDurationDisplay">0:40</span>
+                </span>
+
+                <span id="videoCurrentChapterTag" class="hidden sm:inline-block text-[11px] font-semibold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded">
+                  Ch 1: Biometric Gateway
+                </span>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span class="text-[10px] text-slate-500 font-mono hidden md:inline">1080P HD • CLOUD HOSTED</span>
+                <button id="videoFullscreenBtn" class="hover:text-emerald-600 p-1 text-slate-600 transition" title="Full Screen View">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Play Overlay Poster (Clean Light Theme) -->
+          <div id="videoOverlayControl" class="video-overlay-control">
+            <button id="videoTheaterPlayBtn" class="video-play-btn group">
+              <svg class="w-8 h-8 translate-x-0.5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <span class="mt-4 text-xs font-bold tracking-widest text-emerald-800 uppercase bg-white/95 px-4 py-1.5 rounded-full border border-emerald-300 shadow-md">
+              Play Animated Video (10s Transitions)
+            </span>
+            <p class="text-[11px] text-slate-600 mt-2 font-medium">Fast-Paced 40s Cartoon Story with White Studio Graphics</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. The 9 Core Institutional ERP Modules Showcase (Light Cards) -->
+  <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+          <span>ALL-IN-ONE INSTITUTIONAL SUITE</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          9 Core Operational Modules of <span class="text-emerald-700">YES EDU</span>
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Every single aspect of running a modern School, College, or Madrasa in Bangladesh — fully automated under one cloud dashboard.
+        </p>
+      </div>
+
+      <!-- 9 Modules Grid with Clean Light Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Module 1: Website & Dynamic Frontend CMS -->
+        <div class="tilt-card light-card p-6 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-5 border border-emerald-200 group-hover:bg-emerald-600 group-hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">1. Website & Dynamic CMS</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Custom institutional website with full frontend CMS control, photo gallery, event showcase, dynamic notices, and institutional blog publishing.
+          </p>
+          <span class="text-[11px] font-semibold text-emerald-700 flex items-center gap-1">Included in Starter, Pro & Enterprise →</span>
+        </div>
+
+        <!-- Module 2: Student & Parent Lifecycle Management -->
+        <div class="tilt-card light-card p-6 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-5 border border-cyan-200 group-hover:bg-cyan-600 group-hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">2. Student & Parent Lifecycle</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Digital admissions, student records from playgroup to Alim/SSC/HSC, parent & teacher web portals, and granular role permissions (RBAC).
+          </p>
+          <span class="text-[11px] font-semibold text-cyan-700 flex items-center gap-1">Admissions to Graduation →</span>
+        </div>
+
+        <!-- Module 3: Biometric Attendance & Gate Security -->
+        <div class="tilt-card light-card p-6 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5 border border-amber-200 group-hover:bg-amber-600 group-hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 004 11m0 0a8.003 8.003 0 0015.357 2m1.5-6.5h.01M16 19.5v.01"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">3. Biometric Attendance Sync</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Direct API integration with ZKTeco & Realtime turnstiles. Real-time fingerprint and facial recognition instantly triggers entrance/exit SMS alerts.
+          </p>
+          <span class="text-[11px] font-semibold text-amber-700 flex items-center gap-1">Hardware API + Instant SMS →</span>
+        </div>
+
+        <!-- Module 4: Double-Entry Financial Accounting -->
+        <div class="tilt-card light-card p-6 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-5 border border-emerald-200 group-hover:bg-emerald-600 group-hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">4. Double-Entry Accounting</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Automated tuition fee collection, automated SMS due reminders, online bKash/Nagad settlement, journal vouchers, cash books, and general ledgers.
+          </p>
+          <span class="text-[11px] font-semibold text-emerald-700 flex items-center gap-1">Zero Fee Leakage Guarantee →</span>
+        </div>
+
+        <!-- Module 5: Donation & Waqf Fund Tracking -->
+        <div class="tilt-card light-card p-6 relative overflow-hidden group border-amber-200">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5 border border-amber-200 group-hover:bg-amber-600 group-hover:text-white transition">
+            <span class="text-xl">🕌</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">5. Donation & Waqf Tracking</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Dedicated for Madrasas, orphanages, and religious endowments. Distinct audit ledgers for Zakat, Fitra, Sadaqah, and Waqf land/asset revenue.
+          </p>
+          <span class="text-[11px] font-semibold text-amber-700 flex items-center gap-1">Specialized for Madrasas →</span>
+        </div>
+
+        <!-- Module 6: AI Teacher Assistant Ecosystem -->
+        <div class="tilt-card light-card p-6 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mb-5 border border-purple-200 group-hover:bg-purple-600 group-hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">6. Teacher Assistant AI (V1 & V2)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            V1 for admin routine drafting and parent notices; V2 trained directly on Bangladesh NCTB syllabus to formulate creative questions (CQ/MCQ) and lesson plans.
+          </p>
+          <span class="text-[11px] font-semibold text-purple-700 flex items-center gap-1">NCTB Trained AI →</span>
+        </div>
+
+        <!-- Module 7: Dormitory / Hostel Bed & Fleet Transport -->
+        <div class="tilt-card light-card p-6 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mb-5 border border-blue-200 group-hover:bg-blue-600 group-hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">7. Dormitory & Transport Fleet</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Hostel building, room and bed allocation matrix with meal planning for residential madrasas and boarding schools. School bus route and vehicle tracking.
+          </p>
+          <span class="text-[11px] font-semibold text-blue-700 flex items-center gap-1">Hostel Bed Map + Fleet Routes →</span>
+        </div>
+
+        <!-- Module 8: Library Barcode & Asset Inventory -->
+        <div class="tilt-card light-card p-6 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-5 border border-teal-200 group-hover:bg-teal-600 group-hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">8. Library Barcode & Asset Inventory</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Full library cataloging with barcode check-in/out and late return fee calculations. Institutional asset and equipment depreciation logs.
+          </p>
+          <span class="text-[11px] font-semibold text-teal-700 flex items-center gap-1">Barcode Scanner Support →</span>
+        </div>
+
+        <!-- Module 9: ID Cards, Certificates & Executive BI -->
+        <div class="tilt-card light-card p-6 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center mb-5 border border-indigo-200 group-hover:bg-indigo-600 group-hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">9. ID Cards, Certificates & BI</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Instant 1-click generation of student ID cards, testimonials, admit cards, and transcript certificates. Executive BI analytics with trend forecasting.
+          </p>
+          <span class="text-[11px] font-semibold text-indigo-700 flex items-center gap-1">1-Click PDF Batch Generation →</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. Interactive Pricing & ROI Calculator in Light Mode -->
+  <section id="calculator" class="py-24 px-4 sm:px-6 lg:px-8 bg-white relative border-t border-slate-200">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+          <span>TRANSPARENT SUBSCRIPTION PRICING</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          Interactive Student Pricing & <span class="text-emerald-700">ROI Calculator</span>
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Drag the slider to your active enrolled student count. See your exact monthly investment and estimated institutional cost savings.
+        </p>
+      </div>
+
+      <!-- Main Calculator Box -->
+      <div class="calculator-box-light max-w-4xl mx-auto mb-16">
+        
+        <!-- Slider Controls -->
+        <div class="mb-10 text-center">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-semibold text-slate-700 uppercase tracking-wider">Number of Active Enrolled Students:</span>
+            <div class="flex items-center gap-1 text-2xl font-extrabold text-emerald-700">
+              <span id="studentCountDisplay">500</span>
+              <span class="text-sm font-normal text-slate-500">Students</span>
+            </div>
+          </div>
+
+          <input type="range" id="studentRangeSlider" min="100" max="3000" step="50" value="500" class="student-range-slider-light">
+
+          <div class="flex justify-between text-xs text-slate-400 font-mono mt-2">
+            <span>100 Students</span>
+            <span>500 Students</span>
+            <span>1,000 Students</span>
+            <span>2,000 Students</span>
+            <span>3,000+ Students</span>
+          </div>
+        </div>
+
+        <!-- 3 Pricing Tier Cards (From Official Proposal PDF) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Tier 1: Starter -->
+          <div class="price-card-tier-light flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-1">ESSENTIAL TIER</span>
+              <h4 class="text-xl font-bold text-slate-900 mb-1">LOW / STARTER</h4>
+              <p class="text-xs text-slate-500 mb-4">Core digital foundation for small schools & madrasas.</p>
+
+              <div class="mb-5 pb-5 border-b border-slate-100">
+                <div class="flex items-baseline gap-1">
+                  <span id="starterPriceDisplay" class="text-3xl font-extrabold text-slate-900">৳2,500</span>
+                  <span class="text-xs text-slate-500">/ month</span>
+                </div>
+                <span class="text-xs text-emerald-700 font-semibold">৳5 / student / mo</span>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> Core Student & Staff Profiles
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> Basic Website & Notice Board
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> Automated Fee Collection
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> Donation & Waqf Tracking
+                </li>
+                <li class="flex items-center gap-2 text-slate-400">
+                  <span>✕</span> Shared Cloud Hosting
+                </li>
+                <li class="flex items-center gap-2 text-slate-400">
+                  <span>✕</span> AI Assistant Not Included
+                </li>
+              </ul>
+            </div>
+
+            <button class="w-full btn-secondary text-xs mt-6 trigger-demo-modal">Select Starter</button>
+          </div>
+
+          <!-- Tier 2: Professional -->
+          <div class="price-card-tier-light price-card-popular-light flex flex-col justify-between">
+            <span class="badge-tier-popular-light">COMPLETE OPERATIONS + AI</span>
+            <div>
+              <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-1">MEDIUM TIER</span>
+              <h4 class="text-xl font-bold text-slate-900 mb-1">PROFESSIONAL</h4>
+              <p class="text-xs text-slate-500 mb-4">End-to-end automation with AI & institutional inventory.</p>
+
+              <div class="mb-5 pb-5 border-b border-emerald-100">
+                <div class="flex items-baseline gap-1">
+                  <span id="proPriceDisplay" class="text-3xl font-extrabold text-emerald-700">৳4,000</span>
+                  <span class="text-xs text-slate-500">/ month</span>
+                </div>
+                <span class="text-xs text-emerald-800 font-semibold">৳8 / student / mo</span>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2 font-bold text-emerald-700">
+                  <span>✓</span> EVERYTHING IN STARTER, PLUS:
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> Teacher Assistant AI V1 (Admin Guidance)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> Complete Inventory & Asset System
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> Library Book Barcode System
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> Dormitory / Hostel Bed Allocation
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> Transport Fleet Route Management
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span> High-Speed VPS Cloud Hosting
+                </li>
+              </ul>
+            </div>
+
+            <button class="w-full btn-primary text-xs mt-6 trigger-demo-modal">Select Professional</button>
+          </div>
+
+          <!-- Tier 3: Enterprise -->
+          <div class="price-card-tier-light flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold text-amber-700 uppercase tracking-wider block mb-1">HIGH / ENTERPRISE</span>
+              <h4 class="text-xl font-bold text-slate-900 mb-1">ENTERPRISE</h4>
+              <p class="text-xs text-slate-500 mb-4">Dedicated mobile apps, biometric hardware sync & AWS.</p>
+
+              <div class="mb-5 pb-5 border-b border-slate-100">
+                <div class="flex items-baseline gap-1">
+                  <span id="enterprisePriceDisplay" class="text-3xl font-extrabold text-amber-600">৳6,000</span>
+                  <span class="text-xs text-slate-500">/ month</span>
+                </div>
+                <span class="text-xs text-amber-700 font-semibold">৳12 / student / mo</span>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2 font-bold text-amber-700">
+                  <span>✓</span> EVERYTHING IN PRO, PLUS:
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span> Dedicated Mobile Apps (Android & iOS)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span> Curriculum Trained AI V2 (NCTB)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span> Biometric Hardware Sync (ZKTeco)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span> Dedicated AWS Cloud Infrastructure
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span> Executive BI Analytics & Deep Trends
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span> Priority 24/7 SLA Technical Support
+                </li>
+              </ul>
+            </div>
+
+            <button class="w-full btn-gold text-xs mt-6 trigger-demo-modal">Select Enterprise</button>
+          </div>
+
+        </div>
+
+        <!-- Projected Institutional Savings & ROI -->
+        <div class="mt-10 p-6 rounded-2xl bg-emerald-50 border border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div>
+            <span class="text-xs text-emerald-800 uppercase tracking-wider font-bold block">Estimated Paper & Printing Saved</span>
+            <span id="roiSavedPaper" class="text-2xl font-extrabold text-emerald-800">৳9,000</span>
+            <span class="text-[11px] text-emerald-700 block">Per month in registers & receipts</span>
+          </div>
+          <div>
+            <span class="text-xs text-emerald-800 uppercase tracking-wider font-bold block">Recovered Uncollected Tuition Dues</span>
+            <span id="roiSavedDues" class="text-2xl font-extrabold text-amber-700">৳17,500</span>
+            <span class="text-[11px] text-emerald-700 block">Via automated SMS due alerts</span>
+          </div>
+          <div>
+            <span class="text-xs text-emerald-800 uppercase tracking-wider font-bold block">Admin Overtime Hours Saved</span>
+            <span id="roiSavedHours" class="text-2xl font-extrabold text-sky-700">40 hrs/mo</span>
+            <span class="text-[11px] text-emerald-700 block">Zero manual marksheet handwriting</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. Full Feature Comparison Matrix in Clean Light Mode -->
+  <section id="matrix" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+          <span>EXHAUSTIVE TECHNICAL SPECIFICATIONS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          Complete Module & <span class="text-emerald-700">Feature Comparison</span>
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Side-by-side comparison across all 9 core operational modules of the YES EDU ecosystem (Ref: YB-EDU-PKG-2026).
+        </p>
+      </div>
+
+      <!-- Feature Matrix Table Container -->
+      <div class="bg-white rounded-2xl overflow-x-auto shadow-md border border-slate-200 max-w-5xl mx-auto">
+        <table class="matrix-table-light">
+          <thead>
+            <tr>
+              <th class="w-2/5">Capability / Module</th>
+              <th class="w-1/5 text-center">Starter (Low)<br><span class="text-xs text-emerald-700 font-semibold">৳5 / student / mo</span></th>
+              <th class="w-1/5 text-center bg-emerald-50/70 border-x border-emerald-200">Professional (Med)<br><span class="text-xs text-emerald-800 font-bold">৳8 / student / mo</span></th>
+              <th class="w-1/5 text-center">Enterprise (High)<br><span class="text-xs text-amber-700 font-bold">৳12 / student / mo</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <!-- Category 1 -->
+            <tr class="matrix-category-header-light">
+              <td colspan="4">1. INVESTMENT & SUBSCRIPTION MODEL</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Monthly Subscription Rate</td>
+              <td class="text-center">৳5 / student / mo</td>
+              <td class="text-center font-bold text-emerald-700 bg-emerald-50/40">৳8 / student / mo</td>
+              <td class="text-center font-bold text-amber-700">৳12 / student / mo</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Billing Calculation</td>
+              <td class="text-center">Per Active Student</td>
+              <td class="text-center bg-emerald-50/40">Per Active Student</td>
+              <td class="text-center">Per Active Student</td>
+            </tr>
+
+            <!-- Category 2 -->
+            <tr class="matrix-category-header-light">
+              <td colspan="4">2. WEBSITE & DYNAMIC CONTENT MANAGEMENT (CMS)</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Website Content Control</td>
+              <td class="text-center text-slate-500">Fixed Structure</td>
+              <td class="text-center bg-emerald-50/40">Limited Edit Permission</td>
+              <td class="text-center text-emerald-700 font-bold">Full Control</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Frontend CMS Customization</td>
+              <td class="text-center text-slate-400">Fixed / No Edit</td>
+              <td class="text-center bg-emerald-50/40">Limited Permission</td>
+              <td class="text-center text-emerald-700 font-bold">Full CMS Permission</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Photo Gallery & Event Showcase</td>
+              <td class="text-center text-slate-400">Fixed Template</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Full Gallery</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Full Gallery</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Institutional Blog & Notice Board</td>
+              <td class="text-center">Fixed</td>
+              <td class="text-center bg-emerald-50/40">Limited Edit</td>
+              <td class="text-center text-emerald-700 font-bold">✓ Full Dynamic Publishing</td>
+            </tr>
+
+            <!-- Category 3 -->
+            <tr class="matrix-category-header-light">
+              <td colspan="4">3. CORE INSTITUTIONAL ERP MODULES</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Student & Parent Lifecycle Management</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Teacher & Staff Administration</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Granular Role Permissions</td>
+              <td class="text-center text-slate-500 text-xs">Admin + Parent + Teacher</td>
+              <td class="text-center text-xs bg-emerald-50/40">Full Custom Roles</td>
+              <td class="text-center text-xs text-emerald-700 font-bold">Full Multi-Tier RBAC</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Academic Management & Routine</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Exam Scheduling & Grading Sheet</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Fee Collection & Automated Due Alerts</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+
+            <!-- Category 4 -->
+            <tr class="matrix-category-header-light">
+              <td colspan="4">4. ACADEMIC PLANNING & ATTENDANCE OPERATIONS</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Syllabus & Lesson Plan Management</td>
+              <td class="text-center text-xs">Basic Lesson Plan</td>
+              <td class="text-center text-emerald-700 font-semibold text-xs bg-emerald-50/40">✓ Full Dynamic Routine</td>
+              <td class="text-center text-emerald-700 font-semibold text-xs">✓ Full Dynamic Routine</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Attendance System</td>
+              <td class="text-center text-xs">Manual / Basic Digital</td>
+              <td class="text-center text-xs bg-emerald-50/40">Advanced Daily Tracking</td>
+              <td class="text-center text-emerald-700 font-bold text-xs">Advanced + Biometric Sync</td>
+            </tr>
+
+            <!-- Category 5 -->
+            <tr class="matrix-category-header-light">
+              <td colspan="4">5. FINANCE, OPERATIONS & FACILITIES</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Financial Accounting System</td>
+              <td class="text-center text-xs">Basic Cash Book</td>
+              <td class="text-center text-emerald-700 font-bold text-xs bg-emerald-50/40">✓ Full Double-Entry</td>
+              <td class="text-center text-emerald-700 font-bold text-xs">✓ Full Double-Entry</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Inventory & Asset Management</td>
+              <td class="text-center text-slate-400">— Not Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Library Management (Barcode/Catalog)</td>
+              <td class="text-center text-slate-400">— Not Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Transport & Vehicle Route Management</td>
+              <td class="text-center text-slate-400">— Not Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Dormitory / Hostel Bed Allocation</td>
+              <td class="text-center text-slate-400">— Not Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Donation & Waqf Fund Tracking</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold bg-emerald-50/40">✓ Included</td>
+              <td class="text-center text-emerald-700 font-semibold">✓ Included</td>
+            </tr>
+
+            <!-- Category 6 -->
+            <tr class="matrix-category-header-light">
+              <td colspan="4">6. ID CARDS, CERTIFICATES & TEMPLATES</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Student & Staff ID Card Generator</td>
+              <td class="text-center text-slate-400">— Not Included</td>
+              <td class="text-center text-xs bg-emerald-50/40">Limited Template Access</td>
+              <td class="text-center text-xs text-emerald-700 font-bold">Full Access (All Templates)</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Certificate & Testimonial Generator</td>
+              <td class="text-center text-slate-400">— Not Included</td>
+              <td class="text-center text-xs bg-emerald-50/40">Limited Template Access</td>
+              <td class="text-center text-xs text-emerald-700 font-bold">Full Access (All Templates)</td>
+            </tr>
+
+            <!-- Category 7 -->
+            <tr class="matrix-category-header-light">
+              <td colspan="4">7. ARTIFICIAL INTELLIGENCE & COMMUNICATION</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Teacher Assistant AI Model</td>
+              <td class="text-center text-slate-400">— Not Included</td>
+              <td class="text-center text-emerald-700 font-semibold text-xs bg-emerald-50/40">Teacher AI V1 (Basic)</td>
+              <td class="text-center text-amber-700 font-bold text-xs">Teacher AI V2 (Curriculum Trained)</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Communication & Messaging</td>
+              <td class="text-center text-xs">Basic SMS Broadcast</td>
+              <td class="text-center text-emerald-700 font-semibold text-xs bg-emerald-50/40">✓ Advanced + Live Chat</td>
+              <td class="text-center text-emerald-700 font-semibold text-xs">✓ Advanced + Live Chat</td>
+            </tr>
+
+            <!-- Category 8 -->
+            <tr class="matrix-category-header-light">
+              <td colspan="4">8. REPORTS, HOSTING INFRASTRUCTURE & MOBILE APP</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Reports & Analytics</td>
+              <td class="text-center text-xs">Standard Operational</td>
+              <td class="text-center text-xs bg-emerald-50/40">Advanced Reports</td>
+              <td class="text-center text-amber-700 font-bold text-xs">Advanced + BI Analytics</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Cloud Server Hosting Environment</td>
+              <td class="text-center text-xs">Shared Cloud Server</td>
+              <td class="text-center text-xs text-emerald-700 font-semibold bg-emerald-50/40">High-Speed VPS Server</td>
+              <td class="text-center text-xs text-amber-700 font-bold">Dedicated AWS Cloud</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Dedicated Mobile Application</td>
+              <td class="text-center text-slate-400">— Web Portal Only</td>
+              <td class="text-center text-slate-400 bg-emerald-50/40">— Web Portal Only</td>
+              <td class="text-center text-emerald-700 font-bold">✓ Dedicated Android & iOS</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="max-w-5xl mx-auto mt-4 p-4 rounded-xl bg-white border border-slate-200 text-xs text-slate-600 shadow-xs">
+        <strong class="text-slate-900">Biometric Hardware Note:</strong> The Enterprise tier supports direct API integration with popular biometric hardware (ZKTeco, Realtime, RFID turnstiles). Hardware devices and SMS gateway bundle units are procured separately per institution scale.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. Seamless 4-Stage Onboarding Roadmap -->
+  <section id="onboarding" class="py-24 px-4 sm:px-6 lg:px-8 bg-white relative border-t border-slate-200">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+          <span>HASSLE-FREE DIGITAL DEPLOYMENT</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          Seamless 4-Stage <span class="text-emerald-700">Institutional Onboarding</span>
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Our engineering team handles server setup, database migration, and on-premise staff training so your campus transitions effortlessly.
+        </p>
+      </div>
+
+      <!-- 4 Stages Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Stage 1 -->
+        <div class="roadmap-step-card-light">
+          <div class="roadmap-number-pill-light">01</div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">STAGE 01</span>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Cloud Deployment</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Dedicated AWS / VPS server provisioning, custom institutional subdomain, logo branding, academic calendar, class & section configurations.
+          </p>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="roadmap-step-card-light">
+          <div class="roadmap-number-pill-light">02</div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">STAGE 02</span>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Data Migration</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Bulk import of historical student records, teacher profiles, fee heads, previous exam marks, and Waqf/donor fund structures via secure spreadsheets.
+          </p>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="roadmap-step-card-light">
+          <div class="roadmap-number-pill-light">03</div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">STAGE 03</span>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Staff Training</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Hands-on workshops for accounts officers, teachers, librarians, and IT administrators. Role-specific video guides and SOP reference manuals.
+          </p>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="roadmap-step-card-light">
+          <div class="roadmap-number-pill-light">04</div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">STAGE 04</span>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Official Go-Live</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Parent portal launch, SMS gateway activation, biometric gate hardware synchronization, and 24/7 dedicated technical SLA support.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. Institutional Sign-Off, Office Presence & Contact CTA -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-emerald-50/50 border-t border-slate-200 relative">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 text-center shadow-lg relative overflow-hidden">
+        
+        <div class="max-w-2xl mx-auto space-y-6">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+            OFFICIAL INSTITUTIONAL ENGAGEMENT
+          </span>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+            Ready to Transform Your School or Madrasa with <span class="text-emerald-700">YES EDU</span>?
+          </h2>
+
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Schedule a complimentary on-campus demonstration with our Educational Technology Consultants in Dhaka, Chittagong, Sylhet, Rajshahi, or any district in Bangladesh.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <button class="btn-primary trigger-demo-modal px-8 py-3.5 text-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <span>Book On-Campus Demo</span>
+            </button>
+            <a href="tel:+8801838790573" class="btn-secondary px-6 py-3.5 text-sm">
+              <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>Call: +880 1838-790573</span>
+            </a>
+          </div>
+
+          <!-- Official Contact Details from Proposal PDF -->
+          <div class="pt-8 border-t border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-5 text-left text-xs text-slate-600">
+            <div>
+              <strong class="text-slate-900 block mb-1">Corporate Office:</strong>
+              YES Bangladesh Ltd.<br>
+              House 43, Road 14, Nikunja-2,<br>
+              Khilkhet, Dhaka-1229
+            </div>
+            <div>
+              <strong class="text-slate-900 block mb-1">Hotline & Inquiries:</strong>
+              Direct: +880 1838-790573<br>
+              Email: info@yesbangladesh.net<br>
+              Portal: www.yesbangladesh.net
+            </div>
+            <div>
+              <strong class="text-slate-900 block mb-1">Authorizations:</strong>
+              Ref: YB-EDU-PKG-2026<br>
+              Educational Technology Division<br>
+              All Rights Reserved
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 12. Footer -->
+  <footer class="py-12 px-4 sm:px-6 lg:px-8 bg-white text-slate-500 text-xs border-t border-slate-200">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+          <span class="text-lg font-extrabold text-slate-900">YES <span class="text-emerald-600">EDU</span></span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-mono font-bold">2026 OFFICIAL</span>
+        </div>
+        <p class="text-slate-500">
+          Premier technology partner empowering schools, colleges, and madrasas nationwide with secure cloud software.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-slate-600 font-medium">
+        <a href="#features" class="hover:text-emerald-700">Modules</a>
+        <a href="#animatedStory" class="hover:text-emerald-700">Story</a>
+        <a href="#calculator" class="hover:text-emerald-700">Pricing</a>
+        <a href="#matrix" class="hover:text-emerald-700">Matrix</a>
+        <a href="#onboarding" class="hover:text-emerald-700">Roadmap</a>
+        <a href="tel:+8801838790573" class="hover:text-emerald-700">Support</a>
+      </div>
+
+      <div class="text-slate-500">
+        © 2026 YES Bangladesh Ltd. • Educational Technology Division.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 13. Sticky Floating Conversion Buttons -->
+  <div class="sticky-hotline-float">
+    <!-- WhatsApp Direct -->
+    <a href="https://wa.me/8801838790573?text=Salam,%20I%20am%20interested%20in%20YES%20EDU%20ERP%20for%20my%20Institution." target="_blank" class="float-action-btn float-whatsapp" title="Chat on WhatsApp">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+      <span class="float-tooltip-light">Chat with Consultant</span>
+    </a>
+
+    <!-- Direct Hotline Call -->
+    <a href="tel:+8801838790573" class="float-action-btn float-phone" title="Call Hotline">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      <span class="float-tooltip-light">Call: +880 1838-790573</span>
+    </a>
+  </div>
+
+  <!-- 14. Demo Booking Modal Form in Light Theme -->
+  <div id="demoModal" class="modal-overlay">
+    <div class="modal-box-light">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200 mb-6">
+        <div>
+          <h3 class="text-xl font-bold text-slate-900">Book Free On-Campus Demo</h3>
+          <p class="text-xs text-slate-500">YES Bangladesh Solutions Team Consultant</p>
+        </div>
+        <button class="close-demo-modal text-slate-400 hover:text-slate-700 p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <form id="demoBookingForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Institution Name (প্রতিষ্ঠান)</label>
+          <input type="text" id="demoInstName" required class="form-control-input-light" placeholder="e.g. Darul Uloom Madrasa / Ideal High School">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Institution Type</label>
+            <select id="demoInstType" class="form-control-input-light bg-slate-50">
+              <option value="madrasa">Madrasa (Qawmi/Aliya)</option>
+              <option value="school">School / College</option>
+              <option value="cadet">Cadet Academy</option>
+              <option value="orphanage">Orphanage / Lillah</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Approx. Students</label>
+            <input type="number" id="demoStudentCount" class="form-control-input-light" placeholder="e.g. 500" value="500">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Contact Person</label>
+            <input type="text" id="demoContactPerson" required class="form-control-input-light" placeholder="Principal / Secretary">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Mobile / WhatsApp</label>
+            <input type="tel" id="demoPhone" required class="form-control-input-light" placeholder="018XXXXXXXX">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Campus Location / District</label>
+          <input type="text" id="demoLocation" required class="form-control-input-light" placeholder="e.g. Uttara, Dhaka / Mirsharai, Chittagong">
+        </div>
+
+        <button type="submit" class="w-full btn-primary py-3.5 text-sm mt-4">
+          Confirm Free Consultation Request
+        </button>
+        <p class="text-[11px] text-center text-slate-500">
+          A Solutions Consultant will reach out within 2 hours. Hotline: +880 1838-790573
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- 15. Video Player Full Modal with Live Video Playback & Custom URL Loader -->
+  <div id="videoPlayerModal" class="modal-overlay">
+    <div class="modal-box-light max-w-4xl p-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+          <h4 class="font-bold text-slate-900 text-sm">YES EDU — High-Definition Platform Walkthrough</h4>
+        </div>
+        <button onclick="document.getElementById('videoPlayerModal').classList.remove('open')" class="text-slate-400 hover:text-slate-700 p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Real Video Frame -->
+      <div class="aspect-video w-full rounded-xl bg-slate-950 overflow-hidden relative shadow-inner border border-slate-800">
+        <iframe id="modalVideoIframe" class="w-full h-full" src="https://www.youtube-nocookie.com/embed/L1Zz376nI6o?autoplay=1&mute=0&rel=0&showinfo=0" title="YES EDU Video Demonstration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <!-- Video URL Customizer Bar -->
+      <div class="mt-3 p-3 bg-slate-50 border border-slate-200 rounded-xl flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div class="flex items-center gap-2 flex-1 min-w-[260px]">
+          <span class="text-slate-500 font-semibold whitespace-nowrap">Load Custom Video URL:</span>
+          <input type="text" id="customVideoInput" class="form-control-input-light text-xs py-1.5 flex-1" placeholder="Paste your YouTube or MP4 video URL here...">
+          <button id="applyCustomVideoBtn" class="btn-primary text-xs px-3 py-1.5 whitespace-nowrap">Load Video</button>
+        </div>
+        <button onclick="document.getElementById('videoPlayerModal').classList.remove('open'); document.getElementById('demoModal').classList.add('open');" class="btn-secondary text-xs py-1.5">
+          Schedule Live On-Campus Demo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 16. Confirmation Toast in Light Mode -->
+  <div id="toastNotice" class="toast-notice-light">
+    <!-- Populated via JS -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
