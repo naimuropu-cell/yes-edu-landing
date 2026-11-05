@@ -886,16 +886,10 @@ function initVideoShowcase() {
     });
   }
 
-  // Build cartoon stage and render initial frame
+  // Build cartoon stage, render initial frame and start smooth ambient tour
   buildCartoonStage();
   renderCurrentFrame();
-}
-
-function openVideoPlayerModal() {
-  const modal = document.getElementById('videoPlayerModal');
-  if (modal) {
-    modal.classList.add('open');
-  }
+  startPlayback();
 }
 
 function openVideoPlayerModal() {

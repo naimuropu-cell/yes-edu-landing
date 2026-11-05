@@ -87,6 +87,9 @@
   transform: scale(0.98) translateX(25px);
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
 }
 
 .video-scene-wrapper.active-scene {
@@ -736,7 +739,7 @@ a {
 
 @media (max-width: 768px) {
   .video-screen-light {
-    height: 420px;
+    height: 540px;
   }
 }
 

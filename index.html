@@ -255,208 +255,133 @@
 
         </div>
 
-        <!-- 3-Column Floating Dashboard Composition (EximusEdu Architecture) -->
-        <div class="dashboard-wrapper-box">
-          <div class="dashboard-wrapper">
+        <!-- Chapter Selectors (4 Distinct Parts) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 mt-2">
+          <button class="video-chapter-pill-light active" data-part="0" type="button">
+            <span class="lang-en">Part 1: Biometric Gate (0s)</span>
+            <span class="lang-bn hidden">পর্ব ১: বায়োমেট্রিক গেট (০ সে.)</span>
+          </button>
+          <button class="video-chapter-pill-light" data-part="1" type="button">
+            <span class="lang-en">Part 2: bKash Fee Automation (10s)</span>
+            <span class="lang-bn hidden">পর্ব ২: বিকাশ ফি আদায় (১০ সে.)</span>
+          </button>
+          <button class="video-chapter-pill-light" data-part="2" type="button">
+            <span class="lang-en">Part 3: NCTB Teacher AI (20s)</span>
+            <span class="lang-bn hidden">পর্ব ৩: এনসিটিবি এআই (২০ সে.)</span>
+          </button>
+          <button class="video-chapter-pill-light" data-part="3" type="button">
+            <span class="lang-en">Part 4: Madrasa Waqf & Hostel (30s)</span>
+            <span class="lang-bn hidden">পর্ব ৪: ওয়াকফ ও হোস্টেল (৩০ সে.)</span>
+          </button>
+        </div>
+
+        <!-- High-Tech Cinema Frame Container with Active Video Player & Studio Lighting (White BG) -->
+        <div class="max-w-5xl mx-auto video-theater-frame-light" id="videoShowcase">
+          <!-- Ambient Backlight Glow that shifts pastel color per scene -->
+          <div id="videoAmbientGlow" class="video-ambient-glow" style="background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);"></div>
+
+          <div class="video-screen-light relative" id="mainVideoScreen">
             
-            <!-- Box First (Left Column) -->
-            <div class="box-first">
-              
-              <!-- Card 1: Customer Proof Box with District Coverage -->
-              <div class="customer-box">
-                <div class="content">
-                  <p class="text">
-                    <span class="count font-extrabold text-[#072032] text-2xl block">400+</span>
-                    <span class="label text-xs text-slate-600 block font-medium mt-1">
-                      <span class="lang-en">institutions using our software nationwide</span>
-                      <span class="lang-bn hidden">সারাদেশের শিক্ষা প্রতিষ্ঠানে ব্যবহৃত হচ্ছে</span>
-                    </span>
-                  </p>
-                </div>
-                <div class="thumbs">
-                  <span class="thumb-avatar bg-emerald-100 text-emerald-800 font-bold text-xs" title="Tamirul Millat">TM</span>
-                  <span class="thumb-avatar bg-amber-100 text-amber-800 font-bold text-xs" title="Tanzimul Ummah">TU</span>
-                  <span class="thumb-avatar bg-sky-100 text-sky-800 font-bold text-xs" title="Scholashome">SH</span>
-                  <span class="thumb-avatar bg-purple-100 text-purple-800 font-bold text-xs" title="Chittagong Ideal">CI</span>
-                  <span class="thumb-avatar thumb-add bg-emerald-600 text-white font-bold text-xs">+396</span>
-                </div>
-                <span class="text-[10px] text-slate-400 font-medium block mt-2">
-                  <span class="lang-en">Trusted across 64 districts in Bangladesh</span>
-                  <span class="lang-bn hidden">বাংলাদেশের ৬৪ জেলায় বিশ্বস্ত সেবা</span>
-                </span>
+            <!-- Studio Header Bar -->
+            <div class="video-studio-header">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                <span class="text-[11px] font-mono text-slate-500 ml-2 hidden sm:inline">YES EDU 2.0 • Animated Campus Studio</span>
               </div>
-
-              <!-- Card 2: ZKTeco Biometric Direct Sync & 24/7 Support -->
-              <div class="image-card">
-                <div class="p-6 text-center text-white flex flex-col justify-between h-full">
-                  <div>
-                    <span class="inline-block px-2.5 py-0.5 rounded-full bg-white/20 text-white text-[10px] font-bold uppercase tracking-wider mb-2">HARDWARE IOT SYNC</span>
-                    <p class="text font-bold text-base leading-snug">
-                      <span class="lang-en">ZKTeco Biometric Gateway with Offline Buffering</span>
-                      <span class="lang-bn hidden">জেডকেটেকো বায়োমেট্রিক ও অফলাইন মেমোরি বাফার</span>
-                    </p>
-                    <p class="text-[11px] text-white/80 mt-1">
-                      <span class="lang-en">Attendance records never drop even during internet downtime.</span>
-                      <span class="lang-bn hidden">ইন্টারনেট চলে গেলেও মেশিনে হাজিরা সুরক্ষিত থাকে।</span>
-                    </p>
-                  </div>
-                  <div class="mt-4 flex flex-col items-center pt-3 border-t border-white/10">
-                    <div class="flex items-center gap-2">
-                      <span class="w-2 h-2 rounded-full bg-emerald-300 animate-ping"></span>
-                      <span class="font-mono text-xs font-bold text-white tracking-wider">+880 1838-790573</span>
-                    </div>
-                    <span class="text-[10px] text-white/80">Direct Engineering Hotline</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Box Second (Center Column: Main Software Live Window Showcase) -->
-            <div class="box-second relative">
-              
-              <!-- Floating Watch 40s Video Tour Badge -->
-              <a href="#videoShowcase" class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-emerald-800 text-xs font-bold shadow-md border border-emerald-300 hover:bg-emerald-50 hover:scale-105 transition-all">
+              <div class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span class="lang-en">▶ Watch 40s Video Tour</span>
-                <span class="lang-bn hidden">▶ ৪০ সেকেন্ডের ভিডিও ডেমো</span>
-              </a>
-
-              <div class="dashboard-image-wrapper">
-                <div class="dashboard-image">
-                  <div class="hero-mac-window">
-                    
-                    <!-- macOS Header -->
-                    <div class="hero-mac-header">
-                      <div class="mac-dots">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-400 inline-block"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block"></span>
-                      </div>
-                      <span class="hero-mac-url">campus.yesedu.com/live-control</span>
-                      <span class="hero-mac-live-badge">● Live Synced</span>
-                    </div>
-
-                    <!-- macOS Body Content -->
-                    <div class="hero-mac-body">
-                      <!-- 3 Metrics Top Bar -->
-                      <div class="grid grid-cols-3 gap-2.5 p-3.5 bg-slate-50 border-b border-slate-200 text-left">
-                        <div class="bg-white p-2.5 rounded-xl border border-slate-200">
-                          <span class="text-[10px] text-slate-500 block">
-                            <span class="lang-en">Present Students</span>
-                            <span class="lang-bn hidden">উপস্থিত শিক্ষার্থী</span>
-                          </span>
-                          <span class="text-base font-extrabold text-slate-900" id="heroLivePresentCount">১,২২০ জন</span>
-                          <span class="text-[9px] text-emerald-600 font-bold block">৯৮.৪% বায়োমেট্রিক</span>
-                        </div>
-                        <div class="bg-white p-2.5 rounded-xl border border-emerald-200 bg-emerald-50/30">
-                          <span class="text-[10px] text-emerald-800 block">
-                            <span class="lang-en">Today's Fees</span>
-                            <span class="lang-bn hidden">আজকের ফি আদায়</span>
-                          </span>
-                          <span class="text-base font-extrabold text-emerald-700">৳৪,৮৫,২০০</span>
-                          <span class="text-[9px] text-emerald-600 font-bold block">বিকাশ ও ব্যাংক গেটওয়ে</span>
-                        </div>
-                        <div class="bg-white p-2.5 rounded-xl border border-slate-200">
-                          <span class="text-[10px] text-slate-500 block">
-                            <span class="lang-en">Parent SMS</span>
-                            <span class="lang-bn hidden">অভিভাবক SMS</span>
-                          </span>
-                          <span class="text-base font-extrabold text-purple-700">১,২২০ টি</span>
-                          <span class="text-[9px] text-purple-600 font-bold block">গড় ডেলিভারি ২.৩ সে.</span>
-                        </div>
-                      </div>
-
-                      <!-- Real-Time Stream Rows with Live Ticker -->
-                      <div class="p-4 bg-white text-left space-y-2.5">
-                        <div class="flex items-center justify-between text-xs pb-1">
-                          <span class="font-bold text-slate-900 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span class="lang-en">Live Campus Activity Stream</span>
-                            <span class="lang-bn hidden">লাইভ গেটওয়ে পাঞ্চ ও ফি কালেকশন স্ট্রিম</span>
-                          </span>
-                          <span class="font-mono text-[10px] text-slate-400">SESSION 2026</span>
-                        </div>
-
-                        <!-- Stream Row 1: Biometric Punch -->
-                        <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex justify-between items-center text-xs transition-all duration-300" id="heroStreamRow1">
-                          <div>
-                            <span class="font-semibold text-slate-800 block" id="heroStreamStudent">মুহাম্মদ আবদুল্লাহ (রোল ০১, ১০ম শ্রেণি)</span>
-                            <span class="text-[10px] text-slate-500" id="heroStreamDetails">মেইন গেটওয়ে টার্নস্টাইল #০১ • সকাল ৭:৫৮:১২ AM</span>
-                          </div>
-                          <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]" id="heroStreamBadge">
-                            SMS SENT (2.3s)
-                          </span>
-                        </div>
-
-                        <!-- Stream Row 2: bKash Fee Receipt -->
-                        <div class="p-2.5 rounded-lg bg-pink-50/50 border border-pink-200 flex justify-between items-center text-xs">
-                          <div>
-                            <span class="font-semibold text-slate-800 block">তানভীর আহমেদ (রোল ১২, ৮ম শ্রেণি)</span>
-                            <span class="text-[10px] text-pink-700 font-mono">মে ২০২৬ বেতন ৳২,৫০০ • বিকাশ TRX: 9X82KD71</span>
-                          </div>
-                          <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">
-                            AUTO-RECONCILED
-                          </span>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-                </div>
+                <span id="videoStudioPartIndicator" class="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">PART 1 OF 4 (10s)</span>
               </div>
             </div>
 
-            <!-- Box Third (Right Column) -->
-            <div class="box-third">
-              
-              <!-- Card 1: FinTech & Multi-Head Fee Recovery -->
-              <div class="chart-card">
-                <div>
-                  <span class="inline-block px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold text-[10px] uppercase tracking-wider mb-2">FINTECH GATEWAY</span>
-                  <p class="text font-semibold text-white text-sm leading-snug">
-                    <span class="lang-en">1-Tap bKash & Nagad SMS Fee Links on 1st of Every Month</span>
-                    <span class="lang-bn hidden">১ তারিখেই অভিভাবকের মোবাইলে অটো বিকাশ ও নগদ পেমেন্ট লিঙ্ক</span>
-                  </p>
-                </div>
-                <div class="mini-chart-visual mt-4">
-                  <div class="flex items-baseline justify-between mb-1">
-                    <span class="text-xs text-slate-300">Biometric Attendance</span>
-                    <span class="text-emerald-400 font-mono font-bold text-xs">98.4%</span>
-                  </div>
-                  <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mb-3">
-                    <div class="bg-emerald-400 h-full rounded-full" style="width: 98.4%;"></div>
-                  </div>
-                  <div class="flex items-baseline justify-between mb-1">
-                    <span class="text-xs text-slate-300">Fee Default Reduction</span>
-                    <span class="text-amber-400 font-mono font-bold text-xs">95%</span>
-                  </div>
-                  <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                    <div class="bg-amber-400 h-full rounded-full" style="width: 95%;"></div>
-                  </div>
-                </div>
+            <!-- Simulated Live Video Canvas/Screen with Crisp White Background -->
+            <div id="videoSimulationFrame" class="h-full relative overflow-hidden bg-white">
+              <!-- Active Video Scenes rendered dynamically by js/main.js -->
+            </div>
+
+            <!-- Video Control Bar (Bottom Overlay in Light Theme) -->
+            <div id="videoControlsBar" class="video-controls-bar">
+              <!-- Clickable Progress Track -->
+              <div id="videoProgressTrack" class="video-progress-track">
+                <div id="videoProgressFill" class="video-progress-fill"></div>
               </div>
 
-              <!-- Card 2: 100,000 Families Connected Card -->
-              <div class="loading-card">
-                <p class="text text-white mb-2">
-                  <span class="text-2xl font-extrabold underline block">100,000+</span>
-                  <span class="font-normal block text-xs mt-1">
-                    <span class="lang-en">families connected with their children’s academic journey</span>
-                    <span class="lang-bn hidden">অভিভাবক প্রতিদিন সন্তানের ক্যাম্পাস আপডেট পান</span>
+              <!-- Controls Buttons Row -->
+              <div class="flex items-center justify-between text-slate-800 text-xs pt-1">
+                <div class="flex items-center gap-2 sm:gap-3">
+                  <!-- Previous Part (10s back) -->
+                  <button id="videoPrevPartBtn" type="button" class="text-slate-600 hover:text-emerald-600 p-1 transition" title="Previous Part">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                  </button>
+
+                  <!-- Play / Pause -->
+                  <button id="videoBottomPlayBtn" type="button" class="text-slate-800 hover:text-emerald-600 p-1 transition" title="Play/Pause">
+                    <svg id="videoPlayIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <svg id="videoPauseIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                  </button>
+
+                  <!-- Next Part (10s forward) -->
+                  <button id="videoNextPartBtn" type="button" class="text-slate-600 hover:text-emerald-600 p-1 transition" title="Next Part">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                  </button>
+
+                  <button id="videoSoundBtn" type="button" class="hover:text-emerald-600 p-1 text-slate-600 transition" title="Mute/Unmute Audio">
+                    <svg id="videoSoundOnIcon" class="w-4 h-4 hidden text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                    <svg id="videoSoundOffIcon" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
+                  </button>
+
+                  <!-- Current Time / Duration -->
+                  <span class="font-mono text-[11px] text-slate-700 font-bold">
+                    <span id="videoCurrentTimeDisplay">0:00</span> / <span id="videoDurationDisplay">0:40</span>
                   </span>
-                </p>
-                <div class="my-3 flex items-center justify-center">
-                  <div class="w-12 h-12 rounded-full border-3 border-white/20 border-t-white flex items-center justify-center animate-spin">
-                    <span class="w-2 h-2 rounded-full bg-white"></span>
-                  </div>
-                </div>
-                <span class="text-[10px] text-white/90 font-mono tracking-wider block">INSTANT 3s SMS DELIVERY</span>
-              </div>
 
+                  <span id="videoCurrentChapterTag" class="hidden sm:inline-block text-[11px] font-semibold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded">
+                    Ch 1: Biometric Gateway
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span class="text-[10px] text-slate-500 font-mono hidden md:inline">1080P HD • LIVE INTERACTIVE STUDIO</span>
+                  <button id="videoFullscreenBtn" type="button" class="hover:text-emerald-600 p-1 text-slate-600 transition" title="Full Screen View">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                  </button>
+                </div>
+              </div>
             </div>
 
+            <!-- Video Play Overlay Poster (Clean Light Theme) -->
+            <div id="videoOverlayControl" class="video-overlay-control">
+              <button id="videoTheaterPlayBtn" type="button" class="video-play-btn group" aria-label="Play Video Tour">
+                <svg class="w-8 h-8 translate-x-0.5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="mt-4 text-xs font-bold tracking-widest text-emerald-800 uppercase bg-white/95 px-4 py-1.5 rounded-full border border-emerald-300 shadow-md">
+                <span class="lang-en">Play Animated Video (10s Transitions)</span>
+                <span class="lang-bn hidden">ভিডিও চালু করুন (১০ সে. ট্রানজিশন)</span>
+              </span>
+              <p class="text-[11px] text-slate-600 mt-2 font-medium">
+                <span class="lang-en">Fast-Paced 40s Cartoon Story with White Studio Graphics</span>
+                <span class="lang-bn hidden">হোয়াইট স্টুডিও গ্রাফিক্স সহ ৪০ সেকেন্ডের দ্রুতগতির কার্টুন ডেমো</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Under-video Trust & Architecture Ribbon -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-slate-500 font-medium">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span><strong class="text-slate-800">400+ Campuses</strong> Active in 64 Districts</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span><strong class="text-slate-800">100% ZKTeco</strong> Biometric Hardware Offline Sync</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span><strong class="text-slate-800">bKash & Nagad</strong> Direct Gateway Settlement</span>
           </div>
         </div>
 
@@ -1708,146 +1633,6 @@
           </div>
         </div>
 
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 7. Video Showcase Theatre in Clean Modern Bezel -->
-  <section id="videoShowcase" class="py-24 px-4 sm:px-6 lg:px-8 bg-white relative border-t border-slate-200">
-    <div class="max-w-7xl mx-auto">
-      
-      <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-bold uppercase tracking-wider">
-          <span class="lang-en">ANIMATED VIDEO TOUR & INTERACTIVE LIVE DEMO</span>
-          <span class="lang-bn hidden">অ্যানিমেটেড ভিডিও ট্যুর ও লাইভ ডেমো</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
-          <span class="lang-en">See <span class="text-emerald-700">YES EDU</span> In Action</span>
-          <span class="lang-bn hidden">ভিডিওতে দেখুন কীভাবে কাজ করে <span class="text-emerald-700">ইয়েস এডু</span></span>
-        </h2>
-        <p class="text-slate-600 text-sm sm:text-base">
-          <span class="lang-en">
-            Watch our fast-paced 4-chapter animated tour: Biometric Gate Sync, Automated bKash Fees, NCTB 2026 AI Engine, and Madrasa Waqf Fund Ledgers.
-          </span>
-          <span class="lang-bn hidden">
-            ১০ সেকেন্ড করে ৪টি পর্বে দেখে নিন: বায়োমেট্রিক গেট এন্ট্রি, অটো বিকাশ ফি কালেকশন, এনসিটিবি এআই শিক্ষক সহকারী এবং মাদ্রাসার ওয়াকফ ফান্ড।
-          </span>
-        </p>
-
-        <!-- Chapter Selectors (4 Distinct Parts) -->
-        <div class="flex flex-wrap items-center justify-center gap-2 pt-3">
-          <button class="video-chapter-pill-light active" data-part="0">
-            <span class="lang-en">Part 1: Biometric Gate (0s)</span>
-            <span class="lang-bn hidden">পর্ব ১: বায়োমেট্রিক গেট (০ সে.)</span>
-          </button>
-          <button class="video-chapter-pill-light" data-part="1">
-            <span class="lang-en">Part 2: bKash Fee Automation (10s)</span>
-            <span class="lang-bn hidden">পর্ব ২: বিকাশ ফি আদায় (১০ সে.)</span>
-          </button>
-          <button class="video-chapter-pill-light" data-part="2">
-            <span class="lang-en">Part 3: NCTB Teacher AI (20s)</span>
-            <span class="lang-bn hidden">পর্ব ৩: এনসিটিবি এআই (২০ সে.)</span>
-          </button>
-          <button class="video-chapter-pill-light" data-part="3">
-            <span class="lang-en">Part 4: Madrasa Waqf & Hostel (30s)</span>
-            <span class="lang-bn hidden">পর্ব ৪: ওয়াকফ ও হোস্টেল (৩০ সে.)</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- High-Tech Cinema Frame Container with Active Video Player & Studio Lighting (White BG) -->
-      <div class="max-w-4xl mx-auto video-theater-frame-light">
-        <!-- Ambient Backlight Glow that shifts pastel color per scene -->
-        <div id="videoAmbientGlow" class="video-ambient-glow" style="background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);"></div>
-
-        <div class="video-screen-light relative" id="mainVideoScreen">
-          
-          <!-- Studio Header Bar -->
-          <div class="video-studio-header">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-              <span class="text-[11px] font-mono text-slate-500 ml-2 hidden sm:inline">YES EDU 2.0 • Animated Campus Studio</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span id="videoStudioPartIndicator" class="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">PART 1 OF 4 (10s)</span>
-            </div>
-          </div>
-
-          <!-- Simulated Live Video Canvas/Screen with Crisp White Background -->
-          <div id="videoSimulationFrame" class="h-full relative overflow-hidden bg-white">
-            <!-- Active Video Scenes rendered dynamically by js/main.js -->
-          </div>
-
-          <!-- Video Control Bar (Bottom Overlay in Light Theme) -->
-          <div id="videoControlsBar" class="video-controls-bar">
-            <!-- Clickable Progress Track -->
-            <div id="videoProgressTrack" class="video-progress-track">
-              <div id="videoProgressFill" class="video-progress-fill"></div>
-            </div>
-
-            <!-- Controls Buttons Row -->
-            <div class="flex items-center justify-between text-slate-800 text-xs pt-1">
-              <div class="flex items-center gap-2 sm:gap-3">
-                <!-- Previous Part (10s back) -->
-                <button id="videoPrevPartBtn" class="text-slate-600 hover:text-emerald-600 p-1 transition" title="Previous Part">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-                </button>
-
-                <!-- Play / Pause -->
-                <button id="videoBottomPlayBtn" class="text-slate-800 hover:text-emerald-600 p-1 transition" title="Play/Pause">
-                  <svg id="videoPlayIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  <svg id="videoPauseIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                </button>
-
-                <!-- Next Part (10s forward) -->
-                <button id="videoNextPartBtn" class="text-slate-600 hover:text-emerald-600 p-1 transition" title="Next Part">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
-                </button>
-
-                <button id="videoSoundBtn" class="hover:text-emerald-600 p-1 text-slate-600 transition" title="Mute/Unmute Audio">
-                  <svg id="videoSoundOnIcon" class="w-4 h-4 hidden text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
-                  <svg id="videoSoundOffIcon" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
-                </button>
-
-                <!-- Current Time / Duration -->
-                <span class="font-mono text-[11px] text-slate-700 font-bold">
-                  <span id="videoCurrentTimeDisplay">0:00</span> / <span id="videoDurationDisplay">0:40</span>
-                </span>
-
-                <span id="videoCurrentChapterTag" class="hidden sm:inline-block text-[11px] font-semibold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded">
-                  Ch 1: Biometric Gateway
-                </span>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <span class="text-[10px] text-slate-500 font-mono hidden md:inline">1080P HD • CLOUD HOSTED</span>
-                <button id="videoFullscreenBtn" class="hover:text-emerald-600 p-1 text-slate-600 transition" title="Full Screen View">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Video Play Overlay Poster (Clean Light Theme) -->
-          <div id="videoOverlayControl" class="video-overlay-control">
-            <button id="videoTheaterPlayBtn" class="video-play-btn group" aria-label="Play Video Tour">
-              <svg class="w-8 h-8 translate-x-0.5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-            <span class="mt-4 text-xs font-bold tracking-widest text-emerald-800 uppercase bg-white/95 px-4 py-1.5 rounded-full border border-emerald-300 shadow-md">
-              <span class="lang-en">Play Animated Video (10s Transitions)</span>
-              <span class="lang-bn hidden">ভিডিও চালু করুন (১০ সে. ট্রানজিশন)</span>
-            </span>
-            <p class="text-[11px] text-slate-600 mt-2 font-medium">
-              <span class="lang-en">Fast-Paced 40s Cartoon Story with White Studio Graphics</span>
-              <span class="lang-bn hidden">হোয়াইট স্টুডিও গ্রাফিক্স সহ ৪০ সেকেন্ডের দ্রুতগতির কার্টুন ডেমো</span>
-            </p>
-          </div>
-
-        </div>
       </div>
 
     </div>
