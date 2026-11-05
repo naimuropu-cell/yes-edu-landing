@@ -18,21 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. Navbar & Mobile Menu (Floating Capsule with Dropdowns)
+   1. Navbar & Mobile Menu (EximusEdu Style Header + Sticky Transition)
    ========================================================================== */
 function initNavbar() {
+  const mainHeader = document.getElementById('mainHeader');
   const floatingNav = document.getElementById('floatingNavWrapper');
   const navbar = document.getElementById('mainNavbar');
   const mobileToggle = document.getElementById('mobileMenuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
-  const dropdownTrigger = document.getElementById('modulesDropdownTrigger');
+  const dropdownItems = document.querySelectorAll('.menu-item-has-children');
 
-  // Scroll effect on floating capsule
+  // Sticky header on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 30) {
+      if (mainHeader) mainHeader.classList.add('sticky');
       if (floatingNav) floatingNav.classList.add('scrolled');
       if (navbar) navbar.classList.add('scrolled');
     } else {
+      if (mainHeader) mainHeader.classList.remove('sticky');
       if (floatingNav) floatingNav.classList.remove('scrolled');
       if (navbar) navbar.classList.remove('scrolled');
     }
@@ -51,27 +54,30 @@ function initNavbar() {
         mobileMenu.classList.add('hidden');
       });
     });
-  }
 
-  // Dropdown click support on touch / tablet
-  if (dropdownTrigger) {
-    const triggerBtn = dropdownTrigger.querySelector('button');
-    if (triggerBtn) {
-      triggerBtn.addEventListener('click', (e) => {
-        if (window.innerWidth <= 1024) {
-          e.preventDefault();
-          dropdownTrigger.classList.toggle('open');
-        }
-      });
-    }
-
-    // Close dropdown when clicking outside
+    // Close when clicking outside
     document.addEventListener('click', (e) => {
-      if (!dropdownTrigger.contains(e.target)) {
-        dropdownTrigger.classList.remove('open');
+      if (!mobileMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
       }
     });
   }
+
+  // Dropdown touch support on mobile/tablet
+  dropdownItems.forEach(item => {
+    const link = item.querySelector('a');
+    if (link) {
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1024) {
+          const submenu = item.querySelector('.dp-menu');
+          if (submenu) {
+            e.preventDefault();
+            item.classList.toggle('open');
+          }
+        }
+      });
+    }
+  });
 }
 
 /* ==========================================================================
