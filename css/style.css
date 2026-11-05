@@ -115,10 +115,7 @@
   75% { transform: translateY(-4px) rotate(2deg); }
 }
 
-@keyframes waveHand {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(24deg); }
-}
+/* Hand rotation is now locked to SVG shoulder socket with zero detachment */
 
 @keyframes floatMascot {
   0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -150,11 +147,6 @@
 .anim-walk {
   animation: walkCycle 2.5s infinite ease-in-out;
   transform-origin: bottom center;
-}
-
-.anim-wave {
-  animation: waveHand 1.6s infinite ease-in-out;
-  transform-origin: bottom left;
 }
 
 .anim-mascot {

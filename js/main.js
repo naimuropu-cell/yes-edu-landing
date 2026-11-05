@@ -294,11 +294,33 @@ function initVideoShowcase() {
                   <!-- ID Card Ribbon & Badge -->
                   <path d="M74 80 L78 108 L82 80" stroke="#10b981" stroke-width="2" fill="none"/>
                   <rect x="74" y="108" width="12" height="16" rx="2" fill="#f59e0b"/>
-                  <!-- Outstretched Right Arm holding RFID Card -->
-                  <g class="anim-wave">
-                    <path d="M102 90 Q125 96 136 108" stroke="#ffd1b3" stroke-width="12" stroke-linecap="round"/>
-                    <rect x="130" y="102" width="16" height="10" rx="2" fill="#ffffff" stroke="#059669" stroke-width="2"/>
-                    <circle cx="134" cy="107" r="2" fill="#f59e0b"/>
+                  <!-- Outstretched Right Arm holding RFID Card (Shoulder Pivot Permanently Locked) -->
+                  <g transform="translate(101, 88)">
+                    <!-- Animated Arm with Hardware-Accelerated Local Rotation around Shoulder (0, 0) -->
+                    <g>
+                      <animateTransform 
+                        attributeName="transform" 
+                        type="rotate" 
+                        values="0 0 0; -12 0 0; -16 0 0; -6 0 0; 0 0 0" 
+                        keyTimes="0; 0.35; 0.55; 0.8; 1" 
+                        dur="2.2s" 
+                        repeatCount="indefinite" 
+                        calcMode="spline" 
+                        keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+                      />
+                      <!-- Arm (Skin tone) reaching towards Biometric Gate -->
+                      <path d="M0 0 Q22 6 34 18" stroke="#ffd1b3" stroke-width="11" stroke-linecap="round"/>
+                      <!-- White Kurta sleeve cuff -->
+                      <path d="M0 0 L10 2" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+                      <!-- RFID Smart Card -->
+                      <rect x="26" y="12" width="16" height="10" rx="2" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+                      <circle cx="30" cy="17" r="2" fill="#f59e0b"/>
+                      <!-- Fingers grasping the card -->
+                      <circle cx="28" cy="17" r="3" fill="#ffd1b3"/>
+                    </g>
+                    <!-- Shoulder Sleeve Socket / Cap (Pins joint permanently to body) -->
+                    <circle cx="0" cy="0" r="7.5" fill="#059669"/>
+                    <circle cx="0" cy="0" r="4.5" fill="#047857"/>
                   </g>
                   <!-- Left Arm -->
                   <path d="M58 90 Q44 110 50 128" stroke="#ffd1b3" stroke-width="12" stroke-linecap="round"/>
