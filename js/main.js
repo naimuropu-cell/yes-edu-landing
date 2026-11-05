@@ -6,6 +6,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initHeroRotatingWords();
+  initHeroLiveStreamTicker();
   initPersonaSwitcher();
   initSoftwareWindowTabs();
   initPricingCalculator();
@@ -1104,6 +1106,14 @@ function initPersonaSwitcher() {
       if (personaCopy[persona]) {
         if (subtextEn) subtextEn.textContent = personaCopy[persona].en;
         if (subtextBn) subtextBn.textContent = personaCopy[persona].bn;
+
+        const descText = document.getElementById('heroDescriptionText');
+        if (descText) {
+          const enSpan = descText.querySelector('.lang-en');
+          const bnSpan = descText.querySelector('.lang-bn');
+          if (enSpan) enSpan.innerHTML = personaCopy[persona].en;
+          if (bnSpan) bnSpan.innerHTML = personaCopy[persona].bn;
+        }
       }
 
       // Automatically sync software window tab to relevant module
@@ -1214,5 +1224,106 @@ function initSoftwareWindowTabs() {
     });
   }
 }
+
+/* ==========================================================================
+   11. Hero Headline Rotating Words Animation
+   ========================================================================== */
+function initHeroRotatingWords() {
+  const wordEn = document.getElementById('heroRotatingWordEn');
+  const wordBn = document.getElementById('heroRotatingWordBn');
+  if (!wordEn && !wordBn) return;
+
+  const enWords = ['school', 'madrasah', 'college', 'cadet academy', 'campus'];
+  const bnWords = [
+    'বকেয়া ফি শূন্য করতে',
+    'বায়োমেট্রিক হাজিরা নিতে',
+    'এনসিটিবি প্রশ্ন বানাতে',
+    'ওয়াকফ অডিট লেজারে',
+    'সার্বিক ডিজিটাল নিয়ন্ত্রণে'
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % enWords.length;
+
+    if (wordEn) {
+      wordEn.style.opacity = '0';
+      wordEn.style.transform = 'translateY(-6px)';
+      setTimeout(() => {
+        wordEn.textContent = enWords[index];
+        wordEn.style.opacity = '1';
+        wordEn.style.transform = 'translateY(0)';
+      }, 200);
+    }
+
+    if (wordBn) {
+      wordBn.style.opacity = '0';
+      wordBn.style.transform = 'translateY(-6px)';
+      setTimeout(() => {
+        wordBn.textContent = bnWords[index];
+        wordBn.style.opacity = '1';
+        wordBn.style.transform = 'translateY(0)';
+      }, 200);
+    }
+  }, 2600);
+}
+
+/* ==========================================================================
+   12. Hero Live Campus Stream Activity Ticker
+   ========================================================================== */
+function initHeroLiveStreamTicker() {
+  const streamStudent = document.getElementById('heroStreamStudent');
+  const streamDetails = document.getElementById('heroStreamDetails');
+  const streamBadge = document.getElementById('heroStreamBadge');
+  const liveCount = document.getElementById('heroLivePresentCount');
+  if (!streamStudent) return;
+
+  const demoEvents = [
+    {
+      student: 'মুহাম্মদ আবদুল্লাহ (রোল ০১, ১০ম শ্রেণি)',
+      details: 'মেইন গেটওয়ে টার্নস্টাইল #০১ • সকাল ৭:৫৮:১২ AM',
+      badge: 'SMS SENT (2.3s)',
+      count: '১,২২০ জন'
+    },
+    {
+      student: 'সুমাইয়া আক্তার (রোল ০২, ১০ম শ্রেণি)',
+      details: 'গেট #০১ জেডকেটেকো ফেস স্ক্যান • সকাল ৭:৫৮:১৯ AM',
+      badge: 'SMS SENT (2.1s)',
+      count: '১,২২১ জন'
+    },
+    {
+      student: 'তানভীর আহমেদ (রোল ১২, ৮ম শ্রেণি)',
+      details: 'গেট #০২ আরএফআইডি কার্ড পাঞ্চ • সকাল ৭:৫৮:৩১ AM',
+      badge: 'SMS SENT (2.4s)',
+      count: '১,২২২ জন'
+    },
+    {
+      student: 'নুসরাত জাহান (রোল ০৫, ৭ম শ্রেণি)',
+      details: 'মেইন গেটওয়ে টার্নস্টাইল #০১ • সকাল ৭:৫৮:৪৫ AM',
+      badge: 'SMS SENT (2.2s)',
+      count: '১,২২৩ জন'
+    }
+  ];
+
+  let evIndex = 0;
+  setInterval(() => {
+    evIndex = (evIndex + 1) % demoEvents.length;
+    const ev = demoEvents[evIndex];
+
+    const row = document.getElementById('heroStreamRow1');
+    if (row) {
+      row.style.opacity = '0.3';
+      setTimeout(() => {
+        if (streamStudent) streamStudent.textContent = ev.student;
+        if (streamDetails) streamDetails.textContent = ev.details;
+        if (streamBadge) streamBadge.textContent = ev.badge;
+        if (liveCount) liveCount.textContent = ev.count;
+        row.style.opacity = '1';
+      }, 200);
+    }
+  }, 3500);
+}
+
 
 
