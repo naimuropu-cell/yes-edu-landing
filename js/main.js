@@ -6,6 +6,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initPersonaSwitcher();
+  initSoftwareWindowTabs();
   initPricingCalculator();
   init3DTilt();
   initVideoShowcase();
@@ -1063,4 +1065,148 @@ function initFaqAccordion() {
     });
   });
 }
+
+/* ==========================================================================
+   9. Persona Switcher (School, Madrasa, Cadet)
+   ========================================================================== */
+function initPersonaSwitcher() {
+  const personaBtns = document.querySelectorAll('.persona-tab-btn');
+  const subtextEn = document.getElementById('heroPersonaSubtextEn');
+  const subtextBn = document.getElementById('heroPersonaSubtextBn');
+
+  const personaCopy = {
+    school: {
+      en: "YES EDU is the premier institutional cloud ERP engineered specifically for Bangladesh. Seamlessly integrates instant biometric gate SMS, 1-click bKash/Nagad fee collection, NCTB 2026 AI question bank, and digital tabulation.",
+      bn: "স্কুল ও কলেজের জন্য পূর্ণাঙ্গ ক্লাউড ম্যানেজমেন্ট সফটওয়্যার। বায়োমেট্রিক গেট এন্ট্রি এসএমএস, অটো বিকাশ/নগদ ফি আদায়, এনসিটিবি এআই শিক্ষক সহকারী এবং ডিজিটাল মার্কশিট প্রস্তুতকারক।"
+    },
+    madrasa: {
+      en: "Strict Shariah-compliant double-entry accounting for Qawmi & Aliya Madrasas. Separate Lillah Boarding, Zakat, and General tuition ledgers with automated donor SMS receipts and audit balance sheets.",
+      bn: "কওমি ও আলিয়া মাদ্রাসার জন্য পূর্ণাঙ্গ শরিয়াহসম্মত ক্লাউড প্ল্যাটফর্ম। সাধারণ শিক্ষা ফান্ড, এতিমখানা লিল্লাহ বোর্ডিং ও যাকাত ফান্ডের সম্পূর্ণ পৃথক হিসাব এবং দাতাদের অটো এসএমএস রসিদ।"
+    },
+    cadet: {
+      en: "Military-grade residential campus management. 24/7 dormitory bed matrix, dining meal allocation, live school bus GPS tracking, and parent mobile communication.",
+      bn: "ক্যাডেট ও রেসিডেন্সিয়াল একাডেমির জন্য সার্বক্ষণিক ক্যাম্পাস কন্ট্রোল। হোস্টেল বেড বণ্টন, ডাইনিং মিলের নির্ভুল হিসাব, স্কুল বাস জিপিএস এবং অভিভাবক মোবাইল সংযোগ।"
+    }
+  };
+
+  personaBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const persona = btn.getAttribute('data-persona');
+      personaBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (personaCopy[persona]) {
+        if (subtextEn) subtextEn.textContent = personaCopy[persona].en;
+        if (subtextBn) subtextBn.textContent = personaCopy[persona].bn;
+      }
+
+      // Automatically sync software window tab to relevant module
+      if (persona === 'madrasa') {
+        switchSoftwareTab('waqf');
+      } else if (persona === 'cadet') {
+        switchSoftwareTab('biometric');
+      } else {
+        switchSoftwareTab('dashboard');
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   10. macOS Live Campus OS Window Tabs & Simulator
+   ========================================================================== */
+function switchSoftwareTab(targetTab) {
+  const tabBtns = document.querySelectorAll('.software-tab-btn');
+  const panels = document.querySelectorAll('.software-panel');
+
+  tabBtns.forEach(b => {
+    if (b.getAttribute('data-software-tab') === targetTab) {
+      b.classList.add('active');
+    } else {
+      b.classList.remove('active');
+    }
+  });
+
+  panels.forEach(panel => {
+    const panelId = panel.id.replace('swPanel', '').toLowerCase();
+    if (panelId === targetTab.toLowerCase()) {
+      panel.classList.add('active');
+    } else {
+      panel.classList.remove('active');
+    }
+  });
+}
+
+function initSoftwareWindowTabs() {
+  const tabBtns = document.querySelectorAll('.software-tab-btn');
+  const clockDisplay = document.getElementById('macClockDisplay');
+  const simPunchBtn = document.getElementById('triggerGatePunchSimBtn');
+  const simPunchLogBody = document.getElementById('simPunchLogBody');
+  const simSmsText = document.getElementById('simulatedSmsText');
+  const simSmsTimestamp = document.getElementById('simulatedSmsTimestamp');
+
+  // Tab click listeners
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-software-tab');
+      switchSoftwareTab(target);
+    });
+  });
+
+  // Real-time macOS Clock
+  function updateClock() {
+    if (!clockDisplay) return;
+    const now = new Date();
+    clockDisplay.textContent = now.toLocaleTimeString('en-US', { hour12: true });
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Gate Punch Simulator Test
+  if (simPunchBtn && simPunchLogBody) {
+    const demoStudents = [
+      { roll: '05', name: 'Tanvir Mahmud', class: 'Class 9-B' },
+      { roll: '12', name: 'Nusrat Jahan', class: 'Class 8-A' },
+      { roll: '23', name: 'Muhammad Rayhan', class: 'Class 10-C' },
+      { roll: '08', name: 'Ayesha Siddiqua', class: 'Class 7-A' }
+    ];
+    let studentIndex = 0;
+
+    simPunchBtn.addEventListener('click', () => {
+      const student = demoStudents[studentIndex % demoStudents.length];
+      studentIndex++;
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('en-US', { hour12: true });
+
+      // Add row to table
+      const tr = document.createElement('tr');
+      tr.className = 'bg-emerald-50/50 transition-colors duration-500';
+      tr.innerHTML = `
+        <td class="p-2 font-mono font-bold">${student.roll}</td>
+        <td class="p-2 font-medium">${student.name}</td>
+        <td class="p-2">${student.class}</td>
+        <td class="p-2 font-mono text-slate-600">${timeStr}</td>
+        <td class="p-2 text-emerald-700 font-bold">✓ Delivered (2.1s)</td>
+      `;
+      simPunchLogBody.insertBefore(tr, simPunchLogBody.firstChild);
+
+      // Update SMS preview
+      if (simSmsText) {
+        simSmsText.textContent = `"সম্মানিত অভিভাবক, আপনার সন্তান ${student.name} (রোল: ${student.roll}, ${student.class}) এইমাত্র ${timeStr} মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - ইয়েস এডু"`;
+      }
+      if (simSmsTimestamp) {
+        simSmsTimestamp.textContent = `Today at ${timeStr}`;
+      }
+
+      // Show toast confirmation
+      const toast = document.getElementById('demoToast');
+      if (toast) {
+        toast.textContent = `⚡ Gate Punch: ${student.name} scanned! Parent SMS delivered in 2.1s`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+      }
+    });
+  }
+}
+
 

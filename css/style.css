@@ -1558,3 +1558,281 @@ body.font-bn h4 {
   color: #047857;
   box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
 }
+
+/* ==========================================================================
+   High-Level UI & Graphics: Mac Window Frame, Smartphone Mockup, Hardware & Laser
+   ========================================================================== */
+
+/* 1. macOS / iPad Style Software Window Frame */
+.mac-window-frame {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.mac-window-frame:hover {
+  box-shadow: 0 35px 70px -15px rgba(5, 150, 105, 0.15), 0 0 0 1px rgba(16, 185, 129, 0.2);
+}
+
+.mac-window-header {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mac-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.mac-dot-red { background: #ef4444; }
+.mac-dot-yellow { background: #f59e0b; }
+.mac-dot-green { background: #10b981; }
+
+/* 2. Realistic Smartphone Mockup Frame */
+.phone-mockup-frame {
+  width: 300px;
+  height: 580px;
+  background: #ffffff;
+  border-radius: 44px;
+  border: 8px solid #0f172a;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 2px #334155;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.phone-dynamic-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 22px;
+  background: #0f172a;
+  border-radius: 20px;
+  z-index: 30;
+}
+
+/* 3. Laser Scanner Animation */
+@keyframes laserSweep {
+  0% { top: 0%; opacity: 0.8; }
+  50% { top: 90%; opacity: 1; }
+  100% { top: 0%; opacity: 0.8; }
+}
+
+.laser-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #10b981, #34d399, transparent);
+  box-shadow: 0 0 8px #10b981, 0 0 16px #34d399;
+  animation: laserSweep 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* 4. Interactive Persona Switcher Pill */
+.persona-switch-bar {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.06);
+  gap: 4px;
+}
+
+.persona-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #64748b;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.persona-tab-btn:hover {
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.persona-tab-btn.active {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.12);
+}
+
+/* 5. Bangladeshi FinTech Visual Badges */
+.badge-bkash {
+  background: #fff0f5;
+  color: #d12053;
+  border: 1px solid #fbcfe8;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+.badge-nagad {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #ffedd5;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+/* 6. Realistic NCTB Question Paper Sheet */
+.nctb-paper-sheet {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+  font-family: var(--font-bangla);
+  position: relative;
+  line-height: 1.6;
+}
+
+.nctb-paper-sheet::before {
+  content: 'NCTB 2026';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(148, 163, 184, 0.08);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* 7. Shariah Waqf Ledger Card */
+.waqf-ledger-card {
+  background: #ffffff;
+  border: 1px solid #fde68a;
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.08);
+}
+
+/* 8. Live Campus OS Window Navigation Tabs */
+.software-tab-bar {
+  display: flex;
+  overflow-x: auto;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.software-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.software-tab-btn:hover {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.software-tab-btn.active {
+  background: #ffffff;
+  color: #047857;
+  border-color: #cbd5e1;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.software-panel {
+  display: none;
+  animation: fadeInSoft 0.25s ease forwards;
+}
+
+.software-panel.active {
+  display: block;
+}
+
+@keyframes fadeInSoft {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 9. Phone Screen Scrollable Content */
+.phone-screen-content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 44px 16px 20px 16px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.phone-screen-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* 10. Simulate Gate Punch Interactive Button */
+.simulate-punch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+  transition: all 0.2s ease;
+}
+
+.simulate-punch-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.4);
+}
+
+.simulate-punch-btn:active {
+  transform: translateY(1px);
+}
+
