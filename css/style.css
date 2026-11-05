@@ -2012,6 +2012,23 @@ body.font-bn .section-title {
   box-shadow: 0 12px 28px -4px rgba(5, 150, 105, 0.5);
 }
 
+.wc-btn-hero-secondary {
+  background-color: #ffffff;
+  color: #072032;
+  font-size: 15px;
+  padding: 13px 26px;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.wc-btn-hero-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #059669;
+  color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.15);
+}
+
 /* ==========================================================================
    Hero Area (EximusEdu Style)
    ========================================================================== */
