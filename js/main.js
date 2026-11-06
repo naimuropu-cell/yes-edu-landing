@@ -1145,12 +1145,40 @@ function initPersonaSwitcher() {
 }
 
 /* ==========================================================================
-   10. macOS Live Campus OS Window Tabs & Simulator
+   10. macOS Live Campus OS Window Tabs, Dual-Screen Sync & Live Simulators
    ========================================================================== */
+function showToastNotification(msg) {
+  const toast = document.getElementById('demoToast');
+  if (toast) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+}
+
+function triggerDynamicIslandAlert(text, duration = 3000) {
+  const island = document.getElementById('phoneDynamicIsland');
+  const islandText = document.getElementById('phoneDynamicIslandText');
+  if (!island || !islandText) return;
+
+  islandText.textContent = text;
+  island.classList.add('expanded');
+  clearTimeout(island._timer);
+  island._timer = setTimeout(() => {
+    island.classList.remove('expanded');
+    const now = new Date();
+    islandText.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  }, duration);
+}
+
 function switchSoftwareTab(targetTab) {
   const tabBtns = document.querySelectorAll('.software-tab-btn');
   const panels = document.querySelectorAll('.software-panel');
+  const phonePanels = document.querySelectorAll('.phone-tab-panel');
+  const syncStatus = document.getElementById('phoneSyncStatus');
 
+  // Update Desktop Tab Buttons
   tabBtns.forEach(b => {
     if (b.getAttribute('data-software-tab') === targetTab) {
       b.classList.add('active');
@@ -1159,6 +1187,7 @@ function switchSoftwareTab(targetTab) {
     }
   });
 
+  // Update Desktop Workspace Panels
   panels.forEach(panel => {
     const panelId = panel.id.replace('swPanel', '').toLowerCase();
     if (panelId === targetTab.toLowerCase()) {
@@ -1167,15 +1196,41 @@ function switchSoftwareTab(targetTab) {
       panel.classList.remove('active');
     }
   });
+
+  // Update Phone Synchronized Tab Panels
+  phonePanels.forEach(panel => {
+    const pId = panel.id.replace('phoneTab', '').toLowerCase();
+    if (pId === targetTab.toLowerCase()) {
+      panel.classList.add('active');
+    } else {
+      panel.classList.remove('active');
+    }
+  });
+
+  // Brief flash on phone sync indicator
+  if (syncStatus) {
+    syncStatus.classList.add('scale-105', 'bg-emerald-100');
+    setTimeout(() => {
+      syncStatus.classList.remove('scale-105', 'bg-emerald-100');
+    }, 400);
+  }
+
+  // Dynamic Island synchronization preview
+  const tabNames = {
+    dashboard: '📊 Executive BI Synced',
+    biometric: '⏱️ Biometric Gate Synced',
+    bkash: '৳ bKash Fees Synced',
+    exam: '📝 NCTB AI Exam Synced',
+    waqf: '🕌 Waqf & Lillah Synced'
+  };
+  if (tabNames[targetTab]) {
+    triggerDynamicIslandAlert(tabNames[targetTab], 2200);
+  }
 }
 
 function initSoftwareWindowTabs() {
   const tabBtns = document.querySelectorAll('.software-tab-btn');
   const clockDisplay = document.getElementById('macClockDisplay');
-  const simPunchBtn = document.getElementById('triggerGatePunchSimBtn');
-  const simPunchLogBody = document.getElementById('simPunchLogBody');
-  const simSmsText = document.getElementById('simulatedSmsText');
-  const simSmsTimestamp = document.getElementById('simulatedSmsTimestamp');
 
   // Tab click listeners
   tabBtns.forEach(btn => {
@@ -1190,29 +1245,130 @@ function initSoftwareWindowTabs() {
     if (!clockDisplay) return;
     const now = new Date();
     clockDisplay.textContent = now.toLocaleTimeString('en-US', { hour12: true });
+    
+    // Also update dynamic island clock if not expanded
+    const island = document.getElementById('phoneDynamicIsland');
+    const islandText = document.getElementById('phoneDynamicIslandText');
+    if (island && islandText && !island.classList.contains('expanded')) {
+      islandText.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    }
   }
   updateClock();
   setInterval(updateClock, 1000);
 
-  // Gate Punch Simulator Test
+  // =========================================================================
+  // 1. Executive BI Dashboard: School vs Madrasa Mode Persona Toggle
+  // =========================================================================
+  const biToggleSchool = document.getElementById('biToggleSchool');
+  const biToggleMadrasa = document.getElementById('biToggleMadrasa');
+  const biKpiEnrolledLabel = document.getElementById('biKpiEnrolledLabel');
+  const biKpiEnrolledValue = document.getElementById('biKpiEnrolledValue');
+  const biKpiEnrolledSub = document.getElementById('biKpiEnrolledSub');
+  const biKpiFeesLabel = document.getElementById('biKpiFeesLabel');
+  const biKpiFeesValue = document.getElementById('biKpiFeesValue');
+  const biKpiFeesSub = document.getElementById('biKpiFeesSub');
+  const biKpiGateLabel = document.getElementById('biKpiGateLabel');
+  const biKpiGateValue = document.getElementById('biKpiGateValue');
+  const biKpiGateSub = document.getElementById('biKpiGateSub');
+  const biKpiSmsLabel = document.getElementById('biKpiSmsLabel');
+  const biKpiSmsValue = document.getElementById('biKpiSmsValue');
+  const biKpiSmsSub = document.getElementById('biKpiSmsSub');
+  const phoneStudentName = document.getElementById('phoneStudentName');
+  const phoneStudentMeta = document.getElementById('phoneStudentMeta');
+
+  if (biToggleSchool && biToggleMadrasa) {
+    biToggleSchool.addEventListener('click', () => {
+      biToggleSchool.classList.add('active');
+      biToggleMadrasa.classList.remove('active');
+
+      if (biKpiEnrolledLabel) biKpiEnrolledLabel.textContent = 'Total Enrolled';
+      if (biKpiEnrolledValue) biKpiEnrolledValue.textContent = '১,২৪০ জন';
+      if (biKpiEnrolledSub) biKpiEnrolledSub.textContent = 'Present: ১,২২০ (৯৮.৪%)';
+
+      if (biKpiFeesLabel) biKpiFeesLabel.textContent = "Today's Fees";
+      if (biKpiFeesValue) biKpiFeesValue.textContent = '৳৪,৮৫,২০০';
+      if (biKpiFeesSub) biKpiFeesSub.textContent = 'bKash: 74% • Bank: 26%';
+
+      if (biKpiGateLabel) biKpiGateLabel.textContent = 'Gate Punch Status';
+      if (biKpiGateValue) biKpiGateValue.textContent = 'Online';
+      if (biKpiGateSub) biKpiGateSub.textContent = 'Gate #01 & #02 Synced';
+
+      if (biKpiSmsLabel) biKpiSmsLabel.textContent = 'SMS Delivery';
+      if (biKpiSmsValue) biKpiSmsValue.textContent = '১,২২০ টি';
+      if (biKpiSmsSub) biKpiSmsSub.textContent = 'Avg Delivery: 2.3s';
+
+      if (phoneStudentName) phoneStudentName.textContent = 'Muhammad Abdullah';
+      if (phoneStudentMeta) phoneStudentMeta.textContent = 'Class 10-A • Roll: 01';
+
+      triggerDynamicIslandAlert('🏫 School & College Mode Activated', 2500);
+      showToastNotification('🏫 Dashboard switched to School & College KPIs');
+    });
+
+    biToggleMadrasa.addEventListener('click', () => {
+      biToggleMadrasa.classList.add('active');
+      biToggleSchool.classList.remove('active');
+
+      if (biKpiEnrolledLabel) biKpiEnrolledLabel.textContent = 'মোট তালিব-ই-ইলম';
+      if (biKpiEnrolledValue) biKpiEnrolledValue.textContent = '৮৬০ জন';
+      if (biKpiEnrolledSub) biKpiEnrolledSub.textContent = 'উপস্থিত: ৮৫২ জন (৯৯.১%)';
+
+      if (biKpiFeesLabel) biKpiFeesLabel.textContent = 'ওয়াকফ ও লিল্লাহ ফান্ড';
+      if (biKpiFeesValue) biKpiFeesValue.textContent = '৳৬,৪০,০০০';
+      if (biKpiFeesSub) biKpiFeesSub.textContent = 'শরিয়াহ অডিট লকড';
+
+      if (biKpiGateLabel) biKpiGateLabel.textContent = 'হিফজ খতমে কোরআন';
+      if (biKpiGateValue) biKpiGateValue.textContent = '১৮ পারা';
+      if (biKpiGateSub) biKpiGateSub.textContent = 'আজ সম্পন্ন: ২ জন';
+
+      if (biKpiSmsLabel) biKpiSmsLabel.textContent = 'লিল্লাহ বোর্ডিং খানা';
+      if (biKpiSmsValue) biKpiSmsValue.textContent = '৩৫০ জন';
+      if (biKpiSmsSub) biKpiSmsSub.textContent = 'সেহরি ও ইফতার প্রস্তুত';
+
+      if (phoneStudentName) phoneStudentName.textContent = 'মুহাম্মদ আবদুল্লাহ';
+      if (phoneStudentMeta) phoneStudentMeta.textContent = 'হিফজ ও কিতাব বিভাগ • রোল: ০১';
+
+      triggerDynamicIslandAlert('🕌 Madrasa & Waqf Mode Activated', 2500);
+      showToastNotification('🕌 Dashboard switched to Madrasa & Waqf KPIs');
+    });
+  }
+
+  // =========================================================================
+  // 2. Biometric Gate Simulator (Simulates ZKTeco Turnstile Scan + Parent SMS)
+  // =========================================================================
+  const simPunchBtn = document.getElementById('triggerGatePunchSimBtn');
+  const simPunchLogBody = document.getElementById('simPunchLogBody');
+  const simPunchCount = document.getElementById('simPunchCount');
+  const simSmsText = document.getElementById('simulatedSmsText');
+  const simSmsTimestamp = document.getElementById('simulatedSmsTimestamp');
+  const phoneGateTime = document.getElementById('phoneGateTime');
+  const phoneSmsText = document.getElementById('phoneSmsText');
+  const phoneStudentAvatar = document.getElementById('phoneStudentAvatar');
+
   if (simPunchBtn && simPunchLogBody) {
     const demoStudents = [
       { roll: '05', name: 'Tanvir Mahmud', class: 'Class 9-B' },
       { roll: '12', name: 'Nusrat Jahan', class: 'Class 8-A' },
       { roll: '23', name: 'Muhammad Rayhan', class: 'Class 10-C' },
-      { roll: '08', name: 'Ayesha Siddiqua', class: 'Class 7-A' }
+      { roll: '08', name: 'Ayesha Siddiqua', class: 'Class 7-A' },
+      { roll: '01', name: 'Muhammad Abdullah', class: 'Class 10-A' }
     ];
     let studentIndex = 0;
+    let punchCounter = 1220;
 
     simPunchBtn.addEventListener('click', () => {
       const student = demoStudents[studentIndex % demoStudents.length];
       studentIndex++;
+      punchCounter++;
       const now = new Date();
       const timeStr = now.toLocaleTimeString('en-US', { hour12: true });
 
-      // Add row to table
+      if (simPunchCount) {
+        simPunchCount.textContent = punchCounter.toLocaleString('bn-BD');
+      }
+
+      // Add row to desktop table
       const tr = document.createElement('tr');
-      tr.className = 'bg-emerald-50/50 transition-colors duration-500';
+      tr.className = 'bg-emerald-50/70 transition-colors duration-500';
       tr.innerHTML = `
         <td class="p-2 font-mono font-bold">${student.roll}</td>
         <td class="p-2 font-medium">${student.name}</td>
@@ -1222,21 +1378,223 @@ function initSoftwareWindowTabs() {
       `;
       simPunchLogBody.insertBefore(tr, simPunchLogBody.firstChild);
 
-      // Update SMS preview
-      if (simSmsText) {
-        simSmsText.textContent = `"সম্মানিত অভিভাবক, আপনার সন্তান ${student.name} (রোল: ${student.roll}, ${student.class}) এইমাত্র ${timeStr} মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - ইয়েস এডু"`;
+      // Update SMS preview on desktop
+      const smsMsg = `"সম্মানিত অভিভাবক, আপনার সন্তান ${student.name} (রোল: ${student.roll}, ${student.class}) এইমাত্র ${timeStr} মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - ইয়েস এডু"`;
+      if (simSmsText) simSmsText.textContent = smsMsg;
+      if (simSmsTimestamp) simSmsTimestamp.textContent = `Today at ${timeStr}`;
+
+      // Synchronize with Phone Mockup
+      if (phoneStudentName) phoneStudentName.textContent = student.name;
+      if (phoneStudentMeta) phoneStudentMeta.textContent = `${student.class} • Roll: ${student.roll}`;
+      if (phoneGateTime) phoneGateTime.textContent = timeStr;
+      if (phoneSmsText) phoneSmsText.textContent = smsMsg;
+      if (phoneStudentAvatar) phoneStudentAvatar.textContent = student.name.charAt(0);
+
+      // Trigger Phone Dynamic Island Dropdown
+      triggerDynamicIslandAlert(`⚡ Gate Scan: ${student.name} arrived`, 3200);
+
+      // Show toast
+      showToastNotification(`⚡ Gate Punch: ${student.name} scanned! Parent SMS delivered in 2.1s`);
+    });
+  }
+
+  // =========================================================================
+  // 3. bKash 1-Tap Payment Simulator (Synchronized between macOS & Phone)
+  // =========================================================================
+  const triggerBkashPaymentSimBtn = document.getElementById('triggerBkashPaymentSimBtn');
+  const phonePayBkashBtn = document.getElementById('phonePayBkashBtn');
+  const desktopBkashVoucherBadge = document.getElementById('desktopBkashVoucherBadge');
+  const desktopBkashTrx = document.getElementById('desktopBkashTrx');
+  const phoneBkashStatusPill = document.getElementById('phoneBkashStatusPill');
+  const phoneBkashTrxNotice = document.getElementById('phoneBkashTrxNotice');
+
+  function executeBkashPaymentSimulation() {
+    const randomTrx = 'TRX: 9X' + Math.floor(100000 + Math.random() * 900000);
+
+    // Desktop updates
+    if (desktopBkashVoucherBadge) {
+      desktopBkashVoucherBadge.textContent = 'PAID ONLINE (JUST NOW)';
+      desktopBkashVoucherBadge.className = 'px-2 py-0.5 rounded bg-emerald-600 text-white font-bold text-[10px] animate-pulse';
+    }
+    if (desktopBkashTrx) {
+      desktopBkashTrx.textContent = randomTrx;
+    }
+
+    // Phone updates
+    if (phoneBkashStatusPill) {
+      phoneBkashStatusPill.textContent = 'PAID ONLINE';
+      phoneBkashStatusPill.className = 'px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]';
+    }
+    if (phonePayBkashBtn) {
+      phonePayBkashBtn.innerHTML = `<span>✓ Payment Successful (${randomTrx})</span>`;
+      phonePayBkashBtn.className = 'w-full py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-md cursor-default';
+    }
+    if (phoneBkashTrxNotice) {
+      phoneBkashTrxNotice.textContent = 'Auto-reconciled with Campus Bank Account (100% Verified)';
+      phoneBkashTrxNotice.className = 'text-[10px] text-center text-emerald-700 font-semibold';
+    }
+
+    // Dynamic Island & Toast
+    triggerDynamicIslandAlert(`৳ bKash Paid: ৳2,500 Auto-Reconciled`, 3200);
+    showToastNotification(`⚡ bKash Payment Reconciled: ৳2,500 deposited into Campus Bank! (${randomTrx})`);
+  }
+
+  if (triggerBkashPaymentSimBtn) {
+    triggerBkashPaymentSimBtn.addEventListener('click', executeBkashPaymentSimulation);
+  }
+  if (phonePayBkashBtn) {
+    phonePayBkashBtn.addEventListener('click', executeBkashPaymentSimulation);
+  }
+
+  // =========================================================================
+  // 4. NCTB AI Question Generator Simulator (Subject Switcher)
+  // =========================================================================
+  const triggerExamAiGenBtn = document.getElementById('triggerExamAiGenBtn');
+  const desktopExamSubjectHeader = document.getElementById('desktopExamSubjectHeader');
+  const desktopExamStemText = document.getElementById('desktopExamStemText');
+  const desktopExamQuestionsList = document.getElementById('desktopExamQuestionsList');
+  const desktopExamTabulationBody = document.getElementById('desktopExamTabulationBody');
+
+  if (triggerExamAiGenBtn) {
+    const examSubjects = [
+      {
+        subject: 'পদার্থবিজ্ঞান • ১০ম শ্রেণি • বার্ষিক মূল্যায়ন পরীক্ষা',
+        stem: 'একটি ১০ কেজি ভরের স্থির বস্তুর ওপর ২০ নিউটন বল ৫ সেকেন্ড যাবত প্রযুক্ত হলো। ৫ সেকেন্ড পর বলের ক্রিয়া বন্ধ হয়ে গেল।',
+        questions: [
+          { q: '(ক) বলের মাত্রা সমীকরণ কী?', marks: '[১]' },
+          { q: '(খ) সাইকেলের চাকায় বিয়ারিং ব্যবহার করা হয় কেন? ব্যাখ্যা করো।', marks: '[২]' },
+          { q: '(গ) ৫ সেকেন্ডে বস্তুটির অতিক্রান্ত দূরত্ব নির্ণয় করো।', marks: '[৩]' },
+          { q: '(ঘ) বলের মান দ্বিগুণ করলে গতিশক্তির কীরূপ পরিবর্তন ঘটবে? গাণিতিকভাবে বিশ্লেষণ করো।', marks: '[৪]' }
+        ],
+        ranks: [
+          { roll: '01', name: 'Abdullah', marks: '275 / 300', gpa: '5.00 (A+)' },
+          { roll: '02', name: 'Sumaiya', marks: '266 / 300', gpa: '5.00 (A+)' }
+        ]
+      },
+      {
+        subject: 'উচ্চতর গণিত • ১০ম শ্রেণি • বোর্ড স্ট্যান্ডার্ড সৃজনশীল',
+        stem: 'A(2, 5) এবং B(8, -3) দুটি বিন্দু এবং একটি বৃত্তের সমীকরণ x² + y² - 4x + 6y - 12 = 0।',
+        questions: [
+          { q: '(ক) বৃত্তটির কেন্দ্র ও ব্যাসার্ধ নির্ণয় করো।', marks: '[১]' },
+          { q: '(খ) AB সরলরেখার সমীকরণ ও ঢাল বের করো।', marks: '[২]' },
+          { q: '(গ) A ও B বিন্দুগামী সংযোগ রেখাংশের সমদ্বিখণ্ডকের সমীকরণ নির্ণয় করো।', marks: '[৩]' },
+          { q: '(ঘ) উদ্দীপকের বৃত্তটি দ্বারা অক্ষদ্বয়ের খণ্ডিতাংশের দৈর্ঘ্য জ্যামিতিকভাবে নিরূপণ করো।', marks: '[৪]' }
+        ],
+        ranks: [
+          { roll: '01', name: 'Abdullah', marks: '292 / 300', gpa: '5.00 (Golden A+)' },
+          { roll: '05', name: 'Tanvir', marks: '284 / 300', gpa: '5.00 (A+)' }
+        ]
+      },
+      {
+        subject: 'বাংলা ১ম পত্র • ১০ম শ্রেণি • এনসিটিবি নতুন মূল্যায়ন ২০২৬',
+        stem: 'রফিক সাহেব তার গ্রামের অবহেলিত শিশুদের জন্য একটি অবৈতনিক বিদ্যালয় গড়ে তুলেছেন। যুদ্ধের সময় তিনি নিজের ভিটেমাটি ত্যাগ করে মুক্তিযোদ্ধাদের খাদ্য ও আশ্রয় দিয়েছিলেন।',
+        questions: [
+          { q: '(ক) \'একাত্তরের দিনগুলি\' কার লেখা?', marks: '[১]' },
+          { q: '(খ) \'স্বাধীনতা, এ শব্দটি কীভাবে আমাদের হলো\'—বুঝিয়ে লেখ।', marks: '[২]' },
+          { q: '(গ) উদ্দীপকের রফিক সাহেবের কর্মতৎপরতায় পাঠ্যবইয়ের কোন ভাব প্রতিফলিত হয়েছে?', marks: '[৩]' },
+          { q: '(ঘ) "রফিক সাহেবের দেশপ্রেমই বাঙালির মুক্তির মূল চেতনা"—উক্তিটির যথার্থতা নিরূপণ করো।', marks: '[৪]' }
+        ],
+        ranks: [
+          { roll: '02', name: 'Sumaiya', marks: '289 / 300', gpa: '5.00 (Golden A+)' },
+          { roll: '01', name: 'Abdullah', marks: '281 / 300', gpa: '5.00 (A+)' }
+        ]
       }
-      if (simSmsTimestamp) {
-        simSmsTimestamp.textContent = `Today at ${timeStr}`;
+    ];
+    let examSubjectIndex = 0;
+
+    triggerExamAiGenBtn.addEventListener('click', () => {
+      examSubjectIndex++;
+      const current = examSubjects[examSubjectIndex % examSubjects.length];
+
+      if (desktopExamSubjectHeader) desktopExamSubjectHeader.textContent = current.subject;
+      if (desktopExamStemText) desktopExamStemText.textContent = current.stem;
+
+      if (desktopExamQuestionsList) {
+        desktopExamQuestionsList.innerHTML = current.questions.map(item => `
+          <div class="flex justify-between py-0.5">
+            <span>${item.q}</span>
+            <span class="font-bold text-purple-700">${item.marks}</span>
+          </div>
+        `).join('');
       }
 
-      // Show toast confirmation
-      const toast = document.getElementById('demoToast');
-      if (toast) {
-        toast.textContent = `⚡ Gate Punch: ${student.name} scanned! Parent SMS delivered in 2.1s`;
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3500);
+      if (desktopExamTabulationBody) {
+        desktopExamTabulationBody.innerHTML = current.ranks.map(r => `
+          <tr>
+            <td class="py-1.5 font-mono font-bold">${r.roll}</td>
+            <td class="py-1.5">${r.name}</td>
+            <td class="py-1.5">${r.marks}</td>
+            <td class="py-1.5 text-emerald-700 font-bold">${r.gpa}</td>
+          </tr>
+        `).join('');
       }
+
+      triggerDynamicIslandAlert('✨ NCTB AI: New Exam Paper Compiled', 2800);
+      showToastNotification(`✨ NCTB AI Question Generated: ${current.subject.split('•')[0].trim()}`);
+    });
+  }
+
+  // =========================================================================
+  // 5. Madrasa Waqf Donor Contribution Simulator
+  // =========================================================================
+  const triggerWaqfDonationSimBtn = document.getElementById('triggerWaqfDonationSimBtn');
+  const desktopWaqfDonationTotal = document.getElementById('desktopWaqfDonationTotal');
+  const desktopWaqfNetBalance = document.getElementById('desktopWaqfNetBalance');
+  const desktopWaqfVoucherNo = document.getElementById('desktopWaqfVoucherNo');
+  const desktopWaqfSmsText = document.getElementById('desktopWaqfSmsText');
+  const phoneDonorName = document.getElementById('phoneDonorName');
+  const phoneDonationAmount = document.getElementById('phoneDonationAmount');
+
+  if (triggerWaqfDonationSimBtn) {
+    const donors = [
+      { name: 'হাজী আবদুস সাত্তার সাহেব', amount: '৳৩০,০০০', fund: 'এতিমখানা লিল্লাহ বোর্ডিং ও কিতাব ফান্ড', total: '৳২,১০,০০০', net: '+৳৯০,০০০' },
+      { name: 'আলহাজ্ব নূরুল ইসলাম চৌধুরী', amount: '৳৫০,০০০', fund: 'মসজিদ কমপ্লেক্স ও ওয়াকফ ফান্ড', total: '৳২,৬০,০০০', net: '+৳১,৪০,০০০' },
+      { name: 'মোহাম্মদ দেলোয়ার হোসেন', amount: '৳২৫,০০০', fund: 'দরিদ্র তালিব-ই-ইলম চিকিৎসা ফান্ড', total: '৳২,৮৫,০০০', net: '+৳১,৬৫,০০০' }
+    ];
+    let donorIndex = 0;
+
+    triggerWaqfDonationSimBtn.addEventListener('click', () => {
+      const d = donors[donorIndex % donors.length];
+      donorIndex++;
+      const vNo = 'VOUCHER: WQF-' + Math.floor(1000 + Math.random() * 9000);
+
+      if (desktopWaqfDonationTotal) desktopWaqfDonationTotal.textContent = d.total;
+      if (desktopWaqfNetBalance) desktopWaqfNetBalance.textContent = d.net;
+      if (desktopWaqfVoucherNo) desktopWaqfVoucherNo.textContent = vNo;
+      if (desktopWaqfSmsText) {
+        desktopWaqfSmsText.textContent = `"আলহামদুলিল্লাহ! ${d.name}, জামিয়া ইসলামিয়া ${d.fund} এ আপনার ${d.amount.replace('৳', '')} টাকার অনুদান সফলভাবে জমা হয়েছে। রশিদ নং: ${vNo.replace('VOUCHER: ', '')}। আল্লাহ আপনার দানকে কবুল করুন।"`;
+      }
+
+      // Update Phone Screen
+      if (phoneDonorName) phoneDonorName.textContent = d.name.replace(' সাহেব', '');
+      if (phoneDonationAmount) phoneDonationAmount.textContent = d.amount;
+
+      triggerDynamicIslandAlert(`🕌 Waqf: ${d.amount} Donation Verified`, 3000);
+      showToastNotification(`🕌 Waqf Contribution: ${d.amount} verified and quarantined!`);
+    });
+  }
+
+  // =========================================================================
+  // 6. Mobile Screen Switcher (Desktop Admin OS vs Guardian Parent App)
+  // =========================================================================
+  const mobileStageToggleAdmin = document.getElementById('mobileStageToggleAdmin');
+  const mobileStageTogglePhone = document.getElementById('mobileStageTogglePhone');
+  const macWindowCol = document.getElementById('macWindowCol');
+  const phoneMockupCol = document.getElementById('phoneMockupCol');
+
+  if (mobileStageToggleAdmin && mobileStageTogglePhone && macWindowCol && phoneMockupCol) {
+    mobileStageToggleAdmin.addEventListener('click', () => {
+      mobileStageToggleAdmin.className = 'px-4 py-1.5 rounded-full bg-white text-slate-900 shadow-sm transition';
+      mobileStageTogglePhone.className = 'px-4 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition';
+      macWindowCol.classList.remove('hidden');
+      phoneMockupCol.classList.add('hidden');
+    });
+
+    mobileStageTogglePhone.addEventListener('click', () => {
+      mobileStageTogglePhone.className = 'px-4 py-1.5 rounded-full bg-white text-slate-900 shadow-sm transition';
+      mobileStageToggleAdmin.className = 'px-4 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition';
+      macWindowCol.classList.add('hidden');
+      phoneMockupCol.classList.remove('hidden');
     });
   }
 }
