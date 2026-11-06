@@ -2304,31 +2304,116 @@ body.font-bn .section-title {
   justify-content: space-between;
 }
 
-/* Brand Marquee Area */
+/* Brand Marquee Area (Smooth Infinite Loop + Edge Gradient Fade) */
 .brand-area {
-  background-color: #ffffff;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
   border-bottom: 1px solid #e2e8f0;
-  padding: 36px 0;
+  padding: 42px 0 46px;
+  overflow: hidden;
+  position: relative;
 }
 
-.brand-logo-pill {
-  display: inline-flex;
+.brand-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* Dual Edge Gradient Fade Mask requested by user */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.brand-marquee-track {
+  display: flex;
   align-items: center;
-  padding: 8px 18px;
-  border-radius: 9999px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  font-size: 13px;
-  font-weight: 700;
-  color: #475569;
-  transition: all 0.2s ease;
+  gap: 20px;
+  width: max-content;
+  animation: infiniteMarqueeScroll 45s linear infinite;
+  will-change: transform;
 }
 
-.brand-logo-pill:hover {
-  background: #ecfdf5;
-  border-color: #a7f3d0;
-  color: #047857;
-  transform: translateY(-1px);
+.brand-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes infiniteMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-client-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 8px 16px 8px 10px;
+  box-shadow: 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.brand-client-card:hover {
+  border-color: #10b981;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px -5px rgba(5, 150, 105, 0.16);
+}
+
+.brand-client-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 2px;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.brand-client-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.brand-client-name {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.brand-client-meta {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.brand-counter-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 1.5px solid #a7f3d0;
+  border-radius: 16px;
+  padding: 10px 20px;
+  color: #065f46;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 13.5px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px -3px rgba(5, 150, 105, 0.2);
+  flex-shrink: 0;
 }
 
 
