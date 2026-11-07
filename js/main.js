@@ -195,19 +195,6 @@ function initVideoShowcase() {
   let videoTimer = null;
   let currentChapterIndex = 0;
 
-  // Real Mac Video Detection & Fallback Orchestration
-  const heroMacVideo = document.getElementById('heroMacVideo');
-  if (heroMacVideo) {
-    heroMacVideo.addEventListener('playing', () => {
-      if (simulationFrame) simulationFrame.style.display = 'none';
-      heroMacVideo.style.display = 'block';
-    });
-    heroMacVideo.addEventListener('error', () => {
-      heroMacVideo.style.display = 'none';
-      if (simulationFrame) simulationFrame.style.display = 'block';
-    });
-  }
-
   // Web Audio API Synthesizer
   let audioCtx = null;
   function playSoundEffect(type) {
@@ -247,275 +234,477 @@ function initVideoShowcase() {
 
   // Build the 4 Cartoon Animated Scenes into the Stage (White BG Edition)
   function buildCartoonStage() {
-  if (!simulationFrame) return;
+    if (!simulationFrame) return;
 
-  simulationFrame.innerHTML = `
-    <div class="video-stage-container w-full h-full relative bg-slate-900 text-white font-sans overflow-hidden flex flex-col justify-between">
-      
-      <!-- Top Enterprise App Console Header -->
-      <div class="px-5 py-3 bg-slate-950/90 border-b border-slate-800 flex items-center justify-between text-xs shrink-0">
-        <div class="flex items-center gap-3">
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-          </div>
-          <span class="font-mono text-slate-400 font-semibold hidden sm:inline">YES EDU 2.0 • Live Campus Operating System</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="font-mono text-emerald-400 text-[11px] font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">● LIVE CAMPUS TELEMETRY</span>
-        </div>
-      </div>
+    simulationFrame.innerHTML = `
+      <div class="video-stage-container w-full h-full relative bg-white">
 
-      <!-- Main Dynamic Scene Container -->
-      <div class="flex-1 relative overflow-hidden p-5 sm:p-7">
-        
-        <!-- SCENE 1: Biometric Gate Attendance & Instant Telco SMS -->
-        <div id="videoScene0" class="video-scene-wrapper active-scene h-full flex flex-col justify-between">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-            <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold block">MODULE 01 • GATE TELEMETRY</span>
-              <h4 class="text-base sm:text-lg font-bold text-white">Morning Gate RFID Turnstile & Instant Mother's SMS</h4>
+        <!-- SCENE 1: Cartoon Student at Biometric Gate with Morning Sunbeams (White BG) -->
+        <div id="videoScene0" class="video-scene-wrapper active-scene bg-gradient-to-br from-[#ffffff] via-[#f0fdf4] to-[#f8fafc] p-6 sm:p-8 pb-16 flex flex-col justify-between text-slate-800 overflow-hidden">
+          <!-- Morning Sunbeam Atmospheric Lighting -->
+          <div class="light-sunbeam"></div>
+
+          <div class="flex items-center justify-between z-10">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
+              <span class="text-xs font-mono font-bold tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-300 px-2.5 py-1 rounded shadow-xs">
+                PART 1: GATEWAY SYNC (0s - 10s)
+              </span>
             </div>
-            <span class="text-xs font-mono font-bold text-slate-300 bg-slate-800 px-3 py-1 rounded-full">07:58:12 AM</span>
+            <span class="text-xs text-emerald-800 font-mono font-semibold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              MORNING SUNLIGHT • REAL HARDWARE SYNC
+            </span>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 my-auto py-2">
-            <!-- Left 7 cols: Live Gate Scan Stream -->
-            <div class="md:col-span-7 bg-slate-950/60 p-4 rounded-xl border border-slate-800 space-y-2.5">
-              <div class="flex items-center justify-between text-xs text-slate-400 pb-1">
-                <span>GATE #01 PUNCH STREAM</span>
-                <span class="text-emerald-400 font-mono">● 4ms Gateway Ping</span>
-              </div>
-              <div class="p-2.5 bg-emerald-950/40 rounded-lg border border-emerald-800/80 flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                  <span class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs">T</span>
-                  <div>
-                    <span class="font-bold text-white text-xs block">Tanvir Mahmud</span>
-                    <span class="text-[10px] text-slate-400">Roll 05 • Class 9-B • Gate #01</span>
-                  </div>
+          <!-- Main Cartoon Graphic Stage -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto z-10">
+            
+            <!-- Cartoon Student Tanvir -->
+            <div class="md:col-span-5 flex flex-col items-center text-center">
+              <div class="relative anim-walk">
+                <!-- Speech Bubble -->
+                <div class="bg-white text-slate-900 text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md border-2 border-emerald-400 mb-2 relative animate-bounce">
+                  "সকাল ৮:৩০! সময়মতো গেটে পাঞ্চ করলাম!"
+                  <div class="w-2.5 h-2.5 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-emerald-400"></div>
                 </div>
-                <span class="text-[10px] font-bold text-emerald-300 bg-emerald-900/80 px-2 py-0.5 rounded border border-emerald-700">✓ SMS Delivered (2.1s)</span>
-              </div>
-              <div class="p-2.5 bg-slate-900/60 rounded-lg border border-slate-800 flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                  <span class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center text-xs">N</span>
-                  <div>
-                    <span class="font-bold text-slate-200 text-xs block">Nusrat Jahan</span>
-                    <span class="text-[10px] text-slate-400">Roll 12 • Class 8-A • Gate #01</span>
-                  </div>
-                </div>
-                <span class="text-[10px] font-bold text-emerald-300 bg-emerald-900/80 px-2 py-0.5 rounded border border-emerald-700">✓ SMS Delivered (1.9s)</span>
+
+                <!-- SVG Cartoon Student -->
+                <svg class="w-36 h-44 drop-shadow-md" viewBox="0 0 160 200" fill="none">
+                  <!-- Cap (Islamic Topi) -->
+                  <ellipse cx="80" cy="38" rx="26" ry="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+                  <rect x="54" y="36" width="52" height="6" rx="2" fill="#10b981"/>
+                  <!-- Face -->
+                  <circle cx="80" cy="58" r="24" fill="#ffd1b3"/>
+                  <!-- Eyes (Smiling cartoon eyes) -->
+                  <path d="M70 54 Q75 48 80 54" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                  <path d="M82 54 Q87 48 92 54" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                  <!-- Blushing cheeks -->
+                  <circle cx="68" cy="62" r="4" fill="#ff9999" opacity="0.6"/>
+                  <circle cx="92" cy="62" r="4" fill="#ff9999" opacity="0.6"/>
+                  <!-- Smile -->
+                  <path d="M74 65 Q81 74 88 65" stroke="#991b1b" stroke-width="2.5" stroke-linecap="round" fill="#ffffff"/>
+                  <!-- Backpack straps -->
+                  <path d="M60 84 L56 140" stroke="#0284c7" stroke-width="7" stroke-linecap="round"/>
+                  <path d="M100 84 L104 140" stroke="#0284c7" stroke-width="7" stroke-linecap="round"/>
+                  <!-- Body: Kurta with Emerald Vest -->
+                  <rect x="58" y="80" width="44" height="60" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+                  <path d="M58 80 L76 138 L60 138 Z" fill="#059669"/>
+                  <path d="M102 80 L84 138 L100 138 Z" fill="#059669"/>
+                  <!-- ID Card Ribbon & Badge -->
+                  <path d="M74 80 L78 108 L82 80" stroke="#10b981" stroke-width="2" fill="none"/>
+                  <rect x="74" y="108" width="12" height="16" rx="2" fill="#f59e0b"/>
+                  <!-- Outstretched Right Arm holding RFID Card (Shoulder Pivot Permanently Locked) -->
+                  <g transform="translate(101, 88)">
+                    <!-- Animated Arm with Hardware-Accelerated Local Rotation around Shoulder (0, 0) -->
+                    <g>
+                      <animateTransform 
+                        attributeName="transform" 
+                        type="rotate" 
+                        values="0 0 0; -12 0 0; -16 0 0; -6 0 0; 0 0 0" 
+                        keyTimes="0; 0.35; 0.55; 0.8; 1" 
+                        dur="2.2s" 
+                        repeatCount="indefinite" 
+                        calcMode="spline" 
+                        keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+                      />
+                      <!-- Arm (Skin tone) reaching towards Biometric Gate -->
+                      <path d="M0 0 Q22 6 34 18" stroke="#ffd1b3" stroke-width="11" stroke-linecap="round"/>
+                      <!-- White Kurta sleeve cuff -->
+                      <path d="M0 0 L10 2" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+                      <!-- RFID Smart Card -->
+                      <rect x="26" y="12" width="16" height="10" rx="2" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+                      <circle cx="30" cy="17" r="2" fill="#f59e0b"/>
+                      <!-- Fingers grasping the card -->
+                      <circle cx="28" cy="17" r="3" fill="#ffd1b3"/>
+                    </g>
+                    <!-- Shoulder Sleeve Socket / Cap (Pins joint permanently to body) -->
+                    <circle cx="0" cy="0" r="7.5" fill="#059669"/>
+                    <circle cx="0" cy="0" r="4.5" fill="#047857"/>
+                  </g>
+                  <!-- Left Arm -->
+                  <path d="M58 90 Q44 110 50 128" stroke="#ffd1b3" stroke-width="12" stroke-linecap="round"/>
+                  <!-- Legs & Shoes -->
+                  <rect x="65" y="140" width="12" height="42" rx="4" fill="#e2e8f0"/>
+                  <rect x="83" y="140" width="12" height="42" rx="4" fill="#e2e8f0"/>
+                  <ellipse cx="71" cy="186" rx="9" ry="6" fill="#1e293b"/>
+                  <ellipse cx="89" cy="186" rx="9" ry="6" fill="#1e293b"/>
+                </svg>
+
+                <span class="text-xs font-extrabold text-slate-900 block mt-1">মুহাম্মদ তানভীর (রোল: ১০৪)</span>
+                <span class="text-[10px] text-slate-500 font-medium">Class 9 • Darul Uloom Campus</span>
               </div>
             </div>
 
-            <!-- Right 5 cols: Mother's Verified Telco SMS -->
-            <div class="md:col-span-5 bg-emerald-950/30 p-4 rounded-xl border border-emerald-800/60 flex flex-col justify-between space-y-3">
-              <div class="flex items-center justify-between text-xs">
-                <span class="font-bold text-emerald-400 flex items-center gap-1.5">📱 CARRIER SMS ROUTE</span>
-                <span class="font-mono text-[10px] text-slate-400">BTRC MASKED</span>
-              </div>
-              <div class="p-3 bg-slate-900 rounded-lg border border-slate-800 text-xs text-slate-200 leading-relaxed font-sans">
-                "সম্মানিত অভিভাবক, আপনার সন্তান তানভীর মাহমুদ সকাল ৭:৫৮ মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - ইয়েস এডু"
-              </div>
-              <div class="flex items-center justify-between text-[10px] text-emerald-400">
-                <span>✓ GP / Robi / BL / Teletalk</span>
-                <span class="font-mono">Latency: 2.1s</span>
+            <!-- Center: Biometric Gate Terminal with Radar Rings -->
+            <div class="md:col-span-3 flex flex-col items-center text-center">
+              <div class="relative w-28 h-42 bg-white border-2 border-emerald-500 rounded-2xl flex flex-col items-center justify-between p-3 shadow-xl">
+                <!-- Glowing Radar Rings -->
+                <div class="absolute -top-3 w-16 h-16 rounded-full border-2 border-emerald-400 anim-radar pointer-events-none"></div>
+                <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 004 11m0 0a8.003 8.003 0 0015.357 2m1.5-6.5h.01M16 19.5v.01"/></svg>
+                </div>
+
+                <div class="text-center">
+                  <span class="text-[10px] font-mono text-emerald-700 font-bold block animate-pulse">PUNCH VERIFIED</span>
+                  <span class="text-[9px] text-slate-500 font-mono">GATE UNLOCKED</span>
+                </div>
+                
+                <div class="w-full py-1 rounded bg-emerald-600 text-[10px] font-bold text-white font-mono text-center shadow-xs">
+                  3 SEC SMS TRIGGER
+                </div>
               </div>
             </div>
+
+            <!-- Right: Parent Phone with Incoming Live SMS -->
+            <div class="md:col-span-4 bg-white border-2 border-emerald-400 rounded-2xl p-4 shadow-xl anim-phone-glow space-y-3">
+              <div class="flex items-center justify-between text-xs text-slate-700 border-b border-slate-100 pb-2">
+                <span class="flex items-center gap-1.5 text-emerald-800 font-bold">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  অভিভাবকের স্মার্টফোন
+                </span>
+                <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono font-bold">SMS RECEIVED</span>
+              </div>
+              <div class="bg-emerald-50/80 p-3 rounded-xl border border-emerald-200 text-xs text-slate-800 font-sans leading-relaxed shadow-xs">
+                <div class="text-emerald-700 font-bold text-[11px] mb-1 flex items-center justify-between">
+                  <span>YES_EDU_SMS</span>
+                  <span class="text-[10px] text-slate-500 font-normal">Just Now</span>
+                </div>
+                "সম্মানিত অভিভাবক, আপনার সন্তান মুহাম্মদ তানভীর সকাল ৮:৩০ মিনিটে নিরাপদে ক্যাম্পাসে প্রবেশ করেছে। — YES EDU"
+              </div>
+              <span class="text-[10px] text-slate-500 block text-right font-mono font-semibold">100% Parent Peace of Mind</span>
+            </div>
+
           </div>
 
-          <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400">
-            <span>Today's Total Attendance: <strong class="text-white font-mono">১,২২০ / ১,২৪০ (৯৮.৪%)</strong></span>
-            <span class="text-emerald-400 font-semibold">● 100% ZKTeco Hardware Offline Sync</span>
+          <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono border-t border-slate-200 pt-2 z-10">
+            <span>PART 1 OF 4 (0s - 10s): SMART BIOMETRIC GATEWAY</span>
+            <button class="jump-chapter-btn text-emerald-800 font-bold hover:bg-emerald-100 cursor-pointer bg-emerald-50 px-2.5 py-1 rounded border border-emerald-300 transition" data-jump="1">
+              PLAY PART 2: BKASH FEE (10s) →
+            </button>
           </div>
         </div>
 
-        <!-- SCENE 2: 1-Tap bKash Fee & Automatic Bank Deposit -->
-        <div id="videoScene1" class="video-scene-wrapper h-full flex flex-col justify-between">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-            <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-pink-400 font-bold block">MODULE 02 • FINANCIAL LEDGER</span>
-              <h4 class="text-base sm:text-lg font-bold text-white">1-Tap bKash Fee Collection & Instant Bank Auto-Deposit</h4>
+        <!-- SCENE 2: Cartoon Parent on Sofa & bKash with Cozy Ambient Lamp (White BG) -->
+        <div id="videoScene1" class="video-scene-wrapper bg-gradient-to-br from-[#ffffff] via-[#fffbeb] to-[#f8fafc] p-6 sm:p-8 pb-16 flex flex-col justify-between text-slate-800 overflow-hidden">
+          <!-- Warm Lamp Glow in Living Room -->
+          <div class="lamp-glow -top-10 left-10"></div>
+
+          <div class="flex items-center justify-between z-10">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-amber-500 animate-ping"></span>
+              <span class="text-xs font-mono font-bold tracking-widest text-amber-800 bg-amber-50 border border-amber-300 px-2.5 py-1 rounded shadow-xs">
+                PART 2: BKASH AUTOMATION (10s - 20s)
+              </span>
             </div>
-            <span class="text-xs font-mono font-bold text-pink-400 bg-pink-950/80 px-3 py-1 rounded-full border border-pink-800">৳ 1-TAP GATEWAY</span>
+            <span class="text-xs text-amber-800 font-mono font-semibold">WARM INTERIOR • ZERO LINE AT BANK</span>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 my-auto py-2">
-            <!-- Left 6 cols: Digital Fee Voucher -->
-            <div class="md:col-span-6 bg-slate-950/60 p-4 rounded-xl border border-slate-800 space-y-2">
-              <div class="flex justify-between items-start text-xs">
+          <!-- Main Cartoon Graphic Stage -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto z-10">
+            
+            <!-- Cartoon Parent on Sofa -->
+            <div class="md:col-span-5 flex flex-col items-center text-center">
+              <div class="relative">
+                <!-- Speech Bubble -->
+                <div class="bg-white text-slate-900 text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md border-2 border-amber-400 mb-2 relative animate-bounce">
+                  "ব্যাংকের লাইনে না গিয়ে ঘরে বসেই ফি দিয়ে দিলাম!"
+                  <div class="w-2.5 h-2.5 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-amber-400"></div>
+                </div>
+
+                <!-- SVG Cartoon Parent on Sofa -->
+                <svg class="w-44 h-44 drop-shadow-md" viewBox="0 0 200 200" fill="none">
+                  <!-- Teal Sofa -->
+                  <rect x="30" y="110" width="140" height="60" rx="14" fill="#0f766e"/>
+                  <rect x="20" y="100" width="24" height="70" rx="10" fill="#115e59"/>
+                  <rect x="156" y="100" width="24" height="70" rx="10" fill="#115e59"/>
+                  <!-- Father Head & Glasses -->
+                  <circle cx="100" cy="55" r="24" fill="#ffd1b3"/>
+                  <!-- Hair -->
+                  <path d="M78 50 Q100 30 122 50 Q100 40 78 50 Z" fill="#334155"/>
+                  <!-- Spectacles -->
+                  <circle cx="92" cy="54" r="6" stroke="#0f172a" stroke-width="2" fill="none"/>
+                  <circle cx="108" cy="54" r="6" stroke="#0f172a" stroke-width="2" fill="none"/>
+                  <line x1="98" y1="54" x2="102" y2="54" stroke="#0f172a" stroke-width="2"/>
+                  <!-- Smile -->
+                  <path d="M94 66 Q100 74 106 66" stroke="#991b1b" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                  <!-- Body / Shirt -->
+                  <rect x="76" y="78" width="48" height="52" rx="8" fill="#f59e0b"/>
+                  <!-- Arms Holding Smartphone -->
+                  <path d="M76 90 Q65 110 82 120" stroke="#ffd1b3" stroke-width="10" stroke-linecap="round"/>
+                  <path d="M124 90 Q135 110 118 120" stroke="#ffd1b3" stroke-width="10" stroke-linecap="round"/>
+                  <!-- Glowing Phone -->
+                  <rect x="86" y="106" width="28" height="42" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+                  <rect x="89" y="110" width="22" height="34" rx="2" fill="#ec4899"/>
+                </svg>
+
+                <span class="text-xs font-extrabold text-slate-900 block">আব্দুর রহমান সাহেব (অভিভাবক)</span>
+                <span class="text-[10px] text-slate-500 font-medium">Paying from Home via bKash</span>
+              </div>
+            </div>
+
+            <!-- Floating Coins Flying from Phone to Cloud -->
+            <div class="md:col-span-3 flex flex-col items-center justify-center text-center">
+              <div class="relative py-4">
+                <div class="w-12 h-12 rounded-full bg-amber-400 text-slate-900 font-extrabold text-xl flex items-center justify-center shadow-lg anim-coin mx-auto mb-2 border-2 border-white">৳</div>
+                <div class="w-10 h-10 rounded-full bg-amber-300 text-slate-900 font-extrabold text-lg flex items-center justify-center shadow-lg anim-coin mx-auto mb-2 border-2 border-white" style="animation-delay: -0.8s;">৳</div>
+                <span class="text-xs font-mono font-bold text-amber-800 block">INSTANT SETTLEMENT</span>
+                <span class="text-[10px] text-slate-500 font-mono">Auto Bank API Reconcile</span>
+              </div>
+            </div>
+
+            <!-- Right: Digital Receipt & Double Entry Confirmation -->
+            <div class="md:col-span-4 bg-white border-2 border-amber-400 rounded-2xl p-4 shadow-xl space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#e2136e] text-white font-bold flex items-center justify-center text-xs shadow-sm">
+                  bKash
+                </div>
                 <div>
-                  <span class="text-[10px] text-slate-400 uppercase font-bold">STUDENT INVOICE</span>
-                  <span class="font-bold text-white block mt-0.5">Samiul Haque • Class 4-A • Roll 07</span>
+                  <span class="text-xs font-bold text-emerald-700 block">✓ ৳২,৫০০ পেমেন্ট সফল</span>
+                  <span class="text-[10px] text-slate-500 font-mono">TrxID: 9B8801K99 • VOUCHER READY</span>
                 </div>
-                <span class="px-2 py-0.5 rounded bg-emerald-600 text-white text-[10px] font-bold animate-pulse">PAID ONLINE</span>
               </div>
-              <div class="p-3 bg-slate-900 rounded-lg border border-slate-800 space-y-1.5 text-xs">
-                <div class="flex justify-between text-slate-400">
-                  <span>Monthly Tuition (Feb 2026):</span>
-                  <span class="font-mono text-white font-bold">৳২,২০০</span>
-                </div>
-                <div class="flex justify-between text-slate-400">
-                  <span>Lab & Computer Charge:</span>
-                  <span class="font-mono text-white font-bold">৳৩০০</span>
-                </div>
-                <div class="flex justify-between text-white font-bold pt-1.5 border-t border-slate-800">
-                  <span>Total Amount Paid:</span>
-                  <span class="font-mono text-pink-400 text-sm">৳২,৫০০</span>
-                </div>
+              <div class="p-3 bg-amber-50/60 rounded-xl border border-amber-200 text-[11px] text-slate-700 font-mono space-y-1 shadow-xs">
+                <div class="flex justify-between"><span>মাসিক বেতন:</span><span class="text-slate-900 font-bold">৳১,৫০০</span></div>
+                <div class="flex justify-between"><span>লিল্লাহ ও ওয়াকফ দান:</span><span class="text-amber-800 font-bold">৳১,০০০</span></div>
+                <div class="border-t border-amber-200 pt-1 text-emerald-700 text-right font-bold">স্বয়ংক্রিয় ডিজিটাল ভাউচার তৈরি!</div>
               </div>
             </div>
 
-            <!-- Right 6 cols: Institutional Bank Reconcile -->
-            <div class="md:col-span-6 bg-slate-950/60 p-4 rounded-xl border border-slate-800 flex flex-col justify-between space-y-3">
-              <div class="flex items-center justify-between text-xs">
-                <span class="font-bold text-emerald-400">INSTITUTIONAL BANK ROUTE</span>
-                <span class="text-[10px] text-slate-400 font-mono">TRX: 9X824102</span>
-              </div>
-              <div class="p-3 bg-slate-900 rounded-lg border border-slate-800 space-y-1 text-xs">
-                <div class="flex justify-between text-slate-400">
-                  <span>Settlement Bank:</span>
-                  <span class="font-semibold text-white">Sonali Bank Ltd</span>
-                </div>
-                <div class="flex justify-between text-slate-400">
-                  <span>Account Number:</span>
-                  <span class="font-mono text-slate-300">#2048-XXXX-091</span>
-                </div>
-                <div class="flex justify-between text-slate-400">
-                  <span>Manual Ledger Entries:</span>
-                  <span class="font-bold text-emerald-400">0 (Zero Mistakes)</span>
-                </div>
-              </div>
-              <span class="text-[10px] text-emerald-400 font-semibold">✓ Auto-settled directly into school account</span>
-            </div>
           </div>
 
-          <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400">
-            <span>Total Collected This Month: <strong class="text-white font-mono">৳২৮,৪০,০০০ (৯৪.২%)</strong></span>
-            <span class="text-pink-400 font-semibold">● 100% Cashless Transparency</span>
+          <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono border-t border-slate-200 pt-2 z-10">
+            <span>PART 2 OF 4 (10s - 20s): AUTOMATED BKASH COLLECTION</span>
+            <button class="jump-chapter-btn text-amber-800 font-bold hover:bg-amber-100 cursor-pointer bg-amber-50 px-2.5 py-1 rounded border border-amber-300 transition" data-jump="2">
+              PLAY PART 3: TEACHER AI (20s) →
+            </button>
           </div>
         </div>
 
-        <!-- SCENE 3: NCTB 2026 AI Creative Exam & GPA 5.0 Tabulation -->
-        <div id="videoScene2" class="video-scene-wrapper h-full flex flex-col justify-between">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-            <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 font-bold block">MODULE 03 • ACADEMIC EXAM AI</span>
-              <h4 class="text-base sm:text-lg font-bold text-white">NCTB 2026 Board Creative Questions & GPA 5.0 Ranks</h4>
+        <!-- SCENE 3: Cartoon Teacher & Cute AI Robot Companion (White BG) -->
+        <div id="videoScene2" class="video-scene-wrapper bg-gradient-to-br from-[#ffffff] via-[#f0f9ff] to-[#f8fafc] p-6 sm:p-8 pb-16 flex flex-col justify-between text-slate-800 overflow-hidden">
+          <!-- Cyberpunk Cyan AI Glow -->
+          <div class="ai-neon-aura top-10 right-28"></div>
+
+          <div class="flex items-center justify-between z-10">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-sky-500 animate-ping"></span>
+              <span class="text-xs font-mono font-bold tracking-widest text-sky-800 bg-sky-50 border border-sky-300 px-2.5 py-1 rounded shadow-xs">
+                PART 3: NCTB AI PEDAGOGY (20s - 30s)
+              </span>
             </div>
-            <span class="text-xs font-mono font-bold text-purple-300 bg-purple-950/80 px-3 py-1 rounded-full border border-purple-800">NCTB 2026 FORMAT</span>
+            <span class="text-xs text-sky-800 font-mono font-semibold">NEON TECH LAB • NCTB AI V2</span>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 my-auto py-2">
-            <!-- Left 6 cols: AI CQ Question Paper -->
-            <div class="md:col-span-6 bg-slate-950/60 p-4 rounded-xl border border-slate-800 space-y-2">
-              <span class="text-[10px] font-bold text-purple-400 uppercase">পদার্থবিজ্ঞান • ১০ম শ্রেণি • সৃজনশীল প্রশ্ন</span>
-              <div class="p-2.5 bg-slate-900 rounded-lg border border-slate-800 text-xs text-slate-300 leading-relaxed font-sans">
-                "একটি ১০ কেজি ভরের স্থির বস্তুর ওপর ২০ নিউটন বল ৫ সেকেন্ড যাবত প্রযুক্ত হলো..."
-              </div>
-              <div class="space-y-1 text-xs text-slate-300">
-                <div class="flex justify-between p-1.5 bg-slate-900/60 rounded">
-                  <span>(ক) বলের মাত্রা সমীকরণ কী?</span>
-                  <span class="font-mono text-purple-400 font-bold">[১]</span>
+          <!-- Main Cartoon Graphic Stage -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto z-10">
+            
+            <!-- Cartoon Teacher with Tea -->
+            <div class="md:col-span-5 flex flex-col items-center text-center">
+              <div class="relative">
+                <!-- Speech Bubble -->
+                <div class="bg-white text-slate-900 text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md border-2 border-sky-400 mb-2 relative animate-bounce">
+                  "সারা রাত জেগে প্রশ্ন তৈরির দিন শেষ! এআই ৩০ সেকেন্ডেই করে দিলো!"
+                  <div class="w-2.5 h-2.5 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-sky-400"></div>
                 </div>
-                <div class="flex justify-between p-1.5 bg-slate-900/60 rounded">
-                  <span>(খ) সাইকেলের চাকায় বিয়ারিং কেন ব্যবহার হয়?</span>
-                  <span class="font-mono text-purple-400 font-bold">[২]</span>
-                </div>
+
+                <!-- SVG Cartoon Teacher -->
+                <svg class="w-40 h-44 drop-shadow-md" viewBox="0 0 180 200" fill="none">
+                  <!-- Head -->
+                  <circle cx="90" cy="55" r="25" fill="#ffd1b3"/>
+                  <!-- Hair -->
+                  <path d="M68 50 Q90 28 112 50 Q90 40 68 50 Z" fill="#1e293b"/>
+                  <!-- Spectacles -->
+                  <circle cx="82" cy="54" r="6" stroke="#0284c7" stroke-width="2" fill="none"/>
+                  <circle cx="98" cy="54" r="6" stroke="#0284c7" stroke-width="2" fill="none"/>
+                  <line x1="88" y1="54" x2="92" y2="54" stroke="#0284c7" stroke-width="2"/>
+                  <!-- Smile -->
+                  <path d="M84 66 Q90 74 96 66" stroke="#991b1b" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                  <!-- Body: Blue Shirt & Tie -->
+                  <rect x="66" y="80" width="48" height="60" rx="8" fill="#0284c7"/>
+                  <polygon points="90,84 94,115 90,125 86,115" fill="#f59e0b"/>
+                  <!-- Right Arm Thumbs Up -->
+                  <path d="M114 90 Q135 100 138 85" stroke="#ffd1b3" stroke-width="10" stroke-linecap="round"/>
+                  <circle cx="138" cy="82" r="5" fill="#ffd1b3"/>
+                  <!-- Left Arm Holding Steaming Teacup -->
+                  <path d="M66 90 Q48 110 56 120" stroke="#ffd1b3" stroke-width="10" stroke-linecap="round"/>
+                  <!-- Teacup -->
+                  <rect x="48" y="116" width="16" height="14" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+                  <!-- Steam -->
+                  <path class="anim-steam" d="M52 110 Q50 102 54 94" stroke="#94a3b8" stroke-width="2" fill="none"/>
+                  <path class="anim-steam" d="M58 110 Q60 102 56 94" stroke="#94a3b8" stroke-width="2" fill="none" style="animation-delay: -1s;"/>
+                </svg>
+
+                <span class="text-xs font-extrabold text-slate-900 block">রফিকুল ইসলাম (সহকারী শিক্ষক)</span>
+                <span class="text-[10px] text-slate-500 font-medium">Relaxed & Teaching with AI</span>
               </div>
             </div>
 
-            <!-- Right 6 cols: Auto Merit Tabulation -->
-            <div class="md:col-span-6 bg-slate-950/60 p-4 rounded-xl border border-slate-800 space-y-2">
-              <span class="text-[10px] font-bold text-emerald-400 uppercase">Class 10-A Final Merit Tabulation</span>
-              <div class="space-y-1.5">
-                <div class="p-2 bg-slate-900 rounded-lg border border-slate-800 flex items-center justify-between text-xs">
-                  <div class="flex items-center gap-2">
-                    <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-[11px]">01</span>
-                    <span class="font-bold text-white">Muhammad Abdullah</span>
-                  </div>
-                  <span class="font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">5.00 (Golden A+)</span>
-                </div>
-                <div class="p-2 bg-slate-900 rounded-lg border border-slate-800 flex items-center justify-between text-xs">
-                  <div class="flex items-center gap-2">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-[11px]">02</span>
-                    <span class="font-bold text-white">Sumaiya Akter</span>
-                  </div>
-                  <span class="font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">5.00 (A+)</span>
-                </div>
+            <!-- Cute Cartoon AI Mascot "YES Bot" -->
+            <div class="md:col-span-3 flex flex-col items-center justify-center text-center">
+              <div class="anim-mascot">
+                <svg class="w-32 h-36 drop-shadow-lg" viewBox="0 0 140 160" fill="none">
+                  <!-- Antenna -->
+                  <line x1="70" y1="28" x2="70" y2="12" stroke="#0284c7" stroke-width="4" stroke-linecap="round"/>
+                  <circle cx="70" cy="8" r="6" fill="#0284c7" class="animate-ping"/>
+                  <circle cx="70" cy="8" r="6" fill="#0284c7"/>
+                  <!-- Robot Head -->
+                  <rect x="35" y="28" width="70" height="52" rx="18" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+                  <!-- Screen Face -->
+                  <rect x="43" y="36" width="54" height="36" rx="10" fill="#0f172a"/>
+                  <!-- Digital Cyan Eyes (Smiling ^ ^) -->
+                  <path d="M52 54 L57 48 L62 54" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M78 54 L83 48 L88 54" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- Robot Body -->
+                  <rect x="42" y="86" width="56" height="48" rx="16" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+                  <!-- Chest Core Badge -->
+                  <circle cx="70" cy="110" r="12" fill="#059669"/>
+                  <text x="70" y="114" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">AI</text>
+                  <!-- Floating Hands -->
+                  <circle cx="26" cy="104" r="8" fill="#0284c7"/>
+                  <circle cx="114" cy="104" r="8" fill="#0284c7"/>
+                </svg>
+
+                <span class="text-xs font-mono font-bold text-sky-800 block">YES BOT V2</span>
+                <span class="text-[10px] text-emerald-700 font-mono font-bold">GENERATING CQ & MCQ</span>
               </div>
-              <span class="text-[10px] text-slate-400 block pt-1">✓ Automated DSHE & Madrasah Board Grade Points</span>
             </div>
+
+            <!-- Right: Generated Creative Question Sheet -->
+            <div class="md:col-span-4 bg-white border-2 border-sky-400 rounded-2xl p-4 shadow-xl space-y-2.5">
+              <div class="flex items-center justify-between text-xs text-sky-800 font-mono pb-1 border-b border-slate-100 font-bold">
+                <span>NCTB 2026 QUESTION PAPER</span>
+                <span class="text-emerald-700 font-bold">READY (18s)</span>
+              </div>
+              <div class="bg-sky-50/70 p-2.5 rounded-lg border border-sky-200 text-[11px] text-slate-800 font-sans shadow-xs">
+                <span class="text-sky-800 font-bold block">পদার্থবিজ্ঞান • ৯ম শ্রেণি:</span>
+                "ক. বল কাকে বলে? (১)<br>
+                খ. জড়তা ও ত্বরণের পার্থক্য ব্যাখ্যা কর (২)<br>
+                গ. উদ্দীপকের তথ্যের আলোকে ত্বরণ নির্ণয় কর (৩)"
+              </div>
+              <button class="w-full py-1.5 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-bold transition shadow-xs">
+                1-Click Export to Word / PDF
+              </button>
+            </div>
+
           </div>
 
-          <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400">
-            <span>Pass Percentage: <strong class="text-white font-mono">৯৯.২%</strong></span>
-            <span class="text-purple-400 font-semibold">● 1-Click Printable PDF Progress Card</span>
+          <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono border-t border-slate-200 pt-2 z-10">
+            <span>PART 3 OF 4 (20s - 30s): AI PEDAGOGICAL ENGINE</span>
+            <button class="jump-chapter-btn text-sky-800 font-bold hover:bg-sky-100 cursor-pointer bg-sky-50 px-2.5 py-1 rounded border border-sky-300 transition" data-jump="3">
+              PLAY PART 4: PRINCIPAL BI (30s) →
+            </button>
           </div>
         </div>
 
-        <!-- SCENE 4: Madrasa Waqf & Lillah Boarding Shariah Quarantine -->
-        <div id="videoScene3" class="video-scene-wrapper h-full flex flex-col justify-between">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-            <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold block">MODULE 04 • MADRASA SHARIAH AUDIT</span>
-              <h4 class="text-base sm:text-lg font-bold text-white">Lillah Boarding Orphan Fund Strict Quarantine</h4>
+        <!-- SCENE 4: Cartoon Principal / Muhtamim with Tablet (White BG) -->
+        <div id="videoScene3" class="video-scene-wrapper bg-gradient-to-br from-[#ffffff] via-[#faf5ff] to-[#f8fafc] p-6 sm:p-8 pb-16 flex flex-col justify-between text-slate-800 overflow-hidden">
+          <!-- Executive Rim Atmospheric Glow -->
+          <div class="executive-rim top-10 right-20"></div>
+
+          <div class="flex items-center justify-between z-10">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-purple-500 animate-ping"></span>
+              <span class="text-xs font-mono font-bold tracking-widest text-purple-800 bg-purple-50 border border-purple-300 px-2.5 py-1 rounded shadow-xs">
+                PART 4: TOTAL INSTITUTIONAL CONTROL (30s - 40s)
+              </span>
             </div>
-            <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800">100% SHARIAH COMPLIANT</span>
+            <span class="text-xs text-purple-800 font-mono font-semibold">EXECUTIVE BI ANALYTICS DASHBOARD</span>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 my-auto py-2">
-            <!-- Left 6 cols: Dual Fund Quarantine Comparison -->
-            <div class="md:col-span-6 bg-amber-950/30 p-4 rounded-xl border border-amber-800/80 space-y-2">
-              <div class="flex justify-between items-center text-xs">
-                <span class="font-bold text-amber-300">🔒 Lillah & Orphan Fund</span>
-                <span class="text-[10px] font-bold bg-amber-900 text-amber-200 px-2 py-0.5 rounded">QUARANTINED</span>
-              </div>
-              <div class="space-y-1 text-xs">
-                <div class="flex justify-between text-slate-300">
-                  <span>Total Donations Received:</span>
-                  <span class="font-mono text-emerald-400 font-bold">৳১,৮০,০০০</span>
+          <!-- Main Cartoon Graphic Stage -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto z-10">
+            
+            <!-- Cartoon Principal / Muhtamim -->
+            <div class="md:col-span-5 flex flex-col items-center text-center">
+              <div class="relative">
+                <!-- Speech Bubble -->
+                <div class="bg-white text-slate-900 text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md border-2 border-purple-400 mb-2 relative animate-bounce">
+                  "কাগজের খাতা মুক্ত ক্যাম্পাস! সব হিসাব এখন শতভাগ নির্ভুল ও স্বচ্ছ!"
+                  <div class="w-2.5 h-2.5 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-purple-400"></div>
                 </div>
-                <div class="flex justify-between text-slate-300">
-                  <span>Student Meals & Books:</span>
-                  <span class="font-mono text-slate-300">৳১,২০,০০০</span>
-                </div>
-                <div class="flex justify-between text-white font-bold pt-1 border-t border-amber-800/60">
-                  <span>Audited Reserve Balance:</span>
-                  <span class="font-mono text-emerald-400">+৳৬০,০০০</span>
-                </div>
+
+                <!-- SVG Cartoon Principal -->
+                <svg class="w-40 h-44 drop-shadow-md" viewBox="0 0 180 200" fill="none">
+                  <!-- Cap / Turban / Topi -->
+                  <ellipse cx="90" cy="38" rx="26" ry="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+                  <rect x="64" y="36" width="52" height="6" rx="2" fill="#d97706"/>
+                  <!-- Head -->
+                  <circle cx="90" cy="58" r="24" fill="#ffd1b3"/>
+                  <!-- White Dignified Beard -->
+                  <path d="M74 65 Q90 92 106 65 Q90 74 74 65 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+                  <!-- Eyes & Glasses -->
+                  <circle cx="82" cy="54" r="5" stroke="#78350f" stroke-width="2" fill="none"/>
+                  <circle cx="98" cy="54" r="5" stroke="#78350f" stroke-width="2" fill="none"/>
+                  <line x1="87" y1="54" x2="93" y2="54" stroke="#78350f" stroke-width="2"/>
+                  <!-- Body: Traditional Dignified Sherwani / Coat -->
+                  <rect x="66" y="80" width="48" height="60" rx="8" fill="#3b0764"/>
+                  <!-- Golden Buttons -->
+                  <circle cx="90" cy="94" r="2" fill="#f59e0b"/>
+                  <circle cx="90" cy="106" r="2" fill="#f59e0b"/>
+                  <circle cx="90" cy="118" r="2" fill="#f59e0b"/>
+                  <!-- Arms Holding Tablet -->
+                  <path d="M66 92 Q50 114 74 120" stroke="#ffd1b3" stroke-width="10" stroke-linecap="round"/>
+                  <path d="M114 92 Q130 114 106 120" stroke="#ffd1b3" stroke-width="10" stroke-linecap="round"/>
+                  <!-- Glowing Tablet -->
+                  <rect x="74" y="106" width="32" height="42" rx="4" fill="#0f172a" stroke="#a855f7" stroke-width="2"/>
+                  <rect x="78" y="110" width="24" height="34" rx="2" fill="#10b981"/>
+                </svg>
+
+                <span class="text-xs font-extrabold text-slate-900 block">মাওলানা আব্দুল কাদের (মুহতামিম / অধ্যক্ষ)</span>
+                <span class="text-[10px] text-slate-500 font-medium">100% Institution Controlled on Mobile</span>
               </div>
             </div>
 
-            <!-- Right 6 cols: Verified Donor SMS Voucher -->
-            <div class="md:col-span-6 bg-slate-950/60 p-4 rounded-xl border border-slate-800 space-y-2">
-              <div class="flex justify-between text-xs">
-                <span class="font-bold text-white">DONOR SMS RECEIPT</span>
-                <span class="font-mono text-[10px] text-amber-400">VOUCHER: WQF-8492</span>
+            <!-- Visual Real-time Charts -->
+            <div class="md:col-span-3 flex flex-col items-center justify-center text-center">
+              <div class="p-3 bg-white rounded-2xl border-2 border-purple-300 shadow-xl space-y-2 w-full max-w-[160px]">
+                <span class="text-[10px] font-mono text-purple-800 uppercase tracking-wider block font-bold">FEES COLLECTED</span>
+                <div class="text-2xl font-extrabold text-emerald-600 font-mono">99.2%</div>
+                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200">
+                  <div class="bg-emerald-500 h-2 rounded-full" style="width: 99.2%;"></div>
+                </div>
+                <span class="text-[9px] text-slate-500 font-mono block">Zero Bad Dues</span>
               </div>
-              <div class="p-2.5 bg-slate-900 rounded-lg border border-slate-800 text-xs text-slate-200 italic leading-relaxed">
-                "আলহামদুলিল্লাহ! হাজী আবদুস সাত্তার সাহেব, এতিমখানা লিল্লাহ ফান্ডে আপনার ৩০,০০০ টাকা জমা হয়েছে। রশিদ: WQF-8492।"
-              </div>
-              <span class="text-[10px] text-emerald-400 font-semibold block">✓ Zero Cross-Fund Contamination Guarantee</span>
             </div>
+
+            <!-- Right: Hostel & Waqf Status -->
+            <div class="md:col-span-4 bg-white border-2 border-purple-300 rounded-2xl p-4 shadow-xl space-y-2.5">
+              <span class="text-xs font-bold text-purple-900 block">🕌 হোস্টেল ও ওয়াকফ ফান্ডের স্বচ্ছ হিসাব</span>
+              <div class="p-2.5 bg-purple-50/70 rounded-xl border border-purple-200 text-xs font-mono space-y-1 text-slate-800 shadow-xs">
+                <div class="flex justify-between"><span>লিল্লাহ ফান্ড অডিট:</span><span class="text-emerald-700 font-bold">১০০% স্বচ্ছ</span></div>
+                <div class="flex justify-between"><span>হোস্টেল সিট বরাদ্দ:</span><span class="text-purple-800 font-bold">২৪/২৪ পূর্ণ</span></div>
+                <div class="flex justify-between"><span>শিক্ষক উপস্থিতি:</span><span class="text-emerald-700 font-bold">৯৮.৫%</span></div>
+              </div>
+              <span class="text-[10px] text-emerald-700 font-bold block text-right font-mono">✓ Managed with YES EDU ERP</span>
+            </div>
+
           </div>
 
-          <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400">
-            <span>Specialized for Qawmi, Alim, Kamil & Tahfiz</span>
-            <span class="text-amber-400 font-semibold">● Verified by Shariah Advisory Council</span>
+          <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono border-t border-slate-200 pt-2 z-10">
+            <span>PART 4 OF 4 (30s - 40s): TOTAL INSTITUTIONAL CONTROL</span>
+            <button class="jump-chapter-btn text-purple-800 font-bold hover:bg-purple-100 cursor-pointer bg-purple-50 px-2.5 py-1 rounded border border-purple-300 transition" data-jump="0">
+              ↺ REPLAY FROM PART 1 (0s)
+            </button>
           </div>
         </div>
 
       </div>
+    `;
+  }
 
-    </div>
-  `;
-}
+  function formatTime(seconds) {
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
+  }
 
+  // 10 Seconds per Chapter Transition
+  function getActiveChapterIndex(sec) {
+    return Math.min(3, Math.floor((sec % 40) / 10));
+  }
 
-function renderCurrentFrame() {
+  function renderCurrentFrame() {
     const newIdx = getActiveChapterIndex(currentTime);
 
     // Bulletproof: explicitly update all 4 scene wrappers
