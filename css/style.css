@@ -3136,28 +3136,31 @@ body.font-bn .section-title {
 
 
 
-/* Notion-Style Master Hero Floating Badges */
+/* Notion-Style Master Hero Floating Micro-Pills (Option 1 Minimalist) */
 .hero-floating-badge {
   position: absolute !important;
   z-index: 20;
   display: flex !important;
   align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.96) !important;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.94) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
   border-radius: 9999px !important;
-  box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.1), 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.08), 0 2px 5px rgba(0, 0, 0, 0.02) !important;
   white-space: nowrap;
   user-select: none;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e293b;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .hero-floating-badge:hover {
   transform: scale(1.08) translateY(-3px) !important;
-  box-shadow: 0 20px 40px -8px rgba(16, 185, 129, 0.22) !important;
+  box-shadow: 0 16px 32px -6px rgba(16, 185, 129, 0.18) !important;
   border-color: #10b981 !important;
 }
 
