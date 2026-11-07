@@ -49,7 +49,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <!-- Custom Styles: Senior UI/UX Designer Light Theme -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2.6">
 </head>
 <body class="bg-[#f8fafc] text-slate-800 selection:bg-emerald-100 selection:text-emerald-900">
 
@@ -161,65 +161,11 @@
     </div>
   </header>
 
-  <!-- 3. Notion-Style Master Hero Section with Floating Cards & Apple Mac Display -->
-  <section class="hero-area pt-28 pb-16 lg:pt-36 lg:pb-24 bg-gradient-to-b from-[#f8fafc]/80 via-white to-slate-50 relative overflow-hidden" id="hero">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative hero-notion-stage">
+    <!-- 3. Notion Calendar-Style Master Hero Section with Sleek Mac Display -->
+  <section class="hero-area pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-b from-[#f8fafc] via-white to-slate-50 relative overflow-hidden" id="hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-      <!-- Floating Micro-Feature Card 1: Gate Attendance (Left Top) -->
-      <div class="hero-floating-card float-orbit-1 hidden lg:flex top-[18%] left-0 xl:left-4">
-        <span class="hero-card-icon bg-emerald-100 text-emerald-800">🏃‍♂️</span>
-        <div class="hero-card-text">
-          <span class="hero-card-title">Gate Attendance</span>
-          <span class="hero-card-stat">98.4% Present • 2.1s SMS</span>
-        </div>
-      </div>
-
-      <!-- Floating Micro-Feature Card 2: bKash Auto-Fees (Left Mid) -->
-      <div class="hero-floating-card float-orbit-2 hidden lg:flex top-[48%] left-1 xl:left-6">
-        <span class="hero-card-icon bg-pink-100 text-pink-700">৳</span>
-        <div class="hero-card-text">
-          <span class="hero-card-title">bKash Auto-Fees</span>
-          <span class="hero-card-stat">৳২,৫০০ Paid • Bank Deposited</span>
-        </div>
-      </div>
-
-      <!-- Floating Micro-Feature Card 3: Parents App (Left Lower) -->
-      <div class="hero-floating-card float-orbit-3 hidden lg:flex top-[74%] left-4 xl:left-12">
-        <span class="hero-card-icon bg-indigo-100 text-indigo-700">👨‍👩‍👧</span>
-        <div class="hero-card-text">
-          <span class="hero-card-title">Parents Mobile App</span>
-          <span class="hero-card-stat">Live Diary & Gate Notice</span>
-        </div>
-      </div>
-
-      <!-- Floating Micro-Feature Card 4: NCTB 2026 AI (Right Top) -->
-      <div class="hero-floating-card float-orbit-4 hidden lg:flex top-[18%] right-0 xl:right-4">
-        <span class="hero-card-icon bg-purple-100 text-purple-700">📝</span>
-        <div class="hero-card-text">
-          <span class="hero-card-title">NCTB 2026 AI Exam</span>
-          <span class="hero-card-stat">Auto CQ Stems • GPA 5.0</span>
-        </div>
-      </div>
-
-      <!-- Floating Micro-Feature Card 5: GPS Transport (Right Mid) -->
-      <div class="hero-floating-card float-orbit-5 hidden lg:flex top-[48%] right-1 xl:right-6">
-        <span class="hero-card-icon bg-amber-100 text-amber-800">🚌</span>
-        <div class="hero-card-text">
-          <span class="hero-card-title">GPS School Transport</span>
-          <span class="hero-card-stat">Bus #03 • Live on Route</span>
-        </div>
-      </div>
-
-      <!-- Floating Micro-Feature Card 6: Madrasa Waqf & Hostel (Right Lower) -->
-      <div class="hero-floating-card float-orbit-6 hidden lg:flex top-[74%] right-4 xl:right-12">
-        <span class="hero-card-icon bg-teal-100 text-teal-800">🕌</span>
-        <div class="hero-card-text">
-          <span class="hero-card-title">Madrasa & Waqf</span>
-          <span class="hero-card-stat">100% Shariah Quarantined</span>
-        </div>
-      </div>
-
-      <!-- Center Hero Typography & Actions -->
+      <!-- Center Hero Header (Notion Minimalist & High-Authority) -->
       <div class="max-w-4xl mx-auto text-center relative z-10">
         
         <!-- Pre-Header Pill Badge -->
@@ -230,7 +176,7 @@
         </div>
 
         <!-- Main Authoritative Headline (As Requested: Ultimate Education Management System) -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.12] mb-6">
+        <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-black text-slate-900 tracking-tight leading-[1.12] mb-6">
           <span class="lang-en">
             The Ultimate Education <br class="hidden sm:inline"> Management System
           </span>
@@ -250,7 +196,7 @@
         </p>
 
         <!-- Executive Call To Action Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-3.5 mb-8">
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
           <button type="button" class="wc-btn wc-btn-hero trigger-demo-modal group shadow-xl shadow-emerald-600/25 hover:shadow-emerald-600/40 transition-all text-sm sm:text-base px-8 py-3.5 rounded-2xl">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-300 animate-ping mr-1"></span>
             <span class="lang-en">Book a Free Live Demo</span>
@@ -265,13 +211,32 @@
           </a>
         </div>
 
-        <!-- Mobile Micro Feature Chips (Visible on Mobile only) -->
-        <div class="flex lg:hidden flex-wrap items-center justify-center gap-2 mb-8">
-          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">🏃 Gate Attendance</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">৳ bKash Auto-Fees</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">📝 NCTB 2026</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">🚌 GPS Bus</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">🕌 Waqf & Hostel</span>
+        <!-- Grounded Capability Dock (Notion-Style Clean Pill Constellation - 100% Solid & Reliable) -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-[13px]">🏃</span>
+            <span>Gate Attendance (3s SMS)</span>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
+            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-[13px]">৳</span>
+            <span>bKash 1-Tap Fees</span>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
+            <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-[13px]">📝</span>
+            <span>NCTB 2026 AI Grading</span>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
+            <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-[13px]">👨‍👩‍👧</span>
+            <span>Parents Mobile Portal</span>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
+            <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-[13px]">🚌</span>
+            <span>GPS Bus Tracking</span>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
+            <span class="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center text-[13px]">🕌</span>
+            <span>Madrasa Waqf & Hostel</span>
+          </div>
         </div>
 
       </div>
@@ -327,7 +292,8 @@
     </div>
   </section>
 
-  <!-- Brand / Trusted Institutions Marquee Area (Option 1 Header + Real Client Logos + Infinite Dual-Edge Fade Slider) -->
+
+<!-- Brand / Trusted Institutions Marquee Area (Option 1 Header + Real Client Logos + Infinite Dual-Edge Fade Slider) -->
   <div class="brand-area" id="clients">
     <div class="max-w-7xl mx-auto px-4 text-center mb-6">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-2">
