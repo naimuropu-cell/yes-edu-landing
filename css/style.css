@@ -3134,3 +3134,62 @@ body.font-bn .section-title {
 }
 
 
+
+
+/* Notion-Style Master Hero Floating Badges */
+@media (max-width: 1199px) {
+  .hero-floating-badge {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-floating-badge {
+    position: absolute !important;
+    z-index: 20;
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.95) !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.1), 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+    white-space: nowrap;
+    user-select: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .hero-floating-badge:hover {
+    transform: scale(1.08) translateY(-3px) !important;
+    box-shadow: 0 20px 40px -8px rgba(16, 185, 129, 0.22) !important;
+    border-color: #10b981 !important;
+  }
+}
+
+/* Staggered Floating Motion Keyframes */
+@keyframes heroFloat1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.8deg); }
+}
+
+@keyframes heroFloat2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(-1.2deg); }
+}
+
+@keyframes heroFloat3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes heroFloat4 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-0.8deg); }
+}
+
+.anim-hero-float-1 { animation: heroFloat1 4.5s ease-in-out infinite; }
+.anim-hero-float-2 { animation: heroFloat2 5.2s ease-in-out infinite 0.4s; }
+.anim-hero-float-3 { animation: heroFloat3 4.8s ease-in-out infinite 0.8s; }
+.anim-hero-float-4 { animation: heroFloat4 5.6s ease-in-out infinite 1.2s; }
+

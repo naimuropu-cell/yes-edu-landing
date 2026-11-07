@@ -49,7 +49,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <!-- Custom Styles: Senior UI/UX Designer Light Theme -->
-  <link rel="stylesheet" href="css/style.css?v=2.6">
+  <link rel="stylesheet" href="css/style.css?v=3.5">
 </head>
 <body class="bg-[#f8fafc] text-slate-800 selection:bg-emerald-100 selection:text-emerald-900">
 
@@ -161,22 +161,89 @@
     </div>
   </header>
 
-    <!-- 3. Notion Calendar-Style Master Hero Section with Sleek Mac Display -->
-  <section class="hero-area pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-b from-[#f8fafc] via-white to-slate-50 relative overflow-hidden" id="hero">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- 3. Notion Calendar-Style Master Hero Section with 8 Floating Badges & Mac Display -->
+  <section class="hero-area pt-24 pb-16 lg:pt-28 lg:pb-20 bg-gradient-to-b from-[#f8fafc] via-white to-slate-50 relative overflow-hidden" id="hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative hero-floating-container min-h-[480px]">
 
-      <!-- Center Hero Header (Notion Minimalist & High-Authority) -->
-      <div class="max-w-4xl mx-auto text-center relative z-10">
+      <!-- ================= 8 FLOATING ANIMATED BADGES (As Requested) ================= -->
+      <!-- Left Side Badges -->
+      <div class="hero-floating-badge anim-hero-float-1" style="left: 2%; top: 6%;">
+        <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-sm shadow-2xs">🏃‍♂️</span>
+        <div class="flex flex-col text-left leading-tight">
+          <span class="text-xs font-bold text-slate-900">Gate Attendance</span>
+          <span class="text-[10px] font-semibold text-emerald-600">● 98.4% Live (2.1s SMS)</span>
+        </div>
+      </div>
+
+      <div class="hero-floating-badge anim-hero-float-2" style="left: 0.5%; top: 32%;">
+        <span class="w-7 h-7 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-sm shadow-2xs font-bold">৳</span>
+        <div class="flex flex-col text-left leading-tight">
+          <span class="text-xs font-bold text-slate-900">bKash 1-Tap Fees</span>
+          <span class="text-[10px] font-semibold text-pink-600">✓ Auto-Reconciled</span>
+        </div>
+      </div>
+
+      <div class="hero-floating-badge anim-hero-float-3" style="left: 3%; top: 56%;">
+        <span class="w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-sm shadow-2xs">👨‍👩‍👧</span>
+        <div class="flex flex-col text-left leading-tight">
+          <span class="text-xs font-bold text-slate-900">Parents Portal</span>
+          <span class="text-[10px] font-semibold text-indigo-600">Live Diary & Bus ETA</span>
+        </div>
+      </div>
+
+      <div class="hero-floating-badge anim-hero-float-4" style="left: 1%; top: 80%;">
+        <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-sm shadow-2xs">🚌</span>
+        <div class="flex flex-col text-left leading-tight">
+          <span class="text-xs font-bold text-slate-900">GPS Transport</span>
+          <span class="text-[10px] font-semibold text-amber-600">Bus #03 • Live on Route</span>
+        </div>
+      </div>
+
+      <!-- Right Side Badges -->
+      <div class="hero-floating-badge anim-hero-float-2" style="right: 2%; top: 6%;">
+        <span class="w-7 h-7 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center text-sm shadow-2xs">📱</span>
+        <div class="flex flex-col text-left leading-tight">
+          <span class="text-xs font-bold text-slate-900">Mobile App</span>
+          <span class="text-[10px] font-semibold text-teal-600">iOS & Android (4.9★)</span>
+        </div>
+      </div>
+
+      <div class="hero-floating-badge anim-hero-float-1" style="right: 0.5%; top: 32%;">
+        <span class="w-7 h-7 rounded-full bg-cyan-100 text-cyan-800 flex items-center justify-center text-sm shadow-2xs">🌐</span>
+        <div class="flex flex-col text-left leading-tight">
+          <span class="text-xs font-bold text-slate-900">Campus Website</span>
+          <span class="text-[10px] font-semibold text-cyan-700">Online Admission</span>
+        </div>
+      </div>
+
+      <div class="hero-floating-badge anim-hero-float-4" style="right: 3%; top: 56%;">
+        <span class="w-7 h-7 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm shadow-2xs">💼</span>
+        <div class="flex flex-col text-left leading-tight">
+          <span class="text-xs font-bold text-slate-900">Staff Payroll</span>
+          <span class="text-[10px] font-semibold text-purple-600">1-Click Bank Pay</span>
+        </div>
+      </div>
+
+      <div class="hero-floating-badge anim-hero-float-3" style="right: 1%; top: 80%;">
+        <span class="w-7 h-7 rounded-full bg-rose-100 text-rose-800 flex items-center justify-center text-sm shadow-2xs">🏢</span>
+        <div class="flex flex-col text-left leading-tight">
+          <span class="text-xs font-bold text-slate-900">Hostel & Waqf</span>
+          <span class="text-[10px] font-semibold text-rose-700">100% Shariah Compliant</span>
+        </div>
+      </div>
+
+      <!-- Center Hero Header (Notion-Inspired Precision & Authority) -->
+      <div class="max-w-3xl mx-auto text-center relative z-10">
         
         <!-- Pre-Header Pill Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider shadow-2xs mb-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-bold uppercase tracking-wider shadow-2xs mb-4">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <span class="lang-en">ALL-IN-ONE CAMPUS OPERATING SYSTEM</span>
           <span class="lang-bn hidden">পূর্ণাঙ্গ ডিজিটাল ক্যাম্পাস অপারেটিং সিস্টেম</span>
         </div>
 
-        <!-- Main Authoritative Headline (As Requested: Ultimate Education Management System) -->
-        <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-black text-slate-900 tracking-tight leading-[1.12] mb-6">
+        <!-- Main Authoritative Headline (As Requested) -->
+        <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-black text-slate-900 tracking-tight leading-[1.12] mb-4">
           <span class="lang-en">
             The Ultimate Education <br class="hidden sm:inline"> Management System
           </span>
@@ -185,58 +252,30 @@
           </span>
         </h1>
 
-        <!-- Supporting Value Copy -->
-        <p class="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
+        <!-- Supporting Value Copy (Concise & Punchy) -->
+        <p class="text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl mx-auto leading-relaxed mb-6">
           <span class="lang-en">
-            Engineered specifically for schools, colleges, and madrasahs across Bangladesh. Effortlessly coordinate biometric attendance, instant parent SMS, 1-tap bKash fee collection, and NCTB 2026 grading—all in one place.
+            Engineered specifically for schools, colleges, and madrasahs across Bangladesh. Biometric attendance, 1-tap bKash fee collection, and NCTB 2026 grading—all in one place.
           </span>
           <span class="lang-bn hidden">
-            সারাদেশের স্কুল, কলেজ ও মাদরাসার বাস্তব চাহিদার আলোকে নির্মিত। বায়োমেট্রিক গেট হাজিরা, ৩ সেকেন্ডে প্যারেন্ট এসএমএস, ১-ট্যাপে বিকাশ ফি আদায় এবং এনসিটিবি নতুন মূল্যায়নের নির্ভরযোগ্য প্ল্যাটফর্ম।
+            সারাদেশের স্কুল, কলেজ ও মাদরাসার বাস্তব চাহিদার আলোকে নির্মিত। বায়োমেট্রিক গেট হাজিরা, ৩ সেকেন্ডে এসএমএস, ১-ট্যাপে বিকাশ ফি আদায় এবং এনসিটিবি নতুন মূল্যায়নের নির্ভরযোগ্য প্ল্যাটফর্ম।
           </span>
         </p>
 
         <!-- Executive Call To Action Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
-          <button type="button" class="wc-btn wc-btn-hero trigger-demo-modal group shadow-xl shadow-emerald-600/25 hover:shadow-emerald-600/40 transition-all text-sm sm:text-base px-8 py-3.5 rounded-2xl">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-300 animate-ping mr-1"></span>
+        <div class="flex flex-wrap items-center justify-center gap-3.5 mb-8">
+          <button type="button" class="wc-btn wc-btn-hero trigger-demo-modal group shadow-xl shadow-emerald-600/25 hover:shadow-emerald-600/40 transition-all text-sm px-7 py-3 rounded-xl">
+            <span class="w-2 h-2 rounded-full bg-emerald-300 animate-ping mr-1"></span>
             <span class="lang-en">Book a Free Live Demo</span>
             <span class="lang-bn hidden">ফ্রি অন-ক্যাম্পাস ডেমো নিন</span>
-            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </button>
 
-          <a href="https://wa.me/8801838790573?text=Salam,%20I%20am%20interested%20in%20YES%20EDU%20ERP%20for%20my%20Institution." target="_blank" class="wc-btn wc-btn-hero-secondary flex items-center gap-2 text-sm sm:text-base px-7 py-3.5 rounded-2xl border border-slate-300 hover:border-emerald-600 hover:bg-emerald-50/50 transition-all">
-            <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+          <a href="https://wa.me/8801838790573?text=Salam,%20I%20am%20interested%20in%20YES%20EDU%20ERP%20for%20my%20Institution." target="_blank" class="wc-btn wc-btn-hero-secondary flex items-center gap-2 text-sm px-6 py-3 rounded-xl border border-slate-300 hover:border-emerald-600 hover:bg-emerald-50/50 transition-all">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
             <span class="lang-en">Chat on WhatsApp</span>
             <span class="lang-bn hidden">হোয়াটসঅ্যাপে কথা বলুন</span>
           </a>
-        </div>
-
-        <!-- Grounded Capability Dock (Notion-Style Clean Pill Constellation - 100% Solid & Reliable) -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto mb-12">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
-            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-[13px]">🏃</span>
-            <span>Gate Attendance (3s SMS)</span>
-          </div>
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
-            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-[13px]">৳</span>
-            <span>bKash 1-Tap Fees</span>
-          </div>
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
-            <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-[13px]">📝</span>
-            <span>NCTB 2026 AI Grading</span>
-          </div>
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
-            <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-[13px]">👨‍👩‍👧</span>
-            <span>Parents Mobile Portal</span>
-          </div>
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
-            <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-[13px]">🚌</span>
-            <span>GPS Bus Tracking</span>
-          </div>
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-bold text-slate-800 hover:border-emerald-500 hover:shadow-xs transition">
-            <span class="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center text-[13px]">🕌</span>
-            <span>Madrasa Waqf & Hostel</span>
-          </div>
         </div>
 
       </div>
