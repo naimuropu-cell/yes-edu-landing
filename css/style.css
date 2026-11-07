@@ -2346,38 +2346,51 @@ body.font-bn .section-title {
   font-family: Georgia, serif;
 }
 
-/* 7. Artisan Tab Navigation (No generic system emojis) */
-.artisan-nav-tab {
+/* ==========================================================================
+   Solid & Humanized Campus OS Console (Clean, Architectural, Zero Gimmickry)
+   ========================================================================== */
+
+.solid-console-card {
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.07), 0 1px 3px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  position: relative;
+}
+
+.solid-module-tab {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 18px;
-  border-radius: 12px;
-  font-size: 0.82rem;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #475569;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
   white-space: nowrap;
 }
 
-.artisan-nav-tab:hover {
+.solid-module-tab:hover {
   color: #0f172a;
   border-color: #cbd5e1;
+  background: #f8fafc;
   transform: translateY(-1px);
 }
 
-.artisan-nav-tab.active {
-  background: #064e3b;
+.solid-module-tab.active {
+  background: #0f172a;
   color: #ffffff;
-  border-color: #064e3b;
-  box-shadow: 0 8px 20px -4px rgba(6, 78, 59, 0.35);
+  border-color: #0f172a;
+  box-shadow: 0 6px 18px -2px rgba(15, 23, 42, 0.25);
 }
 
-.artisan-nav-tab.active svg {
+.solid-module-tab.active svg {
   color: #34d399;
 }
 
@@ -2955,6 +2968,169 @@ body.font-bn .section-title {
   white-space: nowrap;
   box-shadow: 0 4px 14px -3px rgba(5, 150, 105, 0.2);
   flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Notion-Style Master Hero Section with Floating Micro-Cards & Mac Display
+   ========================================================================== */
+
+.hero-notion-stage {
+  position: relative;
+  width: 100%;
+}
+
+/* Floating Micro Feature Cards */
+.hero-floating-card {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 9999px;
+  box-shadow: 0 16px 35px -8px rgba(15, 23, 42, 0.09), 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.hero-floating-card:hover {
+  transform: scale(1.06) translateY(-4px) !important;
+  box-shadow: 0 22px 45px -10px rgba(16, 185, 129, 0.18), 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-color: #10b981;
+}
+
+.hero-card-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.hero-card-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.hero-card-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.hero-card-stat {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #059669;
+}
+
+/* Float Animations with staggered delays and offsets */
+@keyframes floatOrbit1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes floatOrbit2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-1.5deg); }
+}
+
+@keyframes floatOrbit3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1.2deg); }
+}
+
+@keyframes floatOrbit4 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(-1deg); }
+}
+
+@keyframes floatOrbit5 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-11px) rotate(1.5deg); }
+}
+
+@keyframes floatOrbit6 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-13px) rotate(-1.2deg); }
+}
+
+.float-orbit-1 { animation: floatOrbit1 5.2s ease-in-out infinite; }
+.float-orbit-2 { animation: floatOrbit2 6.1s ease-in-out infinite 0.5s; }
+.float-orbit-3 { animation: floatOrbit3 5.6s ease-in-out infinite 1s; }
+.float-orbit-4 { animation: floatOrbit4 5.8s ease-in-out infinite 0.2s; }
+.float-orbit-5 { animation: floatOrbit5 6.4s ease-in-out infinite 0.8s; }
+.float-orbit-6 { animation: floatOrbit6 5.4s ease-in-out infinite 1.2s; }
+
+/* Mac Hardware Display Mockup */
+.mac-hardware-container {
+  position: relative;
+  max-width: 1060px;
+  margin: 48px auto 0 auto;
+}
+
+.mac-hardware-glow {
+  position: absolute;
+  inset: -20px -30px 40px -30px;
+  background: radial-gradient(ellipse at 50% 30%, rgba(16, 185, 129, 0.22) 0%, rgba(56, 189, 248, 0.12) 40%, transparent 70%);
+  filter: blur(50px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.mac-hardware-body {
+  position: relative;
+  z-index: 1;
+  background: #0f172a;
+  border-radius: 24px;
+  padding: 10px 10px 18px 10px;
+  box-shadow: 0 30px 80px -15px rgba(15, 23, 42, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+}
+
+.mac-hardware-camera {
+  width: 7px;
+  height: 7px;
+  background: #020617;
+  border-radius: 50%;
+  margin: 3px auto 8px auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+}
+
+.mac-hardware-screen {
+  position: relative;
+  background: #020617;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9.8;
+  width: 100%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.mac-hardware-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mac-hardware-chin {
+  width: 90px;
+  height: 5px;
+  background: #334155;
+  border-radius: 0 0 4px 4px;
+  margin: 8px auto 0 auto;
+  opacity: 0.9;
 }
 
 

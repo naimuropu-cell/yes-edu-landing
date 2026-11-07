@@ -161,239 +161,152 @@
     </div>
   </header>
 
-  <!-- 3. EximusEdu-Style Hero Area with Interactive Pulse & Rotating Copy -->
-  <section class="hero-area section-spacing">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="hero-area-inner">
-        
-        <!-- Floating Ambient Background Shapes -->
-        <div class="shapes">
-          <div class="shape-1"></div>
-          <div class="shape-2"></div>
-          <div class="shape-3"></div>
+  <!-- 3. Notion-Style Master Hero Section with Floating Cards & Apple Mac Display -->
+  <section class="hero-area pt-28 pb-16 lg:pt-36 lg:pb-24 bg-gradient-to-b from-[#f8fafc]/80 via-white to-slate-50 relative overflow-hidden" id="hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative hero-notion-stage">
+
+      <!-- Floating Micro-Feature Card 1: Gate Attendance (Left Top) -->
+      <div class="hero-floating-card float-orbit-1 hidden lg:flex top-[18%] left-0 xl:left-4">
+        <span class="hero-card-icon bg-emerald-100 text-emerald-800">🏃‍♂️</span>
+        <div class="hero-card-text">
+          <span class="hero-card-title">Gate Attendance</span>
+          <span class="hero-card-stat">98.4% Present • 2.1s SMS</span>
         </div>
-
-        <!-- Section Header Area -->
-        <div class="section-header text-center max-w-4xl mx-auto">
-          
-          <!-- Quick Persona Switcher Bar -->
-          <div class="subtitle-wrapper mb-5 flex items-center justify-center">
-            <div class="persona-switch-bar" id="heroPersonaToggle">
-              <button type="button" class="persona-tab-btn active text-xs py-1.5 px-4" data-persona="school">
-                <span>🏫</span>
-                <span class="lang-en">School & College</span>
-                <span class="lang-bn hidden">স্কুল ও কলেজ</span>
-              </button>
-              <button type="button" class="persona-tab-btn text-xs py-1.5 px-4" data-persona="madrasa">
-                <span>🕌</span>
-                <span class="lang-en">Madrasa & Waqf</span>
-                <span class="lang-bn hidden">মাদরাসা ও লিল্লাহ</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Section Title with Smooth Rotating Value Text -->
-          <div class="title-wrapper mb-5">
-            <h1 class="section-title text-4xl sm:text-5xl lg:text-[58px] font-extrabold tracking-tight text-[#072032] leading-[1.12]">
-              <span class="lang-en">
-                Run Every Department of Your <span class="highlight-text text-emerald-600 inline-block transition-all duration-300" id="heroRotatingWordEn">school</span> on Autopilot
-              </span>
-              <span class="lang-bn hidden">
-                এক ক্লিকেই সম্পূর্ণ ডিজিটাল নিয়ন্ত্রণে রাখুন আপনার <span class="highlight-text text-emerald-600 inline-block transition-all duration-300" id="heroRotatingWordBn">স্কুল ও কলেজ</span>
-              </span>
-            </h1>
-          </div>
-
-          <!-- Section Description Text -->
-          <div class="text-wrapper mb-8 max-w-2xl mx-auto">
-            <p class="text text-slate-600 text-base sm:text-lg leading-relaxed" id="heroDescriptionText">
-              <span class="lang-en">
-                Transform the way you manage education.<br>
-                Seamless. Intelligent. Ready.<br>
-                School, college, madrasah, university, cadet academy — no matter your institution, it's built for you.
-              </span>
-              <span class="lang-bn hidden">
-                কাগজের খাতা ও বকেয়া ফি ভুলে যান।<br>
-                সহজ। বুদ্ধিমান। শতভাগ নির্ভরযোগ্য।<br>
-                স্কুল, কলেজ, মাদরাসা কিংবা ক্যাডেট একাডেমি — যে কোনো প্রতিষ্ঠানের জন্যই এটি স্বয়ংসস্পূর্ণ।
-              </span>
-            </p>
-          </div>
-
-          <!-- Executive Action Cluster (Primary Demo Booking + WhatsApp Consultation) -->
-          <div class="btn-wrapper flex flex-wrap items-center justify-center gap-3.5 mb-10">
-            <!-- Primary CTA: Book On-Campus Demo -->
-            <button type="button" class="wc-btn wc-btn-hero trigger-demo-modal group shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/35 transition-all">
-              <span class="w-2 h-2 rounded-full bg-emerald-300 animate-ping mr-1"></span>
-              <span class="lang-en">Book Free On-Campus Demo</span>
-              <span class="lang-bn hidden">ফ্রি অন-ক্যাম্পাস ডেমো বুক করুন</span>
-              <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </button>
-
-            <!-- Secondary CTA: Direct WhatsApp Consultation -->
-            <a href="https://wa.me/8801838790573?text=Salam,%20I%20am%20interested%20in%20YES%20EDU%20ERP%20for%20my%20Institution." target="_blank" class="wc-btn wc-btn-hero-secondary flex items-center gap-2 transition-all">
-              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
-              <span class="lang-en">Chat on WhatsApp</span>
-              <span class="lang-bn hidden">হোয়াটসঅ্যাপে কথা বলুন</span>
-            </a>
-          </div>
-
-          <!-- Micro Hint to Scroll / Watch Video -->
-          <div class="inline-flex items-center justify-center gap-2 text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-4 py-1.5 rounded-full shadow-xs mt-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <a href="#videoShowcase" class="hover:underline flex items-center gap-1.5">
-              <span class="lang-en">Watch 40s Live Animated Tour Below</span>
-              <span class="lang-bn hidden">নিচে ৪০ সেকেন্ডের লাইভ ভিডিও ডেমো দেখুন</span>
-              <svg class="w-3.5 h-3.5 text-emerald-600 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-            </a>
-          </div>
-
-        </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- 2.5 Animated Campus Video Studio Tour (Dedicated Standalone Section) -->
-  <section id="videoShowcase" class="py-24 px-4 sm:px-6 lg:px-8 bg-white relative border-b border-slate-200">
-    <div class="max-w-7xl mx-auto">
-      
-      <!-- Dedicated Section Header with Caption -->
-      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
-          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-          <span class="lang-en">40-SECOND VIRTUAL TOUR • ZERO MARKETING PROMISES</span>
-          <span class="lang-bn hidden">৪০ সেকেন্ডের লাইভ ভার্চুয়াল ট্যুর • শতভাগ বাস্তব দৃশ্য</span>
+      <!-- Floating Micro-Feature Card 2: bKash Auto-Fees (Left Mid) -->
+      <div class="hero-floating-card float-orbit-2 hidden lg:flex top-[48%] left-1 xl:left-6">
+        <span class="hero-card-icon bg-pink-100 text-pink-700">৳</span>
+        <div class="hero-card-text">
+          <span class="hero-card-title">bKash Auto-Fees</span>
+          <span class="hero-card-stat">৳২,৫০০ Paid • Bank Deposited</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-4xl font-extrabold text-[#072032] tracking-tight">
-          <span class="lang-en">See How <span class="text-emerald-600">YES EDU</span> Automates Your Campus in 4 Steps</span>
-          <span class="lang-bn hidden">ভিডিওতে দেখুন: ৪টি ধাপে কীভাবে চলবে <span class="text-emerald-600">আপনার সম্পূর্ণ ক্যাম্পাস</span></span>
-        </h2>
-        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+      </div>
+
+      <!-- Floating Micro-Feature Card 3: Parents App (Left Lower) -->
+      <div class="hero-floating-card float-orbit-3 hidden lg:flex top-[74%] left-4 xl:left-12">
+        <span class="hero-card-icon bg-indigo-100 text-indigo-700">👨‍👩‍👧</span>
+        <div class="hero-card-text">
+          <span class="hero-card-title">Parents Mobile App</span>
+          <span class="hero-card-stat">Live Diary & Gate Notice</span>
+        </div>
+      </div>
+
+      <!-- Floating Micro-Feature Card 4: NCTB 2026 AI (Right Top) -->
+      <div class="hero-floating-card float-orbit-4 hidden lg:flex top-[18%] right-0 xl:right-4">
+        <span class="hero-card-icon bg-purple-100 text-purple-700">📝</span>
+        <div class="hero-card-text">
+          <span class="hero-card-title">NCTB 2026 AI Exam</span>
+          <span class="hero-card-stat">Auto CQ Stems • GPA 5.0</span>
+        </div>
+      </div>
+
+      <!-- Floating Micro-Feature Card 5: GPS Transport (Right Mid) -->
+      <div class="hero-floating-card float-orbit-5 hidden lg:flex top-[48%] right-1 xl:right-6">
+        <span class="hero-card-icon bg-amber-100 text-amber-800">🚌</span>
+        <div class="hero-card-text">
+          <span class="hero-card-title">GPS School Transport</span>
+          <span class="hero-card-stat">Bus #03 • Live on Route</span>
+        </div>
+      </div>
+
+      <!-- Floating Micro-Feature Card 6: Madrasa Waqf & Hostel (Right Lower) -->
+      <div class="hero-floating-card float-orbit-6 hidden lg:flex top-[74%] right-4 xl:right-12">
+        <span class="hero-card-icon bg-teal-100 text-teal-800">🕌</span>
+        <div class="hero-card-text">
+          <span class="hero-card-title">Madrasa & Waqf</span>
+          <span class="hero-card-stat">100% Shariah Quarantined</span>
+        </div>
+      </div>
+
+      <!-- Center Hero Typography & Actions -->
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        
+        <!-- Pre-Header Pill Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider shadow-2xs mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="lang-en">ALL-IN-ONE CAMPUS OPERATING SYSTEM</span>
+          <span class="lang-bn hidden">পূর্ণাঙ্গ ডিজিটাল ক্যাম্পাস অপারেটিং সিস্টেম</span>
+        </div>
+
+        <!-- Main Authoritative Headline (As Requested: Ultimate Education Management System) -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.12] mb-6">
           <span class="lang-en">
-            Experience the real workflow — from morning biometric gate entry and instant parent SMS to 1-tap bKash fee collection, NCTB AI teacher tools, and Madrasa Waqf ledgers.
+            The Ultimate Education <br class="hidden sm:inline"> Management System
           </span>
           <span class="lang-bn hidden">
-            সরাসরি দেখুন প্রতিদিনের বাস্তব দৃশ্য — সকালের বায়োমেট্রিক গেট ও এসএমএস, ১-ক্লিক বিকাশ ফি কালেকশন, এনসিটিবি এআই শিক্ষক সহকারী এবং মাদরাসার ওয়াকফ ফান্ডের স্বচ্ছ হিসাব।
+            শিক্ষা প্রতিষ্ঠান পরিচালনার <br class="hidden sm:inline"> সর্বাধুনিক ডিজিটাল অপারেটিং সিস্টেম
+          </span>
+        </h1>
+
+        <!-- Supporting Value Copy -->
+        <p class="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
+          <span class="lang-en">
+            Engineered specifically for schools, colleges, and madrasahs across Bangladesh. Effortlessly coordinate biometric attendance, instant parent SMS, 1-tap bKash fee collection, and NCTB 2026 grading—all in one place.
+          </span>
+          <span class="lang-bn hidden">
+            সারাদেশের স্কুল, কলেজ ও মাদরাসার বাস্তব চাহিদার আলোকে নির্মিত। বায়োমেট্রিক গেট হাজিরা, ৩ সেকেন্ডে প্যারেন্ট এসএমএস, ১-ট্যাপে বিকাশ ফি আদায় এবং এনসিটিবি নতুন মূল্যায়নের নির্ভরযোগ্য প্ল্যাটফর্ম।
           </span>
         </p>
 
-        <!-- Chapter Selectors (4 Distinct Parts) -->
-        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-3">
-          <button class="video-chapter-pill-light active" data-part="0" type="button">
-            <span class="lang-en">Part 1: Biometric Gate (0s)</span>
-            <span class="lang-bn hidden">পর্ব ১: বায়োমেট্রিক গেট (০ সে.)</span>
+        <!-- Executive Call To Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-3.5 mb-8">
+          <button type="button" class="wc-btn wc-btn-hero trigger-demo-modal group shadow-xl shadow-emerald-600/25 hover:shadow-emerald-600/40 transition-all text-sm sm:text-base px-8 py-3.5 rounded-2xl">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-300 animate-ping mr-1"></span>
+            <span class="lang-en">Book a Free Live Demo</span>
+            <span class="lang-bn hidden">ফ্রি অন-ক্যাম্পাস ডেমো নিন</span>
+            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </button>
-          <button class="video-chapter-pill-light" data-part="1" type="button">
-            <span class="lang-en">Part 2: bKash Fee Automation (10s)</span>
-            <span class="lang-bn hidden">পর্ব ২: বিকাশ ফি আদায় (১০ সে.)</span>
-          </button>
-          <button class="video-chapter-pill-light" data-part="2" type="button">
-            <span class="lang-en">Part 3: NCTB Teacher AI (20s)</span>
-            <span class="lang-bn hidden">পর্ব ৩: এনসিটিবি এআই (২০ সে.)</span>
-          </button>
-          <button class="video-chapter-pill-light" data-part="3" type="button">
-            <span class="lang-en">Part 4: Madrasa Waqf & Hostel (30s)</span>
-            <span class="lang-bn hidden">পর্ব ৪: ওয়াকফ ও হোস্টেল (৩০ সে.)</span>
-          </button>
+
+          <a href="https://wa.me/8801838790573?text=Salam,%20I%20am%20interested%20in%20YES%20EDU%20ERP%20for%20my%20Institution." target="_blank" class="wc-btn wc-btn-hero-secondary flex items-center gap-2 text-sm sm:text-base px-7 py-3.5 rounded-2xl border border-slate-300 hover:border-emerald-600 hover:bg-emerald-50/50 transition-all">
+            <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+            <span class="lang-en">Chat on WhatsApp</span>
+            <span class="lang-bn hidden">হোয়াটসঅ্যাপে কথা বলুন</span>
+          </a>
         </div>
+
+        <!-- Mobile Micro Feature Chips (Visible on Mobile only) -->
+        <div class="flex lg:hidden flex-wrap items-center justify-center gap-2 mb-8">
+          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">🏃 Gate Attendance</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">৳ bKash Auto-Fees</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">📝 NCTB 2026</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">🚌 GPS Bus</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">🕌 Waqf & Hostel</span>
+        </div>
+
       </div>
 
-      <!-- High-Tech Cinema Frame Container with Active Video Player & Studio Lighting (White BG) -->
-      <div class="max-w-5xl mx-auto video-theater-frame-light">
-          <!-- Ambient Backlight Glow that shifts pastel color per scene -->
-          <div id="videoAmbientGlow" class="video-ambient-glow" style="background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);"></div>
+      <!-- Sleek Apple Mac Display with Edge-to-Edge Borderless Video Player (Zero controls, hints, parts, or buttons) -->
+      <div class="mac-hardware-container" id="videoShowcase">
+        
+        <!-- Ambient Backlight Glow -->
+        <div class="mac-hardware-glow"></div>
 
-          <div class="video-screen-light relative" id="mainVideoScreen">
+        <!-- Mac Hardware Frame -->
+        <div class="mac-hardware-body">
+          <!-- Top iSight Webcam Dot -->
+          <div class="mac-hardware-camera"></div>
+
+          <!-- Edge-to-Edge Screen Container -->
+          <div class="mac-hardware-screen">
             
-            <!-- Studio Header Bar -->
-            <div class="video-studio-header">
-              <div class="flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                <span class="text-[11px] font-mono text-slate-500 ml-2 hidden sm:inline">YES EDU 2.0 • Animated Campus Studio</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span id="videoStudioPartIndicator" class="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">PART 1 OF 4 (10s)</span>
-              </div>
-            </div>
+            <!-- Edge-to-Edge Autoplay Looping Video (No UI chrome, no buttons, no timeline) -->
+            <video id="heroMacVideo" class="mac-hardware-video" autoplay loop muted playsinline preload="auto">
+              <source src="videos/campus-demo.mp4" type="video/mp4">
+            </video>
 
-            <!-- Simulated Live Video Canvas/Screen with Crisp White Background -->
-            <div id="videoSimulationFrame" class="h-full relative overflow-hidden bg-white">
-              <!-- Active Video Scenes rendered dynamically by js/main.js -->
-            </div>
-
-            <!-- Video Control Bar (Bottom Overlay in Light Theme) -->
-            <div id="videoControlsBar" class="video-controls-bar">
-              <!-- Clickable Progress Track -->
-              <div id="videoProgressTrack" class="video-progress-track">
-                <div id="videoProgressFill" class="video-progress-fill"></div>
-              </div>
-
-              <!-- Controls Buttons Row -->
-              <div class="flex items-center justify-between text-slate-800 text-xs pt-1">
-                <div class="flex items-center gap-2 sm:gap-3">
-                  <!-- Previous Part (10s back) -->
-                  <button id="videoPrevPartBtn" type="button" class="text-slate-600 hover:text-emerald-600 p-1 transition" title="Previous Part">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-                  </button>
-
-                  <!-- Play / Pause -->
-                  <button id="videoBottomPlayBtn" type="button" class="text-slate-800 hover:text-emerald-600 p-1 transition" title="Play/Pause">
-                    <svg id="videoPlayIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    <svg id="videoPauseIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                  </button>
-
-                  <!-- Next Part (10s forward) -->
-                  <button id="videoNextPartBtn" type="button" class="text-slate-600 hover:text-emerald-600 p-1 transition" title="Next Part">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
-                  </button>
-
-                  <button id="videoSoundBtn" type="button" class="hover:text-emerald-600 p-1 text-slate-600 transition" title="Mute/Unmute Audio">
-                    <svg id="videoSoundOnIcon" class="w-4 h-4 hidden text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
-                    <svg id="videoSoundOffIcon" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
-                  </button>
-
-                  <!-- Current Time / Duration -->
-                  <span class="font-mono text-[11px] text-slate-700 font-bold">
-                    <span id="videoCurrentTimeDisplay">0:00</span> / <span id="videoDurationDisplay">0:40</span>
-                  </span>
-
-                  <span id="videoCurrentChapterTag" class="hidden sm:inline-block text-[11px] font-semibold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded">
-                    Ch 1: Biometric Gateway
-                  </span>
-                </div>
-
-                <div class="flex items-center gap-3">
-                  <span class="text-[10px] text-slate-500 font-mono hidden md:inline">1080P HD • LIVE INTERACTIVE STUDIO</span>
-                  <button id="videoFullscreenBtn" type="button" class="hover:text-emerald-600 p-1 text-slate-600 transition" title="Full Screen View">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Video Play Overlay Poster (Clean Light Theme) -->
-            <div id="videoOverlayControl" class="video-overlay-control">
-              <button id="videoTheaterPlayBtn" type="button" class="video-play-btn group" aria-label="Play Video Tour">
-                <svg class="w-8 h-8 translate-x-0.5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <span class="mt-4 text-xs font-bold tracking-widest text-emerald-800 uppercase bg-white/95 px-4 py-1.5 rounded-full border border-emerald-300 shadow-md">
-                <span class="lang-en">Play Animated Video (10s Transitions)</span>
-                <span class="lang-bn hidden">ভিডিও চালু করুন (১০ সে. ট্রানজিশন)</span>
-              </span>
-              <p class="text-[11px] text-slate-600 mt-2 font-medium">
-                <span class="lang-en">Fast-Paced 40s Cartoon Story with White Studio Graphics</span>
-                <span class="lang-bn hidden">হোয়াইট স্টুডিও গ্রাফিক্স সহ ৪০ সেকেন্ডের দ্রুতগতির কার্টুন ডেমো</span>
-              </p>
+            <!-- High-Fidelity Fallback Live Animated UI Stage (Runs continuously if external video is not present) -->
+            <div id="videoSimulationFrame" class="w-full h-full absolute inset-0 overflow-hidden bg-white">
+              <!-- Dynamic live cartoon & UI animation automatically rendered by js/main.js -->
             </div>
 
           </div>
+
+          <!-- Bottom Aluminum Thumb Lip -->
+          <div class="mac-hardware-chin"></div>
         </div>
 
-        <!-- Under-video Trust & Architecture Ribbon -->
+        <!-- Under-Display Trust Meta -->
         <div class="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-slate-500 font-medium">
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
@@ -401,13 +314,15 @@
           </div>
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span><strong class="text-slate-800">100% ZKTeco</strong> Biometric Hardware Offline Sync</span>
+            <span><strong class="text-slate-800">100% ZKTeco</strong> Biometric Hardware Sync</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
             <span><strong class="text-slate-800">bKash & Nagad</strong> Direct Gateway Settlement</span>
           </div>
         </div>
+
+      </div>
 
     </div>
   </section>
@@ -803,1099 +718,730 @@
         </div>
       </div>
 
-      <!-- Mobile Stage View Toggle (Visible only on screens < lg) -->
-      <div class="flex lg:hidden justify-center mb-6">
-        <div class="inline-flex p-1 bg-slate-200 rounded-full text-xs font-bold text-slate-600">
-          <button type="button" id="mobileStageToggleAdmin" class="px-4 py-1.5 rounded-full bg-white text-slate-900 shadow-sm transition">
-            💻 Desktop Admin OS
-          </button>
-          <button type="button" id="mobileStageTogglePhone" class="px-4 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition">
-            📱 Parent Mobile App
-          </button>
-        </div>
-      </div>
-
-      <!-- Main Stage: macOS Window on Left (lg:col-span-8), Smartphone on Right (lg:col-span-4) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Solid & Humanized Campus OS Console Architecture (Zero Toy Gimmickry) -->
+      <div class="solid-console-card">
         
-        <!-- Left: macOS Desktop Window Frame -->
-        <div class="lg:col-span-8" id="macWindowCol">
-          <div class="mac-window-frame">
-            
-            <!-- Window Header Bar -->
-            <div class="mac-window-header">
-              <div class="flex items-center gap-2">
-                <span class="mac-dot mac-dot-red"></span>
-                <span class="mac-dot mac-dot-yellow"></span>
-                <span class="mac-dot mac-dot-green"></span>
-              </div>
-              
-              <!-- Address Capsule -->
-              <div class="flex items-center gap-2 bg-white px-3 py-1 rounded-full border border-slate-200 text-xs font-mono text-slate-600 shadow-xs">
-                <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                <span>https://campus.yesedu.com/terminal-os</span>
-              </div>
-
-              <!-- Campus Status & Clock -->
-              <div class="flex items-center gap-2">
-                <span class="hidden sm:inline-block text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-300">
-                  ● Dhaka Central Campus
-                </span>
-                <span id="macClockDisplay" class="font-mono text-xs font-bold text-slate-700">07:58:12 AM</span>
-              </div>
+        <!-- Top Console Header & Module Pill Navigation -->
+        <div class="p-4 sm:p-6 bg-slate-900 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">LIVE CAMPUS OPERATING SYSTEM</span>
             </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mt-1">
+              <span class="lang-en">Architected for True Human Peace of Mind</span>
+              <span class="lang-bn hidden">মানবিক প্রশান্তি ও প্রাতিষ্ঠানিক শৃঙ্খলার বাস্তব আর্কিটেকচার</span>
+            </h3>
+          </div>
 
-            <!-- Software Module Navigation Tabs (Handcrafted Artisan Glyphs • Zero System Emojis) -->
-            <div class="software-tab-bar" id="softwareTabBar">
-              <button type="button" class="artisan-nav-tab active" data-software-tab="dashboard">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                <span class="lang-en">Executive BI</span>
-                <span class="lang-bn hidden">কমান্ড ড্যাশবোর্ড</span>
-              </button>
-              <button type="button" class="artisan-nav-tab" data-software-tab="biometric">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 004.07 7.003m15.86 8.997c-.645 2.266-.99 4.659-.99 7.132"/></svg>
-                <span class="lang-en">Gate & Mother's SMS</span>
-                <span class="lang-bn hidden">গেট ও মায়ের নিশ্চিন্ত স্বস্তি</span>
-              </button>
-              <button type="button" class="artisan-nav-tab" data-software-tab="bkash">
-                <svg class="w-4 h-4 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-                <span class="lang-en">1-Tap Fees & Bank</span>
-                <span class="lang-bn hidden">১-ট্যাপ ফি ও ব্যাংক স্বস্তি</span>
-              </button>
-              <button type="button" class="artisan-nav-tab" data-software-tab="exam">
-                <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
-                <span class="lang-en">Teacher's AI Studio</span>
-                <span class="lang-bn hidden">শিক্ষকের এআই স্টুডিও</span>
-              </button>
-              <button type="button" class="artisan-nav-tab" data-software-tab="waqf">
-                <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                <span class="lang-en">Shariah Waqf Trust</span>
-                <span class="lang-bn hidden">পবিত্র ওয়াকফ আমানত</span>
-              </button>
-            </div>
+          <!-- Module Switcher Tabs -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none" id="solidModuleTabBar">
+            <button type="button" class="solid-module-tab active" data-software-tab="dashboard">
+              <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              <span class="lang-en">1. Executive Command</span>
+              <span class="lang-bn hidden">১. কমান্ড ড্যাশবোর্ড</span>
+            </button>
+            <button type="button" class="solid-module-tab" data-software-tab="biometric">
+              <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 004.07 7.003m15.86 8.997c-.645 2.266-.99 4.659-.99 7.132"/></svg>
+              <span class="lang-en">2. Gate & 3s SMS</span>
+              <span class="lang-bn hidden">২. গেট ও ৩ সেকেন্ডে SMS</span>
+            </button>
+            <button type="button" class="solid-module-tab" data-software-tab="bkash">
+              <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span class="lang-en">3. Fees & Banking</span>
+              <span class="lang-bn hidden">৩. ফি আদায় ও ব্যাংক অটো-জমা</span>
+            </button>
+            <button type="button" class="solid-module-tab" data-software-tab="exam">
+              <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span class="lang-en">4. NCTB Exam & GPA</span>
+              <span class="lang-bn hidden">৪. নতুন মূল্যায়ন ও জিপিএ ৫</span>
+            </button>
+            <button type="button" class="solid-module-tab" data-software-tab="waqf">
+              <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span class="lang-en">5. Madrasa & Waqf</span>
+              <span class="lang-bn hidden">৫. কওমি/আলিম ও লিল্লাহ ফান্ড</span>
+            </button>
+          </div>
+        </div>
 
-            <!-- Software Interactive Workspace Panels -->
-            <div class="p-6 bg-white min-h-[460px]" id="softwareWorkspaceContainer">
+        <!-- Body Area: 5 Solid Software Workspace Panels -->
+        <div class="p-6 sm:p-8 lg:p-10 bg-slate-50/60">
+
+          <!-- MODULE 1: EXECUTIVE COMMAND (DASHBOARD) -->
+          <div id="swPanelDashboard" class="software-panel active">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               
-              <!-- View 1: Executive BI Dashboard -->
-              <div id="swPanelDashboard" class="software-panel active space-y-6">
-                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
-                  <div>
-                    <h4 class="text-base font-bold text-slate-900">
-                      <span class="lang-en">Campus Executive Command Center • Academic Session 2026</span>
-                      <span class="lang-bn hidden">ক্যাম্পাস এক্সিকিউটিভ কমান্ড সেন্টার • শিক্ষাবর্ষ ২০২৬</span>
-                    </h4>
-                    <p class="text-xs text-slate-500">Live Telemetry Synchronized Across Cloud Terminals</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <!-- BI Persona Toggle -->
-                    <div class="bi-persona-toggle">
-                      <button type="button" id="biToggleSchool" class="bi-persona-btn active" title="Switch to General School/College KPI">
-                        <span>🏫</span>
-                        <span class="lang-en">School</span>
-                        <span class="lang-bn hidden">স্কুল</span>
-                      </button>
-                      <button type="button" id="biToggleMadrasa" class="bi-persona-btn" title="Switch to Madrasa & Waqf KPI">
-                        <span>🕌</span>
-                        <span class="lang-en">Madrasa</span>
-                        <span class="lang-bn hidden">মাদরাসা</span>
-                      </button>
-                    </div>
-                    <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">
-                      99.9% Cloud SLA
+              <!-- Left 5 cols: Human Purpose & Leadership Clarity -->
+              <div class="lg:col-span-5 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200/80 text-slate-800 text-xs font-bold uppercase tracking-wider">
+                  <span>📊</span>
+                  <span class="lang-en">CAMPUS HEALTH AT A GLANCE</span>
+                  <span class="lang-bn hidden">ক্যাম্পাসের সার্বিক চিত্র</span>
+                </div>
+                <div>
+                  <h4 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    <span class="lang-en">One Calm Dashboard for Total Responsibility</span>
+                    <span class="lang-bn hidden">প্রতিষ্ঠানের প্রতিটি বিভাগের স্বচ্ছ চিত্র এক নজরে</span>
+                  </h4>
+                  <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                    <span class="lang-en">
+                      Principals, Headmasters, and Madrasa Muhtamims wake up carrying the weight of 1,200+ students, 30+ faculty members, and daily operational cash flow. YES EDU replaces frantic calls and lost registers with total clarity.
                     </span>
-                  </div>
-                </div>
-
-                <!-- Modern Clean Bento Telemetry Cards (Zero Clutter, High-Impact Numbers) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  
-                  <!-- Bento 1: Attendance Core -->
-                  <div class="p-5 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200/90 shadow-xs space-y-3">
-                    <div class="flex items-center justify-between text-xs">
-                      <span class="font-bold text-slate-500 uppercase tracking-wider text-[11px] flex items-center gap-1.5" id="biKpiEnrolledLabel">
-                        <span>🏫</span> Total Enrolled
-                      </span>
-                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        98.4% On-Time
-                      </span>
-                    </div>
-                    <div>
-                      <span class="text-3xl font-extrabold text-slate-900 tracking-tight" id="biKpiEnrolledValue">১,২৪০ জন</span>
-                      <span class="text-xs text-emerald-700 font-semibold block mt-1" id="biKpiEnrolledSub">Present: ১,২২০ (৯৮.৪%)</span>
-                    </div>
-                    <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
-                      <div class="bg-emerald-500 h-1.5 rounded-full transition-all duration-500" style="width: 98.4%"></div>
-                    </div>
-                  </div>
-
-                  <!-- Bento 2: Automated Revenue Core -->
-                  <div class="p-5 bg-gradient-to-br from-emerald-50/50 to-white rounded-2xl border border-emerald-200/90 shadow-xs space-y-3">
-                    <div class="flex items-center justify-between text-xs">
-                      <span class="font-bold text-emerald-800 uppercase tracking-wider text-[11px] flex items-center gap-1.5" id="biKpiFeesLabel">
-                        <span>৳</span> Today's Fees
-                      </span>
-                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
-                        ✓ 100% Reconciled
-                      </span>
-                    </div>
-                    <div>
-                      <span class="text-3xl font-extrabold text-emerald-900 tracking-tight" id="biKpiFeesValue">৳৪,৮৫,২০০</span>
-                      <span class="text-xs text-emerald-700 font-semibold block mt-1" id="biKpiFeesSub">bKash: 74% • Bank: 26%</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-[10px] text-slate-500">
-                      <span class="px-2 py-0.5 rounded bg-pink-50 text-pink-700 font-bold border border-pink-200">bKash Merchant</span>
-                      <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-bold border border-blue-200">Bank Direct</span>
-                    </div>
-                  </div>
-
-                  <!-- Bento 3: Real-Time Gate & Telco Speed -->
-                  <div class="p-5 bg-gradient-to-br from-sky-50/40 to-white rounded-2xl border border-sky-200/90 shadow-xs space-y-3">
-                    <div class="flex items-center justify-between text-xs">
-                      <span class="font-bold text-sky-800 uppercase tracking-wider text-[11px] flex items-center gap-1.5" id="biKpiSmsLabel">
-                        <span>⚡</span> SMS Delivery
-                      </span>
-                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-[10px] font-bold">
-                        <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
-                        <span id="biKpiGateValue">Online</span>
-                      </span>
-                    </div>
-                    <div>
-                      <span class="text-3xl font-extrabold text-sky-900 tracking-tight" id="biKpiSmsValue">১,২২০ টি</span>
-                      <span class="text-xs text-sky-700 font-semibold block mt-1" id="biKpiSmsSub">Avg Delivery: 2.3s</span>
-                    </div>
-                    <div class="flex items-center justify-between text-[10px] text-slate-500 font-mono">
-                      <span id="biKpiGateSub">Gate #01 & #02 Synced</span>
-                      <span class="hidden" id="biKpiGateLabel">Gate Status</span>
-                      <span class="text-sky-700 font-bold">GP • Robi • BL</span>
-                    </div>
-                  </div>
-
-                </div>
-
-                <!-- Single-Line Clean Live Campus Pulse (Zero Table Clutter) -->
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between gap-3 text-xs" id="biEventStreamList">
-                  <div class="flex items-center gap-2.5 truncate">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping shrink-0"></span>
-                    <span class="font-extrabold text-slate-800 text-[11px] uppercase tracking-wider shrink-0">CAMPUS PULSE:</span>
-                    <span class="text-slate-600 truncate font-medium">Student Muhammad Abdullah (Roll 01) punched Gate #01 turnstile • SMS delivered in 2.3s</span>
-                  </div>
-                  <span class="font-mono text-[10px] text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 font-bold shrink-0">
-                    2.1s Live Sync
-                  </span>
-                </div>
-
-                <!-- Humane Story Vignette: Institutional Calm & Clarity -->
-                <div class="humane-story-vignette text-xs text-slate-700 space-y-1">
-                  <div class="flex items-center gap-2">
-                    <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-[10px]">অধ্যক্ষ</span>
-                    <strong class="text-slate-900 font-semibold text-[11px]">প্রফেসর মুহাম্মদ মোজাম্মেল হক (অধ্যক্ষ ও গভর্নিং বডি সচিব):</strong>
-                  </div>
-                  <p class="italic text-[11.5px] leading-relaxed text-slate-600 pl-8">
-                    "আগে শত শত রেজিস্টার খাতা আর অডিট ফাইলের পেছনেই অধ্যক্ষের অর্ধেক দিন হারিয়ে যেত। Yes-Edu আমাদের টেবিলে এনে দিয়েছে স্পষ্ট মানসিক প্রশান্তি — এক ক্লিকে শিক্ষক, শিক্ষার্থী ও ক্যাম্পাসের প্রতিটি আয়-ব্যয় চোখের সামনে কাচের মতো স্বচ্ছ।"
+                    <span class="lang-bn hidden">
+                      ১,২০০+ শিক্ষার্থী, ৩০+ শিক্ষক এবং দৈনন্দিন অর্থপ্রবাহের গুরুদায়িত্ব বহন করেন প্রতিষ্ঠান প্রধানগণ। ইয়েস এডু খাতা খোঁজাখুঁজি ও অনিশ্চয়তা দূর করে এনে দেয় নিখুঁত নিয়ন্ত্রণ।
+                    </span>
                   </p>
                 </div>
 
-                <!-- Quick Action Bar (Artisan SVG Glyphs) -->
-                <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
-                  <span class="font-bold text-slate-500 mr-2 uppercase tracking-wider text-[10px]">Instant Navigation:</span>
-                  <button type="button" class="px-3.5 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 font-semibold transition flex items-center gap-1.5" onclick="switchSoftwareTab('biometric')">
-                    <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 004.07 7.003m15.86 8.997c-.645 2.266-.99 4.659-.99 7.132"/></svg>
-                    <span>Biometric Gate</span>
-                  </button>
-                  <button type="button" class="px-3.5 py-1.5 rounded-lg bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-200 font-semibold transition flex items-center gap-1.5" onclick="switchSoftwareTab('bkash')">
-                    <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-                    <span>1-Tap Fees</span>
-                  </button>
-                  <button type="button" class="px-3.5 py-1.5 rounded-lg bg-purple-50 text-purple-800 hover:bg-purple-100 border border-purple-200 font-semibold transition flex items-center gap-1.5" onclick="switchSoftwareTab('exam')">
-                    <svg class="w-3.5 h-3.5 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
-                    <span>NCTB AI Exam</span>
-                  </button>
-                  <button type="button" class="px-3.5 py-1.5 rounded-lg bg-sky-50 text-sky-800 hover:bg-sky-100 border border-sky-200 font-semibold transition flex items-center gap-1.5" onclick="switchSoftwareTab('waqf')">
-                    <svg class="w-3.5 h-3.5 text-sky-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                    <span>Madrasa Waqf</span>
-                  </button>
+                <!-- 3 Solid Checkpoints -->
+                <div class="space-y-3 pt-1">
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Dual Institution Modes:</strong> 1-click toggle between General School/College and Madrasa/Tahfiz KPIs.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Live Gate Attendance:</strong> Real-time 98.4% attendance monitored with instant absentee flags.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Automated Reconciliation:</strong> Direct settlement into campus bank accounts with zero ledger discrepancies.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Interactive Persona Toggle -->
+                <div class="pt-3 border-t border-slate-200/80">
+                  <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Select Campus Architecture Mode:</label>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <button type="button" id="biToggleSchool" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white shadow-xs transition hover:bg-slate-800">
+                      🏫 School & College Mode
+                    </button>
+                    <button type="button" id="biToggleMadrasa" class="px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 transition shadow-2xs">
+                      🕌 Madrasa & Tahfiz Mode
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              <!-- View 2: Biometric Gate & 3-Second SMS Simulator (Human Art & Tactile Pass) -->
-              <div id="swPanelBiometric" class="software-panel space-y-5">
-                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
-                  <div>
-                    <h4 class="text-base font-bold text-slate-900">
-                      <span class="lang-en">ZKTeco Biometric Gateway Terminal & Automated Parent SMS</span>
-                      <span class="lang-bn hidden">জেডকেটেকো বায়োমেট্রিক গেটওয়ে ও স্বয়ংক্রিয় ৩ সেকেন্ডের বাংলা এসএমএস</span>
-                    </h4>
-                    <p class="text-xs text-slate-500">Physical Contactless Pass • Optical Sensor • Instant Guardian Peace of Mind</p>
+              <!-- Right 7 cols: Precision Command Console -->
+              <div class="lg:col-span-7 bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-100">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span class="text-xs font-bold text-slate-800 font-mono">CENTRAL CAMPUS • SESSION 2026</span>
                   </div>
-                  <button type="button" id="triggerGatePunchSimBtn" class="simulate-punch-btn">
-                    <svg class="w-4 h-4 text-emerald-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"/></svg>
-                    <span>Simulate Gate Punch (Click to Test)</span>
-                  </button>
+                  <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full">1,240 Enrolled Students</span>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-                  
-                  <!-- Artifact 1: Tactile Holographic Bangladesh Student RFID Campus Pass -->
-                  <div class="md:col-span-5 flex flex-col items-center">
-                    <div class="relative tactile-stage-3d w-full max-w-[310px] pt-6">
-                      
-                      <!-- Realistic Woven Lanyard Ribbon & Chrome Swivel Clasp -->
-                      <div class="lanyard-strap"></div>
-                      <div class="lanyard-clasp"></div>
-
-                      <!-- The Physical RFID Student Card -->
-                      <div class="tactile-rfid-card" id="tactileRfidCardElement" title="Click to simulate RFID Gate Tap">
-                        <div class="card-holo-foil"></div>
-                        
-                        <!-- Card Header: Bangladesh Govt & Campus Crest -->
-                        <div class="flex items-center justify-between border-b border-emerald-500/30 pb-2 relative z-10">
-                          <div class="flex items-center gap-1.5">
-                            <div class="w-5 h-5 rounded-full bg-emerald-400 text-slate-900 font-bold flex items-center justify-center text-[9px] shadow-xs">
-                              YE
-                            </div>
-                            <div>
-                              <span class="text-[9px] font-bold tracking-wider text-emerald-200 block uppercase">DHAKA CENTRAL CAMPUS</span>
-                              <span class="text-[7.5px] text-emerald-300/80 font-mono">GOVT APPROVED • RFID PASS</span>
-                            </div>
-                          </div>
-                          <!-- Contactless NFC waves icon -->
-                          <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
-                        </div>
-
-                        <!-- Card Body: Gold Chip + Student Photo + Info -->
-                        <div class="flex items-center gap-3.5 my-3 relative z-10">
-                          <div class="relative shrink-0">
-                            <!-- Student Avatar Badge -->
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-emerald-200 border-2 border-emerald-300 flex items-center justify-center font-bold text-emerald-900 text-lg shadow-sm" id="tactileCardAvatar">
-                              আ
-                            </div>
-                            <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-slate-900"></span>
-                          </div>
-
-                          <div class="min-w-0 flex-1">
-                            <span class="text-xs font-bold text-white block truncate leading-tight" id="tactileCardStudentName">মুহাম্মদ আবদুল্লাহ</span>
-                            <span class="text-[10px] text-emerald-300 font-medium block" id="tactileCardStudentMeta">১০ম শ্রেণি • বিজ্ঞান শাখা</span>
-                            <span class="text-[9px] font-mono text-emerald-400/90 block mt-0.5" id="tactileCardRoll">রোল: ০১ • ID: YE-2026-0849</span>
-                          </div>
-
-                          <!-- Metallic EMV Gold Smart Chip -->
-                          <div class="emv-gold-chip shrink-0" title="Integrated Contactless Smart Microchip"></div>
-                        </div>
-
-                        <!-- Card Footer: Authentic Barcode & Validation -->
-                        <div class="flex items-center justify-between pt-2 border-t border-emerald-500/20 text-[8px] font-mono text-emerald-300/80 relative z-10">
-                          <span>BATCH: 2026-A</span>
-                          <span class="tracking-widest font-bold">||| | |||| | ||| |||||</span>
-                          <span class="text-emerald-400 font-bold">VALID 2026</span>
-                        </div>
-                      </div>
-
+                <!-- 4 Crisp Metric Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/90 space-y-1.5">
+                    <div class="flex justify-between items-center text-xs text-slate-500 font-medium">
+                      <span id="biCardAttendanceLabel">Today's Attendance</span>
+                      <span class="text-emerald-700 font-bold bg-emerald-100 px-2 py-0.5 rounded text-[10px]">98.4%</span>
                     </div>
-
-                    <!-- Tap Interaction Hint -->
-                    <span class="text-[10.5px] text-slate-400 mt-2 font-medium flex items-center gap-1.5">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-                      <span>কার্ডে ক্লিক করে গেট পাঞ্চ পরীক্ষা করুন</span>
-                    </span>
+                    <div class="text-xl font-bold font-mono text-slate-900" id="biMetricAttendance">১,২২০ / ১,২৪০</div>
+                    <p class="text-[11px] text-slate-500">🟢 Morning gate rush completed safely</p>
                   </div>
 
-                  <!-- Artifact 2: ZKTeco Optical Scanner Terminal + Verified Stream -->
-                  <div class="md:col-span-7 space-y-3">
-                    
-                    <!-- Optical Hardware Scanner -->
-                    <div class="optical-scanner-hardware">
-                      <div class="flex items-center justify-between text-xs text-slate-300 pb-2 border-b border-slate-800">
-                        <span class="font-mono text-[10px] text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
-                          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                          ZKTECO OPTICAL SENSOR PRO
-                        </span>
-                        <span class="text-[10px] font-mono text-slate-400">TCP/IP • BUFFER: 0</span>
-                      </div>
-
-                      <div class="my-3 flex items-center justify-center gap-6">
-                        <!-- Optical Prism Glass with Biometric Laser -->
-                        <div class="optical-scanner-prism">
-                          <div class="biometric-laser-sweep"></div>
-                          <!-- Vector Fingerprint Ridge Map -->
-                          <svg class="w-16 h-16 text-emerald-400 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 004.07 7.003m15.86 8.997c-.645 2.266-.99 4.659-.99 7.132"/>
-                          </svg>
-                        </div>
-
-                        <div class="text-left text-xs space-y-1">
-                          <span class="text-[10px] uppercase tracking-wider text-slate-400 block font-bold">Today's Scanned Entrances</span>
-                          <span class="text-2xl font-extrabold text-white font-mono" id="simPunchCount">১,২২০</span>
-                          <span class="text-[11px] text-emerald-400 font-semibold block">✓ 0.3s Hardware Response</span>
-                          <span class="text-[10px] text-slate-400 block">Offline Buffered Memory Ready</span>
-                        </div>
-                      </div>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/90 space-y-1.5">
+                    <div class="flex justify-between items-center text-xs text-slate-500 font-medium">
+                      <span id="biCardFeesLabel">Monthly Tuition Collected</span>
+                      <span class="text-emerald-700 font-bold bg-emerald-100 px-2 py-0.5 rounded text-[10px]">94.2%</span>
                     </div>
+                    <div class="text-xl font-bold font-mono text-slate-900" id="biMetricFees">৳২৮,৪০,০০০</div>
+                    <p class="text-[11px] text-slate-500">Auto-reconciled in Sonali Bank</p>
+                  </div>
 
-                    <!-- Official Bangla SMS Telemetry Bubble -->
-                    <div class="p-3 bg-white rounded-xl border border-emerald-200 shadow-2xs space-y-1 text-xs">
-                      <div class="flex justify-between items-center text-[10px] text-slate-500 font-mono">
-                        <span class="text-emerald-800 font-bold flex items-center gap-1">
-                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                          OFFICIAL TELCO SMS (GP, ROBI, BL, TELETALK)
-                        </span>
-                        <span class="text-emerald-700 font-bold" id="simulatedSmsTimestamp">Today at 07:58 AM • 2.1s</span>
-                      </div>
-                      <p class="font-medium text-slate-900 leading-relaxed text-[11.5px]" id="simulatedSmsText">
-                        "সম্মানিত অভিভাবক, আপনার সন্তান মুহাম্মদ আবদুল্লাহ (রোল: ০১, ১০ম শ্রেণি) সকাল ৭:৫৮ মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - ইয়েস এডু"
-                      </p>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/90 space-y-1.5">
+                    <div class="flex justify-between items-center text-xs text-slate-500 font-medium">
+                      <span id="biCardTeachersLabel">Faculty & Staff Present</span>
+                      <span class="text-emerald-700 font-bold bg-emerald-100 px-2 py-0.5 rounded text-[10px]">100%</span>
                     </div>
+                    <div class="text-xl font-bold font-mono text-slate-900" id="biMetricTeachers">২৮ / ২৮ জন</div>
+                    <p class="text-[11px] text-slate-500">Zero unscheduled faculty absences</p>
+                  </div>
 
-                    <!-- Verified Gate Stream Container (No Table) -->
-                    <div class="space-y-1.5" id="simPunchLogBody">
-                      <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200/90 flex items-center justify-between text-xs">
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/90 space-y-1.5">
+                    <div class="flex justify-between items-center text-xs text-slate-500 font-medium">
+                      <span id="biCardDuesLabel">Pending Dues Balance</span>
+                      <span class="text-amber-700 font-bold bg-amber-100 px-2 py-0.5 rounded text-[10px]">5.8%</span>
+                    </div>
+                    <div class="text-xl font-bold font-mono text-slate-900" id="biMetricDues">৳১,৬৫,০০০</div>
+                    <p class="text-[11px] text-slate-500">Courteous SMS reminders queued</p>
+                  </div>
+                </div>
+
+                <!-- Action Bar & Board Verified Badge -->
+                <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <button type="button" class="w-full sm:w-auto px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-xs" onclick="showToastNotification('📢 Urgent Notice sent to 1,240 Parents!')">
+                    <span>📢</span>
+                    <span>Send Emergency Broadcast SMS</span>
+                  </button>
+                  <span class="text-[11px] font-semibold text-slate-500 flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>DSHE & Madrasah Board Compliant</span>
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- MODULE 2: GATE ATTENDANCE & 3-SECOND MOTHER'S SMS -->
+          <div id="swPanelBiometric" class="software-panel">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              <!-- Left 5 cols: Human Peace of Mind -->
+              <div class="lg:col-span-5 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/80 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+                  <span>⏱️</span>
+                  <span class="lang-en">MORNING 7:55 AM GATE RUSH</span>
+                  <span class="lang-bn hidden">সকাল ৭:৫৫ মিনিটের গেটের ভিড়</span>
+                </div>
+                <div>
+                  <h4 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    <span class="lang-en">When a Child Passes the Gate, a Mother Exhales in Peace</span>
+                    <span class="lang-bn hidden">সন্তান গেট পার হতেই মায়ের মোবাইলে পৌঁছে যায় নিশ্চিন্ত বার্তা</span>
+                  </h4>
+                  <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                    <span class="lang-en">
+                      In the morning rush across Bangladeshi streets, every parent carries quiet anxiety. The moment 8-year-old Sami scans his RFID card at the gate turnstile, a telco-certified SMS lands in his mother's simple button phone within 3 seconds: <em>"Sami arrived safely at 7:58 AM"</em>.
+                    </span>
+                    <span class="lang-bn hidden">
+                      সকালের ব্যস্ত ট্রাফিকের মাঝে সন্তানের স্কুলে পৌঁছানো নিয়ে মায়েদের থাকে নিরব উৎকণ্ঠা। স্কুলে পা রাখার ৩ সেকেন্ডের মধ্যে মায়ের সাধারণ বাটুন ফোনেও চলে আসে কনফার্মেশন মেসেজ।
+                    </span>
+                  </p>
+                </div>
+
+                <!-- 3 Solid Checkpoints -->
+                <div class="space-y-3 pt-1">
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Direct Telco Carrier Route:</strong> BTRC-approved masked gateway delivers SMS to GP, Robi, BL & Teletalk in 2–3s.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Offline-First Gate Hardware:</strong> Local ZKTeco turnstile memory buffers 50,000 punches if optical fiber cuts.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Guard Tablet Photo Match:</strong> Gate security sees real-time student photo and emergency guardian contact.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Simulator Action -->
+                <div class="pt-3 border-t border-slate-200/80 space-y-2">
+                  <button type="button" id="triggerGatePunchSimBtn" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition">
+                    <span>⚡</span>
+                    <span class="lang-en">Simulate RFID Gate Punch (Test 3s SMS Flow)</span>
+                    <span class="lang-bn hidden">গেটে পাঞ্চ করুন (৩ সেকেন্ডের SMS পরীক্ষা)</span>
+                  </button>
+                  <p class="text-[11px] text-slate-500">Click to simulate next student badge scan and live carrier SMS dispatch.</p>
+                </div>
+              </div>
+
+              <!-- Right 7 cols: Gate Hardware Stream & Mother's SMS -->
+              <div class="lg:col-span-7 bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                
+                <!-- Telemetry Header -->
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-100">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs font-bold text-slate-800 font-mono">GATE #01 • MAIN ENTRANCE TCP/IP</span>
+                  </div>
+                  <div class="text-xs font-bold text-slate-700">
+                    <span>Total Scans Today: </span>
+                    <span id="simPunchCount" class="font-mono text-emerald-700 font-extrabold">১,২২০</span>
+                  </div>
+                </div>
+
+                <!-- Two Clean Containers: Real Scan Stream & Verified SMS Card -->
+                <div class="space-y-4">
+                  
+                  <!-- Container 1: Live Hardware Stream -->
+                  <div>
+                    <div class="flex items-center justify-between text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
+                      <span>Real-Time Biometric Punch Stream:</span>
+                      <span class="text-emerald-700 font-mono">● 4ms Gateway Ping</span>
+                    </div>
+                    <div id="simPunchLogBody" class="space-y-2 max-h-48 overflow-y-auto pr-1">
+                      <div class="p-2.5 bg-emerald-50/90 rounded-xl border border-emerald-300 flex items-center justify-between shadow-2xs">
                         <div class="flex items-center gap-2.5">
-                          <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">আ</span>
+                          <span class="w-8 h-8 rounded-full bg-emerald-200 text-emerald-800 font-bold flex items-center justify-center text-xs shadow-2xs">T</span>
                           <div>
-                            <span class="font-bold text-slate-900 block text-xs">Muhammad Abdullah</span>
-                            <span class="text-[10px] text-slate-500">Roll 01 • Class 10-A • Gate #01</span>
+                            <span class="font-bold text-slate-900 block text-xs">Tanvir Mahmud</span>
+                            <span class="text-[10px] text-slate-500 font-medium">Roll 05 • Class 9-B • Gate #01</span>
                           </div>
                         </div>
                         <div class="text-right">
                           <span class="font-mono text-slate-700 block text-[11px] font-semibold">07:58:12 AM</span>
-                          <span class="text-emerald-700 font-bold text-[10px] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">✓ SMS Delivered (2.3s)</span>
+                          <span class="text-emerald-700 font-bold text-[10px] bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">✓ SMS Delivered (2.1s)</span>
                         </div>
                       </div>
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <!-- Humane Story Vignette: The Mother's Relief -->
-                <div class="humane-story-vignette text-xs text-slate-700 space-y-1">
-                  <div class="flex items-center gap-2">
-                    <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-[10px]">মা</span>
-                    <strong class="text-slate-900 font-semibold text-[11px]">সালমা বেগম (অভিভাবক, ধানমন্ডি, ঢাকা):</strong>
-                  </div>
-                  <p class="italic text-[11.5px] leading-relaxed text-slate-600 pl-8">
-                    "বাসা থেকে স্কুলের দূরত্ব প্রায় ৫ কিলোমিটার। প্রতিদিন জ্যাম পেরিয়ে ছেলে ঠিকঠাক পৌঁছাল কি না—এ নিয়ে যতক্ষণ না ফোনে স্কুলের এসএমএস পাই, ততক্ষণ মনটা খচখচ করত। ঘড়ির কাঁটায় কাঁটায় সকাল ৭:৫৮ মিনিটে এসএমএস পেয়ে এক বুক স্বস্তি নিয়ে রান্না আর ঘরের কাজে হাত দিই। প্রযুক্তির এই স্পর্শটুকু আমাদের মতো মায়েদের কাছে পরম শান্তি।"
-                  </p>
-                </div>
-
-              </div>
-
-              <!-- View 3: bKash 1-Tap Fees & Reconciliation -->
-              <div id="swPanelBkash" class="software-panel space-y-6">
-                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
-                  <div>
-                    <h4 class="text-base font-bold text-slate-900">
-                      <span class="lang-en">Automated Fee Collection & Real-Time bKash / Nagad Gateway</span>
-                      <span class="lang-bn hidden">বিকাশ ও নগদ ডিজিটাল ফি আদায় এবং স্বয়ংক্রিয় ব্যাংক রিকনসিলিয়েশন</span>
-                    </h4>
-                    <p class="text-xs text-slate-500">Instant 1-Tap SMS Payment Link Sent on 1st of Every Month</p>
-                  </div>
-                  <div class="flex flex-wrap items-center gap-2">
-                    <button type="button" id="triggerBkashPaymentSimBtn" class="simulate-action-btn">
-                      <svg class="w-4 h-4 text-emerald-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-                      <span>Simulate 1-Tap Payment</span>
-                    </button>
-                    <span class="badge-bkash">bKash Verified</span>
-                    <span class="badge-nagad">Nagad Direct</span>
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
-                  
-                  <!-- Artifact 3: Tactile Thermal Printed Receipt with Serrated Tear Edges & Red Rubber Ink Stamp -->
-                  <div class="md:col-span-6 flex flex-col items-center">
-                    <div class="tactile-thermal-receipt w-full max-w-[320px] space-y-3">
-                      
-                      <!-- Receipt Header -->
-                      <div class="text-center border-b border-dashed border-slate-300 pb-2.5">
-                        <div class="flex items-center justify-center gap-1.5 font-bold text-slate-800 text-xs">
-                          <span class="w-4 h-4 rounded-full bg-pink-600 text-white flex items-center justify-center font-bold text-[9px]">৳</span>
-                          <span>YES-EDU FINTECH TERMINAL</span>
-                        </div>
-                        <span class="text-[9.5px] text-slate-400 block mt-0.5">SONALI BANK & BKASH DIRECT VAULT</span>
-                        <span class="text-[9px] text-slate-500 font-mono block">DATE: 07 MAY 2026 • 08:14 AM</span>
-                      </div>
-
-                      <!-- Student Info Monospace -->
-                      <div class="text-[11px] text-slate-700 space-y-1">
-                        <div class="flex justify-between">
-                          <span class="text-slate-500">STUDENT:</span>
-                          <strong class="text-slate-900" id="desktopBkashStudent">Tanvir Ahmed</strong>
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-slate-500">CLASS / ROLL:</span>
-                          <span class="font-mono">CLASS 8-B • ROLL 12</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-slate-500">VOUCHER ID:</span>
-                          <span class="font-mono font-bold">#VCH-8492</span>
-                        </div>
-                      </div>
-
-                      <!-- Itemized Print Lines -->
-                      <div class="border-t border-b border-dashed border-slate-300 py-2 text-[10.5px] space-y-1 text-slate-800">
-                        <div class="flex justify-between">
-                          <span>01. MONTHLY TUITION FEE</span>
-                          <span>৳২,০০০.০০</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span>02. COMPUTER LAB & ICT</span>
-                          <span>৳৩০০.০০</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span>03. TERMINAL ASSESSMENT</span>
-                          <span>৳২০০.০০</span>
-                        </div>
-                        <div class="flex justify-between pt-1 border-t border-slate-300 font-bold text-slate-900 text-xs">
-                          <span>TOTAL COLLECTED:</span>
-                          <span class="text-emerald-700">৳২,৫০০.০০</span>
-                        </div>
-                      </div>
-
-                      <!-- Red Rubber Ink Stamp & Gateway -->
-                      <div class="pt-1 flex items-center justify-between">
-                        <div class="receipt-rubber-stamp">
-                          ✓ PAID & RECONCILED
-                        </div>
-                        <span id="desktopBkashVoucherBadge" class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[9.5px]">ONLINE</span>
-                      </div>
-
-                      <!-- Footer Barcode & Trx -->
-                      <div class="text-center pt-2 text-[9px] text-slate-400 font-mono space-y-0.5">
-                        <span class="tracking-widest font-bold block text-slate-700">|||| ||| |||||| |||| |||</span>
-                        <span id="desktopBkashTrx" class="text-emerald-700 font-bold block">TRX: 9X82KD71</span>
-                        <span>OFFICIAL ELECTRONIC RECEIPT</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Automated SMS & Cash Flow Bento Stack -->
-                  <div class="md:col-span-6 space-y-3.5">
-                    
-                    <!-- Guardian 1-Tap SMS Link Capsule -->
-                    <div class="p-4 rounded-2xl bg-gradient-to-br from-pink-50/60 to-white border border-pink-200/90 shadow-xs space-y-2.5 text-xs">
-                      <div class="flex justify-between items-center">
-                        <span class="font-bold text-pink-900 text-[11px] uppercase tracking-wider flex items-center gap-1.5">
-                          <span>📱</span> Guardian 1-Tap Payment Link (SMS)
-                        </span>
-                        <span class="text-[10px] font-mono text-pink-700 bg-pink-100 px-2 py-0.5 rounded font-bold">Automated 1st of Month</span>
-                      </div>
-                      <div class="p-3 bg-white rounded-xl border border-pink-100 shadow-2xs">
-                        <p class="text-slate-700 leading-relaxed text-xs" id="desktopBkashSmsLinkText">
-                          "সম্মানিত অভিভাবক, তানভীরের মে ২০২৬ মাসের স্কুল বেতন ২,৫০০ ৳। লাইনে না দাঁড়িয়ে ঘরে বসেই বিকাশ/নগদে ফি পরিশোধ করুন: <strong class="text-pink-700 underline font-mono">pay.yesedu.com/t/9x82</strong>"
-                        </p>
-                      </div>
-                      <div class="flex justify-between text-[11px] text-pink-800 font-semibold pt-1">
-                        <span>✓ Click Rate: 94.2%</span>
-                        <span>✓ Fee Default Slashed: 95%</span>
-                      </div>
-                    </div>
-
-                    <!-- Direct Institutional Bank Deposit Card -->
-                    <div class="p-4 rounded-2xl bg-gradient-to-br from-emerald-50/60 to-white border border-emerald-200/90 shadow-xs text-xs space-y-2">
-                      <div class="flex justify-between items-center">
-                        <span class="font-bold text-emerald-900 flex items-center gap-1.5">
-                          <span>🏛️</span> Direct Institutional Bank Deposit
-                        </span>
-                        <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">AUTO-RECONCILED</span>
-                      </div>
-                      <p class="text-slate-600 text-[11.5px] leading-relaxed">
-                        Funds transfer directly from bKash merchant gateway into your campus bank account (Sonali Bank, Islami Bank, DBBL) with 100% automated ledger entries.
-                      </p>
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <!-- Humane Story Vignette: The Working Father's Saved Hours -->
-                <div class="humane-story-vignette text-xs text-slate-700 space-y-1">
-                  <div class="flex items-center gap-2">
-                    <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-800 font-bold flex items-center justify-center text-[10px]">বাবা</span>
-                    <strong class="text-slate-900 font-semibold text-[11px]">মো. রফিকুল ইসলাম (অভিভাবক ও বেসরকারি চাকরিজীবী):</strong>
-                  </div>
-                  <p class="italic text-[11.5px] leading-relaxed text-slate-600 pl-8">
-                    "মাসের শুরুতে স্কুলের ফি জমা দেওয়ার জন্য অফিস থেকে আধা বেলা ছুটি নিয়ে ব্যাংকের দীর্ঘ লাইনে রোদ-বৃষ্টির মধ্যে দাঁড়িয়ে থাকতে হতো। এখন মাসের ১ তারিখ সকালে ফোনে একটি মেসেজ আসে, লিংকে ক্লিক করে বিকাশ থেকে ২ মিনিটে বেতন দিয়ে দিই। সাথে সাথে প্রিন্টযোগ্য রসিদ চলে আসে। কর্মজীবী বাবার এই ৩টি ঘণ্টার মূল্য অনেক।"
-                  </p>
-                </div>
-              </div>
-
-              <!-- View 4: NCTB AI Exam & Tabulation Sheet -->
-              <div id="swPanelExam" class="software-panel space-y-6">
-                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
-                  <div>
-                    <h4 class="text-base font-bold text-slate-900">
-                      <span class="lang-en">NCTB 2026 AI Question Generator & Automated GPA 5.0 Tabulation</span>
-                      <span class="lang-bn hidden">এনসিটিবি নতুন কারিকুলাম ২০২৬ এআই প্রশ্ন প্রণয়ন ও ১-ক্লিকে অটো ট্যাবুলেশন শিট</span>
-                    </h4>
-                    <p class="text-xs text-slate-500">Complete Compliance with Board Grading Scales & Creative Question (CQ) Formats</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <button type="button" id="triggerExamAiGenBtn" class="simulate-action-btn">
-                      <svg class="w-4 h-4 text-purple-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-                      <span>Generate AI Question (Switch Subject)</span>
-                    </button>
-                    <span class="px-2.5 py-1 rounded bg-purple-100 text-purple-800 font-bold text-xs">
-                      NCTB 2026 AI
-                    </span>
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
-                  
-                  <!-- NCTB AI Question Studio Bento Card -->
-                  <div class="md:col-span-7 p-5 rounded-2xl bg-gradient-to-br from-purple-50/40 to-white border border-purple-200/90 shadow-xs space-y-3.5" id="desktopExamPaperContainer">
-                    <div class="flex items-center justify-between text-xs pb-2 border-b border-purple-100">
-                      <div>
-                        <span class="font-bold text-slate-900 block" id="desktopExamSubjectHeader">পদার্থবিজ্ঞান • ১০ম শ্রেণি • বার্ষিক মূল্যায়ন পরীক্ষা</span>
-                        <span class="text-[10px] text-purple-700 font-medium">ঢাকা শিক্ষা বোর্ড ও এনসিটিবি নতুন কারিকুলাম ২০২৬</span>
-                      </div>
-                      <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-800 font-bold text-[10px]">
-                        ✨ AI Ready (1.2s)
-                      </span>
-                    </div>
-
-                    <!-- Stem Highlight Capsule -->
-                    <div class="p-3 bg-white rounded-xl border border-purple-100/90 space-y-1 text-xs">
-                      <span class="font-bold text-purple-900 block text-[11px] uppercase tracking-wider">উদ্দীপক (Stem):</span>
-                      <p class="text-slate-800 leading-relaxed font-medium" id="desktopExamStemText">
-                        একটি ১০ কেজি ভরের স্থির বস্তুর ওপর ২০ নিউটন বল ৫ সেকেন্ড যাবত প্রযুক্ত হলো। ৫ সেকেন্ড পর বলের ক্রিয়া বন্ধ হয়ে গেল।
-                      </p>
-                    </div>
-
-                    <!-- Clean Question Items (Zero Visual Clutter) -->
-                    <div class="space-y-1.5 text-xs text-slate-800" id="desktopExamQuestionsList">
-                      <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
-                        <span>(ক) বলের মাত্রা সমীকরণ কী?</span>
-                        <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[১]</span>
-                      </div>
-                      <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
-                        <span>(খ) সাইকেলের চাকায় বিয়ারিং ব্যবহার করা হয় কেন? ব্যাখ্যা করো।</span>
-                        <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[২]</span>
-                      </div>
-                      <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
-                        <span>(গ) ৫ সেকেন্ডে বস্তুটির অতিক্রান্ত দূরত্ব নির্ণয় করো।</span>
-                        <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[৩]</span>
-                      </div>
-                      <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
-                        <span>(ঘ) বলের মান দ্বিগুণ করলে গতিশক্তির কীরূপ পরিবর্তন ঘটবে?</span>
-                        <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[৪]</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Auto GPA 5.0 Merit Bento Card (Zero Spreadsheet Rows) -->
-                  <div class="md:col-span-5 p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/90 shadow-xs space-y-4">
-                    <div class="flex justify-between items-center pb-2 border-b border-slate-200 text-xs">
-                      <span class="font-bold text-slate-900 flex items-center gap-1.5">
-                        <span>📊</span> 1-Click GPA Tabulation
-                      </span>
-                      <span class="text-emerald-700 font-bold bg-emerald-100 px-2 py-0.5 rounded text-[10px]">AUTO-CALCULATED</span>
-                    </div>
-
-                    <!-- Board Standard Hero Pill -->
-                    <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-200 flex items-center justify-between text-xs">
-                      <div>
-                        <span class="font-bold text-emerald-950 block">Class 10-A Merit Score</span>
-                        <span class="text-[10px] text-emerald-700">100% Board Standard Grading</span>
-                      </div>
-                      <span class="text-lg font-extrabold text-emerald-800">GPA 5.00</span>
-                    </div>
-
-                    <!-- Clean Student Merit Stream -->
-                    <div class="space-y-2 text-xs" id="desktopExamTabulationBody">
-                      <div class="p-2.5 bg-white rounded-xl border border-slate-200/80 flex items-center justify-between shadow-2xs">
+                      <div class="p-2.5 bg-white rounded-xl border border-slate-200 flex items-center justify-between">
                         <div class="flex items-center gap-2.5">
-                          <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">01</span>
+                          <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 font-bold flex items-center justify-center text-xs">N</span>
                           <div>
-                            <span class="font-bold text-slate-900 block text-xs">Muhammad Abdullah</span>
-                            <span class="text-[10px] text-slate-500 font-mono">275 / 300 Marks</span>
+                            <span class="font-bold text-slate-900 block text-xs">Nusrat Jahan</span>
+                            <span class="text-[10px] text-slate-500 font-medium">Roll 12 • Class 8-A • Gate #01</span>
                           </div>
                         </div>
-                        <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">5.00 (A+)</span>
-                      </div>
-                      <div class="p-2.5 bg-white rounded-xl border border-slate-200/80 flex items-center justify-between shadow-2xs">
-                        <div class="flex items-center gap-2.5">
-                          <span class="w-7 h-7 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-xs">02</span>
-                          <div>
-                            <span class="font-bold text-slate-900 block text-xs">Sumaiya Akter</span>
-                            <span class="text-[10px] text-slate-500 font-mono">266 / 300 Marks</span>
-                          </div>
+                        <div class="text-right">
+                          <span class="font-mono text-slate-700 block text-[11px] font-semibold">07:57:45 AM</span>
+                          <span class="text-emerald-700 font-bold text-[10px] bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">✓ SMS Delivered (1.9s)</span>
                         </div>
-                        <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">5.00 (A+)</span>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="pt-2 border-t border-slate-200">
-                      <button type="button" class="w-full py-2 bg-emerald-600 text-white font-bold text-xs rounded-xl hover:bg-emerald-700 transition shadow-xs flex items-center justify-center gap-1.5" onclick="showToastNotification('📄 Tabulation Sheet PDF Exported!')">
-                        <span>📄 Download Tabulation PDF</span>
-                      </button>
+                  <!-- Container 2: Mother's Verified Telco SMS Card -->
+                  <div class="p-4 sm:p-5 rounded-2xl bg-slate-900 text-white space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+                      <div class="flex items-center gap-2">
+                        <span class="text-base">📱</span>
+                        <div>
+                          <span class="text-xs font-bold text-white block">MOTHER'S PHONE • INCOMING CARRIER SMS</span>
+                          <span class="text-[10px] text-slate-400 font-mono">FROM: YESEDU-ALIM (BTRC Certified Masking)</span>
+                        </div>
+                      </div>
+                      <span id="simulatedSmsTimestamp" class="text-[10px] text-emerald-400 font-mono">Today at 07:58 AM</span>
                     </div>
-                  </div>
-
-                </div>
-
-                <!-- Humane Story Vignette: The Teacher's Creative Freedom -->
-                <div class="humane-story-vignette text-xs text-slate-700 space-y-1">
-                  <div class="flex items-center gap-2">
-                    <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px]">শিক্ষক</span>
-                    <strong class="text-slate-900 font-semibold text-[11px]">মাহমুদুল হাসান (সিনিয়র বিজ্ঞান শিক্ষক, ১০ম শ্রেণি):</strong>
-                  </div>
-                  <p class="italic text-[11.5px] leading-relaxed text-slate-600 pl-8">
-                    "নতুন কারিকুলামে প্রতিদিন ক্লাস টেস্ট ও পরীক্ষার জন্য সৃজনশীল প্রশ্ন ও উত্তরপত্র ম্যানুয়ালি তৈরি করতে গিয়ে রাতের পর রাত ঘুমাতে পারতাম না। Yes-Edu আমাদের সেই বোঝা থেকে মুক্তি দিয়ে ক্লাসরুমে পাঠদানের আসল আনন্দ ফিরিয়ে দিয়েছে। মুহূর্তের মধ্যে বোর্ড স্ট্যান্ডার্ড প্রশ্ন আর এক ক্লিকে রেজাল্ট শিট প্রস্তুত হয়ে যায়।"
-                  </p>
-                </div>
-
-              </div>
-
-              <!-- View 5: Madrasa Waqf & Lillah Boarding Ledger -->
-              <div id="swPanelWaqf" class="software-panel space-y-6">
-                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
-                  <div>
-                    <h4 class="text-base font-bold text-slate-900">
-                      <span class="lang-en">Shariah-Compliant Waqf, Zakat & Lillah Boarding Accounting</span>
-                      <span class="lang-bn hidden">মাদ্রাসার ওয়াকফ, যাকাত ও লিল্লাহ বোর্ডিং শরিয়াহসম্মত পৃথক অডিট লেজার</span>
-                    </h4>
-                    <p class="text-xs text-slate-500">Strict Quarantine of Religious Charity Funds from General Tuition Ledgers</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <button type="button" id="triggerWaqfDonationSimBtn" class="simulate-action-btn">
-                      <svg class="w-4 h-4 text-amber-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"/></svg>
-                      <span>Simulate Donor Contribution</span>
-                    </button>
-                    <span class="px-2.5 py-1 rounded bg-amber-100 text-amber-800 font-bold text-xs">
-                      Shariah Audit Ready
-                    </span>
-                  </div>
-                </div>
-
-                <!-- Artifact 4: Handcrafted Shariah Arabesque Gold Seal -->
-                <div class="flex flex-col items-center justify-center pt-2 pb-1">
-                  <div class="shariah-gold-seal-wrap">
-                    <div class="shariah-gold-seal">
-                      <span class="text-[12px] font-bold tracking-wider leading-none">وقف</span>
-                      <span class="text-[8.5px] font-bold tracking-widest uppercase mt-0.5">SHARIAH</span>
-                      <span class="text-[7px] text-amber-900/80 font-mono">AUDITED</span>
+                    <div class="p-3 bg-slate-800/90 rounded-xl border border-slate-700/80">
+                      <p id="simulatedSmsText" class="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
+                        "সম্মানিত অভিভাবক, আপনার সন্তান তানভীর মাহমুদ (রোল: ০৫, Class 9-B) এইমাত্র সকাল ৭:৫৮ মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - ইয়েস এডু"
+                      </p>
                     </div>
-                    <div class="shariah-seal-ribbon">
-                      <div class="seal-ribbon-tail"></div>
-                      <div class="seal-ribbon-tail gold"></div>
-                    </div>
-                  </div>
-                  <span class="text-xs font-bold text-amber-950 mt-4 tracking-wide">শরিয়াহ্ অডিট সত্যায়িত ও সংরক্ষিত তহবিল</span>
-                  <span class="text-[10.5px] text-amber-800/80 font-medium">কঠোর শরীয়াহ্ কোয়ারেন্টাইন — সাধারণ ও লিল্লাহ ফান্ড ১০০% পৃথক অ্যাকাউন্ট</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  
-                  <!-- Shariah Bento Vault 1: General Tuition Fund -->
-                  <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/90 shadow-xs space-y-3.5 text-xs">
-                    <div class="flex justify-between items-center border-b border-slate-200 pb-2">
-                      <span class="font-bold text-slate-900 flex items-center gap-1.5">
-                        <span>🏫</span> খাত ১: সাধারণ শিক্ষা ও শিক্ষক বেতন
+                    <div class="flex items-center justify-between text-[10px] text-slate-400 pt-1">
+                      <span class="text-emerald-400 flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>Direct Telco Gateway • 0 Failed Queues</span>
                       </span>
-                      <span class="text-[10px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">LEDGER-01</span>
+                      <span>Latency: 2.1 seconds</span>
                     </div>
-                    <div>
-                      <span class="text-[10px] text-slate-500 uppercase tracking-wider block font-bold">সাধারণ ফান্ড উদ্বৃত্ত:</span>
-                      <span class="text-2xl font-extrabold text-emerald-800 tracking-tight">+৳৭০,০০০</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2 text-[11px] pt-1">
-                      <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200/60">
-                        <span class="text-slate-400 block text-[10px]">ছাত্র বেতন ও ভর্তি</span>
-                        <strong class="text-slate-900 text-xs font-mono">৳৪,৫০,০০০</strong>
-                      </div>
-                      <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200/60">
-                        <span class="text-slate-400 block text-[10px]">উস্তাদ বেতন ব্যয়</span>
-                        <strong class="text-red-600 text-xs font-mono">-৳৩,৮০,০০০</strong>
-                      </div>
-                    </div>
-                    <span class="text-[10.5px] text-slate-500 block pt-1">✓ সাধারণ একাডেমিক কার্যক্রম সম্পূর্ণ স্বাবলম্বী</span>
-                  </div>
-
-                  <!-- Shariah Bento Vault 2: Lillah Boarding Fund (Zakat/Sadaqah) -->
-                  <div class="p-5 rounded-2xl bg-gradient-to-br from-amber-50/50 to-white border border-amber-200/90 shadow-xs space-y-3.5 text-xs">
-                    <div class="flex justify-between items-center border-b border-amber-200 pb-2">
-                      <span class="font-bold text-amber-950 flex items-center gap-1.5">
-                        <span>🕌</span> খাত ২: এতিমখানা ও লিল্লাহ বোর্ডিং ফান্ড
-                      </span>
-                      <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded">SHARIAH LOCKED</span>
-                    </div>
-                    <div>
-                      <span class="text-[10px] text-amber-800 uppercase tracking-wider block font-bold">লিল্লাহ ফান্ড বর্তমান স্থিতি:</span>
-                      <span class="text-2xl font-extrabold text-amber-900 tracking-tight" id="desktopWaqfNetBalance">+৳৬০,০০০</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2 text-[11px] pt-1">
-                      <div class="p-2.5 bg-amber-50/70 rounded-xl border border-amber-200/60">
-                        <span class="text-amber-800/80 block text-[10px]">যাকাত ও অনুদান</span>
-                        <strong class="text-amber-950 text-xs font-mono" id="desktopWaqfDonationTotal">৳১,৮০,০০০</strong>
-                      </div>
-                      <div class="p-2.5 bg-amber-50/70 rounded-xl border border-amber-200/60">
-                        <span class="text-amber-800/80 block text-[10px]">এতিম খানা ও কিতাব</span>
-                        <strong class="text-red-700 text-xs font-mono">-৳১,২০,০০০</strong>
-                      </div>
-                    </div>
-                    <span class="text-[10.5px] text-amber-800 font-semibold block pt-1">🛡️ শরিয়াহ অডিট লকড • শতভাগ পৃথক ব্যাংক হিসাব</span>
                   </div>
 
                 </div>
 
-                <!-- Automated Donor SMS Voucher Bento Card -->
-                <div class="p-4 rounded-2xl bg-gradient-to-br from-amber-50/70 to-white border border-amber-200/90 shadow-xs text-xs space-y-2.5">
-                  <div class="flex justify-between items-center">
-                    <span class="font-bold text-amber-950 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
-                      <span>📱</span> দাতাদের জন্য তাৎক্ষণিক অটোমেটিক ভাউচার এসএমএস
-                    </span>
-                    <span class="text-[10px] font-mono text-amber-900 font-bold bg-amber-100 px-2 py-0.5 rounded border border-amber-200" id="desktopWaqfVoucherNo">VOUCHER: WQF-9042</span>
-                  </div>
-                  <div class="p-3 bg-white rounded-xl border border-amber-100 shadow-2xs">
-                    <p class="text-slate-800 leading-relaxed text-xs font-medium" id="desktopWaqfSmsText">
-                      "আলহামদুলিল্লাহ! হাজী মো. রফিকুল ইসলাম সাহেব, জামিয়া ইসলামিয়া এতিমখানা লিল্লাহ বোর্ডিং ফান্ডে আপনার ৫০,০০০ টাকার অনুদান সফলভাবে জমা হয়েছে। রশিদ নং: WQF-9042। আল্লাহ আপনার দানকে কবুল করুন।"
-                    </p>
-                  </div>
-                  <div class="flex justify-between text-[10.5px] text-amber-900 font-medium pt-1">
-                    <span>✓ ৩ সেকেন্ডে বাংলা এসএমএস ডেলিভারি</span>
-                    <span>✓ অটোমেটিক ডিজিটাল মানি রিসিট প্রস্তুত</span>
-                  </div>
-                </div>
-
-                <!-- Humane Story Vignette: The Muhtamim's Sacred Trust -->
-                <div class="humane-story-vignette text-xs text-slate-700 space-y-1">
-                  <div class="flex items-center gap-2">
-                    <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-[10px]">মুহতামিম</span>
-                    <strong class="text-slate-900 font-semibold text-[11px]">মাওলানা মুফতি আবদুল হান্নান (মুহতামিম ও শাইখুল হাদিস):</strong>
-                  </div>
-                  <p class="italic text-[11.5px] leading-relaxed text-slate-600 pl-8">
-                    "এতিমখানা লিল্লাহ ফান্ডের যাকাত-সদকার টাকার সাথে সাধারণ বেতনের ১টি পয়সাও যাতে মিশে না যায়—এটা শুধু হিসাবের বিষয় নয়, আল্লাহর দরবারে জবাবদিহিতার ভয়। Yes-Edu দুটি তহবিল সম্পূর্ণ আলাদা রেখে দাতাদের তাৎক্ষণিক স্বয়ংক্রিয় এসএমএস দেয়। কমিটির মধ্যে বিশ্বাস আর বরকত শতগুণ বেড়ে গেছে।"
-                  </p>
-                </div>
               </div>
 
             </div>
-
           </div>
-        </div>
 
-        <!-- Right: Smart Campus Ecosystem Hub (Smartphone + Role Switcher) -->
-        <div class="lg:col-span-4" id="phoneMockupCol">
-          <div class="phone-ecosystem-stage">
-            
-            <!-- Ambient Glow Halo -->
-            <div class="ecosystem-halo-glow"></div>
+          <!-- MODULE 3: 1-TAP FEES & INSTITUTIONAL BANKING -->
+          <div id="swPanelBkash" class="software-panel">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              <!-- Left 5 cols: Father's Saved Hours & Cashless Integrity -->
+              <div class="lg:col-span-5 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100/80 text-pink-800 text-xs font-bold uppercase tracking-wider">
+                  <span>৳</span>
+                  <span class="lang-en">MONTH-END CASHLESS CLARITY</span>
+                  <span class="lang-bn hidden">মাসের ১০ তারিখের ভিড় ও ব্যাংকের দীর্ঘ লাইন বন্ধ</span>
+                </div>
+                <div>
+                  <h4 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    <span class="lang-en">Zero Bank Queues. Zero Cash Counter Shortages.</span>
+                    <span class="lang-bn hidden">ব্যাংকের দীর্ঘ লাইন নয়, ১০ সেকেন্ডেই ফি পরিশোধ ও রসিদ</span>
+                  </h4>
+                  <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                    <span class="lang-en">
+                      Parents no longer lose working hours standing in humid bank queues. Tuition, bus charges, and exam fees are paid in 10 seconds via bKash, Nagad, or Rocket—settling automatically into your school's bank account with 100% digital reconciliation.
+                    </span>
+                    <span class="lang-bn hidden">
+                      অভিভাবকদের কর্মঘণ্টা নষ্ট করে ব্যাংকে দাঁড়িয়ে থাকার দিন শেষ। ১০ সেকেন্ডে বিকাশ বা নগদে ফি পরিশোধ হতে না হতেই প্রতিষ্ঠানের একাউন্টে স্বয়ংক্রিয়ভাবে জমা হয়।
+                    </span>
+                  </p>
+                </div>
 
-            <!-- The Realistic Smartphone Mockup Frame -->
-            <div class="phone-mockup-frame">
-              <!-- Dynamic Island Notch with Reactive Alert Banner -->
-              <div class="phone-dynamic-island" id="phoneDynamicIsland">
-                <span id="phoneDynamicIslandText" class="truncate font-semibold text-[10px]">07:58 AM</span>
+                <!-- 3 Solid Checkpoints -->
+                <div class="space-y-3 pt-1">
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Direct Institutional Settlement:</strong> Automated batch deposition into Sonali Bank, Islami Bank, or City Bank.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Tamper-Proof Digital Voucher:</strong> Instantly generates downloadable PDF receipt with watermarked QR code.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Courteous Defaulter Notifications:</strong> Private SMS reminders sent only to unpaid guardians, preventing student embarrassment.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Simulator Action -->
+                <div class="pt-3 border-t border-slate-200/80 space-y-2">
+                  <button type="button" id="triggerBkashPaymentSimBtn" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition">
+                    <span>৳</span>
+                    <span class="lang-en">Simulate 1-Tap bKash Payment (৳2,500)</span>
+                    <span class="lang-bn hidden">১-ট্যাপে বিকাশ পেমেন্ট সিমুলেশন (২,৫০০৳)</span>
+                  </button>
+                  <p class="text-[11px] text-slate-500">Tests instant reconciliation and bank auto-deposit generation.</p>
+                </div>
               </div>
 
-              <!-- Phone Scrollable Content Area -->
-              <div class="phone-screen-content">
+              <!-- Right 7 cols: Fee Voucher & Bank Auto-Reconcile Card -->
+              <div class="lg:col-span-7 bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm space-y-6">
                 
-                <!-- App Top Bar with Live Sync Indicator -->
-                <div class="flex items-center justify-between pb-2 border-b border-slate-200 text-xs">
-                  <div class="flex items-center gap-1.5">
-                    <div class="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px]">
-                      YE
-                    </div>
-                    <span class="font-bold text-slate-900" id="phoneAppTopTitle">YES EDU PARENT</span>
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-100">
+                  <div class="flex items-center gap-2">
+                    <span class="text-pink-600 font-bold font-mono text-sm">৳ bKash / Nagad Instant Gateway</span>
                   </div>
-                  <span id="phoneSyncStatus" class="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 font-bold flex items-center gap-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>SYNCED</span>
+                  <span id="desktopBkashVoucherBadge" class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300">
+                    UNPAID (DUE FEB 10)
                   </span>
                 </div>
 
-                <!-- ================= ROLE VIEW 1: PARENT APP (DEFAULT) ================= -->
-                <div id="phoneRoleParentView" class="space-y-3">
-                  <!-- Student Profile Card in Phone -->
-                  <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs flex items-center gap-3">
-                    <div id="phoneStudentAvatar" class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm shadow-xs">
-                      আ
-                    </div>
+                <!-- Digital Fee Voucher -->
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-4">
+                  <div class="flex justify-between items-start">
                     <div>
-                      <span id="phoneStudentName" class="font-bold text-slate-900 block text-xs">Muhammad Abdullah</span>
-                      <span id="phoneStudentMeta" class="text-[10px] text-slate-500">Class 10-A • Roll: 01</span>
+                      <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">STUDENT VOUCHER</span>
+                      <h5 class="text-sm font-bold text-slate-900 mt-0.5">Tanvir Mahmud • Class 9-B • Roll 05</h5>
+                      <span class="text-xs text-slate-500 font-mono">Invoice: INV-2026-09418</span>
+                    </div>
+                    <div class="text-right">
+                      <span class="text-[10px] text-slate-500 block">Transaction Reference</span>
+                      <span id="desktopBkashTrx" class="font-mono text-xs font-bold text-slate-700">TRX: PENDING_PAYMENT</span>
                     </div>
                   </div>
 
-                  <!-- PHONE TAB 1: DASHBOARD OVERVIEW -->
-                  <div id="phoneTabDashboard" class="phone-tab-panel active">
-                    <div class="p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200 shadow-xs space-y-1.5">
-                      <div class="flex items-center justify-between text-xs">
-                        <span class="font-bold text-emerald-900 flex items-center gap-1.5">
-                          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
-                          Today's Campus Status
-                        </span>
-                        <span class="text-[10px] font-mono text-emerald-700 font-bold">100% Present</span>
-                      </div>
-                      <p class="text-[11px] text-emerald-800 leading-snug">
-                        আবদুল্লাহ সকাল ০৭:৫৮ মিনিটে গেট #০১ দিয়ে নিরাপদে ক্যাম্পাসে পৌঁছেছে।
-                      </p>
-                      <div class="text-[10px] text-emerald-700 font-semibold pt-1">
-                        ✓ Biometric Verified • 0 Absences This Month
-                      </div>
+                  <!-- Breakdown -->
+                  <div class="space-y-2 pt-2 border-t border-slate-200/80 text-xs">
+                    <div class="flex justify-between text-slate-600">
+                      <span>Monthly Tuition Fee (February 2026):</span>
+                      <span class="font-mono font-bold text-slate-900">৳২,২০০</span>
                     </div>
-
-                    <div class="p-3 bg-white rounded-2xl border border-pink-200 shadow-xs flex items-center justify-between text-xs">
-                      <div>
-                        <span class="font-bold text-slate-900 block text-xs">May 2026 Tuition Fee</span>
-                        <span class="text-[10px] text-pink-600 font-bold">৳২,৫০০ • 1-Tap bKash Ready</span>
-                      </div>
-                      <button type="button" class="px-2.5 py-1 bg-pink-600 text-white rounded-lg text-[10px] font-bold hover:bg-pink-700 transition" onclick="switchSoftwareTab('bkash')">
-                        Pay Now
-                      </button>
+                    <div class="flex justify-between text-slate-600">
+                      <span>Science Laboratory & Computer Lab Charge:</span>
+                      <span class="font-mono font-bold text-slate-900">৳৩০০</span>
                     </div>
-
-                    <div class="p-3 bg-white rounded-2xl border border-purple-200 shadow-xs flex items-center justify-between text-xs">
-                      <div>
-                        <span class="font-bold text-slate-900 block text-xs">Annual Exam Result</span>
-                        <span class="text-[10px] text-purple-700 font-bold">GPA: 5.00 (Golden A+)</span>
-                      </div>
-                      <button type="button" class="px-2.5 py-1 bg-purple-50 text-purple-700 border border-purple-200 rounded-lg text-[10px] font-bold hover:bg-purple-100 transition" onclick="switchSoftwareTab('exam')">
-                        View Marks
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- PHONE TAB 2: BIOMETRIC GATE ALERT -->
-                  <div id="phoneTabBiometric" class="phone-tab-panel">
-                    <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-300 shadow-xs space-y-2.5">
-                      <div class="flex items-center justify-between text-xs">
-                        <span class="font-bold text-emerald-900 flex items-center gap-1.5">
-                          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-ping"></span>
-                          Gate Arrival Verified
-                        </span>
-                        <span id="phoneGateTime" class="text-[10px] font-mono text-emerald-800 font-bold bg-white px-2 py-0.5 rounded border border-emerald-200">07:58:12 AM</span>
-                      </div>
-                      <div class="p-3 bg-white rounded-xl border border-emerald-200 shadow-xs space-y-1">
-                        <span class="text-[10px] font-mono text-slate-400 block">SENDER: YES-EDU-SMS</span>
-                        <p id="phoneSmsText" class="text-[11.5px] font-medium text-slate-900 leading-snug">
-                          "সম্মানিত অভিভাবক, আপনার সন্তান মুহাম্মদ আবদুল্লাহ (রোল: ০১, ১০ম শ্রেণি) সকাল ৭:৫৮ মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে।"
-                        </p>
-                      </div>
-                      <div class="flex items-center justify-between text-[10px] text-emerald-800 pt-1 font-semibold">
-                        <span>✓ Hardware: ZKTeco Turnstile #01</span>
-                        <span>✓ SMS Delivered: 2.1s</span>
-                      </div>
-                    </div>
-
-                    <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs space-y-2 text-xs">
-                      <div class="flex justify-between items-center">
-                        <span class="font-bold text-slate-900">May 2026 Attendance</span>
-                        <span class="font-mono text-emerald-700 font-bold">24 / 24 Days</span>
-                      </div>
-                      <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
-                        <div class="bg-emerald-500 h-2 rounded-full" style="width: 100%"></div>
-                      </div>
-                      <span class="text-[10px] text-slate-500 block">100% On-Time Record • Punctual Award Eligible</span>
-                    </div>
-                  </div>
-
-                  <!-- PHONE TAB 3: bKASH 1-TAP PAYMENT -->
-                  <div id="phoneTabBkash" class="phone-tab-panel">
-                    <div class="p-4 bg-white rounded-2xl border border-pink-200 shadow-xs space-y-3">
-                      <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-slate-900">Fee Demand Voucher #8492</span>
-                        <span id="phoneBkashStatusPill" class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">PAID ONLINE</span>
-                      </div>
-                      <div class="space-y-1.5 text-xs text-slate-700 pt-1 border-t border-slate-100">
-                        <div class="flex justify-between">
-                          <span>Monthly Tuition Fee:</span>
-                          <span class="font-mono font-bold">৳২,০০০</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span>Computer Lab & ICT:</span>
-                          <span class="font-mono font-bold">৳৩০০</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span>Terminal Exam Fee:</span>
-                          <span class="font-mono font-bold">৳২০০</span>
-                        </div>
-                        <div class="flex justify-between pt-1 border-t border-slate-200 font-bold text-slate-900 text-sm">
-                          <span>Total Payable:</span>
-                          <span id="phonePayableAmount" class="text-pink-600">৳২,৫০০</span>
-                        </div>
-                      </div>
-                      <button type="button" id="phonePayBkashBtn" class="w-full py-2.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-md">
-                        <span>Pay ৳২,৫০০ with bKash (১-ট্যাপ)</span>
-                      </button>
-                      <p id="phoneBkashTrxNotice" class="text-[10px] text-center text-slate-400">
-                        Direct Merchant Checkout • No Cash Handover Risk
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- PHONE TAB 4: NCTB AI EXAM & GPA -->
-                  <div id="phoneTabExam" class="phone-tab-panel">
-                    <div class="p-4 bg-purple-50 rounded-2xl border border-purple-200 shadow-xs space-y-2.5">
-                      <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-purple-900">NCTB 2026 Academic Report</span>
-                        <span class="px-2 py-0.5 rounded bg-purple-200 text-purple-900 font-bold text-[10px]">GPA 5.00</span>
-                      </div>
-                      <div class="p-3 bg-white rounded-xl border border-purple-100 space-y-2 text-xs">
-                        <div class="flex justify-between border-b border-slate-100 pb-1">
-                          <span id="phoneExamSubject1">Physics (পদার্থবিজ্ঞান)</span>
-                          <span class="font-mono font-bold text-emerald-700">96 / 100 (A+)</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-100 pb-1">
-                          <span id="phoneExamSubject2">Higher Math (উচ্চতর গণিত)</span>
-                          <span class="font-mono font-bold text-emerald-700">98 / 100 (A+)</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span id="phoneExamSubject3">Bangla (বাংলা ১ম ও ২য়)</span>
-                          <span class="font-mono font-bold text-emerald-700">91 / 100 (A+)</span>
-                        </div>
-                      </div>
-                      <div class="p-2.5 bg-white/80 rounded-lg border border-purple-100 text-[10.5px] text-slate-700 leading-snug">
-                        <strong>AI Pedagogy Insight:</strong> "Outstanding problem-solving capability in STEM subjects. Ranked 1st in Section A."
-                      </div>
-                      <button type="button" id="phoneDownloadMarksheetBtn" class="w-full py-2 rounded-xl bg-purple-700 text-white font-bold text-xs hover:bg-purple-800 transition" onclick="showToastNotification('📄 Marksheet PDF Downloaded!')">
-                        Download Official Marksheet PDF
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- PHONE TAB 5: WAQF & LILLAH PORTAL -->
-                  <div id="phoneTabWaqf" class="phone-tab-panel">
-                    <div class="p-4 bg-amber-50 rounded-2xl border border-amber-200 shadow-xs space-y-2.5">
-                      <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-amber-900">ওয়াকফ ও লিল্লাহ ডোনার ভাউচার</span>
-                        <span class="px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-bold text-[10px]">SHARIAH VERIFIED</span>
-                      </div>
-                      <div class="p-3 bg-white rounded-xl border border-amber-100 space-y-2 text-xs text-slate-800">
-                        <div class="flex justify-between text-[11px]">
-                          <span class="text-slate-500">দাতা:</span>
-                          <span class="font-bold" id="phoneDonorName">হাজী মো. রফিকুল ইসলাম</span>
-                        </div>
-                        <div class="flex justify-between text-[11px]">
-                          <span class="text-slate-500">অনুদানের খাত:</span>
-                          <span class="font-bold text-amber-800">এতিমখানা লিল্লাহ বোর্ডিং ফান্ড</span>
-                        </div>
-                        <div class="flex justify-between text-[11px]">
-                          <span class="text-slate-500">পরিমাণ:</span>
-                          <span class="font-mono font-bold text-emerald-700 text-sm" id="phoneDonationAmount">৳৫০,০০০</span>
-                        </div>
-                        <div class="pt-1.5 border-t border-slate-100 flex justify-between text-[10px] text-slate-400 font-mono">
-                          <span>TRX: WQF-9042</span>
-                          <span>Quarantine Locked</span>
-                        </div>
-                      </div>
-                      <p class="text-[10px] text-amber-800 text-center font-medium">
-                        "আল্লাহ আপনার দানকে কবুল করুন এবং বরকত দান করুন।"
-                      </p>
+                    <div class="flex justify-between text-slate-900 font-bold text-sm pt-2 border-t border-slate-200">
+                      <span>Total Payable Amount:</span>
+                      <span class="font-mono text-base text-pink-600">৳২,৫০০</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- ================= ROLE VIEW 2: TEACHER AI APP ================= -->
-                <div id="phoneRoleTeacherView" class="hidden space-y-3">
-                  <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-sm shadow-xs">
-                      ম
-                    </div>
-                    <div>
-                      <span class="font-bold text-slate-900 block text-xs">Mahmudul Hasan</span>
-                      <span class="text-[10px] text-slate-500">Senior Teacher • Class 10-A Mentor</span>
-                    </div>
+                <!-- Institutional Bank Auto-Deposit Ledger -->
+                <div class="p-4 rounded-xl bg-slate-900 text-white space-y-2">
+                  <div class="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
+                    <span class="font-bold text-slate-200">INSTITUTIONAL BANK ROUTE</span>
+                    <span class="text-emerald-400 font-mono text-[11px]">● Auto-Settlement Active</span>
                   </div>
-
-                  <div class="p-3.5 bg-purple-50 rounded-2xl border border-purple-200 shadow-xs space-y-2">
-                    <div class="flex justify-between items-center text-xs">
-                      <span class="font-bold text-purple-900">Class 10-A Attendance</span>
-                      <span class="font-mono text-purple-800 font-bold bg-white px-2 py-0.5 rounded">48 / 50 Present</span>
-                    </div>
-                    <div class="w-full bg-purple-200 rounded-full h-2">
-                      <div class="bg-purple-600 h-2 rounded-full" style="width: 96%"></div>
-                    </div>
-                    <button type="button" class="w-full py-1.5 bg-purple-700 text-white rounded-lg text-[11px] font-bold hover:bg-purple-800 transition" onclick="showToastNotification('✅ Roll Call Verified & Synced with Parent Portal')">
-                      Take 1-Tap Digital Roll Call
-                    </button>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-400">Destination Account:</span>
+                    <span class="font-mono text-white font-semibold">Sonali Bank Ltd • A/C #2048-XXXX-091</span>
                   </div>
-
-                  <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs space-y-2 text-xs">
-                    <span class="font-bold text-slate-900 block">NCTB AI Classroom Diary</span>
-                    <p class="text-[11px] text-slate-600 leading-snug">
-                      "Physics Chapter 4: Work, Power & Energy CQ Questions compiled for tomorrow's terminal test."
-                    </p>
-                    <button type="button" class="px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-[10px] font-bold hover:bg-emerald-100 transition" onclick="showToastNotification('📢 Diary Pushed to 50 Student Portals!')">
-                      📢 Broadcast Diary to Students
-                    </button>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-400">Reconciliation Speed:</span>
+                    <span class="text-emerald-400 font-semibold">Instantaneous (Zero Manual Bookkeeping)</span>
                   </div>
-                </div>
-
-                <!-- ================= ROLE VIEW 3: PRINCIPAL COCKPIT ================= -->
-                <div id="phoneRolePrincipalView" class="hidden space-y-3">
-                  <div class="p-3 bg-slate-900 text-white rounded-2xl shadow-sm flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-amber-400 text-slate-900 font-bold flex items-center justify-center text-sm shadow-xs">
-                      👑
-                    </div>
-                    <div>
-                      <span class="font-bold text-white block text-xs">Principal's Live Command</span>
-                      <span class="text-[10px] text-amber-300 font-mono">Academic Year 2026 Telemetry</span>
-                    </div>
-                  </div>
-
-                  <!-- Cash Flow Today -->
-                  <div class="p-3.5 bg-white rounded-2xl border border-emerald-200 shadow-xs space-y-1">
-                    <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Today's Fee Collections</span>
-                    <div class="flex items-baseline justify-between">
-                      <span class="text-xl font-extrabold text-emerald-800">৳৪,৮৫,২০০</span>
-                      <span class="text-[10px] font-mono text-emerald-600 font-bold">100% Reconciled</span>
-                    </div>
-                    <span class="text-[10px] text-slate-500 block">bKash: 74% • Sonali Bank: 26%</span>
-                  </div>
-
-                  <!-- Campus Attendance Snapshot -->
-                  <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs space-y-1 text-xs">
-                    <div class="flex justify-between">
-                      <span class="text-slate-600">Student Attendance:</span>
-                      <span class="font-bold text-slate-900 font-mono">১,২২০ / ১,২৪০ (৯৮.৪%)</span>
-                    </div>
-                    <div class="flex justify-between">
-                      <span class="text-slate-600">Teachers & Staff:</span>
-                      <span class="font-bold text-emerald-700 font-mono">২৮ / ২৮ (১০০% Present)</span>
-                    </div>
-                    <div class="pt-2 border-t border-slate-100">
-                      <button type="button" class="w-full py-1.5 bg-slate-900 text-white rounded-lg text-[11px] font-bold hover:bg-slate-800 transition" onclick="showToastNotification('📢 Urgent Notice sent to 1,240 Parents!')">
-                        📢 Send Emergency Broadcast SMS
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-center pt-2 text-[10px] text-slate-400">
-                  YES EDU Campus Operating System • Multi-Device Ecosystem
                 </div>
 
               </div>
-            </div>
 
-            <!-- Mobile App Multi-Role Switcher Bar -->
-            <div class="mt-4 flex flex-col items-center gap-1.5">
-              <span class="text-[10px] uppercase tracking-widest font-extrabold text-slate-400">SWITCH DEVICE VIEW:</span>
-              <div class="inline-flex p-1 bg-white rounded-2xl border border-slate-200 shadow-xs gap-1 text-xs">
-                <button type="button" id="phoneRoleParentBtn" class="phone-role-btn active" title="Guardian Mobile Portal">
-                  <span>👨‍👩‍👧</span>
-                  <span>Parent</span>
-                </button>
-                <button type="button" id="phoneRoleTeacherBtn" class="phone-role-btn" title="Teacher Mobile Workspace">
-                  <span>👨‍🏫</span>
-                  <span>Teacher AI</span>
-                </button>
-                <button type="button" id="phoneRolePrincipalBtn" class="phone-role-btn" title="Principal Pocket Cockpit">
-                  <span>👑</span>
-                  <span>Principal</span>
-                </button>
-              </div>
             </div>
-
           </div>
-        </div>
 
+          <!-- MODULE 4: NCTB 2026 AI QUESTION ENGINE & GPA 5.0 -->
+          <div id="swPanelExam" class="software-panel">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              <!-- Left 5 cols: Teacher's Restored Creative Joy -->
+              <div class="lg:col-span-5 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100/80 text-purple-800 text-xs font-bold uppercase tracking-wider">
+                  <span>📝</span>
+                  <span class="lang-en">NCTB 2026 CURRICULUM COMPLIANT</span>
+                  <span class="lang-bn hidden">এনসিটিবি নতুন মূল্যায়ন ২০২৬</span>
+                </div>
+                <div>
+                  <h4 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    <span class="lang-en">Teachers Inspiring Students, Not Drowning in Spreadsheets</span>
+                    <span class="lang-bn hidden">শিক্ষকদের খাতা দেখার ক্লান্তি দূর করে ক্লাসে পাঠদানে মনোযোগ</span>
+                  </h4>
+                  <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                    <span class="lang-en">
+                      Educators enter the classroom to change lives, not to spend sleepless nights calculating decimal averages across dozens of ledgers. YES EDU's NCTB 2026 Engine auto-structures Creative Questions (CQ) and converts performance scores into board-ready GPA 5.0 in 1 click.
+                    </span>
+                    <span class="lang-bn hidden">
+                      শিক্ষকদের কাজ শিক্ষার্থীদের অনুপ্রেরণা দেওয়া, খাতার পাতার পর পাতা হিসাব করা নয়। নতুন শিক্ষাক্রমের যোগ্যতাভিত্তিক মূল্যায়ন ও জিপিএ ৫ বের করুন ১ ক্লিকেই।
+                    </span>
+                  </p>
+                </div>
+
+                <!-- 3 Solid Checkpoints -->
+                <div class="space-y-3 pt-1">
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">100% DSHE & Board Compliant:</strong> Engineered precisely to the Directorate and Madrasah Board assessment rules.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Auto-Generated Creative Questions:</strong> Pedagogically structured CQ stems and marks distribution in Bengali & English.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">One-Click Printable Progress Report:</strong> Ready-to-print report card with school seal and Headmaster signature.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Simulator Action -->
+                <div class="pt-3 border-t border-slate-200/80 space-y-2">
+                  <button type="button" id="triggerExamAiGenBtn" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition">
+                    <span>✨</span>
+                    <span class="lang-en">Generate Next Board Subject (CQ & Ranks)</span>
+                    <span class="lang-bn hidden">পরবর্তী বিষয়ের প্রশ্ন ও মেধা তালিকা দেখুন</span>
+                  </button>
+                  <p class="text-[11px] text-slate-500">Cycles between Physics, Higher Math, and Bangla 1st paper.</p>
+                </div>
+              </div>
+
+              <!-- Right 7 cols: NCTB Creative Paper & Board Tabulation -->
+              <div class="lg:col-span-7 bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                
+                <!-- Exam Header -->
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-100">
+                  <div>
+                    <span class="text-[10px] uppercase font-bold text-purple-700 tracking-wider">BOARD COMPLIANT EXAM ENGINE</span>
+                    <h5 id="desktopExamSubjectHeader" class="text-sm font-bold text-slate-900 mt-0.5">পদার্থবিজ্ঞান • ১০ম শ্রেণি • বার্ষিক মূল্যায়ন পরীক্ষা</h5>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800">
+                    NCTB 2026 Format
+                  </span>
+                </div>
+
+                <!-- Creative Question Stem & Sub-questions -->
+                <div class="space-y-3">
+                  <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+                    <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">উদ্দীপক (CQ Stem):</span>
+                    <p id="desktopExamStemText" class="text-xs text-slate-800 leading-relaxed font-sans">
+                      একটি ১০ কেজি ভরের স্থির বস্তুর ওপর ২০ নিউটন বল ৫ সেকেন্ড যাবত প্রযুক্ত হলো। ৫ সেকেন্ড পর বলের ক্রিয়া বন্ধ হয়ে গেল।
+                    </p>
+                  </div>
+
+                  <div id="desktopExamQuestionsList" class="space-y-1.5 text-xs text-slate-800">
+                    <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
+                      <span>(ক) বলের মাত্রা সমীকরণ কী?</span>
+                      <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[১]</span>
+                    </div>
+                    <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
+                      <span>(খ) সাইকেলের চাকায় বিয়ারিং ব্যবহার করা হয় কেন? ব্যাখ্যা করো।</span>
+                      <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[২]</span>
+                    </div>
+                    <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
+                      <span>(গ) ৫ সেকেন্ডে বস্তুটির অতিক্রান্ত দূরত্ব নির্ণয় করো।</span>
+                      <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[৩]</span>
+                    </div>
+                    <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
+                      <span>(ঘ) বলের মান দ্বিগুণ করলে গতিশক্তির কীরূপ পরিবর্তন ঘটবে? গাণিতিকভাবে বিশ্লেষণ করো।</span>
+                      <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[৪]</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Instant Board-Grade Merit Tabulation -->
+                <div class="pt-3 border-t border-slate-100">
+                  <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2">Class 10-A Merit Tabulation (Auto-Calculated):</span>
+                  <div id="desktopExamTabulationBody" class="space-y-2">
+                    <div class="p-2.5 bg-white rounded-xl border border-slate-200/80 flex items-center justify-between shadow-2xs">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">01</span>
+                        <div>
+                          <span class="font-bold text-slate-900 block text-xs">Muhammad Abdullah</span>
+                          <span class="text-[10px] text-slate-500 font-mono">275 / 300 Marks</span>
+                        </div>
+                      </div>
+                      <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">5.00 (A+)</span>
+                    </div>
+                    <div class="p-2.5 bg-white rounded-xl border border-slate-200/80 flex items-center justify-between shadow-2xs">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">02</span>
+                        <div>
+                          <span class="font-bold text-slate-900 block text-xs">Sumaiya Akter</span>
+                          <span class="text-[10px] text-slate-500 font-mono">266 / 300 Marks</span>
+                        </div>
+                      </div>
+                      <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">5.00 (A+)</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <!-- MODULE 5: MADRASA SHARIAH QUARANTINE & LILLAH BOARDING -->
+          <div id="swPanelWaqf" class="software-panel">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              <!-- Left 5 cols: Sacred Trust & Orphan Accountability -->
+              <div class="lg:col-span-5 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 text-amber-800 text-xs font-bold uppercase tracking-wider">
+                  <span>🕌</span>
+                  <span class="lang-en">100% SHARIAH AUDIT GUARANTEE</span>
+                  <span class="lang-bn hidden">১০০% শরিয়াহ সম্মত হিসাব ও আমানত</span>
+                </div>
+                <div>
+                  <h4 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    <span class="lang-en">Protecting the Sacred Trust of Orphans and Donors</span>
+                    <span class="lang-bn hidden">এতিমের হক ও দানকারীদের পবিত্র আমানতের প্রতিটি পয়সার হিসাব</span>
+                  </h4>
+                  <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                    <span class="lang-en">
+                      In Islamic institutions, mixing Zakat and Lillah donations with general operating funds is a spiritual transgression. YES EDU maintains unbreakable digital isolation between orphan boarding funds and campus tuition, issuing instant SMS receipts to every benefactor.
+                    </span>
+                    <span class="lang-bn hidden">
+                      মাদ্রাসায় সাধারণ তহবিলের সাথে লিল্লাহ বা এতিমখানার টাকা মিশ্রিত হওয়া গুরুতর আমানতের খেয়ানত। ইয়েস এডু ডিজিটাল কোয়ারেন্টাইন নিশ্চিত করে প্রতিটি পয়সার শরীয়াহসম্মত ব্যবহার নিশ্চিত করে।
+                    </span>
+                  </p>
+                </div>
+
+                <!-- 3 Solid Checkpoints -->
+                <div class="space-y-3 pt-1">
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Strict Fund Quarantine:</strong> Impossible to disburse Lillah Boarding or Zakat donations into general faculty salary accounts.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Instant Donor SMS & Sanad:</strong> Verified receipt number and du'a acknowledgement SMS dispatched within 2 seconds.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                    <p class="text-xs text-slate-700 leading-snug">
+                      <strong class="text-slate-900">Qawmi, Alim & Tahfiz Tailored:</strong> Pre-loaded charts of accounts for Jamia, Dakhil, Alim, Kamil, and Tahfiz campuses.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Simulator Action -->
+                <div class="pt-3 border-t border-slate-200/80 space-y-2">
+                  <button type="button" id="triggerWaqfDonationSimBtn" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition">
+                    <span>🕌</span>
+                    <span class="lang-en">Record Waqf Donation (Test Quarantine Flow)</span>
+                    <span class="lang-bn hidden">ওয়াকফ অনুদান রেকর্ড করুন (শরীয়াহ অডিট)</span>
+                  </button>
+                  <p class="text-[11px] text-slate-500">Cycles through real donor records and verified SMS receipts.</p>
+                </div>
+              </div>
+
+              <!-- Right 7 cols: Dual-Fund Ledger & Transparent Donor Voucher -->
+              <div class="lg:col-span-7 bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-100">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                    <span class="text-xs font-bold text-slate-800 font-mono">JAMIA ISLAMIA • SHARIAH QUARANTINE LEDGER</span>
+                  </div>
+                  <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">100% Shariah Compliant</span>
+                </div>
+
+                <!-- Dual Fund Quarantine Comparison -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <!-- Fund 1: Quarantined Lillah Boarding -->
+                  <div class="p-4 rounded-xl bg-amber-50/70 border-2 border-amber-300 space-y-2">
+                    <div class="flex justify-between items-center text-xs">
+                      <span class="font-bold text-amber-900">🔒 Lillah & Orphan Fund</span>
+                      <span class="text-[10px] font-bold bg-amber-200 text-amber-800 px-1.5 py-0.5 rounded">Quarantined</span>
+                    </div>
+                    <div class="space-y-1 text-xs">
+                      <div class="flex justify-between text-slate-600">
+                        <span>Total Donations:</span>
+                        <span id="desktopWaqfDonationTotal" class="font-mono font-bold text-emerald-700">৳১,৮০,০০০</span>
+                      </div>
+                      <div class="flex justify-between text-slate-600">
+                        <span>Meals & Books Spent:</span>
+                        <span class="font-mono font-bold text-slate-800">৳১,২০,০০০</span>
+                      </div>
+                      <div class="flex justify-between font-bold pt-1 border-t border-amber-200 text-slate-900">
+                        <span>Available Balance:</span>
+                        <span id="desktopWaqfNetBalance" class="font-mono text-emerald-800">+৳৬০,০০০</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Fund 2: General Campus Operating Fund -->
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div class="flex justify-between items-center text-xs">
+                      <span class="font-bold text-slate-800">🏫 General Operating Fund</span>
+                      <span class="text-[10px] font-bold bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded">Tuition</span>
+                    </div>
+                    <div class="space-y-1 text-xs">
+                      <div class="flex justify-between text-slate-600">
+                        <span>Monthly Tuition:</span>
+                        <span class="font-mono font-bold text-slate-800">৳১২,৫০,০০০</span>
+                      </div>
+                      <div class="flex justify-between text-slate-600">
+                        <span>Teacher Salaries:</span>
+                        <span class="font-mono font-bold text-slate-800">৳৯,২০,০০০</span>
+                      </div>
+                      <div class="flex justify-between font-bold pt-1 border-t border-slate-200 text-slate-900">
+                        <span>Operating Surplus:</span>
+                        <span class="font-mono text-emerald-800">+৳৩,৩০,০০০</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Verified Donor Receipt & SMS Card -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-amber-50/90 border border-amber-200/90 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class="text-[10px] uppercase font-bold text-amber-800 tracking-wider">OFFICIAL DONOR VOUCHER</span>
+                      <h5 class="text-xs font-bold text-slate-900 mt-0.5">হাজী আবদুস সাত্তার সাহেব • এতিমখানা লিল্লাহ বোর্ডিং ও কিতাব ফান্ড</h5>
+                    </div>
+                    <span id="desktopWaqfVoucherNo" class="font-mono text-xs font-bold text-amber-900 bg-amber-100 px-2 py-0.5 rounded border border-amber-300">VOUCHER: WQF-8492</span>
+                  </div>
+                  <div class="p-3 bg-white rounded-xl border border-amber-200">
+                    <p id="desktopWaqfSmsText" class="text-xs text-slate-800 italic leading-relaxed font-sans">
+                      "আলহামদুলিল্লাহ! হাজী আবদুস সাত্তার সাহেব, জামিয়া ইসলামিয়া এতিমখানা লিল্লাহ বোর্ডিং ও কিতাব ফান্ড এ আপনার ৩০,০০০ টাকার অনুদান সফলভাবে জমা হয়েছে। রশিদ নং: WQF-8492। আল্লাহ আপনার দানকে কবুল করুন।"
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-between text-[10px] text-amber-800">
+                    <span>✓ Automated Telco SMS Dispatched (2.0s)</span>
+                    <span class="font-semibold">Zero Cross-Fund Contamination Guaranteed</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
+
 
     </div>
   </section>

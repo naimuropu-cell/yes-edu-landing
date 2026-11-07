@@ -195,6 +195,19 @@ function initVideoShowcase() {
   let videoTimer = null;
   let currentChapterIndex = 0;
 
+  // Real Mac Video Detection & Fallback Orchestration
+  const heroMacVideo = document.getElementById('heroMacVideo');
+  if (heroMacVideo) {
+    heroMacVideo.addEventListener('playing', () => {
+      if (simulationFrame) simulationFrame.style.display = 'none';
+      heroMacVideo.style.display = 'block';
+    });
+    heroMacVideo.addEventListener('error', () => {
+      heroMacVideo.style.display = 'none';
+      if (simulationFrame) simulationFrame.style.display = 'block';
+    });
+  }
+
   // Web Audio API Synthesizer
   let audioCtx = null;
   function playSoundEffect(type) {
@@ -1173,7 +1186,7 @@ function triggerDynamicIslandAlert(text, duration = 3000) {
 }
 
 function switchSoftwareTab(targetTab) {
-  const tabBtns = document.querySelectorAll('.software-tab-btn, .artisan-nav-tab');
+  const tabBtns = document.querySelectorAll('.software-tab-btn, .artisan-nav-tab, .solid-module-tab');
   const panels = document.querySelectorAll('.software-panel');
   const phonePanels = document.querySelectorAll('.phone-tab-panel');
   const syncStatus = document.getElementById('phoneSyncStatus');
@@ -1229,7 +1242,7 @@ function switchSoftwareTab(targetTab) {
 }
 
 function initSoftwareWindowTabs() {
-  const tabBtns = document.querySelectorAll('.software-tab-btn, .artisan-nav-tab');
+  const tabBtns = document.querySelectorAll('.software-tab-btn, .artisan-nav-tab, .solid-module-tab');
   const clockDisplay = document.getElementById('macClockDisplay');
 
   // Tab click listeners
