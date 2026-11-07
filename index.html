@@ -785,6 +785,22 @@
             কথার ফুলঝুড়িতে নয়, সরাসরি ক্লিক করে দেখুন প্রতিদিন কীভাবে ২০০+ শিক্ষা প্রতিষ্ঠান পরিচালিত হচ্ছে — বায়োমেট্রিক গেট এন্ট্রি, ১-ক্লিক বিকাশ ফি আদায়, এনসিটিবি এআই প্রশ্ন এবং ওয়াকফ অডিট লেজার।
           </span>
         </p>
+
+        <!-- Live Auto-Tour Orchestrator Trigger & Step Timeline -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button type="button" id="triggerAutoPlayCampusTourBtn" class="autoplay-tour-btn group">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:scale-125 transition-transform animate-ping"></span>
+            <span id="autoPlayBtnIcon">▶</span>
+            <span id="autoPlayBtnText">
+              <span class="lang-en">⚡ Auto-Play A Campus Day (30s Live Tour)</span>
+              <span class="lang-bn hidden">⚡ ৩০ সেকেন্ডে পুরো ক্যাম্পাস অটোমেশন দেখুন</span>
+            </span>
+          </button>
+          <div id="autoPlayTimelinePill" class="hidden items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 text-white text-xs font-mono border border-slate-700 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span id="autoPlayStepLabel">Phase 1/4: 07:58 AM Morning Gate Rush</span>
+          </div>
+        </div>
       </div>
 
       <!-- Mobile Stage View Toggle (Visible only on screens < lg) -->
@@ -1352,219 +1368,358 @@
           </div>
         </div>
 
-        <!-- Right: Realistic Smartphone Parent App Mockup (100% Synchronized with Desktop OS) -->
+        <!-- Right: Smart Campus Ecosystem Hub (Smartphone + 4 Floating 3D/2.5D Telemetry Nodes + Role Switcher) -->
         <div class="lg:col-span-4" id="phoneMockupCol">
-          <div class="phone-mockup-frame">
-            <!-- Dynamic Island Notch with Reactive Alert Banner -->
-            <div class="phone-dynamic-island" id="phoneDynamicIsland">
-              <span id="phoneDynamicIslandText" class="truncate font-semibold text-[10px]">07:58 AM</span>
+          <div class="phone-ecosystem-stage">
+            
+            <!-- Ambient Glow Halo -->
+            <div class="ecosystem-halo-glow"></div>
+
+            <!-- Floating Telemetry Node 1: ZKTeco Biometric Turnstile (Top-Left) -->
+            <div class="floating-telemetry-node node-top-left hidden sm:flex" onclick="switchSoftwareTab('biometric')" title="Click to inspect Biometric Gate Turnstile">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <span class="text-sm">⏱️</span>
+              <div class="leading-tight text-left">
+                <strong class="text-slate-900 block text-[11px]">ZKTeco Turnstile #01</strong>
+                <span class="text-[9.5px] text-emerald-700 font-mono">Offline-Buffered Sync</span>
+              </div>
             </div>
 
-            <!-- Phone Scrollable Content Area -->
-            <div class="phone-screen-content">
-              
-              <!-- App Top Bar with Live Sync Indicator -->
-              <div class="flex items-center justify-between pb-2 border-b border-slate-200 text-xs">
-                <div class="flex items-center gap-1.5">
-                  <div class="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px]">
-                    YE
-                  </div>
-                  <span class="font-bold text-slate-900">YES EDU PARENT</span>
-                </div>
-                <span id="phoneSyncStatus" class="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 font-bold flex items-center gap-1">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span>SYNCED</span>
-                </span>
+            <!-- Floating Telemetry Node 2: 3-Second Telco SMS Gateway (Top-Right) -->
+            <div class="floating-telemetry-node node-top-right hidden sm:flex" onclick="switchSoftwareTab('biometric')" title="Click to inspect Telco SMS Delivery">
+              <span class="text-sm">📡</span>
+              <div class="leading-tight text-left">
+                <strong class="text-slate-900 block text-[11px]">3s Telco SMS Cloud</strong>
+                <span class="text-[9.5px] text-purple-700 font-mono">GP • Robi • BL • Teletalk</span>
+              </div>
+            </div>
+
+            <!-- Floating Telemetry Node 3: bKash Direct Merchant Gateway (Bottom-Left) -->
+            <div class="floating-telemetry-node node-bottom-left hidden sm:flex" onclick="switchSoftwareTab('bkash')" title="Click to inspect bKash Merchant Gateway">
+              <span class="text-sm">৳</span>
+              <div class="leading-tight text-left">
+                <strong class="text-slate-900 block text-[11px]">bKash Direct Gateway</strong>
+                <span class="text-[9.5px] text-pink-700 font-mono">Auto Bank Reconciliation</span>
+              </div>
+            </div>
+
+            <!-- Floating Telemetry Node 4: NCTB Curriculum AI Engine (Bottom-Right) -->
+            <div class="floating-telemetry-node node-bottom-right hidden sm:flex" onclick="switchSoftwareTab('exam')" title="Click to inspect NCTB Curriculum AI">
+              <span class="text-sm">🤖</span>
+              <div class="leading-tight text-left">
+                <strong class="text-slate-900 block text-[11px]">NCTB AI Engine V2</strong>
+                <span class="text-[9.5px] text-sky-700 font-mono">1-Click GPA 5.0 Tabulation</span>
+              </div>
+            </div>
+
+            <!-- The Realistic Smartphone Mockup Frame -->
+            <div class="phone-mockup-frame">
+              <!-- Dynamic Island Notch with Reactive Alert Banner -->
+              <div class="phone-dynamic-island" id="phoneDynamicIsland">
+                <span id="phoneDynamicIslandText" class="truncate font-semibold text-[10px]">07:58 AM</span>
               </div>
 
-              <!-- Student Profile Card in Phone -->
-              <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs flex items-center gap-3">
-                <div id="phoneStudentAvatar" class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm shadow-xs">
-                  আ
-                </div>
-                <div>
-                  <span id="phoneStudentName" class="font-bold text-slate-900 block text-xs">Muhammad Abdullah</span>
-                  <span id="phoneStudentMeta" class="text-[10px] text-slate-500">Class 10-A • Roll: 01</span>
-                </div>
-              </div>
-
-              <!-- ================= PHONE TAB 1: DASHBOARD OVERVIEW ================= -->
-              <div id="phoneTabDashboard" class="phone-tab-panel active">
-                <!-- Today's Campus Telemetry -->
-                <div class="p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200 shadow-xs space-y-1.5">
-                  <div class="flex items-center justify-between text-xs">
-                    <span class="font-bold text-emerald-900 flex items-center gap-1.5">
-                      <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
-                      Today's Campus Status
-                    </span>
-                    <span class="text-[10px] font-mono text-emerald-700 font-bold">100% Present</span>
+              <!-- Phone Scrollable Content Area -->
+              <div class="phone-screen-content">
+                
+                <!-- App Top Bar with Live Sync Indicator -->
+                <div class="flex items-center justify-between pb-2 border-b border-slate-200 text-xs">
+                  <div class="flex items-center gap-1.5">
+                    <div class="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px]">
+                      YE
+                    </div>
+                    <span class="font-bold text-slate-900" id="phoneAppTopTitle">YES EDU PARENT</span>
                   </div>
-                  <p class="text-[11px] text-emerald-800 leading-snug">
-                    আবদুল্লাহ সকাল ০৭:৫৮ মিনিটে গেট #০১ দিয়ে নিরাপদে ক্যাম্পাসে পৌঁছেছে।
-                  </p>
-                  <div class="text-[10px] text-emerald-700 font-semibold pt-1">
-                    ✓ Biometric Verified • 0 Absences This Month
-                  </div>
+                  <span id="phoneSyncStatus" class="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 font-bold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>SYNCED</span>
+                  </span>
                 </div>
 
-                <!-- Fee Reminder Mini-Card -->
-                <div class="p-3 bg-white rounded-2xl border border-pink-200 shadow-xs flex items-center justify-between text-xs">
-                  <div>
-                    <span class="font-bold text-slate-900 block text-xs">May 2026 Tuition Fee</span>
-                    <span class="text-[10px] text-pink-600 font-bold">৳২,৫০০ • 1-Tap bKash Ready</span>
+                <!-- ================= ROLE VIEW 1: PARENT APP (DEFAULT) ================= -->
+                <div id="phoneRoleParentView" class="space-y-3">
+                  <!-- Student Profile Card in Phone -->
+                  <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs flex items-center gap-3">
+                    <div id="phoneStudentAvatar" class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm shadow-xs">
+                      আ
+                    </div>
+                    <div>
+                      <span id="phoneStudentName" class="font-bold text-slate-900 block text-xs">Muhammad Abdullah</span>
+                      <span id="phoneStudentMeta" class="text-[10px] text-slate-500">Class 10-A • Roll: 01</span>
+                    </div>
                   </div>
-                  <button type="button" class="px-2.5 py-1 bg-pink-600 text-white rounded-lg text-[10px] font-bold hover:bg-pink-700 transition" onclick="switchSoftwareTab('bkash')">
-                    Pay Now
-                  </button>
+
+                  <!-- PHONE TAB 1: DASHBOARD OVERVIEW -->
+                  <div id="phoneTabDashboard" class="phone-tab-panel active">
+                    <div class="p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200 shadow-xs space-y-1.5">
+                      <div class="flex items-center justify-between text-xs">
+                        <span class="font-bold text-emerald-900 flex items-center gap-1.5">
+                          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+                          Today's Campus Status
+                        </span>
+                        <span class="text-[10px] font-mono text-emerald-700 font-bold">100% Present</span>
+                      </div>
+                      <p class="text-[11px] text-emerald-800 leading-snug">
+                        আবদুল্লাহ সকাল ০৭:৫৮ মিনিটে গেট #০১ দিয়ে নিরাপদে ক্যাম্পাসে পৌঁছেছে।
+                      </p>
+                      <div class="text-[10px] text-emerald-700 font-semibold pt-1">
+                        ✓ Biometric Verified • 0 Absences This Month
+                      </div>
+                    </div>
+
+                    <div class="p-3 bg-white rounded-2xl border border-pink-200 shadow-xs flex items-center justify-between text-xs">
+                      <div>
+                        <span class="font-bold text-slate-900 block text-xs">May 2026 Tuition Fee</span>
+                        <span class="text-[10px] text-pink-600 font-bold">৳২,৫০০ • 1-Tap bKash Ready</span>
+                      </div>
+                      <button type="button" class="px-2.5 py-1 bg-pink-600 text-white rounded-lg text-[10px] font-bold hover:bg-pink-700 transition" onclick="switchSoftwareTab('bkash')">
+                        Pay Now
+                      </button>
+                    </div>
+
+                    <div class="p-3 bg-white rounded-2xl border border-purple-200 shadow-xs flex items-center justify-between text-xs">
+                      <div>
+                        <span class="font-bold text-slate-900 block text-xs">Annual Exam Result</span>
+                        <span class="text-[10px] text-purple-700 font-bold">GPA: 5.00 (Golden A+)</span>
+                      </div>
+                      <button type="button" class="px-2.5 py-1 bg-purple-50 text-purple-700 border border-purple-200 rounded-lg text-[10px] font-bold hover:bg-purple-100 transition" onclick="switchSoftwareTab('exam')">
+                        View Marks
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- PHONE TAB 2: BIOMETRIC GATE ALERT -->
+                  <div id="phoneTabBiometric" class="phone-tab-panel">
+                    <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-300 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between text-xs">
+                        <span class="font-bold text-emerald-900 flex items-center gap-1.5">
+                          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-ping"></span>
+                          Gate Arrival Verified
+                        </span>
+                        <span id="phoneGateTime" class="text-[10px] font-mono text-emerald-800 font-bold bg-white px-2 py-0.5 rounded border border-emerald-200">07:58:12 AM</span>
+                      </div>
+                      <div class="p-3 bg-white rounded-xl border border-emerald-200 shadow-xs space-y-1">
+                        <span class="text-[10px] font-mono text-slate-400 block">SENDER: YES-EDU-SMS</span>
+                        <p id="phoneSmsText" class="text-[11.5px] font-medium text-slate-900 leading-snug">
+                          "সম্মানিত অভিভাবক, আপনার সন্তান মুহাম্মদ আবদুল্লাহ (রোল: ০১, ১০ম শ্রেণি) সকাল ৭:৫৮ মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে।"
+                        </p>
+                      </div>
+                      <div class="flex items-center justify-between text-[10px] text-emerald-800 pt-1 font-semibold">
+                        <span>✓ Hardware: ZKTeco Turnstile #01</span>
+                        <span>✓ SMS Delivered: 2.1s</span>
+                      </div>
+                    </div>
+
+                    <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs space-y-2 text-xs">
+                      <div class="flex justify-between items-center">
+                        <span class="font-bold text-slate-900">May 2026 Attendance</span>
+                        <span class="font-mono text-emerald-700 font-bold">24 / 24 Days</span>
+                      </div>
+                      <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                        <div class="bg-emerald-500 h-2 rounded-full" style="width: 100%"></div>
+                      </div>
+                      <span class="text-[10px] text-slate-500 block">100% On-Time Record • Punctual Award Eligible</span>
+                    </div>
+                  </div>
+
+                  <!-- PHONE TAB 3: bKASH 1-TAP PAYMENT -->
+                  <div id="phoneTabBkash" class="phone-tab-panel">
+                    <div class="p-4 bg-white rounded-2xl border border-pink-200 shadow-xs space-y-3">
+                      <div class="flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-900">Fee Demand Voucher #8492</span>
+                        <span id="phoneBkashStatusPill" class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">PAID ONLINE</span>
+                      </div>
+                      <div class="space-y-1.5 text-xs text-slate-700 pt-1 border-t border-slate-100">
+                        <div class="flex justify-between">
+                          <span>Monthly Tuition Fee:</span>
+                          <span class="font-mono font-bold">৳২,০০০</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span>Computer Lab & ICT:</span>
+                          <span class="font-mono font-bold">৳৩০০</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span>Terminal Exam Fee:</span>
+                          <span class="font-mono font-bold">৳২০০</span>
+                        </div>
+                        <div class="flex justify-between pt-1 border-t border-slate-200 font-bold text-slate-900 text-sm">
+                          <span>Total Payable:</span>
+                          <span id="phonePayableAmount" class="text-pink-600">৳২,৫০০</span>
+                        </div>
+                      </div>
+                      <button type="button" id="phonePayBkashBtn" class="w-full py-2.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-md">
+                        <span>Pay ৳২,৫০০ with bKash (১-ট্যাপ)</span>
+                      </button>
+                      <p id="phoneBkashTrxNotice" class="text-[10px] text-center text-slate-400">
+                        Direct Merchant Checkout • No Cash Handover Risk
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- PHONE TAB 4: NCTB AI EXAM & GPA -->
+                  <div id="phoneTabExam" class="phone-tab-panel">
+                    <div class="p-4 bg-purple-50 rounded-2xl border border-purple-200 shadow-xs space-y-2.5">
+                      <div class="flex justify-between items-center text-xs">
+                        <span class="font-bold text-purple-900">NCTB 2026 Academic Report</span>
+                        <span class="px-2 py-0.5 rounded bg-purple-200 text-purple-900 font-bold text-[10px]">GPA 5.00</span>
+                      </div>
+                      <div class="p-3 bg-white rounded-xl border border-purple-100 space-y-2 text-xs">
+                        <div class="flex justify-between border-b border-slate-100 pb-1">
+                          <span id="phoneExamSubject1">Physics (পদার্থবিজ্ঞান)</span>
+                          <span class="font-mono font-bold text-emerald-700">96 / 100 (A+)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-1">
+                          <span id="phoneExamSubject2">Higher Math (উচ্চতর গণিত)</span>
+                          <span class="font-mono font-bold text-emerald-700">98 / 100 (A+)</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span id="phoneExamSubject3">Bangla (বাংলা ১ম ও ২য়)</span>
+                          <span class="font-mono font-bold text-emerald-700">91 / 100 (A+)</span>
+                        </div>
+                      </div>
+                      <div class="p-2.5 bg-white/80 rounded-lg border border-purple-100 text-[10.5px] text-slate-700 leading-snug">
+                        <strong>AI Pedagogy Insight:</strong> "Outstanding problem-solving capability in STEM subjects. Ranked 1st in Section A."
+                      </div>
+                      <button type="button" id="phoneDownloadMarksheetBtn" class="w-full py-2 rounded-xl bg-purple-700 text-white font-bold text-xs hover:bg-purple-800 transition" onclick="showToastNotification('📄 Marksheet PDF Downloaded!')">
+                        Download Official Marksheet PDF
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- PHONE TAB 5: WAQF & LILLAH PORTAL -->
+                  <div id="phoneTabWaqf" class="phone-tab-panel">
+                    <div class="p-4 bg-amber-50 rounded-2xl border border-amber-200 shadow-xs space-y-2.5">
+                      <div class="flex justify-between items-center text-xs">
+                        <span class="font-bold text-amber-900">ওয়াকফ ও লিল্লাহ ডোনার ভাউচার</span>
+                        <span class="px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-bold text-[10px]">SHARIAH VERIFIED</span>
+                      </div>
+                      <div class="p-3 bg-white rounded-xl border border-amber-100 space-y-2 text-xs text-slate-800">
+                        <div class="flex justify-between text-[11px]">
+                          <span class="text-slate-500">দাতা:</span>
+                          <span class="font-bold" id="phoneDonorName">হাজী মো. রফিকুল ইসলাম</span>
+                        </div>
+                        <div class="flex justify-between text-[11px]">
+                          <span class="text-slate-500">অনুদানের খাত:</span>
+                          <span class="font-bold text-amber-800">এতিমখানা লিল্লাহ বোর্ডিং ফান্ড</span>
+                        </div>
+                        <div class="flex justify-between text-[11px]">
+                          <span class="text-slate-500">পরিমাণ:</span>
+                          <span class="font-mono font-bold text-emerald-700 text-sm" id="phoneDonationAmount">৳৫০,০০০</span>
+                        </div>
+                        <div class="pt-1.5 border-t border-slate-100 flex justify-between text-[10px] text-slate-400 font-mono">
+                          <span>TRX: WQF-9042</span>
+                          <span>Quarantine Locked</span>
+                        </div>
+                      </div>
+                      <p class="text-[10px] text-amber-800 text-center font-medium">
+                        "আল্লাহ আপনার দানকে কবুল করুন এবং বরকত দান করুন।"
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <!-- Academic Notice Mini-Card -->
-                <div class="p-3 bg-white rounded-2xl border border-purple-200 shadow-xs flex items-center justify-between text-xs">
-                  <div>
-                    <span class="font-bold text-slate-900 block text-xs">Annual Exam Result</span>
-                    <span class="text-[10px] text-purple-700 font-bold">GPA: 5.00 (Golden A+)</span>
+                <!-- ================= ROLE VIEW 2: TEACHER AI APP ================= -->
+                <div id="phoneRoleTeacherView" class="hidden space-y-3">
+                  <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-sm shadow-xs">
+                      ম
+                    </div>
+                    <div>
+                      <span class="font-bold text-slate-900 block text-xs">Mahmudul Hasan</span>
+                      <span class="text-[10px] text-slate-500">Senior Teacher • Class 10-A Mentor</span>
+                    </div>
                   </div>
-                  <button type="button" class="px-2.5 py-1 bg-purple-50 text-purple-700 border border-purple-200 rounded-lg text-[10px] font-bold hover:bg-purple-100 transition" onclick="switchSoftwareTab('exam')">
-                    View Marks
-                  </button>
-                </div>
-              </div>
 
-              <!-- ================= PHONE TAB 2: BIOMETRIC GATE ALERT ================= -->
-              <div id="phoneTabBiometric" class="phone-tab-panel">
-                <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-300 shadow-xs space-y-2.5">
-                  <div class="flex items-center justify-between text-xs">
-                    <span class="font-bold text-emerald-900 flex items-center gap-1.5">
-                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-ping"></span>
-                      Gate Arrival Verified
-                    </span>
-                    <span id="phoneGateTime" class="text-[10px] font-mono text-emerald-800 font-bold bg-white px-2 py-0.5 rounded border border-emerald-200">07:58:12 AM</span>
+                  <div class="p-3.5 bg-purple-50 rounded-2xl border border-purple-200 shadow-xs space-y-2">
+                    <div class="flex justify-between items-center text-xs">
+                      <span class="font-bold text-purple-900">Class 10-A Attendance</span>
+                      <span class="font-mono text-purple-800 font-bold bg-white px-2 py-0.5 rounded">48 / 50 Present</span>
+                    </div>
+                    <div class="w-full bg-purple-200 rounded-full h-2">
+                      <div class="bg-purple-600 h-2 rounded-full" style="width: 96%"></div>
+                    </div>
+                    <button type="button" class="w-full py-1.5 bg-purple-700 text-white rounded-lg text-[11px] font-bold hover:bg-purple-800 transition" onclick="showToastNotification('✅ Roll Call Verified & Synced with Parent Portal')">
+                      Take 1-Tap Digital Roll Call
+                    </button>
                   </div>
-                  <div class="p-3 bg-white rounded-xl border border-emerald-200 shadow-xs space-y-1">
-                    <span class="text-[10px] font-mono text-slate-400 block">SENDER: YES-EDU-SMS</span>
-                    <p id="phoneSmsText" class="text-[11.5px] font-medium text-slate-900 leading-snug">
-                      "সম্মানিত অভিভাবক, আপনার সন্তান মুহাম্মদ আবদুল্লাহ (রোল: ০১, ১০ম শ্রেণি) সকাল ৭:৫৮ মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে।"
+
+                  <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs space-y-2 text-xs">
+                    <span class="font-bold text-slate-900 block">NCTB AI Classroom Diary</span>
+                    <p class="text-[11px] text-slate-600 leading-snug">
+                      "Physics Chapter 4: Work, Power & Energy CQ Questions compiled for tomorrow's terminal test."
                     </p>
-                  </div>
-                  <div class="flex items-center justify-between text-[10px] text-emerald-800 pt-1 font-semibold">
-                    <span>✓ Hardware: ZKTeco Turnstile #01</span>
-                    <span>✓ SMS Delivered: 2.1s</span>
+                    <button type="button" class="px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-[10px] font-bold hover:bg-emerald-100 transition" onclick="showToastNotification('📢 Diary Pushed to 50 Student Portals!')">
+                      📢 Broadcast Diary to Students
+                    </button>
                   </div>
                 </div>
 
-                <!-- Monthly Attendance Dial -->
-                <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs space-y-2 text-xs">
-                  <div class="flex justify-between items-center">
-                    <span class="font-bold text-slate-900">May 2026 Attendance</span>
-                    <span class="font-mono text-emerald-700 font-bold">24 / 24 Days</span>
-                  </div>
-                  <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
-                    <div class="bg-emerald-500 h-2 rounded-full" style="width: 100%"></div>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block">100% On-Time Record • Punctual Award Eligible</span>
-                </div>
-              </div>
-
-              <!-- ================= PHONE TAB 3: bKASH 1-TAP PAYMENT ================= -->
-              <div id="phoneTabBkash" class="phone-tab-panel">
-                <div class="p-4 bg-white rounded-2xl border border-pink-200 shadow-xs space-y-3">
-                  <div class="flex justify-between items-center text-xs">
-                    <span class="font-bold text-slate-900">Fee Demand Voucher #8492</span>
-                    <span id="phoneBkashStatusPill" class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">PAID ONLINE</span>
-                  </div>
-                  <div class="space-y-1.5 text-xs text-slate-700 pt-1 border-t border-slate-100">
-                    <div class="flex justify-between">
-                      <span>Monthly Tuition Fee:</span>
-                      <span class="font-mono font-bold">৳২,০০০</span>
+                <!-- ================= ROLE VIEW 3: PRINCIPAL COCKPIT ================= -->
+                <div id="phoneRolePrincipalView" class="hidden space-y-3">
+                  <div class="p-3 bg-slate-900 text-white rounded-2xl shadow-sm flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-amber-400 text-slate-900 font-bold flex items-center justify-center text-sm shadow-xs">
+                      👑
                     </div>
+                    <div>
+                      <span class="font-bold text-white block text-xs">Principal's Live Command</span>
+                      <span class="text-[10px] text-amber-300 font-mono">Academic Year 2026 Telemetry</span>
+                    </div>
+                  </div>
+
+                  <!-- Cash Flow Today -->
+                  <div class="p-3.5 bg-white rounded-2xl border border-emerald-200 shadow-xs space-y-1">
+                    <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Today's Fee Collections</span>
+                    <div class="flex items-baseline justify-between">
+                      <span class="text-xl font-extrabold text-emerald-800">৳৪,৮৫,২০০</span>
+                      <span class="text-[10px] font-mono text-emerald-600 font-bold">100% Reconciled</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 block">bKash: 74% • Sonali Bank: 26%</span>
+                  </div>
+
+                  <!-- Campus Attendance Snapshot -->
+                  <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs space-y-1 text-xs">
                     <div class="flex justify-between">
-                      <span>Computer Lab & ICT:</span>
-                      <span class="font-mono font-bold">৳৩০০</span>
+                      <span class="text-slate-600">Student Attendance:</span>
+                      <span class="font-bold text-slate-900 font-mono">১,২২০ / ১,২৪০ (৯৮.৪%)</span>
                     </div>
                     <div class="flex justify-between">
-                      <span>Terminal Exam Fee:</span>
-                      <span class="font-mono font-bold">৳২০০</span>
+                      <span class="text-slate-600">Teachers & Staff:</span>
+                      <span class="font-bold text-emerald-700 font-mono">২৮ / ২৮ (১০০% Present)</span>
                     </div>
-                    <div class="flex justify-between pt-1 border-t border-slate-200 font-bold text-slate-900 text-sm">
-                      <span>Total Payable:</span>
-                      <span id="phonePayableAmount" class="text-pink-600">৳২,৫০০</span>
+                    <div class="pt-2 border-t border-slate-100">
+                      <button type="button" class="w-full py-1.5 bg-slate-900 text-white rounded-lg text-[11px] font-bold hover:bg-slate-800 transition" onclick="showToastNotification('📢 Urgent Notice sent to 1,240 Parents!')">
+                        📢 Send Emergency Broadcast SMS
+                      </button>
                     </div>
                   </div>
-                  <button type="button" id="phonePayBkashBtn" class="w-full py-2.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-md">
-                    <span>Pay ৳২,৫০০ with bKash (১-ট্যাপ)</span>
-                  </button>
-                  <p id="phoneBkashTrxNotice" class="text-[10px] text-center text-slate-400">
-                    Direct Merchant Checkout • No Cash Handover Risk
-                  </p>
                 </div>
-              </div>
 
-              <!-- ================= PHONE TAB 4: NCTB AI EXAM & GPA ================= -->
-              <div id="phoneTabExam" class="phone-tab-panel">
-                <div class="p-4 bg-purple-50 rounded-2xl border border-purple-200 shadow-xs space-y-2.5">
-                  <div class="flex justify-between items-center text-xs">
-                    <span class="font-bold text-purple-900">NCTB 2026 Academic Report</span>
-                    <span class="px-2 py-0.5 rounded bg-purple-200 text-purple-900 font-bold text-[10px]">GPA 5.00</span>
-                  </div>
-                  <div class="p-3 bg-white rounded-xl border border-purple-100 space-y-2 text-xs">
-                    <div class="flex justify-between border-b border-slate-100 pb-1">
-                      <span id="phoneExamSubject1">Physics (পদার্থবিজ্ঞান)</span>
-                      <span class="font-mono font-bold text-emerald-700">96 / 100 (A+)</span>
-                    </div>
-                    <div class="flex justify-between border-b border-slate-100 pb-1">
-                      <span id="phoneExamSubject2">Higher Math (উচ্চতর গণিত)</span>
-                      <span class="font-mono font-bold text-emerald-700">98 / 100 (A+)</span>
-                    </div>
-                    <div class="flex justify-between">
-                      <span id="phoneExamSubject3">Bangla (বাংলা ১ম ও ২য়)</span>
-                      <span class="font-mono font-bold text-emerald-700">91 / 100 (A+)</span>
-                    </div>
-                  </div>
-                  <div class="p-2.5 bg-white/80 rounded-lg border border-purple-100 text-[10.5px] text-slate-700 leading-snug">
-                    <strong>AI Pedagogy Insight:</strong> "Outstanding problem-solving capability in STEM subjects. Ranked 1st in Section A."
-                  </div>
-                  <button type="button" id="phoneDownloadMarksheetBtn" class="w-full py-2 rounded-xl bg-purple-700 text-white font-bold text-xs hover:bg-purple-800 transition" onclick="showToastNotification('📄 Marksheet PDF Downloaded!')">
-                    Download Official Marksheet PDF
-                  </button>
+                <div class="text-center pt-2 text-[10px] text-slate-400">
+                  YES EDU Campus Operating System • Multi-Device Ecosystem
                 </div>
-              </div>
 
-              <!-- ================= PHONE TAB 5: WAQF & LILLAH PORTAL ================= -->
-              <div id="phoneTabWaqf" class="phone-tab-panel">
-                <div class="p-4 bg-amber-50 rounded-2xl border border-amber-200 shadow-xs space-y-2.5">
-                  <div class="flex justify-between items-center text-xs">
-                    <span class="font-bold text-amber-900">ওয়াকফ ও লিল্লাহ ডোনার ভাউচার</span>
-                    <span class="px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-bold text-[10px]">SHARIAH VERIFIED</span>
-                  </div>
-                  <div class="p-3 bg-white rounded-xl border border-amber-100 space-y-2 text-xs text-slate-800">
-                    <div class="flex justify-between text-[11px]">
-                      <span class="text-slate-500">দাতা:</span>
-                      <span class="font-bold" id="phoneDonorName">হাজী মো. রফিকুল ইসলাম</span>
-                    </div>
-                    <div class="flex justify-between text-[11px]">
-                      <span class="text-slate-500">অনুদানের খাত:</span>
-                      <span class="font-bold text-amber-800">এতিমখানা লিল্লাহ বোর্ডিং ফান্ড</span>
-                    </div>
-                    <div class="flex justify-between text-[11px]">
-                      <span class="text-slate-500">পরিমাণ:</span>
-                      <span class="font-mono font-bold text-emerald-700 text-sm" id="phoneDonationAmount">৳৫০,০০০</span>
-                    </div>
-                    <div class="pt-1.5 border-t border-slate-100 flex justify-between text-[10px] text-slate-400 font-mono">
-                      <span>TRX: WQF-9042</span>
-                      <span>Quarantine Locked</span>
-                    </div>
-                  </div>
-                  <p class="text-[10px] text-amber-800 text-center font-medium">
-                    "আল্লাহ আপনার দানকে কবুল করুন এবং বরকত দান করুন।"
-                  </p>
-                </div>
               </div>
-
-              <div class="text-center pt-2 text-[10px] text-slate-400">
-                YES EDU Parent Portal • Android & iOS Ready
-              </div>
-
             </div>
+
+            <!-- Mobile App Multi-Role Switcher Bar -->
+            <div class="mt-4 flex flex-col items-center gap-1.5">
+              <span class="text-[10px] uppercase tracking-widest font-extrabold text-slate-400">SWITCH DEVICE VIEW:</span>
+              <div class="inline-flex p-1 bg-white rounded-2xl border border-slate-200 shadow-xs gap-1 text-xs">
+                <button type="button" id="phoneRoleParentBtn" class="phone-role-btn active" title="Guardian Mobile Portal">
+                  <span>👨‍👩‍👧</span>
+                  <span>Parent</span>
+                </button>
+                <button type="button" id="phoneRoleTeacherBtn" class="phone-role-btn" title="Teacher Mobile Workspace">
+                  <span>👨‍🏫</span>
+                  <span>Teacher AI</span>
+                </button>
+                <button type="button" id="phoneRolePrincipalBtn" class="phone-role-btn" title="Principal Pocket Cockpit">
+                  <span>👑</span>
+                  <span>Principal</span>
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
 

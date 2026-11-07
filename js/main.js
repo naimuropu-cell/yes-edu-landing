@@ -1597,6 +1597,178 @@ function initSoftwareWindowTabs() {
       phoneMockupCol.classList.remove('hidden');
     });
   }
+
+  // =========================================================================
+  // 7. Multi-Role Smartphone App Switcher (Parent • Teacher AI • Principal)
+  // =========================================================================
+  const phoneRoleParentBtn = document.getElementById('phoneRoleParentBtn');
+  const phoneRoleTeacherBtn = document.getElementById('phoneRoleTeacherBtn');
+  const phoneRolePrincipalBtn = document.getElementById('phoneRolePrincipalBtn');
+  const phoneAppTopTitle = document.getElementById('phoneAppTopTitle');
+  const phoneRoleParentView = document.getElementById('phoneRoleParentView');
+  const phoneRoleTeacherView = document.getElementById('phoneRoleTeacherView');
+  const phoneRolePrincipalView = document.getElementById('phoneRolePrincipalView');
+
+  function selectPhoneRole(role) {
+    [phoneRoleParentBtn, phoneRoleTeacherBtn, phoneRolePrincipalBtn].forEach(b => {
+      if (b) b.classList.remove('active');
+    });
+
+    if (role === 'parent') {
+      if (phoneRoleParentBtn) phoneRoleParentBtn.classList.add('active');
+      if (phoneAppTopTitle) phoneAppTopTitle.textContent = 'YES EDU PARENT';
+      if (phoneRoleParentView) phoneRoleParentView.classList.remove('hidden');
+      if (phoneRoleTeacherView) phoneRoleTeacherView.classList.add('hidden');
+      if (phoneRolePrincipalView) phoneRolePrincipalView.classList.add('hidden');
+      triggerDynamicIslandAlert('👨‍👩‍👧 Parent Portal Activated', 2500);
+      showToastNotification('👨‍👩‍👧 Mobile View: Switched to Guardian / Parent App');
+    } else if (role === 'teacher') {
+      if (phoneRoleTeacherBtn) phoneRoleTeacherBtn.classList.add('active');
+      if (phoneAppTopTitle) phoneAppTopTitle.textContent = 'YES EDU TEACHER';
+      if (phoneRoleParentView) phoneRoleParentView.classList.add('hidden');
+      if (phoneRoleTeacherView) phoneRoleTeacherView.classList.remove('hidden');
+      if (phoneRolePrincipalView) phoneRolePrincipalView.classList.add('hidden');
+      triggerDynamicIslandAlert('👨‍🏫 Teacher AI App Activated', 2500);
+      showToastNotification('👨‍🏫 Mobile View: Switched to Teacher AI In-Class Workspace');
+    } else if (role === 'principal') {
+      if (phoneRolePrincipalBtn) phoneRolePrincipalBtn.classList.add('active');
+      if (phoneAppTopTitle) phoneAppTopTitle.textContent = 'PRINCIPAL COCKPIT';
+      if (phoneRoleParentView) phoneRoleParentView.classList.add('hidden');
+      if (phoneRoleTeacherView) phoneRoleTeacherView.classList.add('hidden');
+      if (phoneRolePrincipalView) phoneRolePrincipalView.classList.remove('hidden');
+      triggerDynamicIslandAlert('👑 Principal Cockpit Activated', 2500);
+      showToastNotification('👑 Mobile View: Switched to Principal Pocket Telemetry');
+    }
+  }
+
+  if (phoneRoleParentBtn) {
+    phoneRoleParentBtn.addEventListener('click', () => selectPhoneRole('parent'));
+  }
+  if (phoneRoleTeacherBtn) {
+    phoneRoleTeacherBtn.addEventListener('click', () => selectPhoneRole('teacher'));
+  }
+  if (phoneRolePrincipalBtn) {
+    phoneRolePrincipalBtn.addEventListener('click', () => selectPhoneRole('principal'));
+  }
+
+  // =========================================================================
+  // 8. Auto-Play A Campus Day (30s Live Tour) Automation Controller
+  // =========================================================================
+  const triggerAutoPlayCampusTourBtn = document.getElementById('triggerAutoPlayCampusTourBtn');
+  const autoPlayTimelinePill = document.getElementById('autoPlayTimelinePill');
+  const autoPlayStepLabel = document.getElementById('autoPlayStepLabel');
+  const autoPlayBtnIcon = document.getElementById('autoPlayBtnIcon');
+  const autoPlayBtnText = document.getElementById('autoPlayBtnText');
+
+  let autoTourInterval = null;
+  let autoTourCurrentIndex = 0;
+  let isAutoTourRunning = false;
+
+  const autoTourPhases = [
+    {
+      phaseName: 'Phase 1/4: 07:58 AM • Morning Biometric Rush & 2.1s SMS',
+      run: () => {
+        selectPhoneRole('parent');
+        switchSoftwareTab('biometric');
+        const punchBtn = document.getElementById('triggerGatePunchSimBtn');
+        if (punchBtn) punchBtn.click();
+      }
+    },
+    {
+      phaseName: 'Phase 2/4: 10:30 AM • Classroom NCTB 2026 AI Creative Exam Compilation',
+      run: () => {
+        switchSoftwareTab('exam');
+        const examAiBtn = document.getElementById('triggerExamAiGenBtn');
+        if (examAiBtn) examAiBtn.click();
+      }
+    },
+    {
+      phaseName: 'Phase 3/4: 01:15 PM • Madrasa Waqf & Lillah Boarding Shariah Transparency',
+      run: () => {
+        switchSoftwareTab('waqf');
+        const waqfBtn = document.getElementById('triggerWaqfDonationSimBtn');
+        if (waqfBtn) waqfBtn.click();
+      }
+    },
+    {
+      phaseName: 'Phase 4/4: 04:00 PM • Guardian 1-Tap bKash Payment & Auto Bank Deposit',
+      run: () => {
+        switchSoftwareTab('bkash');
+        const bkashBtn = document.getElementById('triggerBkashPaymentSimBtn');
+        if (bkashBtn) bkashBtn.click();
+      }
+    }
+  ];
+
+  function runNextAutoTourStep() {
+    if (autoTourCurrentIndex >= autoTourPhases.length) {
+      stopAutoTour(true);
+      return;
+    }
+
+    const currentPhase = autoTourPhases[autoTourCurrentIndex];
+    if (autoPlayStepLabel) {
+      autoPlayStepLabel.textContent = currentPhase.phaseName;
+    }
+
+    currentPhase.run();
+    autoTourCurrentIndex++;
+  }
+
+  function startAutoTour() {
+    isAutoTourRunning = true;
+    if (autoPlayBtnIcon) autoPlayBtnIcon.textContent = '⏸';
+    if (autoPlayBtnText) {
+      autoPlayBtnText.innerHTML = `
+        <span class="lang-en">Pause Campus Tour</span>
+        <span class="lang-bn hidden">ট্যুর থামান</span>
+      `;
+    }
+    if (autoPlayTimelinePill) {
+      autoPlayTimelinePill.classList.remove('hidden');
+      autoPlayTimelinePill.classList.add('inline-flex');
+    }
+
+    runNextAutoTourStep();
+    autoTourInterval = setInterval(runNextAutoTourStep, 6500);
+  }
+
+  function stopAutoTour(completed = false) {
+    isAutoTourRunning = false;
+    clearInterval(autoTourInterval);
+    autoTourInterval = null;
+
+    if (autoPlayBtnIcon) autoPlayBtnIcon.textContent = '▶';
+    if (autoPlayBtnText) {
+      autoPlayBtnText.innerHTML = `
+        <span class="lang-en">⚡ Auto-Play A Campus Day (30s Live Tour)</span>
+        <span class="lang-bn hidden">⚡ ৩০ সেকেন্ডে পুরো ক্যাম্পাস অটোমেশন দেখুন</span>
+      `;
+    }
+
+    if (completed) {
+      autoTourCurrentIndex = 0;
+      setTimeout(() => {
+        switchSoftwareTab('dashboard');
+        if (autoPlayTimelinePill) {
+          autoPlayTimelinePill.classList.add('hidden');
+          autoPlayTimelinePill.classList.remove('inline-flex');
+        }
+        showToastNotification('🎉 30s Live Campus Day Simulation Complete! Click any module to test manually.');
+      }, 4000);
+    }
+  }
+
+  if (triggerAutoPlayCampusTourBtn) {
+    triggerAutoPlayCampusTourBtn.addEventListener('click', () => {
+      if (isAutoTourRunning) {
+        stopAutoTour(false);
+        showToastNotification('⏸️ Campus Tour paused. Click again to resume.');
+      } else {
+        startAutoTour();
+      }
+    });
+  }
 }
 
 /* ==========================================================================
