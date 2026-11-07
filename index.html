@@ -907,76 +907,100 @@
                   </div>
                 </div>
 
-                <!-- 4 KPI Telemetry Cards -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-                  <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
-                    <span class="text-xs text-slate-500 block mb-1" id="biKpiEnrolledLabel">Total Enrolled</span>
-                    <span class="text-xl font-extrabold text-slate-900" id="biKpiEnrolledValue">১,২৪০ জন</span>
-                    <span class="text-[10px] text-emerald-600 font-bold block" id="biKpiEnrolledSub">Present: ১,২২০ (৯৮.৪%)</span>
+                <!-- Modern Clean Bento Telemetry Cards (Zero Clutter, High-Impact Numbers) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  
+                  <!-- Bento 1: Attendance Core -->
+                  <div class="p-5 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200/90 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between text-xs">
+                      <span class="font-bold text-slate-500 uppercase tracking-wider text-[11px] flex items-center gap-1.5" id="biKpiEnrolledLabel">
+                        <span>🏫</span> Total Enrolled
+                      </span>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        98.4% On-Time
+                      </span>
+                    </div>
+                    <div>
+                      <span class="text-3xl font-extrabold text-slate-900 tracking-tight" id="biKpiEnrolledValue">১,২৪০ জন</span>
+                      <span class="text-xs text-emerald-700 font-semibold block mt-1" id="biKpiEnrolledSub">Present: ১,২২০ (৯৮.৪%)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                      <div class="bg-emerald-500 h-1.5 rounded-full transition-all duration-500" style="width: 98.4%"></div>
+                    </div>
                   </div>
-                  <div class="p-3.5 bg-emerald-50/60 rounded-xl border border-emerald-200">
-                    <span class="text-xs text-emerald-700 block mb-1" id="biKpiFeesLabel">Today's Fees</span>
-                    <span class="text-xl font-extrabold text-emerald-800" id="biKpiFeesValue">৳৪,৮৫,২০০</span>
-                    <span class="text-[10px] text-emerald-600 font-bold block" id="biKpiFeesSub">bKash: 74% • Bank: 26%</span>
+
+                  <!-- Bento 2: Automated Revenue Core -->
+                  <div class="p-5 bg-gradient-to-br from-emerald-50/50 to-white rounded-2xl border border-emerald-200/90 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between text-xs">
+                      <span class="font-bold text-emerald-800 uppercase tracking-wider text-[11px] flex items-center gap-1.5" id="biKpiFeesLabel">
+                        <span>৳</span> Today's Fees
+                      </span>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+                        ✓ 100% Reconciled
+                      </span>
+                    </div>
+                    <div>
+                      <span class="text-3xl font-extrabold text-emerald-900 tracking-tight" id="biKpiFeesValue">৳৪,৮৫,২০০</span>
+                      <span class="text-xs text-emerald-700 font-semibold block mt-1" id="biKpiFeesSub">bKash: 74% • Bank: 26%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-[10px] text-slate-500">
+                      <span class="px-2 py-0.5 rounded bg-pink-50 text-pink-700 font-bold border border-pink-200">bKash Merchant</span>
+                      <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-bold border border-blue-200">Bank Direct</span>
+                    </div>
                   </div>
-                  <div class="p-3.5 bg-sky-50/60 rounded-xl border border-sky-200">
-                    <span class="text-xs text-sky-700 block mb-1" id="biKpiGateLabel">Gate Punch Status</span>
-                    <span class="text-xl font-extrabold text-sky-800" id="biKpiGateValue">Online</span>
-                    <span class="text-[10px] text-sky-600 font-bold block" id="biKpiGateSub">Gate #01 & #02 Synced</span>
+
+                  <!-- Bento 3: Real-Time Gate & Telco Speed -->
+                  <div class="p-5 bg-gradient-to-br from-sky-50/40 to-white rounded-2xl border border-sky-200/90 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between text-xs">
+                      <span class="font-bold text-sky-800 uppercase tracking-wider text-[11px] flex items-center gap-1.5" id="biKpiSmsLabel">
+                        <span>⚡</span> SMS Delivery
+                      </span>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-[10px] font-bold">
+                        <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+                        <span id="biKpiGateValue">Online</span>
+                      </span>
+                    </div>
+                    <div>
+                      <span class="text-3xl font-extrabold text-sky-900 tracking-tight" id="biKpiSmsValue">১,২২০ টি</span>
+                      <span class="text-xs text-sky-700 font-semibold block mt-1" id="biKpiSmsSub">Avg Delivery: 2.3s</span>
+                    </div>
+                    <div class="flex items-center justify-between text-[10px] text-slate-500 font-mono">
+                      <span id="biKpiGateSub">Gate #01 & #02 Synced</span>
+                      <span class="hidden" id="biKpiGateLabel">Gate Status</span>
+                      <span class="text-sky-700 font-bold">GP • Robi • BL</span>
+                    </div>
                   </div>
-                  <div class="p-3.5 bg-purple-50/60 rounded-xl border border-purple-200">
-                    <span class="text-xs text-purple-700 block mb-1" id="biKpiSmsLabel">SMS Delivery</span>
-                    <span class="text-xl font-extrabold text-purple-800" id="biKpiSmsValue">১,২২০ টি</span>
-                    <span class="text-[10px] text-purple-600 font-bold block" id="biKpiSmsSub">Avg Delivery: 2.3s</span>
+
+                </div>
+
+                <!-- Single-Line Clean Live Campus Pulse (Zero Table Clutter) -->
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between gap-3 text-xs" id="biEventStreamList">
+                  <div class="flex items-center gap-2.5 truncate">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping shrink-0"></span>
+                    <span class="font-extrabold text-slate-800 text-[11px] uppercase tracking-wider shrink-0">CAMPUS PULSE:</span>
+                    <span class="text-slate-600 truncate font-medium">Student Muhammad Abdullah (Roll 01) punched Gate #01 turnstile • SMS delivered in 2.3s</span>
                   </div>
+                  <span class="font-mono text-[10px] text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 font-bold shrink-0">
+                    2.1s Live Sync
+                  </span>
                 </div>
 
                 <!-- Quick Action Bar -->
                 <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
-                  <span class="font-bold text-slate-500 mr-2 uppercase tracking-wider text-[10px]">Instant Actions:</span>
+                  <span class="font-bold text-slate-500 mr-2 uppercase tracking-wider text-[10px]">Instant Navigation:</span>
                   <button type="button" class="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 font-semibold transition" onclick="switchSoftwareTab('biometric')">
-                    ⏱️ Biometric Gate Log
+                    ⏱️ Biometric Gate
                   </button>
                   <button type="button" class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-200 font-semibold transition" onclick="switchSoftwareTab('bkash')">
-                    ৳ Send 1-Tap Fee Links
+                    ৳ 1-Tap Fees
                   </button>
                   <button type="button" class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-800 hover:bg-purple-100 border border-purple-200 font-semibold transition" onclick="switchSoftwareTab('exam')">
-                    📝 Generate NCTB AI Exam
+                    📝 NCTB AI Exam
                   </button>
                   <button type="button" class="px-3 py-1.5 rounded-lg bg-sky-50 text-sky-800 hover:bg-sky-100 border border-sky-200 font-semibold transition" onclick="switchSoftwareTab('waqf')">
-                    🕌 Madrasa Waqf Ledger
+                    🕌 Madrasa Waqf
                   </button>
-                </div>
-
-                <!-- Live Stream Feed Table -->
-                <div class="rounded-xl border border-slate-200 overflow-hidden">
-                  <div class="bg-slate-50 px-4 py-2 border-b border-slate-200 flex justify-between items-center text-xs">
-                    <span class="font-bold text-slate-700">Real-Time Campus Event Stream</span>
-                    <span class="font-mono text-[10px] text-slate-400">UPDATED JUST NOW</span>
-                  </div>
-                  <div class="divide-y divide-slate-100 text-xs" id="biEventStreamList">
-                    <div class="px-4 py-2.5 flex items-center justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                        <span class="font-medium text-slate-900">Student Abdullah Al Mamun (Roll 01) punched Gate #01 turnstile</span>
-                      </div>
-                      <span class="text-slate-500 font-mono text-[11px]">07:58:12 AM • SMS Delivered (2.3s)</span>
-                    </div>
-                    <div class="px-4 py-2.5 flex items-center justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                        <span class="font-medium text-slate-900">Tuition Fee ৳2,500 received via bKash (Student Tanvir, Roll 12)</span>
-                      </div>
-                      <span class="text-emerald-700 font-bold font-mono text-[11px]">TRX: 9X82KD71 • Auto-Reconciled</span>
-                    </div>
-                    <div class="px-4 py-2.5 flex items-center justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-                        <span class="font-medium text-slate-900">Teacher Mahmudul Hasan generated Class 10 Physics CQ Exam Paper</span>
-                      </div>
-                      <span class="text-purple-700 font-mono text-[11px]">NCTB AI Engine V2 • 10 CQ Ready</span>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -1040,35 +1064,45 @@
                       </div>
                     </div>
 
-                    <!-- Punch Table -->
-                    <div class="rounded-xl border border-slate-200 overflow-hidden text-xs">
-                      <table class="w-full text-left">
-                        <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-200">
-                          <tr>
-                            <th class="p-2">Roll</th>
-                            <th class="p-2">Student</th>
-                            <th class="p-2">Class</th>
-                            <th class="p-2">Punch Time</th>
-                            <th class="p-2">SMS Status</th>
-                          </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-100" id="simPunchLogBody">
-                          <tr>
-                            <td class="p-2 font-mono font-bold">01</td>
-                            <td class="p-2 font-medium">Muhammad Abdullah</td>
-                            <td class="p-2">Class 10-A</td>
-                            <td class="p-2 font-mono text-slate-600">07:58:12 AM</td>
-                            <td class="p-2 text-emerald-700 font-bold">✓ Delivered (2.3s)</td>
-                          </tr>
-                          <tr>
-                            <td class="p-2 font-mono font-bold">02</td>
-                            <td class="p-2 font-medium">Sumaiya Akter</td>
-                            <td class="p-2">Class 10-A</td>
-                            <td class="p-2 font-mono text-slate-600">07:58:19 AM</td>
-                            <td class="p-2 text-emerald-700 font-bold">✓ Delivered (2.1s)</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <!-- Live Verified Arrivals Stream (Zero Table Clutter) -->
+                    <div class="p-3.5 bg-slate-50/80 rounded-2xl border border-slate-200/80 space-y-2.5">
+                      <div class="flex items-center justify-between text-xs pb-1.5 border-b border-slate-200">
+                        <span class="font-bold text-slate-800 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                          <span>Verified Gate Stream</span>
+                        </span>
+                        <span class="text-[10px] font-mono text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Zero Buffer Delay</span>
+                      </div>
+
+                      <!-- Arrival Stream Items Container -->
+                      <div class="space-y-2" id="simPunchLogBody">
+                        <div class="p-2.5 bg-white rounded-xl border border-slate-200/90 flex items-center justify-between shadow-2xs">
+                          <div class="flex items-center gap-2.5">
+                            <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs shadow-2xs">আ</span>
+                            <div>
+                              <span class="font-bold text-slate-900 block text-xs">Muhammad Abdullah</span>
+                              <span class="text-[10px] text-slate-500 font-medium">Roll 01 • Class 10-A • Gate #01</span>
+                            </div>
+                          </div>
+                          <div class="text-right">
+                            <span class="font-mono text-slate-700 block text-[11px] font-semibold">07:58:12 AM</span>
+                            <span class="text-emerald-700 font-bold text-[10px] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">✓ SMS Delivered (2.3s)</span>
+                          </div>
+                        </div>
+                        <div class="p-2.5 bg-white rounded-xl border border-slate-200/90 flex items-center justify-between shadow-2xs">
+                          <div class="flex items-center gap-2.5">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-xs shadow-2xs">স</span>
+                            <div>
+                              <span class="font-bold text-slate-900 block text-xs">Sumaiya Akter</span>
+                              <span class="text-[10px] text-slate-500 font-medium">Roll 02 • Class 10-A • Gate #01</span>
+                            </div>
+                          </div>
+                          <div class="text-right">
+                            <span class="font-mono text-slate-700 block text-[11px] font-semibold">07:58:19 AM</span>
+                            <span class="text-emerald-700 font-bold text-[10px] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">✓ SMS Delivered (2.1s)</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -1097,75 +1131,94 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
                   
-                  <!-- Student Digital Voucher -->
-                  <div class="md:col-span-6 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                  <!-- Student Digital Voucher Hero Card (Zero Table Clutter) -->
+                  <div class="md:col-span-6 p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/90 shadow-xs space-y-4">
                     <div class="flex justify-between items-center text-xs">
-                      <span class="font-bold text-slate-900">Student Fee Demand Voucher #8492</span>
-                      <span id="desktopBkashVoucherBadge" class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">PAID ONLINE</span>
+                      <span class="font-bold text-slate-800 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <span>Student Fee Demand Voucher #8492</span>
+                      </span>
+                      <span id="desktopBkashVoucherBadge" class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px]">PAID ONLINE</span>
                     </div>
 
-                    <div class="p-3 bg-white rounded-xl border border-slate-200 text-xs space-y-2">
-                      <div class="flex justify-between text-slate-600">
-                        <span>Student: <strong class="text-slate-900" id="desktopBkashStudent">Tanvir Ahmed (Roll 12)</strong></span>
-                        <span>Class: <strong>Class 8-B</strong></span>
+                    <!-- Big Impact Fee Amount -->
+                    <div class="p-4 bg-white rounded-xl border border-slate-200/80 space-y-2">
+                      <div class="flex justify-between items-baseline">
+                        <span class="text-xs text-slate-500 font-bold uppercase tracking-wider">Total Collected Fee</span>
+                        <span class="text-3xl font-extrabold text-emerald-800 tracking-tight">৳২,৫০০</span>
                       </div>
-                      <div class="flex justify-between text-slate-600">
+                      <div class="text-[11px] text-slate-500 flex justify-between pt-1 border-t border-slate-100">
                         <span>Billing Month: <strong>May 2026</strong></span>
-                        <span>Due Date: <strong>10 May 2026</strong></span>
-                      </div>
-                      <div class="pt-2 border-t border-slate-100 space-y-1">
-                        <div class="flex justify-between">
-                          <span>Monthly Tuition Fee</span>
-                          <span class="font-mono">৳২,০০০</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span>Computer Lab & ICT Charge</span>
-                          <span class="font-mono">৳৩০০</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span>Terminal Exam Assessment Fee</span>
-                          <span class="font-mono">৳২০০</span>
-                        </div>
-                        <div class="flex justify-between pt-1 border-t border-slate-200 font-bold text-slate-900 text-sm">
-                          <span>Total Amount Collected:</span>
-                          <span class="text-emerald-700">৳২,৫০০</span>
-                        </div>
+                        <span class="text-emerald-700 font-bold">✓ Instant Reconciliation</span>
                       </div>
                     </div>
 
-                    <div class="flex items-center justify-between text-[11px] text-slate-500 pt-1">
+                    <!-- Student Snapshot Capsule -->
+                    <div class="p-3 bg-white rounded-xl border border-slate-200/80 flex items-center justify-between text-xs">
+                      <div>
+                        <span class="font-bold text-slate-900 block" id="desktopBkashStudent">Tanvir Ahmed (Roll 12)</span>
+                        <span class="text-[10px] text-slate-500">Class 8-B • General Academic Wing</span>
+                      </div>
+                      <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-[11px]">Due: 10 May</span>
+                    </div>
+
+                    <!-- Clean 3-Item Breakdown Capsule (No Spreadsheet Rows) -->
+                    <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+                      <div class="p-2 bg-slate-50 rounded-lg border border-slate-200/60">
+                        <span class="text-slate-400 block text-[10px]">Tuition</span>
+                        <strong class="text-slate-800">৳২,০০০</strong>
+                      </div>
+                      <div class="p-2 bg-slate-50 rounded-lg border border-slate-200/60">
+                        <span class="text-slate-400 block text-[10px]">ICT Lab</span>
+                        <strong class="text-slate-800">৳৩০০</strong>
+                      </div>
+                      <div class="p-2 bg-slate-50 rounded-lg border border-slate-200/60">
+                        <span class="text-slate-400 block text-[10px]">Exam Fee</span>
+                        <strong class="text-slate-800">৳২০০</strong>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[11px] text-slate-500 pt-1 border-t border-slate-100">
                       <span>Gateway: bKash Direct API</span>
                       <span class="font-mono text-emerald-700 font-bold" id="desktopBkashTrx">TRX: 9X82KD71</span>
                     </div>
                   </div>
 
-                  <!-- Automated SMS & Cash Flow Ledger -->
-                  <div class="md:col-span-6 space-y-3">
-                    <div class="p-4 rounded-xl bg-pink-50/60 border border-pink-200 text-xs space-y-2">
-                      <span class="font-bold text-pink-900 block text-[11px] uppercase tracking-wider">
-                        Guardian 1-Tap Payment Link (Sent 1st of Month)
-                      </span>
-                      <div class="p-3 bg-white rounded-lg border border-pink-100 shadow-xs">
-                        <p class="text-slate-700 leading-relaxed" id="desktopBkashSmsLinkText">
-                          "সম্মানিত অভিভাবক, তানভীরের মে ২০২৬ মাসের স্কুল বেতন ২,৫০০ ৳। লাইনে না দাঁড়িয়ে ঘরে বসেই বিকাশ/নগদে ফি পরিশোধ করুন: <strong class="text-pink-700 underline">pay.yesedu.com/t/9x82</strong>"
+                  <!-- Automated SMS & Cash Flow Bento Stack -->
+                  <div class="md:col-span-6 space-y-3.5">
+                    
+                    <!-- Guardian 1-Tap SMS Link Capsule -->
+                    <div class="p-4 rounded-2xl bg-gradient-to-br from-pink-50/60 to-white border border-pink-200/90 shadow-xs space-y-2.5 text-xs">
+                      <div class="flex justify-between items-center">
+                        <span class="font-bold text-pink-900 text-[11px] uppercase tracking-wider flex items-center gap-1.5">
+                          <span>📱</span> Guardian 1-Tap Payment Link (SMS)
+                        </span>
+                        <span class="text-[10px] font-mono text-pink-700 bg-pink-100 px-2 py-0.5 rounded font-bold">Automated 1st of Month</span>
+                      </div>
+                      <div class="p-3 bg-white rounded-xl border border-pink-100 shadow-2xs">
+                        <p class="text-slate-700 leading-relaxed text-xs" id="desktopBkashSmsLinkText">
+                          "সম্মানিত অভিভাবক, তানভীরের মে ২০২৬ মাসের স্কুল বেতন ২,৫০০ ৳। লাইনে না দাঁড়িয়ে ঘরে বসেই বিকাশ/নগদে ফি পরিশোধ করুন: <strong class="text-pink-700 underline font-mono">pay.yesedu.com/t/9x82</strong>"
                         </p>
                       </div>
-                      <div class="flex justify-between text-[10px] text-pink-800 font-semibold pt-1">
+                      <div class="flex justify-between text-[11px] text-pink-800 font-semibold pt-1">
                         <span>✓ Click Rate: 94.2%</span>
                         <span>✓ Fee Default Slashed: 95%</span>
                       </div>
                     </div>
 
-                    <!-- Bank Auto Reconcile Card -->
-                    <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-200 text-xs">
-                      <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold text-emerald-900">Direct Institutional Bank Deposit</span>
+                    <!-- Direct Institutional Bank Deposit Card -->
+                    <div class="p-4 rounded-2xl bg-gradient-to-br from-emerald-50/60 to-white border border-emerald-200/90 shadow-xs text-xs space-y-2">
+                      <div class="flex justify-between items-center">
+                        <span class="font-bold text-emerald-900 flex items-center gap-1.5">
+                          <span>🏛️</span> Direct Institutional Bank Deposit
+                        </span>
                         <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">AUTO-RECONCILED</span>
                       </div>
-                      <p class="text-slate-600 text-[11px]">
-                        Funds transfer directly from bKash merchant gateway into your campus bank account (Islami Bank, Sonali Bank, Dutch-Bangla Bank, etc.) with zero manual math errors.
+                      <p class="text-slate-600 text-[11.5px] leading-relaxed">
+                        Funds transfer directly from bKash merchant gateway into your campus bank account (Sonali Bank, Islami Bank, DBBL) with 100% automated ledger entries.
                       </p>
                     </div>
+
                   </div>
 
                 </div>
@@ -1194,86 +1247,93 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
                   
-                  <!-- NCTB Exam Paper Sheet -->
-                  <div class="md:col-span-7">
-                    <div class="nctb-paper-sheet space-y-3 text-xs text-slate-800" id="desktopExamPaperContainer">
-                      <div class="text-center border-b border-slate-200 pb-2">
-                        <h5 class="font-bold text-sm text-slate-900" id="desktopExamBoardHeader">ঢাকা শিক্ষা বোর্ড ও এনসিটিবি নতুন কারিকুলাম ২০২৬</h5>
-                        <p class="text-[11px] text-slate-600" id="desktopExamSubjectHeader">পদার্থবিজ্ঞান • ১০ম শ্রেণি • বার্ষিক মূল্যায়ন পরীক্ষা</p>
-                        <div class="flex justify-between text-[10px] text-slate-500 pt-1 font-mono">
-                          <span>সময়: ২ ঘণ্টা ৩০ মিনিট</span>
-                          <span>পূর্ণমান: ১০০</span>
-                        </div>
+                  <!-- NCTB AI Question Studio Bento Card -->
+                  <div class="md:col-span-7 p-5 rounded-2xl bg-gradient-to-br from-purple-50/40 to-white border border-purple-200/90 shadow-xs space-y-3.5" id="desktopExamPaperContainer">
+                    <div class="flex items-center justify-between text-xs pb-2 border-b border-purple-100">
+                      <div>
+                        <span class="font-bold text-slate-900 block" id="desktopExamSubjectHeader">পদার্থবিজ্ঞান • ১০ম শ্রেণি • বার্ষিক মূল্যায়ন পরীক্ষা</span>
+                        <span class="text-[10px] text-purple-700 font-medium">ঢাকা শিক্ষা বোর্ড ও এনসিটিবি নতুন কারিকুলাম ২০২৬</span>
                       </div>
+                      <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-800 font-bold text-[10px]">
+                        ✨ AI Ready (1.2s)
+                      </span>
+                    </div>
 
-                      <div class="space-y-1.5 pt-1">
-                        <span class="font-bold text-slate-900 block">উদ্দীপক (Stem):</span>
-                        <p class="text-slate-700 leading-relaxed bg-slate-50 p-2.5 rounded border border-slate-200" id="desktopExamStemText">
-                          একটি ১০ কেজি ভরের স্থির বস্তুর ওপর ২০ নিউটন বল ৫ সেকেন্ড যাবত প্রযুক্ত হলো। ৫ সেকেন্ড পর বলের ক্রিয়া বন্ধ হয়ে গেল।
-                        </p>
-                        <div class="space-y-1 pt-1 text-slate-800" id="desktopExamQuestionsList">
-                          <div class="flex justify-between">
-                            <span>(ক) বলের মাত্রা সমীকরণ কী?</span>
-                            <span class="font-bold text-purple-700">[১]</span>
-                          </div>
-                          <div class="flex justify-between">
-                            <span>(খ) সাইকেলের চাকায় বিয়ারিং ব্যবহার করা হয় কেন? ব্যাখ্যা করো।</span>
-                            <span class="font-bold text-purple-700">[২]</span>
-                          </div>
-                          <div class="flex justify-between">
-                            <span>(গ) ৫ সেকেন্ডে বস্তুটির অতিক্রান্ত দূরত্ব নির্ণয় করো।</span>
-                            <span class="font-bold text-purple-700">[৩]</span>
-                          </div>
-                          <div class="flex justify-between">
-                            <span>(ঘ) বলের মান দ্বিগুণ করলে গতিশক্তির কীরূপ পরিবর্তন ঘটবে? গাণিতিকভাবে বিশ্লেষণ করো।</span>
-                            <span class="font-bold text-purple-700">[৪]</span>
-                          </div>
-                        </div>
+                    <!-- Stem Highlight Capsule -->
+                    <div class="p-3 bg-white rounded-xl border border-purple-100/90 space-y-1 text-xs">
+                      <span class="font-bold text-purple-900 block text-[11px] uppercase tracking-wider">উদ্দীপক (Stem):</span>
+                      <p class="text-slate-800 leading-relaxed font-medium" id="desktopExamStemText">
+                        একটি ১০ কেজি ভরের স্থির বস্তুর ওপর ২০ নিউটন বল ৫ সেকেন্ড যাবত প্রযুক্ত হলো। ৫ সেকেন্ড পর বলের ক্রিয়া বন্ধ হয়ে গেল।
+                      </p>
+                    </div>
+
+                    <!-- Clean Question Items (Zero Visual Clutter) -->
+                    <div class="space-y-1.5 text-xs text-slate-800" id="desktopExamQuestionsList">
+                      <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
+                        <span>(ক) বলের মাত্রা সমীকরণ কী?</span>
+                        <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[১]</span>
+                      </div>
+                      <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
+                        <span>(খ) সাইকেলের চাকায় বিয়ারিং ব্যবহার করা হয় কেন? ব্যাখ্যা করো।</span>
+                        <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[২]</span>
+                      </div>
+                      <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
+                        <span>(গ) ৫ সেকেন্ডে বস্তুটির অতিক্রান্ত দূরত্ব নির্ণয় করো।</span>
+                        <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[৩]</span>
+                      </div>
+                      <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
+                        <span>(ঘ) বলের মান দ্বিগুণ করলে গতিশক্তির কীরূপ পরিবর্তন ঘটবে?</span>
+                        <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">[৪]</span>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Auto GPA Tabulation Preview -->
-                  <div class="md:col-span-5 space-y-3">
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-3">
-                      <div class="flex justify-between items-center pb-2 border-b border-slate-200">
-                        <span class="font-bold text-slate-900">1-Click GPA Tabulation Sheet</span>
-                        <span class="text-emerald-700 font-bold bg-emerald-100 px-2 py-0.5 rounded text-[10px]">AUTO-CALCULATED</span>
-                      </div>
+                  <!-- Auto GPA 5.0 Merit Bento Card (Zero Spreadsheet Rows) -->
+                  <div class="md:col-span-5 p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/90 shadow-xs space-y-4">
+                    <div class="flex justify-between items-center pb-2 border-b border-slate-200 text-xs">
+                      <span class="font-bold text-slate-900 flex items-center gap-1.5">
+                        <span>📊</span> 1-Click GPA Tabulation
+                      </span>
+                      <span class="text-emerald-700 font-bold bg-emerald-100 px-2 py-0.5 rounded text-[10px]">AUTO-CALCULATED</span>
+                    </div>
 
-                      <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs">
-                          <thead class="text-slate-500 border-b border-slate-200">
-                            <tr>
-                              <th class="pb-1">Roll</th>
-                              <th class="pb-1">Student</th>
-                              <th class="pb-1">Marks</th>
-                              <th class="pb-1">GPA</th>
-                            </tr>
-                          </thead>
-                          <tbody class="divide-y divide-slate-200" id="desktopExamTabulationBody">
-                            <tr>
-                              <td class="py-1.5 font-mono font-bold">01</td>
-                              <td class="py-1.5">Abdullah</td>
-                              <td class="py-1.5">275 / 300</td>
-                              <td class="py-1.5 text-emerald-700 font-bold">5.00 (A+)</td>
-                            </tr>
-                            <tr>
-                              <td class="py-1.5 font-mono font-bold">02</td>
-                              <td class="py-1.5">Sumaiya</td>
-                              <td class="py-1.5">266 / 300</td>
-                              <td class="py-1.5 text-emerald-700 font-bold">5.00 (A+)</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                    <!-- Board Standard Hero Pill -->
+                    <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-200 flex items-center justify-between text-xs">
+                      <div>
+                        <span class="font-bold text-emerald-950 block">Class 10-A Merit Score</span>
+                        <span class="text-[10px] text-emerald-700">100% Board Standard Grading</span>
                       </div>
+                      <span class="text-lg font-extrabold text-emerald-800">GPA 5.00</span>
+                    </div>
 
-                      <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-[11px]">
-                        <span class="text-slate-500">Merit list compiled in 1 click</span>
-                        <button type="button" class="px-2.5 py-1 bg-emerald-600 text-white font-bold rounded hover:bg-emerald-700 transition" onclick="showToastNotification('📄 Tabulation Sheet PDF Exported!')">
-                          Download Tabulation PDF
-                        </button>
+                    <!-- Clean Student Merit Stream -->
+                    <div class="space-y-2 text-xs" id="desktopExamTabulationBody">
+                      <div class="p-2.5 bg-white rounded-xl border border-slate-200/80 flex items-center justify-between shadow-2xs">
+                        <div class="flex items-center gap-2.5">
+                          <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">01</span>
+                          <div>
+                            <span class="font-bold text-slate-900 block text-xs">Muhammad Abdullah</span>
+                            <span class="text-[10px] text-slate-500 font-mono">275 / 300 Marks</span>
+                          </div>
+                        </div>
+                        <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">5.00 (A+)</span>
                       </div>
+                      <div class="p-2.5 bg-white rounded-xl border border-slate-200/80 flex items-center justify-between shadow-2xs">
+                        <div class="flex items-center gap-2.5">
+                          <span class="w-7 h-7 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-xs">02</span>
+                          <div>
+                            <span class="font-bold text-slate-900 block text-xs">Sumaiya Akter</span>
+                            <span class="text-[10px] text-slate-500 font-mono">266 / 300 Marks</span>
+                          </div>
+                        </div>
+                        <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">5.00 (A+)</span>
+                      </div>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-200">
+                      <button type="button" class="w-full py-2 bg-emerald-600 text-white font-bold text-xs rounded-xl hover:bg-emerald-700 transition shadow-xs flex items-center justify-center gap-1.5" onclick="showToastNotification('📄 Tabulation Sheet PDF Exported!')">
+                        <span>📄 Download Tabulation PDF</span>
+                      </button>
                     </div>
                   </div>
 
@@ -1303,62 +1363,74 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                   
-                  <!-- Ledger A: General Tuition Fund -->
-                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
+                  <!-- Shariah Bento Vault 1: General Tuition Fund -->
+                  <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/90 shadow-xs space-y-3.5 text-xs">
                     <div class="flex justify-between items-center border-b border-slate-200 pb-2">
-                      <span class="font-bold text-slate-900">খাত ১: সাধারণ শিক্ষা ও শিক্ষক বেতন তহবিল</span>
-                      <span class="text-[10px] font-mono text-slate-500">LEDGER-01</span>
+                      <span class="font-bold text-slate-900 flex items-center gap-1.5">
+                        <span>🏫</span> খাত ১: সাধারণ শিক্ষা ও শিক্ষক বেতন
+                      </span>
+                      <span class="text-[10px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">LEDGER-01</span>
                     </div>
-                    <div class="space-y-1 text-slate-700 pt-1">
-                      <div class="flex justify-between">
-                        <span>ছাত্র বেতন ও ভর্তি ফি আয়:</span>
-                        <span class="font-bold font-mono">৳৪,৫০,০০০</span>
+                    <div>
+                      <span class="text-[10px] text-slate-500 uppercase tracking-wider block font-bold">সাধারণ ফান্ড উদ্বৃত্ত:</span>
+                      <span class="text-2xl font-extrabold text-emerald-800 tracking-tight">+৳৭০,০০০</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-[11px] pt-1">
+                      <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200/60">
+                        <span class="text-slate-400 block text-[10px]">ছাত্র বেতন ও ভর্তি</span>
+                        <strong class="text-slate-900 text-xs font-mono">৳৪,৫০,০০০</strong>
                       </div>
-                      <div class="flex justify-between text-red-600">
-                        <span>উস্তাদ ও কর্মচারী বেতন ব্যয়:</span>
-                        <span class="font-bold font-mono">-৳৩,৮০,০০০</span>
-                      </div>
-                      <div class="flex justify-between pt-1.5 border-t border-slate-200 font-bold text-slate-900">
-                        <span>সাধারণ ফান্ড উদ্বৃত্ত:</span>
-                        <span class="text-emerald-700 font-mono">+৳৭০,০০০</span>
+                      <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200/60">
+                        <span class="text-slate-400 block text-[10px]">উস্তাদ বেতন ব্যয়</span>
+                        <strong class="text-red-600 text-xs font-mono">-৳৩,৮০,০০০</strong>
                       </div>
                     </div>
+                    <span class="text-[10.5px] text-slate-500 block pt-1">✓ সাধারণ একাডেমিক কার্যক্রম সম্পূর্ণ স্বাবলম্বী</span>
                   </div>
 
-                  <!-- Ledger B: Lillah Boarding Fund -->
-                  <div class="waqf-ledger-card text-xs space-y-2">
+                  <!-- Shariah Bento Vault 2: Lillah Boarding Fund (Zakat/Sadaqah) -->
+                  <div class="p-5 rounded-2xl bg-gradient-to-br from-amber-50/50 to-white border border-amber-200/90 shadow-xs space-y-3.5 text-xs">
                     <div class="flex justify-between items-center border-b border-amber-200 pb-2">
-                      <span class="font-bold text-amber-900">খাত ২: এতিমখানা ও লিল্লাহ বোর্ডিং ফান্ড (যাকাত/সদকা)</span>
+                      <span class="font-bold text-amber-950 flex items-center gap-1.5">
+                        <span>🕌</span> খাত ২: এতিমখানা ও লিল্লাহ বোর্ডিং ফান্ড
+                      </span>
                       <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded">SHARIAH LOCKED</span>
                     </div>
-                    <div class="space-y-1 text-slate-700 pt-1">
-                      <div class="flex justify-between">
-                        <span>যাকাত, ফিতরা ও দান অনুদান:</span>
-                        <span class="font-bold font-mono text-amber-800" id="desktopWaqfDonationTotal">৳১,৮০,০০০</span>
+                    <div>
+                      <span class="text-[10px] text-amber-800 uppercase tracking-wider block font-bold">লিল্লাহ ফান্ড বর্তমান স্থিতি:</span>
+                      <span class="text-2xl font-extrabold text-amber-900 tracking-tight" id="desktopWaqfNetBalance">+৳৬০,০০০</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-[11px] pt-1">
+                      <div class="p-2.5 bg-amber-50/70 rounded-xl border border-amber-200/60">
+                        <span class="text-amber-800/80 block text-[10px]">যাকাত ও অনুদান</span>
+                        <strong class="text-amber-950 text-xs font-mono" id="desktopWaqfDonationTotal">৳১,৮০,০০০</strong>
                       </div>
-                      <div class="flex justify-between text-red-600">
-                        <span>এতিমদের খাবার, কিতাব ও চিকিৎসা ব্যয়:</span>
-                        <span class="font-bold font-mono">-৳১,২০,০০০</span>
-                      </div>
-                      <div class="flex justify-between pt-1.5 border-t border-amber-200 font-bold text-slate-900">
-                        <span>লিল্লাহ ফান্ড বর্তমান স্থিতি:</span>
-                        <span class="text-amber-800 font-mono font-bold" id="desktopWaqfNetBalance">+৳৬০,০০০</span>
+                      <div class="p-2.5 bg-amber-50/70 rounded-xl border border-amber-200/60">
+                        <span class="text-amber-800/80 block text-[10px]">এতিম খানা ও কিতাব</span>
+                        <strong class="text-red-700 text-xs font-mono">-৳১,২০,০০০</strong>
                       </div>
                     </div>
+                    <span class="text-[10.5px] text-amber-800 font-semibold block pt-1">🛡️ শরিয়াহ অডিট লকড • শতভাগ পৃথক ব্যাংক হিসাব</span>
                   </div>
 
                 </div>
 
-                <!-- Automated Donor SMS Voucher -->
-                <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200 text-xs space-y-2">
+                <!-- Automated Donor SMS Voucher Bento Card -->
+                <div class="p-4 rounded-2xl bg-gradient-to-br from-amber-50/70 to-white border border-amber-200/90 shadow-xs text-xs space-y-2.5">
                   <div class="flex justify-between items-center">
-                    <span class="font-bold text-amber-900">দাতাদের জন্য তাৎক্ষণিক অটোমেটিক ভাউচার এসএমএস</span>
-                    <span class="text-[10px] font-mono text-amber-800 font-bold" id="desktopWaqfVoucherNo">VOUCHER: WQF-9042</span>
+                    <span class="font-bold text-amber-950 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                      <span>📱</span> দাতাদের জন্য তাৎক্ষণিক অটোমেটিক ভাউচার এসএমএস
+                    </span>
+                    <span class="text-[10px] font-mono text-amber-900 font-bold bg-amber-100 px-2 py-0.5 rounded border border-amber-200" id="desktopWaqfVoucherNo">VOUCHER: WQF-9042</span>
                   </div>
-                  <div class="p-3 bg-white rounded-lg border border-amber-100 shadow-xs">
-                    <p class="text-slate-800 leading-relaxed" id="desktopWaqfSmsText">
+                  <div class="p-3 bg-white rounded-xl border border-amber-100 shadow-2xs">
+                    <p class="text-slate-800 leading-relaxed text-xs font-medium" id="desktopWaqfSmsText">
                       "আলহামদুলিল্লাহ! হাজী মো. রফিকুল ইসলাম সাহেব, জামিয়া ইসলামিয়া এতিমখানা লিল্লাহ বোর্ডিং ফান্ডে আপনার ৫০,০০০ টাকার অনুদান সফলভাবে জমা হয়েছে। রশিদ নং: WQF-9042। আল্লাহ আপনার দানকে কবুল করুন।"
                     </p>
+                  </div>
+                  <div class="flex justify-between text-[10.5px] text-amber-900 font-medium pt-1">
+                    <span>✓ ৩ সেকেন্ডে বাংলা এসএমএস ডেলিভারি</span>
+                    <span>✓ অটোমেটিক ডিজিটাল মানি রিসিট প্রস্তুত</span>
                   </div>
                 </div>
               </div>
@@ -1368,49 +1440,12 @@
           </div>
         </div>
 
-        <!-- Right: Smart Campus Ecosystem Hub (Smartphone + 4 Floating 3D/2.5D Telemetry Nodes + Role Switcher) -->
+        <!-- Right: Smart Campus Ecosystem Hub (Smartphone + Role Switcher) -->
         <div class="lg:col-span-4" id="phoneMockupCol">
           <div class="phone-ecosystem-stage">
             
             <!-- Ambient Glow Halo -->
             <div class="ecosystem-halo-glow"></div>
-
-            <!-- Floating Telemetry Node 1: ZKTeco Biometric Turnstile (Top-Left) -->
-            <div class="floating-telemetry-node node-top-left hidden sm:flex" onclick="switchSoftwareTab('biometric')" title="Click to inspect Biometric Gate Turnstile">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-              <span class="text-sm">⏱️</span>
-              <div class="leading-tight text-left">
-                <strong class="text-slate-900 block text-[11px]">ZKTeco Turnstile #01</strong>
-                <span class="text-[9.5px] text-emerald-700 font-mono">Offline-Buffered Sync</span>
-              </div>
-            </div>
-
-            <!-- Floating Telemetry Node 2: 3-Second Telco SMS Gateway (Top-Right) -->
-            <div class="floating-telemetry-node node-top-right hidden sm:flex" onclick="switchSoftwareTab('biometric')" title="Click to inspect Telco SMS Delivery">
-              <span class="text-sm">📡</span>
-              <div class="leading-tight text-left">
-                <strong class="text-slate-900 block text-[11px]">3s Telco SMS Cloud</strong>
-                <span class="text-[9.5px] text-purple-700 font-mono">GP • Robi • BL • Teletalk</span>
-              </div>
-            </div>
-
-            <!-- Floating Telemetry Node 3: bKash Direct Merchant Gateway (Bottom-Left) -->
-            <div class="floating-telemetry-node node-bottom-left hidden sm:flex" onclick="switchSoftwareTab('bkash')" title="Click to inspect bKash Merchant Gateway">
-              <span class="text-sm">৳</span>
-              <div class="leading-tight text-left">
-                <strong class="text-slate-900 block text-[11px]">bKash Direct Gateway</strong>
-                <span class="text-[9.5px] text-pink-700 font-mono">Auto Bank Reconciliation</span>
-              </div>
-            </div>
-
-            <!-- Floating Telemetry Node 4: NCTB Curriculum AI Engine (Bottom-Right) -->
-            <div class="floating-telemetry-node node-bottom-right hidden sm:flex" onclick="switchSoftwareTab('exam')" title="Click to inspect NCTB Curriculum AI">
-              <span class="text-sm">🤖</span>
-              <div class="leading-tight text-left">
-                <strong class="text-slate-900 block text-[11px]">NCTB AI Engine V2</strong>
-                <span class="text-[9.5px] text-sky-700 font-mono">1-Click GPA 5.0 Tabulation</span>
-              </div>
-            </div>
 
             <!-- The Realistic Smartphone Mockup Frame -->
             <div class="phone-mockup-frame">

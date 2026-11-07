@@ -1366,17 +1366,23 @@ function initSoftwareWindowTabs() {
         simPunchCount.textContent = punchCounter.toLocaleString('bn-BD');
       }
 
-      // Add row to desktop table
-      const tr = document.createElement('tr');
-      tr.className = 'bg-emerald-50/70 transition-colors duration-500';
-      tr.innerHTML = `
-        <td class="p-2 font-mono font-bold">${student.roll}</td>
-        <td class="p-2 font-medium">${student.name}</td>
-        <td class="p-2">${student.class}</td>
-        <td class="p-2 font-mono text-slate-600">${timeStr}</td>
-        <td class="p-2 text-emerald-700 font-bold">✓ Delivered (2.1s)</td>
+      // Add modern card to desktop arrival stream (table-free)
+      const card = document.createElement('div');
+      card.className = 'p-2.5 bg-emerald-50/90 rounded-xl border border-emerald-300 flex items-center justify-between shadow-2xs transition-all duration-500';
+      card.innerHTML = `
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-full bg-emerald-200 text-emerald-800 font-bold flex items-center justify-center text-xs shadow-2xs">${student.name.charAt(0)}</span>
+          <div>
+            <span class="font-bold text-slate-900 block text-xs">${student.name}</span>
+            <span class="text-[10px] text-slate-500 font-medium">Roll ${student.roll} • ${student.class} • Gate #01</span>
+          </div>
+        </div>
+        <div class="text-right">
+          <span class="font-mono text-slate-700 block text-[11px] font-semibold">${timeStr}</span>
+          <span class="text-emerald-700 font-bold text-[10px] bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">✓ SMS Delivered (2.1s)</span>
+        </div>
       `;
-      simPunchLogBody.insertBefore(tr, simPunchLogBody.firstChild);
+      simPunchLogBody.insertBefore(card, simPunchLogBody.firstChild);
 
       // Update SMS preview on desktop
       const smsMsg = `"সম্মানিত অভিভাবক, আপনার সন্তান ${student.name} (রোল: ${student.roll}, ${student.class}) এইমাত্র ${timeStr} মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - ইয়েস এডু"`;
@@ -1511,21 +1517,25 @@ function initSoftwareWindowTabs() {
 
       if (desktopExamQuestionsList) {
         desktopExamQuestionsList.innerHTML = current.questions.map(item => `
-          <div class="flex justify-between py-0.5">
+          <div class="p-2 bg-white rounded-lg border border-slate-200/70 flex justify-between items-center">
             <span>${item.q}</span>
-            <span class="font-bold text-purple-700">${item.marks}</span>
+            <span class="font-bold text-purple-700 font-mono text-[11px] bg-purple-50 px-2 py-0.5 rounded border border-purple-200">${item.marks}</span>
           </div>
         `).join('');
       }
 
       if (desktopExamTabulationBody) {
         desktopExamTabulationBody.innerHTML = current.ranks.map(r => `
-          <tr>
-            <td class="py-1.5 font-mono font-bold">${r.roll}</td>
-            <td class="py-1.5">${r.name}</td>
-            <td class="py-1.5">${r.marks}</td>
-            <td class="py-1.5 text-emerald-700 font-bold">${r.gpa}</td>
-          </tr>
+          <div class="p-2.5 bg-white rounded-xl border border-slate-200/80 flex items-center justify-between shadow-2xs">
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">${r.roll}</span>
+              <div>
+                <span class="font-bold text-slate-900 block text-xs">${r.name}</span>
+                <span class="text-[10px] text-slate-500 font-mono">${r.marks}</span>
+              </div>
+            </div>
+            <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">${r.gpa}</span>
+          </div>
         `).join('');
       }
 
