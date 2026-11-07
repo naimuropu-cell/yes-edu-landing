@@ -1083,57 +1083,180 @@ function initFaqAccordion() {
 }
 
 /* ==========================================================================
-   9. Persona Switcher (School, Madrasa, Cadet)
+   9. Institution Persona Switcher (School vs College vs Madrasa)
    ========================================================================== */
-function initPersonaSwitcher() {
-  const personaBtns = document.querySelectorAll('.persona-tab-btn');
-  const subtextEn = document.getElementById('heroPersonaSubtextEn');
-  const subtextBn = document.getElementById('heroPersonaSubtextBn');
+function setInstitutionPersona(personaKey) {
+  const masterBtns = document.querySelectorAll('.institution-persona-btn');
+  const innerSchoolBtn = document.getElementById('biToggleSchool');
+  const innerMadrasaBtn = document.getElementById('biToggleMadrasa');
+  const badgePill = document.getElementById('personaBadgePill');
+  const badgeText = document.getElementById('personaBadgeText');
+  const summaryText = document.getElementById('personaSummaryText');
 
-  const personaCopy = {
+  // Sync active class on master buttons
+  masterBtns.forEach(btn => {
+    if (btn.getAttribute('data-institution') === personaKey) btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+
+  // Sync active class on inner buttons if present
+  if (innerSchoolBtn && innerMadrasaBtn) {
+    if (personaKey === 'madrasa') {
+      innerMadrasaBtn.classList.add('active');
+      innerSchoolBtn.classList.remove('active');
+    } else {
+      innerSchoolBtn.classList.add('active');
+      innerMadrasaBtn.classList.remove('active');
+    }
+  }
+
+  const institutionMeta = {
     school: {
-      en: "YES EDU is the premier institutional cloud ERP engineered specifically for Bangladesh. Seamlessly integrates instant biometric gate SMS, 1-click bKash/Nagad fee collection, NCTB 2026 AI question bank, and digital tabulation.",
-      bn: "স্কুল ও কলেজের জন্য পূর্ণাঙ্গ ক্লাউড ম্যানেজমেন্ট সফটওয়্যার। বায়োমেট্রিক গেট এন্ট্রি এসএমএস, অটো বিকাশ/নগদ ফি আদায়, এনসিটিবি এআই শিক্ষক সহকারী এবং ডিজিটাল মার্কশিট প্রস্তুতকারক।"
+      badgeClass: 'bg-emerald-100 text-emerald-800 border-emerald-300',
+      badgeEn: 'GENERAL SCHOOL & CADET ARCHITECTURE ACTIVE',
+      badgeBn: 'স্কুল ও ক্যাডেট একাডেমি মোড সক্রিয়',
+      summaryEn: 'Engineered for primary, high school, and cadet academies across Bangladesh. Instant 2.1s biometric gate SMS to mothers, 1-tap bKash tuition collection, and automated NCTB 2026 creative question papers.',
+      summaryBn: 'সারাদেশের প্রাথমিক, মাধ্যমিক ও ক্যাডেট স্কুলের জন্য নির্ভরযোগ্য অপারেটিং সিস্টেম। গেটে পাঞ্চের ২.১ সেকেন্ডে মায়ের ফোনে নোটিফিকেশন এসএমএস, ১-ট্যাপে বিকাশ ফি আদায় এবং এনসিটিবি নতুন মূল্যায়ন টুলস।',
+      tab: 'biometric',
+      alert: '🏫 General School & Cadet Mode Activated',
+      toast: '🏫 Switched to General School Architecture',
+      enrolledLabel: 'Total Enrolled Students',
+      enrolledVal: '১,২৪০ জন',
+      enrolledSub: 'Present: ১,২২০ (৯৮.৪%)',
+      feesLabel: "Today's Tuition Fees",
+      feesVal: '৳৪,৮৫,২০০',
+      feesSub: 'bKash: 74% • Bank: 26%',
+      gateLabel: 'Gate Punch Telemetry',
+      gateVal: 'Online (2.1s SMS)',
+      gateSub: 'Gate #01 & #02 Synced',
+      smsLabel: 'Instant Parent SMS',
+      smsVal: '১,২২০ টি',
+      smsSub: 'Avg Delivery: 2.1s',
+      studentName: 'Muhammad Abdullah',
+      studentMeta: 'Class 10-A • Roll: 01'
+    },
+    college: {
+      badgeClass: 'bg-sky-100 text-sky-800 border-sky-300',
+      badgeEn: 'HIGHER SECONDARY & DEGREE COLLEGE ARCHITECTURE ACTIVE',
+      badgeBn: 'কলেজ ও উচ্চমাধ্যমিক মোড সক্রিয়',
+      summaryEn: 'Engineered for colleges and higher secondary institutions. Multi-shift management (Morning & Day), Science/Arts/Commerce stream tabulations, board examination admit cards, and 1-click staff bank payroll.',
+      summaryBn: 'কলেজ ও উচ্চমাধ্যমিক প্রতিষ্ঠানের জন্য বিশেষায়িত। মর্নিং ও ডে শিফট ম্যানেজমেন্ট, বিজ্ঞান/মানবিক/ব্যবসায় শিক্ষা বিভাগের আলাদা মার্কশিট, বোর্ড পরীক্ষার প্রবেশপত্র এবং শিক্ষকদের ব্যাংক পে-রোল।',
+      tab: 'exam',
+      alert: '🎓 Degree College Mode Activated',
+      toast: '🎓 Switched to Degree College Architecture',
+      enrolledLabel: 'Total College Students',
+      enrolledVal: '১,৮৫০ জন',
+      enrolledSub: 'Morning & Day Shifts',
+      feesLabel: 'Semester Fees Collected',
+      feesVal: '৳১৮,৫০,০০০',
+      feesSub: '1-Click Bank Reconciliation',
+      gateLabel: 'Shift Biometric Terminal',
+      gateVal: 'Online (Morning & Day)',
+      gateSub: 'Science, Arts, Business Stream',
+      smsLabel: 'Admit Card & Routine SMS',
+      smsVal: '১,৮৫০ টি',
+      smsSub: 'Exam Notice Delivered',
+      studentName: 'Tanvir Ahmed',
+      studentMeta: 'HSC 2nd Year • Science Stream • Roll: 104'
     },
     madrasa: {
-      en: "Strict Shariah-compliant double-entry accounting for Qawmi & Aliya Madrasas. Separate Lillah Boarding, Zakat, and General tuition ledgers with automated donor SMS receipts and audit balance sheets.",
-      bn: "কওমি ও আলিয়া মাদ্রাসার জন্য পূর্ণাঙ্গ শরিয়াহসম্মত ক্লাউড প্ল্যাটফর্ম। সাধারণ শিক্ষা ফান্ড, এতিমখানা লিল্লাহ বোর্ডিং ও যাকাত ফান্ডের সম্পূর্ণ পৃথক হিসাব এবং দাতাদের অটো এসএমএস রসিদ।"
-    },
-    cadet: {
-      en: "Military-grade residential campus management. 24/7 dormitory bed matrix, dining meal allocation, live school bus GPS tracking, and parent mobile communication.",
-      bn: "ক্যাডেট ও রেসিডেন্সিয়াল একাডেমির জন্য সার্বক্ষণিক ক্যাম্পাস কন্ট্রোল। হোস্টেল বেড বণ্টন, ডাইনিং মিলের নির্ভুল হিসাব, স্কুল বাস জিপিএস এবং অভিভাবক মোবাইল সংযোগ।"
+      badgeClass: 'bg-purple-100 text-purple-800 border-purple-300',
+      badgeEn: '100% SHARIAH COMPLIANT QAWMI & ALIM ARCHITECTURE ACTIVE',
+      badgeBn: 'কওমি ও আলিয়া মাদরাসা মোড সক্রিয়',
+      summaryEn: 'Engineered specifically for Qawmi, Alim, and Tahfiz institutions. Strict Shariah separation for Lillah Boarding, Zakat, and General tuition ledgers with automated donor SMS receipts and hostel room allocation.',
+      summaryBn: 'কওমি, আলিয়া ও হিফজ মাদরাসার বাস্তব চাহিদার আলোকে নির্মিত। সাধারণ তহবিল, এতিমখানা লিল্লাহ বোর্ডিং ও যাকাত ফান্ডের সম্পূর্ণ পৃথক শরিয়াহসম্মত হিসাব, দাতাদের অটো এসএমএস রসিদ এবং মেস-খানা বন্টন।',
+      tab: 'waqf',
+      alert: '🕌 Shariah Madrasa & Waqf Mode Activated',
+      toast: '🕌 Switched to Madrasa & Waqf Architecture',
+      enrolledLabel: 'মোট তালিব-ই-ইলম',
+      enrolledVal: '৮৬০ জন',
+      enrolledSub: 'উপস্থিত: ৮৫২ জন (৯৯.১%)',
+      feesLabel: 'ওয়াকফ ও লিল্লাহ ফান্ড',
+      feesVal: '৳৬,৪০,০০০',
+      feesSub: 'শরিয়াহ অডিট লকড',
+      gateLabel: 'হিফজ খতমে কোরআন',
+      gateVal: '১৮ পারা',
+      gateSub: 'আজ সম্পন্ন: ২ জন',
+      smsLabel: 'লিল্লাহ বোর্ডিং খানা',
+      smsVal: '৩৫০ জন',
+      smsSub: 'সেহরি ও ইফতার প্রস্তুত',
+      studentName: 'মুহাম্মদ আবদুল্লাহ',
+      studentMeta: 'হিফজ ও কিতাব বিভাগ • রোল: ০১'
     }
   };
 
+  const meta = institutionMeta[personaKey] || institutionMeta.school;
+
+  // Update Badge
+  if (badgePill) {
+    badgePill.className = `inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold shadow-2xs border ${meta.badgeClass}`;
+  }
+  if (badgeText) {
+    badgeText.textContent = meta.badgeEn;
+  }
+  if (summaryText) {
+    const enSpan = summaryText.querySelector('.lang-en');
+    const bnSpan = summaryText.querySelector('.lang-bn');
+    if (enSpan) enSpan.textContent = meta.summaryEn;
+    if (bnSpan) bnSpan.textContent = meta.summaryBn;
+  }
+
+  // Update KPI displays if present
+  const biKpiEnrolledLabel = document.getElementById('biKpiEnrolledLabel');
+  const biKpiEnrolledValue = document.getElementById('biKpiEnrolledValue');
+  const biKpiEnrolledSub = document.getElementById('biKpiEnrolledSub');
+  const biKpiFeesLabel = document.getElementById('biKpiFeesLabel');
+  const biKpiFeesValue = document.getElementById('biKpiFeesValue');
+  const biKpiFeesSub = document.getElementById('biKpiFeesSub');
+  const biKpiGateLabel = document.getElementById('biKpiGateLabel');
+  const biKpiGateValue = document.getElementById('biKpiGateValue');
+  const biKpiGateSub = document.getElementById('biKpiGateSub');
+  const biKpiSmsLabel = document.getElementById('biKpiSmsLabel');
+  const biKpiSmsValue = document.getElementById('biKpiSmsValue');
+  const biKpiSmsSub = document.getElementById('biKpiSmsSub');
+  const phoneStudentName = document.getElementById('phoneStudentName');
+  const phoneStudentMeta = document.getElementById('phoneStudentMeta');
+
+  if (biKpiEnrolledLabel) biKpiEnrolledLabel.textContent = meta.enrolledLabel;
+  if (biKpiEnrolledValue) biKpiEnrolledValue.textContent = meta.enrolledVal;
+  if (biKpiEnrolledSub) biKpiEnrolledSub.textContent = meta.enrolledSub;
+  if (biKpiFeesLabel) biKpiFeesLabel.textContent = meta.feesLabel;
+  if (biKpiFeesValue) biKpiFeesValue.textContent = meta.feesVal;
+  if (biKpiFeesSub) biKpiFeesSub.textContent = meta.feesSub;
+  if (biKpiGateLabel) biKpiGateLabel.textContent = meta.gateLabel;
+  if (biKpiGateValue) biKpiGateValue.textContent = meta.gateVal;
+  if (biKpiGateSub) biKpiGateSub.textContent = meta.gateSub;
+  if (biKpiSmsLabel) biKpiSmsLabel.textContent = meta.smsLabel;
+  if (biKpiSmsValue) biKpiSmsValue.textContent = meta.smsVal;
+  if (biKpiSmsSub) biKpiSmsSub.textContent = meta.smsSub;
+  if (phoneStudentName) phoneStudentName.textContent = meta.studentName;
+  if (phoneStudentMeta) phoneStudentMeta.textContent = meta.studentMeta;
+
+  // Jump to relevant module tab in software window
+  switchSoftwareTab(meta.tab);
+
+  // Trigger Dynamic Island & Toast
+  triggerDynamicIslandAlert(meta.alert, 2600);
+  showToastNotification(meta.toast);
+}
+
+function initPersonaSwitcher() {
+  const personaBtns = document.querySelectorAll('.institution-persona-btn');
   personaBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const persona = btn.getAttribute('data-persona');
-      personaBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      if (personaCopy[persona]) {
-        if (subtextEn) subtextEn.textContent = personaCopy[persona].en;
-        if (subtextBn) subtextBn.textContent = personaCopy[persona].bn;
-
-        const descText = document.getElementById('heroDescriptionText');
-        if (descText) {
-          const enSpan = descText.querySelector('.lang-en');
-          const bnSpan = descText.querySelector('.lang-bn');
-          if (enSpan) enSpan.innerHTML = personaCopy[persona].en;
-          if (bnSpan) bnSpan.innerHTML = personaCopy[persona].bn;
-        }
-      }
-
-      // Automatically sync software window tab to relevant module
-      if (persona === 'madrasa') {
-        switchSoftwareTab('waqf');
-      } else if (persona === 'cadet') {
-        switchSoftwareTab('biometric');
-      } else {
-        switchSoftwareTab('dashboard');
-      }
+      const targetInstitution = btn.getAttribute('data-institution') || 'school';
+      setInstitutionPersona(targetInstitution);
     });
   });
+
+  const innerSchoolBtn = document.getElementById('biToggleSchool');
+  const innerMadrasaBtn = document.getElementById('biToggleMadrasa');
+  if (innerSchoolBtn) {
+    innerSchoolBtn.addEventListener('click', () => setInstitutionPersona('school'));
+  }
+  if (innerMadrasaBtn) {
+    innerMadrasaBtn.addEventListener('click', () => setInstitutionPersona('madrasa'));
+  }
 }
 
 /* ==========================================================================
@@ -1269,59 +1392,8 @@ function initSoftwareWindowTabs() {
   const phoneStudentMeta = document.getElementById('phoneStudentMeta');
 
   if (biToggleSchool && biToggleMadrasa) {
-    biToggleSchool.addEventListener('click', () => {
-      biToggleSchool.classList.add('active');
-      biToggleMadrasa.classList.remove('active');
-
-      if (biKpiEnrolledLabel) biKpiEnrolledLabel.textContent = 'Total Enrolled';
-      if (biKpiEnrolledValue) biKpiEnrolledValue.textContent = '১,২৪০ জন';
-      if (biKpiEnrolledSub) biKpiEnrolledSub.textContent = 'Present: ১,২২০ (৯৮.৪%)';
-
-      if (biKpiFeesLabel) biKpiFeesLabel.textContent = "Today's Fees";
-      if (biKpiFeesValue) biKpiFeesValue.textContent = '৳৪,৮৫,২০০';
-      if (biKpiFeesSub) biKpiFeesSub.textContent = 'bKash: 74% • Bank: 26%';
-
-      if (biKpiGateLabel) biKpiGateLabel.textContent = 'Gate Punch Status';
-      if (biKpiGateValue) biKpiGateValue.textContent = 'Online';
-      if (biKpiGateSub) biKpiGateSub.textContent = 'Gate #01 & #02 Synced';
-
-      if (biKpiSmsLabel) biKpiSmsLabel.textContent = 'SMS Delivery';
-      if (biKpiSmsValue) biKpiSmsValue.textContent = '১,২২০ টি';
-      if (biKpiSmsSub) biKpiSmsSub.textContent = 'Avg Delivery: 2.3s';
-
-      if (phoneStudentName) phoneStudentName.textContent = 'Muhammad Abdullah';
-      if (phoneStudentMeta) phoneStudentMeta.textContent = 'Class 10-A • Roll: 01';
-
-      triggerDynamicIslandAlert('🏫 School & College Mode Activated', 2500);
-      showToastNotification('🏫 Dashboard switched to School & College KPIs');
-    });
-
-    biToggleMadrasa.addEventListener('click', () => {
-      biToggleMadrasa.classList.add('active');
-      biToggleSchool.classList.remove('active');
-
-      if (biKpiEnrolledLabel) biKpiEnrolledLabel.textContent = 'মোট তালিব-ই-ইলম';
-      if (biKpiEnrolledValue) biKpiEnrolledValue.textContent = '৮৬০ জন';
-      if (biKpiEnrolledSub) biKpiEnrolledSub.textContent = 'উপস্থিত: ৮৫২ জন (৯৯.১%)';
-
-      if (biKpiFeesLabel) biKpiFeesLabel.textContent = 'ওয়াকফ ও লিল্লাহ ফান্ড';
-      if (biKpiFeesValue) biKpiFeesValue.textContent = '৳৬,৪০,০০০';
-      if (biKpiFeesSub) biKpiFeesSub.textContent = 'শরিয়াহ অডিট লকড';
-
-      if (biKpiGateLabel) biKpiGateLabel.textContent = 'হিফজ খতমে কোরআন';
-      if (biKpiGateValue) biKpiGateValue.textContent = '১৮ পারা';
-      if (biKpiGateSub) biKpiGateSub.textContent = 'আজ সম্পন্ন: ২ জন';
-
-      if (biKpiSmsLabel) biKpiSmsLabel.textContent = 'লিল্লাহ বোর্ডিং খানা';
-      if (biKpiSmsValue) biKpiSmsValue.textContent = '৩৫০ জন';
-      if (biKpiSmsSub) biKpiSmsSub.textContent = 'সেহরি ও ইফতার প্রস্তুত';
-
-      if (phoneStudentName) phoneStudentName.textContent = 'মুহাম্মদ আবদুল্লাহ';
-      if (phoneStudentMeta) phoneStudentMeta.textContent = 'হিফজ ও কিতাব বিভাগ • রোল: ০১';
-
-      triggerDynamicIslandAlert('🕌 Madrasa & Waqf Mode Activated', 2500);
-      showToastNotification('🕌 Dashboard switched to Madrasa & Waqf KPIs');
-    });
+    biToggleSchool.addEventListener('click', () => setInstitutionPersona('school'));
+    biToggleMadrasa.addEventListener('click', () => setInstitutionPersona('madrasa'));
   }
 
   // =========================================================================

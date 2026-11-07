@@ -49,7 +49,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <!-- Custom Styles: Senior UI/UX Designer Light Theme -->
-  <link rel="stylesheet" href="css/style.css?v=4.3">
+  <link rel="stylesheet" href="css/style.css?v=4.4">
 </head>
 <body class="bg-[#f8fafc] text-slate-800 selection:bg-emerald-100 selection:text-emerald-900">
 
@@ -708,6 +708,70 @@
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span id="autoPlayStepLabel">Phase 1/4: 07:58 AM Morning Gate Rush</span>
           </div>
+        </div>
+      </div>
+
+      <!-- ================= INTERACTIVE INSTITUTION PERSONA SWITCHER ================= -->
+      <div class="institution-persona-wrapper max-w-4xl mx-auto text-center">
+        <div class="institution-persona-segment">
+          
+          <!-- Mode 1: School & Cadet -->
+          <button type="button" class="institution-persona-btn active" data-institution="school">
+            <span class="persona-icon-badge w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-base shadow-2xs font-bold transition-transform">🏫</span>
+            <div class="text-left leading-tight pr-1">
+              <span class="text-xs sm:text-sm font-bold block text-slate-900">
+                <span class="lang-en">School & Cadet</span>
+                <span class="lang-bn hidden">স্কুল ও একাডেমি</span>
+              </span>
+              <span class="text-[10px] text-slate-500 font-medium block">
+                <span class="lang-en">Gate SMS & NCTB 2026</span>
+                <span class="lang-bn hidden">গেট হাজিরা ও নতুন মূল্যায়ন</span>
+              </span>
+            </div>
+          </button>
+
+          <!-- Mode 2: Degree College -->
+          <button type="button" class="institution-persona-btn" data-institution="college">
+            <span class="persona-icon-badge w-9 h-9 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center text-base shadow-2xs font-bold transition-transform">🎓</span>
+            <div class="text-left leading-tight pr-1">
+              <span class="text-xs sm:text-sm font-bold block text-slate-900">
+                <span class="lang-en">Degree College</span>
+                <span class="lang-bn hidden">কলেজ ও উচ্চমাধ্যমিক</span>
+              </span>
+              <span class="text-[10px] text-slate-500 font-medium block">
+                <span class="lang-en">Shifts & Semester Tab</span>
+                <span class="lang-bn hidden">শিফট, বিভাগ ও টেবুলেশন</span>
+              </span>
+            </div>
+          </button>
+
+          <!-- Mode 3: Madrasa & Waqf -->
+          <button type="button" class="institution-persona-btn" data-institution="madrasa">
+            <span class="persona-icon-badge w-9 h-9 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center text-base shadow-2xs font-bold transition-transform">🕌</span>
+            <div class="text-left leading-tight pr-1">
+              <span class="text-xs sm:text-sm font-bold block text-slate-900">
+                <span class="lang-en">Qawmi & Aliya Madrasa</span>
+                <span class="lang-bn hidden">কওমি ও আলিয়া মাদরাসা</span>
+              </span>
+              <span class="text-[10px] text-slate-500 font-medium block">
+                <span class="lang-en">Waqf, Lillah & Hifz</span>
+                <span class="lang-bn hidden">ওয়াকফ, লিল্লাহ ও হিফজ</span>
+              </span>
+            </div>
+          </button>
+
+        </div>
+
+        <!-- Dynamic Value Context Bar -->
+        <div class="mt-4 flex flex-col items-center">
+          <div id="personaBadgePill" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-2xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span id="personaBadgeText">GENERAL SCHOOL & CADET ARCHITECTURE ACTIVE</span>
+          </div>
+          <p id="personaSummaryText" class="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto mt-2 leading-relaxed">
+            <span class="lang-en">Engineered for primary, high school, and cadet academies across Bangladesh. Instant 2.1s biometric gate SMS to mothers, 1-tap bKash tuition collection, and automated NCTB 2026 creative question papers.</span>
+            <span class="lang-bn hidden">সারাদেশের প্রাথমিক, মাধ্যমিক ও ক্যাডেট স্কুলের জন্য নির্ভরযোগ্য অপারেটিং সিস্টেম। গেটে পাঞ্চের ২.১ সেকেন্ডে মায়ের ফোনে নোটিফিকেশন এসএমএস, ১-ট্যাপে বিকাশ ফি আদায় এবং এনসিটিবি নতুন মূল্যায়ন টুলস।</span>
+          </p>
         </div>
       </div>
 

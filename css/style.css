@@ -3196,3 +3196,70 @@ body.font-bn .section-title {
 .anim-hero-float-3 { animation: heroFloat3 4.8s ease-in-out infinite 0.8s; }
 .anim-hero-float-4 { animation: heroFloat4 5.6s ease-in-out infinite 1.2s; }
 
+/* ==========================================================================
+   Institution Persona Switcher (School vs College vs Madrasa)
+   ========================================================================== */
+.institution-persona-wrapper {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.institution-persona-segment {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+  gap: 6px;
+  max-width: 100%;
+}
+
+.institution-persona-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  text-align: left;
+}
+
+.institution-persona-btn:hover {
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.institution-persona-btn.active {
+  background: #ffffff;
+  color: #064e3b;
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(0, 0, 0, 0.02);
+  transform: translateY(-1px);
+}
+
+.institution-persona-btn.active .persona-icon-badge {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+}
+
+@media (max-width: 768px) {
+  .institution-persona-segment {
+    flex-direction: column;
+    width: 100%;
+    padding: 6px;
+  }
+  .institution-persona-btn {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
