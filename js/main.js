@@ -377,11 +377,9 @@ function initVideoShowcase() {
 
           </div>
 
-          <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono border-t border-slate-200 pt-2 z-10">
-            <span>PART 1 OF 4 (0s - 10s): SMART BIOMETRIC GATEWAY</span>
-            <button class="jump-chapter-btn text-emerald-800 font-bold hover:bg-emerald-100 cursor-pointer bg-emerald-50 px-2.5 py-1 rounded border border-emerald-300 transition" data-jump="1">
-              PLAY PART 2: BKASH FEE (10s) →
-            </button>
+          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-2 z-10">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> MODULE 01: BIOMETRIC GATEWAY TELEMETRY</span>
+            <span class="text-slate-400 font-mono text-[10px]">YES EDU CAMPUS OS</span>
           </div>
         </div>
 
@@ -473,11 +471,9 @@ function initVideoShowcase() {
 
           </div>
 
-          <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono border-t border-slate-200 pt-2 z-10">
-            <span>PART 2 OF 4 (10s - 20s): AUTOMATED BKASH COLLECTION</span>
-            <button class="jump-chapter-btn text-amber-800 font-bold hover:bg-amber-100 cursor-pointer bg-amber-50 px-2.5 py-1 rounded border border-amber-300 transition" data-jump="2">
-              PLAY PART 3: TEACHER AI (20s) →
-            </button>
+          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-2 z-10">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span> MODULE 02: AUTOMATED BKASH FEE RECONCILIATION</span>
+            <span class="text-slate-400 font-mono text-[10px]">YES EDU CAMPUS OS</span>
           </div>
         </div>
 
@@ -582,18 +578,16 @@ function initVideoShowcase() {
                 খ. জড়তা ও ত্বরণের পার্থক্য ব্যাখ্যা কর (২)<br>
                 গ. উদ্দীপকের তথ্যের আলোকে ত্বরণ নির্ণয় কর (৩)"
               </div>
-              <button class="w-full py-1.5 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-bold transition shadow-xs">
+              <div class="w-full py-1.5 bg-sky-600 text-white rounded-lg text-xs font-bold text-center shadow-xs">
                 1-Click Export to Word / PDF
-              </button>
+              </div>
             </div>
 
           </div>
 
-          <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono border-t border-slate-200 pt-2 z-10">
-            <span>PART 3 OF 4 (20s - 30s): AI PEDAGOGICAL ENGINE</span>
-            <button class="jump-chapter-btn text-sky-800 font-bold hover:bg-sky-100 cursor-pointer bg-sky-50 px-2.5 py-1 rounded border border-sky-300 transition" data-jump="3">
-              PLAY PART 4: PRINCIPAL BI (30s) →
-            </button>
+          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-2 z-10">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span> MODULE 03: NCTB 2026 AI CURRICULUM & GRADING</span>
+            <span class="text-slate-400 font-mono text-[10px]">YES EDU CAMPUS OS</span>
           </div>
         </div>
 
@@ -681,11 +675,9 @@ function initVideoShowcase() {
 
           </div>
 
-          <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono border-t border-slate-200 pt-2 z-10">
-            <span>PART 4 OF 4 (30s - 40s): TOTAL INSTITUTIONAL CONTROL</span>
-            <button class="jump-chapter-btn text-purple-800 font-bold hover:bg-purple-100 cursor-pointer bg-purple-50 px-2.5 py-1 rounded border border-purple-300 transition" data-jump="0">
-              ↺ REPLAY FROM PART 1 (0s)
-            </button>
+          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-2 z-10">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span> MODULE 04: MADRASA WAQF & HOSTEL MANAGEMENT</span>
+            <span class="text-slate-400 font-mono text-[10px]">YES EDU CAMPUS OS</span>
           </div>
         </div>
 

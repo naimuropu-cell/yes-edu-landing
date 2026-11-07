@@ -3076,16 +3076,17 @@ body.font-bn .section-title {
 .mac-hardware-container {
   position: relative;
   max-width: 1060px;
-  margin: 48px auto 0 auto;
+  margin: 36px auto 0 auto;
 }
 
 .mac-hardware-glow {
   position: absolute;
-  inset: -20px -30px 40px -30px;
-  background: radial-gradient(ellipse at 50% 30%, rgba(16, 185, 129, 0.22) 0%, rgba(56, 189, 248, 0.12) 40%, transparent 70%);
+  inset: -25px -35px 35px -35px;
+  background: radial-gradient(ellipse at 50% 30%, rgba(16, 185, 129, 0.28) 0%, rgba(56, 189, 248, 0.15) 40%, transparent 70%);
   filter: blur(50px);
   z-index: 0;
   pointer-events: none;
+  transition: background 0.8s ease;
 }
 
 .mac-hardware-body {
@@ -3103,25 +3104,24 @@ body.font-bn .section-title {
   background: #020617;
   border-radius: 50%;
   margin: 3px auto 8px auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
 }
 
 .mac-hardware-screen {
   position: relative;
-  background: #020617;
+  background: #ffffff;
   border-radius: 14px;
   overflow: hidden;
-  aspect-ratio: 16 / 9.8;
+  height: 520px;
   width: 100%;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
-.mac-hardware-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+@media (max-width: 768px) {
+  .mac-hardware-screen {
+    height: 560px;
+  }
 }
 
 .mac-hardware-chin {
