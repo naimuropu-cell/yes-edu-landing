@@ -1173,7 +1173,7 @@ function triggerDynamicIslandAlert(text, duration = 3000) {
 }
 
 function switchSoftwareTab(targetTab) {
-  const tabBtns = document.querySelectorAll('.software-tab-btn');
+  const tabBtns = document.querySelectorAll('.software-tab-btn, .artisan-nav-tab');
   const panels = document.querySelectorAll('.software-panel');
   const phonePanels = document.querySelectorAll('.phone-tab-panel');
   const syncStatus = document.getElementById('phoneSyncStatus');
@@ -1229,7 +1229,7 @@ function switchSoftwareTab(targetTab) {
 }
 
 function initSoftwareWindowTabs() {
-  const tabBtns = document.querySelectorAll('.software-tab-btn');
+  const tabBtns = document.querySelectorAll('.software-tab-btn, .artisan-nav-tab');
   const clockDisplay = document.getElementById('macClockDisplay');
 
   // Tab click listeners
@@ -1389,6 +1389,16 @@ function initSoftwareWindowTabs() {
       if (simSmsText) simSmsText.textContent = smsMsg;
       if (simSmsTimestamp) simSmsTimestamp.textContent = `Today at ${timeStr}`;
 
+      // Synchronize with Tactile Physical RFID Card
+      const tactileCardName = document.getElementById('tactileCardStudentName');
+      const tactileCardMeta = document.getElementById('tactileCardStudentMeta');
+      const tactileCardRoll = document.getElementById('tactileCardRoll');
+      const tactileCardAvatar = document.getElementById('tactileCardAvatar');
+      if (tactileCardName) tactileCardName.textContent = student.name;
+      if (tactileCardMeta) tactileCardMeta.textContent = `${student.class} • Regular Batch`;
+      if (tactileCardRoll) tactileCardRoll.textContent = `Roll: ${student.roll} • ID: YE-2026-0849`;
+      if (tactileCardAvatar) tactileCardAvatar.textContent = student.name.charAt(0);
+
       // Synchronize with Phone Mockup
       if (phoneStudentName) phoneStudentName.textContent = student.name;
       if (phoneStudentMeta) phoneStudentMeta.textContent = `${student.class} • Roll: ${student.roll}`;
@@ -1402,6 +1412,31 @@ function initSoftwareWindowTabs() {
       // Show toast
       showToastNotification(`⚡ Gate Punch: ${student.name} scanned! Parent SMS delivered in 2.1s`);
     });
+
+    // 3D Mouse Parallax & Tap on Physical RFID Card
+    const rfidCardEl = document.getElementById('tactileRfidCardElement');
+    if (rfidCardEl) {
+      rfidCardEl.addEventListener('click', () => {
+        rfidCardEl.style.transform = 'scale(0.97) translateY(-2px)';
+        setTimeout(() => {
+          rfidCardEl.style.transform = '';
+          simPunchBtn.click();
+        }, 150);
+      });
+      rfidCardEl.addEventListener('mousemove', (e) => {
+        const rect = rfidCardEl.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xc = rect.width / 2;
+        const yc = rect.height / 2;
+        const dx = (x - xc) / xc;
+        const dy = (y - yc) / yc;
+        rfidCardEl.style.transform = `rotateY(${dx * 14}deg) rotateX(${-dy * 14}deg) translateY(-6px)`;
+      });
+      rfidCardEl.addEventListener('mouseleave', () => {
+        rfidCardEl.style.transform = '';
+      });
+    }
   }
 
   // =========================================================================
