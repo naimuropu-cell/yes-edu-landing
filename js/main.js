@@ -2186,25 +2186,18 @@ function initHeroLiveStreamTicker() {
 }
 
 /* ==========================================================================
-   Floating Action Hub (WhatsApp & Premium Scroll-To-Top with Progress Ring)
+   Floating Action Hub (WhatsApp & Premium 1-Click Scroll-To-Top)
    ========================================================================== */
 function initFloatingActionHub() {
   const scrollTopBtn = document.getElementById('scrollTopBtn');
   const scrollTopProgress = document.getElementById('scrollTopProgress');
   if (!scrollTopBtn) return;
 
-  const circumference = 2 * Math.PI * 19; // ≈ 119.38
+  const circumference = 2 * Math.PI * 22; // ≈ 138.23
 
   function updateScrollState() {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    
-    // Toggle active state after 200px scroll
-    if (scrollY > 200) {
-      scrollTopBtn.classList.add('active');
-    } else {
-      scrollTopBtn.classList.remove('active');
-    }
 
     // Update circular progress ring
     if (scrollTopProgress && docHeight > 0) {
@@ -2214,7 +2207,7 @@ function initFloatingActionHub() {
     }
   }
 
-  // Smooth scroll to top on click
+  // Smooth 1-click scroll to top
   scrollTopBtn.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({

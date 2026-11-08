@@ -977,14 +977,15 @@ a {
   margin-bottom: 16px;
 }
 
-/* Floating Sticky Conversion Widgets */
+/* Floating Sticky Conversion Widgets (WhatsApp & 1-Click Scroll-To-Top) */
 .sticky-hotline-float {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 99;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
 }
 
@@ -996,43 +997,159 @@ a {
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px -2px rgba(15, 23, 42, 0.15);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   position: relative;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  outline: none;
+  text-decoration: none;
 }
 .float-action-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.08) translateY(-2px);
+}
+.float-action-btn:active {
+  transform: scale(0.96);
 }
 
+/* 1. WhatsApp Button */
 .float-whatsapp {
-  background: #25d366;
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px -2px rgba(37, 211, 102, 0.45);
 }
-.float-phone {
-  background: #059669;
-  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.35);
+.float-whatsapp:hover {
+  box-shadow: 0 12px 28px -2px rgba(37, 211, 102, 0.6);
 }
 
+/* Ambient Pulse for WhatsApp */
+.floating-whatsapp-pulse {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 9999px;
+  background: rgba(37, 211, 102, 0.45);
+  z-index: 0;
+  animation: waPulse 2.8s infinite cubic-bezier(0.24, 0, 0.38, 1);
+  pointer-events: none;
+}
+
+@keyframes waPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  60% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* Online Dot */
+.floating-online-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 11px;
+  height: 11px;
+  background-color: #22c55e;
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  z-index: 3;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* 2. Scroll-To-Top Arrow Button (Ultra-Premium Theme Match) */
+.float-scroll-top {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 8px 24px -2px rgba(15, 23, 42, 0.12),
+              0 2px 6px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+.float-scroll-top:hover {
+  background: #059669;
+  border-color: #059669;
+  box-shadow: 0 12px 28px -2px rgba(5, 150, 105, 0.35);
+}
+.float-scroll-top:hover svg.relative {
+  color: #ffffff !important;
+}
+
+/* Progress Ring Inside Scroll-Top */
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.progress-ring-bg {
+  stroke: #f1f5f9;
+}
+
+.progress-ring-indicator {
+  stroke: #059669;
+  stroke-dasharray: 138.23; /* 2 * PI * 22 ≈ 138.23 */
+  stroke-dashoffset: 138.23;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.float-scroll-top:hover .progress-ring-indicator {
+  stroke: #ffffff;
+}
+
+/* Premium Tooltip */
 .float-tooltip-light {
   position: absolute;
-  right: 64px;
+  right: 66px;
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
   background: #0f172a;
   color: #ffffff;
-  padding: 5px 12px;
-  border-radius: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
   font-size: 0.78rem;
   font-weight: 600;
   white-space: nowrap;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
   opacity: 0;
   pointer-events: none;
-  transform: translateX(8px);
-  transition: all 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 100;
+}
+.float-tooltip-light::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #0f172a;
 }
 .float-action-btn:hover .float-tooltip-light {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(-50%) translateX(0);
+}
+
+@media (max-width: 640px) {
+  .sticky-hotline-float {
+    bottom: 18px;
+    right: 18px;
+    gap: 10px;
+  }
+  .float-action-btn {
+    width: 46px;
+    height: 46px;
+  }
+  .float-tooltip-light {
+    display: none !important;
+  }
 }
 
 /* Modal in Light Mode */
@@ -3460,212 +3577,5 @@ body.font-bn .section-title {
   }
 }
 
-/* ==========================================================================
-   Floating Action Hub (WhatsApp & Premium Scroll-To-Top)
-   ========================================================================== */
-.floating-hub-btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.2s ease;
-  user-select: none;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.floating-btn-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-/* 1. WhatsApp Button */
-.floating-whatsapp-btn {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 24px -2px rgba(37, 211, 102, 0.45), 
-              0 2px 6px rgba(15, 23, 42, 0.1);
-}
-
-.floating-whatsapp-btn:hover {
-  transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 12px 28px -2px rgba(37, 211, 102, 0.58), 
-              0 4px 10px rgba(15, 23, 42, 0.15);
-}
-
-.floating-whatsapp-btn:active {
-  transform: translateY(0) scale(0.96);
-}
-
-/* Ambient Pulse for WhatsApp */
-.floating-whatsapp-pulse {
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border-radius: 9999px;
-  background: rgba(37, 211, 102, 0.45);
-  z-index: 1;
-  animation: waPulse 2.8s infinite cubic-bezier(0.24, 0, 0.38, 1);
-  pointer-events: none;
-}
-
-@keyframes waPulse {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
-  60% {
-    transform: scale(1.35);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.35);
-    opacity: 0;
-  }
-}
-
-/* Online Dot */
-.floating-online-dot {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 11px;
-  height: 11px;
-  background-color: #22c55e;
-  border: 2px solid #ffffff;
-  border-radius: 9999px;
-  z-index: 3;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* 2. Scroll-To-Top Button */
-.floating-scroll-btn {
-  width: 46px;
-  height: 46px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 6px 18px -2px rgba(15, 23, 42, 0.1),
-              0 2px 6px rgba(15, 23, 42, 0.04);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px) scale(0.85);
-  pointer-events: none !important;
-  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.2s ease,
-              border-color 0.2s ease;
-}
-
-.floating-scroll-btn.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-  pointer-events: auto !important;
-}
-
-.floating-scroll-btn:hover {
-  transform: translateY(-2px) scale(1.06);
-  border-color: #cbd5e1;
-  box-shadow: 0 10px 24px -2px rgba(5, 150, 105, 0.22),
-              0 3px 8px rgba(15, 23, 42, 0.08);
-}
-
-.floating-scroll-btn:active {
-  transform: translateY(0) scale(0.96);
-}
-
-/* Progress Ring Inside Scroll-Top */
-.progress-ring {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.progress-ring-bg {
-  stroke: #f1f5f9;
-}
-
-.progress-ring-indicator {
-  stroke: #059669;
-  stroke-dasharray: 119.38; /* 2 * PI * 19 ≈ 119.38 */
-  stroke-dashoffset: 119.38;
-  transition: stroke-dashoffset 0.12s linear;
-}
-
-/* Premium Tooltips (Slide Out to the Left on Hover) */
-.floating-btn-tooltip {
-  position: absolute;
-  right: calc(100% + 12px);
-  top: 50%;
-  transform: translateY(-50%) translateX(6px);
-  background: #0f172a;
-  color: #ffffff;
-  font-size: 11.5px;
-  font-weight: 600;
-  white-space: nowrap;
-  padding: 5px 11px;
-  border-radius: 8px;
-  box-shadow: 0 8px 18px -2px rgba(15, 23, 42, 0.3);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-  z-index: 10;
-}
-
-/* Tooltip Little Arrow Pointing Right */
-.floating-btn-tooltip::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent #0f172a;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .floating-hub-btn:hover .floating-btn-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(0);
-  }
-}
-
-/* Mobile Tweaks */
-@media (max-width: 640px) {
-  .floating-whatsapp-btn {
-    width: 46px;
-    height: 46px;
-  }
-  .floating-scroll-btn {
-    width: 42px;
-    height: 42px;
-  }
-  .floating-btn-tooltip {
-    display: none !important;
-  }
-}
 
 
