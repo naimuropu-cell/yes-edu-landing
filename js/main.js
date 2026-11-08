@@ -2186,28 +2186,12 @@ function initHeroLiveStreamTicker() {
 }
 
 /* ==========================================================================
-   Floating Action Hub (WhatsApp & Premium 1-Click Scroll-To-Top)
+   Floating Action Hub (WhatsApp & Small 1-Click Scroll-Up Button)
    ========================================================================== */
 function initFloatingActionHub() {
   const scrollTopBtn = document.getElementById('scrollTopBtn');
-  const scrollTopProgress = document.getElementById('scrollTopProgress');
   if (!scrollTopBtn) return;
 
-  const circumference = 2 * Math.PI * 22; // ≈ 138.23
-
-  function updateScrollState() {
-    const scrollY = window.scrollY || document.documentElement.scrollTop;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-    // Update circular progress ring
-    if (scrollTopProgress && docHeight > 0) {
-      const scrollPercent = Math.min(Math.max(scrollY / docHeight, 0), 1);
-      const offset = circumference - (scrollPercent * circumference);
-      scrollTopProgress.style.strokeDashoffset = offset.toFixed(2);
-    }
-  }
-
-  // Smooth 1-click scroll to top
   scrollTopBtn.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -2215,21 +2199,6 @@ function initFloatingActionHub() {
       behavior: 'smooth'
     });
   });
-
-  // Listen for scroll throttled via requestAnimationFrame
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateScrollState();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-
-  // Initial call
-  updateScrollState();
 }
 
 
