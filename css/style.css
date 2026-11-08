@@ -3072,11 +3072,167 @@ body.font-bn .section-title {
 .float-orbit-5 { animation: floatOrbit5 6.4s ease-in-out infinite 0.8s; }
 .float-orbit-6 { animation: floatOrbit6 5.4s ease-in-out infinite 1.2s; }
 
+/* ==========================================================================
+   Chronicle-Style Modular Story Dock & Interactive Canvas (Idea 1)
+   ========================================================================== */
+
+.chronicle-story-dock {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 960px;
+  margin: 0 auto 22px auto;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+@media (min-width: 768px) {
+  .chronicle-story-dock {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    padding: 8px;
+  }
+}
+
+.chronicle-story-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left;
+  user-select: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chronicle-story-pill:hover {
+  background: rgba(248, 250, 252, 0.95);
+  transform: translateY(-1px);
+}
+
+.chronicle-story-pill.active {
+  background: #ffffff;
+  border-color: rgba(203, 213, 225, 0.9);
+  box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Individual Pill Dynamic Timeline Progress Bar */
+.chronicle-pill-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
+}
+
+.chronicle-story-pill[data-chapter="0"] .chronicle-pill-progress { background: #10b981; }
+.chronicle-story-pill[data-chapter="1"] .chronicle-pill-progress { background: #f59e0b; }
+.chronicle-story-pill[data-chapter="2"] .chronicle-pill-progress { background: #0284c7; }
+.chronicle-story-pill[data-chapter="3"] .chronicle-pill-progress { background: #9333ea; }
+
+.chronicle-story-pill.active .chronicle-pill-progress {
+  opacity: 1;
+}
+
+.chronicle-pill-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.chronicle-story-pill.active .chronicle-pill-badge {
+  transform: scale(1.08);
+}
+
+.chronicle-pill-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.chronicle-pill-sub {
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+  line-height: 1.2;
+}
+
+.chronicle-story-pill.active .chronicle-pill-sub {
+  color: #0f172a;
+}
+
+/* Chronicle Action Buttons inside Scene */
+.chronicle-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.chronicle-action-btn:hover {
+  transform: translateY(-1.5px) scale(1.02);
+  box-shadow: 0 8px 18px -4px rgba(0, 0, 0, 0.18);
+}
+
+.chronicle-action-btn:active {
+  transform: scale(0.96);
+}
+
+/* Chronicle Interactive Mini Tabs */
+.chronicle-mini-tab {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chronicle-mini-tab.active {
+  background: #9333ea;
+  color: #ffffff;
+  border-color: #9333ea;
+  box-shadow: 0 2px 6px rgba(147, 51, 234, 0.3);
+}
+
 /* Mac Hardware Display Mockup */
 .mac-hardware-container {
   position: relative;
   max-width: 1060px;
-  margin: 36px auto 0 auto;
+  margin: 16px auto 0 auto;
+  perspective: 1200px;
 }
 
 .mac-hardware-glow {
@@ -3096,6 +3252,8 @@ body.font-bn .section-title {
   border-radius: 24px;
   padding: 10px 10px 18px 10px;
   box-shadow: 0 30px 80px -15px rgba(15, 23, 42, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .mac-hardware-camera {

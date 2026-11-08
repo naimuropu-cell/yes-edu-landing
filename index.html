@@ -49,7 +49,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <!-- Custom Styles: Senior UI/UX Designer Light Theme -->
-  <link rel="stylesheet" href="css/style.css?v=4.5">
+  <link rel="stylesheet" href="css/style.css?v=4.6">
 </head>
 <body class="bg-[#f8fafc] text-slate-800 selection:bg-emerald-100 selection:text-emerald-900">
 
@@ -211,28 +211,6 @@
           </a>
         </div>
 
-        <!-- Mobile & Tablet Clean Pill Rail (< 1280px) -->
-        <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-5 max-w-2xl mx-auto px-2 xl:hidden">
-          <span class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-full bg-white border border-slate-200 shadow-2xs text-[11px] sm:text-xs font-semibold text-slate-800">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 🏃 Attendance
-          </span>
-          <span class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-full bg-white border border-slate-200 shadow-2xs text-[11px] sm:text-xs font-semibold text-slate-800">
-            <span class="text-pink-600 font-bold">৳</span> bKash Fees
-          </span>
-          <span class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-full bg-white border border-slate-200 shadow-2xs text-[11px] sm:text-xs font-semibold text-slate-800">
-            <span class="text-indigo-600">👨‍👩‍👧</span> Parents App
-          </span>
-          <span class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-full bg-white border border-slate-200 shadow-2xs text-[11px] sm:text-xs font-semibold text-slate-800">
-            <span class="text-amber-600">🚌</span> GPS Bus
-          </span>
-          <span class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-full bg-white border border-slate-200 shadow-2xs text-[11px] sm:text-xs font-semibold text-slate-800">
-            <span class="text-sky-600">📝</span> AI Exam
-          </span>
-          <span class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-full bg-white border border-slate-200 shadow-2xs text-[11px] sm:text-xs font-semibold text-slate-800">
-            <span class="text-rose-600">🏢</span> Waqf & Hostel
-          </span>
-        </div>
-
         <!-- ================= NOTION-STYLE MINIMALIST FLOATING MICRO-PILLS (Option 1) ================= -->
         <!-- Left Side Micro-Pills -->
         <div class="hidden xl:flex hero-floating-badge anim-hero-float-1" style="position: absolute; left: -90px; top: 24px;">
@@ -275,8 +253,77 @@
 
       </div>
 
-      <!-- ================= APPLE MAC HARDWARE DISPLAY (Continuous Full-Display Animated Video, Zero Buttons or Parts) ================= -->
+      <!-- ================= APPLE MAC HARDWARE DISPLAY WITH CHRONICLE-STYLE STORY DOCK ================= -->
       <div class="mac-hardware-container" id="videoShowcase">
+        
+        <!-- Chronicle-Style Segmented Modular Story Dock (4 Interactive Story Blocks with Live Progress Bars) -->
+        <div class="chronicle-story-dock" id="chronicleStoryDock">
+          
+          <!-- Story Block 1: Biometric Gate Attendance -->
+          <button type="button" class="chronicle-story-pill active" data-chapter="0" id="chroniclePill0">
+            <span class="chronicle-pill-badge bg-emerald-100 text-emerald-800">🏃</span>
+            <div class="flex flex-col text-left truncate">
+              <span class="chronicle-pill-title">
+                <span class="lang-en">Gate Attendance</span>
+                <span class="lang-bn hidden">গেটে হাজিরা</span>
+              </span>
+              <span class="chronicle-pill-sub">
+                <span class="lang-en">2.1s SMS Sync</span>
+                <span class="lang-bn hidden">৩ সে. এসএমএস</span>
+              </span>
+            </div>
+            <div class="chronicle-pill-progress" id="chronicleProgress0"></div>
+          </button>
+
+          <!-- Story Block 2: bKash Fee Automation -->
+          <button type="button" class="chronicle-story-pill" data-chapter="1" id="chroniclePill1">
+            <span class="chronicle-pill-badge bg-amber-100 text-amber-800 font-bold">৳</span>
+            <div class="flex flex-col text-left truncate">
+              <span class="chronicle-pill-title">
+                <span class="lang-en">bKash Fees</span>
+                <span class="lang-bn hidden">বিকাশ ফি</span>
+              </span>
+              <span class="chronicle-pill-sub">
+                <span class="lang-en">Auto Voucher</span>
+                <span class="lang-bn hidden">অটো ভাউচার</span>
+              </span>
+            </div>
+            <div class="chronicle-pill-progress" id="chronicleProgress1"></div>
+          </button>
+
+          <!-- Story Block 3: Teacher AI V2 Pedagogy -->
+          <button type="button" class="chronicle-story-pill" data-chapter="2" id="chroniclePill2">
+            <span class="chronicle-pill-badge bg-sky-100 text-sky-800">🤖</span>
+            <div class="flex flex-col text-left truncate">
+              <span class="chronicle-pill-title">
+                <span class="lang-en">NCTB AI Exam</span>
+                <span class="lang-bn hidden">এআই প্রশ্নপত্র</span>
+              </span>
+              <span class="chronicle-pill-sub">
+                <span class="lang-en">30s CQ & MCQ</span>
+                <span class="lang-bn hidden">৩০ সেকেন্ডে</span>
+              </span>
+            </div>
+            <div class="chronicle-pill-progress" id="chronicleProgress2"></div>
+          </button>
+
+          <!-- Story Block 4: Madrasa Waqf & Hostel Control -->
+          <button type="button" class="chronicle-story-pill" data-chapter="3" id="chroniclePill3">
+            <span class="chronicle-pill-badge bg-purple-100 text-purple-800">🕌</span>
+            <div class="flex flex-col text-left truncate">
+              <span class="chronicle-pill-title">
+                <span class="lang-en">Shariah & Waqf</span>
+                <span class="lang-bn hidden">ওয়াকফ ও হোস্টেল</span>
+              </span>
+              <span class="chronicle-pill-sub">
+                <span class="lang-en">100% Shariah Audit</span>
+                <span class="lang-bn hidden">শতভাগ স্বচ্ছ</span>
+              </span>
+            </div>
+            <div class="chronicle-pill-progress" id="chronicleProgress3"></div>
+          </button>
+
+        </div>
         
         <!-- Ambient Backlight Glow behind Mac Display (shifts color dynamically per scene) -->
         <div id="videoAmbientGlow" class="mac-hardware-glow"></div>
@@ -3305,6 +3352,6 @@
   <!-- Interactive JavaScript Controllers -->
   <script src="js/three-scene.js"></script>
   <script src="js/story.js"></script>
-  <script src="js/main.js?v=4.5"></script>
+  <script src="js/main.js?v=4.6"></script>
 </body>
 </html>

@@ -232,7 +232,7 @@ function initVideoShowcase() {
     { startTime: 30, title: "Ch 4: Madrasa Waqf & Hostel", glow: "radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 70%)" }
   ];
 
-  // Build the 4 Cartoon Animated Scenes into the Stage (White BG Edition - Fully Responsive)
+  // Build the 4 Cartoon Animated Scenes into the Stage (Chronicle-Style Interactive Canvas)
   function buildCartoonStage() {
     if (!simulationFrame) return;
 
@@ -248,7 +248,7 @@ function initVideoShowcase() {
             <div class="flex items-center gap-1.5 sm:gap-2">
               <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500 animate-ping shrink-0"></span>
               <span class="text-[10px] sm:text-xs font-mono font-bold tracking-wider sm:tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-300 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-xs">
-                PART 1: GATEWAY SYNC (0s - 10s)
+                MODULE 1: GATEWAY ATTENDANCE (0s - 10s)
               </span>
             </div>
             <span class="text-[10px] sm:text-xs text-emerald-800 font-mono font-semibold flex items-center gap-1.5 shrink-0">
@@ -332,7 +332,7 @@ function initVideoShowcase() {
 
             <!-- Center: Biometric Gate Terminal with Radar Rings -->
             <div class="col-span-1 md:col-span-3 flex flex-col items-center text-center">
-              <div class="relative w-22 sm:w-28 h-32 sm:h-42 bg-white border-2 border-emerald-500 rounded-xl sm:rounded-2xl flex flex-col items-center justify-between p-2 sm:p-3 shadow-xl">
+              <div id="sceneGateCard" class="relative w-22 sm:w-28 h-32 sm:h-42 bg-white border-2 border-emerald-500 rounded-xl sm:rounded-2xl flex flex-col items-center justify-between p-2 sm:p-3 shadow-xl transition-all duration-300">
                 <!-- Glowing Radar Rings -->
                 <div class="absolute -top-2 w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-emerald-400 anim-radar pointer-events-none"></div>
                 <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
@@ -340,7 +340,7 @@ function initVideoShowcase() {
                 </div>
 
                 <div class="text-center">
-                  <span class="text-[9px] sm:text-[10px] font-mono text-emerald-700 font-bold block animate-pulse">PUNCH VERIFIED</span>
+                  <span id="sceneGateStatus" class="text-[9px] sm:text-[10px] font-mono text-emerald-700 font-bold block animate-pulse">PUNCH VERIFIED</span>
                   <span class="text-[8px] sm:text-[9px] text-slate-500 font-mono">GATE UNLOCKED</span>
                 </div>
                 
@@ -359,14 +359,21 @@ function initVideoShowcase() {
                 </span>
                 <span class="text-[9px] sm:text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono font-bold">SMS RECEIVED</span>
               </div>
-              <div class="bg-emerald-50/80 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-emerald-200 text-[10px] sm:text-xs text-slate-800 font-sans leading-relaxed shadow-xs">
+              <div id="scenePhoneNotice" class="bg-emerald-50/80 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-emerald-200 text-[10px] sm:text-xs text-slate-800 font-sans leading-relaxed shadow-xs transition-all duration-300">
                 <div class="text-emerald-700 font-bold text-[10px] sm:text-[11px] mb-1 flex items-center justify-between">
                   <span>YES_EDU_SMS</span>
-                  <span class="text-[9px] sm:text-[10px] text-slate-500 font-normal">Just Now</span>
+                  <span class="text-[9px] text-slate-500 font-normal">Just Now</span>
                 </div>
                 "সম্মানিত অভিভাবক, আপনার সন্তান মুহাম্মদ তানভীর সকাল ৮:৩০ মিনিটে নিরাপদে ক্যাম্পাসে প্রবেশ করেছে। — YES EDU"
               </div>
-              <span class="text-[9px] sm:text-[10px] text-slate-500 block text-right font-mono font-semibold">100% Parent Peace of Mind</span>
+              
+              <!-- Chronicle Interactive Action Trigger -->
+              <div class="flex items-center justify-between pt-1">
+                <button type="button" id="interactivePunchBtn" class="chronicle-action-btn bg-emerald-600 hover:bg-emerald-700 text-white">
+                  <span class="animate-pulse">👆</span> <span>পাঞ্চ টেস্ট (Test Punch)</span>
+                </button>
+                <span class="text-[9px] sm:text-[10px] text-slate-500 font-mono font-semibold hidden sm:inline">100% Peace of Mind</span>
+              </div>
             </div>
 
           </div>
@@ -386,7 +393,7 @@ function initVideoShowcase() {
             <div class="flex items-center gap-1.5 sm:gap-2">
               <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500 animate-ping shrink-0"></span>
               <span class="text-[10px] sm:text-xs font-mono font-bold tracking-wider sm:tracking-widest text-amber-800 bg-amber-50 border border-amber-300 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-xs">
-                PART 2: BKASH AUTOMATION (10s - 20s)
+                MODULE 2: BKASH AUTOMATION (10s - 20s)
               </span>
             </div>
             <span class="text-[10px] sm:text-xs text-amber-800 font-mono font-semibold shrink-0">
@@ -448,7 +455,7 @@ function initVideoShowcase() {
             </div>
 
             <!-- Right: Digital Receipt & Double Entry Confirmation -->
-            <div class="col-span-2 md:col-span-4 bg-white border-2 border-amber-400 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-xl space-y-1.5 sm:space-y-3">
+            <div id="sceneReceiptBox" class="col-span-2 md:col-span-4 bg-white border-2 border-amber-400 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-xl space-y-1.5 sm:space-y-3 transition-all duration-300">
               <div class="flex items-center gap-2 sm:gap-3">
                 <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#e2136e] text-white font-bold flex items-center justify-center text-[10px] sm:text-xs shadow-sm shrink-0">
                   bKash
@@ -462,6 +469,14 @@ function initVideoShowcase() {
                 <div class="flex justify-between"><span>মাসিক বেতন:</span><span class="text-slate-900 font-bold">৳১,৫০০</span></div>
                 <div class="flex justify-between"><span>লিল্লাহ দান:</span><span class="text-amber-800 font-bold">৳১,০০০</span></div>
                 <div class="border-t border-amber-200 pt-1 text-emerald-700 text-right font-bold text-[9px] sm:text-[10px]">স্বয়ংক্রিয় ডিজিটাল ভাউচার তৈরি!</div>
+              </div>
+              
+              <!-- Chronicle Interactive Action Trigger -->
+              <div class="flex items-center justify-between pt-1">
+                <button type="button" id="interactivePayBtn" class="chronicle-action-btn bg-[#e2136e] hover:bg-[#c2105e] text-white">
+                  <span>৳</span> <span>পেমেন্ট টেস্ট (bKash Pay)</span>
+                </button>
+                <span id="interactivePayStatus" class="text-[9px] sm:text-[10px] text-emerald-700 font-bold font-mono">ভাউচার প্রস্তুত ✓</span>
               </div>
             </div>
 
@@ -482,7 +497,7 @@ function initVideoShowcase() {
             <div class="flex items-center gap-1.5 sm:gap-2">
               <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-sky-500 animate-ping shrink-0"></span>
               <span class="text-[10px] sm:text-xs font-mono font-bold tracking-wider sm:tracking-widest text-sky-800 bg-sky-50 border border-sky-300 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-xs">
-                PART 3: NCTB AI PEDAGOGY (20s - 30s)
+                MODULE 3: NCTB AI PEDAGOGY (20s - 30s)
               </span>
             </div>
             <span class="text-[10px] sm:text-xs text-sky-800 font-mono font-semibold shrink-0">
@@ -570,14 +585,19 @@ function initVideoShowcase() {
                 <span class="truncate">NCTB QUESTION PAPER</span>
                 <span class="text-emerald-700 font-bold shrink-0 ml-1">READY (18s)</span>
               </div>
-              <div class="bg-sky-50/70 p-2 sm:p-2.5 rounded-lg border border-sky-200 text-[10px] sm:text-[11px] text-slate-800 font-sans shadow-xs">
+              <div id="sceneAiQuestionBox" class="bg-sky-50/70 p-2 sm:p-2.5 rounded-lg border border-sky-200 text-[10px] sm:text-[11px] text-slate-800 font-sans shadow-xs transition-all duration-300">
                 <span class="text-sky-800 font-bold block">পদার্থবিজ্ঞান • ৯ম শ্রেণি:</span>
                 "ক. বল কাকে বলে? (১)<br>
                 খ. জড়তা ও ত্বরণের পার্থক্য ব্যাখ্যা কর (২)<br>
                 গ. উদ্দীপকের তথ্যের আলোকে ত্বরণ নির্ণয় কর (৩)"
               </div>
-              <div class="w-full py-1 sm:py-1.5 bg-sky-600 text-white rounded-lg text-[10px] sm:text-xs font-bold text-center shadow-xs">
-                1-Click Export to Word / PDF
+              
+              <!-- Chronicle Interactive Action Trigger -->
+              <div class="flex items-center justify-between pt-1">
+                <button type="button" id="interactiveAiGenBtn" class="chronicle-action-btn bg-sky-600 hover:bg-sky-700 text-white">
+                  <span>✨</span> <span>নতুন প্রশ্ন জেনারেট (AI Gen)</span>
+                </button>
+                <span class="text-[9px] sm:text-[10px] text-emerald-700 font-mono font-bold hidden sm:inline">NCTB 2026 Ready</span>
               </div>
             </div>
 
@@ -598,7 +618,7 @@ function initVideoShowcase() {
             <div class="flex items-center gap-1.5 sm:gap-2">
               <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-purple-500 animate-ping shrink-0"></span>
               <span class="text-[10px] sm:text-xs font-mono font-bold tracking-wider sm:tracking-widest text-purple-800 bg-purple-50 border border-purple-300 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-xs">
-                PART 4: TOTAL INSTITUTIONAL CONTROL (30s - 40s)
+                MODULE 4: SHARIAH & INSTITUTION CONTROL (30s - 40s)
               </span>
             </div>
             <span class="text-[10px] sm:text-xs text-purple-800 font-mono font-semibold shrink-0">
@@ -664,13 +684,19 @@ function initVideoShowcase() {
 
             <!-- Right: Hostel & Waqf Status -->
             <div class="col-span-2 md:col-span-4 bg-white border-2 border-purple-300 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-xl space-y-1.5 sm:space-y-2.5">
-              <span class="text-[11px] sm:text-xs font-bold text-purple-900 block truncate">🕌 হোস্টেল ও ওয়াকফ ফান্ডের স্বচ্ছ হিসাব</span>
-              <div class="p-2 sm:p-2.5 bg-purple-50/70 rounded-lg sm:rounded-xl border border-purple-200 text-[10px] sm:text-xs font-mono space-y-0.5 sm:space-y-1 text-slate-800 shadow-xs">
+              <div class="flex items-center justify-between border-b border-purple-100 pb-1.5">
+                <span class="text-[11px] sm:text-xs font-bold text-purple-900 block truncate">🕌 প্রাতিষ্ঠানিক অডিট</span>
+                <div class="flex items-center gap-1">
+                  <button type="button" id="toggleWaqfTab" class="chronicle-mini-tab active">ওয়াকফ ফান্ড</button>
+                  <button type="button" id="toggleHostelTab" class="chronicle-mini-tab">হোস্টেল সিট</button>
+                </div>
+              </div>
+              <div id="sceneWaqfContent" class="p-2 sm:p-2.5 bg-purple-50/70 rounded-lg sm:rounded-xl border border-purple-200 text-[10px] sm:text-xs font-mono space-y-0.5 sm:space-y-1 text-slate-800 shadow-xs transition-all duration-300">
                 <div class="flex justify-between"><span>লিল্লাহ ফান্ড অডিট:</span><span class="text-emerald-700 font-bold">১০০% স্বচ্ছ</span></div>
-                <div class="flex justify-between"><span>হোস্টেল সিট বরাদ্দ:</span><span class="text-purple-800 font-bold">২৪/২৪ পূর্ণ</span></div>
+                <div class="flex justify-between"><span>ওয়াকফ জমি রেকর্ড:</span><span class="text-purple-800 font-bold">৩ একর খতিয়ান</span></div>
                 <div class="flex justify-between"><span>শিক্ষক উপস্থিতি:</span><span class="text-emerald-700 font-bold">৯৮.৫%</span></div>
               </div>
-              <span class="text-[9px] sm:text-[10px] text-emerald-700 font-bold block text-right font-mono">✓ Managed with YES EDU ERP</span>
+              <span id="waqfAuditStatus" class="text-[9px] sm:text-[10px] text-emerald-700 font-bold block text-right font-mono">১০০% স্বচ্ছ অডিট ✓</span>
             </div>
 
           </div>
@@ -683,6 +709,126 @@ function initVideoShowcase() {
 
       </div>
     `;
+
+    // Reattach Chronicle-style scene interactivity after rendering
+    attachSceneInteractivity();
+  }
+
+  // Chronicle Interactive Scene Action Handlers
+  function attachSceneInteractivity() {
+    // 1. Gate Punch Simulation
+    const punchBtn = document.getElementById('interactivePunchBtn');
+    if (punchBtn) {
+      punchBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playSoundEffect('beep');
+        const gateStatus = document.getElementById('sceneGateStatus');
+        const gateCard = document.getElementById('sceneGateCard');
+        const phoneNotice = document.getElementById('scenePhoneNotice');
+        
+        if (gateStatus) {
+          gateStatus.textContent = 'PUNCH VERIFIED • 08:30:14 AM';
+          gateStatus.classList.add('text-emerald-600');
+        }
+        if (gateCard) {
+          gateCard.classList.add('ring-4', 'ring-emerald-400');
+          setTimeout(() => gateCard.classList.remove('ring-4', 'ring-emerald-400'), 1200);
+        }
+        if (phoneNotice) {
+          phoneNotice.innerHTML = `
+            <div class="text-emerald-700 font-bold text-[10px] sm:text-[11px] mb-1 flex items-center justify-between">
+              <span>YES_EDU_SMS</span>
+              <span class="text-[9px] text-emerald-600 font-bold animate-ping">Just Now • 2.1s SMS</span>
+            </div>
+            "সম্মানিত অভিভাবক, মুহাম্মদ তানভীর এইমাত্র ০৮:৩০:১৪ মিনিটে গেটে কার্ড পাঞ্চ করেছেন। — YES EDU"
+          `;
+          phoneNotice.classList.add('bg-emerald-100');
+          setTimeout(() => phoneNotice.classList.remove('bg-emerald-100'), 1500);
+        }
+      });
+    }
+
+    // 2. bKash Fee Payment Simulation
+    const payBtn = document.getElementById('interactivePayBtn');
+    if (payBtn) {
+      payBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playSoundEffect('chime');
+        const payStatus = document.getElementById('interactivePayStatus');
+        const receiptBox = document.getElementById('sceneReceiptBox');
+        if (payStatus) {
+          payStatus.textContent = 'পেমেন্ট সফল! ৳২,৫০০ ✓';
+          payStatus.classList.add('animate-bounce');
+        }
+        if (receiptBox) {
+          receiptBox.classList.add('ring-4', 'ring-amber-400');
+          setTimeout(() => receiptBox.classList.remove('ring-4', 'ring-amber-400'), 1200);
+        }
+      });
+    }
+
+    // 3. AI Question Generation Simulation
+    const aiGenBtn = document.getElementById('interactiveAiGenBtn');
+    let aiQuestionState = 0;
+    if (aiGenBtn) {
+      aiGenBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playSoundEffect('beep');
+        const qBox = document.getElementById('sceneAiQuestionBox');
+        if (qBox) {
+          aiQuestionState = (aiQuestionState + 1) % 2;
+          if (aiQuestionState === 1) {
+            qBox.innerHTML = `
+              <span class="text-sky-800 font-bold block">উচ্চতর গণিত • ৯ম শ্রেণি:</span>
+              "ক. রেডিয়ান কোণ কাকে বলে? (১)<br>
+              খ. ত্রিকোণমিতিক অভেদটি প্রমাণ কর (২)<br>
+              গ. উদ্দীপক অনুযায়ী নির্ণেয় কোণটির মান নির্ণয় কর (৩)"
+            `;
+          } else {
+            qBox.innerHTML = `
+              <span class="text-sky-800 font-bold block">পদার্থবিজ্ঞান • ৯ম শ্রেণি:</span>
+              "ক. বল কাকে বলে? (১)<br>
+              খ. জড়তা ও ত্বরণের পার্থক্য ব্যাখ্যা কর (২)<br>
+              গ. উদ্দীপকের তথ্যের আলোকে ত্বরণ নির্ণয় কর (৩)"
+            `;
+          }
+          qBox.classList.add('ring-2', 'ring-sky-400', 'bg-sky-100');
+          setTimeout(() => qBox.classList.remove('ring-2', 'ring-sky-400', 'bg-sky-100'), 800);
+        }
+      });
+    }
+
+    // 4. Shariah Waqf & Hostel Tab Toggle
+    const waqfTab = document.getElementById('toggleWaqfTab');
+    const hostelTab = document.getElementById('toggleHostelTab');
+    const waqfContent = document.getElementById('sceneWaqfContent');
+    const waqfAuditStatus = document.getElementById('waqfAuditStatus');
+
+    if (waqfTab && hostelTab && waqfContent) {
+      waqfTab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        waqfTab.classList.add('active');
+        hostelTab.classList.remove('active');
+        waqfContent.innerHTML = `
+          <div class="flex justify-between"><span>লিল্লাহ ফান্ড অডিট:</span><span class="text-emerald-700 font-bold">১০০% স্বচ্ছ</span></div>
+          <div class="flex justify-between"><span>ওয়াকফ জমি রেকর্ড:</span><span class="text-purple-800 font-bold">৩ একর খতিয়ান</span></div>
+          <div class="flex justify-between"><span>দান রসিদ এসএমএস:</span><span class="text-emerald-700 font-bold">স্বয়ংক্রিয়</span></div>
+        `;
+        if (waqfAuditStatus) waqfAuditStatus.textContent = '১০০% স্বচ্ছ অডিট ✓';
+      });
+
+      hostelTab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hostelTab.classList.add('active');
+        waqfTab.classList.remove('active');
+        waqfContent.innerHTML = `
+          <div class="flex justify-between"><span>হোস্টেল সিট বরাদ্দ:</span><span class="text-purple-800 font-bold">২৪/২৪ পূর্ণ</span></div>
+          <div class="flex justify-between"><span>রুম মনিটরিং:</span><span class="text-emerald-700 font-bold">সিসিটিভি অনলাইন</span></div>
+          <div class="flex justify-between"><span>মিল চার্জ ব্যালেন্স:</span><span class="text-purple-800 font-bold">৳৪৮,৫০০ ক্যাশ</span></div>
+        `;
+        if (waqfAuditStatus) waqfAuditStatus.textContent = '২৪ সিট পরিচালিত ✓';
+      });
+    }
   }
 
   function formatTime(seconds) {
@@ -727,7 +873,28 @@ function initVideoShowcase() {
       playSoundEffect(newIdx === 1 ? 'chime' : 'beep');
     }
 
-    // Update chapter pills
+    // Update Chronicle Story Pills & Progress Bars (Timeline)
+    const activeChapter = newIdx;
+    const chapterSecondsElapsed = currentTime % 10;
+    const chapterPercent = (chapterSecondsElapsed / 10) * 100;
+
+    for (let i = 0; i < 4; i++) {
+      const pill = document.getElementById(`chroniclePill${i}`);
+      const prog = document.getElementById(`chronicleProgress${i}`);
+      if (pill) {
+        if (i === activeChapter) {
+          pill.classList.add('active');
+          if (prog) prog.style.width = `${Math.min(100, Math.max(0, chapterPercent))}%`;
+        } else {
+          pill.classList.remove('active');
+          if (prog) {
+            prog.style.width = (i < activeChapter) ? '100%' : '0%';
+          }
+        }
+      }
+    }
+
+    // Update legacy chapter pills if any
     chapterPills.forEach((p, idx) => {
       if (idx === currentChapterIndex) p.classList.add('active');
       else p.classList.remove('active');
@@ -857,7 +1024,7 @@ function initVideoShowcase() {
     });
   }
 
-  // Chapter pills click seeks to chapter with smooth transition
+  // Legacy Chapter pills click seeks to chapter with smooth transition
   chapterPills.forEach((pill, idx) => {
     pill.addEventListener('click', () => {
       currentTime = chapterMeta[idx].startTime;
@@ -865,6 +1032,43 @@ function initVideoShowcase() {
       startPlayback();
     });
   });
+
+  // Chronicle Story Pills Navigation (Idea 1)
+  for (let i = 0; i < 4; i++) {
+    const pill = document.getElementById(`chroniclePill${i}`);
+    if (pill) {
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentTime = i * 10;
+        renderCurrentFrame();
+        startPlayback();
+      });
+    }
+  }
+
+  // 3D Perspective Tilt on Mac Hardware (Chronicle HQ signature effect)
+  const macShowcase = document.getElementById('videoShowcase');
+  if (macShowcase) {
+    macShowcase.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 1024) return;
+      const rect = macShowcase.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const rotX = -(y / (rect.height / 2)) * 3;
+      const rotY = (x / (rect.width / 2)) * 3;
+      const macBody = macShowcase.querySelector('.mac-hardware-body');
+      if (macBody) {
+        macBody.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg)`;
+      }
+    });
+
+    macShowcase.addEventListener('mouseleave', () => {
+      const macBody = macShowcase.querySelector('.mac-hardware-body');
+      if (macBody) {
+        macBody.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+      }
+    });
+  }
 
   // Fullscreen modal trigger
   if (fullscreenBtn) {
