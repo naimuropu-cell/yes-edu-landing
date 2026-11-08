@@ -3119,8 +3119,47 @@ body.font-bn .section-title {
 }
 
 @media (max-width: 768px) {
+  .mac-hardware-container {
+    margin: 20px auto 0 auto;
+  }
+  .mac-hardware-body {
+    padding: 6px 6px 12px 6px;
+    border-radius: 18px;
+    box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.25);
+  }
+  .mac-hardware-camera {
+    width: 5px;
+    height: 5px;
+    margin: 2px auto 6px auto;
+  }
   .mac-hardware-screen {
-    height: 560px;
+    height: 480px;
+    border-radius: 12px;
+  }
+  .mac-hardware-chin {
+    width: 60px;
+    height: 3.5px;
+    margin: 6px auto 0 auto;
+  }
+  .mac-hardware-glow {
+    inset: -15px -15px 20px -15px;
+    filter: blur(25px);
+  }
+}
+
+@media (max-width: 480px) {
+  .mac-hardware-body {
+    padding: 5px 5px 10px 5px;
+    border-radius: 14px;
+  }
+  .mac-hardware-screen {
+    height: 450px;
+    border-radius: 9px;
+  }
+  .mac-hardware-chin {
+    width: 45px;
+    height: 3px;
+    margin: 4px auto 0 auto;
   }
 }
 

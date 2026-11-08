@@ -232,7 +232,7 @@ function initVideoShowcase() {
     { startTime: 30, title: "Ch 4: Madrasa Waqf & Hostel", glow: "radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 70%)" }
   ];
 
-  // Build the 4 Cartoon Animated Scenes into the Stage (White BG Edition)
+  // Build the 4 Cartoon Animated Scenes into the Stage (White BG Edition - Fully Responsive)
   function buildCartoonStage() {
     if (!simulationFrame) return;
 
@@ -240,37 +240,37 @@ function initVideoShowcase() {
       <div class="video-stage-container w-full h-full relative bg-white">
 
         <!-- SCENE 1: Cartoon Student at Biometric Gate with Morning Sunbeams (White BG) -->
-        <div id="videoScene0" class="video-scene-wrapper active-scene bg-gradient-to-br from-[#ffffff] via-[#f0fdf4] to-[#f8fafc] p-6 sm:p-8 pb-16 flex flex-col justify-between text-slate-800 overflow-hidden">
+        <div id="videoScene0" class="video-scene-wrapper active-scene bg-gradient-to-br from-[#ffffff] via-[#f0fdf4] to-[#f8fafc] p-3 sm:p-6 sm:pb-16 flex flex-col justify-between text-slate-800 overflow-hidden h-full">
           <!-- Morning Sunbeam Atmospheric Lighting -->
           <div class="light-sunbeam"></div>
 
-          <div class="flex items-center justify-between z-10">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
-              <span class="text-xs font-mono font-bold tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-300 px-2.5 py-1 rounded shadow-xs">
+          <div class="flex items-center justify-between z-10 gap-2 mb-1 sm:mb-0">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500 animate-ping shrink-0"></span>
+              <span class="text-[10px] sm:text-xs font-mono font-bold tracking-wider sm:tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-300 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-xs">
                 PART 1: GATEWAY SYNC (0s - 10s)
               </span>
             </div>
-            <span class="text-xs text-emerald-800 font-mono font-semibold flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-              MORNING SUNLIGHT • REAL HARDWARE SYNC
+            <span class="text-[10px] sm:text-xs text-emerald-800 font-mono font-semibold flex items-center gap-1.5 shrink-0">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 hidden sm:inline-block"></span>
+              <span class="hidden sm:inline">MORNING SUNLIGHT • </span>HARDWARE SYNC
             </span>
           </div>
 
           <!-- Main Cartoon Graphic Stage -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto z-10">
+          <div class="grid grid-cols-2 md:grid-cols-12 gap-2 sm:gap-6 items-center my-auto z-10 w-full">
             
             <!-- Cartoon Student Tanvir -->
-            <div class="md:col-span-5 flex flex-col items-center text-center">
+            <div class="col-span-1 md:col-span-5 flex flex-col items-center text-center">
               <div class="relative anim-walk">
                 <!-- Speech Bubble -->
-                <div class="bg-white text-slate-900 text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md border-2 border-emerald-400 mb-2 relative animate-bounce">
-                  "সকাল ৮:৩০! সময়মতো গেটে পাঞ্চ করলাম!"
-                  <div class="w-2.5 h-2.5 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-emerald-400"></div>
+                <div class="bg-white text-slate-900 text-[9px] sm:text-[11px] font-bold py-1 px-2 sm:py-1.5 sm:px-3 rounded-lg sm:rounded-xl shadow-md border-2 border-emerald-400 mb-1 sm:mb-2 relative animate-bounce max-w-[150px] sm:max-w-none">
+                  "সকাল ৮:৩০! গেটে পাঞ্চ করলাম!"
+                  <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white rotate-45 absolute -bottom-1 sm:-bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-emerald-400"></div>
                 </div>
 
                 <!-- SVG Cartoon Student -->
-                <svg class="w-36 h-44 drop-shadow-md" viewBox="0 0 160 200" fill="none">
+                <svg class="w-24 h-32 sm:w-36 sm:h-44 drop-shadow-md mx-auto" viewBox="0 0 160 200" fill="none">
                   <!-- Cap (Islamic Topi) -->
                   <ellipse cx="80" cy="38" rx="26" ry="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
                   <rect x="54" y="36" width="52" height="6" rx="2" fill="#10b981"/>
@@ -294,9 +294,8 @@ function initVideoShowcase() {
                   <!-- ID Card Ribbon & Badge -->
                   <path d="M74 80 L78 108 L82 80" stroke="#10b981" stroke-width="2" fill="none"/>
                   <rect x="74" y="108" width="12" height="16" rx="2" fill="#f59e0b"/>
-                  <!-- Outstretched Right Arm holding RFID Card (Shoulder Pivot Permanently Locked) -->
+                  <!-- Outstretched Right Arm holding RFID Card -->
                   <g transform="translate(101, 88)">
-                    <!-- Animated Arm with Hardware-Accelerated Local Rotation around Shoulder (0, 0) -->
                     <g>
                       <animateTransform 
                         attributeName="transform" 
@@ -308,17 +307,12 @@ function initVideoShowcase() {
                         calcMode="spline" 
                         keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
                       />
-                      <!-- Arm (Skin tone) reaching towards Biometric Gate -->
                       <path d="M0 0 Q22 6 34 18" stroke="#ffd1b3" stroke-width="11" stroke-linecap="round"/>
-                      <!-- White Kurta sleeve cuff -->
                       <path d="M0 0 L10 2" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
-                      <!-- RFID Smart Card -->
                       <rect x="26" y="12" width="16" height="10" rx="2" fill="#ffffff" stroke="#059669" stroke-width="2"/>
                       <circle cx="30" cy="17" r="2" fill="#f59e0b"/>
-                      <!-- Fingers grasping the card -->
                       <circle cx="28" cy="17" r="3" fill="#ffd1b3"/>
                     </g>
-                    <!-- Shoulder Sleeve Socket / Cap (Pins joint permanently to body) -->
                     <circle cx="0" cy="0" r="7.5" fill="#059669"/>
                     <circle cx="0" cy="0" r="4.5" fill="#047857"/>
                   </g>
@@ -331,87 +325,89 @@ function initVideoShowcase() {
                   <ellipse cx="89" cy="186" rx="9" ry="6" fill="#1e293b"/>
                 </svg>
 
-                <span class="text-xs font-extrabold text-slate-900 block mt-1">মুহাম্মদ তানভীর (রোল: ১০৪)</span>
-                <span class="text-[10px] text-slate-500 font-medium">Class 9 • Darul Uloom Campus</span>
+                <span class="text-[11px] sm:text-xs font-extrabold text-slate-900 block mt-0.5 sm:mt-1 truncate max-w-[130px] sm:max-w-none">মুহাম্মদ তানভীর (রোল ১০৪)</span>
+                <span class="text-[9px] sm:text-[10px] text-slate-500 font-medium truncate max-w-[130px] sm:max-w-none">Class 9 • Darul Uloom</span>
               </div>
             </div>
 
             <!-- Center: Biometric Gate Terminal with Radar Rings -->
-            <div class="md:col-span-3 flex flex-col items-center text-center">
-              <div class="relative w-28 h-42 bg-white border-2 border-emerald-500 rounded-2xl flex flex-col items-center justify-between p-3 shadow-xl">
+            <div class="col-span-1 md:col-span-3 flex flex-col items-center text-center">
+              <div class="relative w-22 sm:w-28 h-32 sm:h-42 bg-white border-2 border-emerald-500 rounded-xl sm:rounded-2xl flex flex-col items-center justify-between p-2 sm:p-3 shadow-xl">
                 <!-- Glowing Radar Rings -->
-                <div class="absolute -top-3 w-16 h-16 rounded-full border-2 border-emerald-400 anim-radar pointer-events-none"></div>
-                <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
-                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 004 11m0 0a8.003 8.003 0 0015.357 2m1.5-6.5h.01M16 19.5v.01"/></svg>
+                <div class="absolute -top-2 w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-emerald-400 anim-radar pointer-events-none"></div>
+                <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
+                  <svg class="w-5 h-5 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 004 11m0 0a8.003 8.003 0 0015.357 2m1.5-6.5h.01M16 19.5v.01"/></svg>
                 </div>
 
                 <div class="text-center">
-                  <span class="text-[10px] font-mono text-emerald-700 font-bold block animate-pulse">PUNCH VERIFIED</span>
-                  <span class="text-[9px] text-slate-500 font-mono">GATE UNLOCKED</span>
+                  <span class="text-[9px] sm:text-[10px] font-mono text-emerald-700 font-bold block animate-pulse">PUNCH VERIFIED</span>
+                  <span class="text-[8px] sm:text-[9px] text-slate-500 font-mono">GATE UNLOCKED</span>
                 </div>
                 
-                <div class="w-full py-1 rounded bg-emerald-600 text-[10px] font-bold text-white font-mono text-center shadow-xs">
+                <div class="w-full py-0.5 sm:py-1 rounded bg-emerald-600 text-[8px] sm:text-[10px] font-bold text-white font-mono text-center shadow-xs">
                   3 SEC SMS TRIGGER
                 </div>
               </div>
             </div>
 
             <!-- Right: Parent Phone with Incoming Live SMS -->
-            <div class="md:col-span-4 bg-white border-2 border-emerald-400 rounded-2xl p-4 shadow-xl anim-phone-glow space-y-3">
-              <div class="flex items-center justify-between text-xs text-slate-700 border-b border-slate-100 pb-2">
+            <div class="col-span-2 md:col-span-4 bg-white border-2 border-emerald-400 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-xl anim-phone-glow space-y-1.5 sm:space-y-3">
+              <div class="flex items-center justify-between text-[11px] sm:text-xs text-slate-700 border-b border-slate-100 pb-1 sm:pb-2">
                 <span class="flex items-center gap-1.5 text-emerald-800 font-bold">
                   <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                   অভিভাবকের স্মার্টফোন
                 </span>
-                <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono font-bold">SMS RECEIVED</span>
+                <span class="text-[9px] sm:text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono font-bold">SMS RECEIVED</span>
               </div>
-              <div class="bg-emerald-50/80 p-3 rounded-xl border border-emerald-200 text-xs text-slate-800 font-sans leading-relaxed shadow-xs">
-                <div class="text-emerald-700 font-bold text-[11px] mb-1 flex items-center justify-between">
+              <div class="bg-emerald-50/80 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-emerald-200 text-[10px] sm:text-xs text-slate-800 font-sans leading-relaxed shadow-xs">
+                <div class="text-emerald-700 font-bold text-[10px] sm:text-[11px] mb-1 flex items-center justify-between">
                   <span>YES_EDU_SMS</span>
-                  <span class="text-[10px] text-slate-500 font-normal">Just Now</span>
+                  <span class="text-[9px] sm:text-[10px] text-slate-500 font-normal">Just Now</span>
                 </div>
                 "সম্মানিত অভিভাবক, আপনার সন্তান মুহাম্মদ তানভীর সকাল ৮:৩০ মিনিটে নিরাপদে ক্যাম্পাসে প্রবেশ করেছে। — YES EDU"
               </div>
-              <span class="text-[10px] text-slate-500 block text-right font-mono font-semibold">100% Parent Peace of Mind</span>
+              <span class="text-[9px] sm:text-[10px] text-slate-500 block text-right font-mono font-semibold">100% Parent Peace of Mind</span>
             </div>
 
           </div>
 
-          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-2 z-10">
-            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> MODULE 01: BIOMETRIC GATEWAY TELEMETRY</span>
-            <span class="text-slate-400 font-mono text-[10px]">YES EDU CAMPUS OS</span>
+          <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-1.5 sm:pt-2 z-10">
+            <span class="flex items-center gap-1 sm:gap-1.5 truncate"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span> <span class="truncate">MODULE 01: BIOMETRIC GATEWAY TELEMETRY</span></span>
+            <span class="text-slate-400 font-mono text-[9px] sm:text-[10px] shrink-0 ml-2">YES EDU</span>
           </div>
         </div>
 
         <!-- SCENE 2: Cartoon Parent on Sofa & bKash with Cozy Ambient Lamp (White BG) -->
-        <div id="videoScene1" class="video-scene-wrapper bg-gradient-to-br from-[#ffffff] via-[#fffbeb] to-[#f8fafc] p-6 sm:p-8 pb-16 flex flex-col justify-between text-slate-800 overflow-hidden">
+        <div id="videoScene1" class="video-scene-wrapper bg-gradient-to-br from-[#ffffff] via-[#fffbeb] to-[#f8fafc] p-3 sm:p-6 sm:pb-16 flex flex-col justify-between text-slate-800 overflow-hidden h-full">
           <!-- Warm Lamp Glow in Living Room -->
           <div class="lamp-glow -top-10 left-10"></div>
 
-          <div class="flex items-center justify-between z-10">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-amber-500 animate-ping"></span>
-              <span class="text-xs font-mono font-bold tracking-widest text-amber-800 bg-amber-50 border border-amber-300 px-2.5 py-1 rounded shadow-xs">
+          <div class="flex items-center justify-between z-10 gap-2 mb-1 sm:mb-0">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500 animate-ping shrink-0"></span>
+              <span class="text-[10px] sm:text-xs font-mono font-bold tracking-wider sm:tracking-widest text-amber-800 bg-amber-50 border border-amber-300 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-xs">
                 PART 2: BKASH AUTOMATION (10s - 20s)
               </span>
             </div>
-            <span class="text-xs text-amber-800 font-mono font-semibold">WARM INTERIOR • ZERO LINE AT BANK</span>
+            <span class="text-[10px] sm:text-xs text-amber-800 font-mono font-semibold shrink-0">
+              <span class="hidden sm:inline">WARM INTERIOR • </span>ZERO BANK QUEUE
+            </span>
           </div>
 
           <!-- Main Cartoon Graphic Stage -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto z-10">
+          <div class="grid grid-cols-2 md:grid-cols-12 gap-2 sm:gap-6 items-center my-auto z-10 w-full">
             
             <!-- Cartoon Parent on Sofa -->
-            <div class="md:col-span-5 flex flex-col items-center text-center">
+            <div class="col-span-1 md:col-span-5 flex flex-col items-center text-center">
               <div class="relative">
                 <!-- Speech Bubble -->
-                <div class="bg-white text-slate-900 text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md border-2 border-amber-400 mb-2 relative animate-bounce">
-                  "ব্যাংকের লাইনে না গিয়ে ঘরে বসেই ফি দিয়ে দিলাম!"
-                  <div class="w-2.5 h-2.5 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-amber-400"></div>
+                <div class="bg-white text-slate-900 text-[9px] sm:text-[11px] font-bold py-1 px-2 sm:py-1.5 sm:px-3 rounded-lg sm:rounded-xl shadow-md border-2 border-amber-400 mb-1 sm:mb-2 relative animate-bounce max-w-[150px] sm:max-w-none">
+                  "ব্যাংকে না গিয়ে ঘরে বসেই ফি দিলাম!"
+                  <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white rotate-45 absolute -bottom-1 sm:-bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-amber-400"></div>
                 </div>
 
                 <!-- SVG Cartoon Parent on Sofa -->
-                <svg class="w-44 h-44 drop-shadow-md" viewBox="0 0 200 200" fill="none">
+                <svg class="w-28 h-28 sm:w-44 sm:h-44 drop-shadow-md mx-auto" viewBox="0 0 200 200" fill="none">
                   <!-- Teal Sofa -->
                   <rect x="30" y="110" width="140" height="60" rx="14" fill="#0f766e"/>
                   <rect x="20" y="100" width="24" height="70" rx="10" fill="#115e59"/>
@@ -436,76 +432,78 @@ function initVideoShowcase() {
                   <rect x="89" y="110" width="22" height="34" rx="2" fill="#ec4899"/>
                 </svg>
 
-                <span class="text-xs font-extrabold text-slate-900 block">আব্দুর রহমান সাহেব (অভিভাবক)</span>
-                <span class="text-[10px] text-slate-500 font-medium">Paying from Home via bKash</span>
+                <span class="text-[11px] sm:text-xs font-extrabold text-slate-900 block mt-0.5 sm:mt-1 truncate max-w-[130px] sm:max-w-none">আব্দুর রহমান (অভিভাবক)</span>
+                <span class="text-[9px] sm:text-[10px] text-slate-500 font-medium truncate max-w-[130px] sm:max-w-none">Paying via bKash</span>
               </div>
             </div>
 
             <!-- Floating Coins Flying from Phone to Cloud -->
-            <div class="md:col-span-3 flex flex-col items-center justify-center text-center">
-              <div class="relative py-4">
-                <div class="w-12 h-12 rounded-full bg-amber-400 text-slate-900 font-extrabold text-xl flex items-center justify-center shadow-lg anim-coin mx-auto mb-2 border-2 border-white">৳</div>
-                <div class="w-10 h-10 rounded-full bg-amber-300 text-slate-900 font-extrabold text-lg flex items-center justify-center shadow-lg anim-coin mx-auto mb-2 border-2 border-white" style="animation-delay: -0.8s;">৳</div>
-                <span class="text-xs font-mono font-bold text-amber-800 block">INSTANT SETTLEMENT</span>
-                <span class="text-[10px] text-slate-500 font-mono">Auto Bank API Reconcile</span>
+            <div class="col-span-1 md:col-span-3 flex flex-col items-center justify-center text-center">
+              <div class="relative py-2 sm:py-4">
+                <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-amber-400 text-slate-900 font-extrabold text-base sm:text-xl flex items-center justify-center shadow-lg anim-coin mx-auto mb-1 border-2 border-white">৳</div>
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-amber-300 text-slate-900 font-extrabold text-sm sm:text-lg flex items-center justify-center shadow-lg anim-coin mx-auto mb-1 border-2 border-white" style="animation-delay: -0.8s;">৳</div>
+                <span class="text-[9px] sm:text-xs font-mono font-bold text-amber-800 block">INSTANT SETTLEMENT</span>
+                <span class="text-[8px] sm:text-[10px] text-slate-500 font-mono">Bank API Reconcile</span>
               </div>
             </div>
 
             <!-- Right: Digital Receipt & Double Entry Confirmation -->
-            <div class="md:col-span-4 bg-white border-2 border-amber-400 rounded-2xl p-4 shadow-xl space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#e2136e] text-white font-bold flex items-center justify-center text-xs shadow-sm">
+            <div class="col-span-2 md:col-span-4 bg-white border-2 border-amber-400 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-xl space-y-1.5 sm:space-y-3">
+              <div class="flex items-center gap-2 sm:gap-3">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#e2136e] text-white font-bold flex items-center justify-center text-[10px] sm:text-xs shadow-sm shrink-0">
                   bKash
                 </div>
-                <div>
-                  <span class="text-xs font-bold text-emerald-700 block">✓ ৳২,৫০০ পেমেন্ট সফল</span>
-                  <span class="text-[10px] text-slate-500 font-mono">TrxID: 9B8801K99 • VOUCHER READY</span>
+                <div class="truncate">
+                  <span class="text-[11px] sm:text-xs font-bold text-emerald-700 block truncate">✓ ৳২,৫০০ পেমেন্ট সফল</span>
+                  <span class="text-[9px] sm:text-[10px] text-slate-500 font-mono truncate">TrxID: 9B8801K99 • VOUCHER READY</span>
                 </div>
               </div>
-              <div class="p-3 bg-amber-50/60 rounded-xl border border-amber-200 text-[11px] text-slate-700 font-mono space-y-1 shadow-xs">
+              <div class="p-2 sm:p-3 bg-amber-50/60 rounded-lg sm:rounded-xl border border-amber-200 text-[10px] sm:text-[11px] text-slate-700 font-mono space-y-0.5 sm:space-y-1 shadow-xs">
                 <div class="flex justify-between"><span>মাসিক বেতন:</span><span class="text-slate-900 font-bold">৳১,৫০০</span></div>
-                <div class="flex justify-between"><span>লিল্লাহ ও ওয়াকফ দান:</span><span class="text-amber-800 font-bold">৳১,০০০</span></div>
-                <div class="border-t border-amber-200 pt-1 text-emerald-700 text-right font-bold">স্বয়ংক্রিয় ডিজিটাল ভাউচার তৈরি!</div>
+                <div class="flex justify-between"><span>লিল্লাহ দান:</span><span class="text-amber-800 font-bold">৳১,০০০</span></div>
+                <div class="border-t border-amber-200 pt-1 text-emerald-700 text-right font-bold text-[9px] sm:text-[10px]">স্বয়ংক্রিয় ডিজিটাল ভাউচার তৈরি!</div>
               </div>
             </div>
 
           </div>
 
-          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-2 z-10">
-            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span> MODULE 02: AUTOMATED BKASH FEE RECONCILIATION</span>
-            <span class="text-slate-400 font-mono text-[10px]">YES EDU CAMPUS OS</span>
+          <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-1.5 sm:pt-2 z-10">
+            <span class="flex items-center gap-1 sm:gap-1.5 truncate"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse shrink-0"></span> <span class="truncate">MODULE 02: AUTOMATED BKASH FEE RECONCILIATION</span></span>
+            <span class="text-slate-400 font-mono text-[9px] sm:text-[10px] shrink-0 ml-2">YES EDU</span>
           </div>
         </div>
 
         <!-- SCENE 3: Cartoon Teacher & Cute AI Robot Companion (White BG) -->
-        <div id="videoScene2" class="video-scene-wrapper bg-gradient-to-br from-[#ffffff] via-[#f0f9ff] to-[#f8fafc] p-6 sm:p-8 pb-16 flex flex-col justify-between text-slate-800 overflow-hidden">
+        <div id="videoScene2" class="video-scene-wrapper bg-gradient-to-br from-[#ffffff] via-[#f0f9ff] to-[#f8fafc] p-3 sm:p-6 sm:pb-16 flex flex-col justify-between text-slate-800 overflow-hidden h-full">
           <!-- Cyberpunk Cyan AI Glow -->
           <div class="ai-neon-aura top-10 right-28"></div>
 
-          <div class="flex items-center justify-between z-10">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-sky-500 animate-ping"></span>
-              <span class="text-xs font-mono font-bold tracking-widest text-sky-800 bg-sky-50 border border-sky-300 px-2.5 py-1 rounded shadow-xs">
+          <div class="flex items-center justify-between z-10 gap-2 mb-1 sm:mb-0">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-sky-500 animate-ping shrink-0"></span>
+              <span class="text-[10px] sm:text-xs font-mono font-bold tracking-wider sm:tracking-widest text-sky-800 bg-sky-50 border border-sky-300 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-xs">
                 PART 3: NCTB AI PEDAGOGY (20s - 30s)
               </span>
             </div>
-            <span class="text-xs text-sky-800 font-mono font-semibold">NEON TECH LAB • NCTB AI V2</span>
+            <span class="text-[10px] sm:text-xs text-sky-800 font-mono font-semibold shrink-0">
+              <span class="hidden sm:inline">NEON TECH LAB • </span>NCTB AI V2
+            </span>
           </div>
 
           <!-- Main Cartoon Graphic Stage -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto z-10">
+          <div class="grid grid-cols-2 md:grid-cols-12 gap-2 sm:gap-6 items-center my-auto z-10 w-full">
             
             <!-- Cartoon Teacher with Tea -->
-            <div class="md:col-span-5 flex flex-col items-center text-center">
+            <div class="col-span-1 md:col-span-5 flex flex-col items-center text-center">
               <div class="relative">
                 <!-- Speech Bubble -->
-                <div class="bg-white text-slate-900 text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md border-2 border-sky-400 mb-2 relative animate-bounce">
-                  "সারা রাত জেগে প্রশ্ন তৈরির দিন শেষ! এআই ৩০ সেকেন্ডেই করে দিলো!"
-                  <div class="w-2.5 h-2.5 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-sky-400"></div>
+                <div class="bg-white text-slate-900 text-[9px] sm:text-[11px] font-bold py-1 px-2 sm:py-1.5 sm:px-3 rounded-lg sm:rounded-xl shadow-md border-2 border-sky-400 mb-1 sm:mb-2 relative animate-bounce max-w-[150px] sm:max-w-none">
+                  "এআই ৩০ সেকেন্ডেই প্রশ্নপত্র তৈরি করলো!"
+                  <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white rotate-45 absolute -bottom-1 sm:-bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-sky-400"></div>
                 </div>
 
                 <!-- SVG Cartoon Teacher -->
-                <svg class="w-40 h-44 drop-shadow-md" viewBox="0 0 180 200" fill="none">
+                <svg class="w-26 h-28 sm:w-40 sm:h-44 drop-shadow-md mx-auto" viewBox="0 0 180 200" fill="none">
                   <!-- Head -->
                   <circle cx="90" cy="55" r="25" fill="#ffd1b3"/>
                   <!-- Hair -->
@@ -531,15 +529,15 @@ function initVideoShowcase() {
                   <path class="anim-steam" d="M58 110 Q60 102 56 94" stroke="#94a3b8" stroke-width="2" fill="none" style="animation-delay: -1s;"/>
                 </svg>
 
-                <span class="text-xs font-extrabold text-slate-900 block">রফিকুল ইসলাম (সহকারী শিক্ষক)</span>
-                <span class="text-[10px] text-slate-500 font-medium">Relaxed & Teaching with AI</span>
+                <span class="text-[11px] sm:text-xs font-extrabold text-slate-900 block mt-0.5 sm:mt-1 truncate max-w-[130px] sm:max-w-none">রফিকুল ইসলাম (শিক্ষক)</span>
+                <span class="text-[9px] sm:text-[10px] text-slate-500 font-medium truncate max-w-[130px] sm:max-w-none">Teaching with AI</span>
               </div>
             </div>
 
             <!-- Cute Cartoon AI Mascot "YES Bot" -->
-            <div class="md:col-span-3 flex flex-col items-center justify-center text-center">
+            <div class="col-span-1 md:col-span-3 flex flex-col items-center justify-center text-center">
               <div class="anim-mascot">
-                <svg class="w-32 h-36 drop-shadow-lg" viewBox="0 0 140 160" fill="none">
+                <svg class="w-22 h-26 sm:w-32 sm:h-36 drop-shadow-lg mx-auto" viewBox="0 0 140 160" fill="none">
                   <!-- Antenna -->
                   <line x1="70" y1="28" x2="70" y2="12" stroke="#0284c7" stroke-width="4" stroke-linecap="round"/>
                   <circle cx="70" cy="8" r="6" fill="#0284c7" class="animate-ping"/>
@@ -561,65 +559,67 @@ function initVideoShowcase() {
                   <circle cx="114" cy="104" r="8" fill="#0284c7"/>
                 </svg>
 
-                <span class="text-xs font-mono font-bold text-sky-800 block">YES BOT V2</span>
-                <span class="text-[10px] text-emerald-700 font-mono font-bold">GENERATING CQ & MCQ</span>
+                <span class="text-[10px] sm:text-xs font-mono font-bold text-sky-800 block">YES BOT V2</span>
+                <span class="text-[8px] sm:text-[10px] text-emerald-700 font-mono font-bold">CQ & MCQ READY</span>
               </div>
             </div>
 
             <!-- Right: Generated Creative Question Sheet -->
-            <div class="md:col-span-4 bg-white border-2 border-sky-400 rounded-2xl p-4 shadow-xl space-y-2.5">
-              <div class="flex items-center justify-between text-xs text-sky-800 font-mono pb-1 border-b border-slate-100 font-bold">
-                <span>NCTB 2026 QUESTION PAPER</span>
-                <span class="text-emerald-700 font-bold">READY (18s)</span>
+            <div class="col-span-2 md:col-span-4 bg-white border-2 border-sky-400 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-xl space-y-1.5 sm:space-y-2.5">
+              <div class="flex items-center justify-between text-[10px] sm:text-xs text-sky-800 font-mono pb-1 border-b border-slate-100 font-bold">
+                <span class="truncate">NCTB QUESTION PAPER</span>
+                <span class="text-emerald-700 font-bold shrink-0 ml-1">READY (18s)</span>
               </div>
-              <div class="bg-sky-50/70 p-2.5 rounded-lg border border-sky-200 text-[11px] text-slate-800 font-sans shadow-xs">
+              <div class="bg-sky-50/70 p-2 sm:p-2.5 rounded-lg border border-sky-200 text-[10px] sm:text-[11px] text-slate-800 font-sans shadow-xs">
                 <span class="text-sky-800 font-bold block">পদার্থবিজ্ঞান • ৯ম শ্রেণি:</span>
                 "ক. বল কাকে বলে? (১)<br>
                 খ. জড়তা ও ত্বরণের পার্থক্য ব্যাখ্যা কর (২)<br>
                 গ. উদ্দীপকের তথ্যের আলোকে ত্বরণ নির্ণয় কর (৩)"
               </div>
-              <div class="w-full py-1.5 bg-sky-600 text-white rounded-lg text-xs font-bold text-center shadow-xs">
+              <div class="w-full py-1 sm:py-1.5 bg-sky-600 text-white rounded-lg text-[10px] sm:text-xs font-bold text-center shadow-xs">
                 1-Click Export to Word / PDF
               </div>
             </div>
 
           </div>
 
-          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-2 z-10">
-            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span> MODULE 03: NCTB 2026 AI CURRICULUM & GRADING</span>
-            <span class="text-slate-400 font-mono text-[10px]">YES EDU CAMPUS OS</span>
+          <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-1.5 sm:pt-2 z-10">
+            <span class="flex items-center gap-1 sm:gap-1.5 truncate"><span class="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse shrink-0"></span> <span class="truncate">MODULE 03: NCTB 2026 AI CURRICULUM & GRADING</span></span>
+            <span class="text-slate-400 font-mono text-[9px] sm:text-[10px] shrink-0 ml-2">YES EDU</span>
           </div>
         </div>
 
         <!-- SCENE 4: Cartoon Principal / Muhtamim with Tablet (White BG) -->
-        <div id="videoScene3" class="video-scene-wrapper bg-gradient-to-br from-[#ffffff] via-[#faf5ff] to-[#f8fafc] p-6 sm:p-8 pb-16 flex flex-col justify-between text-slate-800 overflow-hidden">
+        <div id="videoScene3" class="video-scene-wrapper bg-gradient-to-br from-[#ffffff] via-[#faf5ff] to-[#f8fafc] p-3 sm:p-6 sm:pb-16 flex flex-col justify-between text-slate-800 overflow-hidden h-full">
           <!-- Executive Rim Atmospheric Glow -->
           <div class="executive-rim top-10 right-20"></div>
 
-          <div class="flex items-center justify-between z-10">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-purple-500 animate-ping"></span>
-              <span class="text-xs font-mono font-bold tracking-widest text-purple-800 bg-purple-50 border border-purple-300 px-2.5 py-1 rounded shadow-xs">
+          <div class="flex items-center justify-between z-10 gap-2 mb-1 sm:mb-0">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-purple-500 animate-ping shrink-0"></span>
+              <span class="text-[10px] sm:text-xs font-mono font-bold tracking-wider sm:tracking-widest text-purple-800 bg-purple-50 border border-purple-300 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-xs">
                 PART 4: TOTAL INSTITUTIONAL CONTROL (30s - 40s)
               </span>
             </div>
-            <span class="text-xs text-purple-800 font-mono font-semibold">EXECUTIVE BI ANALYTICS DASHBOARD</span>
+            <span class="text-[10px] sm:text-xs text-purple-800 font-mono font-semibold shrink-0">
+              <span class="hidden sm:inline">EXECUTIVE BI • </span>DASHBOARD
+            </span>
           </div>
 
           <!-- Main Cartoon Graphic Stage -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto z-10">
+          <div class="grid grid-cols-2 md:grid-cols-12 gap-2 sm:gap-6 items-center my-auto z-10 w-full">
             
             <!-- Cartoon Principal / Muhtamim -->
-            <div class="md:col-span-5 flex flex-col items-center text-center">
+            <div class="col-span-1 md:col-span-5 flex flex-col items-center text-center">
               <div class="relative">
                 <!-- Speech Bubble -->
-                <div class="bg-white text-slate-900 text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md border-2 border-purple-400 mb-2 relative animate-bounce">
-                  "কাগজের খাতা মুক্ত ক্যাম্পাস! সব হিসাব এখন শতভাগ নির্ভুল ও স্বচ্ছ!"
-                  <div class="w-2.5 h-2.5 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-purple-400"></div>
+                <div class="bg-white text-slate-900 text-[9px] sm:text-[11px] font-bold py-1 px-2 sm:py-1.5 sm:px-3 rounded-lg sm:rounded-xl shadow-md border-2 border-purple-400 mb-1 sm:mb-2 relative animate-bounce max-w-[150px] sm:max-w-none">
+                  "হিসাব এখন শতভাগ নির্ভুল ও স্বচ্ছ!"
+                  <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white rotate-45 absolute -bottom-1 sm:-bottom-1.5 left-1/2 -translate-x-1/2 border-r-2 border-b-2 border-purple-400"></div>
                 </div>
 
                 <!-- SVG Cartoon Principal -->
-                <svg class="w-40 h-44 drop-shadow-md" viewBox="0 0 180 200" fill="none">
+                <svg class="w-26 h-28 sm:w-40 sm:h-44 drop-shadow-md mx-auto" viewBox="0 0 180 200" fill="none">
                   <!-- Cap / Turban / Topi -->
                   <ellipse cx="90" cy="38" rx="26" ry="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
                   <rect x="64" y="36" width="52" height="6" rx="2" fill="#d97706"/>
@@ -645,39 +645,39 @@ function initVideoShowcase() {
                   <rect x="78" y="110" width="24" height="34" rx="2" fill="#10b981"/>
                 </svg>
 
-                <span class="text-xs font-extrabold text-slate-900 block">মাওলানা আব্দুল কাদের (মুহতামিম / অধ্যক্ষ)</span>
-                <span class="text-[10px] text-slate-500 font-medium">100% Institution Controlled on Mobile</span>
+                <span class="text-[11px] sm:text-xs font-extrabold text-slate-900 block mt-0.5 sm:mt-1 truncate max-w-[130px] sm:max-w-none">মাওলানা আব্দুল কাদের (অধ্যক্ষ)</span>
+                <span class="text-[9px] sm:text-[10px] text-slate-500 font-medium truncate max-w-[130px] sm:max-w-none">Control on Mobile</span>
               </div>
             </div>
 
             <!-- Visual Real-time Charts -->
-            <div class="md:col-span-3 flex flex-col items-center justify-center text-center">
-              <div class="p-3 bg-white rounded-2xl border-2 border-purple-300 shadow-xl space-y-2 w-full max-w-[160px]">
-                <span class="text-[10px] font-mono text-purple-800 uppercase tracking-wider block font-bold">FEES COLLECTED</span>
-                <div class="text-2xl font-extrabold text-emerald-600 font-mono">99.2%</div>
-                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200">
-                  <div class="bg-emerald-500 h-2 rounded-full" style="width: 99.2%;"></div>
+            <div class="col-span-1 md:col-span-3 flex flex-col items-center justify-center text-center">
+              <div class="p-2 sm:p-3 bg-white rounded-xl sm:rounded-2xl border-2 border-purple-300 shadow-xl space-y-1 sm:space-y-2 w-full max-w-[130px] sm:max-w-[160px] mx-auto">
+                <span class="text-[8px] sm:text-[10px] font-mono text-purple-800 uppercase tracking-wider block font-bold">FEES COLLECTED</span>
+                <div class="text-xl sm:text-2xl font-extrabold text-emerald-600 font-mono">99.2%</div>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 sm:h-2 overflow-hidden border border-slate-200">
+                  <div class="bg-emerald-500 h-1.5 sm:h-2 rounded-full" style="width: 99.2%;"></div>
                 </div>
-                <span class="text-[9px] text-slate-500 font-mono block">Zero Bad Dues</span>
+                <span class="text-[8px] sm:text-[9px] text-slate-500 font-mono block">Zero Bad Dues</span>
               </div>
             </div>
 
             <!-- Right: Hostel & Waqf Status -->
-            <div class="md:col-span-4 bg-white border-2 border-purple-300 rounded-2xl p-4 shadow-xl space-y-2.5">
-              <span class="text-xs font-bold text-purple-900 block">🕌 হোস্টেল ও ওয়াকফ ফান্ডের স্বচ্ছ হিসাব</span>
-              <div class="p-2.5 bg-purple-50/70 rounded-xl border border-purple-200 text-xs font-mono space-y-1 text-slate-800 shadow-xs">
+            <div class="col-span-2 md:col-span-4 bg-white border-2 border-purple-300 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-xl space-y-1.5 sm:space-y-2.5">
+              <span class="text-[11px] sm:text-xs font-bold text-purple-900 block truncate">🕌 হোস্টেল ও ওয়াকফ ফান্ডের স্বচ্ছ হিসাব</span>
+              <div class="p-2 sm:p-2.5 bg-purple-50/70 rounded-lg sm:rounded-xl border border-purple-200 text-[10px] sm:text-xs font-mono space-y-0.5 sm:space-y-1 text-slate-800 shadow-xs">
                 <div class="flex justify-between"><span>লিল্লাহ ফান্ড অডিট:</span><span class="text-emerald-700 font-bold">১০০% স্বচ্ছ</span></div>
                 <div class="flex justify-between"><span>হোস্টেল সিট বরাদ্দ:</span><span class="text-purple-800 font-bold">২৪/২৪ পূর্ণ</span></div>
                 <div class="flex justify-between"><span>শিক্ষক উপস্থিতি:</span><span class="text-emerald-700 font-bold">৯৮.৫%</span></div>
               </div>
-              <span class="text-[10px] text-emerald-700 font-bold block text-right font-mono">✓ Managed with YES EDU ERP</span>
+              <span class="text-[9px] sm:text-[10px] text-emerald-700 font-bold block text-right font-mono">✓ Managed with YES EDU ERP</span>
             </div>
 
           </div>
 
-          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-2 z-10">
-            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span> MODULE 04: MADRASA WAQF & HOSTEL MANAGEMENT</span>
-            <span class="text-slate-400 font-mono text-[10px]">YES EDU CAMPUS OS</span>
+          <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 font-mono border-t border-slate-200/80 pt-1.5 sm:pt-2 z-10">
+            <span class="flex items-center gap-1 sm:gap-1.5 truncate"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse shrink-0"></span> <span class="truncate">MODULE 04: MADRASA WAQF & HOSTEL MANAGEMENT</span></span>
+            <span class="text-slate-400 font-mono text-[9px] sm:text-[10px] shrink-0 ml-2">YES EDU</span>
           </div>
         </div>
 
