@@ -56,6 +56,7 @@
 html {
   scroll-behavior: smooth;
   text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -3177,7 +3178,7 @@ html, body {
    2. TABLETS & SMALL SCREENS (<= 860px)
    ========================================== */
 @media (max-width: 860px) {
-  /* Navigation Drawer */
+  /* Navigation Drawer (Executive Theme Style) */
   .nav-links {
     display: none;
     position: fixed;
@@ -3186,15 +3187,15 @@ html, body {
     width: 100%;
     max-height: calc(100vh - 78px);
     overflow-y: auto;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(246, 247, 242, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: flex-start;
     padding: 24px 28px 36px;
     gap: 14px;
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 20px 40px rgba(21, 61, 50, 0.12);
+    border-bottom: 1px solid #DDE3DC;
+    box-shadow: 0 20px 40px rgba(20, 37, 31, 0.12);
     z-index: 999;
   }
 
@@ -3205,10 +3206,14 @@ html, body {
   .nav-links a {
     font-size: 16px;
     font-weight: 700;
-    color: var(--deep);
+    color: var(--ex-ink);
     width: 100%;
     padding: 10px 0;
-    border-bottom: 1px solid #eef5f1;
+    border-bottom: 1px solid #E0E5DE;
+  }
+
+  .nav-links a:hover {
+    color: var(--ex-green);
   }
 
   .menu-toggle {
@@ -3263,11 +3268,19 @@ html, body {
   .hero-actions {
     width: 100%;
     margin: 22px 0 20px;
+    gap: 10px;
   }
 
   .hero-actions .btn {
     width: 100%;
     max-width: 320px;
+  }
+
+  .hero-proof {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
   }
 
   .float-card {
@@ -3284,18 +3297,18 @@ html, body {
   }
 
   .kpi-card {
-    background: #ffffff;
-    border: 1px solid #dcece2;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
     padding: 10px 6px;
     text-align: center;
-    box-shadow: 0 4px 14px rgba(21, 61, 50, 0.05);
+    box-shadow: 0 4px 14px rgba(4, 25, 16, 0.18);
   }
 
   .kpi-card span {
     display: block;
     font-size: 10px;
-    color: #71887e;
+    color: #66746D;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -3304,15 +3317,38 @@ html, body {
   .kpi-card strong {
     display: block;
     font: 800 15px var(--font-heading);
-    color: var(--deep);
+    color: var(--ex-green);
     margin: 3px 0 2px;
   }
 
   .kpi-card small {
     display: block;
     font-size: 9px;
-    color: #2c9b70;
+    color: #236B4E;
     font-weight: 700;
+  }
+
+  /* Trust Strip on Mobile */
+  .trust, .trust-strip {
+    padding: 26px 0 22px;
+  }
+
+  .trust-inner {
+    justify-content: center;
+    text-align: center;
+    gap: 12px 18px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  .trust-label {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .trust-item {
+    font-size: 12.5px;
   }
 
   /* SME Peek Carousel Mobile Responsive Rules */
@@ -3320,7 +3356,19 @@ html, body {
     max-width: 100%;
     gap: 10px;
     margin-bottom: 16px;
-    padding: 0 2px;
+    padding: 0 4px;
+  }
+
+  .sme-story-pill {
+    padding: 5px 12px;
+    font-size: 11px;
+    border-radius: 4px;
+  }
+
+  .sme-counter-badge {
+    padding: 4px 10px;
+    font-size: 11px;
+    border-radius: 4px;
   }
 
   .sme-drag-hint {
@@ -3329,6 +3377,8 @@ html, body {
 
   .sme-carousel-container {
     padding: 8px 0 14px;
+    width: 100%;
+    overflow: hidden;
   }
 
   .sme-carousel-track {
@@ -3337,8 +3387,8 @@ html, body {
 
   .sme-card {
     width: calc(100vw - 32px);
-    padding: 22px 16px;
-    border-radius: 18px;
+    padding: 20px 16px;
+    border-radius: 12px;
   }
 
   .sme-card-body h3 {
@@ -3355,7 +3405,7 @@ html, body {
 
   .sme-card-stage {
     padding: 14px 12px;
-    border-radius: 14px;
+    border-radius: 10px;
     margin-bottom: 18px;
   }
 
@@ -3363,6 +3413,7 @@ html, body {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    padding: 10px 12px;
   }
 
   .sme-feed-action {
@@ -3370,8 +3421,13 @@ html, body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    border-top: 1px dashed #f1f5f9;
+    border-top: 1px dashed #e2e8f0;
     padding-top: 6px;
+  }
+
+  .sme-voucher-card {
+    padding: 14px;
+    border-radius: 8px;
   }
 
   .sme-voucher-student {
@@ -3379,8 +3435,19 @@ html, body {
     gap: 8px;
   }
 
+  .sme-ai-card {
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .sme-dorm-card {
+    padding: 14px;
+    border-radius: 8px;
+  }
+
   .dorm-bed-matrix {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .sme-feed-footer {
@@ -3403,138 +3470,83 @@ html, body {
   .sme-controls-footer {
     max-width: 100%;
     margin-top: 18px;
-    padding: 0 2px;
+    padding: 0 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: transparent;
   }
-}
 
-/* ==========================================
-   4. SMALL SMARTPHONES (<= 540px)
-   ========================================== */
-@media (max-width: 540px) {
-  .container {
-    width: calc(100% - 24px);
-  }
-
-  /* Header elements */
-  .nav {
-    height: 68px;
-  }
-
-  .brand-logo-img {
-    height: 29px;
-    max-width: 125px;
-  }
-
-  .lang-switch-pill {
-    padding: 3px 8px;
-    font-size: 11px;
-  }
-
-  .nav-actions {
-    gap: 8px;
-  }
-
-  .nav-actions .btn-primary {
-    padding: 8px 12px;
+  .sme-arrow-btn {
+    padding: 8px 14px;
     font-size: 12px;
-    border-radius: 10px;
+    border-radius: 6px;
   }
 
-  .menu-toggle {
-    padding: 6px 10px;
-    font-size: 16px;
-  }
-
-  /* 12 Modules & Steps */
-  .module-grid {
+  /* Platform & Modules */
+  .platform-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .platform-card {
+    padding: 22px 18px;
+  }
+
+  .module-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
   .module {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D7E0D7;
-  border-radius: 8px;
-  padding: 22px;
-  min-height: 155px;
-  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-}
+    padding: 16px 14px;
+    min-height: auto;
+  }
 
-  .steps {
+  /* Tech Strip */
+  .tech-strip {
+    padding: 26px 0;
+  }
+
+  .tech-inner {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .tech-pill {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  /* Role Showcase */
+  .role-layout {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 20px;
   }
 
-  .step {
-    padding: 20px 16px;
-  }
-
-  .security-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .security-card {
-    padding: 20px 16px;
-  }
-
-  /* Pricing Calculator */
-  .pricing-calc-box {
-    padding: 20px 14px;
-  }
-
-  .calc-slider-head {
-    flex-direction: column;
-    align-items: flex-start;
+  .role-tabs {
     gap: 8px;
   }
 
-  .calc-student-badge {
-    font-size: 15px;
-    padding: 3px 10px;
+  .role-tab {
+    padding: 13px 15px;
+    font-size: 13px;
+    border-radius: 6px;
   }
 
-  .calc-toggle-row {
-    flex-wrap: wrap;
-    font-size: 12px;
-    gap: 8px;
+  .role-tab.active {
+    transform: none;
   }
 
-  .price-card {
-  background: #ffffff;
-  border: 1px solid #D6DFD6;
-  border-radius: 10px;
-  padding: 28px;
-  position: relative;
-  box-shadow: 0 10px 28px rgba(20, 37, 31, 0.05);
-  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-}
-
-  .price {
-    font-size: 32px;
+  .role-preview {
+    padding: 16px;
+    min-height: auto;
+    border-radius: 10px;
   }
 
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 8px;
-  }
-
-  /* Role Preview */
-  .preview-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+  .preview-window {
+    padding: 16px;
+    border-radius: 8px;
   }
 
   .preview-metrics {
@@ -3554,6 +3566,284 @@ html, body {
     font-size: 18px;
   }
 
+  /* AI Section */
+  .ai-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ai-card {
+    padding: 22px 18px;
+    min-height: auto;
+  }
+
+  /* Mobile App Showcase */
+  .mobile-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .mobile-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .check-list {
+    max-width: 340px;
+    margin: 20px auto;
+    text-align: left;
+  }
+
+  .phone-stage {
+    min-height: 380px;
+    padding: 20px 10px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .phone {
+    width: 230px;
+    height: auto;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .pf1 {
+    top: 16px;
+    left: 8px;
+  }
+
+  .pf2 {
+    bottom: 16px;
+    right: 8px;
+  }
+
+  /* CMS Showcase */
+  .cms-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cms-art {
+    order: 2;
+    transform: none !important;
+    width: 100%;
+  }
+
+  .cms-copy {
+    text-align: center;
+  }
+
+  .cms-points {
+    text-align: left;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Workflow */
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .step {
+    padding: 18px 16px;
+    border-radius: 8px;
+  }
+
+  /* Pricing */
+  .price-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .price-card {
+    padding: 24px 20px;
+    border-radius: 8px;
+    transform: none !important;
+  }
+
+  .price-card.featured {
+    transform: none !important;
+  }
+
+  /* Security */
+  .security-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .security-card {
+    padding: 18px 16px;
+    border-radius: 8px;
+  }
+
+  /* FAQ */
+  .faq details {
+    padding: 14px 16px;
+    border-radius: 7px;
+  }
+
+  .faq summary {
+    font-size: 13.5px;
+  }
+
+  /* CTA Banner */
+  .cta {
+    padding: 60px 0;
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .cta h2 {
+    font-size: clamp(24px, 6vw, 32px);
+    margin: 0 auto;
+  }
+
+  .cta p {
+    margin: 10px auto 0;
+    max-width: 440px;
+  }
+
+  .cta .btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 16px auto 0;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-about {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  /* Floating WhatsApp Cluster */
+  .floating-action-cluster {
+    bottom: 14px;
+    right: 12px;
+    gap: 8px;
+  }
+
+  .btn-whatsapp-floating {
+    width: 46px;
+    height: 46px;
+  }
+
+  .btn-scroll-up-mini {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ==========================================
+   4. SMALL SMARTPHONES (<= 540px)
+   ========================================== */
+@media (max-width: 540px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  /* Header elements */
+  .nav {
+    height: 68px;
+  }
+
+  .nav-links {
+    top: 68px;
+    max-height: calc(100vh - 68px);
+  }
+
+  .brand-logo-img {
+    height: 29px;
+    max-width: 125px;
+  }
+
+  .lang-switch-pill {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .nav-actions .btn-primary {
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .menu-toggle {
+    padding: 6px 10px;
+    font-size: 16px;
+  }
+
+  /* 12 Modules & Steps */
+  .module-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .module {
+    padding: 16px 14px;
+    min-height: auto;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .step {
+    padding: 16px 14px;
+  }
+
+  .security-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .security-card {
+    padding: 16px 14px;
+  }
+
+  .price {
+    font-size: 32px;
+  }
+
+  /* Hide phone-float on small screens so it never covers the phone mockup */
+  .phone-float {
+    display: none !important;
+  }
+
+  /* Question items on small mobile */
+  .cq-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .voucher-line {
+    font-size: 11px;
+  }
+
   /* Modal Dialog */
   .modal-overlay {
     padding: 12px;
@@ -3561,7 +3851,14 @@ html, body {
 
   .modal-box-light {
     padding: 20px 16px;
-    border-radius: 16px;
+    border-radius: 12px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+
+  .form-input, .form-select {
+    font-size: 16px !important; /* Prevents iOS auto-zoom on input tap */
   }
 
   .modal-close-btn {
@@ -3578,13 +3875,13 @@ html, body {
    ========================================== */
 @media (max-width: 380px) {
   .nav-actions .btn-primary {
-    display: none; /* Clean uncluttered header on iPhone SE & small screens */
+    display: none; /* Clean uncluttered header on iPhone SE & extra-small screens */
   }
 
   .phone {
-    width: 240px;
-    padding: 12px 12px 18px;
-    border-width: 8px;
+    width: 215px;
+    padding: 12px 10px 16px;
+    border-width: 7px;
   }
 
   .hero-mobile-kpi {
@@ -3601,6 +3898,19 @@ html, body {
 
   .kpi-card strong {
     margin: 0;
+  }
+
+  .sme-card {
+    padding: 16px 12px;
+  }
+
+  .sme-arrow-btn {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .hero-copy h1 {
+    font-size: 26px;
   }
 }
 
