@@ -2019,40 +2019,57 @@ header.scrolled {
 }
 
 /* ==========================================================================
-   Technology Foundation Strip
+   Institutional Standards & Data Security Strip
    ========================================================================== */
 .tech-strip {
-  background: #E9EEE8;
-  padding: 34px 0;
-  border-top: 1px solid #D7E0D7;
-  border-bottom: 1px solid #D7E0D7;
+  background: #F8FAF8;
+  padding: 28px 0;
+  border-top: 1px solid #E2EDE7;
+  border-bottom: 1px solid #E2EDE7;
 }
 
 .tech-inner {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 12px 14px;
   flex-wrap: wrap;
 }
 
 .tech-label {
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #657e72;
+  letter-spacing: 0.1em;
+  color: #52665B;
   font-weight: 800;
+  margin-right: 6px;
 }
 
 .tech-pill {
-  padding: 9px 18px;
-  border: 1px solid #d4e7db;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border: 1px solid #D5E2DA;
   border-radius: var(--radius-full);
   background: #ffffff;
-  color: var(--deep);
-  font-size: 13px;
+  color: #0E2A1F;
+  font-size: 12.5px;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(21, 61, 50, 0.04);
+  box-shadow: 0 2px 8px rgba(14, 42, 31, 0.04);
+  transition: all 0.2s ease;
+}
+
+.tech-pill:hover {
+  border-color: #059669;
+  color: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.10);
+}
+
+.tech-pill .pill-ico {
+  font-size: 13px;
+  line-height: 1;
 }
 
 /* ==========================================================================
@@ -3790,12 +3807,20 @@ html, body {
 
   /* Tech Strip */
   .tech-strip {
-    padding: 26px 0;
+    padding: 22px 0;
   }
 
   .tech-inner {
     gap: 8px;
     justify-content: center;
+  }
+
+  .tech-label {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 4px;
+    font-size: 10px;
   }
 
   .tech-pill {
