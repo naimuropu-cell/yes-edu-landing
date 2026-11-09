@@ -744,11 +744,13 @@ header.scrolled {
 
 /* SME Top Story Bar */
 .sme-story-bar {
+  max-width: 820px;
+  margin: 0 auto 24px auto;
+  padding: 0 4px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 24px;
 }
 
 .sme-story-pill {
@@ -951,336 +953,570 @@ header.scrolled {
   margin-bottom: 22px;
 }
 
-/* Authentic Dark Centerpiece Stage (Exact yes-sme layout & feel) */
+/* Soft Canvas Stage (Clean, Minimalist SaaS UI) */
 .sme-card-stage {
-  background: #09141d;
-  border: 1px solid #142533;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
-  padding: 24px 28px;
+  padding: 20px;
   margin-bottom: 24px;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
-.sme-stage-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  align-items: center;
-  gap: 28px;
+.sme-live-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-/* Artifact Card (Authentic physical white card on dark stage) */
-.sme-artifact-card {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 16px 18px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  color: #0f172a;
-  font-family: var(--font-sans);
-}
-
-/* 1. RFID Card Artifact */
-.rfid-top-brand {
+.sme-live-feed-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
-  padding-bottom: 6px;
-  border-bottom: 1.5px solid #10b981;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.rfid-inst-name {
+.sme-feed-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: live-pulse 2s infinite;
+}
+
+.live-dot.dot-pink {
+  background: #e11d48;
+  animation-name: live-pulse-pink;
+}
+
+.live-dot.dot-emerald {
+  background: #059669;
+  animation-name: live-pulse;
+}
+
+.live-dot.dot-teal {
+  background: #0d9488;
+  animation-name: live-pulse-teal;
+}
+
+@keyframes live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@keyframes live-pulse-pink {
+  0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.6); }
+  70% { box-shadow: 0 0 0 6px rgba(225, 29, 72, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }
+}
+
+@keyframes live-pulse-teal {
+  0% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.6); }
+  70% { box-shadow: 0 0 0 6px rgba(13, 148, 136, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0); }
+}
+
+.sme-feed-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+.feed-latency {
+  color: #64748b;
+}
+
+.feed-badge-online {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+/* Feed Rows */
+.sme-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.sme-feed-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.sme-feed-row:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.sme-feed-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #059669;
+  font-weight: 700;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid #a7f3d0;
+}
+
+.sme-feed-avatar.avatar-blue {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+.sme-feed-avatar.avatar-amber {
+  background: #fffbeb;
+  color: #d97706;
+  border-color: #fde68a;
+}
+
+.sme-feed-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sme-feed-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sme-feed-roll {
+  font-size: 11px;
+  font-weight: 500;
+  color: #64748b;
+  font-family: var(--font-mono);
+}
+
+.sme-feed-sub {
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.sme-feed-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.sme-time {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #64748b;
+}
+
+.sme-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.sme-status-pill.success {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.sme-status-pill.warning {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+/* Feed Footer Stats */
+.sme-feed-footer {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.feed-stat-pill {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  color: #475569;
+}
+
+.feed-stat-pill b {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* Card 02: Voucher & Ledger Card */
+.sme-voucher-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.sme-voucher-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid #e2e8f0;
+  margin-bottom: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sme-voucher-inst {
+  display: block;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.05em;
   color: #0f172a;
 }
 
-.rfid-student-profile {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.rfid-photo-placeholder {
-  width: 44px;
-  height: 48px;
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
-
-.rfid-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.rfid-name {
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.rfid-meta {
-  font-size: 10.5px;
-  color: #475569;
-}
-
-.rfid-gate-status {
+.sme-voucher-id {
+  display: block;
   font-size: 10px;
-  font-weight: 600;
-  color: #059669;
-}
-
-.rfid-bottom-barcode {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  padding-top: 6px;
-  border-top: 1px dashed #e2e8f0;
-}
-
-.barcode-bars {
-  width: 100%;
-  height: 18px;
-  background: repeating-linear-gradient(90deg, #0f172a 0px, #0f172a 2px, transparent 2px, transparent 4px, #0f172a 4px, #0f172a 5px, transparent 5px, transparent 7px, #0f172a 7px, #0f172a 10px, transparent 10px, transparent 12px);
-}
-
-.barcode-number {
   font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: #334155;
+  color: #64748b;
+  margin-top: 2px;
 }
 
-/* 2. Receipt Artifact */
-.receipt-header-row {
-  display: flex;
-  justify-content: space-between;
+.sme-voucher-seal {
+  display: inline-flex;
   align-items: center;
-  margin-bottom: 10px;
-  padding-bottom: 6px;
-  border-bottom: 1.5px solid #e11d48;
-}
-
-.receipt-brand {
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: #0f172a;
-}
-
-.receipt-paid-seal {
+  gap: 5px;
   background: #ecfdf5;
   border: 1.5px solid #10b981;
   color: #059669;
   font-weight: 800;
   font-size: 10.5px;
-  padding: 2px 7px;
-  border-radius: 4px;
-  transform: rotate(-3deg);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
 }
 
-.receipt-body {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 11px;
-  margin-bottom: 10px;
-}
-
-.receipt-line {
-  display: flex;
-  justify-content: space-between;
-  color: #334155;
-}
-
-.receipt-total-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 6px;
-  border-top: 1px dashed #cbd5e1;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.receipt-amount {
-  font-size: 14px;
-  font-family: var(--font-mono);
-  color: #059669;
-}
-
-.receipt-footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 6px;
-  border-top: 1px dashed #e2e8f0;
-}
-
-.receipt-trx {
-  font-size: 9.5px;
-  font-family: var(--font-mono);
-  color: #64748b;
-}
-
-/* 3. Exam Artifact */
-.exam-sheet-head {
-  margin-bottom: 8px;
-  padding-bottom: 6px;
-  border-bottom: 1.5px solid #0f172a;
-  text-align: center;
-}
-
-.exam-school-title {
-  display: block;
-  font-size: 11px;
-  font-weight: 800;
-  color: #0f172a;
-}
-
-.exam-meta-line {
-  display: block;
-  font-size: 9.5px;
-  color: #64748b;
-}
-
-.exam-sheet-stimulus {
-  background: #f8fafc;
-  border-left: 2px solid #10b981;
-  padding: 6px 8px;
-  font-size: 10.5px;
-  line-height: 1.5;
-  color: #1e293b;
-  margin-bottom: 8px;
-}
-
-.exam-sheet-questions {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 10.5px;
-  color: #334155;
-}
-
-.exam-q-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 6px;
-}
-
-.exam-q-row span {
-  color: #059669;
-  font-family: var(--font-mono);
-  font-weight: 700;
-}
-
-/* 4. Dorm Artifact */
-.dorm-room-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.dorm-room-title {
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.dorm-shariah-seal {
-  background: #ecfdf5;
-  border: 1px solid #10b981;
-  color: #059669;
-  font-size: 9.5px;
-  font-weight: 800;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.dorm-mini-grid {
+.sme-voucher-student {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
-  margin-bottom: 8px;
+  gap: 8px 16px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #e2e8f0;
 }
 
-.mini-bed {
-  border-radius: 6px;
-  padding: 6px;
-  text-align: center;
+.voucher-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.mini-bed.filled {
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-}
-
-.mini-bed.grant {
-  background: #ecfdf5;
-  border: 1px solid #10b981;
-}
-
-.mini-bed.empty {
-  background: #ffffff;
-  border: 1px dashed #cbd5e1;
-}
-
-.mini-bed span {
-  display: block;
+.voucher-label {
   font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.voucher-val {
+  font-size: 12.5px;
   font-weight: 700;
   color: #0f172a;
 }
 
-.mini-bed small {
-  display: block;
-  font-size: 8.5px;
-  color: #64748b;
-}
-
-.dorm-waqf-donor-line {
-  font-size: 9px;
-  color: #64748b;
-  text-align: center;
-  padding-top: 4px;
-  border-top: 1px dashed #e2e8f0;
-}
-
-/* Stage Specs (Exact yes-sme layout) */
-.sme-stage-specs {
+.sme-voucher-breakdown {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
+  font-size: 11.5px;
+  color: #334155;
+}
+
+.voucher-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.voucher-line .mono {
   font-family: var(--font-mono);
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.voucher-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1.5px dashed #cbd5e1;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 2px;
+}
+
+.voucher-grand-total {
+  font-size: 15px;
+  font-family: var(--font-mono);
+  color: #059669;
+  font-weight: 800;
+}
+
+/* Card 03: NCTB AI Question Generator Canvas */
+.sme-ai-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.sme-ai-meta-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.ai-chip {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.ai-chip.highlight {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #047857;
+}
+
+.sme-ai-stimulus {
+  background: #f8fafc;
+  border-left: 3px solid #10b981;
+  border-radius: 0 8px 8px 0;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.stimulus-tag {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.stimulus-text {
   font-size: 12px;
+  line-height: 1.55;
+  color: #334155;
 }
 
-.spec-item {
-  color: #94a3b8;
+.sme-cq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.spec-item.highlight {
-  color: #34d399;
+.cq-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.cq-badge {
+  font-weight: 700;
+  color: #059669;
+  font-size: 11.5px;
+  flex-shrink: 0;
+}
+
+.cq-text {
+  color: #334155;
+}
+
+/* Card 04: Dormitory Matrix & Shariah Waqf */
+.sme-dorm-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.dorm-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dorm-building-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+}
+
+.dorm-shariah-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  color: #047857;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.dorm-bed-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.bed-tile {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bed-tile.occupied {
+  border-color: #cbd5e1;
+}
+
+.bed-tile.waqf {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.bed-tile.vacant {
+  background: #ffffff;
+  border: 1.5px dashed #cbd5e1;
+}
+
+.bed-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.bed-id {
+  font-size: 11px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: #0f172a;
+}
+
+.bed-status-badge {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #475569;
+  background: #e2e8f0;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.waqf-pill {
+  background: #dcfce7;
+  color: #15803d;
   font-weight: 700;
 }
 
-.spec-stat {
-  font-family: var(--font-heading);
-  font-size: 18px;
+.vacant-pill {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.bed-resident {
+  font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
-  margin-top: 4px;
-  letter-spacing: -0.01em;
+  color: #0f172a;
+}
+
+.bed-dept {
+  font-size: 10.5px;
+  color: #64748b;
+}
+
+.bed-meta {
+  font-size: 10px;
+  font-weight: 600;
+  color: #059669;
+  margin-top: 2px;
+}
+
+.text-muted {
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
+}
+
+.text-emerald {
+  color: #059669 !important;
 }
 
 /* Feature Checklist Grid */
@@ -1306,11 +1542,12 @@ header.scrolled {
 
 /* SME Carousel Bottom Controls */
 .sme-controls-footer {
+  max-width: 820px;
+  margin: 28px auto 0 auto;
+  padding: 0 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 28px;
-  padding: 0 4px;
 }
 
 .sme-arrow-btn {
@@ -1355,6 +1592,7 @@ header.scrolled {
   border-radius: 99px;
   background: #0f172a;
 }
+
 
 
 /* ==========================================================================
@@ -2986,8 +3224,10 @@ html, body {
 
   /* SME Peek Carousel Mobile Responsive Rules */
   .sme-story-bar {
+    max-width: 100%;
     gap: 10px;
     margin-bottom: 16px;
+    padding: 0 2px;
   }
 
   .sme-drag-hint {
@@ -3004,12 +3244,12 @@ html, body {
 
   .sme-card {
     width: calc(100vw - 32px);
-    padding: 24px 18px;
+    padding: 22px 16px;
     border-radius: 18px;
   }
 
   .sme-card-body h3 {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.35;
     margin-bottom: 6px;
   }
@@ -3021,14 +3261,38 @@ html, body {
   }
 
   .sme-card-stage {
-    padding: 16px 14px;
+    padding: 14px 12px;
     border-radius: 14px;
     margin-bottom: 18px;
   }
 
-  .sme-stage-grid {
+  .sme-feed-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .sme-feed-action {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px dashed #f1f5f9;
+    padding-top: 6px;
+  }
+
+  .sme-voucher-student {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 8px;
+  }
+
+  .dorm-bed-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  .sme-feed-footer {
+    flex-direction: column;
+    gap: 6px;
   }
 
   .sme-check-grid {
@@ -3041,99 +3305,9 @@ html, body {
   }
 
   .sme-controls-footer {
+    max-width: 100%;
     margin-top: 18px;
-  }
-
-  .sme-arrow-btn {
-    padding: 8px 14px;
-    font-size: 12px;
-  }
-
-  /* Roles Showcase */
-  .role-tab {
-    padding: 14px 16px;
-  }
-
-  .role-tab.active {
-    transform: none !important;
-  }
-
-  .role-preview {
-    padding: 18px 14px;
-    border-radius: 16px;
-  }
-
-  .preview-window {
-    padding: 18px 14px;
-  }
-
-  /* Mobile App section */
-  .phone-float {
-    display: none !important;
-  }
-
-  .phone-stage {
-    padding: 10px 0;
-  }
-
-  .mobile-copy {
-    text-align: center;
-  }
-
-  .check-list {
-    align-items: flex-start;
-    text-align: left;
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto 28px;
-  }
-
-  /* CMS section */
-  .cms-copy {
-    text-align: center;
-  }
-
-  .cms-points {
-    max-width: 340px;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  /* CTA */
-  .cta {
-    padding: 55px 0;
-  }
-
-  .cta-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 22px;
-  }
-
-  .cta-inner p {
-    font-size: 14px;
-  }
-
-  .cta-inner .btn {
-    width: 100%;
-    max-width: 290px;
-  }
-
-  /* Floating Action Hub */
-  .floating-action-cluster {
-    bottom: 16px;
-    right: 14px;
-    gap: 8px;
-  }
-
-  .btn-scroll-up-mini {
-    width: 34px;
-    height: 34px;
-  }
-
-  .btn-whatsapp-floating {
-    width: 46px;
-    height: 46px;
+    padding: 0 2px;
   }
 }
 

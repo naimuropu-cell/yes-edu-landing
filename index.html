@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=7.0">
+  <link rel="stylesheet" href="css/style.css?v=7.1">
 </head>
 <body>
 
@@ -363,50 +363,97 @@
                   <span class="lang-bn hidden">জেডকেটেকো ও রিয়েলটাইম বায়োমেট্রিক মেশিনের সাথে সরাসরি সংযুক্ত। শিক্ষার্থী গেটে কার্ড ছোঁয়ামাত্র সার্ভারে লগ ইন হয় এবং মুহূর্তে অভিভাবকের মোবাইলে বাংলা এসএমএস পৌঁছে যায়।</span>
                 </p>
 
-                <!-- Authentic Centerpiece Stage: Physical Artifact + Specs -->
+                <!-- Software Artifact: Live Campus Gate Activity Feed -->
                 <div class="sme-card-stage">
-                  <div class="sme-stage-grid">
+                  <div class="sme-live-feed">
+                    <div class="sme-live-feed-header">
+                      <div class="sme-feed-title">
+                        <span class="live-dot"></span>
+                        <span class="lang-en">Live Attendance Stream • Gate #02</span>
+                        <span class="lang-bn hidden">লাইভ গেট স্ট্রিম • মূল ফটক #০২</span>
+                      </div>
+                      <div class="sme-feed-meta">
+                        <span class="feed-latency">0.18s latency</span>
+                        <span class="feed-badge-online">ZKTeco Online</span>
+                      </div>
+                    </div>
                     
-                    <!-- Artifact: Student Smart RFID Card -->
-                    <div class="sme-artifact-card rfid-artifact">
-                      <div class="rfid-top-brand">
-                        <span class="rfid-inst-name">GREEN MODEL COLLEGE</span>
-                        <span class="rfid-chip-ico">
-                          <svg width="22" height="18" viewBox="0 0 24 20" fill="none" stroke="#d97706" stroke-width="1.8">
-                            <rect x="2" y="2" width="20" height="16" rx="3"></rect>
-                            <line x1="8" y1="2" x2="8" y2="18"></line>
-                            <line x1="16" y1="2" x2="16" y2="18"></line>
-                            <line x1="2" y1="10" x2="22" y2="10"></line>
-                          </svg>
-                        </span>
-                      </div>
-                      <div class="rfid-student-profile">
-                        <div class="rfid-photo-placeholder">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2">
-                            <circle cx="12" cy="8" r="4"></circle>
-                            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
-                          </svg>
+                    <div class="sme-feed-list">
+                      <!-- Row 1 -->
+                      <div class="sme-feed-row">
+                        <div class="sme-feed-avatar">TR</div>
+                        <div class="sme-feed-info">
+                          <div class="sme-feed-name">
+                            <span>Tahmid Rahman</span>
+                            <span class="sme-feed-roll">Class 9-A • Roll 04</span>
+                          </div>
+                          <div class="sme-feed-sub">RFID Smart Card Punch • Device #ZK-Gate2</div>
                         </div>
-                        <div class="rfid-info">
-                          <span class="rfid-name">Tahmid Rahman</span>
-                          <span class="rfid-meta">ID: YES-9041 • Class 9-A (Roll 04)</span>
-                          <span class="rfid-gate-status">Gate 02 Verified • 09:02 AM</span>
+                        <div class="sme-feed-action">
+                          <span class="sme-time">09:02:14 AM</span>
+                          <span class="sme-status-pill success">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span class="lang-en">Present • SMS Sent</span>
+                            <span class="lang-bn hidden">উপস্থিত • এসএমএস প্রেরিত</span>
+                          </span>
                         </div>
                       </div>
-                      <div class="rfid-bottom-barcode">
-                        <div class="barcode-bars"></div>
-                        <span class="barcode-number">8 941120 019232</span>
+
+                      <!-- Row 2 -->
+                      <div class="sme-feed-row">
+                        <div class="sme-feed-avatar avatar-blue">SI</div>
+                        <div class="sme-feed-info">
+                          <div class="sme-feed-name">
+                            <span>Samiul Islam</span>
+                            <span class="sme-feed-roll">Class 10-B • Roll 12</span>
+                          </div>
+                          <div class="sme-feed-sub">Facial Recognition • Device #FR-Gate2</div>
+                        </div>
+                        <div class="sme-feed-action">
+                          <span class="sme-time">09:01:48 AM</span>
+                          <span class="sme-status-pill success">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span class="lang-en">Present • SMS Sent</span>
+                            <span class="lang-bn hidden">উপস্থিত • এসএমএস প্রেরিত</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Row 3 -->
+                      <div class="sme-feed-row">
+                        <div class="sme-feed-avatar avatar-amber">NJ</div>
+                        <div class="sme-feed-info">
+                          <div class="sme-feed-name">
+                            <span>Nusrat Jahan</span>
+                            <span class="sme-feed-roll">Class 8-A • Roll 09</span>
+                          </div>
+                          <div class="sme-feed-sub">RFID Smart Card Punch • Device #ZK-Gate2</div>
+                        </div>
+                        <div class="sme-feed-action">
+                          <span class="sme-time">08:58:32 AM</span>
+                          <span class="sme-status-pill warning">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span class="lang-en">Late (8m) • Alert Sent</span>
+                            <span class="lang-bn hidden">বিলম্ব (৮মি.) • সতর্কতা প্রেরিত</span>
+                          </span>
+                        </div>
                       </div>
                     </div>
 
-                    <!-- Specs List (Matching yes-sme layout) -->
-                    <div class="sme-stage-specs">
-                      <div class="spec-item highlight">✓ 0.18s Cloud Sync Latency</div>
-                      <div class="spec-item">• ZKTeco & Realtime Ready</div>
-                      <div class="spec-item">• Teletalk/GP Govt. Gateway</div>
-                      <div class="spec-stat">2,400+ Cards / Min</div>
+                    <div class="sme-feed-footer">
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Sync Speed: <b>0.18s Cloud Latency</b></span>
+                        <span class="lang-bn hidden">সিঙ্ক স্পিড: <b>০.১৮ সেকেন্ড</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Capacity: <b>2,400+ Cards / Min</b></span>
+                        <span class="lang-bn hidden">ক্ষমতা: <b>২৪০০+ কার্ড / মিনিট</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">SMS Gateway: <b>Teletalk / GP Govt. DLR</b></span>
+                        <span class="lang-bn hidden">এসএমএস গেটওয়ে: <b>টেলিটক / জিপি মাস্কিং</b></span>
+                      </div>
                     </div>
-
                   </div>
                 </div>
 
@@ -444,52 +491,83 @@
                   <span class="lang-bn hidden">অভিভাবকরা ঘরে বসেই বিকাশ অ্যাপ দিয়ে ফি পরিশোধ করেন। টাকা জমামাত্র ডিজিটাল মানি রিসিট তৈরি হয় এবং প্রতিষ্ঠানের মূল লেজার বই স্বয়ংক্রিয়ভাবে আপডেট হয়ে যায়।</span>
                 </p>
 
-                <!-- Authentic Centerpiece Stage: Digital Receipt + Specs -->
+                <!-- Software Artifact: Digital Fee Voucher & Webhook Reconciliation -->
                 <div class="sme-card-stage">
-                  <div class="sme-stage-grid">
-                    
-                    <!-- Artifact: Digital Money Receipt Voucher -->
-                    <div class="sme-artifact-card receipt-artifact">
-                      <div class="receipt-header-row">
-                        <span class="receipt-brand">YES EDU CAMPUS RECEIPT</span>
-                        <span class="receipt-paid-seal">PAID ✓</span>
+                  <div class="sme-live-feed">
+                    <div class="sme-live-feed-header">
+                      <div class="sme-feed-title">
+                        <span class="live-dot dot-pink"></span>
+                        <span class="lang-en">bKash PGW Webhook • Auto Reconciled</span>
+                        <span class="lang-bn hidden">বিকাশ মার্চেন্ট ওয়েবহুক • স্বয়ংক্রিয় সমন্বয়</span>
                       </div>
-                      <div class="receipt-body">
-                        <div class="receipt-line">
-                          <span>Student:</span>
-                          <b>Tahmid Rahman (Class 9-A)</b>
-                        </div>
-                        <div class="receipt-line">
-                          <span>Breakdown:</span>
-                          <span>Tuition (৳2,500) + Exam (৳1,000)</span>
-                        </div>
-                        <div class="receipt-total-row">
-                          <span>Total Paid:</span>
-                          <span class="receipt-amount">৳ 3,500.00</span>
-                        </div>
-                      </div>
-                      <div class="receipt-footer-row">
-                        <span class="receipt-trx">TrxID: 8NM9X72K • bKash PGW</span>
-                        <span class="receipt-qr-code">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
-                            <rect x="3" y="3" width="6" height="6"></rect>
-                            <rect x="15" y="3" width="6" height="6"></rect>
-                            <rect x="15" y="15" width="6" height="6"></rect>
-                            <rect x="3" y="15" width="6" height="6"></rect>
-                            <path d="M10 10h4v4h-4z"></path>
-                          </svg>
-                        </span>
+                      <div class="sme-feed-meta">
+                        <span class="feed-latency">TrxID: 8NM9X72K</span>
+                        <span class="feed-badge-online">Webhook 200 OK</span>
                       </div>
                     </div>
 
-                    <!-- Specs List -->
-                    <div class="sme-stage-specs">
-                      <div class="spec-item highlight">✓ Instant Bank Webhook Sync</div>
-                      <div class="spec-item">• Zero Counter Cash Queues</div>
-                      <div class="spec-item">• Double-Entry Ledger Balanced</div>
-                      <div class="spec-stat">100% Audit Accurate</div>
+                    <div class="sme-voucher-card">
+                      <div class="sme-voucher-header">
+                        <div>
+                          <span class="sme-voucher-inst">YES MODEL SCHOOL & COLLEGE</span>
+                          <span class="sme-voucher-id">RECEIPT #VCR-2026-9041 • CASH BOOK REF: CB-881</span>
+                        </div>
+                        <div class="sme-voucher-seal">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                          <span class="lang-en">PAID & POSTED</span>
+                          <span class="lang-bn hidden">পরিশোধিত ও সমন্বিত</span>
+                        </div>
+                      </div>
+
+                      <div class="sme-voucher-student">
+                        <div class="voucher-field">
+                          <span class="voucher-label">Student Name</span>
+                          <span class="voucher-val">Tahmid Rahman</span>
+                        </div>
+                        <div class="voucher-field">
+                          <span class="voucher-label">Class & Roll</span>
+                          <span class="voucher-val">Class 9-A • Roll 04</span>
+                        </div>
+                        <div class="voucher-field">
+                          <span class="voucher-label">Payment Gateway</span>
+                          <span class="voucher-val">bKash Merchant PGW</span>
+                        </div>
+                        <div class="voucher-field">
+                          <span class="voucher-label">Settlement Time</span>
+                          <span class="voucher-val">09 Nov 2026, 09:14 AM</span>
+                        </div>
+                      </div>
+
+                      <div class="sme-voucher-breakdown">
+                        <div class="voucher-line">
+                          <span>Monthly Tuition Fee (November 2026)</span>
+                          <span class="mono">৳ 2,500.00</span>
+                        </div>
+                        <div class="voucher-line">
+                          <span>Annual Examination & Assessment Fee</span>
+                          <span class="mono">৳ 1,000.00</span>
+                        </div>
+                        <div class="voucher-total-row">
+                          <span>Auto-Credited to Main General Ledger:</span>
+                          <span class="voucher-grand-total mono">৳ 3,500.00</span>
+                        </div>
+                      </div>
                     </div>
 
+                    <div class="sme-feed-footer">
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Gateway: <b>Direct bKash / Nagad API</b></span>
+                        <span class="lang-bn hidden">গেটওয়ে: <b>সরাসরি বিকাশ / নগদ এপিআই</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Posting: <b>Instant Double-Entry Journal</b></span>
+                        <span class="lang-bn hidden">পোস্টিং: <b>মুহূর্তে ডাবল-এন্ট্রি জার্নাল</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Accuracy: <b>100% Audit Balanced</b></span>
+                        <span class="lang-bn hidden">নির্ভুলতা: <b>১০০% নির্ভুল অডিট</b></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -527,34 +605,67 @@
                   <span class="lang-bn hidden">বাংলাদেশ এনসিটিবি কারিকুলাম অনুসরণ করে তৈরি। শিক্ষকরা মুহূর্তের মধ্যে ক, খ, গ, ঘ ধাপভিত্তিক মানসম্মত সৃজনশীল পরীক্ষার প্রশ্ন ও নমুনা উত্তর তৈরি করতে পারেন।</span>
                 </p>
 
-                <!-- Authentic Centerpiece Stage: Printed Exam Paper + Specs -->
+                <!-- Software Artifact: NCTB AI Question Generator Canvas -->
                 <div class="sme-card-stage">
-                  <div class="sme-stage-grid">
-                    
-                    <!-- Artifact: Printed NCTB Exam Question Paper -->
-                    <div class="sme-artifact-card exam-artifact">
-                      <div class="exam-sheet-head">
-                        <span class="exam-school-title">MODEL ACADEMY • ANNUAL EXAM 2026</span>
-                        <span class="exam-meta-line">General Science • Class 9 • Marks: 70 • Time: 2h 30m</span>
+                  <div class="sme-live-feed">
+                    <div class="sme-live-feed-header">
+                      <div class="sme-feed-title">
+                        <span class="live-dot dot-emerald"></span>
+                        <span class="lang-en">AI Question Generator • NCTB 2026 Syllabus</span>
+                        <span class="lang-bn hidden">এআই প্রশ্ন জেনারেটর • এনসিটিবি ২০২৬ পাঠ্যক্রম</span>
                       </div>
-                      <div class="exam-sheet-stimulus">
-                        <b>উদ্দীপক:</b> ১৫ কেজি ভরের স্থির ট্রলির ওপর ৬০ নিউটন অনুভূমিক বল প্রয়োগ করা হলো...
-                      </div>
-                      <div class="exam-sheet-questions">
-                        <div class="exam-q-row"><b>(ক)</b> বলের আন্তর্জাতিক একক কী? <span>[১]</span></div>
-                        <div class="exam-q-row"><b>(খ)</b> ঘর্ষণ বল কেন প্রয়োজনীয় উপদ্রব? <span>[২]</span></div>
-                        <div class="exam-q-row"><b>(গ)</b> ত্বরণের মান গাণিতিকভাবে নির্ণয় করো। <span>[৩]</span></div>
+                      <div class="sme-feed-meta">
+                        <span class="feed-latency">Engine: Edu-AI V2</span>
+                        <span class="feed-badge-online">Bloom's Taxonomy</span>
                       </div>
                     </div>
 
-                    <!-- Specs List -->
-                    <div class="sme-stage-specs">
-                      <div class="spec-item highlight">✓ Bloom's Taxonomy 4-Tier</div>
-                      <div class="spec-item">• Class 6–12 NCTB Alignment</div>
-                      <div class="spec-item">• Print-Ready PDF & Word DOCX</div>
-                      <div class="spec-stat">10x Faster Paper Drafting</div>
+                    <div class="sme-ai-card">
+                      <div class="sme-ai-meta-bar">
+                        <span class="ai-chip">Class 9 • General Science</span>
+                        <span class="ai-chip">Chapter 03: Force & Motion</span>
+                        <span class="ai-chip highlight">Creative Question (CQ)</span>
+                      </div>
+
+                      <div class="sme-ai-stimulus">
+                        <div class="stimulus-tag">উদ্দীপক (Stimulus):</div>
+                        <div class="stimulus-text">১৫ কেজি ভরের একটি স্থির ট্রলির ওপর ৬০ নিউটন অনুভূমিক বল ৫ সেকেন্ড প্রয়োগ করা হলো। ট্রলি ও মেঝের ঘর্ষণ বল ৫ নিউটন।</div>
+                      </div>
+
+                      <div class="sme-cq-list">
+                        <div class="cq-item">
+                          <span class="cq-badge">(ক) জ্ঞানমূলক [১]:</span>
+                          <span class="cq-text">বলের আন্তর্জাতিক (SI) একক কী?</span>
+                        </div>
+                        <div class="cq-item">
+                          <span class="cq-badge">(খ) অনুধাবনমূলক [২]:</span>
+                          <span class="cq-text">ঘর্ষণ বলকে কেন একটি 'প্রয়োজনীয় উপদ্রব' বলা হয় ব্যাখ্যা করো।</span>
+                        </div>
+                        <div class="cq-item">
+                          <span class="cq-badge">(গ) প্রয়োগমূলক [৩]:</span>
+                          <span class="cq-text">বল প্রয়োগকালীন সময়ে ট্রলিটির ত্বরণ নির্ণয় করো।</span>
+                        </div>
+                        <div class="cq-item">
+                          <span class="cq-badge">(ঘ) উচ্চতর দক্ষতা [৪]:</span>
+                          <span class="cq-text">প্রযুক্ত বলের মান দ্বিগুণ করলে ট্রলির বেগ কত শতাংশ বৃদ্ধি পাবে বিশ্লেষণ করো।</span>
+                        </div>
+                      </div>
                     </div>
 
+                    <div class="sme-feed-footer">
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Export: <b>Print-Ready PDF & Word DOCX</b></span>
+                        <span class="lang-bn hidden">এক্সপোর্ট: <b>প্রিন্ট-রেডি PDF ও Word DOCX</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Standards: <b>Class 6–12 NCTB Alignment</b></span>
+                        <span class="lang-bn hidden">মানদণ্ড: <b>৬ষ্ঠ-১২শ শ্রেণি এনসিটিবি ফ্রেমওয়ার্ক</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Efficiency: <b>10x Faster Paper Drafting</b></span>
+                        <span class="lang-bn hidden">গতি: <b>১০ গুণ দ্রুত প্রশ্ন প্রণয়ন</b></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -592,35 +703,87 @@
                   <span class="lang-bn hidden">আবাসিক মাদ্রাসা ও ক্যাডেট স্কুলের জন্য বিশেষায়িত সুবিধা। হোস্টেলের রুম ও সিট ট্র্যাকিং, ডাইনিং মিল টোকেন এবং সম্পূর্ণ স্বচ্ছ ওয়াকফ ও লিল্লাহ ফান্ড অডিট খতিয়ান।</span>
                 </p>
 
-                <!-- Authentic Centerpiece Stage: Dorm Matrix + Specs -->
+                <!-- Software Artifact: Dormitory Floor Matrix & Shariah Audit -->
                 <div class="sme-card-stage">
-                  <div class="sme-stage-grid">
-                    
-                    <!-- Artifact: Dormitory Bed Matrix & Waqf Seal -->
-                    <div class="sme-artifact-card dorm-artifact">
-                      <div class="dorm-room-header">
-                        <span class="dorm-room-title">BLOCK B • ROOM 204 (4-BED DORM)</span>
-                        <span class="dorm-shariah-seal">SHARIAH AUDIT ✓</span>
+                  <div class="sme-live-feed">
+                    <div class="sme-live-feed-header">
+                      <div class="sme-feed-title">
+                        <span class="live-dot dot-teal"></span>
+                        <span class="lang-en">Hostel Floor Plan & Shariah Waqf Ledger</span>
+                        <span class="lang-bn hidden">হোস্টেল ফ্লোর প্ল্যান ও শরীয়াহ ওয়াকফ অডিট লেজার</span>
                       </div>
-                      <div class="dorm-mini-grid">
-                        <div class="mini-bed filled"><span>Bed 01</span><small>Mahmud (Hifz)</small></div>
-                        <div class="mini-bed filled"><span>Bed 02</span><small>Zubayer (Kitab)</small></div>
-                        <div class="mini-bed grant"><span>Bed 03</span><small>Abdullah (Waqf)</small></div>
-                        <div class="mini-bed empty"><span>Bed 04</span><small>Available</small></div>
-                      </div>
-                      <div class="dorm-waqf-donor-line">
-                        <span>Fund: Al-Hajj Shamsul Huq Waqf Trust (#WQ-441)</span>
+                      <div class="sme-feed-meta">
+                        <span class="feed-latency">Block B • Dorm 204</span>
+                        <span class="feed-badge-online">Occupancy 3/4</span>
                       </div>
                     </div>
 
-                    <!-- Specs List -->
-                    <div class="sme-stage-specs">
-                      <div class="spec-item highlight">✓ 100% Shariah Audit Sealed</div>
-                      <div class="spec-item">• Real-Time Dorm & Bed Tracking</div>
-                      <div class="spec-item">• Automated Donor SMS Voucher</div>
-                      <div class="spec-stat">Zero Fund Leakage</div>
+                    <div class="sme-dorm-card">
+                      <div class="dorm-header-bar">
+                        <span class="dorm-building-title">ROOM 204 • 4-BED CAPACITY (QUAD DORM)</span>
+                        <span class="dorm-shariah-badge">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                          Shariah Board Audited
+                        </span>
+                      </div>
+
+                      <div class="dorm-bed-matrix">
+                        <div class="bed-tile occupied">
+                          <div class="bed-top">
+                            <span class="bed-id">Bed #01</span>
+                            <span class="bed-status-badge">Occupied</span>
+                          </div>
+                          <div class="bed-resident">Mahmud Hasan</div>
+                          <div class="bed-dept">Hifzul Quran Dept.</div>
+                          <div class="bed-meta">Hostel Fee: Paid</div>
+                        </div>
+
+                        <div class="bed-tile occupied">
+                          <div class="bed-top">
+                            <span class="bed-id">Bed #02</span>
+                            <span class="bed-status-badge">Occupied</span>
+                          </div>
+                          <div class="bed-resident">Zubayer Ahmed</div>
+                          <div class="bed-dept">Kitab (Dawra-e-Hadith)</div>
+                          <div class="bed-meta">Hostel Fee: Paid</div>
+                        </div>
+
+                        <div class="bed-tile waqf">
+                          <div class="bed-top">
+                            <span class="bed-id">Bed #03</span>
+                            <span class="bed-status-badge waqf-pill">Waqf Grant (100% Free)</span>
+                          </div>
+                          <div class="bed-resident">Abdullah Al-Mansur</div>
+                          <div class="bed-dept">Lillah Boarding Scholar</div>
+                          <div class="bed-meta">Fund: Al-Hajj Shamsul Huq Trust</div>
+                        </div>
+
+                        <div class="bed-tile vacant">
+                          <div class="bed-top">
+                            <span class="bed-id">Bed #04</span>
+                            <span class="bed-status-badge vacant-pill">Available</span>
+                          </div>
+                          <div class="bed-resident text-muted">Ready for Allocation</div>
+                          <div class="bed-dept text-muted">Bed & Locker Sanitized</div>
+                          <div class="bed-meta text-emerald">1-Tap Assign Ready</div>
+                        </div>
+                      </div>
                     </div>
 
+                    <div class="sme-feed-footer">
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Audit Seal: <b>100% Shariah Compliant</b></span>
+                        <span class="lang-bn hidden">অডিট সিল: <b>১০০% শরীয়াহ সম্মত</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Boarding: <b>Real-Time Bed & Meal Tokens</b></span>
+                        <span class="lang-bn hidden">বোর্ডিং: <b>লাইভ বেড ও মিল টোকেন ট্র্যাকিং</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Donations: <b>Instant SMS Money Receipt</b></span>
+                        <span class="lang-bn hidden">দান সংগ্রহ: <b>অটো এসএমএস মানি রিসিট</b></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -1577,6 +1740,6 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=7.0"></script>
+  <script src="js/main.js?v=7.1"></script>
 </body>
 </html>
