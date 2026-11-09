@@ -220,123 +220,215 @@
     });
   }
 
-  // 5. Interactive Demo Studio Simulator
+  // 5. Interactive SME Peek Carousel (Live Campus OS Simulation)
   function initDemoStudio() {
     let currentSlide = 0;
-    const totalSlides = 4;
-    const track = document.getElementById("storySliderTrack");
-    const slides = document.querySelectorAll(".story-slide");
-    const progressTracks = document.querySelectorAll(".story-progress-track");
-    const pillBtns = document.querySelectorAll(".story-pill-btn");
-    const dots = document.querySelectorAll(".story-dot");
-    const prevBtn = document.getElementById("storyPrevBtn");
-    const nextBtn = document.getElementById("storyNextBtn");
-    const viewport = document.getElementById("storySliderViewport");
+    const cards = Array.from(document.querySelectorAll(".sme-card"));
+    const totalSlides = cards.length || 4;
+    const container = document.getElementById("smeCarousel");
+    const track = document.getElementById("smeCarouselTrack");
+    const prevBtn = document.getElementById("smePrevBtn");
+    const nextBtn = document.getElementById("smeNextBtn");
+    const dots = Array.from(document.querySelectorAll(".sme-dot"));
+    const activeIndexEl = document.getElementById("smeActiveIndex");
+    const totalCountEl = document.getElementById("smeTotalCount");
+    const timerFill = document.getElementById("smeTimerFill");
+    const storyPill = document.getElementById("smeStoryPill");
 
-    function goToSlide(index) {
-      if (index < 0) index = 0;
-      if (index >= totalSlides) index = totalSlides - 1;
-      currentSlide = index;
+    if (totalCountEl) {
+      totalCountEl.textContent = totalSlides < 10 ? "0" + totalSlides : totalSlides;
+    }
 
-      if (track) {
-        track.style.transform = "translateX(-" + (currentSlide * 100) + "%)";
+    let isAutoStoryPlaying = true;
+    let isUserInteracting = false;
+    let storyTimerInterval = null;
+    let progressPercentage = 0;
+    const storyDuration = 10000; // 10 seconds
+    const intervalTick = 100; // update every 100ms
+
+    function updateCarouselPosition(animate = true) {
+      if (!container || !track || cards.length === 0) return;
+
+      if (!animate) {
+        track.style.transition = "none";
+      } else {
+        track.style.transition = "transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1)";
       }
 
-      slides.forEach((s, idx) => {
-        s.classList.toggle("active", idx === currentSlide);
-      });
+      const activeCard = cards[currentSlide];
+      if (!activeCard) return;
 
-      progressTracks.forEach((t, idx) => {
-        t.classList.toggle("active", idx <= currentSlide);
-      });
+      const containerWidth = container.offsetWidth;
+      const cardCenter = activeCard.offsetLeft + (activeCard.offsetWidth / 2);
+      const targetOffset = (containerWidth / 2) - cardCenter;
 
-      pillBtns.forEach((p, idx) => {
+      track.style.transform = `translateX(${targetOffset}px)`;
+
+      // Update card states
+      cards.forEach((card, idx) => {
         const isActive = idx === currentSlide;
-        p.classList.toggle("active", isActive);
-        p.setAttribute("aria-selected", isActive ? "true" : "false");
+        card.classList.toggle("active", isActive);
+        card.setAttribute("aria-hidden", isActive ? "false" : "true");
       });
 
-      dots.forEach((d, idx) => {
-        d.classList.toggle("active", idx === currentSlide);
-      });
-
-      if (prevBtn) {
-        prevBtn.style.opacity = currentSlide === 0 ? "0.4" : "1";
-        prevBtn.style.pointerEvents = currentSlide === 0 ? "none" : "auto";
+      // Update counter
+      if (activeIndexEl) {
+        activeIndexEl.textContent = (currentSlide + 1) < 10 ? "0" + (currentSlide + 1) : (currentSlide + 1);
       }
 
-      if (nextBtn) {
-        nextBtn.style.opacity = currentSlide === totalSlides - 1 ? "0.4" : "1";
-        nextBtn.style.pointerEvents = currentSlide === totalSlides - 1 ? "none" : "auto";
+      // Update dots
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle("active", idx === currentSlide);
+      });
+
+      if (!animate) {
+        // Force reflow
+        void track.offsetHeight;
+        track.style.transition = "transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1)";
       }
     }
 
-    // Pill buttons
-    pillBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const idx = parseInt(btn.dataset.slide, 10);
-        goToSlide(idx);
+    function goToSlide(index, manual = false) {
+      if (index < 0) {
+        currentSlide = totalSlides - 1; // loop backwards
+      } else if (index >= totalSlides) {
+        currentSlide = 0; // loop forward
+      } else {
+        currentSlide = index;
+      }
+
+      updateCarouselPosition(true);
+
+      if (manual) {
+        resetStoryTimer();
+      }
+    }
+
+    function resetStoryTimer() {
+      progressPercentage = 0;
+      if (timerFill) {
+        timerFill.style.width = "0%";
+      }
+    }
+
+    function startStoryTimer() {
+      stopStoryTimer();
+      storyTimerInterval = setInterval(() => {
+        if (!isAutoStoryPlaying || isUserInteracting) return;
+
+        progressPercentage += (intervalTick / storyDuration) * 100;
+        if (progressPercentage >= 100) {
+          progressPercentage = 0;
+          goToSlide(currentSlide + 1, false);
+        }
+
+        if (timerFill) {
+          timerFill.style.width = Math.min(progressPercentage, 100) + "%";
+        }
+      }, intervalTick);
+    }
+
+    function stopStoryTimer() {
+      if (storyTimerInterval) {
+        clearInterval(storyTimerInterval);
+        storyTimerInterval = null;
+      }
+    }
+
+    // Toggle auto-story on clicking the 10s pill
+    if (storyPill) {
+      storyPill.addEventListener("click", () => {
+        isAutoStoryPlaying = !isAutoStoryPlaying;
+        storyPill.style.opacity = isAutoStoryPlaying ? "1" : "0.6";
+        const dot = storyPill.querySelector(".story-pulse-dot");
+        if (dot) {
+          dot.style.animationPlayState = isAutoStoryPlaying ? "running" : "paused";
+        }
+      });
+    }
+
+    // Pause on hover or focus
+    if (container) {
+      container.addEventListener("mouseenter", () => {
+        isUserInteracting = true;
+      });
+      container.addEventListener("mouseleave", () => {
+        isUserInteracting = false;
+      });
+    }
+
+    // Click on cards to bring them into view
+    cards.forEach((card, idx) => {
+      card.addEventListener("click", () => {
+        if (idx !== currentSlide) {
+          goToSlide(idx, true);
+        }
       });
     });
 
-    // Progress bar tracks
-    progressTracks.forEach((pt) => {
-      pt.addEventListener("click", () => {
-        const idx = parseInt(pt.dataset.slide, 10);
-        goToSlide(idx);
-      });
-    });
-
-    // Indicator dots
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const idx = parseInt(dot.dataset.slide, 10);
-        goToSlide(idx);
-      });
-    });
-
-    // Prev / Next buttons
+    // Arrow buttons
     if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        goToSlide(currentSlide - 1);
+      prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        goToSlide(currentSlide - 1, true);
       });
     }
 
     if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        goToSlide(currentSlide + 1);
+      nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        goToSlide(currentSlide + 1, true);
       });
     }
 
-    // Touch Swipe for Mobile Devices
-    if (viewport) {
+    // Dots indicator clicks
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const idx = parseInt(dot.dataset.index, 10);
+        goToSlide(idx, true);
+      });
+    });
+
+    // Touch Swipe Support for Mobile & Tablet
+    if (container) {
       let touchStartX = 0;
       let touchStartY = 0;
       let touchEndX = 0;
       let touchEndY = 0;
 
-      viewport.addEventListener("touchstart", (e) => {
+      container.addEventListener("touchstart", (e) => {
+        isUserInteracting = true;
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY;
       }, { passive: true });
 
-      viewport.addEventListener("touchend", (e) => {
+      container.addEventListener("touchend", (e) => {
+        isUserInteracting = false;
         touchEndX = e.changedTouches[0].screenX;
         touchEndY = e.changedTouches[0].screenY;
         const diffX = touchEndX - touchStartX;
         const diffY = touchEndY - touchStartY;
+
         if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
           if (diffX < 0) {
-            goToSlide(currentSlide + 1);
+            goToSlide(currentSlide + 1, true);
           } else {
-            goToSlide(currentSlide - 1);
+            goToSlide(currentSlide - 1, true);
           }
         }
       }, { passive: true });
     }
 
-    // Initial boot
-    goToSlide(0);
+    // Window resize handler: recalculate exact track centering
+    window.addEventListener("resize", () => {
+      updateCarouselPosition(false);
+    });
+
+    // Initial position & timer boot
+    setTimeout(() => {
+      updateCarouselPosition(false);
+      startStoryTimer();
+    }, 50);
 
     // Test 1: Biometric RFID Tap
     const punchBtn = document.getElementById("triggerGatePunchSimBtn");

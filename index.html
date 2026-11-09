@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=6.3">
+  <link rel="stylesheet" href="css/style.css?v=6.4">
 </head>
 <body>
 
@@ -310,63 +310,67 @@
             <span class="lang-bn hidden">সরাসরি ব্রাউজারে ক্যাম্পাস সফটওয়্যার পরীক্ষা করুন।</span>
           </h2>
           <p>
-            <span class="lang-en">Swipe or click through 4 interactive campus workflows — test hardware biometric punch, instant bKash fee collection, NCTB AI question generation, and madrasa Waqf accounting.</span>
+            <span class="lang-en">Test our biometric gate punch, 1-tap bKash fee collection, NCTB AI question generator, and madrasa Waqf ledger right here.</span>
             <span class="lang-bn hidden">বায়োমেট্রিক গেট পাঞ্চ, ১-ট্যাপে বিকাশ ফি পেমেন্ট, এনসিটিবি এআই প্রশ্ন তৈরি এবং মাদ্রাসা ওয়াকফ খতিয়ানের কার্যপদ্ধতি সোয়াইপ করে সরাসরি পরীক্ষা করুন।</span>
           </p>
         </div>
 
-        <!-- 1. Instagram / Chronicle Story Progress Indicators -->
-        <div class="story-progress-bar reveal" aria-label="Story Progress">
-          <div class="story-progress-track active" data-slide="0"><span class="story-progress-fill"></span></div>
-          <div class="story-progress-track" data-slide="1"><span class="story-progress-fill"></span></div>
-          <div class="story-progress-track" data-slide="2"><span class="story-progress-fill"></span></div>
-          <div class="story-progress-track" data-slide="3"><span class="story-progress-fill"></span></div>
+        <!-- SME Top Story Bar: Auto-Story Timer + Drag Hint + Counter Badge -->
+        <div class="sme-story-bar reveal">
+          <div class="sme-story-timer-wrap">
+            <div class="sme-story-timer-bar"><span class="sme-story-timer-fill" id="smeTimerFill"></span></div>
+            <div class="sme-story-pill" id="smeStoryPill" title="Toggle Auto-Play">
+              <span class="story-pulse-dot"></span>
+              <span class="lang-en">10s Auto-Story</span>
+              <span class="lang-bn hidden">১০সে. অটো-স্টোরি</span>
+            </div>
+          </div>
+
+          <div class="sme-drag-hint">
+            <span class="lang-en">👉 Swipe or drag cards</span>
+            <span class="lang-bn hidden">👉 কার্ড সোয়াইপ বা ড্র্যাগ করুন</span>
+          </div>
+
+          <div class="sme-counter-badge">
+            <span id="smeActiveIndex">01</span> / <span id="smeTotalCount">04</span>
+          </div>
         </div>
 
-        <!-- 2. Sleek Compact Chapter Tabs (Pill Bar) -->
-        <div class="story-pills-nav reveal" role="tablist">
-          <button class="story-pill-btn active" data-slide="0" role="tab" aria-selected="true">
-            <span class="story-pill-ico">🕒</span>
-            <span class="story-pill-label"><span class="lang-en">01 · Biometrics</span><span class="lang-bn hidden">০১ · বায়োমেট্রিক</span></span>
-          </button>
-          <button class="story-pill-btn" data-slide="1" role="tab" aria-selected="false">
-            <span class="story-pill-ico">💳</span>
-            <span class="story-pill-label"><span class="lang-en">02 · bKash 1-Tap</span><span class="lang-bn hidden">০২ · বিকাশ ফি</span></span>
-          </button>
-          <button class="story-pill-btn" data-slide="2" role="tab" aria-selected="false">
-            <span class="story-pill-ico">⌘</span>
-            <span class="story-pill-label"><span class="lang-en">03 · NCTB AI V2</span><span class="lang-bn hidden">০৩ · এনসিটিবি এআই</span></span>
-          </button>
-          <button class="story-pill-btn" data-slide="3" role="tab" aria-selected="false">
-            <span class="story-pill-ico">🕌</span>
-            <span class="story-pill-label"><span class="lang-en">04 · Madrasa Waqf</span><span class="lang-bn hidden">০৪ · ওয়াকফ ও বোর্ডিং</span></span>
-          </button>
-        </div>
+        <!-- SME Peek Carousel Showcase -->
+        <div class="sme-carousel-container reveal" id="smeCarousel">
+          <div class="sme-carousel-track" id="smeCarouselTrack">
 
-        <!-- 3. Story Slider Viewport & Slides Container -->
-        <div class="story-slider-card reveal">
-          <div class="story-slider-viewport" id="storySliderViewport">
-            <div class="story-slider-track" id="storySliderTrack">
+            <!-- CARD 01: Biometric Gate Attendance -->
+            <article class="sme-card active" data-index="0">
+              <div class="sme-card-head">
+                <div class="sme-meta-left">
+                  <span class="sme-cat-tag">CAMPUS HARDWARE</span>
+                  <span class="sme-label-pill">🏷️ Biometric Gateway</span>
+                </div>
+                <div class="sme-meta-right">
+                  <span class="sme-tier-badge">✓ Enterprise</span>
+                  <span class="sme-index-no">/ 01</span>
+                </div>
+              </div>
 
-              <!-- SLIDE 1: Biometric Punch -->
-              <div class="story-slide active" data-slide="0">
-                <div class="demo-grid-2col">
-                  <div class="demo-card-lead">
-                    <span class="tag"><span class="lang-en">Biometric Gateway API</span><span class="lang-bn hidden">বায়োমেট্রিক গেটওয়ে</span></span>
-                    <h3 style="margin-top:14px;">
-                      <span class="lang-en">Zero-Latency Gate Attendance & Instant Parent SMS</span>
-                      <span class="lang-bn hidden">গেট কার্ড পাঞ্চের সাথে সাথে স্বয়ংক্রিয় অভিভাবক এসএমএস</span>
-                    </h3>
-                    <p>
-                      <span class="lang-en">Connected directly with ZKTeco and Realtime biometric hardware. When a student touches their smart card or thumb, YES EDU registers the exact millisecond and triggers an instant parent alert via Teletalk/Grameenphone API.</span>
-                      <span class="lang-bn hidden">জেডকেটেকো ও রিয়েলটাইম বায়োমেট্রিক মেশিনের সাথে সরাসরি সংযুক্ত। শিক্ষার্থী গেটে কার্ড ছোঁয়ামাত্র সার্ভারে লগ ইন হয় এবং মুহূর্তে অভিভাবকের মোবাইলে বাংলা এসএমএস পৌঁছে যায়।</span>
-                    </p>
-                    <div class="check-list">
-                      <div class="check"><b>✓</b> <span class="lang-en">Cloud sync within 0.2 seconds</span><span class="lang-bn hidden">০.২ সেকেন্ডে ক্লাউড ডাটাবেজ আপডেট</span></div>
-                      <div class="check"><b>✓</b> <span class="lang-en">Offline buffer fallback in case of local power outage</span><span class="lang-bn hidden">বিদ্যুৎ বা ইন্টারনেট না থাকলেও অফলাইনে ডাটা সংরক্ষণ</span></div>
-                    </div>
+              <div class="sme-card-body">
+                <h3>
+                  <span class="lang-en">Zero-Latency Biometric Attendance & Instant Parent SMS</span>
+                  <span class="lang-bn hidden">গেট কার্ড পাঞ্চের সাথে সাথে স্বয়ংক্রিয় অভিভাবক এসএমএস</span>
+                </h3>
+                <p class="sme-card-desc">
+                  <span class="lang-en">Connected directly with ZKTeco and Realtime biometric hardware. Registers gate entry down to the millisecond with automated SMS delivery via Teletalk/Grameenphone API.</span>
+                  <span class="lang-bn hidden">জেডকেটেকো ও রিয়েলটাইম বায়োমেট্রিক মেশিনের সাথে সরাসরি সংযুক্ত। শিক্ষার্থী গেটে কার্ড ছোঁয়ামাত্র সার্ভারে লগ ইন হয় এবং মুহূর্তে অভিভাবকের মোবাইলে বাংলা এসএমএস পৌঁছে যায়।</span>
+                </p>
+
+                <!-- Dark Interactive Stage Mockup -->
+                <div class="sme-card-stage">
+                  <div class="sme-stage-header">
+                    <span class="sme-stage-title">RFID SMART CARD GATEWAY • SIMULATOR</span>
+                    <span class="sme-stage-status">● 0.2s SYNC READY</span>
                   </div>
-                  <div class="sim-interactive-box">
+                  
+                  <div class="sme-stage-interactive">
                     <button class="sim-btn-trigger" id="triggerGatePunchSimBtn">
                       <span>🪪</span>
                       <span class="lang-en">Simulate RFID Card Touch</span>
@@ -380,27 +384,48 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- Feature Bullet Points Checklist -->
+                <div class="sme-check-grid">
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">High-Speed 0.2s Cloud Attendance Sync</span><span class="lang-bn hidden">০.২ সেকেন্ডে ক্লাউড ডাটাবেজ আপডেট</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Automated Bangla SMS via Teletalk/GP</span><span class="lang-bn hidden">মুহূর্তে অভিভাবকের মোবাইলে বাংলা এসএমএস</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Offline Local Buffer Fallback (No Power/Net loss)</span><span class="lang-bn hidden">বিদ্যুৎ বা ইন্টারনেট না থাকলেও অফলাইনে ডাটা সংরক্ষণ</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Multi-Shift Teacher & Staff Clock-in Support</span><span class="lang-bn hidden">শিক্ষক ও কর্মচারীদের শিফটভিত্তিক উপস্থিতি ট্র্যাকিং</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 02: 1-Tap bKash Fee Payment -->
+            <article class="sme-card" data-index="1">
+              <div class="sme-card-head">
+                <div class="sme-meta-left">
+                  <span class="sme-cat-tag">FINTECH RECONCILIATION</span>
+                  <span class="sme-label-pill">🏷️ bKash Webhook</span>
+                </div>
+                <div class="sme-meta-right">
+                  <span class="sme-tier-badge">✓ Professional+</span>
+                  <span class="sme-index-no">/ 02</span>
+                </div>
               </div>
 
-              <!-- SLIDE 2: bKash Fee Payment -->
-              <div class="story-slide" data-slide="1">
-                <div class="demo-grid-2col">
-                  <div class="demo-card-lead">
-                    <span class="tag"><span class="lang-en">Direct FinTech Integration</span><span class="lang-bn hidden">ফিনটেক অটো-রিকনসিল</span></span>
-                    <h3 style="margin-top:14px;">
-                      <span class="lang-en">1-Tap bKash & Nagad Fee Collection with Zero Ledger Error</span>
-                      <span class="lang-bn hidden">বিকাশ ও নগদ ১-ট্যাপ ফি পেমেন্ট ও স্বয়ংক্রিয় ক্যাশবুক এন্ট্রি</span>
-                    </h3>
-                    <p>
-                      <span class="lang-en">Parents pay student tuition, exam, or transport fees directly from their smartphone. The bank webhook instantly clears dues, issues a digital receipt with QR verification, and updates accounts without manual ledger entry.</span>
-                      <span class="lang-bn hidden">অভিভাবকরা ঘরে বসেই বিকাশ অ্যাপ দিয়ে ফি পরিশোধ করেন। টাকা জমামাত্র ডিজিটাল মানি রিসিট তৈরি হয় এবং প্রতিষ্ঠানের মূল লেজার বই স্বয়ংক্রিয়ভাবে আপডেট হয়ে যায়।</span>
-                    </p>
-                    <div class="check-list">
-                      <div class="check"><b>✓</b> <span class="lang-en">No manual counter receipt issuance</span><span class="lang-bn hidden">কাউন্টারে লাইনে দাঁড়িয়ে রশিদ কাটার প্রয়োজন নেই</span></div>
-                      <div class="check"><b>✓</b> <span class="lang-en">Instant digital voucher with QR seal</span><span class="lang-bn hidden">স্বয়ংক্রিয় ডিজিটাল ভাউচার ও কিউআর সিল</span></div>
-                    </div>
+              <div class="sme-card-body">
+                <h3>
+                  <span class="lang-en">1-Tap bKash & Nagad Fee Collection with Zero Ledger Error</span>
+                  <span class="lang-bn hidden">বিকাশ ও নগদ ১-ট্যাপ ফি পেমেন্ট ও স্বয়ংক্রিয় ক্যাশবুক এন্ট্রি</span>
+                </h3>
+                <p class="sme-card-desc">
+                  <span class="lang-en">Parents pay student tuition, exam, or transport fees directly from their smartphone. The bank webhook instantly clears dues, issues a digital receipt with QR verification, and updates accounts without manual ledger entry.</span>
+                  <span class="lang-bn hidden">অভিভাবকরা ঘরে বসেই বিকাশ অ্যাপ দিয়ে ফি পরিশোধ করেন। টাকা জমামাত্র ডিজিটাল মানি রিসিট তৈরি হয় এবং প্রতিষ্ঠানের মূল লেজার বই স্বয়ংক্রিয়ভাবে আপডেট হয়ে যায়।</span>
+                </p>
+
+                <!-- Dark Interactive Stage Mockup -->
+                <div class="sme-card-stage">
+                  <div class="sme-stage-header">
+                    <span class="sme-stage-title">DIGITAL PAYMENT WEBHOOK • RECONCILIATION</span>
+                    <span class="sme-stage-status">● DIRECT API</span>
                   </div>
-                  <div class="sim-interactive-box">
+                  
+                  <div class="sme-stage-interactive">
                     <button class="sim-btn-trigger" id="triggerBkashPaymentSimBtn" style="background:#e2136e;">
                       <span>৳</span>
                       <span class="lang-en">Simulate bKash 1-Tap Payment</span>
@@ -414,27 +439,48 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- Feature Bullet Points Checklist -->
+                <div class="sme-check-grid">
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Zero Manual Counter Receipt Queues</span><span class="lang-bn hidden">কাউন্টারে লাইনে দাঁড়িয়ে রশিদ কাটার প্রয়োজন নেই</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Instant Digital Voucher with Encrypted QR Seal</span><span class="lang-bn hidden">স্বয়ংক্রিয় ডিজিটাল ভাউচার ও কিউআর সিল</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Automated Double-Entry Cash Book Balancing</span><span class="lang-bn hidden">ডাবল-এন্ট্রি অ্যাকাউন্টিং ও ক্যাশবুক অটো-ব্যালান্সিং</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Automatic Monthly Due Alert SMS & Invoicing</span><span class="lang-bn hidden">বকেয়া ফি নোটিশ ও স্বয়ংক্রিয় ইনভয়েস এসএমএস</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 03: NCTB Curriculum AI Engine V2 -->
+            <article class="sme-card" data-index="2">
+              <div class="sme-card-head">
+                <div class="sme-meta-left">
+                  <span class="sme-cat-tag">CURRICULUM AI ENGINE</span>
+                  <span class="sme-label-pill">🏷️ NCTB Syllabus V2</span>
+                </div>
+                <div class="sme-meta-right">
+                  <span class="sme-tier-badge">✓ AI Experience</span>
+                  <span class="sme-index-no">/ 03</span>
+                </div>
               </div>
 
-              <!-- SLIDE 3: NCTB AI Question Generator -->
-              <div class="story-slide" data-slide="2">
-                <div class="demo-grid-2col">
-                  <div class="demo-card-lead">
-                    <span class="tag"><span class="lang-en">Curriculum AI Engine V2</span><span class="lang-bn hidden">এনসিটিবি কারিকুলাম এআই</span></span>
-                    <h3 style="margin-top:14px;">
-                      <span class="lang-en">NCTB Creative Exam Question Paper Generation</span>
-                      <span class="lang-bn hidden">এনসিটিবি পাঠ্যক্রম অনুযায়ী সৃজনশীল প্রশ্নপত্র প্রণয়ন</span>
-                    </h3>
-                    <p>
-                      <span class="lang-en">Built on Bangladesh National Curriculum and Textbook Board (NCTB) guidelines. Generates 4-tier creative questions (Knowledge, Comprehension, Application, Higher Ability) in seconds for teachers.</span>
-                      <span class="lang-bn hidden">বাংলাদেশ এনসিটিবি কারিকুলাম অনুসরণ করে তৈরি। শিক্ষকরা মুহূর্তের মধ্যে ক, খ, গ, ঘ ধাপভিত্তিক মানসম্মত সৃজনশীল পরীক্ষার প্রশ্ন ও নমুনা উত্তর তৈরি করতে পারেন।</span>
-                    </p>
-                    <div class="check-list">
-                      <div class="check"><b>✓</b> <span class="lang-en">Aligned with Class 6 to 12 NCTB syllabus</span><span class="lang-bn hidden">৬ষ্ঠ থেকে ১২শ শ্রেণির সম্পূর্ণ এনসিটিবি সিলেবাস অন্তর্ভুক্ত</span></div>
-                      <div class="check"><b>✓</b> <span class="lang-en">Exportable directly to DOCX and PDF formatted for printing</span><span class="lang-bn hidden">সরাসরি প্রিন্ট-রেডি পিডিএফ ও ওয়ার্ড ফরম্যাটে এক্সপোর্ট</span></div>
-                    </div>
+              <div class="sme-card-body">
+                <h3>
+                  <span class="lang-en">NCTB Creative Exam Question Paper Generation</span>
+                  <span class="lang-bn hidden">এনসিটিবি পাঠ্যক্রম অনুযায়ী সৃজনশীল প্রশ্নপত্র প্রণয়ন</span>
+                </h3>
+                <p class="sme-card-desc">
+                  <span class="lang-en">Built on Bangladesh National Curriculum and Textbook Board (NCTB) guidelines. Generates 4-tier creative questions (Knowledge, Comprehension, Application, Higher Ability) in seconds for teachers.</span>
+                  <span class="lang-bn hidden">বাংলাদেশ এনসিটিবি কারিকুলাম অনুসরণ করে তৈরি। শিক্ষকরা মুহূর্তের মধ্যে ক, খ, গ, ঘ ধাপভিত্তিক মানসম্মত সৃজনশীল পরীক্ষার প্রশ্ন ও নমুনা উত্তর তৈরি করতে পারেন।</span>
+                </p>
+
+                <!-- Dark Interactive Stage Mockup -->
+                <div class="sme-card-stage">
+                  <div class="sme-stage-header">
+                    <span class="sme-stage-title">BLOOM TAXONOMY ENGINE • NCTB BANGLADESH</span>
+                    <span class="sme-stage-status">● V2 READY</span>
                   </div>
-                  <div class="sim-interactive-box">
+                  
+                  <div class="sme-stage-interactive">
                     <button class="sim-btn-trigger" id="triggerAiQuestionSimBtn">
                       <span>✦</span>
                       <span class="lang-en">Generate NCTB Creative Question</span>
@@ -448,27 +494,48 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- Feature Bullet Points Checklist -->
+                <div class="sme-check-grid">
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Full Class 6 to 12 NCTB Textbook Alignment</span><span class="lang-bn hidden">৬ষ্ঠ থেকে ১২শ শ্রেণির সম্পূর্ণ এনসিটিবি সিলেবাস অন্তর্ভুক্ত</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Direct Export to Print-Ready PDF & Word DOCX</span><span class="lang-bn hidden">সরাসরি প্রিন্ট-রেডি পিডিএফ ও ওয়ার্ড ফরম্যাটে এক্সপোর্ট</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Automated Model Answers & Grading Rubric</span><span class="lang-bn hidden">নমুনা উত্তর ও শিক্ষক মূল্যায়ন নির্দেশিকা স্বয়ংক্রিয়ভাবে প্রস্তুত</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Custom Daily Lesson Planning & Homework Helper</span><span class="lang-bn hidden">দৈনন্দিন ক্লাসের পাঠপরিকল্পনা ও বাড়ির কাজের সুপারিশ</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 04: Madrasa Waqf & Hostel Boarding -->
+            <article class="sme-card" data-index="3">
+              <div class="sme-card-head">
+                <div class="sme-meta-left">
+                  <span class="sme-cat-tag">MADRASA & RESIDENTIAL</span>
+                  <span class="sme-label-pill">🏷️ Shariah Compliance</span>
+                </div>
+                <div class="sme-meta-right">
+                  <span class="sme-tier-badge">✓ All Tiers</span>
+                  <span class="sme-index-no">/ 04</span>
+                </div>
               </div>
 
-              <!-- SLIDE 4: Madrasa Waqf & Hostel Audit -->
-              <div class="story-slide" data-slide="3">
-                <div class="demo-grid-2col">
-                  <div class="demo-card-lead">
-                    <span class="tag"><span class="lang-en">Madrasa & Residential Hub</span><span class="lang-bn hidden">আবাসিক মাদ্রাসা ও অডিট</span></span>
-                    <h3 style="margin-top:14px;">
-                      <span class="lang-en">Residential Hostel Bed Allocation & Waqf Audit</span>
-                      <span class="lang-bn hidden">ছাত্রাবাস সিট বরাদ্দ ও ওয়াকফ-লিল্লাহ ফান্ড অডিট</span>
-                    </h3>
-                    <p>
-                      <span class="lang-en">Bespoke management for residential madrasas and cadet schools. Real-time dorm room & bed tracking, meal token management, and 100% Shariah-compliant Waqf and Zakat donation tracking.</span>
-                      <span class="lang-bn hidden">আবাসিক মাদ্রাসা ও ক্যাডেট স্কুলের জন্য বিশেষায়িত সুবিধা। হোস্টেলের রুম ও সিট ট্র্যাকিং, ডাইনিং মিল টোকেন এবং সম্পূর্ণ স্বচ্ছ ওয়াকফ ও লিল্লাহ ফান্ড অডিট খতিয়ান।</span>
-                    </p>
-                    <div class="check-list">
-                      <div class="check"><b>✓</b> <span class="lang-en">Visual hostel room & bed occupancy map</span><span class="lang-bn hidden">হোস্টেল রুম ও বেড খালি/ভর্তি ভিজ্যুয়াল চিত্র</span></div>
-                      <div class="check"><b>✓</b> <span class="lang-en">Automated donor confirmation SMS for Zakat</span><span class="lang-bn hidden">দানকারীকে তাৎক্ষণিক ডিজিটাল মানি রিসিট ও কৃতজ্ঞতা বার্তা</span></div>
-                    </div>
+              <div class="sme-card-body">
+                <h3>
+                  <span class="lang-en">Residential Hostel Bed Allocation & Waqf Audit</span>
+                  <span class="lang-bn hidden">ছাত্রাবাস সিট বরাদ্দ ও ওয়াকফ-লিল্লাহ ফান্ড অডিট</span>
+                </h3>
+                <p class="sme-card-desc">
+                  <span class="lang-en">Bespoke management for residential madrasas and cadet schools. Real-time dorm room & bed tracking, meal token management, and 100% Shariah-compliant Waqf and Zakat donation tracking.</span>
+                  <span class="lang-bn hidden">আবাসিক মাদ্রাসা ও ক্যাডেট স্কুলের জন্য বিশেষায়িত সুবিধা। হোস্টেলের রুম ও সিট ট্র্যাকিং, ডাইনিং মিল টোকেন এবং সম্পূর্ণ স্বচ্ছ ওয়াকফ ও লিল্লাহ ফান্ড অডিট খতিয়ান।</span>
+                </p>
+
+                <!-- Dark Interactive Stage Mockup -->
+                <div class="sme-card-stage">
+                  <div class="sme-stage-header">
+                    <span class="sme-stage-title">DORMITORY MATRIX & WAQF AUDIT LEDGER</span>
+                    <span class="sme-stage-status">● AUDIT SEALED</span>
                   </div>
-                  <div class="sim-interactive-box">
+                  
+                  <div class="sme-stage-interactive">
                     <button class="sim-btn-trigger" id="triggerWaqfAuditSimBtn">
                       <span>🕌</span>
                       <span class="lang-en">Audit Madrasa Boarding & Waqf</span>
@@ -482,34 +549,46 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- Feature Bullet Points Checklist -->
+                <div class="sme-check-grid">
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Visual Dorm Room & Bed Occupancy Matrix</span><span class="lang-bn hidden">হোস্টেল রুম ও বেড খালি/ভর্তি ভিজ্যুয়াল চিত্র</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">100% Shariah-Compliant Donor Zakat Ledger</span><span class="lang-bn hidden">সম্পূর্ণ শরীয়াহ সম্মত যাকাত ও ওয়াকফ অডিট খতিয়ান</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Instant Automated Donor Receipt SMS</span><span class="lang-bn hidden">দানকারীকে তাৎক্ষণিক ডিজিটাল মানি রিসিট ও কৃতজ্ঞতা বার্তা</span></div>
+                  <div class="sme-check-item"><b>✓</b> <span class="lang-en">Dining Mess Meal Token & Inventory Tracking</span><span class="lang-bn hidden">মেস মিল টোকেন ও বোর্ডিং খাদ্য সামগ্রী ট্র্যাকিং</span></div>
+                </div>
               </div>
+            </article>
 
-            </div>
-          </div>
-
-          <!-- Slider Footer Navigation Controls -->
-          <div class="story-slider-footer">
-            <button class="story-nav-btn" id="storyPrevBtn" aria-label="Previous Slide">
-              <span>←</span>
-              <span class="lang-en">Previous Story</span>
-              <span class="lang-bn hidden">পূর্ববর্তী</span>
-            </button>
-
-            <!-- Dots Indicator -->
-            <div class="story-dots">
-              <span class="story-dot active" data-slide="0"></span>
-              <span class="story-dot" data-slide="1"></span>
-              <span class="story-dot" data-slide="2"></span>
-              <span class="story-dot" data-slide="3"></span>
-            </div>
-
-            <button class="story-nav-btn" id="storyNextBtn" aria-label="Next Slide">
-              <span class="lang-en">Next Story</span>
-              <span class="lang-bn hidden">পরবর্তী</span>
-              <span>→</span>
-            </button>
           </div>
         </div>
+
+        <!-- SME Carousel Bottom Controls -->
+        <div class="sme-controls-footer reveal">
+          <button class="sme-arrow-btn" id="smePrevBtn" aria-label="Previous Workflow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="lang-en">Previous</span>
+            <span class="lang-bn hidden">পূর্ববর্তী</span>
+          </button>
+
+          <div class="sme-dots" id="smeDotsContainer">
+            <span class="sme-dot active" data-index="0"></span>
+            <span class="sme-dot" data-index="1"></span>
+            <span class="sme-dot" data-index="2"></span>
+            <span class="sme-dot" data-index="3"></span>
+          </div>
+
+          <button class="sme-arrow-btn" id="smeNextBtn" aria-label="Next Workflow">
+            <span class="lang-en">Next Workflow</span>
+            <span class="lang-bn hidden">পরবর্তী</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
       </div>
     </section>
 
@@ -1423,6 +1502,6 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=6.3"></script>
+  <script src="js/main.js?v=6.4"></script>
 </body>
 </html>

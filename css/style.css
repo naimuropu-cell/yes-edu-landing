@@ -732,152 +732,280 @@ header.scrolled {
 }
 
 /* ==========================================================================
-   Interactive Story Card Slider System (Live Campus OS Simulation)
+   Interactive SME Peek Carousel (Live Campus OS Simulation)
    ========================================================================== */
 .demo-studio-section {
   background: linear-gradient(180deg, #f8fcf9 0%, #edf7f1 100%);
   border-bottom: 1px solid var(--line);
   position: relative;
   overflow: hidden;
+  padding: 80px 0 90px;
 }
 
-/* Instagram / Chronicle HQ Story Progress Bar */
-.story-progress-bar {
+/* SME Top Story Bar: 10s Timer + Drag Hint + Counter Badge */
+.sme-story-bar {
   display: flex;
-  gap: 8px;
-  max-width: 520px;
-  margin: 0 auto 18px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
-.story-progress-track {
-  flex: 1;
+.sme-story-timer-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sme-story-timer-bar {
+  width: 64px;
   height: 4px;
   background: #d4ebd9;
   border-radius: 99px;
   overflow: hidden;
-  cursor: pointer;
-  transition: all 0.25s ease;
+  position: relative;
 }
 
-.story-progress-track.active {
-  background: var(--deep);
-}
-
-.story-progress-fill {
+.sme-story-timer-fill {
   display: block;
-  width: 100%;
   height: 100%;
+  width: 0%;
   background: var(--green);
+  border-radius: 99px;
+  transition: width 0.1s linear;
 }
 
-/* Compact Story Pill Navigation (Fits in one neat line on desktop) */
-.story-pills-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
-}
-
-.story-pill-btn {
+.sme-story-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 18px;
   background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-full);
-  font-size: 13px;
+  border: 1.5px solid #2c9b70;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 12px;
   font-weight: 700;
-  color: #557065;
+  color: #153d32;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(21, 61, 50, 0.03);
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(44, 155, 112, 0.12);
+  transition: all 0.2s ease;
 }
 
-.story-pill-btn:hover {
-  border-color: #a4dcbf;
-  color: var(--deep);
+.sme-story-pill:hover {
+  background: #edf8f2;
   transform: translateY(-1px);
 }
 
-.story-pill-btn.active {
-  background: var(--deep);
-  color: var(--white);
-  border-color: var(--deep);
-  box-shadow: 0 8px 20px rgba(21, 61, 50, 0.18);
+.story-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2c9b70;
+  box-shadow: 0 0 0 0 rgba(44, 155, 112, 0.7);
+  animation: pulse-ring 2s infinite;
 }
 
-.story-pill-ico {
-  font-size: 14px;
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(44, 155, 112, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(44, 155, 112, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(44, 155, 112, 0); }
 }
 
-/* Story Slider Card Container */
-.story-slider-card {
+.sme-drag-hint {
+  font-size: 13px;
+  color: #557065;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sme-counter-badge {
+  background: #0d241c;
+  color: #8cc4ab;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  padding: 6px 16px;
+  border-radius: 99px;
+  letter-spacing: 1px;
+}
+
+.sme-counter-badge span#smeActiveIndex {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* SME Peek Carousel Showcase */
+.sme-carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0 24px;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.sme-carousel-track {
+  display: flex;
+  align-items: stretch;
+  gap: 28px;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+/* SME Individual Card */
+.sme-card {
+  width: min(820px, calc(100vw - 48px));
+  flex-shrink: 0;
   background: #ffffff;
   border: 1px solid #dcece2;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  position: relative;
-  overflow: hidden;
+  border-radius: 24px;
+  padding: 36px 40px;
+  box-shadow: 0 10px 28px -10px rgba(21, 61, 50, 0.08);
+  opacity: 0.35;
+  transform: scale(0.92);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
 }
 
-.story-slider-viewport {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  touch-action: pan-y;
+.sme-card:hover {
+  opacity: 0.55;
 }
 
-.story-slider-track {
-  display: flex;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  width: 100%;
-}
-
-.story-slide {
-  min-width: 100%;
-  width: 100%;
-  flex-shrink: 0;
-  padding: 38px 36px 30px;
-  opacity: 0.3;
-  transition: opacity 0.4s ease;
-}
-
-.story-slide.active {
+.sme-card.active {
   opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 20px 48px -12px rgba(21, 61, 50, 0.14);
+  border-color: #c4e4d0;
+  cursor: default;
 }
 
-.demo-grid-2col {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 36px;
+/* Card Header Meta */
+.sme-card-head {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.demo-card-lead h3 {
-  margin-bottom: 12px;
+.sme-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.demo-card-lead p {
-  font-size: 15px;
+.sme-cat-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #607d71;
+}
+
+.sme-label-pill {
+  background: #edf7f2;
+  border: 1px solid #d0ebd9;
+  color: #1b5341;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+.sme-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sme-tier-badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #2c9b70;
+  background: #eaf6ef;
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid #a8dec3;
+}
+
+.sme-index-no {
+  font-size: 16px;
+  font-weight: 800;
+  color: #2c9b70;
+  font-family: var(--font-mono);
+}
+
+/* Card Body Content */
+.sme-card-body h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--deep);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.sme-card-desc {
+  font-size: 14.5px;
   line-height: 1.7;
-  margin-bottom: 22px;
+  color: #4b675c;
+  margin-bottom: 20px;
 }
 
-.sim-interactive-box {
-  background: #f7faf8;
-  border: 1px solid #e1eee7;
-  border-radius: var(--radius-md);
-  padding: 22px;
+/* Dark Interactive Stage Mockup */
+.sme-card-stage {
+  background: #091d15;
+  border: 1px solid #163e2e;
+  border-radius: 18px;
+  padding: 22px 24px;
+  margin: 18px 0 22px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.sme-stage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #143527;
+  padding-bottom: 10px;
+}
+
+.sme-stage-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #79a896;
+}
+
+.sme-stage-status {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #34d399;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sme-stage-interactive {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .sim-btn-trigger {
   width: 100%;
-  padding: 13px;
-  border-radius: 11px;
-  background: var(--green);
+  padding: 13px 20px;
+  border-radius: 12px;
+  background: #2c9b70;
   color: #ffffff;
   font-weight: 700;
   font-size: 14px;
@@ -885,81 +1013,112 @@ header.scrolled {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  box-shadow: 0 6px 16px rgba(44, 155, 112, 0.25);
-  transition: all 0.2s ease;
+  border: none;
   cursor: pointer;
+  box-shadow: 0 4px 14px rgba(44, 155, 112, 0.35);
+  transition: all 0.2s ease;
 }
 
 .sim-btn-trigger:hover {
   background: var(--green-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(44, 155, 112, 0.45);
 }
 
 .sim-btn-trigger:active {
   transform: translateY(0);
 }
 
+.sim-btn-trigger:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .sim-log-display {
-  margin-top: 16px;
-  background: #ffffff;
-  border: 1px solid #e3eee7;
-  border-radius: 10px;
-  padding: 14px;
+  background: #05120c;
+  border: 1px solid #133324;
+  border-radius: 11px;
+  padding: 14px 16px;
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: #2f4e41;
-  min-height: 90px;
+  font-size: 12.5px;
+  color: #a3e6cb;
+  min-height: 76px;
   line-height: 1.7;
 }
 
-/* Slider Footer Navigation Bar */
-.story-slider-footer {
+/* Feature Checklist Grid */
+.sme-check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 24px;
+  padding-top: 4px;
+}
+
+.sme-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: #2b5444;
+  line-height: 1.5;
+}
+
+.sme-check-item b {
+  color: #2c9b70;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* SME Carousel Bottom Controls */
+.sme-controls-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 36px;
-  border-top: 1px solid #edf4ef;
-  background: #fafdfb;
+  margin-top: 24px;
+  padding: 0 6px;
 }
 
-.story-nav-btn {
+.sme-arrow-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
+  padding: 10px 22px;
   background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 99px;
   color: var(--deep);
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(21, 61, 50, 0.04);
   transition: all 0.2s ease;
 }
 
-.story-nav-btn:hover {
-  border-color: var(--green);
-  background: #eef7f2;
-  color: var(--deep);
+.sme-arrow-btn:hover {
+  border-color: #2c9b70;
+  color: #153d32;
+  background: #f4faf6;
+  transform: translateY(-1px);
 }
 
-.story-dots {
+.sme-dots {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.story-dot {
+.sme-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #cfe2d6;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
-.story-dot.active {
-  width: 24px;
+.sme-dot.active {
+  width: 26px;
   border-radius: 99px;
   background: var(--deep);
 }
@@ -2591,60 +2750,61 @@ html, body {
     font-weight: 700;
   }
 
-  /* Story Card Slider Responsive Rules */
-  .story-progress-bar {
-    max-width: 100%;
-    gap: 6px;
-    padding: 0 4px;
+  /* SME Peek Carousel Mobile Responsive Rules */
+  .sme-story-bar {
+    gap: 10px;
+    margin-bottom: 16px;
   }
 
-  .story-pills-nav {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 4px 4px 14px;
-    gap: 8px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    margin-bottom: 18px;
-  }
-
-  .story-pills-nav::-webkit-scrollbar {
+  .sme-drag-hint {
     display: none;
   }
 
-  .story-pill-btn {
-    flex-shrink: 0;
-    padding: 7px 13px;
-    font-size: 12px;
-    white-space: nowrap;
+  .sme-carousel-container {
+    padding: 10px 0 16px;
   }
 
-  .story-slide {
-    padding: 24px 16px 20px;
+  .sme-carousel-track {
+    gap: 16px;
   }
 
-  .story-slider-footer {
-    padding: 12px 16px;
+  .sme-card {
+    width: calc(100vw - 32px);
+    padding: 24px 18px;
+    border-radius: 20px;
   }
 
-  .story-nav-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .demo-card-lead h3 {
-    font-size: 18px;
+  .sme-card-body h3 {
+    font-size: 19px;
     line-height: 1.35;
+    margin-bottom: 8px;
   }
 
-  .demo-card-lead p {
-    font-size: 14px;
+  .sme-card-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 16px;
   }
 
-  .sim-interactive-box {
+  .sme-card-stage {
     padding: 16px 14px;
+    border-radius: 14px;
+    margin: 14px 0 18px;
+  }
+
+  .sme-stage-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .sme-stage-title {
+    font-size: 10px;
+  }
+
+  .sme-stage-status {
+    font-size: 10px;
   }
 
   .sim-btn-trigger {
@@ -2653,9 +2813,27 @@ html, body {
   }
 
   .sim-log-display {
-    font-size: 11px;
+    font-size: 11.5px;
     padding: 12px;
     word-break: break-word;
+  }
+
+  .sme-check-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .sme-check-item {
+    font-size: 12.5px;
+  }
+
+  .sme-controls-footer {
+    margin-top: 18px;
+  }
+
+  .sme-arrow-btn {
+    padding: 8px 14px;
+    font-size: 12px;
   }
 
   /* Roles Showcase */
