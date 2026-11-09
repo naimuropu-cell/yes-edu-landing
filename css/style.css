@@ -6,27 +6,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap");
 
 :root {
-  --deep: #153d32;
-  --ink: #18352d;
-  --green: #2c9b70;
-  --green-hover: #22805b;
-  --mint: #bcebd8;
-  --mint2: #e6f6ed;
-  --mint3: #d3f0e2;
-  --paper: #f8fcf9;
+  /* Executive Corporate Theme (Theme 03) Tokens */
+  --ex-ink: #14251F;
+  --ex-green: #174B39;
+  --ex-green2: #236B4E;
+  --ex-lime: #D5E8B5;
+  --ex-red: #C9433D;
+  --ex-red-btn: #E45B50;
+  --ex-paper: #F6F7F2;
+  --ex-sage: #E9EEE8;
+  --ex-muted: #66746D;
+  --ex-line: #DDE3DC;
+
+  /* Aliases mapped to Executive Theme */
+  --deep: #174B39;
+  --ink: #14251F;
+  --green: #236B4E;
+  --green-hover: #174B39;
+  --mint: #D5E8B5;
+  --mint2: #EAF0E5;
+  --mint3: #DDE8DE;
+  --paper: #F6F7F2;
   --white: #ffffff;
-  --muted: #647a70;
-  --muted-light: #8fa399;
-  --line: #e2ede6;
-  --line-strong: #cbe0d5;
-  --accent-red: #c94b49;
+  --muted: #66746D;
+  --muted-light: #9EB4A7;
+  --line: #DDE3DC;
+  --line-strong: #CBD5CC;
+  --accent-red: #E45B50;
   --accent-gold: #d99a2b;
-  --shadow-sm: 0 4px 14px rgba(21, 61, 50, 0.05);
-  --shadow-md: 0 14px 38px rgba(21, 61, 50, 0.08);
-  --shadow-lg: 0 28px 75px rgba(21, 61, 50, 0.12);
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --shadow-sm: 0 4px 14px rgba(20, 37, 31, 0.05);
+  --shadow-md: 0 10px 30px rgba(20, 37, 31, 0.08);
+  --shadow-lg: 0 24px 60px rgba(20, 37, 31, 0.12);
+  --radius-sm: 7px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
   --radius-full: 9999px;
   --font-heading: "Manrope", sans-serif;
   --font-body: "DM Sans", sans-serif;
@@ -121,14 +134,14 @@ p { color: var(--muted); }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  border: 1px solid #cbe6d8;
-  border-radius: var(--radius-full);
-  background: #eff9f3;
-  color: #247555;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  padding: 6px 13px;
+  border: 1px solid #D7E2D0;
+  border-radius: 4px;
+  background: #EAF0E5;
+  color: var(--ex-green);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -137,8 +150,8 @@ p { color: var(--muted); }
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 3px #d6f2e4;
+  background: var(--ex-red);
+  box-shadow: 0 0 0 4px #F3DEDA;
 }
 
 .section {
@@ -168,39 +181,40 @@ p { color: var(--muted); }
   justify-content: center;
   gap: 10px;
   padding: 13px 24px;
-  border-radius: 13px;
+  border-radius: 7px;
   font-weight: 700;
   font-size: 14px;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   cursor: pointer;
   border: 1px solid transparent;
   white-space: nowrap;
 }
 
 .btn-primary {
-  background: var(--deep);
+  background: var(--ex-red-btn);
   color: var(--white);
-  box-shadow: 0 10px 25px rgba(21, 61, 50, 0.22);
+  border: 1px solid var(--ex-red-btn);
+  box-shadow: 0 9px 22px rgba(228, 91, 80, 0.28);
 }
 
 .btn-primary:hover {
-  background: #1d5243;
+  background: #c9433d;
+  border-color: #c9433d;
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(21, 61, 50, 0.3);
+  box-shadow: 0 13px 28px rgba(228, 91, 80, 0.38);
 }
 
 .btn-light {
   background: var(--white);
-  color: var(--deep);
-  border-color: #dcece2;
+  color: var(--ex-green);
+  border: 1px solid #CBD5CC;
   box-shadow: var(--shadow-sm);
 }
 
 .btn-light:hover {
-  background: #f4faf6;
-  border-color: #a8dfc4;
+  background: #F6F7F2;
+  border-color: #A9C4AE;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
 }
 
 .btn-accent {
@@ -354,38 +368,39 @@ header.scrolled {
 }
 
 /* ==========================================================================
-   Hero Section
+   Hero Section (Executive Deep Pine Green Theme)
    ========================================================================== */
 .hero {
   position: relative;
-  padding: 80px 0 92px;
-  background: radial-gradient(ellipse at 75% 25%, #d7f3e4 0%, transparent 42%),
-              linear-gradient(180deg, #eff9f3 0%, #f8fcf9 100%);
   overflow: hidden;
-  border-bottom: 1px solid var(--line);
-}
-
-.hero::before, .hero::after {
-  content: "";
-  position: absolute;
-  border: 1px solid #cbe9d7;
-  border-radius: 50%;
-  pointer-events: none;
+  color: #fff;
+  background: linear-gradient(105deg, #0D3024 0%, #174B39 56%, #1F5B42 100%);
+  padding: 96px 0 88px;
+  border-bottom: none;
 }
 
 .hero::before {
-  width: 580px;
-  height: 580px;
-  right: -160px;
-  top: -260px;
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image: linear-gradient(#ffffff2e 1px, transparent 1px), linear-gradient(90deg, #ffffff2e 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: linear-gradient(90deg, black, transparent 88%);
 }
 
 .hero::after {
-  width: 760px;
-  height: 760px;
-  right: -240px;
-  top: -340px;
-  opacity: 0.5;
+  content: "";
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  border: 1px solid #dcefd338;
+  right: -210px;
+  top: -300px;
+  box-shadow: 0 0 0 52px rgba(220, 239, 211, 0.05), 0 0 0 105px rgba(220, 239, 211, 0.03);
+  pointer-events: none;
 }
 
 .hero-grid {
@@ -398,19 +413,22 @@ header.scrolled {
 }
 
 .hero-copy h1 {
+  color: #fff;
+  font-size: clamp(38px, 5.5vw, 66px);
+  line-height: 1.02;
+  max-width: 680px;
   margin: 22px 0 20px;
-  max-width: 620px;
 }
 
 .hero-copy h1 span {
-  color: var(--green);
+  color: var(--ex-lime);
 }
 
 .hero-copy > p {
-  max-width: 520px;
+  color: #D2DED7;
+  max-width: 540px;
   font-size: 17px;
   line-height: 1.8;
-  color: var(--muted);
 }
 
 .hero-actions {
@@ -424,7 +442,7 @@ header.scrolled {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #5c756a;
+  color: #D2DED7;
   font-size: 13px;
   font-weight: 600;
 }
@@ -437,7 +455,7 @@ header.scrolled {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 2px solid var(--paper);
+  border: 2px solid #174B39;
   margin-left: -8px;
   display: block;
 }
@@ -446,6 +464,41 @@ header.scrolled {
 .proof-dots i:nth-child(2) { background: #d8c5a7; }
 .proof-dots i:nth-child(3) { background: #8bb9c4; }
 .proof-dots i:nth-child(4) { background: #c9b4d9; }
+
+.hero .eyebrow {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #E4F0D9;
+}
+
+.hero .eyebrow::before {
+  background: #E56A5F;
+  box-shadow: 0 0 0 4px rgba(229, 106, 95, 0.3);
+}
+
+.hero .btn-light {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.hero .btn-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+.hero .btn-primary {
+  background: #E45B50;
+  border-color: #E45B50;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(228, 91, 80, 0.35);
+}
+
+.hero .btn-primary:hover {
+  background: #c9433d;
+  box-shadow: 0 14px 30px rgba(228, 91, 80, 0.45);
+}
 
 /* 3D Dashboard Perspective & Real Software Showcase */
 .hero-visual {
@@ -1168,11 +1221,9 @@ header.scrolled {
 
 /* Feed Footer Stats */
 .sme-feed-footer {
-  display: flex;
-  gap: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #e2e8f0;
-  flex-wrap: wrap;
+  background: #0C241B;
+  color: #DDE7E0;
+  padding: 60px 0 28px;
 }
 
 .feed-stat-pill {
@@ -1542,12 +1593,9 @@ header.scrolled {
 
 /* SME Carousel Bottom Controls */
 .sme-controls-footer {
-  max-width: 820px;
-  margin: 28px auto 0 auto;
-  padding: 0 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: #0C241B;
+  color: #DDE7E0;
+  padding: 60px 0 28px;
 }
 
 .sme-arrow-btn {
@@ -1610,14 +1658,12 @@ header.scrolled {
 }
 
 .platform-card {
-  background: #fafdfb;
-  border: 1px solid #e2ede6;
-  border-radius: var(--radius-lg);
-  padding: 34px 30px;
-  position: relative;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid var(--ex-line);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(20, 37, 31, 0.04);
+  padding: 28px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
 .platform-card:hover {
@@ -1666,8 +1712,7 @@ header.scrolled {
    12 ERP Modules Grid
    ========================================================================== */
 .modules {
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  background: #E9EEE8;
 }
 
 .module-grid {
@@ -1677,11 +1722,12 @@ header.scrolled {
 }
 
 .module {
-  background: #ffffff;
-  border: 1px solid #e3eee7;
-  border-radius: var(--radius-md);
-  padding: 24px;
-  transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #D7E0D7;
+  border-radius: 8px;
+  padding: 22px;
+  min-height: 155px;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
 .module:hover {
@@ -1710,9 +1756,10 @@ header.scrolled {
    Technology Foundation Strip
    ========================================================================== */
 .tech-strip {
-  background: #edf6f0;
+  background: #E9EEE8;
   padding: 34px 0;
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid #D7E0D7;
+  border-bottom: 1px solid #D7E0D7;
 }
 
 .tech-inner {
@@ -1764,11 +1811,13 @@ header.scrolled {
 }
 
 .role-tab {
+  width: 100%;
   text-align: left;
-  padding: 20px 24px;
-  border-radius: var(--radius-md);
-  border: 1px solid #e3eee7;
-  background: #fafdfb;
+  padding: 17px 19px;
+  border: 1px solid var(--ex-line);
+  background: #ffffff;
+  border-radius: 7px;
+  color: var(--ex-ink);
   cursor: pointer;
   transition: all 0.25s ease;
 }
@@ -1779,10 +1828,11 @@ header.scrolled {
 }
 
 .role-tab.active {
-  border-color: var(--deep);
-  background: #ffffff;
-  box-shadow: var(--shadow-md);
-  transform: translateX(8px);
+  background: #EAF0E5;
+  border-color: #A8C1A8;
+  color: var(--ex-green);
+  box-shadow: 0 10px 28px rgba(23, 61, 50, 0.07);
+  transform: translateX(4px);
 }
 
 .role-tab strong {
@@ -1798,12 +1848,13 @@ header.scrolled {
 }
 
 .role-preview {
-  background: linear-gradient(135deg, #1d4d3f 0%, #153d32 100%);
-  border-radius: var(--radius-lg);
-  padding: 34px;
-  box-shadow: var(--shadow-lg);
-  color: #ffffff;
+  background: linear-gradient(145deg, #EAF0E5, #DDE8DE);
+  border: 1px solid #D2DED2;
+  border-radius: 10px;
+  padding: 25px;
+  min-height: 350px;
   position: relative;
+  overflow: hidden;
 }
 
 .preview-window {
@@ -1876,9 +1927,10 @@ header.scrolled {
    Dark AI Ecosystem Section
    ========================================================================== */
 .ai-section {
-  background: radial-gradient(circle at 80% 20%, #205c4a 0%, #153d32 60%);
+  background: linear-gradient(125deg, #102E24, #174B39 58%, #1C5A40);
   color: #ffffff;
-  padding: 105px 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .ai-section .section-head h2 {
@@ -2290,8 +2342,7 @@ header.scrolled {
    Pricing Section & Calculator Slider
    ========================================================================== */
 .pricing {
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  background: #E9EEE8;
 }
 
 .pricing-calc-box {
@@ -2411,13 +2462,12 @@ header.scrolled {
 
 .price-card {
   background: #ffffff;
-  border: 1px solid #dcece2;
-  border-radius: var(--radius-lg);
-  padding: 36px 30px;
+  border: 1px solid #D6DFD6;
+  border-radius: 10px;
+  padding: 28px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 28px rgba(20, 37, 31, 0.05);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
 .price-card:hover {
@@ -2427,11 +2477,9 @@ header.scrolled {
 }
 
 .price-card.featured {
-  border-color: var(--deep);
-  background: linear-gradient(180deg, #ffffff 0%, #f4faf6 100%);
-  box-shadow: 0 25px 60px rgba(21, 61, 50, 0.12);
-  transform: scale(1.03);
-  z-index: 2;
+  border: 2px solid var(--ex-green);
+  box-shadow: 0 22px 48px rgba(23, 75, 57, 0.16);
+  transform: translateY(-7px);
 }
 
 .price-card.featured:hover {
@@ -2580,8 +2628,7 @@ header.scrolled {
    FAQ Section
    ========================================================================== */
 .faq {
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  background: #E9EEE8;
 }
 
 .faq-list {
@@ -2643,9 +2690,11 @@ header.scrolled {
    CTA Banner Section
    ========================================================================== */
 .cta {
-  background: radial-gradient(circle at 75% 30%, #1e5a47 0%, #153d32 70%);
+  padding: 88px 0;
+  background: linear-gradient(112deg, #102E24, #174B39 70%, #236B4E);
+  position: relative;
+  overflow: hidden;
   color: #ffffff;
-  padding: 85px 0;
 }
 
 .cta-inner {
@@ -2671,10 +2720,9 @@ header.scrolled {
    Footer
    ========================================================================== */
 footer {
-  background: #0f2d25;
-  color: #b8d4c7;
-  padding: 70px 0 30px;
-  font-size: 13px;
+  background: #0C241B;
+  color: #DDE7E0;
+  padding: 60px 0 28px;
 }
 
 .footer-grid {
@@ -3057,8 +3105,10 @@ html, body {
   }
 
   .price-card.featured {
-    transform: none !important;
-  }
+  border: 2px solid var(--ex-green);
+  box-shadow: 0 22px 48px rgba(23, 75, 57, 0.16);
+  transform: translateY(-7px);
+}
 
   .price-card.featured:hover {
     transform: translateY(-4px) !important;
@@ -3291,9 +3341,10 @@ html, body {
   }
 
   .sme-feed-footer {
-    flex-direction: column;
-    gap: 6px;
-  }
+  background: #0C241B;
+  color: #DDE7E0;
+  padding: 60px 0 28px;
+}
 
   .sme-check-grid {
     grid-template-columns: 1fr;
@@ -3305,10 +3356,10 @@ html, body {
   }
 
   .sme-controls-footer {
-    max-width: 100%;
-    margin-top: 18px;
-    padding: 0 2px;
-  }
+  background: #0C241B;
+  color: #DDE7E0;
+  padding: 60px 0 28px;
+}
 }
 
 /* ==========================================
@@ -3356,8 +3407,13 @@ html, body {
   }
 
   .module {
-    padding: 18px 16px;
-  }
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #D7E0D7;
+  border-radius: 8px;
+  padding: 22px;
+  min-height: 155px;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
 
   .steps {
     grid-template-columns: 1fr;
@@ -3400,8 +3456,14 @@ html, body {
   }
 
   .price-card {
-    padding: 26px 18px;
-  }
+  background: #ffffff;
+  border: 1px solid #D6DFD6;
+  border-radius: 10px;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 10px 28px rgba(20, 37, 31, 0.05);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
 
   .price {
     font-size: 32px;
