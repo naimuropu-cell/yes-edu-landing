@@ -10,6 +10,8 @@
   let currentLang = localStorage.getItem("yes_edu_lang") || "en";
   let isAnnualBilling = false;
   let studentCount = 500;
+  let activeHeroRole = "admin";
+  let renderHeroRole;
 
   // Role showcase data (bilingual)
   const roleData = {
@@ -115,6 +117,11 @@
 
     // Sync pricing display
     updatePricingCalculator();
+
+    // Sync hero multi-role cockpit display
+    if (typeof renderHeroRole === "function") {
+      renderHeroRole(activeHeroRole);
+    }
   }
 
   function initLanguageSwitcher() {
@@ -595,11 +602,223 @@
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
+  // ==========================================================================
+  // Hero Multi-Role Slider & Data Synchronization Engine (Option 3)
+  // ==========================================================================
+  const HERO_ROLES = {
+    admin: {
+      roleTitle: { en: "/ Super Admin Cockpit", bn: "/ সুপার অ্যাডমিন ককপিট" },
+      status: { en: "Live • 2026", bn: "লাইভ • ২০২৬" },
+      float1: {
+        ico: "✓",
+        title: { en: "Attendance Today", bn: "আজকের উপস্থিতি" },
+        stat: "97%",
+        sub: { en: "Live Biometric • 115 Present", bn: "বায়োমেট্রিক • ১১৫ জন উপস্থিত" }
+      },
+      float2: {
+        ico: "৳",
+        title: { en: "Today's Collection", bn: "আজকের ফি আদায়" },
+        stat: "৳ 6,350.00",
+        sub: { en: "bKash, Nagad & Cash Reconciled", bn: "বিকাশ ও নগদ অটো-রিকনসাইল" }
+      },
+      float3: {
+        ico: "✦",
+        title: { en: "AI Teaching Assistant", bn: "এআই শিক্ষক সহকারী" },
+        stat: { en: "Active & Ready", bn: "সক্রিয় ও প্রস্তুত" },
+        sub: { en: "NCTB Syllabus V2 Engine", bn: "এনসিটিবি সিলেবাস V2" }
+      },
+      mob1: { title: { en: "Attendance", bn: "উপস্থিতি" }, stat: "97%", sub: { en: "Live Biometric", bn: "বায়োমেট্রিক" } },
+      mob2: { title: { en: "Collection", bn: "ফি আদায়" }, stat: "৳ 6,350", sub: { en: "bKash Verified", bn: "বিকাশ ভেরিফাইড" } },
+      mob3: { title: { en: "AI Assistant", bn: "এআই সহকারী" }, stat: { en: "Active", bn: "সক্রিয়" }, sub: { en: "NCTB V2 Engine", bn: "এনসিটিবি V2" } }
+    },
+    teacher: {
+      roleTitle: { en: "/ Teacher Workspace", bn: "/ শিক্ষক ড্যাশবোর্ড" },
+      status: { en: "Active • Term 01", bn: "সক্রিয় • টার্ম ০১" },
+      float1: {
+        ico: "📋",
+        title: { en: "Classes Today", bn: "আজকের ক্লাস" },
+        stat: "3 Classes",
+        sub: { en: "Class 9-A, 10-B & 8-A Routine", bn: "ক্লাস ৯-এ, ১০-বি ও ৮-এ রুটিন" }
+      },
+      float2: {
+        ico: "👥",
+        title: { en: "My Students", bn: "মোট শিক্ষার্থী" },
+        stat: "43 Students",
+        sub: { en: "Digital Attendance & Marks", bn: "লাইভ উপস্থিতি ও নম্বর গ্রহণ" }
+      },
+      float3: {
+        ico: "✦",
+        title: { en: "Teacher AI Engine", bn: "টিচার এআই ইঞ্জিন" },
+        stat: { en: "NCTB Ready", bn: "এনসিটিবি প্রস্তুত" },
+        sub: { en: "1-Tap Lesson Plan & Questions", bn: "১-ট্যাপ পাঠপরিকল্পনা ও প্রশ্ন" }
+      },
+      mob1: { title: { en: "Classes", bn: "আজকের ক্লাস" }, stat: "3 Classes", sub: { en: "Routine Ready", bn: "রুটিন প্রস্তুত" } },
+      mob2: { title: { en: "Students", bn: "শিক্ষার্থী" }, stat: "43 Active", sub: { en: "Marksheet Ready", bn: "নম্বর এন্ট্রি" } },
+      mob3: { title: { en: "Teacher AI", bn: "টিচার এআই" }, stat: { en: "Ready", bn: "প্রস্তুত" }, sub: { en: "NCTB Syllabus V2", bn: "এনসিটিবি V2" } }
+    },
+    parent: {
+      roleTitle: { en: "/ Guardian Portal", bn: "/ অভিভাবক পোর্টাল" },
+      status: { en: "Connected • 3 Children", bn: "সংযুক্ত • ৩ সন্তান" },
+      float1: {
+        ico: "📱",
+        title: { en: "Gate SMS Alert", bn: "গেট এসএমএস অ্যালার্ট" },
+        stat: "09:02 AM",
+        sub: { en: "Tahmid Verified at Gate #02", bn: "তাহমিদ গেট #০২ এ প্রবেশ করেছে" }
+      },
+      float2: {
+        ico: "৳",
+        title: { en: "Fees Due (bKash)", bn: "বকেয়া ফি (বিকাশ)" },
+        stat: "৳ 850.00",
+        sub: { en: "1-Tap Digital QR Receipt", bn: "১-ট্যাপ ডিজিটাল মানি রিসিট" }
+      },
+      float3: {
+        ico: "📚",
+        title: { en: "Homework & Routine", bn: "হোমওয়ার্ক ও রুটিন" },
+        stat: { en: "4 Pending", bn: "৪টি নির্ধারিত" },
+        sub: { en: "English For Today & Bangla", bn: "ইংলিশ ও বাংলা অ্যাসাইনমেন্ট" }
+      },
+      mob1: { title: { en: "Gate Alert", bn: "গেট অ্যালার্ট" }, stat: "09:02 AM", sub: { en: "Tahmid Arrived", bn: "তাহমিদ উপস্থিত" } },
+      mob2: { title: { en: "Fees Due", bn: "বকেয়া ফি" }, stat: "৳ 850", sub: { en: "bKash 1-Tap", bn: "বিকাশ পেমেন্ট" } },
+      mob3: { title: { en: "Homework", bn: "হোমওয়ার্ক" }, stat: { en: "4 Tasks", bn: "৪টি কাজ" }, sub: { en: "English & Bangla", bn: "ইংরেজি ও বাংলা" } }
+    }
+  };
+
+  const HERO_ROLES_KEYS = ["admin", "teacher", "parent"];
+  let heroCarouselTimer = null;
+  let isHeroPaused = false;
+
+  function updateHeroText(el, textObj) {
+    if (!el) return;
+    if (typeof textObj === "string") {
+      el.textContent = textObj;
+      return;
+    }
+    const isBn = currentLang === "bn";
+    el.innerHTML = `<span class="lang-en ${isBn ? "hidden" : ""}">${textObj.en}</span><span class="lang-bn ${isBn ? "" : "hidden"}">${textObj.bn}</span>`;
+  }
+
+  renderHeroRole = function (roleKey) {
+    const data = HERO_ROLES[roleKey];
+    if (!data) return;
+
+    // 1. Update Buttons & Progress bar
+    const buttons = document.querySelectorAll(".hero-role-btn");
+    buttons.forEach((btn) => {
+      const isActive = btn.dataset.role === roleKey;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-selected", isActive ? "true" : "false");
+      if (isActive) {
+        btn.classList.remove("animating");
+        void btn.offsetWidth; // Trigger reflow for CSS animation restart
+        btn.classList.add("animating");
+      } else {
+        btn.classList.remove("animating");
+      }
+    });
+
+    // 2. Update Slides
+    const slides = document.querySelectorAll(".dash-slide");
+    slides.forEach((slide) => {
+      const isSlideActive = slide.dataset.slide === roleKey;
+      slide.classList.toggle("active", isSlideActive);
+    });
+
+    // 3. Update Title & Status
+    const titleEl = document.getElementById("dashRoleTitle");
+    if (titleEl) updateHeroText(titleEl, data.roleTitle);
+
+    const statusEl = document.getElementById("dashStatusText");
+    if (statusEl) updateHeroText(statusEl, data.status);
+
+    // 4. Update Float Cards
+    const f1Ico = document.getElementById("floatOneIco");
+    if (f1Ico) f1Ico.textContent = data.float1.ico;
+    updateHeroText(document.getElementById("floatOneTitle"), data.float1.title);
+    const f1Stat = document.getElementById("floatOneStat");
+    if (f1Stat) f1Stat.textContent = currentLang === "bn" ? toBengaliNumber(data.float1.stat) : data.float1.stat;
+    updateHeroText(document.getElementById("floatOneSub"), data.float1.sub);
+
+    const f2Ico = document.getElementById("floatTwoIco");
+    if (f2Ico) f2Ico.textContent = data.float2.ico;
+    updateHeroText(document.getElementById("floatTwoTitle"), data.float2.title);
+    const f2Stat = document.getElementById("floatTwoStat");
+    if (f2Stat) f2Stat.textContent = currentLang === "bn" ? toBengaliNumber(data.float2.stat) : data.float2.stat;
+    updateHeroText(document.getElementById("floatTwoSub"), data.float2.sub);
+
+    const f3Ico = document.getElementById("floatThreeIco");
+    if (f3Ico) f3Ico.textContent = data.float3.ico;
+    updateHeroText(document.getElementById("floatThreeTitle"), data.float3.title);
+    updateHeroText(document.getElementById("floatThreeStat"), data.float3.stat);
+    updateHeroText(document.getElementById("floatThreeSub"), data.float3.sub);
+
+    // 5. Update Mobile KPI Cards
+    updateHeroText(document.getElementById("mobKpiOneTitle"), data.mob1.title);
+    const m1Stat = document.getElementById("mobKpiOneStat");
+    if (m1Stat) m1Stat.textContent = currentLang === "bn" ? toBengaliNumber(data.mob1.stat) : data.mob1.stat;
+    updateHeroText(document.getElementById("mobKpiOneSub"), data.mob1.sub);
+
+    updateHeroText(document.getElementById("mobKpiTwoTitle"), data.mob2.title);
+    const m2Stat = document.getElementById("mobKpiTwoStat");
+    if (m2Stat) m2Stat.textContent = currentLang === "bn" ? toBengaliNumber(data.mob2.stat) : data.mob2.stat;
+    updateHeroText(document.getElementById("mobKpiTwoSub"), data.mob2.sub);
+
+    updateHeroText(document.getElementById("mobKpiThreeTitle"), data.mob3.title);
+    updateHeroText(document.getElementById("mobKpiThreeStat"), data.mob3.stat);
+    updateHeroText(document.getElementById("mobKpiThreeSub"), data.mob3.sub);
+  };
+
+  function startHeroTimer() {
+    stopHeroTimer();
+    heroCarouselTimer = setInterval(() => {
+      if (isHeroPaused) return;
+      const currentIndex = HERO_ROLES_KEYS.indexOf(activeHeroRole);
+      const nextIndex = (currentIndex + 1) % HERO_ROLES_KEYS.length;
+      activeHeroRole = HERO_ROLES_KEYS[nextIndex];
+      renderHeroRole(activeHeroRole);
+    }, 5500);
+  }
+
+  function stopHeroTimer() {
+    if (heroCarouselTimer) {
+      clearInterval(heroCarouselTimer);
+      heroCarouselTimer = null;
+    }
+  }
+
+  function initHeroRoleCarousel() {
+    const nav = document.getElementById("heroRoleNav");
+    const frame = document.getElementById("heroDashboardFrame");
+    if (!nav || !frame) return;
+
+    renderHeroRole(activeHeroRole);
+    startHeroTimer();
+
+    // Click handler for role tabs
+    nav.addEventListener("click", (e) => {
+      const btn = e.target.closest(".hero-role-btn");
+      if (!btn || !btn.dataset.role) return;
+      activeHeroRole = btn.dataset.role;
+      renderHeroRole(activeHeroRole);
+      startHeroTimer(); // Restart timer after user interaction
+    });
+
+    // Pause auto-rotation on mouse hover so visitor can inspect calmly
+    [nav, frame].forEach((container) => {
+      container.addEventListener("mouseenter", () => {
+        isHeroPaused = true;
+      });
+      container.addEventListener("mouseleave", () => {
+        isHeroPaused = false;
+      });
+    });
+  }
+
   // Initialize all subsystems when DOM is ready
   document.addEventListener("DOMContentLoaded", () => {
     initLanguageSwitcher();
     initNavbar();
     initScrollReveal();
+    initHeroRoleCarousel();
     initRoleShowcase();
     initDemoStudio();
     initPricingCalculator();

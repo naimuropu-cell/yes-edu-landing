@@ -569,6 +569,96 @@ header.scrolled {
   border-radius: 50%;
 }
 
+/* Hero Multi-Role Slider Navigation */
+.hero-role-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #D5E2DA;
+  border-radius: 99px;
+  padding: 4px;
+  box-shadow: 0 6px 20px rgba(14, 42, 31, 0.06);
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 3;
+}
+
+.hero-role-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 99px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #52665B;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.hero-role-btn:hover {
+  color: #0E2A1F;
+  background: rgba(14, 42, 31, 0.04);
+}
+
+.hero-role-btn.active {
+  background: #0E2A1F;
+  color: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(14, 42, 31, 0.2);
+}
+
+.role-btn-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #A0B3A9;
+  transition: all 0.25s ease;
+}
+
+.hero-role-btn.active .role-btn-dot {
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.35);
+}
+
+/* Subtle Progress Bar underneath active tab */
+.role-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  display: none;
+}
+
+.hero-role-btn.active .role-progress-bar {
+  display: block;
+}
+
+.role-progress-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #10B981;
+}
+
+.hero-role-btn.active.animating .role-progress-fill {
+  animation: roleProgress 5.5s linear forwards;
+}
+
+@keyframes roleProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
 .dashboard {
   width: min(100%, 575px);
   background: #ffffff;
@@ -628,6 +718,7 @@ header.scrolled {
   font-weight: 700;
   color: #247555;
   margin-left: 8px;
+  transition: all 0.3s ease;
 }
 
 .dash-status-dot {
@@ -664,14 +755,63 @@ header.scrolled {
   background: #ffffff;
   overflow: hidden;
   line-height: 0;
+  aspect-ratio: 1024 / 560;
+  width: 100%;
+}
+
+.dash-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.985);
+  pointer-events: none;
+}
+
+.dash-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
 .dash-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.4s ease;
+}
+
+/* Vector Universal Name Overlay */
+.dash-name-overlay {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  user-select: none;
+}
+
+.teacher-name-overlay {
+  left: 30.5%;
+  top: 20.8%;
+}
+
+.parent-name-overlay {
+  left: 30.5%;
+  top: 34.6%;
+}
+
+.dash-user-label {
+  font-family: var(--font-heading);
+  font-size: clamp(14px, 2.2vw, 22px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  display: inline-block;
+  line-height: 1;
 }
 
 /* Floating Stat Cards */
@@ -3539,6 +3679,22 @@ html, body {
     justify-content: center;
     text-align: center;
     gap: 10px;
+  }
+
+  .hero-role-nav {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 12px;
+    gap: 4px;
+    padding: 3px;
+  }
+
+  .hero-role-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 6px 8px;
+    font-size: 11px;
+    gap: 5px;
   }
 
   .float-card {

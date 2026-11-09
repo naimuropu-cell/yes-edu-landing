@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=7.7">
+  <link rel="stylesheet" href="css/style.css?v=7.8">
 </head>
 <body>
 
@@ -103,27 +103,80 @@
         </div>
         
         <div class="hero-visual reveal">
-          <!-- Float 1: Top-Left Attendance Badge (Synced with 97% on dashboard) -->
-          <div class="float-card float-one">
-            <div class="mini"><span class="float-icon">✓</span><span class="lang-en">Attendance Today</span><span class="lang-bn hidden">আজকের উপস্থিতি</span></div>
-            <strong>97%</strong>
-            <span><span class="lang-en">Live Biometric • 115 Present</span><span class="lang-bn hidden">বায়োমেট্রিক • ১১৫ জন উপস্থিত</span></span>
+          <!-- Role Navigation Switcher Pills directly integrated with the Hero Cockpit -->
+          <div class="hero-role-nav" id="heroRoleNav" role="tablist" aria-label="Select Role Dashboard">
+            <button class="hero-role-btn active" data-role="admin" type="button" role="tab" aria-selected="true" title="Super Admin Cockpit">
+              <span class="role-btn-dot"></span>
+              <span class="role-btn-title">
+                <span class="lang-en">Super Admin</span>
+                <span class="lang-bn hidden">অ্যাডমিন ককপিট</span>
+              </span>
+              <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
+            </button>
+            <button class="hero-role-btn" data-role="teacher" type="button" role="tab" aria-selected="false" title="Teacher Workspace">
+              <span class="role-btn-dot"></span>
+              <span class="role-btn-title">
+                <span class="lang-en">Teacher Workspace</span>
+                <span class="lang-bn hidden">শিক্ষক ড্যাশবোর্ড</span>
+              </span>
+              <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
+            </button>
+            <button class="hero-role-btn" data-role="parent" type="button" role="tab" aria-selected="false" title="Guardian Portal">
+              <span class="role-btn-dot"></span>
+              <span class="role-btn-title">
+                <span class="lang-en">Guardian Portal</span>
+                <span class="lang-bn hidden">অভিভাবক পোর্টাল</span>
+              </span>
+              <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
+            </button>
+          </div>
+
+          <!-- Float 1: Top-Left Dynamic Status Badge (Synchronized with Active Role) -->
+          <div class="float-card float-one" id="heroFloatOne">
+            <div class="mini">
+              <span class="float-icon" id="floatOneIco">✓</span>
+              <span id="floatOneTitle">
+                <span class="lang-en">Attendance Today</span>
+                <span class="lang-bn hidden">আজকের উপস্থিতি</span>
+              </span>
+            </div>
+            <strong id="floatOneStat">97%</strong>
+            <span id="floatOneSub">
+              <span class="lang-en">Live Biometric • 115 Present</span>
+              <span class="lang-bn hidden">বায়োমেট্রিক • ১১৫ জন উপস্থিত</span>
+            </span>
           </div>
           
-          <!-- Float 3: Top-Right AI Assistant (Synced with AI Teaching Assistant) -->
-          <div class="float-card float-three">
-            <div class="mini"><span class="float-icon">✦</span><span class="lang-en">AI Teaching Assistant</span><span class="lang-bn hidden">এআই শিক্ষক সহকারী</span></div>
-            <strong><span class="lang-en">Active & Ready</span><span class="lang-bn hidden">সক্রিয় ও প্রস্তুত</span></strong>
-            <span><span class="lang-en">NCTB Syllabus V2 Engine</span><span class="lang-bn hidden">এনসিটিবি সিলেবাস V2</span></span>
+          <!-- Float 3: Top-Right Dynamic AI & Routine Badge (Synchronized with Active Role) -->
+          <div class="float-card float-three" id="heroFloatThree">
+            <div class="mini">
+              <span class="float-icon" id="floatThreeIco">✦</span>
+              <span id="floatThreeTitle">
+                <span class="lang-en">AI Teaching Assistant</span>
+                <span class="lang-bn hidden">এআই শিক্ষক সহকারী</span>
+              </span>
+            </div>
+            <strong id="floatThreeStat">
+              <span class="lang-en">Active & Ready</span>
+              <span class="lang-bn hidden">সক্রিয় ও প্রস্তুত</span>
+            </strong>
+            <span id="floatThreeSub">
+              <span class="lang-en">NCTB Syllabus V2 Engine</span>
+              <span class="lang-bn hidden">এনসিটিবি সিলেবাস V2</span>
+            </span>
           </div>
           
-          <!-- Modern macOS App Window Container with Real YES EDU Super Admin Dashboard -->
-          <div class="dashboard" title="YES EDU Super Admin Dashboard">
+          <!-- Modern macOS App Window Container with Real YES EDU Multi-Role Slides -->
+          <div class="dashboard" id="heroDashboardFrame" title="YES EDU Multi-Role Cockpit">
             <div class="dash-top">
               <div class="dash-logo">
-                <b>Y</b> YES EDU <span style="font-weight:500;color:#7e968b">/ Super Admin Cockpit</span>
-                <span class="dash-status-pill">
-                  <span class="dash-status-dot"></span> <span class="lang-en">Live • 2026</span><span class="lang-bn hidden">লাইভ • ২০২৬</span>
+                <b>Y</b> YES EDU <span id="dashRoleTitle" style="font-weight:500;color:#7e968b">/ Super Admin Cockpit</span>
+                <span class="dash-status-pill" id="dashStatusPill">
+                  <span class="dash-status-dot"></span> 
+                  <span id="dashStatusText">
+                    <span class="lang-en">Live • 2026</span>
+                    <span class="lang-bn hidden">লাইভ • ২০২৬</span>
+                  </span>
                 </span>
               </div>
               <div class="dash-dots">
@@ -131,40 +184,78 @@
               </div>
             </div>
             
-            <div class="dash-screen">
-              <img src="images/admin-dashboard.png" 
-                   alt="YES EDU Super Admin Dashboard Overview" 
-                   class="dash-img" 
-                   width="1024" 
-                   height="586" 
-                   loading="eager" 
-                   fetchpriority="high">
+            <div class="dash-screen" id="dashScreenSlider">
+              <!-- Slide 1: Super Admin Cockpit (Authentic High-Res Dashboard) -->
+              <div class="dash-slide active" data-slide="admin">
+                <img src="images/admin-dashboard.png" 
+                     alt="YES EDU Super Admin Dashboard" 
+                     class="dash-img" 
+                     width="1024" 
+                     height="586" 
+                     loading="eager" 
+                     fetchpriority="high">
+              </div>
+
+              <!-- Slide 2: Teacher Workspace (Authentic Dashboard with Universal Label) -->
+              <div class="dash-slide" data-slide="teacher">
+                <img src="images/teacher-dashboard.png" 
+                     alt="YES EDU Teacher Workspace" 
+                     class="dash-img" 
+                     width="1024" 
+                     height="528" 
+                     loading="lazy">
+                <div class="dash-name-overlay teacher-name-overlay">
+                  <span class="dash-user-label">Teacher</span>
+                </div>
+              </div>
+
+              <!-- Slide 3: Guardian Portal (Authentic Dashboard with Universal Label) -->
+              <div class="dash-slide" data-slide="parent">
+                <img src="images/parent-dashboard.png" 
+                     alt="YES EDU Guardian Portal" 
+                     class="dash-img" 
+                     width="1024" 
+                     height="525" 
+                     loading="lazy">
+                <div class="dash-name-overlay parent-name-overlay">
+                  <span class="dash-user-label">Guardian</span>
+                </div>
+              </div>
             </div>
           </div>
           
-          <!-- Float 2: Bottom-Right Fee Collection Badge (Synced with ৳6,350 on dashboard) -->
-          <div class="float-card float-two">
-            <div class="mini"><span class="float-icon">৳</span><span class="lang-en">Today's Collection</span><span class="lang-bn hidden">আজকের ফি আদায়</span></div>
-            <strong>৳ 6,350.00</strong>
-            <span><span class="lang-en">bKash, Nagad & Cash Reconciled</span><span class="lang-bn hidden">বিকাশ ও নগদ অটো-রিকনসাইল</span></span>
+          <!-- Float 2: Bottom-Right Dynamic Collection/Due Badge (Synchronized with Active Role) -->
+          <div class="float-card float-two" id="heroFloatTwo">
+            <div class="mini">
+              <span class="float-icon" id="floatTwoIco">৳</span>
+              <span id="floatTwoTitle">
+                <span class="lang-en">Today's Collection</span>
+                <span class="lang-bn hidden">আজকের ফি আদায়</span>
+              </span>
+            </div>
+            <strong id="floatTwoStat">৳ 6,350.00</strong>
+            <span id="floatTwoSub">
+              <span class="lang-en">bKash, Nagad & Cash Reconciled</span>
+              <span class="lang-bn hidden">বিকাশ ও নগদ অটো-রিকনসাইল</span>
+            </span>
           </div>
 
           <!-- Mobile KPI Stat Strip (Visible only on screens <= 768px where floating badges are hidden) -->
-          <div class="hero-mobile-kpi">
-            <div class="kpi-card">
-              <span><span class="lang-en">Attendance</span><span class="lang-bn hidden">উপস্থিতি</span></span>
-              <strong>97%</strong>
-              <small><span class="lang-en">Live Biometric</span><span class="lang-bn hidden">বায়োমেট্রিক</span></small>
+          <div class="hero-mobile-kpi" id="heroMobileKpi">
+            <div class="kpi-card" id="mobileKpiOne">
+              <span id="mobKpiOneTitle"><span class="lang-en">Attendance</span><span class="lang-bn hidden">উপস্থিতি</span></span>
+              <strong id="mobKpiOneStat">97%</strong>
+              <small id="mobKpiOneSub"><span class="lang-en">Live Biometric</span><span class="lang-bn hidden">বায়োমেট্রিক</span></small>
             </div>
-            <div class="kpi-card">
-              <span><span class="lang-en">Collection</span><span class="lang-bn hidden">ফি আদায়</span></span>
-              <strong>৳ 6,350</strong>
-              <small><span class="lang-en">bKash Verified</span><span class="lang-bn hidden">বিকাশ ভেরিফাইড</span></small>
+            <div class="kpi-card" id="mobileKpiTwo">
+              <span id="mobKpiTwoTitle"><span class="lang-en">Collection</span><span class="lang-bn hidden">ফি আদায়</span></span>
+              <strong id="mobKpiTwoStat">৳ 6,350</strong>
+              <small id="mobKpiTwoSub"><span class="lang-en">bKash Verified</span><span class="lang-bn hidden">বিকাশ ভেরিফাইড</span></small>
             </div>
-            <div class="kpi-card">
-              <span><span class="lang-en">AI Assistant</span><span class="lang-bn hidden">এআই সহকারী</span></span>
-              <strong>Active</strong>
-              <small><span class="lang-en">NCTB V2 Engine</span><span class="lang-bn hidden">এনসিটিবি V2</span></small>
+            <div class="kpi-card" id="mobileKpiThree">
+              <span id="mobKpiThreeTitle"><span class="lang-en">AI Assistant</span><span class="lang-bn hidden">এআই সহকারী</span></span>
+              <strong id="mobKpiThreeStat"><span class="lang-en">Active</span><span class="lang-bn hidden">সক্রিয়</span></strong>
+              <small id="mobKpiThreeSub"><span class="lang-en">NCTB V2 Engine</span><span class="lang-bn hidden">এনসিটিবি V2</span></small>
             </div>
           </div>
         </div>
@@ -1844,6 +1935,6 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=7.7"></script>
+  <script src="js/main.js?v=7.8"></script>
 </body>
 </html>
