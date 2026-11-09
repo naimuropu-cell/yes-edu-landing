@@ -430,111 +430,170 @@
       startStoryTimer();
     }, 50);
 
-    // Test 1: Biometric RFID Tap
+    // Test 1: Biometric RFID Tap -> Phone SMS Live Mockup
     const punchBtn = document.getElementById("triggerGatePunchSimBtn");
-    const punchLog = document.getElementById("punchLogDisplay");
-    if (punchBtn && punchLog) {
+    const phoneTime = document.getElementById("phoneMockupTime");
+    const smsBubble = document.getElementById("punchSmsBubble");
+    const latencyEl = document.getElementById("punchLatencyText");
+    if (punchBtn) {
       punchBtn.addEventListener("click", () => {
         punchBtn.textContent = currentLang === "bn" ? "কার্ড স্ক্যান হচ্ছে..." : "Scanning RFID Card...";
         punchBtn.disabled = true;
 
         setTimeout(() => {
-          const timeStr = new Date().toLocaleTimeString();
-          if (currentLang === "bn") {
-            punchLog.innerHTML = `<span style="color:#2c9b70;font-weight:700;">[সফল]</span> কার্ড পাঞ্চ সম্পন্ন! <b>আইডি: YES-9041 (তাহমিদ রহমান, ৯ম শ্রেণি)</b><br>
-              <span style="color:#637d71;">• সময়: ${timeStr} • গেট নং: প্রধান ফটক (ডিভাইস #ZKT-02)</span><br>
-              <span style="color:#1d5243;">• অভিভাবক এসএমএস: "আপনার সন্তান তাহমিদ নিরাপদে প্রতিষ্ঠানে প্রবেশ করেছে।" [ডেলিভার্ড ✓]</span>`;
-            punchBtn.textContent = "পুনরায় কার্ড পাঞ্চ টেস্ট করুন";
-          } else {
-            punchLog.innerHTML = `<span style="color:#2c9b70;font-weight:700;">[SUCCESS]</span> RFID Punch Verified! <b>ID: YES-9041 (Tahmid Rahman, Class 9)</b><br>
-              <span style="color:#637d71;">• Timestamp: ${timeStr} • Gate: Main Entrance (Device #ZKT-02)</span><br>
-              <span style="color:#1d5243;">• Parent SMS: "Your child Tahmid entered campus safely at ${timeStr}." [Delivered ✓]</span>`;
-            punchBtn.textContent = "Test Card Punch Again";
+          const now = new Date();
+          const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          if (phoneTime) phoneTime.textContent = timeStr;
+          if (latencyEl) {
+            const lat = (0.14 + Math.random() * 0.08).toFixed(2);
+            latencyEl.textContent = `Latency: ${lat}s • Device #ZKT-02`;
           }
+
+          if (smsBubble) {
+            smsBubble.style.borderColor = "#34d399";
+            smsBubble.style.boxShadow = "0 0 16px rgba(52, 211, 153, 0.4)";
+            setTimeout(() => {
+              smsBubble.style.borderColor = "#174230";
+              smsBubble.style.boxShadow = "none";
+            }, 1200);
+          }
+
+          punchBtn.textContent = currentLang === "bn" ? "পুনরায় কার্ড পাঞ্চ টেস্ট করুন" : "Touch Another Smart Card";
           punchBtn.disabled = false;
+        }, 500);
+      });
+    }
+
+    // Test 2: bKash Payment Simulation -> Official Digital Voucher Mockup
+    const bkashBtn = document.getElementById("triggerBkashPaymentSimBtn");
+    const voucherNoEl = document.getElementById("voucherNoDisplay");
+    const trxIdEl = document.getElementById("voucherTrxIdDisplay");
+    const paidSeal = document.getElementById("voucherPaidSeal");
+    if (bkashBtn) {
+      bkashBtn.addEventListener("click", () => {
+        bkashBtn.textContent = currentLang === "bn" ? "বিকাশ পেমেন্ট প্রসেস হচ্ছে..." : "Processing bKash Webhook...";
+        bkashBtn.disabled = true;
+
+        setTimeout(() => {
+          const randomVoucher = "#VR-" + Math.floor(100000 + Math.random() * 900000);
+          const randomTrx = "8NM" + Math.random().toString(36).substring(2, 6).toUpperCase();
+          if (voucherNoEl) voucherNoEl.textContent = randomVoucher;
+          if (trxIdEl) trxIdEl.textContent = "TrxID: " + randomTrx;
+
+          if (paidSeal) {
+            paidSeal.style.transform = "rotate(-3deg) scale(1.2)";
+            paidSeal.style.boxShadow = "0 0 20px rgba(52, 211, 153, 0.6)";
+            setTimeout(() => {
+              paidSeal.style.transform = "rotate(-3deg) scale(1)";
+              paidSeal.style.boxShadow = "0 0 12px rgba(52, 211, 153, 0.25)";
+            }, 300);
+          }
+
+          bkashBtn.textContent = currentLang === "bn" ? "পুনরায় ফি পেমেন্ট টেস্ট করুন" : "Simulate Another Fee Payment";
+          bkashBtn.disabled = false;
         }, 600);
       });
     }
 
-    // Test 2: bKash Payment Simulation
-    const bkashBtn = document.getElementById("triggerBkashPaymentSimBtn");
-    const bkashLog = document.getElementById("bkashLogDisplay");
-    if (bkashBtn && bkashLog) {
-      bkashBtn.addEventListener("click", () => {
-        bkashBtn.textContent = currentLang === "bn" ? "পেমেন্ট প্রসেস হচ্ছে..." : "Processing bKash Webhook...";
-        bkashBtn.disabled = true;
-
-        setTimeout(() => {
-          const voucher = "V-" + Math.floor(100000 + Math.random() * 900000);
-          if (currentLang === "bn") {
-            bkashLog.innerHTML = `<span style="color:#2c9b70;font-weight:700;">[ভেরিফাইড]</span> বিকাশ ফি আদায় সফল! <b>ভাউচার: #${voucher}</b><br>
-              <span style="color:#637d71;">• ট্রানজেকশন আইডি: 8NM9X72K • ফি পরিমাণ: ৳ ৩,৫০০ (টিউশন ও পরীক্ষা ফি)</span><br>
-              <span style="color:#1d5243;">• হিসাব ক্যাশবুক আপডেট সম্পন্ন • অটো-মানি রিসিট এসএমএস পাঠানো হয়েছে।</span>`;
-            bkashBtn.textContent = "পুনরায় ফি পেমেন্ট টেস্ট করুন";
-          } else {
-            bkashLog.innerHTML = `<span style="color:#2c9b70;font-weight:700;">[VERIFIED]</span> bKash 1-Tap Collection Complete! <b>Voucher: #${voucher}</b><br>
-              <span style="color:#637d71;">• TrxID: 8NM9X72K • Amount: ৳ 3,500 (Tuition + Exam Fee)</span><br>
-              <span style="color:#1d5243;">• Double-entry ledger auto-reconciled • Digital receipt dispatched via SMS.</span>`;
-            bkashBtn.textContent = "Test Fee Payment Again";
-          }
-          bkashBtn.disabled = false;
-        }, 700);
-      });
-    }
-
-    // Test 3: NCTB AI Question Generator
+    // Test 3: NCTB AI Question Generator -> Print-Ready Exam Paper Mockup
     const aiBtn = document.getElementById("triggerAiQuestionSimBtn");
-    const aiLog = document.getElementById("aiLogDisplay");
-    if (aiBtn && aiLog) {
+    const stimulusEl = document.getElementById("examStimulus");
+    const questionsListEl = document.getElementById("examQuestionsList");
+    let aiQuestionCycle = 0;
+    if (aiBtn) {
       aiBtn.addEventListener("click", () => {
-        aiBtn.textContent = currentLang === "bn" ? "এআই সৃজনশীল প্রশ্ন তৈরি করছে..." : "AI Generating NCTB Question...";
+        aiBtn.textContent = currentLang === "bn" ? "এআই প্রশ্ন তৈরি করছে..." : "AI Generating NCTB Questions...";
         aiBtn.disabled = true;
 
         setTimeout(() => {
-          if (currentLang === "bn") {
-            aiLog.innerHTML = `<b>বিষয়: সাধারণ বিজ্ঞান (৯ম শ্রেণি) • এনসিটিবি সৃজনশীল প্রশ্ন:</b><br>
-              <span style="color:#637d71;">উদ্দীপক: সাকিব ও রাফি স্কুলের মাঠে খেলাধুলা করছিল...</span><br>
-              (ক) বল কাকে বলে? [১]<br>
-              (খ) জড়তা বলতে কী বোঝায়? ব্যাখ্যা করো। [২]<br>
-              (গ) উদ্দীপকের ঘটনার আলোকে নিউটনের ২য় সূত্র প্রয়োগ করো। [৩]<br>
-              (ঘ) বাস্তব জীবনে এই নীতির প্রয়োগ যথার্থতা বিশ্লেষণ করো। [৪]`;
-            aiBtn.textContent = "নতুন প্রশ্ন জেনারেট করুন";
+          aiQuestionCycle = (aiQuestionCycle + 1) % 2;
+
+          if (aiQuestionCycle === 1) {
+            if (stimulusEl) {
+              stimulusEl.innerHTML = currentLang === "bn" 
+                ? "<b>উদ্দীপক:</b> একটি বিদ্যালয়ের শিক্ষার্থীরা বার্ষিক ক্রীড়া প্রতিযোগিতায় ৫০ মিটার দৌড়ে অংশগ্রহণ করল। তামিম ৪ সেকেন্ডে ২০ মিটার এবং পরবর্তী ৩ সেকেন্ডে ৩০ মিটার দূরত্ব অতিক্রম করে..."
+                : "<b>Stimulus:</b> Students participated in a 50m sprint track race. Tamim covered 20m in 4 seconds and the remaining 30m in 3 seconds under uniform acceleration...";
+            }
+            if (questionsListEl) {
+              questionsListEl.innerHTML = currentLang === "bn"
+                ? `<div class="cq-item"><b>(ক) জ্ঞানমূলক:</b> দ্রুতি কাকে বলে? <span class="cq-mark">[১]</span></div>
+                   <div class="cq-item"><b>(খ) অনুধাবনমূলক:</b> সকল বৃত্তাকার গতিই কি পর্যায়বৃত্ত গতি? ব্যাখ্যা করো। <span class="cq-mark">[২]</span></div>
+                   <div class="cq-item"><b>(গ) প্রয়োগমূলক:</b> উদ্দীপকের ১ম অংশে তামিমের ত্বরণ নির্ণয় করো। <span class="cq-mark">[৩]</span></div>
+                   <div class="cq-item"><b>(ঘ) উচ্চতর দক্ষতা:</b> তামিমের সম্পূর্ণ গতির বেগ-সময় লেখচিত্র অঙ্কনপূর্বক ত্বরণের পরিবর্তন বিশ্লেষণ করো। <span class="cq-mark">[৪]</span></div>`
+                : `<div class="cq-item"><b>(a) Knowledge:</b> Define Velocity. <span class="cq-mark">[1]</span></div>
+                   <div class="cq-item"><b>(b) Comprehension:</b> Explain why circular motion is periodic. <span class="cq-mark">[2]</span></div>
+                   <div class="cq-item"><b>(c) Application:</b> Calculate acceleration during the first 20m. <span class="cq-mark">[3]</span></div>
+                   <div class="cq-item"><b>(d) Higher Ability:</b> Plot and analyze the velocity-time graph. <span class="cq-mark">[4]</span></div>`;
+            }
           } else {
-            aiLog.innerHTML = `<b>Subject: General Science (Grade 9) • NCTB Creative Question:</b><br>
-              <span style="color:#637d71;">Stimulus: During a laboratory test on acceleration...</span><br>
-              (a) Define Force. [1]<br>
-              (b) Explain inertia with a practical example. [2]<br>
-              (c) Calculate the applied kinetic friction from the graph. [3]<br>
-              (d) Analyze the conservation of momentum in this scenario. [4]`;
-            aiBtn.textContent = "Generate Another Question";
+            if (stimulusEl) {
+              stimulusEl.innerHTML = currentLang === "bn"
+                ? "<b>উদ্দীপক:</b> সাকিব একটি ১৫ কেজি ভরের স্থির ট্রলির ওপর ৬০ নিউটন অনুভূমিক বল প্রয়োগ করে সমত্বরণে ৫ সেকেন্ডে ৪০ মিটার পথ অতিক্রম করালো..."
+                : "<b>Stimulus:</b> A student applied 60N horizontal force on a 15kg trolley initially at rest, accelerating it 40m in 5 seconds...";
+            }
+            if (questionsListEl) {
+              questionsListEl.innerHTML = currentLang === "bn"
+                ? `<div class="cq-item"><b>(ক) জ্ঞানমূলক:</b> বলের আন্তর্জাতিক (SI) একক কী? <span class="cq-mark">[১]</span></div>
+                   <div class="cq-item"><b>(খ) অনুধাবনমূলক:</b> ঘর্ষণ বলকে একটি প্রয়োজনীয় উপদ্রব বলা হয় কেন? ব্যাখ্যা করো। <span class="cq-mark">[২]</span></div>
+                   <div class="cq-item"><b>(গ) প্রয়োগমূলক:</b> উদ্দীপকের ট্রলিটির ওপর প্রযুক্ত ত্বরণের মান গাণিতিকভাবে নির্ণয় করো। <span class="cq-mark">[৩]</span></div>
+                   <div class="cq-item"><b>(ঘ) উচ্চতর দক্ষতা:</b> ভর দ্বিগুণ করা হলে অর্জিত ত্বরণ ও গতির প্রকৃতি কীভাবে পরিবর্তিত হবে? বিশ্লেষণ করো। <span class="cq-mark">[৪]</span></div>`
+                : `<div class="cq-item"><b>(a) Knowledge:</b> What is the SI unit of Force? <span class="cq-mark">[1]</span></div>
+                   <div class="cq-item"><b>(b) Comprehension:</b> Why friction is considered a necessary evil? <span class="cq-mark">[2]</span></div>
+                   <div class="cq-item"><b>(c) Application:</b> Compute acceleration applied on the trolley. <span class="cq-mark">[3]</span></div>
+                   <div class="cq-item"><b>(d) Higher Ability:</b> Analyze motion if mass is doubled. <span class="cq-mark">[4]</span></div>`;
+            }
           }
+
+          aiBtn.textContent = currentLang === "bn" ? "নতুন প্রশ্নপত্র তৈরি করুন" : "Generate Another Question Paper";
           aiBtn.disabled = false;
-        }, 700);
+        }, 600);
       });
     }
 
-    // Test 4: Waqf & Hostel Audit
+    // Test 4: Waqf & Hostel Audit -> Dormitory Bed Matrix Mockup
     const waqfBtn = document.getElementById("triggerWaqfAuditSimBtn");
-    const waqfLog = document.getElementById("waqfLogDisplay");
-    if (waqfBtn && waqfLog) {
+    const bed04 = document.getElementById("bed04");
+    const occupancyBadge = document.getElementById("dormOccupancyBadge");
+    const waqfSubtext = document.getElementById("waqfSubtext");
+    let isBedAllocated = false;
+    if (waqfBtn) {
       waqfBtn.addEventListener("click", () => {
-        waqfBtn.textContent = currentLang === "bn" ? "অডিট খতিয়ান আপডেট হচ্ছে..." : "Auditing Madrasa Boarding...";
+        waqfBtn.textContent = currentLang === "bn" ? "ওয়াকফ অডিট সম্পন্ন হচ্ছে..." : "Auditing Waqf & Allocating Bed...";
         waqfBtn.disabled = true;
 
         setTimeout(() => {
-          if (currentLang === "bn") {
-            waqfLog.innerHTML = `<span style="color:#2c9b70;font-weight:700;">[ওয়াকফ খতিয়ান সম্পন্ন]</span> ছাত্রাবাস রুম ২০৪ (বেড ৩) বরাদ্দকৃত!<br>
-              <span style="color:#637d71;">• শিক্ষার্থী: হাফেজ আবদুল্লাহ • ক্যাটাগরি: এতিম ও দরিদ্র তহবিল (লিল্লাহ বোর্ডিং)</span><br>
-              <span style="color:#1d5243;">• শরীয়াহ কমপ্লায়েন্ট অনুদান ফান্ড অটো-অডিট সম্পন্ন হয়েছে।</span>`;
-            waqfBtn.textContent = "পুনরায় অডিট পরীক্ষা করুন";
-          } else {
-            waqfLog.innerHTML = `<span style="color:#2c9b70;font-weight:700;">[SHARIAH AUDIT VERIFIED]</span> Dorm Room 204 (Bed 03) Allocated!<br>
-              <span style="color:#637d71;">• Student: Hafez Abdullah • Category: Waqf / Lillah Boarding Fund</span><br>
-              <span style="color:#1d5243;">• Transparent donor ledger entry #WQ-441 auto-dispatched.</span>`;
-            waqfBtn.textContent = "Audit Madrasa Fund Again";
+          isBedAllocated = !isBedAllocated;
+          if (bed04) {
+            if (isBedAllocated) {
+              bed04.className = "bed-card just-allocated";
+              bed04.innerHTML = `
+                <div class="bed-ico">🛏️</div>
+                <div class="bed-info">
+                  <b>Bed 04</b>
+                  <small>Zubair (Orphan Fund)</small>
+                </div>
+                <span class="bed-status-badge waqf">Zakat Grant ✓</span>
+              `;
+              if (occupancyBadge) occupancyBadge.textContent = "4 / 4 Beds Occupied (Full)";
+              if (waqfSubtext) waqfSubtext.textContent = "Zakat Grant Verified • Ledger Entry #WQ-442 Auto-Dispatched";
+            } else {
+              bed04.className = "bed-card vacant";
+              bed04.innerHTML = `
+                <div class="bed-ico">🛏️</div>
+                <div class="bed-info">
+                  <b>Bed 04</b>
+                  <small>Available</small>
+                </div>
+                <span class="bed-status-badge vacant">Vacant</span>
+              `;
+              if (occupancyBadge) occupancyBadge.textContent = "3 / 4 Beds Occupied";
+              if (waqfSubtext) waqfSubtext.textContent = "Lillah Orphan Boarding & Meal Subsidy • Verified Voucher #WQ-441";
+            }
           }
+
+          waqfBtn.textContent = currentLang === "bn" ? "পুনরায় অডিট পরীক্ষা করুন" : "Audit Next Dorm Room";
           waqfBtn.disabled = false;
-        }, 650);
+        }, 550);
       });
     }
   }
