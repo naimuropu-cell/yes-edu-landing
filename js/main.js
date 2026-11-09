@@ -450,11 +450,11 @@
           }
 
           if (smsBubble) {
-            smsBubble.style.borderColor = "#34d399";
-            smsBubble.style.boxShadow = "0 0 16px rgba(52, 211, 153, 0.4)";
+            smsBubble.style.borderColor = "#2c9b70";
+            smsBubble.style.boxShadow = "0 0 16px rgba(44, 155, 112, 0.25)";
             setTimeout(() => {
-              smsBubble.style.borderColor = "#174230";
-              smsBubble.style.boxShadow = "none";
+              smsBubble.style.borderColor = "";
+              smsBubble.style.boxShadow = "";
             }, 1200);
           }
 
@@ -481,11 +481,11 @@
           if (trxIdEl) trxIdEl.textContent = "TrxID: " + randomTrx;
 
           if (paidSeal) {
-            paidSeal.style.transform = "rotate(-3deg) scale(1.2)";
-            paidSeal.style.boxShadow = "0 0 20px rgba(52, 211, 153, 0.6)";
+            paidSeal.style.transform = "rotate(-3deg) scale(1.15)";
+            paidSeal.style.boxShadow = "0 0 16px rgba(44, 155, 112, 0.4)";
             setTimeout(() => {
               paidSeal.style.transform = "rotate(-3deg) scale(1)";
-              paidSeal.style.boxShadow = "0 0 12px rgba(52, 211, 153, 0.25)";
+              paidSeal.style.boxShadow = "0 0 10px rgba(44, 155, 112, 0.2)";
             }, 300);
           }
 

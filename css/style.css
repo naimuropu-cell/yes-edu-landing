@@ -820,20 +820,22 @@ header.scrolled {
 }
 
 .sme-counter-badge {
-  background: #0d241c;
-  color: #8cc4ab;
+  background: #ffffff;
+  color: #557567;
+  border: 1px solid #cde8d7;
   font-size: 12px;
   font-weight: 700;
   font-family: var(--font-mono);
   padding: 6px 16px;
   border-radius: 99px;
   letter-spacing: 1px;
+  box-shadow: 0 2px 6px rgba(21, 61, 50, 0.04);
 }
 
 .sme-counter-badge span#smeActiveIndex {
-  color: #ffffff;
+  color: #153d32;
   font-weight: 800;
-  font-size: 13px;
+  font-size: 13.5px;
 }
 
 /* SME Peek Carousel Showcase */
@@ -955,14 +957,14 @@ header.scrolled {
   margin-bottom: 20px;
 }
 
-/* Dark Interactive Stage Mockup */
+/* Lime-White / Pale Mint-Ivory Interactive Stage Mockup */
 .sme-card-stage {
-  background: #081a13;
-  border: 1px solid #143829;
+  background: linear-gradient(180deg, #f5faf7 0%, #edf7f2 100%);
+  border: 1px solid #d4ebd9;
   border-radius: 18px;
   padding: 22px 24px;
   margin: 18px 0 22px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 1px 3px rgba(21, 61, 50, 0.04), 0 4px 16px rgba(21, 61, 50, 0.03);
 }
 
 .sme-stage-header {
@@ -970,23 +972,27 @@ header.scrolled {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  border-bottom: 1px solid #143527;
+  border-bottom: 1px solid #d9ede0;
   padding-bottom: 10px;
 }
 
 .sme-stage-title {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1px;
-  color: #79a896;
+  color: #3b6653;
 }
 
 .sme-stage-status {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
-  color: #34d399;
+  color: #176547;
+  background: #e0f4e9;
+  border: 1px solid #b5e3c8;
+  padding: 3px 10px;
+  border-radius: 99px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1020,19 +1026,19 @@ header.scrolled {
   gap: 10px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(44, 155, 112, 0.35);
+  box-shadow: 0 4px 14px rgba(44, 155, 112, 0.28);
   transition: all 0.2s ease;
 }
 
 .sim-btn-trigger:hover {
   background: var(--green-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(44, 155, 112, 0.45);
+  box-shadow: 0 6px 18px rgba(44, 155, 112, 0.38);
 }
 
 .sim-btn-trigger.bkash-btn {
   background: #e2136e;
-  box-shadow: 0 4px 14px rgba(226, 19, 110, 0.35);
+  box-shadow: 0 4px 14px rgba(226, 19, 110, 0.28);
 }
 
 .sim-btn-trigger.bkash-btn:hover {
@@ -1061,22 +1067,23 @@ header.scrolled {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #05150f;
-  border: 1px solid #143527;
+  background: #ffffff;
+  border: 1px solid #cbe6d4;
   padding: 8px 14px;
   border-radius: 99px;
   font-size: 11px;
   font-weight: 700;
-  color: #79a896;
+  color: #245744;
   white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(21, 61, 50, 0.03);
 }
 
 .device-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 6px #34d399;
+  background: #2c9b70;
+  box-shadow: 0 0 6px rgba(44, 155, 112, 0.5);
 }
 
 /* Stage Visual Containers & UI Mockups */
@@ -1086,11 +1093,11 @@ header.scrolled {
 
 /* 1. Phone Live SMS Mockup */
 .phone-mockup-frame {
-  background: #04120b;
-  border: 1px solid #123324;
+  background: #ffffff;
+  border: 1px solid #d4ebdd;
   border-radius: 14px;
   padding: 14px 16px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 14px rgba(21, 61, 50, 0.04);
 }
 
 .phone-status-bar {
@@ -1099,15 +1106,15 @@ header.scrolled {
   align-items: center;
   font-family: var(--font-mono);
   font-size: 10.5px;
-  color: #638c7b;
+  color: #577b6c;
   margin-bottom: 10px;
   padding-bottom: 6px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #ebf4ef;
 }
 
 .phone-sms-bubble {
-  background: #092419;
-  border: 1px solid #174230;
+  background: #f4faf6;
+  border: 1px solid #cee8d8;
   border-radius: 12px;
   padding: 14px 16px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1122,8 +1129,9 @@ header.scrolled {
 }
 
 .sms-sender-badge {
-  background: #143d2c;
-  color: #34d399;
+  background: #e2f5ea;
+  color: #166447;
+  border: 1px solid #bbe6ce;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -1133,7 +1141,7 @@ header.scrolled {
 
 .sms-carrier {
   font-size: 10.5px;
-  color: #749b8a;
+  color: #618575;
   font-family: var(--font-mono);
 }
 
@@ -1141,15 +1149,20 @@ header.scrolled {
   display: block;
   font-size: 13px;
   font-weight: 800;
-  color: #ffffff;
+  color: #153d32;
   margin-bottom: 6px;
 }
 
 .sms-body {
   font-size: 12.5px;
   line-height: 1.6;
-  color: #caeedb;
+  color: #2a5243;
   margin-bottom: 10px;
+}
+
+.sms-body b {
+  color: #153d32;
+  font-weight: 800;
 }
 
 .sms-meta-row {
@@ -1158,21 +1171,23 @@ header.scrolled {
   align-items: center;
   font-family: var(--font-mono);
   font-size: 10.5px;
-  color: #34d399;
+  color: #2c9b70;
   padding-top: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #e3f0e8;
+  font-weight: 600;
 }
 
 .sms-latency {
-  color: #719b88;
+  color: #5f8373;
 }
 
 /* 2. Official Money Receipt Voucher Mockup */
 .voucher-mockup-frame {
-  background: #04120b;
-  border: 1px solid #133827;
+  background: #ffffff;
+  border: 1.5px dashed #bfe2cc;
   border-radius: 14px;
   padding: 16px 18px;
+  box-shadow: 0 4px 16px rgba(21, 61, 50, 0.04);
 }
 
 .voucher-top-bar {
@@ -1181,7 +1196,7 @@ header.scrolled {
   align-items: center;
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed #17422f;
+  border-bottom: 1px dashed #cfe7d8;
 }
 
 .voucher-title {
@@ -1190,26 +1205,26 @@ header.scrolled {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.8px;
-  color: #ffffff;
+  color: #153d32;
 }
 
 .voucher-sub {
   display: block;
   font-size: 9.5px;
-  color: #6d9684;
+  color: #5d8172;
 }
 
 .voucher-seal-badge {
-  background: rgba(52, 211, 153, 0.15);
-  border: 1.5px solid #34d399;
-  color: #34d399;
+  background: rgba(44, 155, 112, 0.12);
+  border: 2px solid #2c9b70;
+  color: #1b6d4e;
   font-weight: 900;
   font-size: 12px;
   letter-spacing: 1px;
   padding: 4px 12px;
   border-radius: 6px;
   transform: rotate(-3deg);
-  box-shadow: 0 0 12px rgba(52, 211, 153, 0.25);
+  box-shadow: 0 0 10px rgba(44, 155, 112, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -1223,20 +1238,22 @@ header.scrolled {
 .voucher-cell small {
   display: block;
   font-size: 10px;
-  color: #6a9280;
+  color: #6a8d7e;
   margin-bottom: 2px;
+  font-weight: 600;
 }
 
 .voucher-cell b,
 .voucher-cell span {
   font-size: 12px;
-  color: #d1f2e0;
+  color: #153d32;
 }
 
 .voucher-amount {
-  font-size: 15px !important;
-  color: #34d399 !important;
+  font-size: 16px !important;
+  color: #166b4c !important;
   font-family: var(--font-mono);
+  font-weight: 900;
 }
 
 .voucher-footer-row {
@@ -1244,7 +1261,7 @@ header.scrolled {
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
-  border-top: 1px dashed #17422f;
+  border-top: 1px dashed #cfe7d8;
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -1253,19 +1270,20 @@ header.scrolled {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #34d399;
+  color: #1b6348;
 }
 
 .qr-label small {
   display: block;
   font-size: 9.5px;
-  color: #6e9684;
+  color: #6b8d7e;
 }
 
 .qr-label span {
   font-family: var(--font-mono);
   font-size: 10.5px;
-  color: #a7e7cb;
+  color: #153d32;
+  font-weight: 700;
 }
 
 .voucher-reconcile-status {
@@ -1277,30 +1295,31 @@ header.scrolled {
 
 .status-check {
   font-size: 10.5px;
-  color: #34d399;
-  font-weight: 600;
+  color: #1d7553;
+  font-weight: 700;
 }
 
 /* 3. Print-Ready NCTB Exam Paper Mockup */
 .exam-paper-frame {
-  background: #04120b;
-  border: 1px solid #133827;
+  background: #ffffff;
+  border: 1px solid #d4ebdd;
   border-radius: 14px;
   padding: 16px 18px;
+  box-shadow: 0 4px 16px rgba(21, 61, 50, 0.04);
 }
 
 .exam-paper-head {
   text-align: center;
   margin-bottom: 12px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #16402d;
+  border-bottom: 1.5px solid #153d32;
 }
 
 .exam-school-name {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.5px;
-  color: #ffffff;
+  color: #153d32;
   margin-bottom: 3px;
 }
 
@@ -1309,18 +1328,23 @@ header.scrolled {
   justify-content: center;
   gap: 16px;
   font-size: 11px;
-  color: #7ba694;
+  color: #4b6f60;
+  font-weight: 600;
 }
 
 .exam-stimulus-box {
-  background: #092116;
+  background: #f4faf6;
   border-left: 3px solid #2c9b70;
   padding: 9px 12px;
   border-radius: 0 8px 8px 0;
   font-size: 12px;
   line-height: 1.6;
-  color: #d1f2e1;
+  color: #1b4536;
   margin-bottom: 10px;
+}
+
+.exam-stimulus-box b {
+  color: #153d32;
 }
 
 .exam-questions-list {
@@ -1333,7 +1357,7 @@ header.scrolled {
 .cq-item {
   font-size: 11.5px;
   line-height: 1.5;
-  color: #b3dfc9;
+  color: #214b3b;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -1341,13 +1365,13 @@ header.scrolled {
 }
 
 .cq-item b {
-  color: #ffffff;
+  color: #153d32;
 }
 
 .cq-mark {
-  color: #34d399;
+  color: #2c9b70;
   font-family: var(--font-mono);
-  font-weight: 700;
+  font-weight: 800;
   flex-shrink: 0;
 }
 
@@ -1356,32 +1380,34 @@ header.scrolled {
   align-items: center;
   gap: 8px;
   padding-top: 8px;
-  border-top: 1px solid #16402d;
+  border-top: 1px solid #e4efe9;
   flex-wrap: wrap;
 }
 
 .paper-action-pill {
-  background: #0d281c;
-  border: 1px solid #1a4d35;
+  background: #f2f8f4;
+  border: 1px solid #cce8d7;
   padding: 4px 10px;
   border-radius: 6px;
   font-size: 10.5px;
   font-weight: 600;
-  color: #8bc2a9;
+  color: #215441;
 }
 
 .paper-action-pill.highlight {
   border-color: #2c9b70;
-  color: #34d399;
-  background: rgba(44, 155, 112, 0.15);
+  color: #136043;
+  background: #e4f6ec;
+  font-weight: 700;
 }
 
 /* 4. Dormitory Bed Matrix & Waqf Ledger Mockup */
 .dorm-mockup-frame {
-  background: #04120b;
-  border: 1px solid #133827;
+  background: #ffffff;
+  border: 1px solid #d4ebdd;
   border-radius: 14px;
   padding: 16px 18px;
+  box-shadow: 0 4px 16px rgba(21, 61, 50, 0.04);
 }
 
 .dorm-matrix-header {
@@ -1390,16 +1416,17 @@ header.scrolled {
   align-items: center;
   font-family: var(--font-mono);
   font-size: 10.5px;
-  color: #79a896;
+  color: #436959;
   margin-bottom: 12px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #153c2a;
+  border-bottom: 1px solid #e5eee8;
+  font-weight: 700;
 }
 
 .dorm-occupancy-pill {
-  background: rgba(52, 211, 153, 0.15);
-  border: 1px solid #34d399;
-  color: #34d399;
+  background: #e4f6ec;
+  border: 1px solid #a4dfbe;
+  color: #146244;
   padding: 2px 8px;
   border-radius: 99px;
   font-weight: 700;
@@ -1413,8 +1440,8 @@ header.scrolled {
 }
 
 .bed-card {
-  background: #092016;
-  border: 1px solid #163f2d;
+  background: #f5fbf7;
+  border: 1px solid #d4ebd9;
   border-radius: 10px;
   padding: 10px 8px;
   text-align: center;
@@ -1426,14 +1453,15 @@ header.scrolled {
 }
 
 .bed-card.just-allocated {
-  border-color: #34d399;
-  background: #0d2c1f;
-  box-shadow: 0 0 12px rgba(52, 211, 153, 0.25);
+  border-color: #2c9b70;
+  background: #eaf8f1;
+  box-shadow: 0 0 10px rgba(44, 155, 112, 0.2);
 }
 
 .bed-card.vacant {
-  opacity: 0.6;
-  border-style: dashed;
+  opacity: 0.7;
+  background: #fafdfb;
+  border: 1.5px dashed #cfe3d7;
 }
 
 .bed-ico {
@@ -1443,13 +1471,13 @@ header.scrolled {
 .bed-info b {
   display: block;
   font-size: 11px;
-  color: #ffffff;
+  color: #153d32;
 }
 
 .bed-info small {
   display: block;
   font-size: 9.5px;
-  color: #75a08e;
+  color: #5c7e70;
 }
 
 .bed-status-badge {
@@ -1457,23 +1485,23 @@ header.scrolled {
   font-weight: 700;
   padding: 2px 6px;
   border-radius: 4px;
-  background: #143e2d;
-  color: #8cc4ab;
+  background: #e1f4ea;
+  color: #1a6348;
 }
 
 .bed-status-badge.waqf {
-  background: #114e35;
-  color: #34d399;
+  background: #2c9b70;
+  color: #ffffff;
 }
 
 .bed-status-badge.vacant {
-  background: #192b23;
-  color: #6d8d80;
+  background: #e8eee9;
+  color: #6e887a;
 }
 
 .waqf-audit-strip {
-  background: #081e14;
-  border: 1px solid #184330;
+  background: #f4faf6;
+  border: 1px solid #d2ebd9;
   border-radius: 10px;
   padding: 10px 14px;
   display: flex;
@@ -1486,20 +1514,20 @@ header.scrolled {
   display: block;
   font-size: 11px;
   font-weight: 800;
-  color: #ffffff;
+  color: #153d32;
   letter-spacing: 0.5px;
 }
 
 .waqf-strip-left small {
   display: block;
   font-size: 10px;
-  color: #79a693;
+  color: #547768;
 }
 
 .waqf-cert-badge {
-  background: rgba(52, 211, 153, 0.15);
-  border: 1px solid #34d399;
-  color: #34d399;
+  background: #e2f5ea;
+  border: 1.5px solid #2c9b70;
+  color: #146043;
   font-size: 10.5px;
   font-weight: 800;
   padding: 4px 10px;
@@ -3657,3 +3685,4 @@ html, body {
     scroll-behavior: auto !important;
   }
 }
+
