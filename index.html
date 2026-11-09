@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=7.5">
+  <link rel="stylesheet" href="css/style.css?v=7.6">
 </head>
 <body>
 
@@ -82,10 +82,14 @@
               <span class="lang-bn hidden">ব্যক্তিগত ডেমো বুক করুন</span>
               <span class="arrow">↗</span>
             </a>
-            <a class="btn btn-light" href="#platform">
-              <span class="lang-en">Explore Platform</span>
-              <span class="lang-bn hidden">প্ল্যাটফর্ম দেখুন</span>
-              <span class="arrow">↓</span>
+            <a class="btn btn-tour-play" href="#demoStudio">
+              <span class="play-circle">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                </svg>
+              </span>
+              <span class="lang-en">Explore Live Platform</span>
+              <span class="lang-bn hidden">সরাসরি প্ল্যাটফর্ম দেখুন</span>
             </a>
           </div>
           
@@ -164,6 +168,72 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- ================= ALAXY-STYLE EXECUTIVE PROOF & METRIC BAR ================= -->
+      <div class="container hero-proof-bar reveal">
+        <!-- Dashed Client Institution Proof Card -->
+        <div class="alaxy-proof-card">
+          <div class="alaxy-avatar-stack">
+            <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah Int'l Madrasa" width="34" height="34" loading="lazy">
+            <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Madrasa" width="34" height="34" loading="lazy">
+            <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Institute" width="34" height="34" loading="lazy">
+            <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Academy" width="34" height="34" loading="lazy">
+            <span class="alaxy-avatar-plus">+150</span>
+          </div>
+          <div class="alaxy-proof-text">
+            <strong>
+              <span class="lang-en">150+ Leading Institutions</span>
+              <span class="lang-bn hidden">১৫০+ স্বনামধন্য প্রতিষ্ঠান</span>
+            </strong>
+            <p>
+              <span class="lang-en">85,000+ Active Students & Teachers</span>
+              <span class="lang-bn hidden">৮৫,০০০+ শিক্ষার্থী ও শিক্ষক যুক্ত</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Bold Minimal Metric Counters -->
+        <div class="alaxy-stat-grid">
+          <div class="alaxy-stat-item">
+            <span class="alaxy-stat-num">0.18s</span>
+            <span class="alaxy-stat-label">
+              <span class="lang-en">Gate Cloud Latency</span>
+              <span class="lang-bn hidden">ক্লাউড গেট ল্যাটেন্সি</span>
+            </span>
+          </div>
+          <div class="alaxy-stat-item">
+            <span class="alaxy-stat-num">100%</span>
+            <span class="alaxy-stat-label">
+              <span class="lang-en">Shariah & Waqf Audited</span>
+              <span class="lang-bn hidden">শরীয়াহ ও ওয়াকফ অডিট</span>
+            </span>
+          </div>
+          <div class="alaxy-stat-item">
+            <span class="alaxy-stat-num">৳ 1.2 Cr+</span>
+            <span class="alaxy-stat-label">
+              <span class="lang-en">Monthly Fee Volume</span>
+              <span class="lang-bn hidden">মাসিক ফি আদায় ভলিউম</span>
+            </span>
+          </div>
+          <div class="alaxy-stat-item">
+            <span class="alaxy-stat-num">24/7</span>
+            <span class="alaxy-stat-label">
+              <span class="lang-en">Bangla SMS Alerts</span>
+              <span class="lang-bn hidden">বাংলা এসএমএস অ্যালার্ট</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- MATHIM Minimal Scroll Down Guide -->
+        <a href="#demoStudio" class="hero-scroll-guide" aria-label="Scroll to explore interactive demo">
+          <span class="mouse-icon"><i class="mouse-wheel"></i></span>
+          <span class="scroll-text">
+            <span class="lang-en">Scroll to Explore</span>
+            <span class="lang-bn hidden">নিচে দেখুন</span>
+            <span class="scroll-arrow">↓</span>
+          </span>
+        </a>
       </div>
     </section>
 
@@ -1751,6 +1821,6 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=7.5"></script>
+  <script src="js/main.js?v=7.6"></script>
 </body>
 </html>

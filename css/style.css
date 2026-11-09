@@ -369,15 +369,15 @@ header.scrolled {
 }
 
 /* ==========================================================================
-   Hero Section (Executive Deep Pine Green Theme)
+   Hero Section (World-Class Hybrid Formula: Besnik + Alaxy + MATHIM)
    ========================================================================== */
 .hero {
   position: relative;
   overflow: hidden;
-  color: #fff;
-  background: linear-gradient(105deg, #0D3024 0%, #174B39 56%, #1F5B42 100%);
-  padding: 96px 0 88px;
-  border-bottom: none;
+  color: #0E2A1F;
+  background: linear-gradient(180deg, #F8FAF8 0%, #FFFFFF 100%);
+  padding: 84px 0 64px;
+  border-bottom: 1px solid #E5EFE9;
 }
 
 .hero::before {
@@ -385,22 +385,23 @@ header.scrolled {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.14;
-  background-image: linear-gradient(#ffffff2e 1px, transparent 1px), linear-gradient(90deg, #ffffff2e 1px, transparent 1px);
-  background-size: 58px 58px;
-  mask-image: linear-gradient(90deg, black, transparent 88%);
+  opacity: 0.65;
+  background-image: 
+    linear-gradient(rgba(14, 42, 31, 0.035) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(14, 42, 31, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at 50% 35%, black 40%, transparent 85%);
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  width: 620px;
-  height: 620px;
+  width: 720px;
+  height: 720px;
   border-radius: 50%;
-  border: 1px solid #dcefd338;
-  right: -210px;
-  top: -300px;
-  box-shadow: 0 0 0 52px rgba(220, 239, 211, 0.05), 0 0 0 105px rgba(220, 239, 211, 0.03);
+  right: -150px;
+  top: -180px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(228, 91, 80, 0.03) 40%, transparent 70%);
   pointer-events: none;
 }
 
@@ -414,36 +415,116 @@ header.scrolled {
 }
 
 .hero-copy h1 {
-  color: #fff;
-  font-size: clamp(38px, 5.5vw, 66px);
-  line-height: 1.02;
+  color: #0E2A1F;
+  font-size: clamp(38px, 5.2vw, 64px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
   max-width: 680px;
-  margin: 22px 0 20px;
+  margin: 20px 0 18px;
 }
 
 .hero-copy h1 span {
-  color: var(--ex-lime);
+  color: #059669;
 }
 
 .hero-copy > p {
-  color: #D2DED7;
-  max-width: 540px;
+  color: #475569;
+  max-width: 550px;
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 .hero-actions {
   display: flex;
-  gap: 12px;
+  gap: 14px;
+  align-items: center;
   flex-wrap: wrap;
-  margin: 32px 0 26px;
+  margin: 30px 0 24px;
+}
+
+.hero .eyebrow {
+  background: #E8F5EE;
+  border: 1px solid #BFE3CF;
+  color: #14532D;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.hero .eyebrow::before {
+  background: #10B981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25);
+}
+
+.hero .btn-primary {
+  background: #E45B50;
+  border-color: #E45B50;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 14.5px;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(228, 91, 80, 0.28);
+  transition: all 0.25s ease;
+}
+
+.hero .btn-primary:hover {
+  background: #cb4339;
+  border-color: #cb4339;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(228, 91, 80, 0.38);
+}
+
+/* Besnik-style Play Video / Explore Tour Button */
+.btn-tour-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 20px;
+  background: #FFFFFF;
+  border: 1.5px solid #D5E2DA;
+  border-radius: 10px;
+  color: #0E2A1F;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(14, 42, 31, 0.04);
+  transition: all 0.25s ease;
+}
+
+.btn-tour-play:hover {
+  background: #F0FDF4;
+  border-color: #10B981;
+  color: #065F46;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.12);
+}
+
+.play-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #E8F5EE;
+  color: #059669;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.btn-tour-play:hover .play-circle {
+  background: #059669;
+  color: #FFFFFF;
+  transform: scale(1.08);
 }
 
 .hero-proof {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #D2DED7;
+  color: #52665B;
   font-size: 13px;
   font-weight: 600;
 }
@@ -456,50 +537,16 @@ header.scrolled {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 2px solid #174B39;
+  border: 2px solid #FFFFFF;
   margin-left: -8px;
   display: block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .proof-dots i:first-child { margin: 0; background: #8ac9aa; }
 .proof-dots i:nth-child(2) { background: #d8c5a7; }
 .proof-dots i:nth-child(3) { background: #8bb9c4; }
 .proof-dots i:nth-child(4) { background: #c9b4d9; }
-
-.hero .eyebrow {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.24);
-  color: #E4F0D9;
-}
-
-.hero .eyebrow::before {
-  background: #E56A5F;
-  box-shadow: 0 0 0 4px rgba(229, 106, 95, 0.3);
-}
-
-.hero .btn-light {
-  background: transparent;
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.45);
-}
-
-.hero .btn-light:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: #fff;
-  color: #fff;
-}
-
-.hero .btn-primary {
-  background: #E45B50;
-  border-color: #E45B50;
-  color: #fff;
-  box-shadow: 0 10px 25px rgba(228, 91, 80, 0.35);
-}
-
-.hero .btn-primary:hover {
-  background: #c9433d;
-  box-shadow: 0 14px 30px rgba(228, 91, 80, 0.45);
-}
 
 /* 3D Dashboard Perspective & Real Software Showcase */
 .hero-visual {
@@ -525,9 +572,9 @@ header.scrolled {
 .dashboard {
   width: min(100%, 575px);
   background: #ffffff;
-  border: 1px solid rgba(220, 236, 226, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 32px 85px rgba(21, 61, 50, 0.16), 0 0 0 1px rgba(21, 61, 50, 0.04);
+  border: 1px solid #D5E3DB;
+  border-radius: 18px;
+  box-shadow: 0 28px 75px rgba(14, 42, 31, 0.10), 0 2px 8px rgba(14, 42, 31, 0.03);
   overflow: hidden;
   transform: rotateY(-7deg) rotateX(3deg);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
@@ -537,7 +584,7 @@ header.scrolled {
 
 .dashboard:hover {
   transform: rotateY(0deg) rotateX(0deg) scale(1.02);
-  box-shadow: 0 45px 110px rgba(21, 61, 50, 0.22), 0 0 0 1px rgba(44, 155, 112, 0.15);
+  box-shadow: 0 40px 95px rgba(14, 42, 31, 0.14), 0 0 0 1px rgba(16, 185, 129, 0.25);
 }
 
 .dash-top {
@@ -630,14 +677,14 @@ header.scrolled {
 /* Floating Stat Cards */
 .float-card {
   position: absolute;
-  background: #ffffff;
-  border: 1px solid #dcece2;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #D5E3DB;
+  border-radius: 14px;
   padding: 12px 18px;
-  box-shadow: 0 20px 45px rgba(21, 61, 50, 0.14);
+  box-shadow: 0 16px 38px rgba(14, 42, 31, 0.08), 0 2px 6px rgba(14, 42, 31, 0.03);
   z-index: 2;
   animation: float 5s ease-in-out infinite;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .float-one {
@@ -663,7 +710,7 @@ header.scrolled {
   gap: 7px;
   font-size: 11px;
   font-weight: 700;
-  color: #71887e;
+  color: #52665B;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -672,8 +719,8 @@ header.scrolled {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #e5f6ee;
-  color: #2c9b70;
+  background: #E8F5EE;
+  color: #059669;
   display: grid;
   place-items: center;
   font-size: 10px;
@@ -682,18 +729,193 @@ header.scrolled {
 .float-card strong {
   display: block;
   font: 800 20px var(--font-heading);
-  color: var(--deep);
+  color: #0E2A1F;
   margin-top: 4px;
 }
 
 .float-card span {
   font-size: 11px;
-  color: #8da197;
+  color: #64748B;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-9px); }
+}
+
+/* ==========================================================================
+   Alaxy-Style Executive Proof & Metric Bar
+   ========================================================================== */
+.hero-proof-bar {
+  margin-top: 54px;
+  padding-top: 32px;
+  border-top: 1px solid #E2EDE7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.alaxy-proof-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 18px;
+  background: #FFFFFF;
+  border: 1.5px dashed #A5C7B6;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(14, 42, 31, 0.03);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.alaxy-proof-card:hover {
+  border-color: #059669;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+  transform: translateY(-2px);
+}
+
+.alaxy-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.alaxy-avatar-stack img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #FFFFFF;
+  margin-left: -9px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.alaxy-avatar-stack img:first-child {
+  margin-left: 0;
+}
+
+.alaxy-avatar-plus {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #0E2A1F;
+  color: #FFFFFF;
+  font-size: 10.5px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  border: 2px solid #FFFFFF;
+  margin-left: -9px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-heading);
+}
+
+.alaxy-proof-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.alaxy-proof-text strong {
+  font: 800 13.5px var(--font-heading);
+  color: #0E2A1F;
+  letter-spacing: -0.01em;
+}
+
+.alaxy-proof-text p {
+  font-size: 11.5px;
+  color: #52665B;
+  margin: 0;
+  font-weight: 500;
+}
+
+.alaxy-stat-grid {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.alaxy-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.alaxy-stat-num {
+  font: 800 clamp(22px, 2.2vw, 30px) var(--font-heading);
+  color: #0E2A1F;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.alaxy-stat-label {
+  font-size: 12px;
+  color: #64748B;
+  font-weight: 600;
+  margin-top: 4px;
+  display: block;
+}
+
+/* MATHIM-Style Minimal Scroll Down Pill */
+.hero-scroll-guide {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 99px;
+  background: rgba(14, 42, 31, 0.04);
+  border: 1px solid rgba(14, 42, 31, 0.08);
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hero-scroll-guide:hover {
+  background: rgba(14, 42, 31, 0.08);
+  color: #0E2A1F;
+  border-color: rgba(14, 42, 31, 0.18);
+}
+
+.mouse-icon {
+  width: 14px;
+  height: 22px;
+  border: 1.5px solid #0E2A1F;
+  border-radius: 8px;
+  display: inline-flex;
+  justify-content: center;
+  padding-top: 3px;
+  box-sizing: border-box;
+}
+
+.mouse-wheel {
+  width: 2.5px;
+  height: 5px;
+  background: #0E2A1F;
+  border-radius: 2px;
+  animation: mouseWheel 1.5s infinite;
+}
+
+.scroll-arrow {
+  color: #059669;
+  font-weight: 700;
+  animation: bounceDown 1.5s infinite;
+}
+
+@keyframes mouseWheel {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(6px); opacity: 0; }
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
 }
 
 /* ==========================================================================
@@ -3110,6 +3332,25 @@ html, body {
     transform: none !important;
   }
 
+  .hero-proof-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    margin-top: 42px;
+    padding-top: 26px;
+  }
+
+  .alaxy-stat-grid {
+    width: 100%;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .alaxy-stat-item {
+    align-items: center;
+  }
+
   /* Grids */
   .platform-grid {
     grid-template-columns: 1fr;
@@ -3326,6 +3567,50 @@ html, body {
     font-size: 9px;
     color: #236B4E;
     font-weight: 700;
+  }
+
+  /* Alaxy Proof Bar on Mobile */
+  .hero-proof-bar {
+    margin-top: 32px;
+    padding-top: 22px;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .alaxy-proof-card {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 14px;
+    box-sizing: border-box;
+  }
+
+  .alaxy-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+  }
+
+  .alaxy-stat-item {
+    align-items: center;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #E2EDE7;
+    border-radius: 10px;
+    padding: 10px 6px;
+    box-sizing: border-box;
+  }
+
+  .alaxy-stat-num {
+    font-size: 20px;
+  }
+
+  .alaxy-stat-label {
+    font-size: 11px;
+  }
+
+  .hero-scroll-guide {
+    margin-top: 4px;
   }
 
   /* Trust Strip on Mobile */
