@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=7.9">
+  <link rel="stylesheet" href="css/style.css?v=8.0">
 </head>
 <body>
 
@@ -103,34 +103,6 @@
         </div>
         
         <div class="hero-visual reveal">
-          <!-- Role Navigation Switcher Pills directly integrated with the Hero Cockpit -->
-          <div class="hero-role-nav" id="heroRoleNav" role="tablist" aria-label="Select Role Dashboard">
-            <button class="hero-role-btn active" data-role="admin" type="button" role="tab" aria-selected="true" title="Super Admin Cockpit">
-              <span class="role-btn-dot"></span>
-              <span class="role-btn-title">
-                <span class="lang-en">Super Admin</span>
-                <span class="lang-bn hidden">অ্যাডমিন ককপিট</span>
-              </span>
-              <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
-            </button>
-            <button class="hero-role-btn" data-role="teacher" type="button" role="tab" aria-selected="false" title="Teacher Workspace">
-              <span class="role-btn-dot"></span>
-              <span class="role-btn-title">
-                <span class="lang-en">Teacher Workspace</span>
-                <span class="lang-bn hidden">শিক্ষক ড্যাশবোর্ড</span>
-              </span>
-              <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
-            </button>
-            <button class="hero-role-btn" data-role="parent" type="button" role="tab" aria-selected="false" title="Guardian Portal">
-              <span class="role-btn-dot"></span>
-              <span class="role-btn-title">
-                <span class="lang-en">Guardian Portal</span>
-                <span class="lang-bn hidden">অভিভাবক পোর্টাল</span>
-              </span>
-              <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
-            </button>
-          </div>
-
           <!-- Float 1: Top-Left Dynamic Status Badge (Synchronized with Active Role) -->
           <div class="float-card float-one" id="heroFloatOne">
             <div class="mini">
@@ -182,6 +154,34 @@
               <div class="dash-dots">
                 <i></i><i></i><i></i>
               </div>
+            </div>
+
+            <!-- Role Navigation Segmented Bar INSIDE the app window (Zero-collision architecture) -->
+            <div class="dash-role-bar" id="heroRoleNav" role="tablist" aria-label="Select Role Dashboard">
+              <button class="hero-role-btn active" data-role="admin" type="button" role="tab" aria-selected="true" title="Super Admin Cockpit">
+                <span class="role-btn-dot"></span>
+                <span class="role-btn-title">
+                  <span class="lang-en">Super Admin</span>
+                  <span class="lang-bn hidden">অ্যাডমিন ককপিট</span>
+                </span>
+                <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
+              </button>
+              <button class="hero-role-btn" data-role="teacher" type="button" role="tab" aria-selected="false" title="Teacher Workspace">
+                <span class="role-btn-dot"></span>
+                <span class="role-btn-title">
+                  <span class="lang-en">Teacher Workspace</span>
+                  <span class="lang-bn hidden">শিক্ষক ড্যাশবোর্ড</span>
+                </span>
+                <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
+              </button>
+              <button class="hero-role-btn" data-role="parent" type="button" role="tab" aria-selected="false" title="Guardian Portal">
+                <span class="role-btn-dot"></span>
+                <span class="role-btn-title">
+                  <span class="lang-en">Guardian Portal</span>
+                  <span class="lang-bn hidden">অভিভাবক পোর্টাল</span>
+                </span>
+                <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
+              </button>
             </div>
             
             <div class="dash-screen" id="dashScreenSlider">
@@ -1929,6 +1929,6 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=7.9"></script>
+  <script src="js/main.js?v=8.0"></script>
 </body>
 </html>
