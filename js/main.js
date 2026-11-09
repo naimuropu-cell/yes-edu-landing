@@ -222,17 +222,121 @@
 
   // 5. Interactive Demo Studio Simulator
   function initDemoStudio() {
-    // Tab switching
-    const tabBtns = document.querySelectorAll(".demo-tab-btn");
-    const panes = document.querySelectorAll(".demo-pane");
+    let currentSlide = 0;
+    const totalSlides = 4;
+    const track = document.getElementById("storySliderTrack");
+    const slides = document.querySelectorAll(".story-slide");
+    const progressTracks = document.querySelectorAll(".story-progress-track");
+    const pillBtns = document.querySelectorAll(".story-pill-btn");
+    const dots = document.querySelectorAll(".story-dot");
+    const prevBtn = document.getElementById("storyPrevBtn");
+    const nextBtn = document.getElementById("storyNextBtn");
+    const viewport = document.getElementById("storySliderViewport");
 
-    tabBtns.forEach((btn) => {
+    function goToSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+      currentSlide = index;
+
+      if (track) {
+        track.style.transform = "translateX(-" + (currentSlide * 100) + "%)";
+      }
+
+      slides.forEach((s, idx) => {
+        s.classList.toggle("active", idx === currentSlide);
+      });
+
+      progressTracks.forEach((t, idx) => {
+        t.classList.toggle("active", idx <= currentSlide);
+      });
+
+      pillBtns.forEach((p, idx) => {
+        const isActive = idx === currentSlide;
+        p.classList.toggle("active", isActive);
+        p.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      dots.forEach((d, idx) => {
+        d.classList.toggle("active", idx === currentSlide);
+      });
+
+      if (prevBtn) {
+        prevBtn.style.opacity = currentSlide === 0 ? "0.4" : "1";
+        prevBtn.style.pointerEvents = currentSlide === 0 ? "none" : "auto";
+      }
+
+      if (nextBtn) {
+        nextBtn.style.opacity = currentSlide === totalSlides - 1 ? "0.4" : "1";
+        nextBtn.style.pointerEvents = currentSlide === totalSlides - 1 ? "none" : "auto";
+      }
+    }
+
+    // Pill buttons
+    pillBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const targetId = btn.dataset.target;
-        tabBtns.forEach((b) => b.classList.toggle("active", b === btn));
-        panes.forEach((p) => p.classList.toggle("active", p.id === targetId));
+        const idx = parseInt(btn.dataset.slide, 10);
+        goToSlide(idx);
       });
     });
+
+    // Progress bar tracks
+    progressTracks.forEach((pt) => {
+      pt.addEventListener("click", () => {
+        const idx = parseInt(pt.dataset.slide, 10);
+        goToSlide(idx);
+      });
+    });
+
+    // Indicator dots
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const idx = parseInt(dot.dataset.slide, 10);
+        goToSlide(idx);
+      });
+    });
+
+    // Prev / Next buttons
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        goToSlide(currentSlide - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        goToSlide(currentSlide + 1);
+      });
+    }
+
+    // Touch Swipe for Mobile Devices
+    if (viewport) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchEndX = 0;
+      let touchEndY = 0;
+
+      viewport.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      viewport.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+          if (diffX < 0) {
+            goToSlide(currentSlide + 1);
+          } else {
+            goToSlide(currentSlide - 1);
+          }
+        }
+      }, { passive: true });
+    }
+
+    // Initial boot
+    goToSlide(0);
 
     // Test 1: Biometric RFID Tap
     const punchBtn = document.getElementById("triggerGatePunchSimBtn");

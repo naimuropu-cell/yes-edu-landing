@@ -732,81 +732,126 @@ header.scrolled {
 }
 
 /* ==========================================================================
-   Interactive Demo Studio / Live Campus OS Simulation
+   Interactive Story Card Slider System (Live Campus OS Simulation)
    ========================================================================== */
 .demo-studio-section {
   background: linear-gradient(180deg, #f8fcf9 0%, #edf7f1 100%);
   border-bottom: 1px solid var(--line);
-}
-
-.demo-tabs-nav {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
-}
-
-.demo-tab-btn {
-  padding: 10px 20px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--line);
-  background: #ffffff;
-  color: #557065;
-  font-size: 13px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
-}
-
-.demo-tab-btn:hover {
-  border-color: #a4dcbf;
-  color: var(--deep);
-}
-
-.demo-tab-btn.active {
-  background: var(--deep);
-  color: var(--white);
-  border-color: var(--deep);
-  box-shadow: 0 8px 20px rgba(21, 61, 50, 0.2);
-}
-
-.demo-tab-badge {
-  font-size: 10px;
-  padding: 2px 7px;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.demo-panel-box {
-  background: #ffffff;
-  border: 1px solid #dcece2;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: 34px;
   position: relative;
   overflow: hidden;
 }
 
-.demo-pane {
-  display: none;
+/* Instagram / Chronicle HQ Story Progress Bar */
+.story-progress-bar {
+  display: flex;
+  gap: 8px;
+  max-width: 520px;
+  margin: 0 auto 18px;
 }
 
-.demo-pane.active {
+.story-progress-track {
+  flex: 1;
+  height: 4px;
+  background: #d4ebd9;
+  border-radius: 99px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.story-progress-track.active {
+  background: var(--deep);
+}
+
+.story-progress-fill {
   display: block;
-  animation: fadeIn 0.3s ease forwards;
+  width: 100%;
+  height: 100%;
+  background: var(--green);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Compact Story Pill Navigation (Fits in one neat line on desktop) */
+.story-pills-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.story-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  color: #557065;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(21, 61, 50, 0.03);
+}
+
+.story-pill-btn:hover {
+  border-color: #a4dcbf;
+  color: var(--deep);
+  transform: translateY(-1px);
+}
+
+.story-pill-btn.active {
+  background: var(--deep);
+  color: var(--white);
+  border-color: var(--deep);
+  box-shadow: 0 8px 20px rgba(21, 61, 50, 0.18);
+}
+
+.story-pill-ico {
+  font-size: 14px;
+}
+
+/* Story Slider Card Container */
+.story-slider-card {
+  background: #ffffff;
+  border: 1px solid #dcece2;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.story-slider-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  touch-action: pan-y;
+}
+
+.story-slider-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.story-slide {
+  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 38px 36px 30px;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+.story-slide.active {
+  opacity: 1;
 }
 
 .demo-grid-2col {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 36px;
   align-items: center;
 }
@@ -842,6 +887,7 @@ header.scrolled {
   gap: 10px;
   box-shadow: 0 6px 16px rgba(44, 155, 112, 0.25);
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .sim-btn-trigger:hover {
@@ -864,6 +910,58 @@ header.scrolled {
   color: #2f4e41;
   min-height: 90px;
   line-height: 1.7;
+}
+
+/* Slider Footer Navigation Bar */
+.story-slider-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 36px;
+  border-top: 1px solid #edf4ef;
+  background: #fafdfb;
+}
+
+.story-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--deep);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.story-nav-btn:hover {
+  border-color: var(--green);
+  background: #eef7f2;
+  color: var(--deep);
+}
+
+.story-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.story-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cfe2d6;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.story-dot.active {
+  width: 24px;
+  border-radius: 99px;
+  background: var(--deep);
 }
 
 /* ==========================================================================
@@ -2493,32 +2591,47 @@ html, body {
     font-weight: 700;
   }
 
-  /* Demo Studio */
-  .demo-tabs-nav {
+  /* Story Card Slider Responsive Rules */
+  .story-progress-bar {
+    max-width: 100%;
+    gap: 6px;
+    padding: 0 4px;
+  }
+
+  .story-pills-nav {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
-    padding: 4px 6px 14px;
+    padding: 4px 4px 14px;
     gap: 8px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    margin-bottom: 18px;
   }
 
-  .demo-tabs-nav::-webkit-scrollbar {
+  .story-pills-nav::-webkit-scrollbar {
     display: none;
   }
 
-  .demo-tab-btn {
+  .story-pill-btn {
     flex-shrink: 0;
-    padding: 8px 14px;
+    padding: 7px 13px;
     font-size: 12px;
     white-space: nowrap;
   }
 
-  .demo-panel-box {
-    padding: 20px 16px;
-    border-radius: 16px;
+  .story-slide {
+    padding: 24px 16px 20px;
+  }
+
+  .story-slider-footer {
+    padding: 12px 16px;
+  }
+
+  .story-nav-btn {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 
   .demo-card-lead h3 {
