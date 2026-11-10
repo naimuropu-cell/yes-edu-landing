@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="10" fill="#1C3829"/>
+  <!-- Diamond Crest with Torch -->
+  <polygon points="24,9 38,24 24,39 10,24" fill="#164A31" stroke="#F59E0B" stroke-width="1.8"/>
+  <!-- Torch Handle & Flame -->
+  <path d="M22 24 L26 24 L25 33 L23 33 Z" fill="#D97706"/>
+  <path d="M24 15 C26 18 27 20 25 23 C24 21 23 21 23 23 C21 20 22 18 24 15 Z" fill="#FBBF24"/>
+</svg>
+

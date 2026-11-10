@@ -11,7 +11,9 @@
   let isAnnualBilling = false;
   let studentCount = 500;
   let activeHeroRole = "admin";
+  let activeInstitution = "general";
   let renderHeroRole;
+  let updateInstitutionFeature;
 
   // Role showcase data (bilingual)
   const roleData = {
@@ -122,6 +124,11 @@
     if (typeof renderHeroRole === "function") {
       renderHeroRole(activeHeroRole);
     }
+
+    // Sync institution segmenter feature text
+    if (typeof updateInstitutionFeature === "function") {
+      updateInstitutionFeature(activeInstitution);
+    }
   }
 
   function initLanguageSwitcher() {
@@ -227,134 +234,210 @@
     });
   }
 
-  // 5. Interactive SME Peek Carousel (Live Campus OS Simulation)
+  // 5. Interactive Enterprise Campus OS Studio (Segmented Tab Controller & Mobile Story Slider)
   function initDemoStudio() {
-    let currentSlide = 0;
-    const cards = Array.from(document.querySelectorAll(".sme-card"));
-    const totalSlides = cards.length || 4;
-    const container = document.getElementById("smeCarousel");
-    const track = document.getElementById("smeCarouselTrack");
-    const prevBtn = document.getElementById("smePrevBtn");
-    const nextBtn = document.getElementById("smeNextBtn");
-    const dots = Array.from(document.querySelectorAll(".sme-dot"));
-    const activeIndexEl = document.getElementById("smeActiveIndex");
-    const totalCountEl = document.getElementById("smeTotalCount");
-    const timerFill = document.getElementById("smeTimerFill");
-    const storyPill = document.getElementById("smeStoryPill");
+    let currentTab = 0;
+    const tabs = Array.from(document.querySelectorAll(".studio-tab"));
+    const panels = Array.from(document.querySelectorAll(".studio-panel"));
+    const storySegs = Array.from(document.querySelectorAll(".story-seg"));
+    const storyCurrentStep = document.getElementById("storyCurrentStep");
+    const viewport = document.querySelector(".studio-viewport");
+    const prevBtn = document.getElementById("storyPrevBtn");
+    const nextBtn = document.getElementById("storyNextBtn");
+    const container = document.getElementById("demoStudio");
+    const totalTabs = tabs.length;
 
-    if (totalCountEl) {
-      totalCountEl.textContent = totalSlides < 10 ? "0" + totalSlides : totalSlides;
-    }
+    if (totalTabs === 0 || panels.length === 0) return;
 
-    let isAutoStoryPlaying = true;
+    let isAutoPlaying = true;
     let isUserInteracting = false;
-    let storyTimerInterval = null;
+    let autoTimer = null;
     let progressPercentage = 0;
-    const storyDuration = 10000; // 10 seconds
-    const intervalTick = 100; // update every 100ms
+    const slideDuration = 7500; // 7.5 seconds per slide
+    const tickInterval = 60; // 60ms tick for smooth progress
 
-    function updateCarouselPosition(animate = true) {
-      if (!container || !track || cards.length === 0) return;
+    function activateTab(index, userInitiated = false, direction = "next") {
+      if (index < 0) index = totalTabs - 1;
+      if (index >= totalTabs) index = 0;
+      currentTab = index;
 
-      if (!animate) {
-        track.style.transition = "none";
-      } else {
-        track.style.transition = "transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1)";
-      }
+      // Update Desktop Tabs
+      tabs.forEach((tab, idx) => {
+        const isActive = idx === currentTab;
+        tab.classList.toggle("active", isActive);
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
 
-      const activeCard = cards[currentSlide];
-      if (!activeCard) return;
+        const fill = tab.querySelector(".tab-indicator-fill");
+        if (fill) {
+          fill.style.width = "0%";
+          fill.style.transition = "none";
+        }
 
-      const containerWidth = container.offsetWidth;
-      const cardCenter = activeCard.offsetLeft + (activeCard.offsetWidth / 2);
-      const targetOffset = (containerWidth / 2) - cardCenter;
-
-      track.style.transform = `translateX(${targetOffset}px)`;
-
-      // Update card states
-      cards.forEach((card, idx) => {
-        const isActive = idx === currentSlide;
-        card.classList.toggle("active", isActive);
-        card.setAttribute("aria-hidden", isActive ? "false" : "true");
+        if (isActive && userInitiated) {
+          tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        }
       });
 
-      // Update counter
-      if (activeIndexEl) {
-        activeIndexEl.textContent = (currentSlide + 1) < 10 ? "0" + (currentSlide + 1) : (currentSlide + 1);
-      }
-
-      // Update dots
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle("active", idx === currentSlide);
+      // Update Mobile Story Progress Segments
+      storySegs.forEach((seg, idx) => {
+        const fill = seg.querySelector(".story-seg-fill");
+        if (!fill) return;
+        if (idx < currentTab) {
+          fill.style.width = "100%";
+          fill.style.transition = "width 0.25s ease";
+        } else if (idx === currentTab) {
+          fill.style.width = "0%";
+          fill.style.transition = "none";
+        } else {
+          fill.style.width = "0%";
+          fill.style.transition = "none";
+        }
       });
 
-      if (!animate) {
-        // Force reflow
-        void track.offsetHeight;
-        track.style.transition = "transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1)";
-      }
-    }
-
-    function goToSlide(index, manual = false) {
-      if (index < 0) {
-        currentSlide = totalSlides - 1; // loop backwards
-      } else if (index >= totalSlides) {
-        currentSlide = 0; // loop forward
-      } else {
-        currentSlide = index;
+      // Update Mobile Step Counter
+      if (storyCurrentStep) {
+        storyCurrentStep.textContent = (currentTab + 1).toString();
       }
 
-      updateCarouselPosition(true);
+      // Update Studio Panels with directional animation
+      const animClass = direction === "prev" ? "slide-prev" : "slide-next";
+      panels.forEach((panel, idx) => {
+        const isActive = idx === currentTab;
+        panel.classList.remove("slide-next", "slide-prev");
+        if (isActive) {
+          panel.classList.add("active");
+          panel.setAttribute("aria-hidden", "false");
+          panel.classList.add(animClass);
+        } else {
+          panel.classList.remove("active");
+          panel.setAttribute("aria-hidden", "true");
+        }
+      });
 
-      if (manual) {
-        resetStoryTimer();
-      }
-    }
-
-    function resetStoryTimer() {
       progressPercentage = 0;
-      if (timerFill) {
-        timerFill.style.width = "0%";
-      }
     }
 
-    function startStoryTimer() {
-      stopStoryTimer();
-      storyTimerInterval = setInterval(() => {
-        if (!isAutoStoryPlaying || isUserInteracting) return;
+    function startTimer() {
+      stopTimer();
+      autoTimer = setInterval(() => {
+        if (!isAutoPlaying || isUserInteracting) return;
 
-        progressPercentage += (intervalTick / storyDuration) * 100;
+        progressPercentage += (tickInterval / slideDuration) * 100;
+        const boundedPct = Math.min(progressPercentage, 100);
+
+        // Update Desktop Tab Indicator
+        const activeTab = tabs[currentTab];
+        if (activeTab) {
+          const fill = activeTab.querySelector(".tab-indicator-fill");
+          if (fill) fill.style.width = boundedPct + "%";
+        }
+
+        // Update Mobile Story Segment Fill
+        const activeSeg = storySegs[currentTab];
+        if (activeSeg) {
+          const fill = activeSeg.querySelector(".story-seg-fill");
+          if (fill) fill.style.width = boundedPct + "%";
+        }
+
         if (progressPercentage >= 100) {
           progressPercentage = 0;
-          goToSlide(currentSlide + 1, false);
+          activateTab(currentTab + 1, false, "next");
         }
-
-        if (timerFill) {
-          timerFill.style.width = Math.min(progressPercentage, 100) + "%";
-        }
-      }, intervalTick);
+      }, tickInterval);
     }
 
-    function stopStoryTimer() {
-      if (storyTimerInterval) {
-        clearInterval(storyTimerInterval);
-        storyTimerInterval = null;
+    function stopTimer() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
       }
     }
 
-    // Toggle auto-story on clicking the 10s pill
-    if (storyPill) {
-      storyPill.addEventListener("click", () => {
-        isAutoStoryPlaying = !isAutoStoryPlaying;
-        storyPill.style.opacity = isAutoStoryPlaying ? "1" : "0.6";
-        const dot = storyPill.querySelector(".story-pulse-dot");
-        if (dot) {
-          dot.style.animationPlayState = isAutoStoryPlaying ? "running" : "paused";
+    // Desktop Tab Click & Keyboard Arrow Navigation
+    tabs.forEach((tab, idx) => {
+      tab.addEventListener("click", () => {
+        const dir = idx >= currentTab ? "next" : "prev";
+        activateTab(idx, true, dir);
+        startTimer();
+      });
+
+      tab.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
+          e.preventDefault();
+          activateTab(currentTab + 1, true, "next");
+          tabs[currentTab].focus();
+        } else if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          activateTab(currentTab - 1, true, "prev");
+          tabs[currentTab].focus();
         }
+      });
+    });
+
+    // Story Segments Click (Jump directly to slide)
+    storySegs.forEach((seg, idx) => {
+      seg.addEventListener("click", () => {
+        const dir = idx >= currentTab ? "next" : "prev";
+        activateTab(idx, true, dir);
+        startTimer();
+      });
+    });
+
+    // Mobile Story Prev / Next Buttons
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        activateTab(currentTab - 1, true, "prev");
+        startTimer();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        activateTab(currentTab + 1, true, "next");
+        startTimer();
       });
     }
 
-    // Pause on hover or focus
+    // Touch Swipe Gesture Detection on Viewport (Story Card Slider)
+    if (viewport) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+
+      viewport.addEventListener("touchstart", (e) => {
+        if (e.touches && e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+          isUserInteracting = true; // Pause auto-slide while holding
+        }
+      }, { passive: true });
+
+      viewport.addEventListener("touchend", (e) => {
+        setTimeout(() => { isUserInteracting = false; }, 3500);
+
+        if (e.changedTouches && e.changedTouches.length === 1) {
+          const touchEndX = e.changedTouches[0].clientX;
+          const touchEndY = e.changedTouches[0].clientY;
+          const diffX = touchEndX - touchStartX;
+          const diffY = touchEndY - touchStartY;
+          const elapsed = Date.now() - touchStartTime;
+
+          // Detect genuine horizontal swipe (>40px, mostly horizontal, within 700ms)
+          if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY) * 1.2 && elapsed < 700) {
+            if (diffX < 0) {
+              // Swiped left -> Next
+              activateTab(currentTab + 1, true, "next");
+            } else {
+              // Swiped right -> Previous
+              activateTab(currentTab - 1, true, "prev");
+            }
+            startTimer();
+          }
+        }
+      }, { passive: true });
+    }
+
+    // Pause on desktop mouse hover
     if (container) {
       container.addEventListener("mouseenter", () => {
         isUserInteracting = true;
@@ -364,78 +447,8 @@
       });
     }
 
-    // Click on cards to bring them into view
-    cards.forEach((card, idx) => {
-      card.addEventListener("click", () => {
-        if (idx !== currentSlide) {
-          goToSlide(idx, true);
-        }
-      });
-    });
-
-    // Arrow buttons
-    if (prevBtn) {
-      prevBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        goToSlide(currentSlide - 1, true);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        goToSlide(currentSlide + 1, true);
-      });
-    }
-
-    // Dots indicator clicks
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const idx = parseInt(dot.dataset.index, 10);
-        goToSlide(idx, true);
-      });
-    });
-
-    // Touch Swipe Support for Mobile & Tablet
-    if (container) {
-      let touchStartX = 0;
-      let touchStartY = 0;
-      let touchEndX = 0;
-      let touchEndY = 0;
-
-      container.addEventListener("touchstart", (e) => {
-        isUserInteracting = true;
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
-      }, { passive: true });
-
-      container.addEventListener("touchend", (e) => {
-        isUserInteracting = false;
-        touchEndX = e.changedTouches[0].screenX;
-        touchEndY = e.changedTouches[0].screenY;
-        const diffX = touchEndX - touchStartX;
-        const diffY = touchEndY - touchStartY;
-
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-          if (diffX < 0) {
-            goToSlide(currentSlide + 1, true);
-          } else {
-            goToSlide(currentSlide - 1, true);
-          }
-        }
-      }, { passive: true });
-    }
-
-    // Window resize handler: recalculate exact track centering
-    window.addEventListener("resize", () => {
-      updateCarouselPosition(false);
-    });
-
-    // Initial position & timer boot
-    setTimeout(() => {
-      updateCarouselPosition(false);
-      startStoryTimer();
-    }, 50);
+    activateTab(0, false, "next");
+    startTimer();
   }
 
   // 6. Interactive Pricing Calculator
@@ -687,6 +700,34 @@
   let heroCarouselTimer = null;
   let isHeroPaused = false;
 
+  function getLiveSyncStatus(roleKey) {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const isAm = hours < 12;
+    const h12 = hours % 12 || 12;
+    const timeStrEn = `${String(h12).padStart(2, "0")}:${minutes} ${isAm ? "AM" : "PM"}`;
+    const bnPeriod = hours < 12 ? "সকাল" : (hours < 15 ? "দুপুর" : (hours < 18 ? "বিকাল" : "রাত"));
+    const timeStrBn = `${bnPeriod} ${toBengaliNumber(String(h12).padStart(2, "0"))}:${toBengaliNumber(minutes)}`;
+
+    if (roleKey === "admin") {
+      return {
+        en: `Live • Synced ${timeStrEn}`,
+        bn: `লাইভ • ${timeStrBn} এ সিঙ্ক`
+      };
+    } else if (roleKey === "teacher") {
+      return {
+        en: `Active • Term 01 (${timeStrEn})`,
+        bn: `সক্রিয় • টার্ম ০১ (${timeStrBn})`
+      };
+    } else {
+      return {
+        en: `Connected • ${timeStrEn}`,
+        bn: `সংযুক্ত • ${timeStrBn}`
+      };
+    }
+  }
+
   function updateHeroText(el, textObj) {
     if (!el) return;
     if (typeof textObj === "string") {
@@ -728,7 +769,7 @@
     if (titleEl) updateHeroText(titleEl, data.roleTitle);
 
     const statusEl = document.getElementById("dashStatusText");
-    if (statusEl) updateHeroText(statusEl, data.status);
+    if (statusEl) updateHeroText(statusEl, getLiveSyncStatus(roleKey));
 
     // 4. Update Float Cards
     const f1Ico = document.getElementById("floatOneIco");
@@ -813,12 +854,108 @@
     });
   }
 
+  // ==========================================================================
+  // Institution Type Segmenter (School & College / Madrasah / Cadet)
+  // ==========================================================================
+  const INST_DATA = {
+    general: {
+      en: "<strong>Tailored for General Schools:</strong> NCTB 2026 Assessment • Auto GPA Report Card • 1-Tap bKash Fee • Biometric Gate SMS",
+      bn: "<strong>স্কুল ও কলেজের জন্য:</strong> এনসিটিবি ২০২৬ নতুন মূল্যায়ন • অটো জিপিএ মার্কশিট • ১-ট্যাপে বিকাশ ফি • বায়োমেট্রিক গেট এসএমএস"
+    },
+    madrasah: {
+      en: "<strong>Tailored for Madrasahs:</strong> Hifz Para-wise Tracker • Kitabkhana Ledger • Shariah Waqf & Zakat Fund Audit • Talimat Routine",
+      bn: "<strong>মাদরাসার জন্য:</strong> হিফজ ৩য় পারা দৈনিক রেকর্ড • কিতাবখানা ও জামাত বণ্টন • শরীয়াহ ও ওয়াকফ অডিট • বোর্ডিং হিসাব"
+    },
+    cadet: {
+      en: "<strong>Tailored for Cadet & English Med:</strong> Residential Hostel & Mess • Merit Ranking • Cambridge/Edexcel Tracking • Dual-Currency Ledger",
+      bn: "<strong>ক্যাডেট ও ইংলিশ মিডিয়ামের জন্য:</strong> হোস্টেল ও মেস ম্যানেজমেন্ট • মেধা ক্রমতালিকা • ক্যামব্রিজ/এডেক্সেল ট্র্যাকিং • দ্রুত ফি লেজার"
+    }
+  };
+
+  updateInstitutionFeature = function (instKey) {
+    activeInstitution = instKey;
+    const tagEl = document.getElementById("instTagText");
+    const container = document.getElementById("instFeatureTag");
+    const pills = document.querySelectorAll(".inst-pill");
+
+    pills.forEach((p) => {
+      const isActive = p.dataset.inst === instKey;
+      p.classList.toggle("active", isActive);
+      p.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+
+    if (tagEl && INST_DATA[instKey]) {
+      const data = INST_DATA[instKey];
+      if (container) {
+        container.style.opacity = "0.4";
+        setTimeout(() => {
+          tagEl.innerHTML = currentLang === "bn" ? data.bn : data.en;
+          container.style.opacity = "1";
+        }, 100);
+      } else {
+        tagEl.innerHTML = currentLang === "bn" ? data.bn : data.en;
+      }
+    }
+  };
+
+  function initInstitutionSegmenter() {
+    const segmenter = document.getElementById("instSegmenter");
+    if (!segmenter) return;
+
+    segmenter.addEventListener("click", (e) => {
+      const btn = e.target.closest(".inst-pill");
+      if (!btn || !btn.dataset.inst) return;
+      updateInstitutionFeature(btn.dataset.inst);
+    });
+
+    updateInstitutionFeature(activeInstitution);
+  }
+
+  // ==========================================================================
+  // Interactive Dashboard Hotspots (Biometric, bKash, YesEdu Copilot)
+  // ==========================================================================
+  function initDashboardHotspots() {
+    const hotspots = document.querySelectorAll(".dash-hotspot");
+    if (!hotspots.length) return;
+
+    hotspots.forEach((spot) => {
+      const beacon = spot.querySelector(".hotspot-beacon");
+      if (!beacon) return;
+
+      beacon.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const wasActive = spot.classList.contains("active");
+        hotspots.forEach((s) => s.classList.remove("active"));
+        if (!wasActive) {
+          spot.classList.add("active");
+        }
+      });
+
+      spot.addEventListener("mouseenter", () => {
+        isHeroPaused = true;
+      });
+
+      spot.addEventListener("mouseleave", () => {
+        isHeroPaused = false;
+        spot.classList.remove("active");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".dash-hotspot")) {
+        hotspots.forEach((s) => s.classList.remove("active"));
+      }
+    });
+  }
+
   // Initialize all subsystems when DOM is ready
   document.addEventListener("DOMContentLoaded", () => {
     initLanguageSwitcher();
     initNavbar();
     initScrollReveal();
     initHeroRoleCarousel();
+    initInstitutionSegmenter();
+    initDashboardHotspots();
     initRoleShowcase();
     initDemoStudio();
     initPricingCalculator();
