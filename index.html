@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f8fcf9">
   <title>YES EDU — One Connected Education Ecosystem | School ERP, Website CMS & AI</title>
-  <meta name="description" content="YES EDU connects institutional websites, academic operations, finance, biometric attendance, mobile apps, and NCTB AI-powered assistance in one connected ecosystem.">
+  <meta name="description"
+    content="YES EDU connects institutional websites, academic operations, finance, biometric attendance, mobile apps, and NCTB AI-powered assistance in one connected ecosystem.">
   <link rel="icon" type="image/png" href="images/yes-edu-logo.png">
-  
+
   <!-- Preconnect Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=8.0">
+  <link rel="stylesheet" href="css/style.css?v=8.1">
 </head>
+
 <body>
 
   <!-- ================= HEADER & NAVIGATION ================= -->
@@ -24,7 +29,7 @@
       <a class="brand" href="#home" aria-label="YES EDU Home">
         <img src="images/yes-edu-logo.png" alt="YesEdu Logo" class="brand-logo-img">
       </a>
-      
+
       <nav class="nav-links" id="navLinks">
         <a href="#platform"><span class="lang-en">Platform</span><span class="lang-bn hidden">প্ল্যাটফর্ম</span></a>
         <a href="#modules"><span class="lang-en">Modules</span><span class="lang-bn hidden">মডিউলস</span></a>
@@ -35,7 +40,7 @@
         <a href="#pricing"><span class="lang-en">Pricing</span><span class="lang-bn hidden">মূল্যতালিকা</span></a>
         <a href="#faq"><span class="lang-en">FAQ</span><span class="lang-bn hidden">প্রশ্নোত্তর</span></a>
       </nav>
-      
+
       <div class="nav-actions">
         <!-- Language Switcher -->
         <button class="lang-switch-pill" id="langToggleBtn" aria-label="Switch Language">
@@ -46,10 +51,10 @@
 
         <a class="btn btn-primary open-demo-modal" href="#contact">
           <span class="lang-en">Book a Demo</span>
-          <span class="lang-bn hidden">ডেমো বুক করুন</span>
+          <span class="lang-bn hidden">ডেমো দেখুন</span>
           <span class="arrow">↗</span>
         </a>
-        
+
         <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
       </div>
     </div>
@@ -61,188 +66,267 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <!-- Institution Segmenter Pill (Schools, Madrasahs, Cadets) -->
-          <div class="institution-segmenter" id="instSegmenter" role="tablist" aria-label="Select Institution Type">
-            <button class="inst-pill active" data-inst="general" type="button" role="tab" aria-selected="true">
-              <span class="inst-pill-ico">🏫</span>
-              <span class="lang-en">School & College</span>
-              <span class="lang-bn hidden">স্কুল ও কলেজ</span>
-            </button>
-            <button class="inst-pill" data-inst="madrasah" type="button" role="tab" aria-selected="false">
-              <span class="inst-pill-ico">🕌</span>
-              <span class="lang-en">Madrasah</span>
-              <span class="lang-bn hidden">কওমি ও আলিয়া মাদরাসা</span>
-            </button>
-            <button class="inst-pill" data-inst="cadet" type="button" role="tab" aria-selected="false">
-              <span class="inst-pill-ico">🎖️</span>
-              <span class="lang-en">Cadet & English Med.</span>
-              <span class="lang-bn hidden">ক্যাডেট ও ইংলিশ মিডিয়াম</span>
-            </button>
-          </div>
-          
+          <span class="eyebrow">
+            <span class="lang-en">THE CONNECTED EDUCATION ECOSYSTEM</span>
+            <span class="lang-bn hidden">পরিপূর্ণ শিক্ষাব্যবস্থাপনা ইকোসিস্টেম</span>
+          </span>
+
           <h1>
-            <span class="lang-en">Run Your Entire Campus on Autopilot. <span>Zero Paper, Zero Fee Dues.</span></span>
-            <span class="lang-bn hidden">খাতা-কলমের দিন শেষ, <span>স্বয়ংক্রিয় ক্লাউডে ক্যাম্পাস পরিচালনা করুন নির্ভুলভাবে।</span></span>
+            <span class="lang-en">A better-connected future for <span>every institution.</span></span>
+            <span class="lang-bn hidden">প্রতিটি শিক্ষাপ্রতিষ্ঠানের জন্য একটি <span>স্মার্ট ও সংযুক্ত
+                ভবিষ্যৎ।</span></span>
           </h1>
-          
-          <p class="hero-desc">
-            <span class="lang-en">The all-in-one Smart Campus ERP tailored for Bangladesh: 1-Tap bKash auto-reconciled fees, 0.18s biometric gate SMS to parents, and NCTB 2026 / Madrasa AI question creator — all in one unified platform.</span>
-            <span class="lang-bn hidden">বাংলাদেশের স্কুল, কলেজ ও মাদরাসার উপযোগী পূর্ণাঙ্গ স্মার্ট ক্যাম্পাস ইআরপি: ১-ট্যাপে বিকাশ-নগদ অটো ফি আদায়, ০.১৮ সেকেন্ডে অভিভাবকের মোবাইলে বায়োমেট্রিক গেট এসএমএস এবং এনসিটিবি ও মাদরাসা এআই প্রশ্নপত্র নির্মাতা।</span>
+
+          <p>
+            <span class="lang-en">One connected education ecosystem for academic management, campus operations,
+              institutional websites, mobile experiences and AI-powered assistance.</span>
+            <span class="lang-bn hidden">একাডেমিক ব্যবস্থাপনা, ক্যাম্পাস পরিচালনা, প্রাতিষ্ঠানিক ওয়েবসাইট, মোবাইল অ্যাপস
+              এবং এআই সহায়তার জন্য একটি সমন্বিত শিক্ষাব্যবস্থাপনা প্ল্যাটফর্ম।</span>
           </p>
-          
+
           <div class="hero-actions">
             <a class="btn btn-primary open-demo-modal" href="#contact">
-              <span class="lang-en">Book a Free Live Demo</span>
-              <span class="lang-bn hidden">ফ্রি লাইভ ডেমো বুক করুন</span>
+              <span class="lang-en">Book a Personal Demo</span>
+              <span class="lang-bn hidden">ব্যক্তিগত ডেমো বুক করুন</span>
               <span class="arrow">↗</span>
             </a>
-            <a class="btn btn-tour-play" href="tel:+8801838790573" title="Call YES EDU Direct Hotline">
-              <span class="play-circle hotline-play-circle">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            <a class="btn btn-tour-play" href="#demoStudio">
+              <span class="play-circle">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
                 </svg>
               </span>
-              <span class="lang-en">Call Hotline: 01838-790573</span>
-              <span class="lang-bn hidden">হটলাইন: ০১৮৩৮-৭৯০৫৭৩</span>
+              <span class="lang-en">Explore Live Platform</span>
+              <span class="lang-bn hidden">সরাসরি প্ল্যাটফর্ম দেখুন</span>
             </a>
           </div>
 
           <div class="hero-proof">
             <span class="proof-dots"><i></i><i></i><i></i><i></i></span>
             <span>
-              <span class="lang-en">Trusted by 150+ Schools, Colleges & Madrasahs across 42 Districts</span>
-              <span class="lang-bn hidden">৪২টি জেলার ১৫০+ শীর্ষ স্কুল, কলেজ ও মাদরাসায় সম্পূর্ণ সক্রিয়</span>
+              <span class="lang-en">Engineered for schools, colleges & madrasas in Bangladesh</span>
+              <span class="lang-bn hidden">বাংলাদেশের স্কুল, কলেজ ও মাদ্রাসার জন্য বিশেষভাবে তৈরি</span>
             </span>
           </div>
         </div>
-        
-        <div class="hero-visual reveal">
-          <!-- Ambient Radial Aura -->
-          <div class="capsule-ambient-glow"></div>
 
-          <!-- The Floating Metric Canvas -->
-          <div class="capsule-stage">
-            
-            <!-- Card 1: Gate SMS Security Alert (Top Left) -->
-            <div class="cap-card cap-gate" id="capGateCard">
-              <div class="cap-top">
-                <div class="cap-badge-pulse">
-                  <span class="cap-dot-live"></span>
-                  <span class="cap-badge-txt"><span class="lang-en">Gate Cloud • 0.18s</span><span class="lang-bn hidden">ক্লাউড গেট • ০.১৮ সে.</span></span>
-                </div>
-                <span class="cap-time-pill">09:02 AM</span>
-              </div>
-              <div class="cap-profile">
-                <div class="cap-avatar">
-                  <span class="cap-avatar-initials">TI</span>
-                </div>
-                <div class="cap-profile-info">
-                  <strong class="cap-name"><span class="lang-en">Tahmid Iqbal • Class 10 (A)</span><span class="lang-bn hidden">তাহমিদ ইকবাল • ১০ম শ্রেণি (শাখা-ক)</span></strong>
-                  <span class="cap-desc"><span class="lang-en">Biometric punch verified at Gate #02</span><span class="lang-bn hidden">গেট #০২ এ বায়োমেট্রিক পাঞ্চ সম্পন্ন</span></span>
-                </div>
-              </div>
-              <div class="cap-status-row">
-                <span class="cap-status-chip success">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <span class="lang-en">SMS Delivered to Guardian Phone</span>
-                  <span class="lang-bn hidden">অভিভাবকের ফোনে বাংলা SMS প্রেরিত</span>
+        <div class="hero-visual reveal">
+          <!-- Float 1: Top-Left Dynamic Status Badge (Synchronized with Active Role) -->
+          <div class="float-card float-one" id="heroFloatOne">
+            <div class="mini">
+              <span class="float-icon" id="floatOneIco">✓</span>
+              <span id="floatOneTitle">
+                <span class="lang-en">Attendance Today</span>
+                <span class="lang-bn hidden">আজকের উপস্থিতি</span>
+              </span>
+            </div>
+            <strong id="floatOneStat">97%</strong>
+            <span id="floatOneSub">
+              <span class="lang-en">Live Biometric • 115 Present</span>
+              <span class="lang-bn hidden">বায়োমেট্রিক • ১১৫ জন উপস্থিত</span>
+            </span>
+          </div>
+
+          <!-- Float 3: Top-Right Dynamic AI & Routine Badge (Synchronized with Active Role) -->
+          <div class="float-card float-three" id="heroFloatThree">
+            <div class="mini">
+              <span class="float-icon" id="floatThreeIco">✦</span>
+              <span id="floatThreeTitle">
+                <span class="lang-en">AI Teaching Assistant</span>
+                <span class="lang-bn hidden">এআই শিক্ষক সহকারী</span>
+              </span>
+            </div>
+            <strong id="floatThreeStat">
+              <span class="lang-en">Active & Ready</span>
+              <span class="lang-bn hidden">সক্রিয় ও প্রস্তুত</span>
+            </strong>
+            <span id="floatThreeSub">
+              <span class="lang-en">NCTB Syllabus V2 Engine</span>
+              <span class="lang-bn hidden">এনসিটিবি সিলেবাস V2</span>
+            </span>
+          </div>
+
+          <!-- Modern macOS App Window Container with Real YES EDU Multi-Role Slides -->
+          <div class="dashboard" id="heroDashboardFrame" title="YES EDU Multi-Role Cockpit">
+            <div class="dash-top">
+              <div class="dash-logo">
+                <b>Y</b> YES EDU <span id="dashRoleTitle" style="font-weight:500;color:#7e968b">/ Super Admin
+                  Cockpit</span>
+                <span class="dash-status-pill" id="dashStatusPill">
+                  <span class="dash-status-dot"></span>
+                  <span id="dashStatusText">
+                    <span class="lang-en">Live • 2026</span>
+                    <span class="lang-bn hidden">লাইভ • ২০২৬</span>
+                  </span>
                 </span>
               </div>
-            </div>
-
-            <!-- Card 2: 1-Tap bKash Collection Ledger (Center Anchor - Prominent) -->
-            <div class="cap-card cap-ledger" id="capLedgerCard">
-              <div class="cap-ledger-header">
-                <div class="cap-ledger-title">
-                  <span class="cap-eyebrow-mini"><span class="lang-en">Today's Fee Collection</span><span class="lang-bn hidden">আজকের ফি আদায়</span></span>
-                  <div class="cap-amount-wrap">
-                    <span class="cap-amount-figure">৳ ৩,৪৫,২৫০</span>
-                    <span class="cap-amount-sub">.০০</span>
-                  </div>
-                </div>
-                <div class="cap-growth-badge">
-                  <span class="growth-arrow">↑</span>
-                  <span>+১৮% <small><span class="lang-en">this week</span><span class="lang-bn hidden">এই সপ্তাহে</span></small></span>
-                </div>
-              </div>
-
-              <!-- Micro Transactions -->
-              <div class="cap-tx-list">
-                <div class="cap-tx-item">
-                  <div class="cap-tx-brand bkash-brand">bKash</div>
-                  <div class="cap-tx-details">
-                    <strong><span class="lang-en">Tuition Fee • Rafi Ahmed</span><span class="lang-bn hidden">মাসিক বেতন • রাফি আহমেদ</span></strong>
-                    <span><span class="lang-en">Class 9 • Roll 04</span><span class="lang-bn hidden">৯ম শ্রেণি • রোল ০৪</span></span>
-                  </div>
-                  <div class="cap-tx-val">
-                    <span class="tx-amount">৳ ২,৫০০</span>
-                    <span class="tx-tag auto-sync"><span class="lang-en">Auto-Sync ✓</span><span class="lang-bn hidden">অটো-সিঙ্ক ✓</span></span>
-                  </div>
-                </div>
-
-                <div class="cap-tx-item">
-                  <div class="cap-tx-brand nagad-brand">Nagad</div>
-                  <div class="cap-tx-details">
-                    <strong><span class="lang-en">Session Charge • Sumaiya Jahan</span><span class="lang-bn hidden">সেশন চার্জ • সুমাইয়া জাহান</span></strong>
-                    <span><span class="lang-en">Class 10 • Roll 01</span><span class="lang-bn hidden">১০ম শ্রেণি • রোল ০১</span></span>
-                  </div>
-                  <div class="cap-tx-val">
-                    <span class="tx-amount">৳ ৫,০০০</span>
-                    <span class="tx-tag auto-sync"><span class="lang-en">Auto-Sync ✓</span><span class="lang-bn hidden">অটো-সিঙ্ক ✓</span></span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Ledger Progress Footer -->
-              <div class="cap-progress-box">
-                <div class="cap-progress-bar">
-                  <div class="cap-progress-fill" style="width: 82%;"></div>
-                </div>
-                <div class="cap-progress-info">
-                  <span><span class="lang-en">82% Month Target Collected</span><span class="lang-bn hidden">৮২% ফি আদায় সম্পন্ন</span></span>
-                  <span class="cap-zero-dues">
-                    <span class="dot-green"></span>
-                    <span class="lang-en">Zero Fee Dues</span>
-                    <span class="lang-bn hidden">বকেয়ামুক্ত ক্যাম্পাস</span>
-                  </span>
-                </div>
+              <div class="dash-dots">
+                <i></i><i></i><i></i>
               </div>
             </div>
 
-            <!-- Card 3: YesEdu Copilot & NCTB 2026 Engine (Bottom Right) -->
-            <div class="cap-card cap-ai" id="capAiCard">
-              <div class="cap-ai-head">
-                <div class="cap-ai-title">
-                  <span class="cap-sparkle-icon">✦</span>
-                  <strong><span class="lang-en">YesEdu Copilot</span><span class="lang-bn hidden">YesEdu কোপাইলট</span></strong>
-                </div>
-                <span class="cap-nctb-pill"><span class="lang-en">NCTB 2026 Ready</span><span class="lang-bn hidden">এনসিটিবি ২০২৬ প্রস্তুত</span></span>
-              </div>
-              <div class="cap-ai-prompt">
-                <div class="prompt-label"><span class="lang-en">Prompt:</span><span class="lang-bn hidden">প্রম্পট:</span></div>
-                <p><span class="lang-en">"Generate 20-marks chapter exam & progress report card"</span><span class="lang-bn hidden">"অধ্যায়ভিত্তিক ২০ নম্বরের সৃজনশীল প্রশ্ন ও মার্কশিট প্রস্তুত করো"</span></p>
-              </div>
-              <div class="cap-ai-metrics">
-                <div class="ai-metric-item">
-                  <span><span class="lang-en">Exam Marks</span><span class="lang-bn hidden">পূর্ণমান</span></span>
-                  <strong>20 Marks</strong>
-                </div>
-                <div class="ai-metric-divider"></div>
-                <div class="ai-metric-item">
-                  <span><span class="lang-en">Evaluation</span><span class="lang-bn hidden">মূল্যায়ন</span></span>
-                  <strong class="highlight-green"><span class="lang-en">Auto GPA</span><span class="lang-bn hidden">অটো জিপিএ</span></strong>
-                </div>
-                <a href="#demoStudio" class="ai-export-btn">
-                  <span class="lang-en">Print / PDF ↗</span>
-                  <span class="lang-bn hidden">প্রিন্ট / পিডিএফ ↗</span>
-                </a>
-              </div>
+            <!-- Role Navigation Segmented Bar INSIDE the app window (Zero-collision architecture) -->
+            <div class="dash-role-bar" id="heroRoleNav" role="tablist" aria-label="Select Role Dashboard">
+              <button class="hero-role-btn active" data-role="admin" type="button" role="tab" aria-selected="true"
+                title="Super Admin Cockpit">
+                <span class="role-btn-dot"></span>
+                <span class="role-btn-title">
+                  <span class="lang-en">Super Admin</span>
+                  <span class="lang-bn hidden">অ্যাডমিন ককপিট</span>
+                </span>
+                <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
+              </button>
+              <button class="hero-role-btn" data-role="teacher" type="button" role="tab" aria-selected="false"
+                title="Teacher Workspace">
+                <span class="role-btn-dot"></span>
+                <span class="role-btn-title">
+                  <span class="lang-en">Teacher Workspace</span>
+                  <span class="lang-bn hidden">শিক্ষক ড্যাশবোর্ড</span>
+                </span>
+                <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
+              </button>
+              <button class="hero-role-btn" data-role="parent" type="button" role="tab" aria-selected="false"
+                title="Guardian Portal">
+                <span class="role-btn-dot"></span>
+                <span class="role-btn-title">
+                  <span class="lang-en">Guardian Portal</span>
+                  <span class="lang-bn hidden">অভিভাবক পোর্টাল</span>
+                </span>
+                <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
+              </button>
             </div>
 
+            <div class="dash-screen" id="dashScreenSlider">
+              <!-- Slide 1: Super Admin Cockpit (Authentic High-Res Dashboard) -->
+              <div class="dash-slide active" data-slide="admin">
+                <img src="images/admin-dashboard.png" alt="YES EDU Super Admin Dashboard" class="dash-img" width="1024"
+                  height="586" loading="eager" fetchpriority="high">
+              </div>
+
+              <!-- Slide 2: Teacher Workspace (Authentic Dashboard) -->
+              <div class="dash-slide" data-slide="teacher">
+                <img src="images/teacher-dashboard.png" alt="YES EDU Teacher Workspace" class="dash-img" width="1024"
+                  height="528" loading="lazy">
+              </div>
+
+              <!-- Slide 3: Guardian Portal (Authentic Dashboard) -->
+              <div class="dash-slide" data-slide="parent">
+                <img src="images/parent-dashboard.png" alt="YES EDU Guardian Portal" class="dash-img" width="1024"
+                  height="525" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- Float 2: Bottom-Right Dynamic Collection/Due Badge (Synchronized with Active Role) -->
+          <div class="float-card float-two" id="heroFloatTwo">
+            <div class="mini">
+              <span class="float-icon" id="floatTwoIco">৳</span>
+              <span id="floatTwoTitle">
+                <span class="lang-en">Today's Collection</span>
+                <span class="lang-bn hidden">আজকের ফি আদায়</span>
+              </span>
+            </div>
+            <strong id="floatTwoStat">৳ 6,350.00</strong>
+            <span id="floatTwoSub">
+              <span class="lang-en">bKash, Nagad & Cash Reconciled</span>
+              <span class="lang-bn hidden">বিকাশ ও নগদ অটো-রিকনসাইল</span>
+            </span>
+          </div>
+
+          <!-- Mobile KPI Stat Strip (Visible only on screens <= 768px where floating badges are hidden) -->
+          <div class="hero-mobile-kpi" id="heroMobileKpi">
+            <div class="kpi-card" id="mobileKpiOne">
+              <span id="mobKpiOneTitle"><span class="lang-en">Attendance</span><span
+                  class="lang-bn hidden">উপস্থিতি</span></span>
+              <strong id="mobKpiOneStat">97%</strong>
+              <small id="mobKpiOneSub"><span class="lang-en">Live Biometric</span><span
+                  class="lang-bn hidden">বায়োমেট্রিক</span></small>
+            </div>
+            <div class="kpi-card" id="mobileKpiTwo">
+              <span id="mobKpiTwoTitle"><span class="lang-en">Collection</span><span class="lang-bn hidden">ফি
+                  আদায়</span></span>
+              <strong id="mobKpiTwoStat">৳ 6,350</strong>
+              <small id="mobKpiTwoSub"><span class="lang-en">bKash Verified</span><span class="lang-bn hidden">বিকাশ
+                  ভেরিফাইড</span></small>
+            </div>
+            <div class="kpi-card" id="mobileKpiThree">
+              <span id="mobKpiThreeTitle"><span class="lang-en">AI Assistant</span><span class="lang-bn hidden">এআই
+                  সহকারী</span></span>
+              <strong id="mobKpiThreeStat"><span class="lang-en">Active</span><span
+                  class="lang-bn hidden">সক্রিয়</span></strong>
+              <small id="mobKpiThreeSub"><span class="lang-en">NCTB V2 Engine</span><span
+                  class="lang-bn hidden">এনসিটিবি V2</span></small>
+            </div>
           </div>
         </div>
+      </div>
+
+      <!-- ================= ALAXY-STYLE EXECUTIVE PROOF & METRIC BAR ================= -->
+      <div class="container hero-proof-bar reveal">
+        <!-- Dashed Client Institution Proof Card -->
+        <div class="alaxy-proof-card">
+          <div class="alaxy-avatar-stack">
+            <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah Int'l Madrasa" width="34" height="34" loading="lazy">
+            <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Madrasa" width="34" height="34" loading="lazy">
+            <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Institute" width="34" height="34"
+              loading="lazy">
+            <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Academy" width="34" height="34"
+              loading="lazy">
+            <span class="alaxy-avatar-plus">+150</span>
+          </div>
+          <div class="alaxy-proof-text">
+            <strong>
+              <span class="lang-en">150+ Leading Institutions</span>
+              <span class="lang-bn hidden">১৫০+ স্বনামধন্য প্রতিষ্ঠান</span>
+            </strong>
+            <p>
+              <span class="lang-en">85,000+ Active Students & Teachers</span>
+              <span class="lang-bn hidden">৮৫,০০০+ শিক্ষার্থী ও শিক্ষক যুক্ত</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Bold Minimal Metric Counters -->
+        <div class="alaxy-stat-grid">
+          <div class="alaxy-stat-item">
+            <span class="alaxy-stat-num">0.18s</span>
+            <span class="alaxy-stat-label">
+              <span class="lang-en">Gate Cloud Latency</span>
+              <span class="lang-bn hidden">ক্লাউড গেট ল্যাটেন্সি</span>
+            </span>
+          </div>
+          <div class="alaxy-stat-item">
+            <span class="alaxy-stat-num">100%</span>
+            <span class="alaxy-stat-label">
+              <span class="lang-en">Shariah & Waqf Audited</span>
+              <span class="lang-bn hidden">শরীয়াহ ও ওয়াকফ অডিট</span>
+            </span>
+          </div>
+          <div class="alaxy-stat-item">
+            <span class="alaxy-stat-num">৳ 1.2 Cr+</span>
+            <span class="alaxy-stat-label">
+              <span class="lang-en">Monthly Fee Volume</span>
+              <span class="lang-bn hidden">মাসিক ফি আদায় ভলিউম</span>
+            </span>
+          </div>
+          <div class="alaxy-stat-item">
+            <span class="alaxy-stat-num">24/7</span>
+            <span class="alaxy-stat-label">
+              <span class="lang-en">Bangla SMS Alerts</span>
+              <span class="lang-bn hidden">বাংলা এসএমএস অ্যালার্ট</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- MATHIM Minimal Scroll Down Guide -->
+        <a href="#demoStudio" class="hero-scroll-guide" aria-label="Scroll to explore interactive demo">
+          <span class="mouse-icon"><i class="mouse-wheel"></i></span>
+          <span class="scroll-text">
+            <span class="lang-en">Scroll to Explore</span>
+            <span class="lang-bn hidden">নিচে দেখুন</span>
+            <span class="scroll-arrow">↓</span>
+          </span>
+        </a>
       </div>
     </section>
 
@@ -251,38 +335,31 @@
       <div class="container trust-inner">
         <span class="trust-label">
           <span class="lang-en">One connected ecosystem for</span>
-          <span class="lang-bn hidden">সমন্বিত প্ল্যাটফর্ম</span>
+          <span class="lang-bn hidden">পরিপূর্ণ শিক্ষাব্যবস্থাপনা</span>
         </span>
-        <span class="trust-item"><span class="trust-ico">🏫</span> <span class="lang-en">Schools & Colleges</span><span class="lang-bn hidden">স্কুল ও কলেজ</span></span>
-        <span class="trust-item"><span class="trust-ico">🕌</span> <span class="lang-en">Madrasahs (Qawmi & Alia)</span><span class="lang-bn hidden">মাদরাসা (কওমি ও আলিয়া)</span></span>
-        <span class="trust-item"><span class="trust-ico">🎖️</span> <span class="lang-en">Cadet & English Med.</span><span class="lang-bn hidden">ক্যাডেট ও ইংলিশ মিডিয়াম</span></span>
-        <span class="trust-item"><span class="trust-ico">🏢</span> <span class="lang-en">Education Groups & Trusts</span><span class="lang-bn hidden">এডুকেশন ট্রাস্ট ও ফাউন্ডেশন</span></span>
+        <span class="trust-item"><b>▥</b> <span class="lang-en">Schools</span><span
+            class="lang-bn hidden">স্কুল</span></span>
+        <span class="trust-item"><b>⌂</b> <span class="lang-en">Colleges</span><span
+            class="lang-bn hidden">কলেজ</span></span>
+        <span class="trust-item"><b>◈</b> <span class="lang-en">Madrasas</span><span
+            class="lang-bn hidden">মাদ্রাসা</span></span>
+        <span class="trust-item"><b>◎</b> <span class="lang-en">Education Groups</span><span
+            class="lang-bn hidden">এডুকেশন গ্রুপ</span></span>
       </div>
 
       <div class="container trust-head">
         <span>
-          <span class="lang-en">Trusted by Leading Schools, Colleges & Madrasahs Across 42+ Districts</span>
-          <span class="lang-bn hidden">বাংলাদেশের ৪২+ জেলার স্বনামধন্য স্কুল, কলেজ ও মাদরাসাসমূহে সফলভাবে পরিচালিত</span>
+          <span class="lang-en">Trusted by Leading Educational Institutions & Madrasas Across Bangladesh</span>
+          <span class="lang-bn hidden">বাংলাদেশের স্বনামধন্য স্কুল, কলেজ ও মাদ্রাসাসমূহে সফলভাবে পরিচালিত</span>
         </span>
       </div>
-      
+
       <div class="brand-marquee-wrapper">
         <div class="brand-marquee-track">
-          <!-- Client 1: General School & College -->
-          <div class="brand-client-card" title="Ideal Model School & College">
-            <img src="images/clients/ideal-model.svg" alt="Ideal Model School & College" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Ideal Model School & College</span>
-                <span class="lang-bn hidden">আইডিয়াল মডেল স্কুল ও কলেজ</span>
-              </span>
-              <span class="brand-client-meta">Dhaka • NCTB Curriculum</span>
-            </div>
-          </div>
-
-          <!-- Client 2: Madrasah -->
+          <!-- Client 1 -->
           <div class="brand-client-card" title="As-Sunnah International Madarsa">
-            <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah International Madarsa" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah International Madarsa" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">As-Sunnah Int'l Madrasa</span>
@@ -292,21 +369,10 @@
             </div>
           </div>
 
-          <!-- Client 3: Cadet / Public School -->
-          <div class="brand-client-card" title="Cantonment Public School & College">
-            <img src="images/clients/cantonment-public.svg" alt="Cantonment Public School & College" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Cantonment Public School & College</span>
-                <span class="lang-bn hidden">ক্যান্টনমেন্ট পাবলিক স্কুল ও কলেজ</span>
-              </span>
-              <span class="brand-client-meta">Chattogram • Cadet & English Version</span>
-            </div>
-          </div>
-
-          <!-- Client 4: Madrasah -->
+          <!-- Client 2 -->
           <div class="brand-client-card" title="Darul Arqam Madrasa Feni">
-            <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Madrasa Feni" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Madrasa Feni" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">Darul Arqam Madrasa</span>
@@ -316,21 +382,10 @@
             </div>
           </div>
 
-          <!-- Client 5: Degree College -->
-          <div class="brand-client-card" title="Agrabad City College">
-            <img src="images/clients/city-college.svg" alt="Agrabad City College" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Agrabad City College</span>
-                <span class="lang-bn hidden">আগ্রাবাদ সিটি কলেজ</span>
-              </span>
-              <span class="brand-client-meta">Chattogram • HSC & Degree</span>
-            </div>
-          </div>
-
-          <!-- Client 6: Madrasah -->
+          <!-- Client 3 -->
           <div class="brand-client-card" title="Fikrul Ummah Institute Feni">
-            <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Institute Feni" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Institute Feni" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">Fikrul Ummah Institute</span>
@@ -340,68 +395,36 @@
             </div>
           </div>
 
-          <!-- Client 7: English Medium & Cambridge -->
-          <div class="brand-client-card" title="Scholars International School & College">
-            <img src="images/clients/scholars-intl.svg" alt="Scholars International School & College" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Scholars Int'l School & College</span>
-                <span class="lang-bn hidden">স্কলার্স ইন্টারন্যাশনাল স্কুল ও কলেজ</span>
-              </span>
-              <span class="brand-client-meta">Sylhet • Cambridge & NCTB</span>
-            </div>
-          </div>
-
-          <!-- Client 8: Madrasah -->
+          <!-- Client 4 -->
           <div class="brand-client-card" title="Intihadul Umam Alim Madrasah">
-            <img src="images/clients/intihadul-umam.jpg" alt="Intihadul Umam Alim Madrasah" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/intihadul-umam.jpg" alt="Intihadul Umam Alim Madrasah" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">Intihadul Umam Alim Madrasah</span>
                 <span class="lang-bn hidden">ইত্তিহাদুল উমাম আলিম মাদ্রাসা</span>
               </span>
-              <span class="brand-client-meta">Dhaka • Alim Board Verified</span>
+              <span class="brand-client-meta">Alim Board Verified</span>
             </div>
           </div>
 
-          <!-- Client 9: Residential Academy -->
-          <div class="brand-client-card" title="Apex Residential Model Academy">
-            <img src="images/clients/apex-academy.svg" alt="Apex Residential Model Academy" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Apex Residential Model Academy</span>
-                <span class="lang-bn hidden">অ্যাপেক্স রেসিডেন্সিয়াল মডেল একাডেমি</span>
-              </span>
-              <span class="brand-client-meta">Dhaka • Residential Campus</span>
-            </div>
-          </div>
-
-          <!-- Client 10: Madrasah -->
+          <!-- Client 5 -->
           <div class="brand-client-card" title="Wisdom Islamic Institute">
-            <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Institute" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Institute" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">Wisdom Islamic Academy</span>
                 <span class="lang-bn hidden">উইজডম ইসলামিক একাডেমি</span>
               </span>
-              <span class="brand-client-meta">Cumilla • Integrated English Med.</span>
+              <span class="brand-client-meta">Integrated English Medium</span>
             </div>
           </div>
 
-          <!-- ================= DUPLICATE SET FOR INFINITE SMOOTH MARQUEE ================= -->
-          <div class="brand-client-card" title="Ideal Model School & College">
-            <img src="images/clients/ideal-model.svg" alt="Ideal Model School & College" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Ideal Model School & College</span>
-                <span class="lang-bn hidden">আইডিয়াল মডেল স্কুল ও কলেজ</span>
-              </span>
-              <span class="brand-client-meta">Dhaka • NCTB Curriculum</span>
-            </div>
-          </div>
-
+          <!-- Loop duplicates for infinite marquee -->
           <div class="brand-client-card" title="As-Sunnah International Madarsa">
-            <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah International Madarsa" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah International Madarsa" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">As-Sunnah Int'l Madrasa</span>
@@ -411,19 +434,9 @@
             </div>
           </div>
 
-          <div class="brand-client-card" title="Cantonment Public School & College">
-            <img src="images/clients/cantonment-public.svg" alt="Cantonment Public School & College" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Cantonment Public School & College</span>
-                <span class="lang-bn hidden">ক্যান্টনমেন্ট পাবলিক স্কুল ও কলেজ</span>
-              </span>
-              <span class="brand-client-meta">Chattogram • Cadet & English Version</span>
-            </div>
-          </div>
-
           <div class="brand-client-card" title="Darul Arqam Madrasa Feni">
-            <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Madrasa Feni" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Madrasa Feni" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">Darul Arqam Madrasa</span>
@@ -433,19 +446,9 @@
             </div>
           </div>
 
-          <div class="brand-client-card" title="Agrabad City College">
-            <img src="images/clients/city-college.svg" alt="Agrabad City College" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Agrabad City College</span>
-                <span class="lang-bn hidden">আগ্রাবাদ সিটি কলেজ</span>
-              </span>
-              <span class="brand-client-meta">Chattogram • HSC & Degree</span>
-            </div>
-          </div>
-
           <div class="brand-client-card" title="Fikrul Ummah Institute Feni">
-            <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Institute Feni" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Institute Feni" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">Fikrul Ummah Institute</span>
@@ -455,47 +458,27 @@
             </div>
           </div>
 
-          <div class="brand-client-card" title="Scholars International School & College">
-            <img src="images/clients/scholars-intl.svg" alt="Scholars International School & College" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Scholars Int'l School & College</span>
-                <span class="lang-bn hidden">স্কলার্স ইন্টারন্যাশনাল স্কুল ও কলেজ</span>
-              </span>
-              <span class="brand-client-meta">Sylhet • Cambridge & NCTB</span>
-            </div>
-          </div>
-
           <div class="brand-client-card" title="Intihadul Umam Alim Madrasah">
-            <img src="images/clients/intihadul-umam.jpg" alt="Intihadul Umam Alim Madrasah" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/intihadul-umam.jpg" alt="Intihadul Umam Alim Madrasah" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">Intihadul Umam Alim Madrasah</span>
                 <span class="lang-bn hidden">ইত্তিহাদুল উমাম আলিম মাদ্রাসা</span>
               </span>
-              <span class="brand-client-meta">Dhaka • Alim Board Verified</span>
-            </div>
-          </div>
-
-          <div class="brand-client-card" title="Apex Residential Model Academy">
-            <img src="images/clients/apex-academy.svg" alt="Apex Residential Model Academy" class="brand-client-logo" width="32" height="32" loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Apex Residential Model Academy</span>
-                <span class="lang-bn hidden">অ্যাপেক্স রেসিডেন্সিয়াল মডেল একাডেমি</span>
-              </span>
-              <span class="brand-client-meta">Dhaka • Residential Campus</span>
+              <span class="brand-client-meta">Alim Board Verified</span>
             </div>
           </div>
 
           <div class="brand-client-card" title="Wisdom Islamic Institute">
-            <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Institute" class="brand-client-logo" width="32" height="32" loading="lazy">
+            <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Institute" class="brand-client-logo"
+              loading="lazy">
             <div class="brand-client-info">
               <span class="brand-client-name">
                 <span class="lang-en">Wisdom Islamic Academy</span>
                 <span class="lang-bn hidden">উইজডম ইসলামিক একাডেমি</span>
               </span>
-              <span class="brand-client-meta">Cumilla • Integrated English Med.</span>
+              <span class="brand-client-meta">Integrated English Medium</span>
             </div>
           </div>
         </div>
@@ -515,673 +498,587 @@
             <span class="lang-bn hidden">সরাসরি ব্রাউজারে ক্যাম্পাস সফটওয়্যার পরীক্ষা করুন।</span>
           </h2>
           <p>
-            <span class="lang-en">Test our biometric gate punch, 1-tap bKash fee collection, NCTB AI question generator, and madrasa Waqf ledger right here.</span>
-            <span class="lang-bn hidden">বায়োমেট্রিক গেট পাঞ্চ, ১-ট্যাপে বিকাশ ফি পেমেন্ট, এনসিটিবি এআই প্রশ্ন তৈরি এবং মাদ্রাসা ওয়াকফ খতিয়ানের কার্যপদ্ধতি সোয়াইপ করে সরাসরি পরীক্ষা করুন।</span>
+            <span class="lang-en">Test our biometric gate punch, 1-tap bKash fee collection, NCTB AI question generator,
+              and madrasa Waqf ledger right here.</span>
+            <span class="lang-bn hidden">বায়োমেট্রিক গেট পাঞ্চ, ১-ট্যাপে বিকাশ ফি পেমেন্ট, এনসিটিবি এআই প্রশ্ন তৈরি এবং
+              মাদ্রাসা ওয়াকফ খতিয়ানের কার্যপদ্ধতি সোয়াইপ করে সরাসরি পরীক্ষা করুন।</span>
           </p>
         </div>
 
-                <!-- Segmented Tab Controller (Linear / Stripe Style) -->
-        <div class="studio-tab-bar reveal" role="tablist" aria-label="Campus OS Modules">
-          <button class="studio-tab active" data-tab="0" role="tab" aria-selected="true" aria-controls="studioPanel0">
-            <span class="tab-indicator-fill"></span>
-            <span class="tab-ico">⚡</span>
-            <span class="tab-text">
-              <span class="lang-en">Biometric Gate</span>
-              <span class="lang-bn hidden">বায়োমেট্রিক গেট</span>
+        <!-- SME Top Story Bar: Auto-Story Timer + Drag Hint + Counter Badge -->
+        <div class="sme-story-bar reveal">
+          <div class="sme-story-pill" id="smeStoryPill" role="button" tabindex="0" title="Toggle Auto-Play">
+            <span class="sme-pill-timer-fill" id="smeTimerFill"></span>
+            <span class="story-pulse-dot"></span>
+            <span class="sme-pill-label">
+              <span class="lang-en">10s Auto-Story</span>
+              <span class="lang-bn hidden">১০সে. অটো-স্টোরি</span>
             </span>
-          </button>
-
-          <button class="studio-tab" data-tab="1" role="tab" aria-selected="false" aria-controls="studioPanel1">
-            <span class="tab-indicator-fill"></span>
-            <span class="tab-ico">💳</span>
-            <span class="tab-text">
-              <span class="lang-en">bKash 1-Tap Fees</span>
-              <span class="lang-bn hidden">বিকাশ অটো ফি</span>
-            </span>
-          </button>
-
-          <button class="studio-tab" data-tab="2" role="tab" aria-selected="false" aria-controls="studioPanel2">
-            <span class="tab-indicator-fill"></span>
-            <span class="tab-ico">✦</span>
-            <span class="tab-text">
-              <span class="lang-en">YesEdu Copilot</span>
-              <span class="lang-bn hidden">YesEdu কোপাইলট</span>
-            </span>
-          </button>
-
-          <button class="studio-tab" data-tab="3" role="tab" aria-selected="false" aria-controls="studioPanel3">
-            <span class="tab-indicator-fill"></span>
-            <span class="tab-ico">🏢</span>
-            <span class="tab-text">
-              <span class="lang-en">Hostel & Waqf</span>
-              <span class="lang-bn hidden">ছাত্রাবাস ও ওয়াকফ</span>
-            </span>
-          </button>
-        </div>
-
-        <!-- Mobile-Only Story Progress Bar (Instagram / App Story Style) -->
-        <div class="mobile-story-bar" id="mobileStoryBar" role="region" aria-label="Feature Story Progress">
-          <div class="story-seg-track">
-            <button type="button" class="story-seg" data-seg="0" aria-label="Module 1: Biometric Gate"><span class="story-seg-fill"></span></button>
-            <button type="button" class="story-seg" data-seg="1" aria-label="Module 2: bKash 1-Tap Fees"><span class="story-seg-fill"></span></button>
-            <button type="button" class="story-seg" data-seg="2" aria-label="Module 3: YesEdu Copilot"><span class="story-seg-fill"></span></button>
-            <button type="button" class="story-seg" data-seg="3" aria-label="Module 4: Hostel and Waqf"><span class="story-seg-fill"></span></button>
           </div>
-          <div class="mobile-story-nav-hint">
-            <div class="story-nav-left">
-              <button type="button" class="story-arrow-btn" id="storyPrevBtn" aria-label="Previous Slide">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-              </button>
-              <span class="story-hint-text">
-                <span class="lang-en">👈 Swipe or tap to explore 👉</span>
-                <span class="lang-bn hidden">👈 সোয়াইপ বা ট্যাপ করে দেখুন 👉</span>
-              </span>
-            </div>
-            <div class="story-nav-right">
-              <span class="story-step-badge"><span id="storyCurrentStep">1</span> / 4</span>
-              <button type="button" class="story-arrow-btn" id="storyNextBtn" aria-label="Next Slide">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </button>
-            </div>
+
+          <div class="sme-drag-hint">
+            <span class="lang-en">Swipe or drag cards →</span>
+            <span class="lang-bn hidden">কার্ড সোয়াইপ বা ড্র্যাগ করুন →</span>
+          </div>
+
+          <div class="sme-counter-badge">
+            <span id="smeActiveIndex">01</span> / <span id="smeTotalCount">04</span>
           </div>
         </div>
 
-        <!-- Studio Panes Viewport -->
-        <div class="studio-viewport reveal">
+        <!-- SME Peek Carousel Showcase -->
+        <div class="sme-carousel-container reveal" id="smeCarousel">
+          <div class="sme-carousel-track" id="smeCarouselTrack">
 
-          <!-- ================= PANEL 0: Biometric Gate Attendance ================= -->
-          <div class="studio-panel active" id="studioPanel0" role="tabpanel" data-panel="0">
-            <div class="studio-split-grid">
-              <!-- Left Pane: Executive Value -->
-              <div class="studio-value-col">
-                <div class="studio-badge-row">
-                  <span class="studio-badge-pill">⚡ HARDWARE GATEWAY</span>
-                  <span class="studio-index-no">/ 01</span>
+            <!-- CARD 01: Biometric Gate Attendance -->
+            <article class="sme-card active" data-index="0">
+              <div class="sme-card-head">
+                <div class="sme-meta-left">
+                  <span class="sme-cat-tag">CAMPUS HARDWARE</span>
+                  <span class="sme-label-pill">Biometric Gateway</span>
                 </div>
+                <div class="sme-meta-right">
+                  <span class="sme-tier-badge">Enterprise Ready</span>
+                  <span class="sme-index-no">/ 01</span>
+                </div>
+              </div>
+
+              <div class="sme-card-body">
                 <h3>
                   <span class="lang-en">Biometric Gate Attendance & Instant Parent SMS</span>
                   <span class="lang-bn hidden">বায়োমেট্রিক গেট উপস্থিতি ও তাৎক্ষণিক অভিভাবক এসএমএস</span>
                 </h3>
-                <p class="studio-desc">
-                  <span class="lang-en">Direct hardware sync with ZKTeco and Realtime biometric machines. Students touch RFID card or scan face, triggering zero-latency attendance and automated Bangla SMS to parents.</span>
-                  <span class="lang-bn hidden">জেডকেটেকো ও রিয়েলটাইম বায়োমেট্রিক মেশিনের সাথে সরাসরি সংযুক্ত। শিক্ষার্থী গেটে কার্ড ছোঁয়ামাত্র সার্ভারে লগ ইন হয় এবং মুহূর্তে অভিভাবকের মোবাইলে বাংলা এসএমএস পৌঁছে যায়।</span>
+                <p class="sme-card-desc">
+                  <span class="lang-en">Direct hardware sync with ZKTeco and Realtime biometric machines. Students touch
+                    RFID card or scan face, triggering zero-latency attendance and automated Bangla SMS to
+                    parents.</span>
+                  <span class="lang-bn hidden">জেডকেটেকো ও রিয়েলটাইম বায়োমেট্রিক মেশিনের সাথে সরাসরি সংযুক্ত।
+                    শিক্ষার্থী গেটে কার্ড ছোঁয়ামাত্র সার্ভারে লগ ইন হয় এবং মুহূর্তে অভিভাবকের মোবাইলে বাংলা এসএমএস
+                    পৌঁছে যায়।</span>
                 </p>
 
-                <!-- 3 Metric Highlight Cards -->
-                <div class="studio-metrics-row">
-                  <div class="studio-metric-card">
-                    <span class="metric-val">0.18s</span>
-                    <span class="metric-lbl"><span class="lang-en">Cloud Latency</span><span class="lang-bn hidden">ক্লাউড সিঙ্ক</span></span>
-                  </div>
-                  <div class="studio-metric-card">
-                    <span class="metric-val">2,400+</span>
-                    <span class="metric-lbl"><span class="lang-en">Cards / Min</span><span class="lang-bn hidden">পাঞ্চ ক্ষমতা</span></span>
-                  </div>
-                  <div class="studio-metric-card">
-                    <span class="metric-val">100%</span>
-                    <span class="metric-lbl"><span class="lang-en">Offline Buffer</span><span class="lang-bn hidden">অফলাইন সেফ</span></span>
+                <!-- Software Artifact: Live Campus Gate Activity Feed -->
+                <div class="sme-card-stage">
+                  <div class="sme-live-feed">
+                    <div class="sme-live-feed-header">
+                      <div class="sme-feed-title">
+                        <span class="live-dot"></span>
+                        <span class="lang-en">Live Attendance Stream • Gate #02</span>
+                        <span class="lang-bn hidden">লাইভ গেট স্ট্রিম • মূল ফটক #০২</span>
+                      </div>
+                      <div class="sme-feed-meta">
+                        <span class="feed-latency">0.18s latency</span>
+                        <span class="feed-badge-online">ZKTeco Online</span>
+                      </div>
+                    </div>
+
+                    <div class="sme-feed-list">
+                      <!-- Row 1 -->
+                      <div class="sme-feed-row">
+                        <div class="sme-feed-avatar">TR</div>
+                        <div class="sme-feed-info">
+                          <div class="sme-feed-name">
+                            <span>Tahmid Rahman</span>
+                            <span class="sme-feed-roll">Class 9-A • Roll 04</span>
+                          </div>
+                          <div class="sme-feed-sub">RFID Smart Card Punch • Device #ZK-Gate2</div>
+                        </div>
+                        <div class="sme-feed-action">
+                          <span class="sme-time">09:02:14 AM</span>
+                          <span class="sme-status-pill success">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2.5">
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="lang-en">Present • SMS Sent</span>
+                            <span class="lang-bn hidden">উপস্থিত • এসএমএস প্রেরিত</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Row 2 -->
+                      <div class="sme-feed-row">
+                        <div class="sme-feed-avatar avatar-blue">SI</div>
+                        <div class="sme-feed-info">
+                          <div class="sme-feed-name">
+                            <span>Samiul Islam</span>
+                            <span class="sme-feed-roll">Class 10-B • Roll 12</span>
+                          </div>
+                          <div class="sme-feed-sub">Facial Recognition • Device #FR-Gate2</div>
+                        </div>
+                        <div class="sme-feed-action">
+                          <span class="sme-time">09:01:48 AM</span>
+                          <span class="sme-status-pill success">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2.5">
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="lang-en">Present • SMS Sent</span>
+                            <span class="lang-bn hidden">উপস্থিত • এসএমএস প্রেরিত</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Row 3 -->
+                      <div class="sme-feed-row">
+                        <div class="sme-feed-avatar avatar-amber">NJ</div>
+                        <div class="sme-feed-info">
+                          <div class="sme-feed-name">
+                            <span>Nusrat Jahan</span>
+                            <span class="sme-feed-roll">Class 8-A • Roll 09</span>
+                          </div>
+                          <div class="sme-feed-sub">RFID Smart Card Punch • Device #ZK-Gate2</div>
+                        </div>
+                        <div class="sme-feed-action">
+                          <span class="sme-time">08:58:32 AM</span>
+                          <span class="sme-status-pill warning">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2.5">
+                              <circle cx="12" cy="12" r="10"></circle>
+                              <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span class="lang-en">Late (8m) • Alert Sent</span>
+                            <span class="lang-bn hidden">বিলম্ব (৮মি.) • সতর্কতা প্রেরিত</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="sme-feed-footer">
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Sync Speed: <b>0.18s Cloud Latency</b></span>
+                        <span class="lang-bn hidden">সিঙ্ক স্পিড: <b>০.১৮ সেকেন্ড</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Capacity: <b>2,400+ Cards / Min</b></span>
+                        <span class="lang-bn hidden">ক্ষমতা: <b>২৪০০+ কার্ড / মিনিট</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">SMS Gateway: <b>Teletalk / GP Govt. DLR</b></span>
+                        <span class="lang-bn hidden">এসএমএস গেটওয়ে: <b>টেলিটক / জিপি মাস্কিং</b></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Feature Benefits List -->
-                <ul class="studio-benefits-list">
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Real-time gate clock-in with zero database lag</span><span class="lang-bn hidden">জিরো ল্যাগসহ লাইভ গেট এন্ট্রি রেজিস্ট্রেশন</span></span>
-                  </li>
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Automated Bangla SMS via Teletalk / GP Masking</span><span class="lang-bn hidden">টেলিটক ও জিপি মাস্কিং গেটওয়ে দিয়ে তাৎক্ষণিক বাংলা এসএমএস</span></span>
-                  </li>
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Offline buffer storage during power or internet cuts</span><span class="lang-bn hidden">বিদ্যুৎ বা ইন্টারনেট না থাকলেও ডিভাইসে ডাটা নিরাপদ থাকে</span></span>
-                  </li>
-                </ul>
+                <!-- Feature Checklist Grid -->
+                <div class="sme-check-grid">
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Real-time gate clock-in with zero
+                      database lag</span><span class="lang-bn hidden">জিরো ল্যাগসহ লাইভ গেট এন্ট্রি রেজিস্ট্রেশন</span>
+                  </div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Automated Bangla SMS delivery to
+                      guardian phone</span><span class="lang-bn hidden">মুহূর্তে অভিভাবকের মোবাইলে বাংলা এসএমএস</span>
+                  </div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Offline buffer storage during power
+                      or internet cuts</span><span class="lang-bn hidden">বিদ্যুৎ বা ইন্টারনেট না থাকলেও অফলাইনে ডাটা
+                      সংরক্ষণ</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Shift-based teacher & campus staff
+                      attendance</span><span class="lang-bn hidden">শিক্ষক ও কর্মচারীদের শিফটভিত্তিক উপস্থিতি
+                      ট্র্যাকিং</span></div>
+                </div>
 
-                <div class="studio-cta-row">
-                  <a href="#contact" class="btn btn-primary open-demo-modal">
-                    <span class="lang-en">Book Live Hardware Demo</span>
-                    <span class="lang-bn hidden">লাইভ হার্ডওয়্যার ডেমো দেখুন</span>
-                    <span class="arrow">↗</span>
-                  </a>
+              </div>
+            </article>
+
+            <!-- CARD 02: 1-Tap bKash Fee Payment -->
+            <article class="sme-card" data-index="1">
+              <div class="sme-card-head">
+                <div class="sme-meta-left">
+                  <span class="sme-cat-tag">FINTECH & FEES</span>
+                  <span class="sme-label-pill">bKash Webhook</span>
+                </div>
+                <div class="sme-meta-right">
+                  <span class="sme-tier-badge">Auto Reconciled</span>
+                  <span class="sme-index-no">/ 02</span>
                 </div>
               </div>
 
-              <!-- Right Pane: App Window Frame -->
-              <div class="studio-stage-col">
-                <div class="app-window-frame">
-                  <div class="app-window-header">
-                    <div class="window-dots">
-                      <span class="w-dot dot-red"></span>
-                      <span class="w-dot dot-yellow"></span>
-                      <span class="w-dot dot-green"></span>
-                    </div>
-                    <div class="window-url-bar">
-                      <span class="window-lock">🔒</span>
-                      <span>gate02.yesedu.cloud/stream</span>
-                    </div>
-                    <div class="window-status-badge">
-                      <span class="live-dot"></span>
-                      <span>ZKTeco Online</span>
-                    </div>
-                  </div>
-
-                  <div class="app-window-body">
-                    <div class="sme-live-feed">
-                      <div class="sme-live-feed-header">
-                        <div class="sme-feed-title">
-                          <span class="live-dot"></span>
-                          <span class="lang-en">Live Attendance Stream • Gate #02</span>
-                          <span class="lang-bn hidden">লাইভ গেট স্ট্রিম • মূল ফটক #০২</span>
-                        </div>
-                        <div class="sme-feed-meta">
-                          <span class="feed-latency">0.18s latency</span>
-                          <span class="feed-badge-online">Hardware Synced</span>
-                        </div>
-                      </div>
-                      
-                      <div class="sme-feed-list">
-                        <!-- Student 1 -->
-                        <div class="sme-feed-row">
-                          <div class="sme-feed-avatar">TR</div>
-                          <div class="sme-feed-info">
-                            <div class="sme-feed-name">
-                              <span>Tahmid Rahman</span>
-                              <span class="sme-feed-roll">Class 9-A • Roll 04</span>
-                            </div>
-                            <div class="sme-feed-sub">RFID Smart Card Punch • Device #ZK-Gate2</div>
-                          </div>
-                          <div class="sme-feed-action">
-                            <span class="sme-time">09:02:14 AM</span>
-                            <span class="sme-status-pill success">
-                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                              <span class="lang-en">Present • SMS Sent</span>
-                              <span class="lang-bn hidden">উপস্থিত • এসএমএস প্রেরিত</span>
-                            </span>
-                          </div>
-                        </div>
-
-                        <!-- Student 2 -->
-                        <div class="sme-feed-row">
-                          <div class="sme-feed-avatar avatar-blue">SI</div>
-                          <div class="sme-feed-info">
-                            <div class="sme-feed-name">
-                              <span>Samiul Islam</span>
-                              <span class="sme-feed-roll">Class 10-B • Roll 12</span>
-                            </div>
-                            <div class="sme-feed-sub">Facial Recognition • Device #FR-Gate2</div>
-                          </div>
-                          <div class="sme-feed-action">
-                            <span class="sme-time">09:01:48 AM</span>
-                            <span class="sme-status-pill success">
-                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                              <span class="lang-en">Present • SMS Sent</span>
-                              <span class="lang-bn hidden">উপস্থিত • এসএমএস প্রেরিত</span>
-                            </span>
-                          </div>
-                        </div>
-
-                        <!-- Student 3 -->
-                        <div class="sme-feed-row">
-                          <div class="sme-feed-avatar avatar-amber">NJ</div>
-                          <div class="sme-feed-info">
-                            <div class="sme-feed-name">
-                              <span>Nusrat Jahan</span>
-                              <span class="sme-feed-roll">Class 8-A • Roll 09</span>
-                            </div>
-                            <div class="sme-feed-sub">RFID Smart Card Punch • Device #ZK-Gate2</div>
-                          </div>
-                          <div class="sme-feed-action">
-                            <span class="sme-time">08:58:32 AM</span>
-                            <span class="sme-status-pill warning">
-                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                              <span class="lang-en">Late (8m) • Alert Sent</span>
-                              <span class="lang-bn hidden">বিলম্ব (৮মি.) • সতর্কতা</span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="sme-feed-footer">
-                        <div class="feed-stat-pill">
-                          <span class="lang-en">Sync Speed: <b>0.18s Cloud Latency</b></span>
-                          <span class="lang-bn hidden">সিঙ্ক স্পিড: <b>০.১৮ সেকেন্ড</b></span>
-                        </div>
-                        <div class="feed-stat-pill">
-                          <span class="lang-en">SMS Gateway: <b>Teletalk / GP Masking</b></span>
-                          <span class="lang-bn hidden">এসএমএস: <b>টেলিটক / জিপি মাস্কিং</b></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ================= PANEL 1: bKash 1-Tap Fees ================= -->
-          <div class="studio-panel" id="studioPanel1" role="tabpanel" data-panel="1">
-            <div class="studio-split-grid">
-              <!-- Left Pane: Executive Value -->
-              <div class="studio-value-col">
-                <div class="studio-badge-row">
-                  <span class="studio-badge-pill">💳 FINTECH & ACCOUNTS</span>
-                  <span class="studio-index-no">/ 02</span>
-                </div>
+              <div class="sme-card-body">
                 <h3>
                   <span class="lang-en">1-Tap bKash Collection & Zero-Error Ledger</span>
                   <span class="lang-bn hidden">বিকাশ ১-ট্যাপ ফি সংগ্রহ ও স্বয়ংক্রিয় হিসাব খতিয়ান</span>
                 </h3>
-                <p class="studio-desc">
-                  <span class="lang-en">Parents pay tuition, exam, and transport dues directly via bKash. Instant webhook clears ledger dues, generates digital QR receipt, and auto-balances campus accounts.</span>
-                  <span class="lang-bn hidden">অভিভাবকরা ঘরে বসেই বিকাশ অ্যাপ দিয়ে ফি পরিশোধ করেন। টাকা জমামাত্র ডিজিটাল মানি রিসিট তৈরি হয় এবং প্রতিষ্ঠানের মূল লেজার বই স্বয়ংক্রিয়ভাবে আপডেট হয়ে যায়।</span>
+                <p class="sme-card-desc">
+                  <span class="lang-en">Parents pay tuition, exam, and transport dues directly via bKash. Instant
+                    webhook clears ledger dues, generates digital QR receipt, and auto-balances campus accounts.</span>
+                  <span class="lang-bn hidden">অভিভাবকরা ঘরে বসেই বিকাশ অ্যাপ দিয়ে ফি পরিশোধ করেন। টাকা জমামাত্র
+                    ডিজিটাল মানি রিসিট তৈরি হয় এবং প্রতিষ্ঠানের মূল লেজার বই স্বয়ংক্রিয়ভাবে আপডেট হয়ে যায়।</span>
                 </p>
 
-                <!-- 3 Metric Highlight Cards -->
-                <div class="studio-metrics-row">
-                  <div class="studio-metric-card">
-                    <span class="metric-val">1-Tap</span>
-                    <span class="metric-lbl"><span class="lang-en">bKash PGW</span><span class="lang-bn hidden">বিকাশ পেমেন্ট</span></span>
-                  </div>
-                  <div class="studio-metric-card">
-                    <span class="metric-val">0 Error</span>
-                    <span class="metric-lbl"><span class="lang-en">Auto Ledger</span><span class="lang-bn hidden">অটো খতিয়ান</span></span>
-                  </div>
-                  <div class="studio-metric-card">
-                    <span class="metric-val">100%</span>
-                    <span class="metric-lbl"><span class="lang-en">Audit Balanced</span><span class="lang-bn hidden">নির্ভুল অডিট</span></span>
-                  </div>
-                </div>
-
-                <!-- Feature Benefits List -->
-                <ul class="studio-benefits-list">
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Direct integration with bKash, Nagad, and Rocket</span><span class="lang-bn hidden">বিকাশ, নগদ ও রকেটের সাথে সরাসরি পেমেন্ট ইন্টিগ্রেশন</span></span>
-                  </li>
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Encrypted digital voucher with instant verification QR</span><span class="lang-bn hidden">কিউআর সিলযুক্ত নিরাপদ ডিজিটাল ভাউচার ও মানি রিসিট</span></span>
-                  </li>
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Automatic double-entry journal & cash book posting</span><span class="lang-bn hidden">ডাবল-এন্ট্রি অ্যাকাউন্টিং ও ক্যাশবুক অটো-ব্যালান্সিং</span></span>
-                  </li>
-                </ul>
-
-                <div class="studio-cta-row">
-                  <a href="#contact" class="btn btn-primary open-demo-modal">
-                    <span class="lang-en">Explore Fintech Gateway</span>
-                    <span class="lang-bn hidden">পেমেন্ট গেটওয়ে দেখুন</span>
-                    <span class="arrow">↗</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Right Pane: App Window Frame -->
-              <div class="studio-stage-col">
-                <div class="app-window-frame">
-                  <div class="app-window-header">
-                    <div class="window-dots">
-                      <span class="w-dot dot-red"></span>
-                      <span class="w-dot dot-yellow"></span>
-                      <span class="w-dot dot-green"></span>
+                <!-- Software Artifact: Digital Fee Voucher & Webhook Reconciliation -->
+                <div class="sme-card-stage">
+                  <div class="sme-live-feed">
+                    <div class="sme-live-feed-header">
+                      <div class="sme-feed-title">
+                        <span class="live-dot dot-pink"></span>
+                        <span class="lang-en">bKash PGW Webhook • Auto Reconciled</span>
+                        <span class="lang-bn hidden">বিকাশ মার্চেন্ট ওয়েবহুক • স্বয়ংক্রিয় সমন্বয়</span>
+                      </div>
+                      <div class="sme-feed-meta">
+                        <span class="feed-latency">TrxID: 8NM9X72K</span>
+                        <span class="feed-badge-online">Webhook 200 OK</span>
+                      </div>
                     </div>
-                    <div class="window-url-bar">
-                      <span class="window-lock">🔒</span>
-                      <span>accounts.yesedu.cloud/vouchers</span>
-                    </div>
-                    <div class="window-status-badge">
-                      <span class="live-dot dot-pink"></span>
-                      <span>bKash Webhook 200 OK</span>
-                    </div>
-                  </div>
 
-                  <div class="app-window-body">
-                    <div class="sme-live-feed">
-                      <div class="sme-voucher-card">
-                        <div class="sme-voucher-header">
-                          <div>
-                            <span class="sme-voucher-inst">YES MODEL SCHOOL & COLLEGE</span>
-                            <span class="sme-voucher-id">RECEIPT #VCR-2026-9041 • CASH BOOK REF: CB-881</span>
-                          </div>
-                          <div class="sme-voucher-seal">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="lang-en">PAID & POSTED</span>
-                            <span class="lang-bn hidden">পরিশোধিত ও সমন্বিত</span>
-                          </div>
+                    <div class="sme-voucher-card">
+                      <div class="sme-voucher-header">
+                        <div>
+                          <span class="sme-voucher-inst">YES MODEL SCHOOL & COLLEGE</span>
+                          <span class="sme-voucher-id">RECEIPT #VCR-2026-9041 • CASH BOOK REF: CB-881</span>
                         </div>
-
-                        <div class="sme-voucher-student">
-                          <div class="voucher-field">
-                            <span class="voucher-label">Student Name</span>
-                            <span class="voucher-val">Tahmid Rahman</span>
-                          </div>
-                          <div class="voucher-field">
-                            <span class="voucher-label">Class & Roll</span>
-                            <span class="voucher-val">Class 9-A • Roll 04</span>
-                          </div>
-                          <div class="voucher-field">
-                            <span class="voucher-label">Payment Gateway</span>
-                            <span class="voucher-val">bKash Merchant PGW</span>
-                          </div>
-                          <div class="voucher-field">
-                            <span class="voucher-label">Settlement Time</span>
-                            <span class="voucher-val">09 Nov 2026, 09:14 AM</span>
-                          </div>
-                        </div>
-
-                        <div class="sme-voucher-breakdown">
-                          <div class="voucher-line">
-                            <span>Monthly Tuition Fee (November 2026)</span>
-                            <span class="mono">৳ 2,500.00</span>
-                          </div>
-                          <div class="voucher-line">
-                            <span>Annual Examination & Assessment Fee</span>
-                            <span class="mono">৳ 1,000.00</span>
-                          </div>
-                          <div class="voucher-total-row">
-                            <span>Auto-Credited to Main General Ledger:</span>
-                            <span class="voucher-grand-total mono">৳ 3,500.00</span>
-                          </div>
+                        <div class="sme-voucher-seal">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                          <span class="lang-en">PAID & POSTED</span>
+                          <span class="lang-bn hidden">পরিশোধিত ও সমন্বিত</span>
                         </div>
                       </div>
 
-                      <div class="sme-feed-footer">
-                        <div class="feed-stat-pill">
-                          <span class="lang-en">TrxID: <b>8NM9X72K (Verified)</b></span>
-                          <span class="lang-bn hidden">TrxID: <b>8NM9X72K (যাচাইকৃত)</b></span>
+                      <div class="sme-voucher-student">
+                        <div class="voucher-field">
+                          <span class="voucher-label">Student Name</span>
+                          <span class="voucher-val">Tahmid Rahman</span>
                         </div>
-                        <div class="feed-stat-pill">
-                          <span class="lang-en">Posting: <b>Instant Double-Entry Journal</b></span>
-                          <span class="lang-bn hidden">পোস্টিং: <b>মুহূর্তে ডাবল-এন্ট্রি জার্নাল</b></span>
+                        <div class="voucher-field">
+                          <span class="voucher-label">Class & Roll</span>
+                          <span class="voucher-val">Class 9-A • Roll 04</span>
                         </div>
+                        <div class="voucher-field">
+                          <span class="voucher-label">Payment Gateway</span>
+                          <span class="voucher-val">bKash Merchant PGW</span>
+                        </div>
+                        <div class="voucher-field">
+                          <span class="voucher-label">Settlement Time</span>
+                          <span class="voucher-val">09 Nov 2026, 09:14 AM</span>
+                        </div>
+                      </div>
+
+                      <div class="sme-voucher-breakdown">
+                        <div class="voucher-line">
+                          <span>Monthly Tuition Fee (November 2026)</span>
+                          <span class="mono">৳ 2,500.00</span>
+                        </div>
+                        <div class="voucher-line">
+                          <span>Annual Examination & Assessment Fee</span>
+                          <span class="mono">৳ 1,000.00</span>
+                        </div>
+                        <div class="voucher-total-row">
+                          <span>Auto-Credited to Main General Ledger:</span>
+                          <span class="voucher-grand-total mono">৳ 3,500.00</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="sme-feed-footer">
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Gateway: <b>Direct bKash / Nagad API</b></span>
+                        <span class="lang-bn hidden">গেটওয়ে: <b>সরাসরি বিকাশ / নগদ এপিআই</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Posting: <b>Instant Double-Entry Journal</b></span>
+                        <span class="lang-bn hidden">পোস্টিং: <b>মুহূর্তে ডাবল-এন্ট্রি জার্নাল</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Accuracy: <b>100% Audit Balanced</b></span>
+                        <span class="lang-bn hidden">নির্ভুলতা: <b>১০০% নির্ভুল অডিট</b></span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- ================= PANEL 2: YesEdu Copilot ================= -->
-          <div class="studio-panel" id="studioPanel2" role="tabpanel" data-panel="2">
-            <div class="studio-split-grid">
-              <!-- Left Pane: Executive Value -->
-              <div class="studio-value-col">
-                <div class="studio-badge-row">
-                  <span class="studio-badge-pill">✦ AI CURRICULUM</span>
-                  <span class="studio-index-no">/ 03</span>
+                <!-- Feature Checklist Grid -->
+                <div class="sme-check-grid">
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Direct integration with bKash, Nagad,
+                      and Rocket</span><span class="lang-bn hidden">বিকাশ, নগদ ও রকেটের সাথে সরাসরি পেমেন্ট
+                      ইন্টিগ্রেশন</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Encrypted digital voucher with
+                      instant verification QR</span><span class="lang-bn hidden">কিউআর সিলযুক্ত নিরাপদ ডিজিটাল ভাউচার ও
+                      মানি রিসিট</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Automatic double-entry journal & cash
+                      book posting</span><span class="lang-bn hidden">ডাবল-এন্ট্রি অ্যাকাউন্টিং ও ক্যাশবুক
+                      অটো-ব্যালান্সিং</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Automated monthly due alerts via SMS
+                      & portal notification</span><span class="lang-bn hidden">বকেয়া ফি নোটিশ ও স্বয়ংক্রিয় ইনভয়েস
+                      এসএমএস</span></div>
                 </div>
+
+              </div>
+            </article>
+
+            <!-- CARD 03: NCTB Curriculum AI Engine V2 -->
+            <article class="sme-card" data-index="2">
+              <div class="sme-card-head">
+                <div class="sme-meta-left">
+                  <span class="sme-cat-tag">CURRICULUM ENGINE</span>
+                  <span class="sme-label-pill">NCTB Syllabus V2</span>
+                </div>
+                <div class="sme-meta-right">
+                  <span class="sme-tier-badge">AI Experience</span>
+                  <span class="sme-index-no">/ 03</span>
+                </div>
+              </div>
+
+              <div class="sme-card-body">
                 <h3>
                   <span class="lang-en">NCTB Creative Exam Question Paper Generation</span>
                   <span class="lang-bn hidden">এনসিটিবি পাঠ্যক্রম অনুযায়ী সৃজনশীল প্রশ্নপত্র প্রণয়ন</span>
                 </h3>
-                <p class="studio-desc">
-                  <span class="lang-en">Built on Bangladesh NCTB curriculum standards. Teachers generate 4-tier creative question papers (Knowledge, Comprehension, Application, Higher Ability) with model answers in seconds.</span>
-                  <span class="lang-bn hidden">বাংলাদেশ এনসিটিবি কারিকুলাম অনুসরণ করে তৈরি। শিক্ষকরা মুহূর্তের মধ্যে ক, খ, গ, ঘ ধাপভিত্তিক মানসম্মত সৃজনশীল পরীক্ষার প্রশ্ন ও নমুনা উত্তর তৈরি করতে পারেন।</span>
+                <p class="sme-card-desc">
+                  <span class="lang-en">Built on Bangladesh NCTB curriculum standards. Teachers generate 4-tier creative
+                    question papers (Knowledge, Comprehension, Application, Higher Ability) with model answers in
+                    seconds.</span>
+                  <span class="lang-bn hidden">বাংলাদেশ এনসিটিবি কারিকুলাম অনুসরণ করে তৈরি। শিক্ষকরা মুহূর্তের মধ্যে ক,
+                    খ, গ, ঘ ধাপভিত্তিক মানসম্মত সৃজনশীল পরীক্ষার প্রশ্ন ও নমুনা উত্তর তৈরি করতে পারেন।</span>
                 </p>
 
-                <!-- 3 Metric Highlight Cards -->
-                <div class="studio-metrics-row">
-                  <div class="studio-metric-card">
-                    <span class="metric-val">10x</span>
-                    <span class="metric-lbl"><span class="lang-en">Faster Drafting</span><span class="lang-bn hidden">দ্রুত প্রশ্ন তৈরি</span></span>
-                  </div>
-                  <div class="studio-metric-card">
-                    <span class="metric-val">Class 6–12</span>
-                    <span class="metric-lbl"><span class="lang-en">NCTB Syllabus</span><span class="lang-bn hidden">এনসিটিবি সিলেবাস</span></span>
-                  </div>
-                  <div class="studio-metric-card">
-                    <span class="metric-val">1-Click</span>
-                    <span class="metric-lbl"><span class="lang-en">PDF & DOCX</span><span class="lang-bn hidden">প্রিন্ট-রেডি এক্সপোর্ট</span></span>
-                  </div>
-                </div>
-
-                <!-- Feature Benefits List -->
-                <ul class="studio-benefits-list">
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Strictly mapped to updated Bangladesh NCTB textbooks</span><span class="lang-bn hidden">৬ষ্ঠ থেকে ১২শ শ্রেণির সম্পূর্ণ এনসিটিবি সিলেবাস অন্তর্ভুক্ত</span></span>
-                  </li>
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Instant 1-click export to print-ready PDF and Word format</span><span class="lang-bn hidden">সরাসরি প্রিন্ট-রেডি পিডিএফ ও ওয়ার্ড ফরম্যাটে এক্সপোর্ট</span></span>
-                  </li>
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Automated model answer sheets and grading rubrics</span><span class="lang-bn hidden">নমুনা উত্তর ও শিক্ষক মূল্যায়ন নির্দেশিকা স্বয়ংক্রিয়ভাবে প্রস্তুত</span></span>
-                  </li>
-                </ul>
-
-                <div class="studio-cta-row">
-                  <a href="#contact" class="btn btn-primary open-demo-modal">
-                    <span class="lang-en">Try YesEdu Copilot</span>
-                    <span class="lang-bn hidden">YesEdu কোপাইলট ট্রাই করুন</span>
-                    <span class="arrow">↗</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Right Pane: App Window Frame -->
-              <div class="studio-stage-col">
-                <div class="app-window-frame">
-                  <div class="app-window-header">
-                    <div class="window-dots">
-                      <span class="w-dot dot-red"></span>
-                      <span class="w-dot dot-yellow"></span>
-                      <span class="w-dot dot-green"></span>
+                <!-- Software Artifact: NCTB AI Question Generator Canvas -->
+                <div class="sme-card-stage">
+                  <div class="sme-live-feed">
+                    <div class="sme-live-feed-header">
+                      <div class="sme-feed-title">
+                        <span class="live-dot dot-emerald"></span>
+                        <span class="lang-en">AI Question Generator • NCTB 2026 Syllabus</span>
+                        <span class="lang-bn hidden">এআই প্রশ্ন জেনারেটর • এনসিটিবি ২০২৬ পাঠ্যক্রম</span>
+                      </div>
+                      <div class="sme-feed-meta">
+                        <span class="feed-latency">Engine: Edu-AI V2</span>
+                        <span class="feed-badge-online">Bloom's Taxonomy</span>
+                      </div>
                     </div>
-                    <div class="window-url-bar">
-                      <span class="window-lock">🔒</span>
-                      <span>copilot.yesedu.cloud/exam-studio</span>
-                    </div>
-                    <div class="window-status-badge">
-                      <span class="live-dot dot-emerald"></span>
-                      <span>Engine: YesEdu Copilot</span>
-                    </div>
-                  </div>
 
-                  <div class="app-window-body">
-                    <div class="sme-live-feed">
-                      <div class="sme-ai-card">
-                        <div class="sme-ai-meta-bar">
-                          <span class="ai-chip">Class 9 • General Science</span>
-                          <span class="ai-chip">Chapter 03: Force & Motion</span>
-                          <span class="ai-chip highlight">Creative Question (CQ)</span>
-                        </div>
-
-                        <div class="sme-ai-stimulus">
-                          <div class="stimulus-tag">উদ্দীপক (Stimulus):</div>
-                          <div class="stimulus-text">১৫ কেজি ভরের একটি স্থির ট্রলির ওপর ৬০ নিউটন অনুভূমিক বল ৫ সেকেন্ড প্রয়োগ করা হলো। ট্রলি ও মেঝের ঘর্ষণ বল ৫ নিউটন।</div>
-                        </div>
-
-                        <div class="sme-cq-list">
-                          <div class="cq-item">
-                            <span class="cq-badge">(ক) জ্ঞানমূলক [১]:</span>
-                            <span class="cq-text">বলের আন্তর্জাতিক (SI) একক কী?</span>
-                          </div>
-                          <div class="cq-item">
-                            <span class="cq-badge">(খ) অনুধাবনমূলক [২]:</span>
-                            <span class="cq-text">ঘর্ষণ বলকে কেন একটি 'প্রয়োজনীয় উপদ্রব' বলা হয় ব্যাখ্যা করো।</span>
-                          </div>
-                          <div class="cq-item">
-                            <span class="cq-badge">(গ) প্রয়োগমূলক [৩]:</span>
-                            <span class="cq-text">বল প্রয়োগকালীন সময়ে ট্রলিটির ত্বরণ নির্ণয় করো।</span>
-                          </div>
-                          <div class="cq-item">
-                            <span class="cq-badge">(ঘ) উচ্চতর দক্ষতা [৪]:</span>
-                            <span class="cq-text">প্রযুক্ত বলের মান দ্বিগুণ করলে ট্রলির বেগ কত শতাংশ বৃদ্ধি পাবে বিশ্লেষণ করো।</span>
-                          </div>
-                        </div>
+                    <div class="sme-ai-card">
+                      <div class="sme-ai-meta-bar">
+                        <span class="ai-chip">Class 9 • General Science</span>
+                        <span class="ai-chip">Chapter 03: Force & Motion</span>
+                        <span class="ai-chip highlight">Creative Question (CQ)</span>
                       </div>
 
-                      <div class="sme-feed-footer">
-                        <div class="feed-stat-pill">
-                          <span class="lang-en">Export: <b>Print-Ready PDF & Word DOCX</b></span>
-                          <span class="lang-bn hidden">এক্সপোর্ট: <b>প্রিন্ট-রেডি PDF ও Word DOCX</b></span>
+                      <div class="sme-ai-stimulus">
+                        <div class="stimulus-tag">উদ্দীপক (Stimulus):</div>
+                        <div class="stimulus-text">১৫ কেজি ভরের একটি স্থির ট্রলির ওপর ৬০ নিউটন অনুভূমিক বল ৫ সেকেন্ড
+                          প্রয়োগ করা হলো। ট্রলি ও মেঝের ঘর্ষণ বল ৫ নিউটন।</div>
+                      </div>
+
+                      <div class="sme-cq-list">
+                        <div class="cq-item">
+                          <span class="cq-badge">(ক) জ্ঞানমূলক [১]:</span>
+                          <span class="cq-text">বলের আন্তর্জাতিক (SI) একক কী?</span>
                         </div>
-                        <div class="feed-stat-pill">
-                          <span class="lang-en">Standards: <b>Bloom's Taxonomy Framework</b></span>
-                          <span class="lang-bn hidden">মানদণ্ড: <b>ব্লুমস ট্যাক্সোনমি ফ্রেমওয়ার্ক</b></span>
+                        <div class="cq-item">
+                          <span class="cq-badge">(খ) অনুধাবনমূলক [২]:</span>
+                          <span class="cq-text">ঘর্ষণ বলকে কেন একটি 'প্রয়োজনীয় উপদ্রব' বলা হয় ব্যাখ্যা করো।</span>
                         </div>
+                        <div class="cq-item">
+                          <span class="cq-badge">(গ) প্রয়োগমূলক [৩]:</span>
+                          <span class="cq-text">বল প্রয়োগকালীন সময়ে ট্রলিটির ত্বরণ নির্ণয় করো।</span>
+                        </div>
+                        <div class="cq-item">
+                          <span class="cq-badge">(ঘ) উচ্চতর দক্ষতা [৪]:</span>
+                          <span class="cq-text">প্রযুক্ত বলের মান দ্বিগুণ করলে ট্রলির বেগ কত শতাংশ বৃদ্ধি পাবে বিশ্লেষণ
+                            করো।</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="sme-feed-footer">
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Export: <b>Print-Ready PDF & Word DOCX</b></span>
+                        <span class="lang-bn hidden">এক্সপোর্ট: <b>প্রিন্ট-রেডি PDF ও Word DOCX</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Standards: <b>Class 6–12 NCTB Alignment</b></span>
+                        <span class="lang-bn hidden">মানদণ্ড: <b>৬ষ্ঠ-১২শ শ্রেণি এনসিটিবি ফ্রেমওয়ার্ক</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Efficiency: <b>10x Faster Paper Drafting</b></span>
+                        <span class="lang-bn hidden">গতি: <b>১০ গুণ দ্রুত প্রশ্ন প্রণয়ন</b></span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- ================= PANEL 3: Hostel & Waqf Audit ================= -->
-          <div class="studio-panel" id="studioPanel3" role="tabpanel" data-panel="3">
-            <div class="studio-split-grid">
-              <!-- Left Pane: Executive Value -->
-              <div class="studio-value-col">
-                <div class="studio-badge-row">
-                  <span class="studio-badge-pill">🏢 HOSTEL & WAQF AUDIT</span>
-                  <span class="studio-index-no">/ 04</span>
+                <!-- Feature Checklist Grid -->
+                <div class="sme-check-grid">
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Strictly mapped to updated Bangladesh
+                      NCTB textbooks</span><span class="lang-bn hidden">৬ষ্ঠ থেকে ১২শ শ্রেণির সম্পূর্ণ এনসিটিবি সিলেবাস
+                      অন্তর্ভুক্ত</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Instant 1-click export to print-ready
+                      PDF and Word format</span><span class="lang-bn hidden">সরাসরি প্রিন্ট-রেডি পিডিএফ ও ওয়ার্ড
+                      ফরম্যাটে এক্সপোর্ট</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Automated model answer sheets and
+                      grading rubrics</span><span class="lang-bn hidden">নমুনা উত্তর ও শিক্ষক মূল্যায়ন নির্দেশিকা
+                      স্বয়ংক্রিয়ভাবে প্রস্তুত</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Lesson planning and daily homework
+                      recommendation helper</span><span class="lang-bn hidden">দৈনন্দিন ক্লাসের পাঠপরিকল্পনা ও বাড়ির
+                      কাজের সুপারিশ</span></div>
                 </div>
+
+              </div>
+            </article>
+
+            <!-- CARD 04: Madrasa Waqf & Hostel Boarding -->
+            <article class="sme-card" data-index="3">
+              <div class="sme-card-head">
+                <div class="sme-meta-left">
+                  <span class="sme-cat-tag">MADRASA & RESIDENTIAL</span>
+                  <span class="sme-label-pill">Shariah Ledger</span>
+                </div>
+                <div class="sme-meta-right">
+                  <span class="sme-tier-badge">All Tiers</span>
+                  <span class="sme-index-no">/ 04</span>
+                </div>
+              </div>
+
+              <div class="sme-card-body">
                 <h3>
                   <span class="lang-en">Residential Hostel Bed Allocation & Waqf Audit</span>
                   <span class="lang-bn hidden">ছাত্রাবাস সিট বরাদ্দ ও ওয়াকফ-লিল্লাহ ফান্ড অডিট</span>
                 </h3>
-                <p class="studio-desc">
-                  <span class="lang-en">Bespoke management for residential madrasas and cadet schools. Real-time dorm room & bed tracking, meal token management, and 100% Shariah-compliant Waqf and Zakat donation tracking.</span>
-                  <span class="lang-bn hidden">আবাসিক মাদ্রাসা ও ক্যাডেট স্কুলের জন্য বিশেষায়িত সুবিধা। হোস্টেলের রুম ও সিট ট্র্যাকিং, ডাইনিং মিল টোকেন এবং সম্পূর্ণ স্বচ্ছ ওয়াকফ ও লিল্লাহ ফান্ড অডিট খতিয়ান।</span>
+                <p class="sme-card-desc">
+                  <span class="lang-en">Bespoke management for residential madrasas and cadet schools. Real-time dorm
+                    room & bed tracking, meal token management, and 100% Shariah-compliant Waqf and Zakat donation
+                    tracking.</span>
+                  <span class="lang-bn hidden">আবাসিক মাদ্রাসা ও ক্যাডেট স্কুলের জন্য বিশেষায়িত সুবিধা। হোস্টেলের রুম ও
+                    সিট ট্র্যাকিং, ডাইনিং মিল টোকেন এবং সম্পূর্ণ স্বচ্ছ ওয়াকফ ও লিল্লাহ ফান্ড অডিট খতিয়ান।</span>
                 </p>
 
-                <!-- 3 Metric Highlight Cards -->
-                <div class="studio-metrics-row">
-                  <div class="studio-metric-card">
-                    <span class="metric-val">100%</span>
-                    <span class="metric-lbl"><span class="lang-en">Shariah Audit</span><span class="lang-bn hidden">শরীয়াহ অডিট</span></span>
-                  </div>
-                  <div class="studio-metric-card">
-                    <span class="metric-val">Live Bed</span>
-                    <span class="metric-lbl"><span class="lang-en">Matrix Tracking</span><span class="lang-bn hidden">সিট ট্র্যাকিং</span></span>
-                  </div>
-                  <div class="studio-metric-card">
-                    <span class="metric-val">Auto SMS</span>
-                    <span class="metric-lbl"><span class="lang-en">Money Receipt</span><span class="lang-bn hidden">মানি রিসিট</span></span>
-                  </div>
-                </div>
-
-                <!-- Feature Benefits List -->
-                <ul class="studio-benefits-list">
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Visual floor plan with room & bed vacancy matrix</span><span class="lang-bn hidden">হোস্টেল রুম ও বেড খালি/ভর্তি ভিজ্যুয়াল চিত্র</span></span>
-                  </li>
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">100% Shariah-compliant donor Zakat & Lillah accounting</span><span class="lang-bn hidden">সম্পূর্ণ শরীয়াহ সম্মত যাকাত ও ওয়াকফ অডিট খতিয়ান</span></span>
-                  </li>
-                  <li>
-                    <span class="chk-ico">✓</span>
-                    <span><span class="lang-en">Dining mess meal token issuance and food inventory control</span><span class="lang-bn hidden">মেস মিল টোকেন ও বোর্ডিং খাদ্য সামগ্রী ট্র্যাকিং</span></span>
-                  </li>
-                </ul>
-
-                <div class="studio-cta-row">
-                  <a href="#contact" class="btn btn-primary open-demo-modal">
-                    <span class="lang-en">Schedule Campus Walkthrough</span>
-                    <span class="lang-bn hidden">ক্যাম্পাস ডেমো বুক করুন</span>
-                    <span class="arrow">↗</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Right Pane: App Window Frame -->
-              <div class="studio-stage-col">
-                <div class="app-window-frame">
-                  <div class="app-window-header">
-                    <div class="window-dots">
-                      <span class="w-dot dot-red"></span>
-                      <span class="w-dot dot-yellow"></span>
-                      <span class="w-dot dot-green"></span>
+                <!-- Software Artifact: Dormitory Floor Matrix & Shariah Audit -->
+                <div class="sme-card-stage">
+                  <div class="sme-live-feed">
+                    <div class="sme-live-feed-header">
+                      <div class="sme-feed-title">
+                        <span class="live-dot dot-teal"></span>
+                        <span class="lang-en">Hostel Floor Plan & Shariah Waqf Ledger</span>
+                        <span class="lang-bn hidden">হোস্টেল ফ্লোর প্ল্যান ও শরীয়াহ ওয়াকফ অডিট লেজার</span>
+                      </div>
+                      <div class="sme-feed-meta">
+                        <span class="feed-latency">Block B • Dorm 204</span>
+                        <span class="feed-badge-online">Occupancy 3/4</span>
+                      </div>
                     </div>
-                    <div class="window-url-bar">
-                      <span class="window-lock">🔒</span>
-                      <span>hostel.yesedu.cloud/dorm-matrix</span>
-                    </div>
-                    <div class="window-status-badge">
-                      <span class="live-dot dot-teal"></span>
-                      <span>Block B • Dorm 204 • 3/4 Occupied</span>
-                    </div>
-                  </div>
 
-                  <div class="app-window-body">
-                    <div class="sme-live-feed">
-                      <div class="sme-dorm-card">
-                        <div class="dorm-header-bar">
-                          <span class="dorm-building-title">ROOM 204 • 4-BED CAPACITY (QUAD DORM)</span>
-                          <span class="dorm-shariah-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Shariah Board Audited
-                          </span>
-                        </div>
-
-                        <div class="dorm-bed-matrix">
-                          <div class="bed-tile occupied">
-                            <div class="bed-top">
-                              <span class="bed-id">Bed #01</span>
-                              <span class="bed-status-badge">Occupied</span>
-                            </div>
-                            <div class="bed-resident">Mahmud Hasan</div>
-                            <div class="bed-dept">Hifzul Quran Dept.</div>
-                            <div class="bed-meta">Hostel Fee: Paid</div>
-                          </div>
-
-                          <div class="bed-tile occupied">
-                            <div class="bed-top">
-                              <span class="bed-id">Bed #02</span>
-                              <span class="bed-status-badge">Occupied</span>
-                            </div>
-                            <div class="bed-resident">Zubayer Ahmed</div>
-                            <div class="bed-dept">Kitab (Dawra-e-Hadith)</div>
-                            <div class="bed-meta">Hostel Fee: Paid</div>
-                          </div>
-
-                          <div class="bed-tile waqf">
-                            <div class="bed-top">
-                              <span class="bed-id">Bed #03</span>
-                              <span class="bed-status-badge waqf-pill">Waqf Grant (100% Free)</span>
-                            </div>
-                            <div class="bed-resident">Abdullah Al-Mansur</div>
-                            <div class="bed-dept">Lillah Boarding Scholar</div>
-                            <div class="bed-meta">Fund: Shamsul Huq Trust</div>
-                          </div>
-
-                          <div class="bed-tile vacant">
-                            <div class="bed-top">
-                              <span class="bed-id">Bed #04</span>
-                              <span class="bed-status-badge vacant-pill">Available</span>
-                            </div>
-                            <div class="bed-resident text-muted">Ready for Allocation</div>
-                            <div class="bed-dept text-muted">Bed & Locker Sanitized</div>
-                            <div class="bed-meta text-emerald">1-Tap Assign Ready</div>
-                          </div>
-                        </div>
+                    <div class="sme-dorm-card">
+                      <div class="dorm-header-bar">
+                        <span class="dorm-building-title">ROOM 204 • 4-BED CAPACITY (QUAD DORM)</span>
+                        <span class="dorm-shariah-badge">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                          Shariah Board Audited
+                        </span>
                       </div>
 
-                      <div class="sme-feed-footer">
-                        <div class="feed-stat-pill">
-                          <span class="lang-en">Audit Seal: <b>100% Shariah Compliant</b></span>
-                          <span class="lang-bn hidden">অডিট সিল: <b>১০০% শরীয়াহ সম্মত</b></span>
+                      <div class="dorm-bed-matrix">
+                        <div class="bed-tile occupied">
+                          <div class="bed-top">
+                            <span class="bed-id">Bed #01</span>
+                            <span class="bed-status-badge">Occupied</span>
+                          </div>
+                          <div class="bed-resident">Mahmud Hasan</div>
+                          <div class="bed-dept">Hifzul Quran Dept.</div>
+                          <div class="bed-meta">Hostel Fee: Paid</div>
                         </div>
-                        <div class="feed-stat-pill">
-                          <span class="lang-en">Meal Tokens: <b>Active Real-Time Mess</b></span>
-                          <span class="lang-bn hidden">মিল টোকেন: <b>সক্রিয় মেস ট্র্যাকিং</b></span>
+
+                        <div class="bed-tile occupied">
+                          <div class="bed-top">
+                            <span class="bed-id">Bed #02</span>
+                            <span class="bed-status-badge">Occupied</span>
+                          </div>
+                          <div class="bed-resident">Zubayer Ahmed</div>
+                          <div class="bed-dept">Kitab (Dawra-e-Hadith)</div>
+                          <div class="bed-meta">Hostel Fee: Paid</div>
                         </div>
+
+                        <div class="bed-tile waqf">
+                          <div class="bed-top">
+                            <span class="bed-id">Bed #03</span>
+                            <span class="bed-status-badge waqf-pill">Waqf Grant (100% Free)</span>
+                          </div>
+                          <div class="bed-resident">Abdullah Al-Mansur</div>
+                          <div class="bed-dept">Lillah Boarding Scholar</div>
+                          <div class="bed-meta">Fund: Al-Hajj Shamsul Huq Trust</div>
+                        </div>
+
+                        <div class="bed-tile vacant">
+                          <div class="bed-top">
+                            <span class="bed-id">Bed #04</span>
+                            <span class="bed-status-badge vacant-pill">Available</span>
+                          </div>
+                          <div class="bed-resident text-muted">Ready for Allocation</div>
+                          <div class="bed-dept text-muted">Bed & Locker Sanitized</div>
+                          <div class="bed-meta text-emerald">1-Tap Assign Ready</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="sme-feed-footer">
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Audit Seal: <b>100% Shariah Compliant</b></span>
+                        <span class="lang-bn hidden">অডিট সিল: <b>১০০% শরীয়াহ সম্মত</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Boarding: <b>Real-Time Bed & Meal Tokens</b></span>
+                        <span class="lang-bn hidden">বোর্ডিং: <b>লাইভ বেড ও মিল টোকেন ট্র্যাকিং</b></span>
+                      </div>
+                      <div class="feed-stat-pill">
+                        <span class="lang-en">Donations: <b>Instant SMS Money Receipt</b></span>
+                        <span class="lang-bn hidden">দান সংগ্রহ: <b>অটো এসএমএস মানি রিসিট</b></span>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <!-- Feature Checklist Grid -->
+                <div class="sme-check-grid">
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Visual floor plan with room & bed
+                      vacancy matrix</span><span class="lang-bn hidden">হোস্টেল রুম ও বেড খালি/ভর্তি ভিজ্যুয়াল
+                      চিত্র</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">100% Shariah-compliant donor Zakat &
+                      Lillah accounting</span><span class="lang-bn hidden">সম্পূর্ণ শরীয়াহ সম্মত যাকাত ও ওয়াকফ অডিট
+                      খতিয়ান</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Instant digital donation money
+                      receipt dispatched via SMS</span><span class="lang-bn hidden">দানকারীকে তাৎক্ষণিক ডিজিটাল মানি
+                      রিসিট ও কৃতজ্ঞতা বার্তা</span></div>
+                  <div class="sme-check-item"><span>✓</span> <span class="lang-en">Dining mess meal token issuance and
+                      food inventory control</span><span class="lang-bn hidden">মেস মিল টোকেন ও বোর্ডিং খাদ্য সামগ্রী
+                      ট্র্যাকিং</span></div>
+                </div>
+
               </div>
-            </div>
+            </article>
+
           </div>
+        </div>
+
+        <!-- SME Carousel Bottom Controls -->
+        <div class="sme-controls-footer reveal">
+          <button class="sme-arrow-btn" id="smePrevBtn" aria-label="Previous Workflow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="lang-en">Previous</span>
+            <span class="lang-bn hidden">পূর্ববর্তী</span>
+          </button>
+
+          <div class="sme-dots" id="smeDotsContainer">
+            <span class="sme-dot active" data-index="0"></span>
+            <span class="sme-dot" data-index="1"></span>
+            <span class="sme-dot" data-index="2"></span>
+            <span class="sme-dot" data-index="3"></span>
+          </div>
+
+          <button class="sme-arrow-btn" id="smeNextBtn" aria-label="Next Workflow">
+            <span class="lang-en">Next Workflow</span>
+            <span class="lang-bn hidden">পরবর্তী</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
 
       </div>
@@ -1200,11 +1097,13 @@
             <span class="lang-bn hidden">আপনার সম্পূর্ণ প্রতিষ্ঠান, এক সাথে ও সুশৃঙ্খল।</span>
           </h2>
           <p>
-            <span class="lang-en">YES EDU connects the people, processes and information that keep an institution moving — from the front office to the classroom and beyond.</span>
-            <span class="lang-bn hidden">প্রশাসন থেকে ক্লাসরুম, হিসাব বিভাগ থেকে অভিভাবক—প্রতিটি কার্যক্রমকে একই ডিজিটাল সূত্রে গেঁথে দেয় YES EDU।</span>
+            <span class="lang-en">YES EDU connects the people, processes and information that keep an institution moving
+              — from the front office to the classroom and beyond.</span>
+            <span class="lang-bn hidden">প্রশাসন থেকে ক্লাসরুম, হিসাব বিভাগ থেকে অভিভাবক—প্রতিটি কার্যক্রমকে একই ডিজিটাল
+              সূত্রে গেঁথে দেয় YES EDU।</span>
           </p>
         </div>
-        
+
         <div class="platform-grid">
           <article class="platform-card reveal">
             <div class="icon-box">▤</div>
@@ -1213,12 +1112,15 @@
               <span class="lang-bn hidden">প্রাতিষ্ঠানিক ওয়েবসাইট ও সিএমএস</span>
             </h3>
             <p>
-              <span class="lang-en">Present your institution online with dynamic pages, notices, events, photo galleries, teacher directories and custom domain branding.</span>
-              <span class="lang-bn hidden">ডায়নামিক পেজ, নোটিশ বোর্ড, ইভেন্ট ক্যালেন্ডার, ছবি গ্যালারি এবং নিজস্ব ব্র্যান্ডিং সহ একটি আধুনিক প্রাতিষ্ঠানিক ওয়েবসাইট।</span>
+              <span class="lang-en">Present your institution online with dynamic pages, notices, events, photo
+                galleries, teacher directories and custom domain branding.</span>
+              <span class="lang-bn hidden">ডায়নামিক পেজ, নোটিশ বোর্ড, ইভেন্ট ক্যালেন্ডার, ছবি গ্যালারি এবং নিজস্ব
+                ব্র্যান্ডিং সহ একটি আধুনিক প্রাতিষ্ঠানিক ওয়েবসাইট।</span>
             </p>
-            <span class="tag"><span class="lang-en">Digital Presence</span><span class="lang-bn hidden">ডিজিটাল উপস্থিতি</span></span>
+            <span class="tag"><span class="lang-en">Digital Presence</span><span class="lang-bn hidden">ডিজিটাল
+                উপস্থিতি</span></span>
           </article>
-          
+
           <article class="platform-card reveal">
             <div class="icon-box">◈</div>
             <h3>
@@ -1226,12 +1128,15 @@
               <span class="lang-bn hidden">পরিপূর্ণ শিক্ষাপ্রতিষ্ঠান ইআরপি</span>
             </h3>
             <p>
-              <span class="lang-en">Manage student admissions, biometric attendance, examination grading, fee collection, staff payroll, inventory, and library workflows.</span>
-              <span class="lang-bn hidden">ভর্তি প্রক্রিয়া, বায়োমেট্রিক হাজিরা, ফলাফল তৈরি, টিউশন ফি আদায়, বেতন-ভাতা এবং দৈনন্দিন প্রশাসনিক কার্যক্রমের পরিপূর্ণ সমাধান।</span>
+              <span class="lang-en">Manage student admissions, biometric attendance, examination grading, fee
+                collection, staff payroll, inventory, and library workflows.</span>
+              <span class="lang-bn hidden">ভর্তি প্রক্রিয়া, বায়োমেট্রিক হাজিরা, ফলাফল তৈরি, টিউশন ফি আদায়, বেতন-ভাতা
+                এবং দৈনন্দিন প্রশাসনিক কার্যক্রমের পরিপূর্ণ সমাধান।</span>
             </p>
-            <span class="tag"><span class="lang-en">Connected Operations</span><span class="lang-bn hidden">সংযুক্ত কার্যক্রম</span></span>
+            <span class="tag"><span class="lang-en">Connected Operations</span><span class="lang-bn hidden">সংযুক্ত
+                কার্যক্রম</span></span>
           </article>
-          
+
           <article class="platform-card reveal">
             <div class="icon-box">✦</div>
             <h3>
@@ -1239,10 +1144,13 @@
               <span class="lang-bn hidden">এআই-চালিত স্মার্ট সহায়তা</span>
             </h3>
             <p>
-              <span class="lang-en">Support teachers with NCTB lesson planning and creative questions, while institutional leaders query database analytics with natural language.</span>
-              <span class="lang-bn hidden">এনসিটিবি পাঠপরিকল্পনা ও পরীক্ষার প্রশ্ন প্রণয়নে শিক্ষকদের সহায়তা এবং সহজ ভাষায় ডেটাবেজ প্রশ্নোত্তরের আধুনিক এআই ব্যবস্থা।</span>
+              <span class="lang-en">Support teachers with NCTB lesson planning and creative questions, while
+                institutional leaders query database analytics with natural language.</span>
+              <span class="lang-bn hidden">এনসিটিবি পাঠপরিকল্পনা ও পরীক্ষার প্রশ্ন প্রণয়নে শিক্ষকদের সহায়তা এবং সহজ
+                ভাষায় ডেটাবেজ প্রশ্নোত্তরের আধুনিক এআই ব্যবস্থা।</span>
             </p>
-            <span class="tag"><span class="lang-en">Intelligent Workflows</span><span class="lang-bn hidden">ইন্টেলিজেন্ট ওয়ার্কফ্লো</span></span>
+            <span class="tag"><span class="lang-en">Intelligent Workflows</span><span
+                class="lang-bn hidden">ইন্টেলিজেন্ট ওয়ার্কফ্লো</span></span>
           </article>
         </div>
       </div>
@@ -1261,83 +1169,124 @@
             <span class="lang-bn hidden">একটি আধুনিক প্রতিষ্ঠানের যা কিছু প্রয়োজন।</span>
           </h2>
           <p>
-            <span class="lang-en">A connected suite of capabilities designed to simplify administration, strengthen communication and support better learning experiences.</span>
-            <span class="lang-bn hidden">প্রশাসনিক জটিলতা দূর করতে এবং শিক্ষা ও যোগাযোগের মান বাড়াতে ১২টি শক্তিশালী মডিউলের সমন্বয়।</span>
+            <span class="lang-en">A connected suite of capabilities designed to simplify administration, strengthen
+              communication and support better learning experiences.</span>
+            <span class="lang-bn hidden">প্রশাসনিক জটিলতা দূর করতে এবং শিক্ষা ও যোগাযোগের মান বাড়াতে ১২টি শক্তিশালী
+              মডিউলের সমন্বয়।</span>
           </p>
         </div>
-        
-        <div class="module-grid">
+
+        <div class="module-grid" id="moduleGrid">
           <article class="module reveal">
             <div class="ico">🎓</div>
-            <h3><span class="lang-en">Student Management</span><span class="lang-bn hidden">শিক্ষার্থী ব্যবস্থাপনা</span></h3>
-            <p><span class="lang-en">Profiles, admissions, guardians, student lifecycle, and digital ID cards.</span><span class="lang-bn hidden">অনলাইন ভর্তি, ডিজিটাল প্রোফাইল, অভিভাবক তথ্য ও ডিজিটাল আইডি কার্ড।</span></p>
+            <h3><span class="lang-en">Student Management</span><span class="lang-bn hidden">শিক্ষার্থী
+                ব্যবস্থাপনা</span></h3>
+            <p><span class="lang-en">Profiles, admissions, guardians, student lifecycle, and digital ID
+                cards.</span><span class="lang-bn hidden">অনলাইন ভর্তি, ডিজিটাল প্রোফাইল, অভিভাবক তথ্য ও ডিজিটাল আইডি
+                কার্ড।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">📚</div>
-            <h3><span class="lang-en">Academic Management</span><span class="lang-bn hidden">একাডেমিক ব্যবস্থাপনা</span></h3>
-            <p><span class="lang-en">Classes, sections, routines, subject allocations, and lesson plans.</span><span class="lang-bn hidden">ক্লাস, সেকশন, পিরিয়ড রুটিন, বিষয় বণ্টন ও পাঠপরিকল্পনা।</span></p>
+            <h3><span class="lang-en">Academic Management</span><span class="lang-bn hidden">একাডেমিক ব্যবস্থাপনা</span>
+            </h3>
+            <p><span class="lang-en">Classes, sections, routines, subject allocations, and lesson plans.</span><span
+                class="lang-bn hidden">ক্লাস, সেকশন, পিরিয়ড রুটিন, বিষয় বণ্টন ও পাঠপরিকল্পনা।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">📝</div>
-            <h3><span class="lang-en">Examination & Results</span><span class="lang-bn hidden">পরীক্ষা ও ফলাফল</span></h3>
-            <p><span class="lang-en">Exam schedules, grading systems, marksheets, and report cards.</span><span class="lang-bn hidden">পরীক্ষার রুটিন, গ্রেডিং সিস্টেম, মার্কশিট ও প্রগ্রেস রিপোর্ট।</span></p>
+            <h3><span class="lang-en">Examination & Results</span><span class="lang-bn hidden">পরীক্ষা ও ফলাফল</span>
+            </h3>
+            <p><span class="lang-en">Exam schedules, grading systems, marksheets, and report cards.</span><span
+                class="lang-bn hidden">পরীক্ষার রুটিন, গ্রেডিং সিস্টেম, মার্কশিট ও প্রগ্রেস রিপোর্ট।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">💳</div>
             <h3><span class="lang-en">Fees & Accounting</span><span class="lang-bn hidden">ফি ও হিসাবরক্ষণ</span></h3>
-            <p><span class="lang-en">Fee collection, dues tracking, cash book, ledger, and bank integration.</span><span class="lang-bn hidden">বিকাশ-নগদ পেমেন্ট, বকেয়া ট্র্যাকিং, ক্যাশবুক ও অডিট খতিয়ান।</span></p>
+            <p><span class="lang-en">Fee collection, dues tracking, cash book, ledger, and bank integration.</span><span
+                class="lang-bn hidden">বিকাশ-নগদ পেমেন্ট, বকেয়া ট্র্যাকিং, ক্যাশবুক ও অডিট খতিয়ান।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">🕒</div>
-            <h3><span class="lang-en">Biometric Attendance</span><span class="lang-bn hidden">বায়োমেট্রিক হাজিরা</span></h3>
-            <p><span class="lang-en">Daily RFID card and fingerprint tracking with instant parent SMS.</span><span class="lang-bn hidden">ডিভাইস ইন্টিগ্রেশন, রিয়েল-টাইম লগ ও তাৎক্ষণিক এসএমএস অ্যালার্ট।</span></p>
+            <h3><span class="lang-en">Biometric Attendance</span><span class="lang-bn hidden">বায়োমেট্রিক হাজিরা</span>
+            </h3>
+            <p><span class="lang-en">Daily RFID card and fingerprint tracking with instant parent SMS.</span><span
+                class="lang-bn hidden">ডিভাইস ইন্টিগ্রেশন, রিয়েল-টাইম লগ ও তাৎক্ষণিক এসএমএস অ্যালার্ট।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">👥</div>
             <h3><span class="lang-en">HR & Payroll</span><span class="lang-bn hidden">এইচআর ও বেতন-ভাতা</span></h3>
-            <p><span class="lang-en">Staff profiles, leave tracking, monthly payroll, and role permissions.</span><span class="lang-bn hidden">শিক্ষক-স্টাফ প্রোফাইল, ছুটি মঞ্জুর, পে-স্লিপ ও ভূমিকাভিত্তিক অনুমতি।</span></p>
+            <p><span class="lang-en">Staff profiles, leave tracking, monthly payroll, and role permissions.</span><span
+                class="lang-bn hidden">শিক্ষক-স্টাফ প্রোফাইল, ছুটি মঞ্জুর, পে-স্লিপ ও ভূমিকাভিত্তিক অনুমতি।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">📦</div>
-            <h3><span class="lang-en">Inventory & Assets</span><span class="lang-bn hidden">সম্পদ ও ইনভেন্টরি</span></h3>
-            <p><span class="lang-en">Institutional stock, assets, vendor records, and resource allocation.</span><span class="lang-bn hidden">প্রতিষ্ঠানের মালামাল, সম্পদ রেজিস্টার ও স্টক ট্র্যাকিং।</span></p>
+            <h3><span class="lang-en">Inventory & Assets</span><span class="lang-bn hidden">সম্পদ ও ইনভেন্টরি</span>
+            </h3>
+            <p><span class="lang-en">Institutional stock, assets, vendor records, and resource allocation.</span><span
+                class="lang-bn hidden">প্রতিষ্ঠানের মালামাল, সম্পদ রেজিস্টার ও স্টক ট্র্যাকিং।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">📖</div>
-            <h3><span class="lang-en">Library Automation</span><span class="lang-bn hidden">লাইব্রেরি অটোমেশন</span></h3>
-            <p><span class="lang-en">Cataloguing, book issue, return tracking, and barcode workflows.</span><span class="lang-bn hidden">বই ক্যাটালগ, ইস্যু-রিটার্ন হিসাব ও বারকোড ট্র্যাকিং।</span></p>
+            <h3><span class="lang-en">Library Automation</span><span class="lang-bn hidden">লাইব্রেরি অটোমেশন</span>
+            </h3>
+            <p><span class="lang-en">Cataloguing, book issue, return tracking, and barcode workflows.</span><span
+                class="lang-bn hidden">বই ক্যাটালগ, ইস্যু-রিটার্ন হিসাব ও বারকোড ট্র্যাকিং।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">🚌</div>
             <h3><span class="lang-en">Transport & Fleet</span><span class="lang-bn hidden">যানবাহন ও রুট</span></h3>
-            <p><span class="lang-en">Vehicles, routes, driver logs, and student transport rosters.</span><span class="lang-bn hidden">গাড়ি ও রুট বরাদ্দ, চালক তথ্য এবং পরিবহন ফি ট্র্যাকিং।</span></p>
+            <p><span class="lang-en">Vehicles, routes, driver logs, and student transport rosters.</span><span
+                class="lang-bn hidden">গাড়ি ও রুট বরাদ্দ, চালক তথ্য এবং পরিবহন ফি ট্র্যাকিং।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">🏠</div>
-            <h3><span class="lang-en">Hostel & Dormitory</span><span class="lang-bn hidden">হোস্টেল ও ছাত্রাবাস</span></h3>
-            <p><span class="lang-en">Room and bed allocation, meal tokens, and residential monitoring.</span><span class="lang-bn hidden">রুম ও সিট বরাদ্দ, ডাইনিং মিল হিসাব ও আবাসিক ব্যবস্থাপনা।</span></p>
+            <h3><span class="lang-en">Hostel & Dormitory</span><span class="lang-bn hidden">হোস্টেল ও ছাত্রাবাস</span>
+            </h3>
+            <p><span class="lang-en">Room and bed allocation, meal tokens, and residential monitoring.</span><span
+                class="lang-bn hidden">রুম ও সিট বরাদ্দ, ডাইনিং মিল হিসাব ও আবাসিক ব্যবস্থাপনা।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">💬</div>
-            <h3><span class="lang-en">Communication & SMS</span><span class="lang-bn hidden">যোগাযোগ ও এসএমএস</span></h3>
-            <p><span class="lang-en">Notice boards, push messaging, Bangla SMS gateway, and parent chat.</span><span class="lang-bn hidden">নোটিশ বোর্ড, বাল্ক বাংলা এসএমএস ও শিক্ষক-অভিভাবক মেসেজিং।</span></p>
+            <h3><span class="lang-en">Communication & SMS</span><span class="lang-bn hidden">যোগাযোগ ও এসএমএস</span>
+            </h3>
+            <p><span class="lang-en">Notice boards, push messaging, Bangla SMS gateway, and parent chat.</span><span
+                class="lang-bn hidden">নোটিশ বোর্ড, বাল্ক বাংলা এসএমএস ও শিক্ষক-অভিভাবক মেসেজিং।</span></p>
           </article>
-          
+
           <article class="module reveal">
             <div class="ico">📊</div>
-            <h3><span class="lang-en">Reports & Analytics</span><span class="lang-bn hidden">রিপোর্ট ও অ্যানালিটিক্স</span></h3>
-            <p><span class="lang-en">Institutional reporting, audit records, and executive BI dashboards.</span><span class="lang-bn hidden">সার্বিক পরিসংখ্যান, অডিট রিপোর্ট ও প্রধান শিক্ষকের কন্ট্রোল প্যানেল।</span></p>
+            <h3><span class="lang-en">Reports & Analytics</span><span class="lang-bn hidden">রিপোর্ট ও
+                অ্যানালিটিক্স</span></h3>
+            <p><span class="lang-en">Institutional reporting, audit records, and executive BI dashboards.</span><span
+                class="lang-bn hidden">সার্বিক পরিসংখ্যান, অডিট রিপোর্ট ও প্রধান শিক্ষকের কন্ট্রোল প্যানেল।</span></p>
           </article>
+        </div>
+
+        <!-- Mobile Progressive Disclosure Toggle (Visible only on mobile devices) -->
+        <div class="module-toggle-wrap">
+          <button type="button" class="btn-module-toggle" id="moduleToggleBtn" aria-expanded="false" aria-controls="moduleGrid">
+            <span class="module-toggle-txt">
+              <span class="txt-collapsed">
+                <span class="lang-en"><span class="toggle-icon">✦</span> Explore All 12 Modules (<span class="toggle-count">+6</span>)</span>
+                <span class="lang-bn hidden"><span class="toggle-icon">✦</span> সকল ১২টি মডিউল দেখুন (<span class="toggle-count">+৬</span>)</span>
+              </span>
+              <span class="txt-expanded" style="display: none;">
+                <span class="lang-en"><span class="toggle-icon">▴</span> Show Less</span>
+                <span class="lang-bn hidden"><span class="toggle-icon">▴</span> সংক্ষেপ করুন</span>
+              </span>
+            </span>
+            <span class="toggle-arrow">▾</span>
+          </button>
         </div>
       </div>
     </section>
@@ -1395,38 +1344,48 @@
             <span class="lang-bn hidden">প্রতিটি ভূমিকার জন্য আলাদা ও স্পষ্ট ইন্টারফেস।</span>
           </h2>
           <p>
-            <span class="lang-en">Role-based experiences help each member of the institution focus on the information and actions relevant to their responsibilities.</span>
-            <span class="lang-bn hidden">অ্যাডমিন, শিক্ষক, অভিভাবক ও হিসাব বিভাগ—সবার দায়িত্ব অনুযায়ী উপযোগী স্ক্রিন ও ডেটা সিকিউরিটি।</span>
+            <span class="lang-en">Role-based experiences help each member of the institution focus on the information
+              and actions relevant to their responsibilities.</span>
+            <span class="lang-bn hidden">অ্যাডমিন, শিক্ষক, অভিভাবক ও হিসাব বিভাগ—সবার দায়িত্ব অনুযায়ী উপযোগী স্ক্রিন ও
+              ডেটা সিকিউরিটি।</span>
           </p>
         </div>
-        
+
         <div class="role-layout">
           <div class="role-tabs reveal" role="tablist">
             <button class="role-tab active" data-role="admin" role="tab" aria-selected="true">
-              <strong><span class="lang-en">Institution Administrator</span><span class="lang-bn hidden">প্রতিষ্ঠান প্রধান ও অ্যাডমিন</span></strong>
-              <span><span class="lang-en">Institution-wide oversight and operational visibility</span><span class="lang-bn hidden">সার্বিক নিয়ন্ত্রণ ও রিয়েল-টাইম প্রশাসনিক ড্যাশবোর্ড</span></span>
+              <strong><span class="lang-en">Institution Administrator</span><span class="lang-bn hidden">প্রতিষ্ঠান
+                  প্রধান ও অ্যাডমিন</span></strong>
+              <span><span class="lang-en">Institution-wide oversight and operational visibility</span><span
+                  class="lang-bn hidden">সার্বিক নিয়ন্ত্রণ ও রিয়েল-টাইম প্রশাসনিক ড্যাশবোর্ড</span></span>
             </button>
             <button class="role-tab" data-role="teacher" role="tab" aria-selected="false">
-              <strong><span class="lang-en">Teacher</span><span class="lang-bn hidden">শিক্ষক ওয়ার্কস্পেস</span></strong>
-              <span><span class="lang-en">Classroom, attendance and academic workflows</span><span class="lang-bn hidden">ক্লাস রুটিন, উপস্থিতি ও পরীক্ষার নম্বর গ্রহণ</span></span>
+              <strong><span class="lang-en">Teacher</span><span class="lang-bn hidden">শিক্ষক
+                  ওয়ার্কস্পেস</span></strong>
+              <span><span class="lang-en">Classroom, attendance and academic workflows</span><span
+                  class="lang-bn hidden">ক্লাস রুটিন, উপস্থিতি ও পরীক্ষার নম্বর গ্রহণ</span></span>
             </button>
             <button class="role-tab" data-role="parent" role="tab" aria-selected="false">
-              <strong><span class="lang-en">Parent & Guardian</span><span class="lang-bn hidden">অভিভাবক পোর্টাল</span></strong>
-              <span><span class="lang-en">Student updates, results and fee payments</span><span class="lang-bn hidden">সন্তানের উপস্থিতি নোটিফিকেশন ও ১-ট্যাপ ফি পেমেন্ট</span></span>
+              <strong><span class="lang-en">Parent & Guardian</span><span class="lang-bn hidden">অভিভাবক
+                  পোর্টাল</span></strong>
+              <span><span class="lang-en">Student updates, results and fee payments</span><span
+                  class="lang-bn hidden">সন্তানের উপস্থিতি নোটিফিকেশন ও ১-ট্যাপ ফি পেমেন্ট</span></span>
             </button>
             <button class="role-tab" data-role="accounts" role="tab" aria-selected="false">
-              <strong><span class="lang-en">Accounts Team</span><span class="lang-bn hidden">হিসাবরক্ষণ বিভাগ</span></strong>
-              <span><span class="lang-en">Fees, collections and financial records</span><span class="lang-bn hidden">বকেয়া ট্র্যাকিং, ক্যাশবুক ও স্বয়ংক্রিয় অডিট</span></span>
+              <strong><span class="lang-en">Accounts Team</span><span class="lang-bn hidden">হিসাবরক্ষণ
+                  বিভাগ</span></strong>
+              <span><span class="lang-en">Fees, collections and financial records</span><span
+                  class="lang-bn hidden">বকেয়া ট্র্যাকিং, ক্যাশবুক ও স্বয়ংক্রিয় অডিট</span></span>
             </button>
           </div>
-          
+
           <div class="role-preview reveal">
             <div class="preview-window">
               <div class="preview-top">
                 <span id="roleTitle">Institution Overview & Control</span>
                 <span class="preview-chip" id="roleChip">ADMIN VIEW</span>
               </div>
-              
+
               <div class="preview-metrics">
                 <div class="preview-metric">
                   <small id="metricOneLabel">Active Students</small>
@@ -1441,9 +1400,10 @@
                   <b id="metricThree">Live & Active</b>
                 </div>
               </div>
-              
+
               <div class="preview-note" id="roleDescription">
-                A consolidated 360° cockpit of institutional operations, biometric logs, staff attendance and real-time revenue collection shaped by strict administrative permissions.
+                A consolidated 360° cockpit of institutional operations, biometric logs, staff attendance and real-time
+                revenue collection shaped by strict administrative permissions.
               </div>
             </div>
           </div>
@@ -1455,7 +1415,8 @@
     <section class="section ai-section" id="ai">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:#a8eed1">
+          <span class="eyebrow"
+            style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:#a8eed1">
             <span class="lang-en">MEET THE YES EDU AI ECOSYSTEM</span>
             <span class="lang-bn hidden">YES EDU এআই ইকোসিস্টেম</span>
           </span>
@@ -1464,11 +1425,13 @@
             <span class="lang-bn hidden">পুনরাবৃত্তি কাজ কমে, বাড়ে গুণগত শিক্ষার মান।</span>
           </h2>
           <p>
-            <span class="lang-en">Purpose-built AI experiences to assist educators and help institutional leaders find useful information faster.</span>
-            <span class="lang-bn hidden">শিক্ষকদের সময় বাঁচাতে এবং প্রশাসনিক যেকোনো প্রশ্নের উত্তর সেকেন্ডে পেতে বিশেষায়িত কৃত্রিম বুদ্ধিমত্তা।</span>
+            <span class="lang-en">Purpose-built AI experiences to assist educators and help institutional leaders find
+              useful information faster.</span>
+            <span class="lang-bn hidden">শিক্ষকদের সময় বাঁচাতে এবং প্রশাসনিক যেকোনো প্রশ্নের উত্তর সেকেন্ডে পেতে
+              বিশেষায়িত কৃত্রিম বুদ্ধিমত্তা।</span>
           </p>
         </div>
-        
+
         <div class="ai-grid">
           <article class="ai-card reveal">
             <div class="ai-icon">✧</div>
@@ -1477,12 +1440,15 @@
               <span class="lang-bn hidden">টিচার অ্যাসিস্ট্যান্ট এআই V1</span>
             </h3>
             <p>
-              <span class="lang-en">Intelligent assistant for administrative guidance, routine drafting, parent notice writing in natural Bengali, and everyday lesson planning.</span>
-              <span class="lang-bn hidden">সহজ বাংলায় অভিভাবক নোটিশ তৈরি, ক্লাসের রুটিন গুছিয়ে নেওয়া এবং দৈনন্দিন পাঠপরিকল্পনা তৈরিতে শিক্ষকের সার্বক্ষণিক সহকারী।</span>
+              <span class="lang-en">Intelligent assistant for administrative guidance, routine drafting, parent notice
+                writing in natural Bengali, and everyday lesson planning.</span>
+              <span class="lang-bn hidden">সহজ বাংলায় অভিভাবক নোটিশ তৈরি, ক্লাসের রুটিন গুছিয়ে নেওয়া এবং দৈনন্দিন
+                পাঠপরিকল্পনা তৈরিতে শিক্ষকের সার্বক্ষণিক সহকারী।</span>
             </p>
-            <span class="ai-label"><span class="lang-en">AI Experience · V1</span><span class="lang-bn hidden">এআই সংস্করণ V1</span></span>
+            <span class="ai-label"><span class="lang-en">AI Experience · V1</span><span class="lang-bn hidden">এআই
+                সংস্করণ V1</span></span>
           </article>
-          
+
           <article class="ai-card reveal">
             <div class="ai-icon">⌘</div>
             <h3>
@@ -1490,12 +1456,15 @@
               <span class="lang-bn hidden">কারিকুলাম এআই V2 (এনসিটিবি)</span>
             </h3>
             <p>
-              <span class="lang-en">Curriculum-oriented engine tailored to Bangladesh NCTB syllabus. Generates Bloom-taxonomy creative questions, homework, and subject rubrics.</span>
-              <span class="lang-bn hidden">বাংলাদেশ এনসিটিবি কারিকুলাম ভিত্তিক। ক, খ, গ, ঘ ধাপের মানসম্মত সৃজনশীল প্রশ্ন, হোমওয়ার্ক এবং মূল্যায়ন শিট তৈরিতে অপ্রতিদ্বন্দ্বী।</span>
+              <span class="lang-en">Curriculum-oriented engine tailored to Bangladesh NCTB syllabus. Generates
+                Bloom-taxonomy creative questions, homework, and subject rubrics.</span>
+              <span class="lang-bn hidden">বাংলাদেশ এনসিটিবি কারিকুলাম ভিত্তিক। ক, খ, গ, ঘ ধাপের মানসম্মত সৃজনশীল
+                প্রশ্ন, হোমওয়ার্ক এবং মূল্যায়ন শিট তৈরিতে অপ্রতিদ্বন্দ্বী।</span>
             </p>
-            <span class="ai-label"><span class="lang-en">AI Experience · V2</span><span class="lang-bn hidden">এআই সংস্করণ V2</span></span>
+            <span class="ai-label"><span class="lang-en">AI Experience · V2</span><span class="lang-bn hidden">এআই
+                সংস্করণ V2</span></span>
           </article>
-          
+
           <article class="ai-card reveal">
             <div class="ai-icon">◉</div>
             <h3>
@@ -1503,10 +1472,13 @@
               <span class="lang-bn hidden">রোল-ভিত্তিক ইআরপি চ্যাটবট</span>
             </h3>
             <p>
-              <span class="lang-en">Ask questions in natural language and get instantaneous answers from the institution database, strictly respecting user permission hierarchies.</span>
-              <span class="lang-bn hidden">"আজ কতজন অনুপস্থিত?" বা "৯ম শ্রেণির বকেয়া কত?" লিখে প্রশ্ন করলেই তাৎক্ষণিক সঠিক হিসাব দেয় প্রতিষ্ঠানের নিজস্ব সুরক্ষিত চ্যাটবট।</span>
+              <span class="lang-en">Ask questions in natural language and get instantaneous answers from the institution
+                database, strictly respecting user permission hierarchies.</span>
+              <span class="lang-bn hidden">"আজ কতজন অনুপস্থিত?" বা "৯ম শ্রেণির বকেয়া কত?" লিখে প্রশ্ন করলেই তাৎক্ষণিক
+                সঠিক হিসাব দেয় প্রতিষ্ঠানের নিজস্ব সুরক্ষিত চ্যাটবট।</span>
             </p>
-            <span class="ai-label"><span class="lang-en">Role-Aware Database AI</span><span class="lang-bn hidden">নিরাপদ ডাটাবেজ এআই</span></span>
+            <span class="ai-label"><span class="lang-en">Role-Aware Database AI</span><span
+                class="lang-bn hidden">নিরাপদ ডাটাবেজ এআই</span></span>
           </article>
         </div>
       </div>
@@ -1525,31 +1497,37 @@
             <span class="lang-bn hidden">ক্যাম্পাসের সীমানা পেরিয়ে অভিভাবক ও শিক্ষকের হাতের মুঠোয়।</span>
           </h2>
           <p>
-            <span class="lang-en">Keep parents, teachers and principals connected with dedicated Android & iOS mobile applications. Instant attendance alerts and exam results always in reach.</span>
-            <span class="lang-bn hidden">অ্যান্ড্রয়েড ও আইওএস অ্যাপের মাধ্যমে শিক্ষার্থী গেট পাঞ্চ করলেই অভিভাবকের ফোনে নোটিফিকেশন যায়। পরীক্ষার ফলাফল ও ফি পরিশোধ মুহূর্তের ব্যাপার।</span>
+            <span class="lang-en">Keep parents, teachers and principals connected with dedicated Android & iOS mobile
+              applications. Instant attendance alerts and exam results always in reach.</span>
+            <span class="lang-bn hidden">অ্যান্ড্রয়েড ও আইওএস অ্যাপের মাধ্যমে শিক্ষার্থী গেট পাঞ্চ করলেই অভিভাবকের ফোনে
+              নোটিফিকেশন যায়। পরীক্ষার ফলাফল ও ফি পরিশোধ মুহূর্তের ব্যাপার।</span>
           </p>
-          
+
           <div class="check-list">
-            <div class="check"><b>✓</b> <span class="lang-en">Dedicated Android and iOS applications</span><span class="lang-bn hidden">স্মার্ট অ্যান্ড্রয়েড ও আইওএস মোবাইল অ্যাপস</span></div>
-            <div class="check"><b>✓</b> <span class="lang-en">Push alerts & Bangla SMS gateway integration</span><span class="lang-bn hidden">পুশ নোটিফিকেশন ও অটোমেটিক বাংলা এসএমএস</span></div>
-            <div class="check"><b>✓</b> <span class="lang-en">1-Tap bKash fee collection & progress reports</span><span class="lang-bn hidden">১-ট্যাপে বিকাশ ফি পেমেন্ট ও ডিজিটাল রিপোর্ট কার্ড</span></div>
-            <div class="check"><b>✓</b> <span class="lang-en">Direct messaging between parents and class teachers</span><span class="lang-bn hidden">শিক্ষক ও অভিভাবকের মধ্যে নিরাপদ মেসেজিং</span></div>
+            <div class="check"><b>✓</b> <span class="lang-en">Dedicated Android and iOS applications</span><span
+                class="lang-bn hidden">স্মার্ট অ্যান্ড্রয়েড ও আইওএস মোবাইল অ্যাপস</span></div>
+            <div class="check"><b>✓</b> <span class="lang-en">Push alerts & Bangla SMS gateway integration</span><span
+                class="lang-bn hidden">পুশ নোটিফিকেশন ও অটোমেটিক বাংলা এসএমএস</span></div>
+            <div class="check"><b>✓</b> <span class="lang-en">1-Tap bKash fee collection & progress reports</span><span
+                class="lang-bn hidden">১-ট্যাপে বিকাশ ফি পেমেন্ট ও ডিজিটাল রিপোর্ট কার্ড</span></div>
+            <div class="check"><b>✓</b> <span class="lang-en">Direct messaging between parents and class
+                teachers</span><span class="lang-bn hidden">শিক্ষক ও অভিভাবকের মধ্যে নিরাপদ মেসেজিং</span></div>
           </div>
-          
+
           <a class="btn btn-primary open-demo-modal" href="#contact">
             <span class="lang-en">Explore Mobile App</span>
             <span class="lang-bn hidden">মোবাইল অ্যাপ দেখুন</span>
             <span class="arrow">↗</span>
           </a>
         </div>
-        
+
         <div class="phone-stage reveal">
           <div class="phone-float pf1">
             📣 <b><span class="lang-en">New Notice</span><span class="lang-bn hidden">নতুন নোটিশ</span></b>
             <span class="lang-en">Class schedule updated</span>
             <span class="lang-bn hidden">ক্লাস রুটিন হালনাগাদ</span>
           </div>
-          
+
           <div class="phone">
             <div class="phone-notch"></div>
             <div class="phone-head">YES EDU <span style="float:right;color:#2c9b70">●</span></div>
@@ -1568,7 +1546,7 @@
             <div class="phone-row">Study Materials <span>Open →</span></div>
             <div class="phone-nav">⌂　▦　✉　◉</div>
           </div>
-          
+
           <div class="phone-float pf2">
             ✓ <b><span class="lang-en">Always Connected</span><span class="lang-bn hidden">সর্বদা সংযুক্ত</span></b>
             <span class="lang-en">Updates at your fingertips</span>
@@ -1593,11 +1571,13 @@
               <button>Discover Our Campus ↗</button>
             </div>
             <div class="site-cards">
-              <div></div><div></div><div></div>
+              <div></div>
+              <div></div>
+              <div></div>
             </div>
           </div>
         </div>
-        
+
         <div class="cms-copy reveal">
           <span class="eyebrow">
             <span class="lang-en">A DIGITAL FRONT DOOR</span>
@@ -1608,15 +1588,21 @@
             <span class="lang-bn hidden">আপনার প্রতিষ্ঠানের জন্য একটি দৃষ্টিনন্দন ও নিজস্ব ওয়েবসাইট।</span>
           </h2>
           <p>
-            <span class="lang-en">Give your school a professional online presence with institutional branding, photo galleries, online admissions, and dynamic notice boards with zero technical coding required.</span>
-            <span class="lang-bn hidden">কোনো কোডিং ছাড়া সহজেই ছবি, নোটিশ, ইভেন্ট এবং শিক্ষকদের তালিকা আপডেট করুন। নিজস্ব ডোমেইনে চলবে আপনার প্রতিষ্ঠানের চমৎকার ওয়েবসাইট।</span>
+            <span class="lang-en">Give your school a professional online presence with institutional branding, photo
+              galleries, online admissions, and dynamic notice boards with zero technical coding required.</span>
+            <span class="lang-bn hidden">কোনো কোডিং ছাড়া সহজেই ছবি, নোটিশ, ইভেন্ট এবং শিক্ষকদের তালিকা আপডেট করুন।
+              নিজস্ব ডোমেইনে চলবে আপনার প্রতিষ্ঠানের চমৎকার ওয়েবসাইট।</span>
           </p>
-          
+
           <div class="cms-points">
-            <span><b>✓</b> <span class="lang-en">Dynamic Pages</span><span class="lang-bn hidden">ডায়নামিক পেজ</span></span>
-            <span><b>✓</b> <span class="lang-en">Notice & Events</span><span class="lang-bn hidden">নোটিশ ও ইভেন্ট</span></span>
-            <span><b>✓</b> <span class="lang-en">Photo Galleries</span><span class="lang-bn hidden">ফটো গ্যালারি</span></span>
-            <span><b>✓</b> <span class="lang-en">Online Admissions</span><span class="lang-bn hidden">অনলাইন ভর্তি ফরম</span></span>
+            <span><b>✓</b> <span class="lang-en">Dynamic Pages</span><span class="lang-bn hidden">ডায়নামিক
+                পেজ</span></span>
+            <span><b>✓</b> <span class="lang-en">Notice & Events</span><span class="lang-bn hidden">নোটিশ ও
+                ইভেন্ট</span></span>
+            <span><b>✓</b> <span class="lang-en">Photo Galleries</span><span class="lang-bn hidden">ফটো
+                গ্যালারি</span></span>
+            <span><b>✓</b> <span class="lang-en">Online Admissions</span><span class="lang-bn hidden">অনলাইন ভর্তি
+                ফরম</span></span>
           </div>
         </div>
       </div>
@@ -1635,34 +1621,44 @@
             <span class="lang-bn hidden">শুরু থেকে চালু হওয়া পর্যন্ত আমাদের সার্বক্ষণিক সহায়তা।</span>
           </h2>
           <p>
-            <span class="lang-en">A structured onboarding journey helps your institution transition to a connected digital environment smoothly and without downtime.</span>
-            <span class="lang-bn hidden">প্রতিষ্ঠানের কোনো কাজ বন্ধ না রেখেই ৪টি সুনির্দিষ্ট ধাপে আমরা আপনার সফটওয়্যার প্রস্তুত করে দিই।</span>
+            <span class="lang-en">A structured onboarding journey helps your institution transition to a connected
+              digital environment smoothly and without downtime.</span>
+            <span class="lang-bn hidden">প্রতিষ্ঠানের কোনো কাজ বন্ধ না রেখেই ৪টি সুনির্দিষ্ট ধাপে আমরা আপনার সফটওয়্যার
+              প্রস্তুত করে দিই।</span>
           </p>
         </div>
-        
+
         <div class="steps">
           <article class="step reveal">
             <div class="step-no">01</div>
             <h3><span class="lang-en">Cloud Deployment</span><span class="lang-bn hidden">ক্লাউড সেটআপ</span></h3>
-            <p><span class="lang-en">Server provisioning, institution domain mapping, and academic structure setup.</span><span class="lang-bn hidden">নিরাপদ সার্ভার প্রভিশনিং, ডোমেন সেটআপ ও ক্লাসরুম কনফিগারেশন।</span></p>
+            <p><span class="lang-en">Server provisioning, institution domain mapping, and academic structure
+                setup.</span><span class="lang-bn hidden">নিরাপদ সার্ভার প্রভিশনিং, ডোমেন সেটআপ ও ক্লাসরুম
+                কনফিগারেশন।</span></p>
           </article>
-          
+
           <article class="step reveal">
             <div class="step-no">02</div>
             <h3><span class="lang-en">Data Migration</span><span class="lang-bn hidden">ডাটা মাইগ্রেশন</span></h3>
-            <p><span class="lang-en">Seamless import of existing student records, teacher profiles, and past fee registers.</span><span class="lang-bn hidden">পুরাতন এক্সেল বা খাতা থেকে শিক্ষার্থী ও শিক্ষক ডাটা সহজে ইমপোর্ট।</span></p>
+            <p><span class="lang-en">Seamless import of existing student records, teacher profiles, and past fee
+                registers.</span><span class="lang-bn hidden">পুরাতন এক্সেল বা খাতা থেকে শিক্ষার্থী ও শিক্ষক ডাটা সহজে
+                ইমপোর্ট।</span></p>
           </article>
-          
+
           <article class="step reveal">
             <div class="step-no">03</div>
             <h3><span class="lang-en">Staff Training</span><span class="lang-bn hidden">হাতে-কলমে প্রশিক্ষণ</span></h3>
-            <p><span class="lang-en">Practical training sessions for administrators, teachers, and account officers.</span><span class="lang-bn hidden">অ্যাডমিন, শিক্ষক ও হিসাব বিভাগের কর্মীদের অন-ক্যাম্পাস প্রশিক্ষণ।</span></p>
+            <p><span class="lang-en">Practical training sessions for administrators, teachers, and account
+                officers.</span><span class="lang-bn hidden">অ্যাডমিন, শিক্ষক ও হিসাব বিভাগের কর্মীদের অন-ক্যাম্পাস
+                প্রশিক্ষণ।</span></p>
           </article>
-          
+
           <article class="step reveal">
             <div class="step-no">04</div>
             <h3><span class="lang-en">Go-Live & Support</span><span class="lang-bn hidden">লাইভ ও সেবা</span></h3>
-            <p><span class="lang-en">Official rollout with dedicated technical support and continuous updates.</span><span class="lang-bn hidden">সফটওয়্যার চালু এবং সার্বক্ষণিক গ্রাহক সেবা ও আপডেট নিশ্চয়তা।</span></p>
+            <p><span class="lang-en">Official rollout with dedicated technical support and continuous
+                updates.</span><span class="lang-bn hidden">সফটওয়্যার চালু এবং সার্বক্ষণিক গ্রাহক সেবা ও আপডেট
+                নিশ্চয়তা।</span></p>
           </article>
         </div>
       </div>
@@ -1681,8 +1677,10 @@
             <span class="lang-bn hidden">প্রতিটি প্রতিষ্ঠানের সক্ষমতা অনুযায়ী সাশ্রয়ী প্ল্যান।</span>
           </h2>
           <p>
-            <span class="lang-en">Monthly subscription based on your active enrolled student count. Drag the calculator slider below to see estimated pricing.</span>
-            <span class="lang-bn hidden">আপনার প্রতিষ্ঠানে যত শিক্ষার্থী, ঠিক ততটুকুর জন্যই মূল্য পরিশোধ করুন। নিচের স্লাইডার টেনে আনুমানিক খরচ দেখুন।</span>
+            <span class="lang-en">Monthly subscription based on your active enrolled student count. Drag the calculator
+              slider below to see estimated pricing.</span>
+            <span class="lang-bn hidden">আপনার প্রতিষ্ঠানে যত শিক্ষার্থী, ঠিক ততটুকুর জন্যই মূল্য পরিশোধ করুন। নিচের
+              স্লাইডার টেনে আনুমানিক খরচ দেখুন।</span>
           </p>
         </div>
 
@@ -1695,9 +1693,9 @@
             </strong>
             <span class="calc-student-badge" id="studentCountDisplay">500 Students</span>
           </div>
-          
+
           <input type="range" class="slider-range-input" id="studentSlider" min="100" max="5000" step="50" value="500">
-          
+
           <div class="calc-toggle-row">
             <span><span class="lang-en">Monthly Billing</span><span class="lang-bn hidden">মাসিক বিলিং</span></span>
             <div class="billing-switch" id="billingSwitch" title="Toggle Annual Billing">
@@ -1710,7 +1708,7 @@
             </span>
           </div>
         </div>
-        
+
         <!-- 3 Tier Pricing Cards -->
         <div class="price-grid">
           <!-- Tier 1: Starter -->
@@ -1725,13 +1723,20 @@
               <span class="lang-bn hidden">দৈনন্দিন প্রাথমিক স্কুল পরিচালনার জন্য অপরিহার্য সুবিধা।</span>
             </p>
             <ul>
-              <li><span class="lang-en">Student & Staff Management</span><span class="lang-bn hidden">শিক্ষার্থী ও স্টাফ ব্যবস্থাপনা</span></li>
-              <li><span class="lang-en">Basic Institutional Website</span><span class="lang-bn hidden">প্রাতিষ্ঠানিক পরিচিতি ওয়েবসাইট</span></li>
-              <li><span class="lang-en">Parent & Teacher Portals</span><span class="lang-bn hidden">অভিভাবক ও শিক্ষক পোর্টাল</span></li>
-              <li><span class="lang-en">Exam Scheduling & Report Cards</span><span class="lang-bn hidden">পরীক্ষার রুটিন ও রেজাল্ট কার্ড</span></li>
-              <li><span class="lang-en">Fee Collection & Due Alerts</span><span class="lang-bn hidden">ফি কালেকশন ও বকেয়া নোটিশ</span></li>
-              <li><span class="lang-en">Attendance Tracking & Cash Book</span><span class="lang-bn hidden">হাজিরা ট্র্যাকিং ও ক্যাশবুক</span></li>
-              <li><span class="lang-en">Donation & Waqf Tracking</span><span class="lang-bn hidden">ওয়াকফ ও অনুদান ফান্ড রেজিস্টার</span></li>
+              <li><span class="lang-en">Student & Staff Management</span><span class="lang-bn hidden">শিক্ষার্থী ও স্টাফ
+                  ব্যবস্থাপনা</span></li>
+              <li><span class="lang-en">Basic Institutional Website</span><span class="lang-bn hidden">প্রাতিষ্ঠানিক
+                  পরিচিতি ওয়েবসাইট</span></li>
+              <li><span class="lang-en">Parent & Teacher Portals</span><span class="lang-bn hidden">অভিভাবক ও শিক্ষক
+                  পোর্টাল</span></li>
+              <li><span class="lang-en">Exam Scheduling & Report Cards</span><span class="lang-bn hidden">পরীক্ষার রুটিন
+                  ও রেজাল্ট কার্ড</span></li>
+              <li><span class="lang-en">Fee Collection & Due Alerts</span><span class="lang-bn hidden">ফি কালেকশন ও
+                  বকেয়া নোটিশ</span></li>
+              <li><span class="lang-en">Attendance Tracking & Cash Book</span><span class="lang-bn hidden">হাজিরা
+                  ট্র্যাকিং ও ক্যাশবুক</span></li>
+              <li><span class="lang-en">Donation & Waqf Tracking</span><span class="lang-bn hidden">ওয়াকফ ও অনুদান
+                  ফান্ড রেজিস্টার</span></li>
             </ul>
             <a class="btn btn-light open-demo-modal" href="#contact">
               <span class="lang-en">Choose Starter</span>
@@ -1739,7 +1744,7 @@
               <span class="arrow">↗</span>
             </a>
           </article>
-          
+
           <!-- Tier 2: Professional (Featured) -->
           <article class="price-card featured reveal">
             <span class="popular">MOST POPULAR</span>
@@ -1753,13 +1758,20 @@
               <span class="lang-bn hidden">ক্রমবর্ধমান স্কুল ও মাদ্রাসার জন্য পূর্ণাঙ্গ অটোমেশন।</span>
             </p>
             <ul>
-              <li><span class="lang-en">Everything in Starter</span><span class="lang-bn hidden">স্টার্টার প্ল্যানের সকল সুবিধা</span></li>
-              <li><span class="lang-en">Inventory & Asset Management</span><span class="lang-bn hidden">ইনভেন্টরি ও সম্পদ রেজিস্টার</span></li>
-              <li><span class="lang-en">Library, Transport & Hostel</span><span class="lang-bn hidden">লাইব্রেরি, পরিবহন ও হোস্টেল</span></li>
-              <li><span class="lang-en">Double-Entry Accounting & Ledger</span><span class="lang-bn hidden">ডাবল-এন্ট্রি পূর্ণাঙ্গ হিসাব খতিয়ান</span></li>
-              <li><span class="lang-en">Bulk Bangla SMS & Communication</span><span class="lang-bn hidden">বাল্ক বাংলা এসএমএস ও মেসেজিং</span></li>
-              <li><span class="lang-en">Teacher Assistant AI V1</span><span class="lang-bn hidden">টিচার অ্যাসিস্ট্যান্ট এআই V1</span></li>
-              <li><span class="lang-en">Advanced Reports & Executive BI</span><span class="lang-bn hidden">উন্নত অ্যানালিটিক্স ও অডিট রিপোর্ট</span></li>
+              <li><span class="lang-en">Everything in Starter</span><span class="lang-bn hidden">স্টার্টার প্ল্যানের সকল
+                  সুবিধা</span></li>
+              <li><span class="lang-en">Inventory & Asset Management</span><span class="lang-bn hidden">ইনভেন্টরি ও
+                  সম্পদ রেজিস্টার</span></li>
+              <li><span class="lang-en">Library, Transport & Hostel</span><span class="lang-bn hidden">লাইব্রেরি, পরিবহন
+                  ও হোস্টেল</span></li>
+              <li><span class="lang-en">Double-Entry Accounting & Ledger</span><span class="lang-bn hidden">ডাবল-এন্ট্রি
+                  পূর্ণাঙ্গ হিসাব খতিয়ান</span></li>
+              <li><span class="lang-en">Bulk Bangla SMS & Communication</span><span class="lang-bn hidden">বাল্ক বাংলা
+                  এসএমএস ও মেসেজিং</span></li>
+              <li><span class="lang-en">Teacher Assistant AI V1</span><span class="lang-bn hidden">টিচার অ্যাসিস্ট্যান্ট
+                  এআই V1</span></li>
+              <li><span class="lang-en">Advanced Reports & Executive BI</span><span class="lang-bn hidden">উন্নত
+                  অ্যানালিটিক্স ও অডিট রিপোর্ট</span></li>
             </ul>
             <a class="btn btn-primary open-demo-modal" href="#contact">
               <span class="lang-en">Choose Professional</span>
@@ -1767,7 +1779,7 @@
               <span class="arrow">↗</span>
             </a>
           </article>
-          
+
           <!-- Tier 3: Enterprise -->
           <article class="price-card reveal">
             <div class="tier">Enterprise</div>
@@ -1780,14 +1792,22 @@
               <span class="lang-bn hidden">মোবাইল অ্যাপস, বায়োমেট্রিক হার্ডওয়্যার ও উন্নত এআই।</span>
             </p>
             <ul>
-              <li><span class="lang-en">Everything in Professional</span><span class="lang-bn hidden">প্রফেশনাল প্ল্যানের সকল সুবিধা</span></li>
-              <li><span class="lang-en">Dedicated Android & iOS Apps</span><span class="lang-bn hidden">অভিভাবক ও শিক্ষকের মোবাইল অ্যাপস</span></li>
-              <li><span class="lang-en">Curriculum AI V2 (NCTB)</span><span class="lang-bn hidden">এনসিটিবি কারিকুলাম এআই V2</span></li>
-              <li><span class="lang-en">Biometric Hardware Synchronization</span><span class="lang-bn hidden">বায়োমেট্রিক মেশিন অটো-সিঙ্ক</span></li>
-              <li><span class="lang-en">Full Dynamic Website CMS</span><span class="lang-bn hidden">সম্পূর্ণ ডায়নামিক ওয়েবসাইট সিএমএস</span></li>
-              <li><span class="lang-en">ID Card & Certificate Printing</span><span class="lang-bn hidden">আইডি কার্ড ও সার্টিফিকেট টেমপ্লেট</span></li>
-              <li><span class="lang-en">Role-Based ERP Chatbot</span><span class="lang-bn hidden">রোল-ভিত্তিক ইআরপি চ্যাটবট</span></li>
-              <li><span class="lang-en">24/7 Priority Support & Training</span><span class="lang-bn hidden">অগ্রাধিকার সাপোর্ট ও অনসাইট ট্রেইনিং</span></li>
+              <li><span class="lang-en">Everything in Professional</span><span class="lang-bn hidden">প্রফেশনাল
+                  প্ল্যানের সকল সুবিধা</span></li>
+              <li><span class="lang-en">Dedicated Android & iOS Apps</span><span class="lang-bn hidden">অভিভাবক ও
+                  শিক্ষকের মোবাইল অ্যাপস</span></li>
+              <li><span class="lang-en">Curriculum AI V2 (NCTB)</span><span class="lang-bn hidden">এনসিটিবি কারিকুলাম
+                  এআই V2</span></li>
+              <li><span class="lang-en">Biometric Hardware Synchronization</span><span
+                  class="lang-bn hidden">বায়োমেট্রিক মেশিন অটো-সিঙ্ক</span></li>
+              <li><span class="lang-en">Full Dynamic Website CMS</span><span class="lang-bn hidden">সম্পূর্ণ ডায়নামিক
+                  ওয়েবসাইট সিএমএস</span></li>
+              <li><span class="lang-en">ID Card & Certificate Printing</span><span class="lang-bn hidden">আইডি কার্ড ও
+                  সার্টিফিকেট টেমপ্লেট</span></li>
+              <li><span class="lang-en">Role-Based ERP Chatbot</span><span class="lang-bn hidden">রোল-ভিত্তিক ইআরপি
+                  চ্যাটবট</span></li>
+              <li><span class="lang-en">24/7 Priority Support & Training</span><span class="lang-bn hidden">অগ্রাধিকার
+                  সাপোর্ট ও অনসাইট ট্রেইনিং</span></li>
             </ul>
             <a class="btn btn-light open-demo-modal" href="#contact">
               <span class="lang-en">Choose Enterprise</span>
@@ -1796,10 +1816,12 @@
             </a>
           </article>
         </div>
-        
+
         <p class="fineprint">
-          <span class="lang-en">Subscription billing is based on active enrolled students. Contact our institutional consultant team to confirm package scope, custom features, and onboarding schedule.</span>
-          <span class="lang-bn hidden">মাসিক সাবস্ক্রিপশন প্রতিষ্ঠানে সক্রিয় ছাত্রছাত্রী সংখ্যার ওপর প্রযোজ্য। প্রতিষ্ঠানের প্রয়োজন অনুযায়ী কাস্টমাইজেশনের জন্য আমাদের টিমের সাথে কথা বলুন।</span>
+          <span class="lang-en">Subscription billing is based on active enrolled students. Contact our institutional
+            consultant team to confirm package scope, custom features, and onboarding schedule.</span>
+          <span class="lang-bn hidden">মাসিক সাবস্ক্রিপশন প্রতিষ্ঠানে সক্রিয় ছাত্রছাত্রী সংখ্যার ওপর প্রযোজ্য।
+            প্রতিষ্ঠানের প্রয়োজন অনুযায়ী কাস্টমাইজেশনের জন্য আমাদের টিমের সাথে কথা বলুন।</span>
         </p>
       </div>
     </section>
@@ -1817,34 +1839,48 @@
             <span class="lang-bn hidden">যে অবকাঠামোতে নিশ্চিন্ত থাকে প্রতিষ্ঠান।</span>
           </h2>
           <p>
-            <span class="lang-en">Enterprise technology engineered for 99.9% uptime, strict tenant data isolation, and bank-grade digital financial auditing.</span>
-            <span class="lang-bn hidden">উচ্চগতির ক্লাউড সার্ভার, প্রতিদিনের স্বয়ংক্রিয় ব্যাকআপ এবং ব্যাংকিং মানের এনক্রিপশনের নিশ্চয়তা।</span>
+            <span class="lang-en">Enterprise technology engineered for 99.9% uptime, strict tenant data isolation, and
+              bank-grade digital financial auditing.</span>
+            <span class="lang-bn hidden">উচ্চগতির ক্লাউড সার্ভার, প্রতিদিনের স্বয়ংক্রিয় ব্যাকআপ এবং ব্যাংকিং মানের
+              এনক্রিপশনের নিশ্চয়তা।</span>
           </p>
         </div>
-        
+
         <div class="security-grid">
           <article class="security-card reveal">
             <div class="icon-box">☁</div>
-            <b><span class="lang-en">Cloud Infrastructure</span><span class="lang-bn hidden">উচ্চগতির ক্লাউড সার্ভার</span></b>
-            <p><span class="lang-en">High-speed SSD VPS and dedicated AWS deployment options optimized for Bangladesh networks.</span><span class="lang-bn hidden">দ্রুতগতির ক্লাউড ক্লাস্টার ও নিরবচ্ছিন্ন আপটাইম সুবিধা।</span></p>
+            <b><span class="lang-en">Cloud Infrastructure</span><span class="lang-bn hidden">উচ্চগতির ক্লাউড
+                সার্ভার</span></b>
+            <p><span class="lang-en">High-speed SSD VPS and dedicated AWS deployment options optimized for Bangladesh
+                networks.</span><span class="lang-bn hidden">দ্রুতগতির ক্লাউড ক্লাস্টার ও নিরবচ্ছিন্ন আপটাইম
+                সুবিধা।</span></p>
           </article>
-          
+
           <article class="security-card reveal">
             <div class="icon-box">🔐</div>
-            <b><span class="lang-en">Role-Based Access Control</span><span class="lang-bn hidden">ভূমিকাভিত্তিক ডাটা নিরাপত্তা</span></b>
-            <p><span class="lang-en">Granular permissions ensuring teachers, staff, and accountants only access authorized records.</span><span class="lang-bn hidden">কে কোন তথ্য দেখতে বা পরিবর্তন করতে পারবে তার সুনির্দিষ্ট নিয়ন্ত্রণ।</span></p>
+            <b><span class="lang-en">Role-Based Access Control</span><span class="lang-bn hidden">ভূমিকাভিত্তিক ডাটা
+                নিরাপত্তা</span></b>
+            <p><span class="lang-en">Granular permissions ensuring teachers, staff, and accountants only access
+                authorized records.</span><span class="lang-bn hidden">কে কোন তথ্য দেখতে বা পরিবর্তন করতে পারবে তার
+                সুনির্দিষ্ট নিয়ন্ত্রণ।</span></p>
           </article>
-          
+
           <article class="security-card reveal">
             <div class="icon-box">⌁</div>
-            <b><span class="lang-en">Biometric Sync Gateways</span><span class="lang-bn hidden">বায়োমেট্রিক হার্ডওয়্যার সিঙ্ক</span></b>
-            <p><span class="lang-en">Compatible with ZKTeco, Realtime, RFID gates, and Hikvision camera systems.</span><span class="lang-bn hidden">স্বনামধন্য সকল বায়োমেট্রিক হাজিরা মেশিনের সাথে তাৎক্ষণিক সিঙ্ক।</span></p>
+            <b><span class="lang-en">Biometric Sync Gateways</span><span class="lang-bn hidden">বায়োমেট্রিক
+                হার্ডওয়্যার সিঙ্ক</span></b>
+            <p><span class="lang-en">Compatible with ZKTeco, Realtime, RFID gates, and Hikvision camera
+                systems.</span><span class="lang-bn hidden">স্বনামধন্য সকল বায়োমেট্রিক হাজিরা মেশিনের সাথে তাৎক্ষণিক
+                সিঙ্ক।</span></p>
           </article>
-          
+
           <article class="security-card reveal">
             <div class="icon-box">↻</div>
-            <b><span class="lang-en">Automated Daily Backups</span><span class="lang-bn hidden">অটোমেটিক দৈনিক ব্যাকআপ</span></b>
-            <p><span class="lang-en">Automated offsite backup snapshots with one-click disaster recovery protocols.</span><span class="lang-bn hidden">প্রতিদিনের ডাটা স্বয়ংক্রিয়ভাবে ক্লাউড ড্রাইভ ও ব্যাকআপে সংরক্ষিত।</span></p>
+            <b><span class="lang-en">Automated Daily Backups</span><span class="lang-bn hidden">অটোমেটিক দৈনিক
+                ব্যাকআপ</span></b>
+            <p><span class="lang-en">Automated offsite backup snapshots with one-click disaster recovery
+                protocols.</span><span class="lang-bn hidden">প্রতিদিনের ডাটা স্বয়ংক্রিয়ভাবে ক্লাউড ড্রাইভ ও ব্যাকআপে
+                সংরক্ষিত।</span></p>
           </article>
         </div>
       </div>
@@ -1867,7 +1903,7 @@
             <span class="lang-bn hidden">YES EDU ব্যবহারের পূর্বে প্রতিষ্ঠান প্রধানরা সচরাচর যা জানতে চান।</span>
           </p>
         </div>
-        
+
         <div class="faq-list reveal">
           <details>
             <summary>
@@ -1875,63 +1911,87 @@
               <span class="lang-bn hidden">YES EDU কী এবং এটি কীভাবে কাজ করে?</span>
             </summary>
             <p>
-              <span class="lang-en">YES EDU is an all-in-one institutional management ecosystem that brings together a custom school website, dynamic CMS, academic and administrative ERP, FinTech fee collection (bKash/Nagad), biometric attendance, dedicated mobile applications, and NCTB AI-powered assistance.</span>
-              <span class="lang-bn hidden">YES EDU হলো একটি আধুনিক সর্বজনীন শিক্ষাব্যবস্থাপনা প্ল্যাটফর্ম। এতে রয়েছে প্রতিষ্ঠানের নিজস্ব ওয়েবসাইট, ভর্তি, বায়োমেট্রিক হাজিরা, বিকাশ ফি কালেকশন, ফলাফল তৈরি, মোবাইল অ্যাপস এবং এনসিটিবি এআই সহায়তা।</span>
+              <span class="lang-en">YES EDU is an all-in-one institutional management ecosystem that brings together a
+                custom school website, dynamic CMS, academic and administrative ERP, FinTech fee collection
+                (bKash/Nagad), biometric attendance, dedicated mobile applications, and NCTB AI-powered
+                assistance.</span>
+              <span class="lang-bn hidden">YES EDU হলো একটি আধুনিক সর্বজনীন শিক্ষাব্যবস্থাপনা প্ল্যাটফর্ম। এতে রয়েছে
+                প্রতিষ্ঠানের নিজস্ব ওয়েবসাইট, ভর্তি, বায়োমেট্রিক হাজিরা, বিকাশ ফি কালেকশন, ফলাফল তৈরি, মোবাইল অ্যাপস
+                এবং এনসিটিবি এআই সহায়তা।</span>
             </p>
           </details>
-          
+
           <details>
             <summary>
               <span class="lang-en">Who is YES EDU designed for?</span>
               <span class="lang-bn hidden">YES EDU কাদের জন্য প্রযোজ্য?</span>
             </summary>
             <p>
-              <span class="lang-en">YES EDU is purpose-built for primary schools, high schools, colleges, cadet academies, and both general and residential madrasas in Bangladesh. It includes custom modules for Waqf and hostel management.</span>
-              <span class="lang-bn hidden">বাংলাদেশের সকল প্রাইমারি, মাধ্যমিক স্কুল, কলেজ, ক্যাডেট একাডেমি এবং সাধারণ ও আবাসিক মাদ্রাসার জন্য এটি বিশেষভাবে উপযোগী। মাদ্রাসার জন্য রয়েছে বিশেষ লিল্লাহ বোর্ডিং ও ওয়াকফ অডিট সুবিধা।</span>
+              <span class="lang-en">YES EDU is purpose-built for primary schools, high schools, colleges, cadet
+                academies, and both general and residential madrasas in Bangladesh. It includes custom modules for Waqf
+                and hostel management.</span>
+              <span class="lang-bn hidden">বাংলাদেশের সকল প্রাইমারি, মাধ্যমিক স্কুল, কলেজ, ক্যাডেট একাডেমি এবং সাধারণ ও
+                আবাসিক মাদ্রাসার জন্য এটি বিশেষভাবে উপযোগী। মাদ্রাসার জন্য রয়েছে বিশেষ লিল্লাহ বোর্ডিং ও ওয়াকফ অডিট
+                সুবিধা।</span>
             </p>
           </details>
-          
+
           <details>
             <summary>
               <span class="lang-en">Does YES EDU include mobile apps for parents and teachers?</span>
               <span class="lang-bn hidden">এতে কি অভিভাবক ও শিক্ষকদের জন্য মোবাইল অ্যাপ আছে?</span>
             </summary>
             <p>
-              <span class="lang-en">Yes. YES EDU includes dedicated native mobile applications for Android and iOS. Parents can track attendance logs, pay tuition fees with bKash in 1 tap, and review report cards directly from their phones.</span>
-              <span class="lang-bn hidden">হ্যাঁ, YES EDU-র রয়েছে নিজস্ব অ্যান্ড্রয়েড ও আইওএস মোবাইল অ্যাপস। অভিভাবকরা ঘরে বসেই সন্তানের ক্লাসে পৌঁছানোর নোটিফিকেশন পান, বিকাশ দিয়ে ফি দেন এবং রেজাল্ট কার্ড দেখতে পান।</span>
+              <span class="lang-en">Yes. YES EDU includes dedicated native mobile applications for Android and iOS.
+                Parents can track attendance logs, pay tuition fees with bKash in 1 tap, and review report cards
+                directly from their phones.</span>
+              <span class="lang-bn hidden">হ্যাঁ, YES EDU-র রয়েছে নিজস্ব অ্যান্ড্রয়েড ও আইওএস মোবাইল অ্যাপস। অভিভাবকরা
+                ঘরে বসেই সন্তানের ক্লাসে পৌঁছানোর নোটিফিকেশন পান, বিকাশ দিয়ে ফি দেন এবং রেজাল্ট কার্ড দেখতে পান।</span>
             </p>
           </details>
-          
+
           <details>
             <summary>
               <span class="lang-en">How does the NCTB Curriculum AI work?</span>
               <span class="lang-bn hidden">এনসিটিবি কারিকুলাম এআই কীভাবে কাজ করে?</span>
             </summary>
             <p>
-              <span class="lang-en">Our Curriculum AI V2 engine is pre-trained on Bangladesh National Curriculum and Textbook Board (NCTB) guidelines. Teachers can select a class, subject, and chapter to automatically generate Bloom-taxonomy creative question papers (ক, খ, গ, ঘ) and detailed lesson plans in seconds.</span>
-              <span class="lang-bn hidden">আমাদের কারিকুলাম এআই ইঞ্জিন জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (এনসিটিবি) নির্দেশিকা অনুসারে তৈরি। শিক্ষকরা মুহূর্তের মধ্যে ক, খ, গ, ঘ সৃজনশীল পরীক্ষার প্রশ্ন ও পাঠপরিকল্পনা তৈরি করতে পারেন।</span>
+              <span class="lang-en">Our Curriculum AI V2 engine is pre-trained on Bangladesh National Curriculum and
+                Textbook Board (NCTB) guidelines. Teachers can select a class, subject, and chapter to automatically
+                generate Bloom-taxonomy creative question papers (ক, খ, গ, ঘ) and detailed lesson plans in
+                seconds.</span>
+              <span class="lang-bn hidden">আমাদের কারিকুলাম এআই ইঞ্জিন জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (এনসিটিবি)
+                নির্দেশিকা অনুসারে তৈরি। শিক্ষকরা মুহূর্তের মধ্যে ক, খ, গ, ঘ সৃজনশীল পরীক্ষার প্রশ্ন ও পাঠপরিকল্পনা তৈরি
+                করতে পারেন।</span>
             </p>
           </details>
-          
+
           <details>
             <summary>
               <span class="lang-en">Can we migrate existing student records and past dues from Excel?</span>
               <span class="lang-bn hidden">আমাদের পুরাতন এক্সেল ডাটা কি সফটওয়্যারে আনা যাবে?</span>
             </summary>
             <p>
-              <span class="lang-en">Yes, completely. Our technical onboarding specialists assist your institution with one-click data migration from existing Excel sheets, paper ledgers, or legacy databases with 100% data integrity guarantees.</span>
-              <span class="lang-bn hidden">হ্যাঁ, অবশ্যই। আমাদের বিশেষজ্ঞ টিম আপনার প্রতিষ্ঠানের পূর্বের এক্সেল ফাইল বা খাতা থেকে সকল শিক্ষার্থীর তথ্য ও বকেয়া হিসাব নিরাপদে সফটওয়্যারে মাইগ্রেট করে দেবেন।</span>
+              <span class="lang-en">Yes, completely. Our technical onboarding specialists assist your institution with
+                one-click data migration from existing Excel sheets, paper ledgers, or legacy databases with 100% data
+                integrity guarantees.</span>
+              <span class="lang-bn hidden">হ্যাঁ, অবশ্যই। আমাদের বিশেষজ্ঞ টিম আপনার প্রতিষ্ঠানের পূর্বের এক্সেল ফাইল বা
+                খাতা থেকে সকল শিক্ষার্থীর তথ্য ও বকেয়া হিসাব নিরাপদে সফটওয়্যারে মাইগ্রেট করে দেবেন।</span>
             </p>
           </details>
-          
+
           <details>
             <summary>
               <span class="lang-en">How is subscription pricing calculated?</span>
               <span class="lang-bn hidden">সাবস্ক্রিপশন ফি কীভাবে নির্ধারিত হয়?</span>
             </summary>
             <p>
-              <span class="lang-en">Subscription billing is transparently based on your active enrolled student count, starting at ৳5/month for Starter, ৳8/month for Professional, and ৳12/month for Enterprise. Annual subscriptions receive an additional 15% discount.</span>
-              <span class="lang-bn hidden">প্রতিষ্ঠানের মোট সক্রিয় শিক্ষার্থীর ওপর ভিত্তি করে মাসিক ফি নির্ধারিত হয় (স্টার্টার ৫ টাকা, প্রফেশনাল ৮ টাকা, এন্টারপ্রাইজ ১২ টাকা প্রতি শিক্ষার্থী)। বার্ষিক প্যাকেজে মিলবে ১৫% অতিরিক্ত ছাড়।</span>
+              <span class="lang-en">Subscription billing is transparently based on your active enrolled student count,
+                starting at ৳5/month for Starter, ৳8/month for Professional, and ৳12/month for Enterprise. Annual
+                subscriptions receive an additional 15% discount.</span>
+              <span class="lang-bn hidden">প্রতিষ্ঠানের মোট সক্রিয় শিক্ষার্থীর ওপর ভিত্তি করে মাসিক ফি নির্ধারিত হয়
+                (স্টার্টার ৫ টাকা, প্রফেশনাল ৮ টাকা, এন্টারপ্রাইজ ১২ টাকা প্রতি শিক্ষার্থী)। বার্ষিক প্যাকেজে মিলবে ১৫%
+                অতিরিক্ত ছাড়।</span>
             </p>
           </details>
         </div>
@@ -1942,7 +2002,8 @@
     <section class="cta" id="contact">
       <div class="container cta-inner">
         <div>
-          <span class="eyebrow" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:#a8eed1">
+          <span class="eyebrow"
+            style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:#a8eed1">
             <span class="lang-en">BRING YOUR INSTITUTION FORWARD</span>
             <span class="lang-bn hidden">ডিজিটাল ক্যাম্পাসের নতুন সূচনা</span>
           </span>
@@ -1951,11 +2012,13 @@
             <span class="lang-bn hidden">আপনার প্রতিষ্ঠানকে স্মার্ট করতে প্রস্তুত?</span>
           </h2>
           <p>
-            <span class="lang-en">Schedule an on-campus demonstration with our education management specialists today.</span>
-            <span class="lang-bn hidden">আমাদের বিশেষজ্ঞ দলের সাথে আপনার ক্যাম্পাসে একটি সরাসরি ডেমো প্রদর্শনীর সময় নির্ধারণ করুন।</span>
+            <span class="lang-en">Schedule an on-campus demonstration with our education management specialists
+              today.</span>
+            <span class="lang-bn hidden">আমাদের বিশেষজ্ঞ দলের সাথে আপনার ক্যাম্পাসে একটি সরাসরি ডেমো প্রদর্শনীর সময়
+              নির্ধারণ করুন।</span>
           </p>
         </div>
-        
+
         <a class="btn btn-light open-demo-modal" href="#contact">
           <span class="lang-en">Talk to Our Team</span>
           <span class="lang-bn hidden">আমাদের দলের সাথে কথা বলুন</span>
@@ -1975,28 +2038,34 @@
             <img src="images/yes-edu-logo.png" alt="YesEdu Logo" class="brand-logo-img">
           </a>
           <p class="footer-about">
-            <span class="lang-en">A connected digital ecosystem for schools, colleges and madrasas — from everyday campus operations to AI-powered academic progress.</span>
-            <span class="lang-bn hidden">স্কুল, কলেজ ও মাদ্রাসার জন্য পরিপূর্ণ ডিজিটাল শিক্ষাব্যবস্থাপনা ইকোসিস্টেম।</span>
+            <span class="lang-en">A connected digital ecosystem for schools, colleges and madrasas — from everyday
+              campus operations to AI-powered academic progress.</span>
+            <span class="lang-bn hidden">স্কুল, কলেজ ও মাদ্রাসার জন্য পরিপূর্ণ ডিজিটাল শিক্ষাব্যবস্থাপনা
+              ইকোসিস্টেম।</span>
           </p>
         </div>
-        
+
         <div class="footer-col">
           <h4>Platform</h4>
           <a href="#platform"><span class="lang-en">Overview</span><span class="lang-bn hidden">ওভারভিউ</span></a>
           <a href="#modules"><span class="lang-en">ERP Modules</span><span class="lang-bn hidden">মডিউলসমূহ</span></a>
-          <a href="#demoStudio"><span class="lang-en">Live Campus OS</span><span class="lang-bn hidden">লাইভ ওএস</span></a>
+          <a href="#demoStudio"><span class="lang-en">Live Campus OS</span><span class="lang-bn hidden">লাইভ
+              ওএস</span></a>
           <a href="#ai"><span class="lang-en">AI Ecosystem</span><span class="lang-bn hidden">এআই সমাধান</span></a>
-          <a href="#mobile"><span class="lang-en">Mobile Apps</span><span class="lang-bn hidden">মোবাইল অ্যাপস</span></a>
+          <a href="#mobile"><span class="lang-en">Mobile Apps</span><span class="lang-bn hidden">মোবাইল
+              অ্যাপস</span></a>
         </div>
-        
+
         <div class="footer-col">
           <h4>Navigation</h4>
           <a href="#pricing"><span class="lang-en">Packages</span><span class="lang-bn hidden">প্যাকেজসমূহ</span></a>
-          <a href="#roles"><span class="lang-en">Role Views</span><span class="lang-bn hidden">ব্যবহারকারী ভিউ</span></a>
+          <a href="#roles"><span class="lang-en">Role Views</span><span class="lang-bn hidden">ব্যবহারকারী
+              ভিউ</span></a>
           <a href="#faq"><span class="lang-en">FAQs</span><span class="lang-bn hidden">প্রশ্নোত্তর</span></a>
-          <a href="#contact" class="open-demo-modal"><span class="lang-en">Book a Demo</span><span class="lang-bn hidden">ডেমো বুকিং</span></a>
+          <a href="#contact" class="open-demo-modal"><span class="lang-en">Book a Demo</span><span
+              class="lang-bn hidden">ডেমো বুকিং</span></a>
         </div>
-        
+
         <div class="footer-col">
           <h4>YES Bangladesh</h4>
           <a href="https://yesbangladesh.net" target="_blank" rel="noopener">yesbangladesh.net ↗</a>
@@ -2005,7 +2074,7 @@
           <a>House 43, Road 14, Nikunja-2, Khilkhet, Dhaka-1229</a>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <span>© <span id="currentYear"></span> YES Bangladesh Ltd. All rights reserved.</span>
         <span>YES EDU · Institutional Education Management Platform</span>
@@ -2017,7 +2086,7 @@
   <div class="modal-overlay" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-box-light">
       <button class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">✕</button>
-      
+
       <div style="margin-bottom:20px;">
         <span class="eyebrow" style="margin-bottom:8px;">
           <span class="lang-en">SCHEDULE ON-CAMPUS DEMO</span>
@@ -2028,11 +2097,12 @@
           <span class="lang-bn hidden">আপনার প্রতিষ্ঠানের জন্য ডেমো দেখুন</span>
         </h3>
         <p style="font-size:14px;color:#71887e;margin-top:4px;">
-          <span class="lang-en">Fill in your institution details and our regional specialist will contact you to arrange a tailored session.</span>
+          <span class="lang-en">Fill in your institution details and our regional specialist will contact you to arrange
+            a tailored session.</span>
           <span class="lang-bn hidden">আপনার প্রতিষ্ঠানের বিবরণ দিন, আমাদের প্রতিনিধি সরাসরি যোগাযোগ করবেন।</span>
         </p>
       </div>
-      
+
       <form id="demoBookingForm">
         <div class="form-group">
           <label for="fullName">
@@ -2041,7 +2111,7 @@
           </label>
           <input type="text" id="fullName" class="form-input" placeholder="e.g. Principal Md. Rafiqul Islam" required>
         </div>
-        
+
         <div class="form-group">
           <label for="phoneNum">
             <span class="lang-en">Phone Number (WhatsApp)</span>
@@ -2049,15 +2119,16 @@
           </label>
           <input type="tel" id="phoneNum" class="form-input" placeholder="018XXXXXXXX" required>
         </div>
-        
+
         <div class="form-group">
           <label for="institutionName">
             <span class="lang-en">Institution Name</span>
             <span class="lang-bn hidden">প্রতিষ্ঠানের নাম</span> *
           </label>
-          <input type="text" id="institutionName" class="form-input" placeholder="e.g. Model School & College / Madrasa" required>
+          <input type="text" id="institutionName" class="form-input" placeholder="e.g. Model School & College / Madrasa"
+            required>
         </div>
-        
+
         <div class="form-group">
           <label for="institutionRole">
             <span class="lang-en">Your Role</span>
@@ -2071,7 +2142,7 @@
             <option value="other">Other</option>
           </select>
         </div>
-        
+
         <div class="form-group">
           <label for="approxStudents">
             <span class="lang-en">Approx. Student Count</span>
@@ -2084,7 +2155,7 @@
             <option value="over3000">3,000+ Students</option>
           </select>
         </div>
-        
+
         <button type="submit" class="btn btn-primary" style="width:100%;margin-top:10px;">
           <span class="lang-en">Submit Demo Request</span>
           <span class="lang-bn hidden">অনুরোধ জমা দিন</span>
@@ -2101,25 +2172,25 @@
   <div class="floating-action-cluster">
     <!-- Mini 1-Click Scroll Up Button -->
     <button class="btn-scroll-up-mini" id="btnScrollUpMini" title="Scroll to Top" aria-label="Scroll to Top">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
-    
+
     <!-- Direct WhatsApp Contact Button -->
-    <a href="https://wa.me/8801838790573?text=Hello%20YES%20EDU%20Team%2C%20I%20would%20like%20to%20learn%20more%20about%20the%20platform%20for%20my%20institution." 
-       class="btn-whatsapp-floating" 
-       target="_blank" 
-       rel="noopener" 
-       title="Chat on WhatsApp" 
-       aria-label="Chat with YES EDU on WhatsApp">
+    <a href="https://wa.me/8801838790573?text=Hello%20YES%20EDU%20Team%2C%20I%20would%20like%20to%20learn%20more%20about%20the%20platform%20for%20my%20institution."
+      class="btn-whatsapp-floating" target="_blank" rel="noopener" title="Chat on WhatsApp"
+      aria-label="Chat with YES EDU on WhatsApp">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.158.577 4.184 1.583 5.932l-1.683 6.148 6.308-1.654c1.704.945 3.666 1.574 5.792 1.574 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+        <path
+          d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.158.577 4.184 1.583 5.932l-1.683 6.148 6.308-1.654c1.704.945 3.666 1.574 5.792 1.574 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z" />
       </svg>
     </a>
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=8.0"></script>
+  <script src="js/main.js?v=8.1"></script>
 </body>
+
 </html>

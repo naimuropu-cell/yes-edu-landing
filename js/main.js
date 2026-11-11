@@ -948,6 +948,42 @@
     });
   }
 
+  // ==========================================================================
+  // Mobile Progressive Disclosure for 12 ERP Modules
+  // ==========================================================================
+  function initModuleToggle() {
+    const grid = document.getElementById("moduleGrid");
+    const btn = document.getElementById("moduleToggleBtn");
+    if (!grid || !btn) return;
+
+    const collapsedTxt = btn.querySelector(".txt-collapsed");
+    const expandedTxt = btn.querySelector(".txt-expanded");
+
+    btn.addEventListener("click", () => {
+      const isExpanded = grid.classList.toggle("is-expanded");
+      btn.classList.toggle("is-active", isExpanded);
+      btn.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+
+      if (collapsedTxt && expandedTxt) {
+        collapsedTxt.style.display = isExpanded ? "none" : "inline";
+        expandedTxt.style.display = isExpanded ? "inline" : "none";
+      }
+
+      if (isExpanded) {
+        grid.querySelectorAll(".module").forEach((m) => {
+          m.classList.add("visible");
+        });
+      } else {
+        const modulesSection = document.getElementById("modules");
+        if (modulesSection) {
+          const yOffset = -70;
+          const y = modulesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }
+    });
+  }
+
   // Initialize all subsystems when DOM is ready
   document.addEventListener("DOMContentLoaded", () => {
     initLanguageSwitcher();
@@ -956,6 +992,7 @@
     initHeroRoleCarousel();
     initInstitutionSegmenter();
     initDashboardHotspots();
+    initModuleToggle();
     initRoleShowcase();
     initDemoStudio();
     initPricingCalculator();
