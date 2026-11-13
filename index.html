@@ -18,7 +18,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=8.1">
+  <link rel="stylesheet" href="css/style.css?v=8.2">
 </head>
 
 <body>
@@ -1352,58 +1352,162 @@
         </div>
 
         <div class="role-layout">
-          <div class="role-tabs reveal" role="tablist">
-            <button class="role-tab active" data-role="admin" role="tab" aria-selected="true">
-              <strong><span class="lang-en">Institution Administrator</span><span class="lang-bn hidden">প্রতিষ্ঠান
-                  প্রধান ও অ্যাডমিন</span></strong>
-              <span><span class="lang-en">Institution-wide oversight and operational visibility</span><span
-                  class="lang-bn hidden">সার্বিক নিয়ন্ত্রণ ও রিয়েল-টাইম প্রশাসনিক ড্যাশবোর্ড</span></span>
+          <!-- Role Navigation Tabs (Left Column) -->
+          <div class="role-tabs reveal" role="tablist" aria-label="Institution Roles">
+            <button class="role-tab active" data-role="admin" type="button" role="tab" aria-selected="true" aria-controls="rolePreviewWindow">
+              <span class="role-tab-ico">🏛️</span>
+              <div class="role-tab-info">
+                <strong>
+                  <span class="lang-en">Super Admin Cockpit</span>
+                  <span class="lang-bn hidden">সুপার অ্যাডমিন ককপিট</span>
+                </strong>
+                <span>
+                  <span class="lang-en">Institution-wide oversight & real-time operational cockpit</span>
+                  <span class="lang-bn hidden">সার্বিক নিয়ন্ত্রণ ও রিয়েল-টাইম প্রশাসনিক ড্যাশবোর্ড</span>
+                </span>
+              </div>
             </button>
-            <button class="role-tab" data-role="teacher" role="tab" aria-selected="false">
-              <strong><span class="lang-en">Teacher</span><span class="lang-bn hidden">শিক্ষক
-                  ওয়ার্কস্পেস</span></strong>
-              <span><span class="lang-en">Classroom, attendance and academic workflows</span><span
-                  class="lang-bn hidden">ক্লাস রুটিন, উপস্থিতি ও পরীক্ষার নম্বর গ্রহণ</span></span>
+
+            <button class="role-tab" data-role="teacher" type="button" role="tab" aria-selected="false" aria-controls="rolePreviewWindow">
+              <span class="role-tab-ico">🎓</span>
+              <div class="role-tab-info">
+                <strong>
+                  <span class="lang-en">Teacher Workspace</span>
+                  <span class="lang-bn hidden">শিক্ষক ওয়ার্কস্পেস</span>
+                </strong>
+                <span>
+                  <span class="lang-en">Classes, digital attendance, marksheets & lesson plans</span>
+                  <span class="lang-bn hidden">ক্লাস রুটিন, ডিজিটাল হাজিরা ও পরীক্ষার নম্বর গ্রহণ</span>
+                </span>
+              </div>
             </button>
-            <button class="role-tab" data-role="parent" role="tab" aria-selected="false">
-              <strong><span class="lang-en">Parent & Guardian</span><span class="lang-bn hidden">অভিভাবক
-                  পোর্টাল</span></strong>
-              <span><span class="lang-en">Student updates, results and fee payments</span><span
-                  class="lang-bn hidden">সন্তানের উপস্থিতি নোটিফিকেশন ও ১-ট্যাপ ফি পেমেন্ট</span></span>
+
+            <button class="role-tab" data-role="parent" type="button" role="tab" aria-selected="false" aria-controls="rolePreviewWindow">
+              <span class="role-tab-ico">📱</span>
+              <div class="role-tab-info">
+                <strong>
+                  <span class="lang-en">Guardian Portal</span>
+                  <span class="lang-bn hidden">অভিভাবক পোর্টাল</span>
+                </strong>
+                <span>
+                  <span class="lang-en">Gate SMS alerts, fee dues, report card & teacher chat</span>
+                  <span class="lang-bn hidden">গেট পাঞ্চ নোটিফিকেশন, বিকাশ ফি ও রেজাল্ট কার্ড</span>
+                </span>
+              </div>
             </button>
-            <button class="role-tab" data-role="accounts" role="tab" aria-selected="false">
-              <strong><span class="lang-en">Accounts Team</span><span class="lang-bn hidden">হিসাবরক্ষণ
-                  বিভাগ</span></strong>
-              <span><span class="lang-en">Fees, collections and financial records</span><span
-                  class="lang-bn hidden">বকেয়া ট্র্যাকিং, ক্যাশবুক ও স্বয়ংক্রিয় অডিট</span></span>
+
+            <button class="role-tab" data-role="accounts" type="button" role="tab" aria-selected="false" aria-controls="rolePreviewWindow">
+              <span class="role-tab-ico">💳</span>
+              <div class="role-tab-info">
+                <strong>
+                  <span class="lang-en">Accounts & Finance</span>
+                  <span class="lang-bn hidden">হিসাবরক্ষণ ও অডিট</span>
+                </strong>
+                <span>
+                  <span class="lang-en">Auto fee reconciliation, cash book & audit ledger</span>
+                  <span class="lang-bn hidden">বিকাশ অটো রিকনসিলিয়েশন ও নগদ ক্যাশবুক লেজার</span>
+                </span>
+              </div>
             </button>
           </div>
 
-          <div class="role-preview reveal">
-            <div class="preview-window">
-              <div class="preview-top">
-                <span id="roleTitle">Institution Overview & Control</span>
-                <span class="preview-chip" id="roleChip">ADMIN VIEW</span>
+          <!-- Interactive macOS / Cloud App Window Preview (Right Column) -->
+          <div class="role-preview reveal" id="rolePreviewWindow">
+            <div class="role-app-window">
+              <!-- Window Chrome Header -->
+              <div class="role-window-header">
+                <div class="role-window-dots">
+                  <span class="r-dot r-dot-red"></span>
+                  <span class="r-dot r-dot-yellow"></span>
+                  <span class="r-dot r-dot-green"></span>
+                </div>
+                <div class="role-window-url">
+                  <span class="role-url-lock">🔒</span>
+                  <span class="role-url-text" id="roleWindowUrl">admin.yesedu.cloud/cockpit</span>
+                </div>
+                <div class="role-window-actions">
+                  <span class="role-live-badge">
+                    <span class="role-live-dot"></span>
+                    <span class="lang-en">Live Cloud</span>
+                    <span class="lang-bn hidden">লাইভ ক্লাউড</span>
+                  </span>
+                  <span class="preview-chip" id="roleChip">ADMIN VIEW</span>
+                </div>
               </div>
 
-              <div class="preview-metrics">
-                <div class="preview-metric">
-                  <small id="metricOneLabel">Active Students</small>
-                  <b id="metricOne">2,480</b>
+              <!-- Real Software Dashboard Screenshot Stage -->
+              <div class="role-screen-stage">
+                <div class="role-slides-container">
+                  <img src="images/admin-dashboard.png" 
+                       alt="YES EDU Super Admin Dashboard" 
+                       class="role-dash-img active" 
+                       data-role-slide="admin" 
+                       width="1024" 
+                       height="586"
+                       loading="eager"
+                       fetchpriority="high">
+                  <img src="images/teacher-dashboard.png" 
+                       alt="YES EDU Teacher Workspace" 
+                       class="role-dash-img" 
+                       data-role-slide="teacher" 
+                       width="1024" 
+                       height="528"
+                       loading="lazy">
+                  <img src="images/parent-dashboard.png" 
+                       alt="YES EDU Guardian Portal" 
+                       class="role-dash-img" 
+                       data-role-slide="parent" 
+                       width="1024" 
+                       height="525"
+                       loading="lazy">
+                  <img src="images/admin-dashboard.png" 
+                       alt="YES EDU Accounts & Fee Collection Cockpit" 
+                       class="role-dash-img" 
+                       data-role-slide="accounts" 
+                       width="1024" 
+                       height="586"
+                       loading="lazy">
                 </div>
-                <div class="preview-metric">
-                  <small id="metricTwoLabel">Today Attendance</small>
-                  <b id="metricTwo">96.8%</b>
-                </div>
-                <div class="preview-metric">
-                  <small id="metricThreeLabel">Campus Status</small>
-                  <b id="metricThree">Live & Active</b>
+
+                <!-- Dynamic Floating KPI Badge Synchronized with Role -->
+                <div class="role-floating-badge badge-pop" id="roleFloatingBadge">
+                  <div class="role-badge-icon" id="roleBadgeIcon">✓</div>
+                  <div class="role-badge-content">
+                    <span class="role-badge-title" id="roleBadgeTitle">Attendance Today</span>
+                    <strong class="role-badge-stat" id="roleBadgeStat">97%</strong>
+                    <span class="role-badge-sub" id="roleBadgeSub">Live Biometric • 115 Present</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="preview-note" id="roleDescription">
-                A consolidated 360° cockpit of institutional operations, biometric logs, staff attendance and real-time
-                revenue collection shaped by strict administrative permissions.
+              <!-- Window Footer with Dynamic Metrics and Role Summary -->
+              <div class="role-window-footer">
+                <div class="role-footer-head">
+                  <h4 class="role-footer-title" id="roleTitle">Institution Overview & Control</h4>
+                  <a href="#contact" class="role-demo-link open-demo-modal">
+                    <span class="lang-en">Request Live Demo ↗</span>
+                    <span class="lang-bn hidden">লাইভ ডেমো দেখুন ↗</span>
+                  </a>
+                </div>
+
+                <div class="preview-metrics">
+                  <div class="preview-metric">
+                    <small id="metricOneLabel">Active Students</small>
+                    <b id="metricOne">2,480</b>
+                  </div>
+                  <div class="preview-metric">
+                    <small id="metricTwoLabel">Today Attendance</small>
+                    <b id="metricTwo">96.8%</b>
+                  </div>
+                  <div class="preview-metric">
+                    <small id="metricThreeLabel">Campus Status</small>
+                    <b id="metricThree">Live & Active</b>
+                  </div>
+                </div>
+
+                <div class="preview-note" id="roleDescription">
+                  A consolidated 360° cockpit of institutional operations, biometric logs, staff attendance and real-time revenue collection shaped by strict administrative permissions.
+                </div>
               </div>
             </div>
           </div>
@@ -2190,7 +2294,7 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=8.1"></script>
+  <script src="js/main.js?v=8.2"></script>
 </body>
 
 </html>

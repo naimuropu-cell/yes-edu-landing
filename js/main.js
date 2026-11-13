@@ -18,6 +18,11 @@
   // Role showcase data (bilingual)
   const roleData = {
     admin: {
+      url: "admin.yesedu.cloud/cockpit",
+      badge: {
+        en: { icon: "✓", title: "Attendance Today", stat: "97%", sub: "Live Biometric • 115 Present" },
+        bn: { icon: "✓", title: "আজকের উপস্থিতি", stat: "৯৭%", sub: "বায়োমেট্রিক • ১১৫ জন উপস্থিত" }
+      },
       en: {
         title: "Institution Overview & Control",
         chip: "ADMIN VIEW",
@@ -34,6 +39,11 @@
       }
     },
     teacher: {
+      url: "teacher.yesedu.cloud/workspace",
+      badge: {
+        en: { icon: "📋", title: "Classes Today", stat: "3 Classes", sub: "Class 9-A, 10-B, 8-A" },
+        bn: { icon: "📋", title: "আজকের ক্লাস", stat: "৩টি ক্লাস", sub: "৯ম-ক, ১০ম-খ, ৮ম-ক" }
+      },
       en: {
         title: "Teacher Workspace & Class Hub",
         chip: "TEACHER VIEW",
@@ -50,6 +60,11 @@
       }
     },
     parent: {
+      url: "guardian.yesedu.cloud/portal",
+      badge: {
+        en: { icon: "💳", title: "Tuition Fees", stat: "৳ 850 Due", sub: "1-Tap bKash Payment Ready" },
+        bn: { icon: "💳", title: "মাসিক বেতন", stat: "৳ ৮৫০ বকেয়া", sub: "১-ট্যাপে বিকাশ পেমেন্ট" }
+      },
       en: {
         title: "Parent Portal & Child Safety",
         chip: "PARENT VIEW",
@@ -66,6 +81,11 @@
       }
     },
     accounts: {
+      url: "accounts.yesedu.cloud/ledger",
+      badge: {
+        en: { icon: "💰", title: "Today's Collection", stat: "৳ 6,350.00", sub: "bKash, Nagad & Cash Reconciled" },
+        bn: { icon: "💰", title: "আজকের ফি আদায়", stat: "৳ ৬,৩৫০.০০", sub: "বিকাশ, নগদ ও ক্যাশ অটো সিঙ্ক" }
+      },
       en: {
         title: "Finance, Fees & Audit Ledger",
         chip: "ACCOUNTS VIEW",
@@ -201,16 +221,20 @@
 
   // 4. Role Showcase Switcher
   function updateRolePreview(roleKey) {
-    const d = roleData[roleKey] ? roleData[roleKey][currentLang] : null;
+    const roleConf = roleData[roleKey];
+    if (!roleConf) return;
+    const d = roleConf[currentLang] || roleConf.en;
     if (!d) return;
 
     const roleTitle = document.getElementById("roleTitle");
     const roleChip = document.getElementById("roleChip");
     const roleDesc = document.getElementById("roleDescription");
+    const roleUrl = document.getElementById("roleWindowUrl");
 
     if (roleTitle) roleTitle.textContent = d.title;
     if (roleChip) roleChip.textContent = d.chip;
     if (roleDesc) roleDesc.textContent = d.desc;
+    if (roleUrl && roleConf.url) roleUrl.textContent = roleConf.url;
 
     ["One", "Two", "Three"].forEach((name, i) => {
       const lbl = document.getElementById("metric" + name + "Label");
@@ -218,6 +242,35 @@
       if (lbl && d.labels[i]) lbl.textContent = d.labels[i];
       if (val && d.values[i]) val.textContent = d.values[i];
     });
+
+    // Cross-fade dashboard screenshot slide
+    const slides = document.querySelectorAll(".role-dash-img");
+    slides.forEach((slide) => {
+      const isActive = slide.dataset.roleSlide === roleKey;
+      slide.classList.toggle("active", isActive);
+    });
+
+    // Update Floating Badge
+    const badge = document.getElementById("roleFloatingBadge");
+    const badgeIcon = document.getElementById("roleBadgeIcon");
+    const badgeTitle = document.getElementById("roleBadgeTitle");
+    const badgeStat = document.getElementById("roleBadgeStat");
+    const badgeSub = document.getElementById("roleBadgeSub");
+
+    if (roleConf.badge) {
+      const bData = roleConf.badge[currentLang] || roleConf.badge.en;
+      if (bData) {
+        if (badgeIcon) badgeIcon.textContent = bData.icon;
+        if (badgeTitle) badgeTitle.textContent = bData.title;
+        if (badgeStat) badgeStat.textContent = bData.stat;
+        if (badgeSub) badgeSub.textContent = bData.sub;
+        if (badge) {
+          badge.classList.remove("badge-pop");
+          void badge.offsetWidth; // retrigger CSS animation
+          badge.classList.add("badge-pop");
+        }
+      }
+    }
   }
 
   function initRoleShowcase() {
