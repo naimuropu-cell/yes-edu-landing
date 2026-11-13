@@ -8,6 +8,30 @@
   <title>YES EDU — One Connected Education Ecosystem | School ERP, Website CMS & AI</title>
   <meta name="description"
     content="YES EDU connects institutional websites, academic operations, finance, biometric attendance, mobile apps, and NCTB AI-powered assistance in one connected ecosystem.">
+  <meta name="keywords"
+    content="YES EDU, School Management System Bangladesh, Education ERP, Madrasah Software, NCTB 2026 AI, Biometric School Attendance, bKash Education Fees, College ERP, Digital Report Card">
+  <meta name="author" content="YES Bangladesh Ltd.">
+  <link rel="canonical" href="https://yesbangladesh.net/">
+
+  <!-- OpenGraph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yesbangladesh.net/">
+  <meta property="og:title" content="YES EDU — One Connected Education Ecosystem | Smart Campus ERP & AI">
+  <meta property="og:description"
+    content="Run your entire campus on autopilot: 1-Tap bKash fee collection, 0.18s biometric gate SMS, and NCTB 2026 / Madrasa AI question creator for schools, colleges & madrasas in Bangladesh.">
+  <meta property="og:image" content="https://yesbangladesh.net/images/yes-edu-logo.png">
+  <meta property="og:image:alt" content="YES EDU Platform Logo">
+  <meta property="og:locale" content="bn_BD">
+  <meta property="og:site_name" content="YES EDU Bangladesh">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://yesbangladesh.net/">
+  <meta name="twitter:title" content="YES EDU — One Connected Education Ecosystem">
+  <meta name="twitter:description"
+    content="The all-in-one Smart Campus ERP tailored for Bangladesh: 1-Tap bKash auto fees, 0.18s biometric gate SMS, and NCTB 2026 AI.">
+  <meta name="twitter:image" content="https://yesbangladesh.net/images/yes-edu-logo.png">
+
   <link rel="icon" type="image/png" href="images/yes-edu-logo.png">
 
   <!-- Preconnect Fonts -->
@@ -18,7 +42,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=8.2">
+  <link rel="stylesheet" href="css/style.css?v=8.3">
 </head>
 
 <body>
@@ -66,10 +90,33 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">
-            <span class="lang-en">THE CONNECTED EDUCATION ECOSYSTEM</span>
-            <span class="lang-bn hidden">পরিপূর্ণ শিক্ষাব্যবস্থাপনা ইকোসিস্টেম</span>
-          </span>
+          <!-- Institution Segmenter Pill (Schools, Madrasahs, Cadets) -->
+          <div class="institution-segmenter" id="instSegmenter" role="tablist" aria-label="Select Institution Type">
+            <button class="inst-pill active" data-inst="general" type="button" role="tab" aria-selected="true">
+              <span class="inst-pill-ico">🏫</span>
+              <span class="lang-en">School & College</span>
+              <span class="lang-bn hidden">স্কুল ও কলেজ</span>
+            </button>
+            <button class="inst-pill" data-inst="madrasah" type="button" role="tab" aria-selected="false">
+              <span class="inst-pill-ico">🕌</span>
+              <span class="lang-en">Madrasah</span>
+              <span class="lang-bn hidden">কওমি ও আলিয়া মাদরাসা</span>
+            </button>
+            <button class="inst-pill" data-inst="cadet" type="button" role="tab" aria-selected="false">
+              <span class="inst-pill-ico">🎖️</span>
+              <span class="lang-en">Cadet & English Med.</span>
+              <span class="lang-bn hidden">ক্যাডেট ও ইংলিশ মিডিয়াম</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Tailored Institution Feature Ribbon -->
+          <div class="inst-feature-tag" id="instFeatureTag">
+            <span class="inst-tag-dot">✦</span>
+            <span id="instTagText">
+              <span class="lang-en"><strong>Tailored for General Schools:</strong> NCTB 2026 Assessment • Auto GPA Report Card • 1-Tap bKash Fee • Biometric Gate SMS</span>
+              <span class="lang-bn hidden"><strong>স্কুল ও কলেজের জন্য:</strong> এনসিটিবি ২০২৬ নতুন মূল্যায়ন • অটো জিপিএ মার্কশিট • ১-ট্যাপে বিকাশ ফি • বায়োমেট্রিক গেট এসএমএস</span>
+            </span>
+          </div>
 
           <h1>
             <span class="lang-en">A better-connected future for <span>every institution.</span></span>
@@ -2294,7 +2341,7 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=8.2"></script>
+  <script src="js/main.js?v=8.3"></script>
 </body>
 
 </html>

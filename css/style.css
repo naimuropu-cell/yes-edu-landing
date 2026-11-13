@@ -575,6 +575,33 @@ header.scrolled {
   line-height: 1;
 }
 
+/* Dynamic Contextual Feature Ribbon */
+.inst-feature-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E8F5EE;
+  border: 1px solid #BFE3CF;
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 12.5px;
+  color: #14532D;
+  line-height: 1.4;
+  margin: 8px 0 16px;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  box-shadow: 0 1px 4px rgba(20, 83, 45, 0.05);
+}
+
+.inst-feature-tag strong {
+  color: #0E2A1F;
+  font-weight: 700;
+}
+
+.inst-tag-dot {
+  color: #059669;
+  font-size: 11px;
+}
+
 .hero-actions {
   display: flex;
   gap: 14px;
@@ -4403,10 +4430,14 @@ body {
   }
 
   .inst-feature-tag {
+    display: inline-flex;
     text-align: center;
     justify-content: center;
-    font-size: 12px;
-    margin: 14px 0 0;
+    font-size: 11px;
+    padding: 6px 12px;
+    margin: 6px 0 14px;
+    border-radius: 8px;
+    line-height: 1.45;
   }
 
   .hero-usps {
