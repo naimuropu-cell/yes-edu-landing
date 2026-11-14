@@ -3,7 +3,7 @@
    Harmonized Nordic Forest-Mint & Ivory Design System
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap");
 
 :root {
   /* Executive Corporate Theme (Theme 03) Tokens */
@@ -41,9 +41,9 @@
   --radius-md: 10px;
   --radius-lg: 12px;
   --radius-full: 9999px;
-  --font-heading: "Manrope", sans-serif;
-  --font-body: "DM Sans", sans-serif;
-  --font-bn: "Anek Bangla", "DM Sans", sans-serif;
+  --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-bn: "Hind Siliguri", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
@@ -74,6 +74,7 @@ body {
 
 body.lang-bn-active {
   font-family: var(--font-bn);
+  line-height: 1.72;
 }
 
 a {
@@ -117,8 +118,8 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  letter-spacing: -0.035em;
-  line-height: 1.15;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
   color: var(--deep);
   font-weight: 800;
 }
@@ -126,9 +127,12 @@ h6 {
 body.lang-bn-active h1,
 body.lang-bn-active h2,
 body.lang-bn-active h3,
-body.lang-bn-active h4 {
+body.lang-bn-active h4,
+body.lang-bn-active h5,
+body.lang-bn-active h6 {
   font-family: var(--font-bn);
-  letter-spacing: 0;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
 }
 
 h1 {
@@ -512,7 +516,7 @@ header.scrolled {
   font-size: clamp(30px, 3.5vw, 46px);
   font-weight: 800;
   line-height: 1.16;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   max-width: 580px;
   margin: 18px 0 16px;
   word-break: normal;
