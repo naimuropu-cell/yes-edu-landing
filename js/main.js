@@ -103,6 +103,85 @@
     }
   };
 
+  // ==========================================================================
+  // NCTB 2026 AI Question Generator & Teacher Rubric Engine
+  // ==========================================================================
+  const nctbKnowledgeBase = {
+    physics: {
+      subjectEn: "Class 9-10 • Physics",
+      subjectBn: "৯ম-১০ম শ্রেণি • পদার্থবিজ্ঞান",
+      chapterEn: "Chapter 4: Work, Power & Energy",
+      chapterBn: "অধ্যায় ৪: কাজ, ক্ষমতা ও শক্তি",
+      code: "NCTB-2026-PHY-C04",
+      stimulusEn: "A teenager of mass 40 kg carrying a 20 kg sack climbs to the roof of a 20-meter high school building in 3 minutes. Another student carrying the same sack reaches the same roof using an electric lift in 30 seconds. (Take g = 9.8 m/s²).",
+      stimulusBn: "৪০ কেজি ভরের একজন শিক্ষার্থী ২০ কেজি ভরের একটি বিজ্ঞান প্রজেক্টের বক্স নিয়ে ২০ মিটার উঁচু একাডেমিক ভবনের ছাদে ৩ মিনিটে উঠল। অপর একজন শিক্ষার্থী একই ভরের বক্সসহ ক্যাম্পাসের আধুনিক লিফটে চড়ে ৩০ সেকেন্ডে একই ছাদে পৌঁছাল। (g = ৯.৮ m/s²)",
+      questionsEn: [
+        { badge: "(A) Knowledge [1]:", text: "What is 1 Kilowatt-hour (kWh)?" },
+        { badge: "(B) Comprehension [2]:", text: "Why is work done against gravitational force considered negative? Explain." },
+        { badge: "(C) Application [3]:", text: "Calculate the total work done and the mechanical power expended by the first student." },
+        { badge: "(D) Higher Ability [4]:", text: "Although both students performed identical total work, their power output differed significantly—verify this mathematically." }
+      ],
+      questionsBn: [
+        { badge: "(ক) জ্ঞানমূলক [১]:", text: "১ কিলোওয়াট-ঘণ্টা (kWh) কাকে বলে?" },
+        { badge: "(খ) অনুধাবনমূলক [২]:", text: "অভিকর্ষ বলের বিরুদ্ধে কৃতকাজ কেন ঋণাত্মক হয়? ব্যাখ্যা করো।" },
+        { badge: "(গ) প্রয়োগমূলক [৩]:", text: "প্রথম শিক্ষার্থীর ক্ষেত্রে সম্পন্ন কাজের পরিমাণ ও ব্যয়িত ক্ষমতা নির্ণয় করো।" },
+        { badge: "(ঘ) উচ্চতর দক্ষতা [৪]:", text: "'উভয় শিক্ষার্থীর কৃতকাজের মান অভিন্ন হলেও তাদের ক্ষমতার উল্লেখযোগ্য তারতম্য রয়েছে'—উদ্দীপকের আলোকে গাণিতিকভাবে বিশ্লেষণ করো।" }
+      ],
+      rubricEn: [
+        { points: "Part A (1 Mark)", detail: "1 mark for accurate definition: 1 kWh is energy consumed by a 1 kW device running for 1 hour (= 3.6 × 10⁶ Joules)." },
+        { points: "Part B (2 Marks)", detail: "1 mark for stating angle between force and displacement is 180° (cos 180° = -1); 1 mark for upward displacement vs gravity explanation." },
+        { points: "Part C (3 Marks)", detail: "Total mass m = 40 + 20 = 60 kg. Work W = mgh = 60 × 9.8 × 20 = 11,760 J (1.5 marks). Power P = W/t = 11,760 / 180 = 65.33 Watts (1.5 marks)." },
+        { points: "Part D (4 Marks)", detail: "Student 2 power P₂ = 11,760 / 30 = 392 Watts (1.5 marks). Comparing P₂ / P₁ = 392 / 65.33 = 6 times greater (1.5 marks). Final comparative justification (1 mark)." }
+      ],
+      rubricBn: [
+        { points: "ক এর উত্তর (১ নম্বর)", detail: "১ কিলোওয়াট ক্ষমতাসম্পন্ন কোনো যন্ত্র ১ ঘণ্টা চললে যে পরিমাণ শক্তি ব্যয় হয়, তাকে ১ কিলোওয়াট-ঘণ্টা বলে (= ৩.৬ × ১০⁶ জুল)।" },
+        { points: "খ এর ব্যাখ্যা (২ নম্বর)", detail: "অভিকর্ষ বলের দিক নিচের দিকে এবং সরণ বিপরীতমুখী (θ = ১৮০°, cos ১৮০° = -১)। বল ও সরণের দিক বিপরীত হওয়ায় কৃতকাজ ঋণাত্মক।" },
+        { points: "গ এর সমাধান (৩ নম্বর)", detail: "মোট ভর m = ৪০ + ২০ = ৬০ কেজি। কৃতকাজ W = mgh = ৬০ × ৯.৮ × ২০ = ১১,৭৬০ জুল (১.৫)। ব্যয়িত ক্ষমতা P = W/t = ১১,৭৬০ / ১৮০ = ৬৫.৩৩ ওয়াট (১.৫)।" },
+        { points: "ঘ এর বিশ্লেষণ (৪ নম্বর)", detail: "লিফটের শিক্ষার্থীর ব্যয়িত ক্ষমতা P₂ = ১১,৭৬০ / ৩০ = ৩৯২ ওয়াট (১.৫)। ক্ষমতা অনুপাত P₂ / P₁ = ৩৯২ / ৬৫.৩৩ = ৬ গুণ (১.৫)। সঠিক তুলনামূলক সিদ্ধান্ত উপস্থাপন (১)।" }
+      ],
+      pedagogicalEn: "Teacher Alert: Ensure students add the sack mass (20 kg) to body mass (40 kg) before calculating work.",
+      pedagogicalBn: "শিক্ষক সহায়িকা: শিক্ষার্থীরা অনেক সময় বক্সের ভর (২০ কেজি) ও শিক্ষার্থীর ভর (৪০ কেজি) যোগ করতে ভুলে যায়। সিস্টেমের মোট ভর নির্ণয়ে সতর্ক করুন।"
+    },
+    math: {
+      subjectEn: "Class 8 • Mathematics",
+      subjectBn: "৮ম শ্রেণি • সাধারণ গণিত",
+      chapterEn: "Chapter 9: Pythagorean Theorem",
+      chapterBn: "অধ্যায় ৯: পিথাগোরাসের উপপাদ্য ও ত্রিভুজ",
+      code: "NCTB-2026-MTH-C08",
+      stimulusEn: "A rectangular campus playground is 24 meters long and 7 meters wide. A student walks diagonally across the ground from one corner to the opposite corner instead of walking along the boundary.",
+      stimulusBn: "একটি ক্যাম্পাসের আয়তাকার খেলার মাঠের দৈর্ঘ্য ২৪ মিটার এবং প্রস্থ ৭ মিটার। একজন শিক্ষার্থী সীমানা বরাবর না হেঁটে মাঠের এক কোণা থেকে বিপরীত কোণায় কর্ণ বরাবর সোজা হেঁটে অপর পাশে পৌঁছাল।",
+      questionsEn: [
+        { badge: "(A) Knowledge [1]:", text: "State the Pythagorean Theorem." },
+        { badge: "(B) Comprehension [2]:", text: "If triangle side lengths are 3 cm, 4 cm, and 5 cm, verify whether it forms a right-angled triangle." },
+        { badge: "(C) Application [3]:", text: "How many meters of walking distance did the student save by taking the diagonal path?" },
+        { badge: "(D) Higher Ability [4]:", text: "If the playground length is increased by 25% and width decreased by 20%, determine the percentage change in the new diagonal length." }
+      ],
+      questionsBn: [
+        { badge: "(ক) জ্ঞানমূলক [১]:", text: "পিথাগোরাসের উপপাদ্যটি বিবৃতি করো।" },
+        { badge: "(খ) অনুধাবনমূলক [২]:", text: "কোনো ত্রিভুজের বাহুর দৈর্ঘ্য ৩ সেমি, ৪ সেমি ও ৫ সেমি হলে এটি সমকোণী ত্রিভুজ কি না যাচাই করো।" },
+        { badge: "(গ) প্রয়োগমূলক [৩]:", text: "মাঠের সীমানা বরাবর হাঁটার চেয়ে কর্ণ বরাবর হেঁটে ছাত্রটির কত মিটার দূরত্ব সাশ্রয় হলো?" },
+        { badge: "(ঘ) উচ্চতর দক্ষতা [৪]:", text: "মাঠের দৈর্ঘ্য ২৫% বৃদ্ধি এবং প্রস্থ ২০% হ্রাস করা হলে নতুন কর্ণের দৈর্ঘ্যের শতকরা পরিবর্তন গাণিতিকভাবে নিরূপণ করো।" }
+      ],
+      rubricEn: [
+        { points: "Part A (1 Mark)", detail: "In a right-angled triangle, the square of the hypotenuse equals the sum of squares of the other two sides (c² = a² + b²)." },
+        { points: "Part B (2 Marks)", detail: "Check 3² + 4² = 9 + 16 = 25 = 5². Since sum of squares of legs equals hypotenuse squared, it is right-angled (Converse theorem)." },
+        { points: "Part C (3 Marks)", detail: "Diagonal d = √(24² + 7²) = √(576 + 49) = √625 = 25m (1.5 marks). Boundary = 24 + 7 = 31m. Distance saved = 31 - 25 = 6 meters (1.5 marks)." },
+        { points: "Part D (4 Marks)", detail: "New length = 30m; New width = 5.6m. New diagonal = √(30² + 5.6²) = √931.36 ≈ 30.52m. Increase = 5.52m; % change = (5.52 / 25) × 100 = 22.08% increase (4 marks)." }
+      ],
+      rubricBn: [
+        { points: "ক এর উত্তর (১ নম্বর)", detail: "একটি সমকোণী ত্রিভুজের অতিভুজের ওপর অঙ্কিত বর্গক্ষেত্রের ক্ষেত্রফল অপর দুই বাহুর ওপর অঙ্কিত বর্গক্ষেত্রদ্বয়ের ক্ষেত্রফলের সমষ্টির সমান (c² = a² + b²)।" },
+        { points: "খ এর যাচাই (২ নম্বর)", detail: "৩² + ৪² = ৯ + ১৬ = ২৫ = ৫²। বাহুদ্বয়ের বর্গের সমষ্টি বৃহত্তম বাহুর বর্গের সমান হওয়ায় ত্রিভুজটি সমকোণী (২)।" },
+        { points: "গ এর সমাধান (৩ নম্বর)", detail: "কর্ণ d = √(২৪² + ৭²) = √(৫৭৬ + ৪৯) = √৬২৫ = ২৫ মিটার (১.৫)। সীমানা পথ = ২৪ + ৭ = ৩১ মিটার। সাশ্রয়কৃত দূরত্ব = ৩১ - ২৫ = ৬ মিটার (১.৫)।" },
+        { points: "ঘ এর বিশ্লেষণ (৪ নম্বর)", detail: "নতুন দৈর্ঘ্য = ৩০ মিটার; নতুন প্রস্থ = ৫.৬ মিটার। নতুন কর্ণ = √(৩০² + ৫.৬²) = √৯৩১.৩৬ ≈ ৩০.৫২ মিটার। কর্ণের বৃদ্ধি = ৫.৫২ মিটার; শতকরা বৃদ্ধি = ২২.০৮% (৪)।" }
+      ],
+      pedagogicalEn: "Teacher Alert: Ensure students do not round off intermediate square roots prematurely.",
+      pedagogicalBn: "শিক্ষক সহায়িকা: শিক্ষার্থীদের রাউন্ড-অফ দশমিক গণনায় পূর্ণ সতর্কতা অবলম্বনের পরামর্শ দিন।"
+    }
+  };
+
+  let activeAiSub = "physics";
+  let activeAiMode = "question";
+
   function toBengaliNumber(num) {
     const bengaliDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
     return String(num).replace(/\d/g, (d) => bengaliDigits[d]);
@@ -152,7 +231,11 @@
 
     // Sync NCTB AI Simulator display
     if (typeof renderNctbAiSimulator === "function") {
-      renderNctbAiSimulator();
+      try {
+        renderNctbAiSimulator();
+      } catch (err) {
+        // Safe fallback if called before DOM nodes attach
+      }
     }
   }
 
@@ -656,84 +739,6 @@
     }
   }
 
-  // ==========================================================================
-  // NCTB 2026 AI Question Generator & Teacher Rubric Engine
-  // ==========================================================================
-  const nctbKnowledgeBase = {
-    physics: {
-      subjectEn: "Class 9-10 • Physics",
-      subjectBn: "৯ম-১০ম শ্রেণি • পদার্থবিজ্ঞান",
-      chapterEn: "Chapter 4: Work, Power & Energy",
-      chapterBn: "অধ্যায় ৪: কাজ, ক্ষমতা ও শক্তি",
-      code: "NCTB-2026-PHY-C04",
-      stimulusEn: "A teenager of mass 40 kg carrying a 20 kg sack climbs to the roof of a 20-meter high school building in 3 minutes. Another student carrying the same sack reaches the same roof using an electric lift in 30 seconds. (Take g = 9.8 m/s²).",
-      stimulusBn: "৪০ কেজি ভরের একজন শিক্ষার্থী ২০ কেজি ভরের একটি বিজ্ঞান প্রজেক্টের বক্স নিয়ে ২০ মিটার উঁচু একাডেমিক ভবনের ছাদে ৩ মিনিটে উঠল। অপর একজন শিক্ষার্থী একই ভরের বক্সসহ ক্যাম্পাসের আধুনিক লিফটে চড়ে ৩০ সেকেন্ডে একই ছাদে পৌঁছাল। (g = ৯.৮ m/s²)",
-      questionsEn: [
-        { badge: "(A) Knowledge [1]:", text: "What is 1 Kilowatt-hour (kWh)?" },
-        { badge: "(B) Comprehension [2]:", text: "Why is work done against gravitational force considered negative? Explain." },
-        { badge: "(C) Application [3]:", text: "Calculate the total work done and the mechanical power expended by the first student." },
-        { badge: "(D) Higher Ability [4]:", text: "Although both students performed identical total work, their power output differed significantly—verify this mathematically." }
-      ],
-      questionsBn: [
-        { badge: "(ক) জ্ঞানমূলক [১]:", text: "১ কিলোওয়াট-ঘণ্টা (kWh) কাকে বলে?" },
-        { badge: "(খ) অনুধাবনমূলক [২]:", text: "অভিকর্ষ বলের বিরুদ্ধে কৃতকাজ কেন ঋণাত্মক হয়? ব্যাখ্যা করো।" },
-        { badge: "(গ) প্রয়োগমূলক [৩]:", text: "প্রথম শিক্ষার্থীর ক্ষেত্রে সম্পন্ন কাজের পরিমাণ ও ব্যয়িত ক্ষমতা নির্ণয় করো।" },
-        { badge: "(ঘ) উচ্চতর দক্ষতা [৪]:", text: ""উভয় শিক্ষার্থীর কৃতকাজের মান অভিন্ন হলেও তাদের ক্ষমতার উল্লেখযোগ্য তারতম্য রয়েছে"—উদ্দীপকের আলোকে গাণিতিকভাবে বিশ্লেষণ করো।" }
-      ],
-      rubricEn: [
-        { points: "Part A (1 Mark)", detail: "1 mark for accurate definition: 1 kWh is energy consumed by a 1 kW device running for 1 hour (= 3.6 × 10⁶ Joules)." },
-        { points: "Part B (2 Marks)", detail: "1 mark for stating angle between force and displacement is 180° (cos 180° = -1); 1 mark for upward displacement vs gravity explanation." },
-        { points: "Part C (3 Marks)", detail: "Total mass m = 40 + 20 = 60 kg. Work W = mgh = 60 × 9.8 × 20 = 11,760 J (1.5 marks). Power P = W/t = 11,760 / 180 = 65.33 Watts (1.5 marks)." },
-        { points: "Part D (4 Marks)", detail: "Student 2 power P₂ = 11,760 / 30 = 392 Watts (1.5 marks). Comparing P₂ / P₁ = 392 / 65.33 = 6 times greater (1.5 marks). Final comparative justification (1 mark)." }
-      ],
-      rubricBn: [
-        { points: "ক এর উত্তর (১ নম্বর)", detail: "১ কিলোওয়াট ক্ষমতাসম্পন্ন কোনো যন্ত্র ১ ঘণ্টা চললে যে পরিমাণ শক্তি ব্যয় হয়, তাকে ১ কিলোওয়াট-ঘণ্টা বলে (= ৩.৬ × ১০⁶ জুল)।" },
-        { points: "খ এর ব্যাখ্যা (২ নম্বর)", detail: "অভিকর্ষ বলের দিক নিচের দিকে এবং সরণ বিপরীতমুখী (θ = ১৮০°, cos ১৮০° = -১)। বল ও সরণের দিক বিপরীত হওয়ায় কৃতকাজ ঋণাত্মক।" },
-        { points: "গ এর সমাধান (৩ নম্বর)", detail: "মোট ভর m = ৪০ + ২০ = ৬০ কেজি। কৃতকাজ W = mgh = ৬০ × ৯.৮ × ২০ = ১১,৭৬০ জুল (১.৫)। ব্যয়িত ক্ষমতা P = W/t = ১১,৭৬০ / ১৮০ = ৬৫.৩৩ ওয়াট (১.৫)।" },
-        { points: "ঘ এর বিশ্লেষণ (৪ নম্বর)", detail: "লিফটের শিক্ষার্থীর ব্যয়িত ক্ষমতা P₂ = ১১,৭৬০ / ৩০ = ৩৯২ ওয়াট (১.৫)। ক্ষমতা অনুপাত P₂ / P₁ = ৩৯২ / ৬৫.৩৩ = ৬ গুণ (১.৫)। সঠিক তুলনামূলক সিদ্ধান্ত উপস্থাপন (১)।" }
-      ],
-      pedagogicalEn: "Teacher Alert: Ensure students add the sack mass (20 kg) to body mass (40 kg) before calculating work.",
-      pedagogicalBn: "শিক্ষক সহায়িকা: শিক্ষার্থীরা অনেক সময় বক্সের ভর (২০ কেজি) ও শিক্ষার্থীর ভর (৪০ কেজি) যোগ করতে ভুলে যায়। সিস্টেমের মোট ভর নির্ণয়ে সতর্ক করুন।"
-    },
-    math: {
-      subjectEn: "Class 8 • Mathematics",
-      subjectBn: "৮ম শ্রেণি • সাধারণ গণিত",
-      chapterEn: "Chapter 9: Pythagorean Theorem",
-      chapterBn: "অধ্যায় ৯: পিথাগোরাসের উপপাদ্য ও ত্রিভুজ",
-      code: "NCTB-2026-MTH-C08",
-      stimulusEn: "A rectangular campus playground is 24 meters long and 7 meters wide. A student walks diagonally across the ground from one corner to the opposite corner instead of walking along the boundary.",
-      stimulusBn: "একটি ক্যাম্পাসের আয়তাকার খেলার মাঠের দৈর্ঘ্য ২৪ মিটার এবং প্রস্থ ৭ মিটার। একজন শিক্ষার্থী সীমানা বরাবর না হেঁটে মাঠের এক কোণা থেকে বিপরীত কোণায় কর্ণ বরাবর সোজা হেঁটে অপর পাশে পৌঁছাল।",
-      questionsEn: [
-        { badge: "(A) Knowledge [1]:", text: "State the Pythagorean Theorem." },
-        { badge: "(B) Comprehension [2]:", text: "If triangle side lengths are 3 cm, 4 cm, and 5 cm, verify whether it forms a right-angled triangle." },
-        { badge: "(C) Application [3]:", text: "How many meters of walking distance did the student save by taking the diagonal path?" },
-        { badge: "(D) Higher Ability [4]:", text: "If the playground length is increased by 25% and width decreased by 20%, determine the percentage change in the new diagonal length." }
-      ],
-      questionsBn: [
-        { badge: "(ক) জ্ঞানমূলক [১]:", text: "পিথাগোরাসের উপপাদ্যটি বিবৃতি করো।" },
-        { badge: "(খ) অনুধাবনমূলক [২]:", text: "কোনো ত্রিভুজের বাহুর দৈর্ঘ্য ৩ সেমি, ৪ সেমি ও ৫ সেমি হলে এটি সমকোণী ত্রিভুজ কি না যাচাই করো।" },
-        { badge: "(গ) প্রয়োগমূলক [৩]:", text: "মাঠের সীমানা বরাবর হাঁটার চেয়ে কর্ণ বরাবর হেঁটে ছাত্রটির কত মিটার দূরত্ব সাশ্রয় হলো?" },
-        { badge: "(ঘ) উচ্চতর দক্ষতা [৪]:", text: "মাঠের দৈর্ঘ্য ২৫% বৃদ্ধি এবং প্রস্থ ২০% হ্রাস করা হলে নতুন কর্ণের দৈর্ঘ্যের শতকরা পরিবর্তন গাণিতিকভাবে নিরূপণ করো।" }
-      ],
-      rubricEn: [
-        { points: "Part A (1 Mark)", detail: "In a right-angled triangle, the square of the hypotenuse equals the sum of squares of the other two sides (c² = a² + b²)." },
-        { points: "Part B (2 Marks)", detail: "Check 3² + 4² = 9 + 16 = 25 = 5². Since sum of squares of legs equals hypotenuse squared, it is right-angled (Converse theorem)." },
-        { points: "Part C (3 Marks)", detail: "Diagonal d = √(24² + 7²) = √(576 + 49) = √625 = 25m (1.5 marks). Boundary = 24 + 7 = 31m. Distance saved = 31 - 25 = 6 meters (1.5 marks)." },
-        { points: "Part D (4 Marks)", detail: "New length = 30m; New width = 5.6m. New diagonal = √(30² + 5.6²) = √931.36 ≈ 30.52m. Increase = 5.52m; % change = (5.52 / 25) × 100 = 22.08% increase (4 marks)." }
-      ],
-      rubricBn: [
-        { points: "ক এর উত্তর (১ নম্বর)", detail: "একটি সমকোণী ত্রিভুজের অতিভুজের ওপর অঙ্কিত বর্গক্ষেত্রের ক্ষেত্রফল অপর দুই বাহুর ওপর অঙ্কিত বর্গক্ষেত্রদ্বয়ের ক্ষেত্রফলের সমষ্টির সমান (c² = a² + b²)।" },
-        { points: "খ এর যাচাই (২ নম্বর)", detail: "৩² + ৪² = ৯ + ১৬ = ২৫ = ৫²। বাহুদ্বয়ের বর্গের সমষ্টি বৃহত্তম বাহুর বর্গের সমান হওয়ায় ত্রিভুজটি সমকোণী (২)।" },
-        { points: "গ এর সমাধান (৩ নম্বর)", detail: "কর্ণ d = √(২৪² + ৭²) = √(৫৭৬ + ৪৯) = √৬২৫ = ২৫ মিটার (১.৫)। সীমানা পথ = ২৪ + ৭ = ৩১ মিটার। সাশ্রয়কৃত দূরত্ব = ৩১ - ২৫ = ৬ মিটার (১.৫)।" },
-        { points: "ঘ এর বিশ্লেষণ (৪ নম্বর)", detail: "নতুন দৈর্ঘ্য = ৩০ মিটার; নতুন প্রস্থ = ৫.৬ মিটার। নতুন কর্ণ = √(৩০² + ৫.৬²) = √৯৩১.৩৬ ≈ ৩০.৫২ মিটার। কর্ণের বৃদ্ধি = ৫.৫২ মিটার; শতকরা বৃদ্ধি = ২২.০৮% (৪)।" }
-      ],
-      pedagogicalEn: "Teacher Alert: Ensure students do not round off intermediate square roots prematurely.",
-      pedagogicalBn: "শিক্ষক সহায়িকা: শিক্ষার্থীদের রাউন্ড-অফ দশমিক গণনায় পূর্ণ সতর্কতা অবলম্বনের পরামর্শ দিন।"
-    }
-  };
-
-  let activeAiSub = "physics";
-  let activeAiMode = "question";
 
   function renderNctbAiSimulator() {
     const subjectChip = document.getElementById("aiSubjectChip");

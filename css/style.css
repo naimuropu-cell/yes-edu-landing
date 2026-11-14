@@ -4475,7 +4475,8 @@ footer {
     transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.visible {
+.reveal.visible,
+.hero .reveal {
   opacity: 1;
   transform: translateY(0);
 }
