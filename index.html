@@ -42,7 +42,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=8.3">
+  <link rel="stylesheet" href="css/style.css?v=8.4">
 </head>
 
 <body>
@@ -607,19 +607,27 @@
                 <!-- Software Artifact: Live Campus Gate Activity Feed -->
                 <div class="sme-card-stage">
                   <div class="sme-live-feed">
-                    <div class="sme-live-feed-header">
+                    <div class="sme-live-feed-header" id="gateFeedHeader">
                       <div class="sme-feed-title">
-                        <span class="live-dot"></span>
+                        <span class="live-dot" id="gateLiveDot"></span>
                         <span class="lang-en">Live Attendance Stream • Gate #02</span>
                         <span class="lang-bn hidden">লাইভ গেট স্ট্রিম • মূল ফটক #০২</span>
                       </div>
-                      <div class="sme-feed-meta">
-                        <span class="feed-latency">0.18s latency</span>
-                        <span class="feed-badge-online">ZKTeco Online</span>
+                      <div class="sme-feed-actions-cluster">
+                        <button type="button" class="btn-sim-punch" id="btnSimGatePunch" aria-label="Simulate RFID Card or Face Punch">
+                          <span class="punch-pulse-ring"></span>
+                          <span class="punch-icon">⚡</span>
+                          <span class="lang-en">Simulate RFID Punch</span>
+                          <span class="lang-bn hidden">পাঞ্চ পরীক্ষা করুন</span>
+                        </button>
+                        <div class="sme-feed-meta">
+                          <span class="feed-latency">0.18s latency</span>
+                          <span class="feed-badge-online">ZKTeco Online</span>
+                        </div>
                       </div>
                     </div>
 
-                    <div class="sme-feed-list">
+                    <div class="sme-feed-list" id="simFeedList">
                       <!-- Row 1 -->
                       <div class="sme-feed-row">
                         <div class="sme-feed-avatar">TR</div>
@@ -895,37 +903,61 @@
                       </div>
                     </div>
 
-                    <div class="sme-ai-card">
+                    <!-- Interactive NCTB AI Studio Controls -->
+                    <div class="sme-ai-toolbar">
+                      <div class="ai-toolbar-left">
+                        <div class="ai-subject-tabs" role="tablist" aria-label="NCTB Subjects">
+                          <button type="button" class="ai-sub-tab active" data-sub="physics">
+                            <span class="sub-icon">⚛️</span>
+                            <span class="lang-en">Physics (Class 9-10)</span>
+                            <span class="lang-bn hidden">পদার্থবিজ্ঞান (৯ম-১০ম)</span>
+                          </button>
+                          <button type="button" class="ai-sub-tab" data-sub="math">
+                            <span class="sub-icon">📐</span>
+                            <span class="lang-en">Mathematics (Class 8)</span>
+                            <span class="lang-bn hidden">সাধারণ গণিত (৮ম)</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="ai-toolbar-right">
+                        <div class="ai-mode-toggle" role="tablist" aria-label="Display Mode">
+                          <button type="button" class="ai-mode-btn active" data-mode="question">
+                            <span class="lang-en">Questions (CQ)</span>
+                            <span class="lang-bn hidden">সৃজনশীল প্রশ্ন</span>
+                          </button>
+                          <button type="button" class="ai-mode-btn" data-mode="rubric">
+                            <span class="lang-en">Teacher Rubric</span>
+                            <span class="lang-bn hidden">মূল্যায়ন নির্দেশিকা</span>
+                          </button>
+                        </div>
+                        <button type="button" class="btn-ai-generate" id="btnRegenAiQuestion" title="Regenerate Question" aria-label="Regenerate Question">
+                          <span class="btn-ai-sparkle">⚡</span>
+                          <span class="lang-en">Regenerate</span>
+                          <span class="lang-bn hidden">নতুন প্রশ্ন</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Dynamic Question / Rubric Display Area -->
+                    <div class="sme-ai-card" id="smeAiCardStage">
                       <div class="sme-ai-meta-bar">
-                        <span class="ai-chip">Class 9 • General Science</span>
-                        <span class="ai-chip">Chapter 03: Force & Motion</span>
-                        <span class="ai-chip highlight">Creative Question (CQ)</span>
+                        <span class="ai-chip" id="aiSubjectChip">Class 9-10 • Physics</span>
+                        <span class="ai-chip" id="aiChapterChip">Chapter 4: Work, Power & Energy</span>
+                        <span class="ai-chip highlight" id="aiCodeChip">NCTB-2026-PHY-C04</span>
                       </div>
 
-                      <div class="sme-ai-stimulus">
-                        <div class="stimulus-tag">উদ্দীপক (Stimulus):</div>
-                        <div class="stimulus-text">১৫ কেজি ভরের একটি স্থির ট্রলির ওপর ৬০ নিউটন অনুভূমিক বল ৫ সেকেন্ড
-                          প্রয়োগ করা হলো। ট্রলি ও মেঝের ঘর্ষণ বল ৫ নিউটন।</div>
+                      <div class="sme-ai-stimulus" id="aiStimulusBox">
+                        <div class="stimulus-tag">
+                          <span class="lang-en">Stimulus (উদ্দীপক):</span>
+                          <span class="lang-bn hidden">উদ্দীপক:</span>
+                        </div>
+                        <div class="stimulus-text" id="aiStimulusText">
+                          A teenager of mass 40 kg carrying a 20 kg sack climbs to the roof of a 20-meter high school building in 3 minutes. Another student carrying the same sack reaches the same roof using an electric lift in 30 seconds. (Take g = 9.8 m/s²).
+                        </div>
                       </div>
 
-                      <div class="sme-cq-list">
-                        <div class="cq-item">
-                          <span class="cq-badge">(ক) জ্ঞানমূলক [১]:</span>
-                          <span class="cq-text">বলের আন্তর্জাতিক (SI) একক কী?</span>
-                        </div>
-                        <div class="cq-item">
-                          <span class="cq-badge">(খ) অনুধাবনমূলক [২]:</span>
-                          <span class="cq-text">ঘর্ষণ বলকে কেন একটি 'প্রয়োজনীয় উপদ্রব' বলা হয় ব্যাখ্যা করো।</span>
-                        </div>
-                        <div class="cq-item">
-                          <span class="cq-badge">(গ) প্রয়োগমূলক [৩]:</span>
-                          <span class="cq-text">বল প্রয়োগকালীন সময়ে ট্রলিটির ত্বরণ নির্ণয় করো।</span>
-                        </div>
-                        <div class="cq-item">
-                          <span class="cq-badge">(ঘ) উচ্চতর দক্ষতা [৪]:</span>
-                          <span class="cq-text">প্রযুক্ত বলের মান দ্বিগুণ করলে ট্রলির বেগ কত শতাংশ বৃদ্ধি পাবে বিশ্লেষণ
-                            করো।</span>
-                        </div>
+                      <div class="sme-cq-list" id="aiContentList">
+                        <!-- Populated by JS -->
                       </div>
                     </div>
 
@@ -2319,6 +2351,27 @@
   <!-- Toast Notification -->
   <div class="toast-notice" id="toastNotice" role="status" aria-live="polite"></div>
 
+  <!-- Floating Instant Parent SMS Alert Toast (Biometric Gate Simulation) -->
+  <aside class="sim-sms-toast" id="simSmsToast" aria-live="polite" role="status" aria-hidden="true">
+    <div class="sms-toast-card">
+      <div class="sms-toast-header">
+        <div class="sms-toast-sender">
+          <span class="sms-toast-dot"></span>
+          <span class="sms-gateway-tag">TELETALK_GOVT_DLR</span>
+          <span class="sms-delivery-time" id="smsToastTime">Just now</span>
+        </div>
+        <button type="button" class="sms-toast-close" id="smsToastClose" aria-label="Close SMS notification">✕</button>
+      </div>
+      <div class="sms-toast-body" id="smsToastBody">
+        <!-- Message populated dynamically -->
+      </div>
+      <div class="sms-toast-footer">
+        <span class="sms-latency-pill">⚡ 0.18s Gateway Latency</span>
+        <span class="sms-verified-pill">✓ Masked Govt. Gateway</span>
+      </div>
+    </div>
+  </aside>
+
   <!-- ================= FLOATING ACTION HUB (BOTTOM-RIGHT) ================= -->
   <div class="floating-action-cluster">
     <!-- Mini 1-Click Scroll Up Button -->
@@ -2341,7 +2394,7 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=8.3"></script>
+  <script src="js/main.js?v=8.4"></script>
 </body>
 
 </html>

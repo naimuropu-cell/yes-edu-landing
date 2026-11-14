@@ -149,6 +149,11 @@
     if (typeof updateInstitutionFeature === "function") {
       updateInstitutionFeature(activeInstitution);
     }
+
+    // Sync NCTB AI Simulator display
+    if (typeof renderNctbAiSimulator === "function") {
+      renderNctbAiSimulator();
+    }
   }
 
   function initLanguageSwitcher() {
@@ -287,210 +292,133 @@
     });
   }
 
-  // 5. Interactive Enterprise Campus OS Studio (Segmented Tab Controller & Mobile Story Slider)
+  // 5. Interactive SME Peek Carousel (Live Campus OS Simulation)
   function initDemoStudio() {
-    let currentTab = 0;
-    const tabs = Array.from(document.querySelectorAll(".studio-tab"));
-    const panels = Array.from(document.querySelectorAll(".studio-panel"));
-    const storySegs = Array.from(document.querySelectorAll(".story-seg"));
-    const storyCurrentStep = document.getElementById("storyCurrentStep");
-    const viewport = document.querySelector(".studio-viewport");
-    const prevBtn = document.getElementById("storyPrevBtn");
-    const nextBtn = document.getElementById("storyNextBtn");
-    const container = document.getElementById("demoStudio");
-    const totalTabs = tabs.length;
+    let currentSlide = 0;
+    const cards = Array.from(document.querySelectorAll(".sme-card"));
+    const totalSlides = cards.length || 4;
+    const container = document.getElementById("smeCarousel");
+    const track = document.getElementById("smeCarouselTrack");
+    const prevBtn = document.getElementById("smePrevBtn");
+    const nextBtn = document.getElementById("smeNextBtn");
+    const dots = Array.from(document.querySelectorAll(".sme-dot"));
+    const activeIndexEl = document.getElementById("smeActiveIndex");
+    const totalCountEl = document.getElementById("smeTotalCount");
+    const timerFill = document.getElementById("smeTimerFill");
+    const storyPill = document.getElementById("smeStoryPill");
 
-    if (totalTabs === 0 || panels.length === 0) return;
-
-    let isAutoPlaying = true;
-    let isUserInteracting = false;
-    let autoTimer = null;
-    let progressPercentage = 0;
-    const slideDuration = 7500; // 7.5 seconds per slide
-    const tickInterval = 60; // 60ms tick for smooth progress
-
-    function activateTab(index, userInitiated = false, direction = "next") {
-      if (index < 0) index = totalTabs - 1;
-      if (index >= totalTabs) index = 0;
-      currentTab = index;
-
-      // Update Desktop Tabs
-      tabs.forEach((tab, idx) => {
-        const isActive = idx === currentTab;
-        tab.classList.toggle("active", isActive);
-        tab.setAttribute("aria-selected", isActive ? "true" : "false");
-
-        const fill = tab.querySelector(".tab-indicator-fill");
-        if (fill) {
-          fill.style.width = "0%";
-          fill.style.transition = "none";
-        }
-
-        if (isActive && userInitiated) {
-          tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-        }
-      });
-
-      // Update Mobile Story Progress Segments
-      storySegs.forEach((seg, idx) => {
-        const fill = seg.querySelector(".story-seg-fill");
-        if (!fill) return;
-        if (idx < currentTab) {
-          fill.style.width = "100%";
-          fill.style.transition = "width 0.25s ease";
-        } else if (idx === currentTab) {
-          fill.style.width = "0%";
-          fill.style.transition = "none";
-        } else {
-          fill.style.width = "0%";
-          fill.style.transition = "none";
-        }
-      });
-
-      // Update Mobile Step Counter
-      if (storyCurrentStep) {
-        storyCurrentStep.textContent = (currentTab + 1).toString();
-      }
-
-      // Update Studio Panels with directional animation
-      const animClass = direction === "prev" ? "slide-prev" : "slide-next";
-      panels.forEach((panel, idx) => {
-        const isActive = idx === currentTab;
-        panel.classList.remove("slide-next", "slide-prev");
-        if (isActive) {
-          panel.classList.add("active");
-          panel.setAttribute("aria-hidden", "false");
-          panel.classList.add(animClass);
-        } else {
-          panel.classList.remove("active");
-          panel.setAttribute("aria-hidden", "true");
-        }
-      });
-
-      progressPercentage = 0;
+    if (totalCountEl) {
+      totalCountEl.textContent = totalSlides < 10 ? "0" + totalSlides : totalSlides;
     }
 
-    function startTimer() {
-      stopTimer();
-      autoTimer = setInterval(() => {
-        if (!isAutoPlaying || isUserInteracting) return;
+    let isAutoStoryPlaying = true;
+    let isUserInteracting = false;
+    let storyTimerInterval = null;
+    let progressPercentage = 0;
+    const storyDuration = 10000; // 10 seconds per slide
+    const intervalTick = 100; // update every 100ms
 
-        progressPercentage += (tickInterval / slideDuration) * 100;
-        const boundedPct = Math.min(progressPercentage, 100);
+    function updateCarouselPosition(animate = true) {
+      if (!container || !track || cards.length === 0) return;
 
-        // Update Desktop Tab Indicator
-        const activeTab = tabs[currentTab];
-        if (activeTab) {
-          const fill = activeTab.querySelector(".tab-indicator-fill");
-          if (fill) fill.style.width = boundedPct + "%";
-        }
+      if (!animate) {
+        track.style.transition = "none";
+      } else {
+        track.style.transition = "transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1)";
+      }
 
-        // Update Mobile Story Segment Fill
-        const activeSeg = storySegs[currentTab];
-        if (activeSeg) {
-          const fill = activeSeg.querySelector(".story-seg-fill");
-          if (fill) fill.style.width = boundedPct + "%";
-        }
+      const activeCard = cards[currentSlide];
+      if (!activeCard) return;
 
+      const containerWidth = container.offsetWidth;
+      const cardCenter = activeCard.offsetLeft + (activeCard.offsetWidth / 2);
+      const targetOffset = (containerWidth / 2) - cardCenter;
+
+      track.style.transform = `translateX(${targetOffset}px)`;
+
+      // Update card states
+      cards.forEach((card, idx) => {
+        const isActive = idx === currentSlide;
+        card.classList.toggle("active", isActive);
+        card.setAttribute("aria-hidden", isActive ? "false" : "true");
+      });
+
+      // Update counter
+      if (activeIndexEl) {
+        activeIndexEl.textContent = (currentSlide + 1) < 10 ? "0" + (currentSlide + 1) : (currentSlide + 1);
+      }
+
+      // Update dots
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle("active", idx === currentSlide);
+      });
+
+      if (!animate) {
+        void track.offsetHeight;
+        track.style.transition = "transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1)";
+      }
+    }
+
+    function goToSlide(index, manual = false) {
+      if (index < 0) {
+        currentSlide = totalSlides - 1;
+      } else if (index >= totalSlides) {
+        currentSlide = 0;
+      } else {
+        currentSlide = index;
+      }
+
+      updateCarouselPosition(true);
+
+      if (manual) {
+        resetStoryTimer();
+      }
+    }
+
+    function resetStoryTimer() {
+      progressPercentage = 0;
+      if (timerFill) {
+        timerFill.style.width = "0%";
+      }
+    }
+
+    function startStoryTimer() {
+      stopStoryTimer();
+      storyTimerInterval = setInterval(() => {
+        if (!isAutoStoryPlaying || isUserInteracting) return;
+
+        progressPercentage += (intervalTick / storyDuration) * 100;
         if (progressPercentage >= 100) {
           progressPercentage = 0;
-          activateTab(currentTab + 1, false, "next");
+          goToSlide(currentSlide + 1, false);
         }
-      }, tickInterval);
+
+        if (timerFill) {
+          timerFill.style.width = Math.min(progressPercentage, 100) + "%";
+        }
+      }, intervalTick);
     }
 
-    function stopTimer() {
-      if (autoTimer) {
-        clearInterval(autoTimer);
-        autoTimer = null;
+    function stopStoryTimer() {
+      if (storyTimerInterval) {
+        clearInterval(storyTimerInterval);
+        storyTimerInterval = null;
       }
     }
 
-    // Desktop Tab Click & Keyboard Arrow Navigation
-    tabs.forEach((tab, idx) => {
-      tab.addEventListener("click", () => {
-        const dir = idx >= currentTab ? "next" : "prev";
-        activateTab(idx, true, dir);
-        startTimer();
-      });
-
-      tab.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowRight") {
-          e.preventDefault();
-          activateTab(currentTab + 1, true, "next");
-          tabs[currentTab].focus();
-        } else if (e.key === "ArrowLeft") {
-          e.preventDefault();
-          activateTab(currentTab - 1, true, "prev");
-          tabs[currentTab].focus();
+    // Toggle auto-story on clicking the 10s pill
+    if (storyPill) {
+      storyPill.addEventListener("click", () => {
+        isAutoStoryPlaying = !isAutoStoryPlaying;
+        storyPill.style.opacity = isAutoStoryPlaying ? "1" : "0.6";
+        const dot = storyPill.querySelector(".story-pulse-dot");
+        if (dot) {
+          dot.style.animationPlayState = isAutoStoryPlaying ? "running" : "paused";
         }
-      });
-    });
-
-    // Story Segments Click (Jump directly to slide)
-    storySegs.forEach((seg, idx) => {
-      seg.addEventListener("click", () => {
-        const dir = idx >= currentTab ? "next" : "prev";
-        activateTab(idx, true, dir);
-        startTimer();
-      });
-    });
-
-    // Mobile Story Prev / Next Buttons
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        activateTab(currentTab - 1, true, "prev");
-        startTimer();
-      });
-    }
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        activateTab(currentTab + 1, true, "next");
-        startTimer();
       });
     }
 
-    // Touch Swipe Gesture Detection on Viewport (Story Card Slider)
-    if (viewport) {
-      let touchStartX = 0;
-      let touchStartY = 0;
-      let touchStartTime = 0;
-
-      viewport.addEventListener("touchstart", (e) => {
-        if (e.touches && e.touches.length === 1) {
-          touchStartX = e.touches[0].clientX;
-          touchStartY = e.touches[0].clientY;
-          touchStartTime = Date.now();
-          isUserInteracting = true; // Pause auto-slide while holding
-        }
-      }, { passive: true });
-
-      viewport.addEventListener("touchend", (e) => {
-        setTimeout(() => { isUserInteracting = false; }, 3500);
-
-        if (e.changedTouches && e.changedTouches.length === 1) {
-          const touchEndX = e.changedTouches[0].clientX;
-          const touchEndY = e.changedTouches[0].clientY;
-          const diffX = touchEndX - touchStartX;
-          const diffY = touchEndY - touchStartY;
-          const elapsed = Date.now() - touchStartTime;
-
-          // Detect genuine horizontal swipe (>40px, mostly horizontal, within 700ms)
-          if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY) * 1.2 && elapsed < 700) {
-            if (diffX < 0) {
-              // Swiped left -> Next
-              activateTab(currentTab + 1, true, "next");
-            } else {
-              // Swiped right -> Previous
-              activateTab(currentTab - 1, true, "prev");
-            }
-            startTimer();
-          }
-        }
-      }, { passive: true });
-    }
-
-    // Pause on desktop mouse hover
+    // Pause on hover or focus
     if (container) {
       container.addEventListener("mouseenter", () => {
         isUserInteracting = true;
@@ -500,8 +428,407 @@
       });
     }
 
-    activateTab(0, false, "next");
-    startTimer();
+    // Click on cards to bring them into view
+    cards.forEach((card, idx) => {
+      card.addEventListener("click", () => {
+        if (idx !== currentSlide) {
+          goToSlide(idx, true);
+        }
+      });
+    });
+
+    // Arrow buttons
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        goToSlide(currentSlide - 1, true);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        goToSlide(currentSlide + 1, true);
+      });
+    }
+
+    // Dots indicator clicks
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const idx = parseInt(dot.dataset.index, 10);
+        goToSlide(idx, true);
+      });
+    });
+
+    // Touch Swipe Support for Mobile & Tablet
+    if (container) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchEndX = 0;
+      let touchEndY = 0;
+
+      container.addEventListener("touchstart", (e) => {
+        isUserInteracting = true;
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      container.addEventListener("touchend", (e) => {
+        isUserInteracting = false;
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+          if (diffX < 0) {
+            goToSlide(currentSlide + 1, true);
+          } else {
+            goToSlide(currentSlide - 1, true);
+          }
+        }
+      }, { passive: true });
+    }
+
+    // Window resize handler: recalculate exact track centering
+    window.addEventListener("resize", () => {
+      updateCarouselPosition(false);
+    });
+
+    // Initial position & timer boot
+    setTimeout(() => {
+      updateCarouselPosition(false);
+      startStoryTimer();
+    }, 50);
+  }
+
+  // ==========================================================================
+  // Live Biometric Gate Attendance Simulation & SMS Alert
+  // ==========================================================================
+  function convertToBanglaDigits(str) {
+    const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+    return str.toString().replace(/[0-9]/g, (d) => bnDigits[parseInt(d, 10)]);
+  }
+
+  function initBiometricPunchSimulator() {
+    const btn = document.getElementById("btnSimGatePunch");
+    const feedList = document.getElementById("simFeedList");
+    const toast = document.getElementById("simSmsToast");
+    const toastTime = document.getElementById("smsToastTime");
+    const toastBody = document.getElementById("smsToastBody");
+    const toastClose = document.getElementById("smsToastClose");
+    const liveDot = document.getElementById("gateLiveDot");
+
+    if (!btn || !feedList) return;
+
+    let toastTimer = null;
+
+    const studentPool = [
+      {
+        nameEn: "Farhan Ahmed",
+        nameBn: "ফারহান আহমেদ",
+        rollEn: "Class 10-A • Roll 01",
+        rollBn: "১০ম শ্রেণি (ক শাখা) • রোল ০১",
+        avatar: "FA",
+        avatarCls: "avatar-blue",
+        methodEn: "RFID Smart Card Punch • Device #ZK-Gate2",
+        methodBn: "আরএফআইডি স্মার্ট কার্ড পাঞ্চ • গেট #০২"
+      },
+      {
+        nameEn: "Ayesha Siddiqua",
+        nameBn: "আয়েশা সিদ্দিকা",
+        rollEn: "Class 9-B • Roll 05",
+        rollBn: "৯ম শ্রেণি (খ শাখা) • রোল ০৫",
+        avatar: "AS",
+        avatarCls: "",
+        methodEn: "Facial Recognition • Device #FR-Gate1",
+        methodBn: "ফেসিয়াল রিকগনিশন স্ক্যান • গেট #০১"
+      },
+      {
+        nameEn: "Tanvir Hasan",
+        nameBn: "তানভীর হাসান",
+        rollEn: "Class 8-A • Roll 14",
+        rollBn: "৮ম শ্রেণি (ক শাখা) • রোল ১৪",
+        avatar: "TH",
+        avatarCls: "avatar-amber",
+        methodEn: "RFID Smart Card Punch • Device #ZK-Gate2",
+        methodBn: "আরএফআইডি স্মার্ট কার্ড পাঞ্চ • গেট #০২"
+      },
+      {
+        nameEn: "Mehnaz Parveen",
+        nameBn: "মেহনাজ পারভীন",
+        rollEn: "Class 10-C • Roll 02",
+        rollBn: "১০ম শ্রেণি (গ শাখা) • রোল ০২",
+        avatar: "MP",
+        avatarCls: "avatar-blue",
+        methodEn: "Facial Recognition • Device #FR-Gate2",
+        methodBn: "ফেসিয়াল রিকগনিশন স্ক্যান • গেট #০২"
+      }
+    ];
+
+    let poolIdx = 0;
+
+    btn.addEventListener("click", () => {
+      // Trigger scan pulse
+      btn.classList.add("scanning");
+      if (liveDot) {
+        liveDot.style.animation = "none";
+        void liveDot.offsetWidth;
+        liveDot.style.animation = "live-pulse 0.5s infinite";
+      }
+      setTimeout(() => btn.classList.remove("scanning"), 650);
+
+      const student = studentPool[poolIdx % studentPool.length];
+      poolIdx++;
+
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+      const timeBn = convertToBanglaDigits(timeStr);
+
+      const isBn = currentLang === "bn";
+      const name = isBn ? student.nameBn : student.nameEn;
+      const roll = isBn ? student.rollBn : student.rollEn;
+      const method = isBn ? student.methodBn : student.methodEn;
+      const displayTime = isBn ? timeBn : timeStr;
+
+      // Create new feed row
+      const newRow = document.createElement("div");
+      newRow.className = "sme-feed-row newly-added";
+      newRow.innerHTML = `
+        <div class="sme-feed-avatar ${student.avatarCls}">${student.avatar}</div>
+        <div class="sme-feed-info">
+          <div class="sme-feed-name">
+            <span>${name}</span>
+            <span class="sme-feed-roll">${roll}</span>
+          </div>
+          <div class="sme-feed-sub">${method}</div>
+        </div>
+        <div class="sme-feed-action">
+          <span class="sme-time">${displayTime}</span>
+          <span class="sme-status-pill success">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="lang-en ${isBn ? 'hidden' : ''}">Present • SMS Sent</span>
+            <span class="lang-bn ${isBn ? '' : 'hidden'}">উপস্থিত • এসএমএস প্রেরিত</span>
+          </span>
+        </div>
+      `;
+
+      feedList.insertBefore(newRow, feedList.firstChild);
+
+      // Keep max 4 rows
+      const rows = feedList.querySelectorAll(".sme-feed-row");
+      if (rows.length > 4) {
+        for (let i = 4; i < rows.length; i++) {
+          rows[i].remove();
+        }
+      }
+
+      // Show SMS Toast
+      if (toast && toastBody) {
+        if (toastTimer) clearTimeout(toastTimer);
+
+        if (toastTime) {
+          toastTime.textContent = isBn ? "এইমাত্র" : "Just now";
+        }
+
+        const smsTextBn = `সম্মানিত অভিভাবক, আপনার সন্তান <b>${student.nameBn}</b> (${student.rollBn}) আজ সকাল ${timeBn}-এ ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - YES EDU`;
+        const smsTextEn = `Dear Guardian, your ward <b>${student.nameEn}</b> (${student.rollEn}) has safely checked in to campus at ${timeStr}. - YES EDU`;
+
+        toastBody.innerHTML = isBn ? smsTextBn : smsTextEn;
+        toast.classList.add("active");
+        toast.setAttribute("aria-hidden", "false");
+
+        toastTimer = setTimeout(() => {
+          toast.classList.remove("active");
+          toast.setAttribute("aria-hidden", "true");
+        }, 5000);
+      }
+    });
+
+    if (toastClose && toast) {
+      toastClose.addEventListener("click", () => {
+        if (toastTimer) clearTimeout(toastTimer);
+        toast.classList.remove("active");
+        toast.setAttribute("aria-hidden", "true");
+      });
+    }
+  }
+
+  // ==========================================================================
+  // NCTB 2026 AI Question Generator & Teacher Rubric Engine
+  // ==========================================================================
+  const nctbKnowledgeBase = {
+    physics: {
+      subjectEn: "Class 9-10 • Physics",
+      subjectBn: "৯ম-১০ম শ্রেণি • পদার্থবিজ্ঞান",
+      chapterEn: "Chapter 4: Work, Power & Energy",
+      chapterBn: "অধ্যায় ৪: কাজ, ক্ষমতা ও শক্তি",
+      code: "NCTB-2026-PHY-C04",
+      stimulusEn: "A teenager of mass 40 kg carrying a 20 kg sack climbs to the roof of a 20-meter high school building in 3 minutes. Another student carrying the same sack reaches the same roof using an electric lift in 30 seconds. (Take g = 9.8 m/s²).",
+      stimulusBn: "৪০ কেজি ভরের একজন শিক্ষার্থী ২০ কেজি ভরের একটি বিজ্ঞান প্রজেক্টের বক্স নিয়ে ২০ মিটার উঁচু একাডেমিক ভবনের ছাদে ৩ মিনিটে উঠল। অপর একজন শিক্ষার্থী একই ভরের বক্সসহ ক্যাম্পাসের আধুনিক লিফটে চড়ে ৩০ সেকেন্ডে একই ছাদে পৌঁছাল। (g = ৯.৮ m/s²)",
+      questionsEn: [
+        { badge: "(A) Knowledge [1]:", text: "What is 1 Kilowatt-hour (kWh)?" },
+        { badge: "(B) Comprehension [2]:", text: "Why is work done against gravitational force considered negative? Explain." },
+        { badge: "(C) Application [3]:", text: "Calculate the total work done and the mechanical power expended by the first student." },
+        { badge: "(D) Higher Ability [4]:", text: "Although both students performed identical total work, their power output differed significantly—verify this mathematically." }
+      ],
+      questionsBn: [
+        { badge: "(ক) জ্ঞানমূলক [১]:", text: "১ কিলোওয়াট-ঘণ্টা (kWh) কাকে বলে?" },
+        { badge: "(খ) অনুধাবনমূলক [২]:", text: "অভিকর্ষ বলের বিরুদ্ধে কৃতকাজ কেন ঋণাত্মক হয়? ব্যাখ্যা করো।" },
+        { badge: "(গ) প্রয়োগমূলক [৩]:", text: "প্রথম শিক্ষার্থীর ক্ষেত্রে সম্পন্ন কাজের পরিমাণ ও ব্যয়িত ক্ষমতা নির্ণয় করো।" },
+        { badge: "(ঘ) উচ্চতর দক্ষতা [৪]:", text: ""উভয় শিক্ষার্থীর কৃতকাজের মান অভিন্ন হলেও তাদের ক্ষমতার উল্লেখযোগ্য তারতম্য রয়েছে"—উদ্দীপকের আলোকে গাণিতিকভাবে বিশ্লেষণ করো।" }
+      ],
+      rubricEn: [
+        { points: "Part A (1 Mark)", detail: "1 mark for accurate definition: 1 kWh is energy consumed by a 1 kW device running for 1 hour (= 3.6 × 10⁶ Joules)." },
+        { points: "Part B (2 Marks)", detail: "1 mark for stating angle between force and displacement is 180° (cos 180° = -1); 1 mark for upward displacement vs gravity explanation." },
+        { points: "Part C (3 Marks)", detail: "Total mass m = 40 + 20 = 60 kg. Work W = mgh = 60 × 9.8 × 20 = 11,760 J (1.5 marks). Power P = W/t = 11,760 / 180 = 65.33 Watts (1.5 marks)." },
+        { points: "Part D (4 Marks)", detail: "Student 2 power P₂ = 11,760 / 30 = 392 Watts (1.5 marks). Comparing P₂ / P₁ = 392 / 65.33 = 6 times greater (1.5 marks). Final comparative justification (1 mark)." }
+      ],
+      rubricBn: [
+        { points: "ক এর উত্তর (১ নম্বর)", detail: "১ কিলোওয়াট ক্ষমতাসম্পন্ন কোনো যন্ত্র ১ ঘণ্টা চললে যে পরিমাণ শক্তি ব্যয় হয়, তাকে ১ কিলোওয়াট-ঘণ্টা বলে (= ৩.৬ × ১০⁶ জুল)।" },
+        { points: "খ এর ব্যাখ্যা (২ নম্বর)", detail: "অভিকর্ষ বলের দিক নিচের দিকে এবং সরণ বিপরীতমুখী (θ = ১৮০°, cos ১৮০° = -১)। বল ও সরণের দিক বিপরীত হওয়ায় কৃতকাজ ঋণাত্মক।" },
+        { points: "গ এর সমাধান (৩ নম্বর)", detail: "মোট ভর m = ৪০ + ২০ = ৬০ কেজি। কৃতকাজ W = mgh = ৬০ × ৯.৮ × ২০ = ১১,৭৬০ জুল (১.৫)। ব্যয়িত ক্ষমতা P = W/t = ১১,৭৬০ / ১৮০ = ৬৫.৩৩ ওয়াট (১.৫)।" },
+        { points: "ঘ এর বিশ্লেষণ (৪ নম্বর)", detail: "লিফটের শিক্ষার্থীর ব্যয়িত ক্ষমতা P₂ = ১১,৭৬০ / ৩০ = ৩৯২ ওয়াট (১.৫)। ক্ষমতা অনুপাত P₂ / P₁ = ৩৯২ / ৬৫.৩৩ = ৬ গুণ (১.৫)। সঠিক তুলনামূলক সিদ্ধান্ত উপস্থাপন (১)।" }
+      ],
+      pedagogicalEn: "Teacher Alert: Ensure students add the sack mass (20 kg) to body mass (40 kg) before calculating work.",
+      pedagogicalBn: "শিক্ষক সহায়িকা: শিক্ষার্থীরা অনেক সময় বক্সের ভর (২০ কেজি) ও শিক্ষার্থীর ভর (৪০ কেজি) যোগ করতে ভুলে যায়। সিস্টেমের মোট ভর নির্ণয়ে সতর্ক করুন।"
+    },
+    math: {
+      subjectEn: "Class 8 • Mathematics",
+      subjectBn: "৮ম শ্রেণি • সাধারণ গণিত",
+      chapterEn: "Chapter 9: Pythagorean Theorem",
+      chapterBn: "অধ্যায় ৯: পিথাগোরাসের উপপাদ্য ও ত্রিভুজ",
+      code: "NCTB-2026-MTH-C08",
+      stimulusEn: "A rectangular campus playground is 24 meters long and 7 meters wide. A student walks diagonally across the ground from one corner to the opposite corner instead of walking along the boundary.",
+      stimulusBn: "একটি ক্যাম্পাসের আয়তাকার খেলার মাঠের দৈর্ঘ্য ২৪ মিটার এবং প্রস্থ ৭ মিটার। একজন শিক্ষার্থী সীমানা বরাবর না হেঁটে মাঠের এক কোণা থেকে বিপরীত কোণায় কর্ণ বরাবর সোজা হেঁটে অপর পাশে পৌঁছাল।",
+      questionsEn: [
+        { badge: "(A) Knowledge [1]:", text: "State the Pythagorean Theorem." },
+        { badge: "(B) Comprehension [2]:", text: "If triangle side lengths are 3 cm, 4 cm, and 5 cm, verify whether it forms a right-angled triangle." },
+        { badge: "(C) Application [3]:", text: "How many meters of walking distance did the student save by taking the diagonal path?" },
+        { badge: "(D) Higher Ability [4]:", text: "If the playground length is increased by 25% and width decreased by 20%, determine the percentage change in the new diagonal length." }
+      ],
+      questionsBn: [
+        { badge: "(ক) জ্ঞানমূলক [১]:", text: "পিথাগোরাসের উপপাদ্যটি বিবৃতি করো।" },
+        { badge: "(খ) অনুধাবনমূলক [২]:", text: "কোনো ত্রিভুজের বাহুর দৈর্ঘ্য ৩ সেমি, ৪ সেমি ও ৫ সেমি হলে এটি সমকোণী ত্রিভুজ কি না যাচাই করো।" },
+        { badge: "(গ) প্রয়োগমূলক [৩]:", text: "মাঠের সীমানা বরাবর হাঁটার চেয়ে কর্ণ বরাবর হেঁটে ছাত্রটির কত মিটার দূরত্ব সাশ্রয় হলো?" },
+        { badge: "(ঘ) উচ্চতর দক্ষতা [৪]:", text: "মাঠের দৈর্ঘ্য ২৫% বৃদ্ধি এবং প্রস্থ ২০% হ্রাস করা হলে নতুন কর্ণের দৈর্ঘ্যের শতকরা পরিবর্তন গাণিতিকভাবে নিরূপণ করো।" }
+      ],
+      rubricEn: [
+        { points: "Part A (1 Mark)", detail: "In a right-angled triangle, the square of the hypotenuse equals the sum of squares of the other two sides (c² = a² + b²)." },
+        { points: "Part B (2 Marks)", detail: "Check 3² + 4² = 9 + 16 = 25 = 5². Since sum of squares of legs equals hypotenuse squared, it is right-angled (Converse theorem)." },
+        { points: "Part C (3 Marks)", detail: "Diagonal d = √(24² + 7²) = √(576 + 49) = √625 = 25m (1.5 marks). Boundary = 24 + 7 = 31m. Distance saved = 31 - 25 = 6 meters (1.5 marks)." },
+        { points: "Part D (4 Marks)", detail: "New length = 30m; New width = 5.6m. New diagonal = √(30² + 5.6²) = √931.36 ≈ 30.52m. Increase = 5.52m; % change = (5.52 / 25) × 100 = 22.08% increase (4 marks)." }
+      ],
+      rubricBn: [
+        { points: "ক এর উত্তর (১ নম্বর)", detail: "একটি সমকোণী ত্রিভুজের অতিভুজের ওপর অঙ্কিত বর্গক্ষেত্রের ক্ষেত্রফল অপর দুই বাহুর ওপর অঙ্কিত বর্গক্ষেত্রদ্বয়ের ক্ষেত্রফলের সমষ্টির সমান (c² = a² + b²)।" },
+        { points: "খ এর যাচাই (২ নম্বর)", detail: "৩² + ৪² = ৯ + ১৬ = ২৫ = ৫²। বাহুদ্বয়ের বর্গের সমষ্টি বৃহত্তম বাহুর বর্গের সমান হওয়ায় ত্রিভুজটি সমকোণী (২)।" },
+        { points: "গ এর সমাধান (৩ নম্বর)", detail: "কর্ণ d = √(২৪² + ৭²) = √(৫৭৬ + ৪৯) = √৬২৫ = ২৫ মিটার (১.৫)। সীমানা পথ = ২৪ + ৭ = ৩১ মিটার। সাশ্রয়কৃত দূরত্ব = ৩১ - ২৫ = ৬ মিটার (১.৫)।" },
+        { points: "ঘ এর বিশ্লেষণ (৪ নম্বর)", detail: "নতুন দৈর্ঘ্য = ৩০ মিটার; নতুন প্রস্থ = ৫.৬ মিটার। নতুন কর্ণ = √(৩০² + ৫.৬²) = √৯৩১.৩৬ ≈ ৩০.৫২ মিটার। কর্ণের বৃদ্ধি = ৫.৫২ মিটার; শতকরা বৃদ্ধি = ২২.০৮% (৪)।" }
+      ],
+      pedagogicalEn: "Teacher Alert: Ensure students do not round off intermediate square roots prematurely.",
+      pedagogicalBn: "শিক্ষক সহায়িকা: শিক্ষার্থীদের রাউন্ড-অফ দশমিক গণনায় পূর্ণ সতর্কতা অবলম্বনের পরামর্শ দিন।"
+    }
+  };
+
+  let activeAiSub = "physics";
+  let activeAiMode = "question";
+
+  function renderNctbAiSimulator() {
+    const subjectChip = document.getElementById("aiSubjectChip");
+    const chapterChip = document.getElementById("aiChapterChip");
+    const codeChip = document.getElementById("aiCodeChip");
+    const stimulusText = document.getElementById("aiStimulusText");
+    const contentList = document.getElementById("aiContentList");
+    const stage = document.getElementById("smeAiCardStage");
+
+    if (!subjectChip || !chapterChip || !contentList) return;
+
+    const data = nctbKnowledgeBase[activeAiSub] || nctbKnowledgeBase.physics;
+    const isBn = currentLang === "bn";
+
+    subjectChip.textContent = isBn ? data.subjectBn : data.subjectEn;
+    chapterChip.textContent = isBn ? data.chapterBn : data.chapterEn;
+    if (codeChip) codeChip.textContent = data.code;
+    if (stimulusText) stimulusText.textContent = isBn ? data.stimulusBn : data.stimulusEn;
+
+    if (activeAiMode === "question") {
+      const qList = isBn ? data.questionsBn : data.questionsEn;
+      contentList.className = "sme-cq-list";
+      contentList.innerHTML = qList.map((q) => `
+        <div class="cq-item">
+          <span class="cq-badge">${q.badge}</span>
+          <span class="cq-text">${q.text}</span>
+        </div>
+      `).join("");
+    } else {
+      const rList = isBn ? data.rubricBn : data.rubricEn;
+      const pedAlert = isBn ? data.pedagogicalBn : data.pedagogicalEn;
+      contentList.className = "sme-rubric-card";
+      contentList.innerHTML = rList.map((r) => `
+        <div class="rubric-step-row">
+          <span class="rubric-step-points">${r.points}</span>
+          <span class="rubric-step-detail">${r.detail}</span>
+        </div>
+      `).join("") + `
+        <div class="pedagogical-alert">
+          <strong>ℹ️ ${isBn ? "শিক্ষক মূল্যায়ন নির্দেশিকা:" : "Pedagogical Note:"}</strong> ${pedAlert}
+        </div>
+      `;
+    }
+
+    if (stage) {
+      stage.style.opacity = "0.7";
+      stage.style.transform = "scale(0.99)";
+      setTimeout(() => {
+        stage.style.transition = "opacity 0.25s ease, transform 0.25s ease";
+        stage.style.opacity = "1";
+        stage.style.transform = "scale(1)";
+      }, 40);
+    }
+  }
+
+  function initNctbAiSimulator() {
+    const subTabs = document.querySelectorAll(".ai-sub-tab");
+    const modeBtns = document.querySelectorAll(".ai-mode-btn");
+    const regenBtn = document.getElementById("btnRegenAiQuestion");
+
+    subTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        subTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        activeAiSub = tab.dataset.sub;
+        renderNctbAiSimulator();
+      });
+    });
+
+    modeBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        modeBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeAiMode = btn.dataset.mode;
+        renderNctbAiSimulator();
+      });
+    });
+
+    if (regenBtn) {
+      regenBtn.addEventListener("click", () => {
+        regenBtn.style.transform = "rotate(180deg)";
+        regenBtn.style.transition = "transform 0.4s ease";
+        setTimeout(() => {
+          regenBtn.style.transform = "none";
+        }, 400);
+
+        activeAiSub = activeAiSub === "physics" ? "math" : "physics";
+        subTabs.forEach((t) => {
+          t.classList.toggle("active", t.dataset.sub === activeAiSub);
+        });
+        renderNctbAiSimulator();
+      });
+    }
+
+    renderNctbAiSimulator();
   }
 
   // 6. Interactive Pricing Calculator
@@ -1048,6 +1375,8 @@
     initModuleToggle();
     initRoleShowcase();
     initDemoStudio();
+    initBiometricPunchSimulator();
+    initNctbAiSimulator();
     initPricingCalculator();
     initDemoModal();
     initFloatingActions();
