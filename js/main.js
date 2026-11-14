@@ -1411,6 +1411,129 @@
     });
   }
 
+  // ==========================================================================
+  // Interactive 3D SaaS Hero Dashboard & Testimonials
+  // ==========================================================================
+  function initHeroLaptopInteractive() {
+    const visual = document.querySelector(".hero-visual");
+    const laptop = document.querySelector(".laptop-device-wrapper");
+    const sidebarItems = document.querySelectorAll(".dash-sidebar .dash-nav-item");
+
+    // 1. Interactive Sidebar Tabs inside Laptop
+    if (sidebarItems.length) {
+      sidebarItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          sidebarItems.forEach((i) => i.classList.remove("active"));
+          item.classList.add("active");
+        });
+      });
+    }
+
+    // 2. Subtle 3D Mouse Parallax on Desktop
+    if (visual && laptop && window.matchMedia("(min-width: 1024px)").matches) {
+      visual.addEventListener("mousemove", (e) => {
+        const rect = visual.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        const rotY = -5 + x * 8; // -9deg to -1deg
+        const rotX = 2 - y * 6;  // -1deg to 5deg
+
+        laptop.style.transform = `perspective(1200px) rotateY(${rotY.toFixed(2)}deg) rotateX(${rotX.toFixed(2)}deg)`;
+      });
+
+      visual.addEventListener("mouseleave", () => {
+        laptop.style.transform = "perspective(1200px) rotateY(-5deg) rotateX(2deg)";
+      });
+    }
+
+    // 3. Testimonial Quote Carousel in Floating Card
+    const testimonialCard = document.querySelector(".floating-testimonial-card");
+    if (testimonialCard) {
+      const quoteText = testimonialCard.querySelector(".testimonial-quote-text");
+      const authorName = testimonialCard.querySelector(".author-name");
+      const authorTitle = testimonialCard.querySelector(".author-title");
+      const dots = testimonialCard.querySelectorAll(".testimonial-carousel-dots .dot");
+
+      const testimonials = [
+        {
+          quoteEn: '"YesEdu has completely transformed our institution\'s management. It\'s simple, powerful and incredibly reliable."',
+          quoteBn: '"YesEdu আমাদের প্রতিষ্ঠানের সামগ্রিক ব্যবস্থাপনা সম্পূর্ণ বদলে দিয়েছে। এটি অত্যন্ত সহজ, কার্যকর এবং নির্ভরযোগ্য।"',
+          nameEn: "Dr. A. Rahman",
+          nameBn: "ড. এ. রহমান",
+          titleEn: "Principal, Al-Noor Academy",
+          titleBn: "অধ্যক্ষ, আল-নূর একাডেমি",
+          avatar: "DR"
+        },
+        {
+          quoteEn: '"From NCTB exam grading to biometric SMS, our daily manual paperwork reduced by 90% in 1 month."',
+          quoteBn: '"এনসিটিবি মূল্যায়ন থেকে বায়োমেট্রিক গেট এসএমএস—আমাদের দৈনিক কাগজের কাজ ৯০% কমে গেছে।"',
+          nameEn: "Engr. M. Haque",
+          nameBn: "ইঞ্জি. এম. হক",
+          titleEn: "Vice Principal, Cantonment Public",
+          titleBn: "উপাধ্যক্ষ, ক্যান্টনমেন্ট পাবলিক",
+          avatar: "MH"
+        },
+        {
+          quoteEn: '"Tuition fees with bKash and instant auto receipts made fee collection seamless for 2,500 students."',
+          quoteBn: '"বিকাশ ফি কালেকশন এবং অটো ডিজিটাল রসিদ থাকায় ২,৫০০ শিক্ষার্থীর ফি আদায় এখন ঝামেলামুক্ত।"',
+          nameEn: "Prof. N. Sultana",
+          nameBn: "প্রফেসর এন. সুলতানা",
+          titleEn: "Director, Ideal Model College",
+          titleBn: "পরিচালক, আইডিয়াল মডেল কলেজ",
+          avatar: "NS"
+        }
+      ];
+
+      let activeIndex = 0;
+      let quoteTimer = null;
+
+      function renderTestimonial(idx) {
+        if (!quoteText || !authorName || !authorTitle) return;
+        const t = testimonials[idx];
+        const isBn = currentLang === "bn";
+
+        quoteText.innerHTML = isBn ? `"${t.quoteBn.replace(/^"|"$/g, "")}"` : `"${t.quoteEn.replace(/^"|"$/g, "")}"`;
+        authorName.textContent = isBn ? t.nameBn : t.nameEn;
+        authorTitle.textContent = isBn ? t.titleBn : t.titleEn;
+
+        const avatarEl = testimonialCard.querySelector(".testimonial-avatar-fallback");
+        if (avatarEl) avatarEl.textContent = t.avatar;
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === idx);
+        });
+      }
+
+      function startQuoteTimer() {
+        if (quoteTimer) clearInterval(quoteTimer);
+        quoteTimer = setInterval(() => {
+          activeIndex = (activeIndex + 1) % testimonials.length;
+          renderTestimonial(activeIndex);
+        }, 5500);
+      }
+
+      dots.forEach((dot, i) => {
+        dot.style.cursor = "pointer";
+        dot.addEventListener("click", () => {
+          activeIndex = i;
+          renderTestimonial(activeIndex);
+          startQuoteTimer();
+        });
+      });
+
+      startQuoteTimer();
+
+      // Pause on hover
+      testimonialCard.addEventListener("mouseenter", () => {
+        if (quoteTimer) clearInterval(quoteTimer);
+      });
+      testimonialCard.addEventListener("mouseleave", () => {
+        startQuoteTimer();
+      });
+    }
+  }
+
   // Initialize all subsystems when DOM is ready
   document.addEventListener("DOMContentLoaded", () => {
     initLanguageSwitcher();
@@ -1419,6 +1542,7 @@
     initHeroRoleCarousel();
     initInstitutionSegmenter();
     initDashboardHotspots();
+    initHeroLaptopInteractive();
     initModuleToggle();
     initRoleShowcase();
     initDemoStudio();

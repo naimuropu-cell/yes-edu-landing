@@ -42,7 +42,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=9.1">
+  <link rel="stylesheet" href="css/style.css?v=10.0">
 </head>
 
 <body>
@@ -83,242 +83,485 @@
   <main id="home">
 
     <!-- ================= HERO SECTION (2-COL SPLIT + 3D DASHBOARD) ================= -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <!-- Institution Segmenter Pill (Schools, Madrasahs, Cadets) -->
-          <div class="institution-segmenter" id="instSegmenter" role="tablist" aria-label="Select Institution Type">
-            <button class="inst-pill active" data-inst="general" type="button" role="tab" aria-selected="true">
-              <span class="inst-pill-ico">🏫</span>
-              <span class="lang-en">School & College</span>
-              <span class="lang-bn hidden">স্কুল ও কলেজ</span>
-            </button>
-            <button class="inst-pill" data-inst="madrasah" type="button" role="tab" aria-selected="false">
-              <span class="inst-pill-ico">🕌</span>
-              <span class="lang-en">Madrasah</span>
-              <span class="lang-bn hidden">কওমি ও আলিয়া মাদরাসা</span>
-            </button>
-            <button class="inst-pill" data-inst="cadet" type="button" role="tab" aria-selected="false">
-              <span class="inst-pill-ico">🎖️</span>
-              <span class="lang-en">Cadet & English Med.</span>
-              <span class="lang-bn hidden">ক্যাডেট ও ইংলিশ মিডিয়াম</span>
-            </button>
-          </div>
+    <!-- ================= HERO SECTION (BESPOKE SAAS DASHBOARD + 3D PERSPECTIVE LAPTOP) ================= -->
+    <section class="hero" id="hero">
+      <!-- Ambient Glow & Radial Backdrops -->
+      <div class="hero-top-glow" aria-hidden="true"></div>
+      <div class="hero-campus-ambient" aria-hidden="true"></div>
+      <div class="hero-dot-pattern" aria-hidden="true"></div>
 
-          <!-- Dynamic Tailored Institution Feature Ribbon -->
-          <div class="inst-feature-tag" id="instFeatureTag">
-            <span class="inst-tag-dot">✦</span>
-            <span id="instTagText">
-              <span class="lang-en"><strong>Tailored for General Schools:</strong> NCTB 2026 Assessment • Auto GPA Report Card • 1-Tap bKash Fee • Biometric Gate SMS</span>
-              <span class="lang-bn hidden"><strong>স্কুল ও কলেজের জন্য:</strong> এনসিটিবি ২০২৬ নতুন মূল্যায়ন • অটো জিপিএ মার্কশিট • ১-ট্যাপে বিকাশ ফি • বায়োমেট্রিক গেট এসএমএস</span>
-            </span>
-          </div>
-
-          <h1>
-            <span class="lang-en">A better-connected future for <span>every institution.</span></span>
-            <span class="lang-bn hidden">প্রতিটি শিক্ষাপ্রতিষ্ঠানের জন্য একটি <span>স্মার্ট ও সংযুক্ত
-                ভবিষ্যৎ।</span></span>
-          </h1>
-
-          <p>
-            <span class="lang-en">One connected education ecosystem for academic management, campus operations,
-              institutional websites, mobile experiences and AI-powered assistance.</span>
-            <span class="lang-bn hidden">একাডেমিক ব্যবস্থাপনা, ক্যাম্পাস পরিচালনা, প্রাতিষ্ঠানিক ওয়েবসাইট, মোবাইল অ্যাপস
-              এবং এআই সহায়তার জন্য একটি সমন্বিত শিক্ষাব্যবস্থাপনা প্ল্যাটফর্ম।</span>
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary open-demo-modal" href="#contact">
-              <span class="lang-en">Book a Personal Demo</span>
-              <span class="lang-bn hidden">ব্যক্তিগত ডেমো বুক করুন</span>
-              <span class="arrow">↗</span>
-            </a>
-            <a class="btn btn-tour-play" href="#demoStudio">
-              <span class="play-circle">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
-                </svg>
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <!-- LEFT COLUMN: Value Proposition, Trust Seal, Headline, CTAs, Stats -->
+          <div class="hero-copy reveal">
+            <!-- Trust Pill with Client Crest Seals -->
+            <div class="hero-trust-pill" role="status">
+              <span class="trust-star">✦</span>
+              <span class="trust-text">
+                <span class="lang-en">Trusted by 1,200+ Educational Institutions</span>
+                <span class="lang-bn hidden">১,২০০+ শিক্ষাপ্রতিষ্ঠানের বিশ্বস্ত সঙ্গী</span>
               </span>
-              <span class="lang-en">Explore Live Platform</span>
-              <span class="lang-bn hidden">সরাসরি প্ল্যাটফর্ম দেখুন</span>
-            </a>
+              <div class="trust-seals-cluster" aria-label="Partner Institutions">
+                <img src="images/clients/ideal-model.svg" alt="Ideal Model" class="trust-seal-img" title="Ideal Model School & College">
+                <img src="images/clients/cantonment-public.svg" alt="Cantonment Public" class="trust-seal-img" title="Cantonment Public School & College">
+                <img src="images/clients/city-college.svg" alt="City College" class="trust-seal-img" title="City Model College">
+                <img src="images/clients/scholars-intl.svg" alt="Scholars Intl" class="trust-seal-img" title="Scholars International School">
+                <span class="trust-seal-more">+</span>
+              </div>
+            </div>
+
+            <!-- Main Impactful Headline with Hand-Drawn Curved Emerald Underline -->
+            <h1 class="hero-headline">
+              <span class="lang-en">Smart Education<br>Management for a<br><span class="highlight-swoosh">Brighter</span> Tomorrow</span>
+              <span class="lang-bn hidden">স্মার্ট শিক্ষা<br>ব্যবস্থাপনা একটি<br><span class="highlight-swoosh">উজ্জ্বল</span> ভবিষ্যতের জন্য</span>
+            </h1>
+
+            <!-- Sub-paragraph Description -->
+            <p class="hero-desc">
+              <span class="lang-en">Automate, manage and grow your institution with YesEdu – the all-in-one digital solution for schools, colleges and madrasahs.</span>
+              <span class="lang-bn hidden">আপনার প্রতিষ্ঠানকে স্বয়ংক্রিয়, পরিচালনা ও সমৃদ্ধ করুন YesEdu-এর সাথে – স্কুল, কলেজ ও মাদ্রাসার জন্য একটি পূর্ণাঙ্গ ডিজিটাল সমাধান।</span>
+            </p>
+
+            <!-- Dual Action CTAs -->
+            <div class="hero-ctas">
+              <a class="btn btn-hero-primary open-demo-modal" href="#contact">
+                <span class="lang-en">Start Free Trial</span>
+                <span class="lang-bn hidden">ফ্রি ট্রায়াল শুরু করুন</span>
+                <span class="arrow-ico">→</span>
+              </a>
+              <a class="btn btn-hero-outline" href="#demoStudio">
+                <span class="play-circle-ico">▶</span>
+                <span class="lang-en">Watch Product Tour</span>
+                <span class="lang-bn hidden">প্ল্যাটফর্ম ট্যুর দেখুন</span>
+              </a>
+            </div>
+
+            <!-- Mini 3-KPI Stat Metric Row -->
+            <div class="hero-stat-row">
+              <div class="hero-stat-col">
+                <span class="hero-stat-ico stat-ico-inst">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                </span>
+                <div class="hero-stat-meta">
+                  <strong>
+                    <span class="lang-en">1,200+</span>
+                    <span class="lang-bn hidden">১,২০০+</span>
+                  </strong>
+                  <small>
+                    <span class="lang-en">Institutions</span>
+                    <span class="lang-bn hidden">প্রতিষ্ঠান</span>
+                  </small>
+                </div>
+              </div>
+
+              <div class="hero-stat-col">
+                <span class="hero-stat-ico stat-ico-stud">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </span>
+                <div class="hero-stat-meta">
+                  <strong>
+                    <span class="lang-en">500K+</span>
+                    <span class="lang-bn hidden">৫০০K+</span>
+                  </strong>
+                  <small>
+                    <span class="lang-en">Students</span>
+                    <span class="lang-bn hidden">শিক্ষার্থী</span>
+                  </small>
+                </div>
+              </div>
+
+              <div class="hero-stat-col">
+                <span class="hero-stat-ico stat-ico-upt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
+                </span>
+                <div class="hero-stat-meta">
+                  <strong>
+                    <span class="lang-en">99.9%</span>
+                    <span class="lang-bn hidden">৯৯.৯%</span>
+                  </strong>
+                  <small>
+                    <span class="lang-en">Uptime</span>
+                    <span class="lang-bn hidden">আপটাইম</span>
+                  </small>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="hero-proof">
-            <span class="proof-dots"><i></i><i></i><i></i><i></i></span>
-            <span>
-              <span class="lang-en">Engineered for schools, colleges & madrasas in Bangladesh</span>
-              <span class="lang-bn hidden">বাংলাদেশের স্কুল, কলেজ ও মাদ্রাসার জন্য বিশেষভাবে তৈরি</span>
-            </span>
+          <!-- RIGHT COLUMN: 3D Perspective Laptop Mockup with Live Dashboard & Floating Badges -->
+          <div class="hero-visual reveal">
+            <!-- Organic Mint Radial Aura Blob -->
+            <div class="visual-blob-aura" aria-hidden="true"></div>
+
+            <!-- FLOATING BADGE 1: AI Assistant (Top-Left) -->
+            <div class="floating-badge badge-ai" aria-label="AI Assistant">
+              <span class="float-badge-ico ico-ai">🤖</span>
+              <div class="float-badge-content">
+                <span class="float-badge-title">
+                  <span class="lang-en">AI Assistant</span>
+                  <span class="lang-bn hidden">এআই অ্যাসিস্ট্যান্ট</span>
+                </span>
+                <small class="float-badge-sub">
+                  <span class="lang-en">Always with you</span>
+                  <span class="lang-bn hidden">সবসময় আপনার সাথে</span>
+                </small>
+              </div>
+            </div>
+
+            <!-- FLOATING BADGE 2: Online Fee Collection (Top-Right) -->
+            <div class="floating-badge badge-fee" aria-label="Online Fee Collection">
+              <span class="float-badge-ico ico-fee">💳</span>
+              <div class="float-badge-content">
+                <span class="float-badge-title">
+                  <span class="lang-en">Online Fee</span>
+                  <span class="lang-bn hidden">অনলাইন ফি</span>
+                </span>
+                <small class="float-badge-sub">
+                  <span class="lang-en">Collection</span>
+                  <span class="lang-bn hidden">কালেকশন</span>
+                </small>
+              </div>
+            </div>
+
+            <!-- FLOATING BADGE 3: Real-time Reports (Mid-Right) -->
+            <div class="floating-badge badge-report" aria-label="Real-time Reports">
+              <span class="float-badge-ico ico-report">📊</span>
+              <div class="float-badge-content">
+                <span class="float-badge-title">
+                  <span class="lang-en">Real-time</span>
+                  <span class="lang-bn hidden">রিয়েল-টাইম</span>
+                </span>
+                <small class="float-badge-sub">
+                  <span class="lang-en">Reports</span>
+                  <span class="lang-bn hidden">রিপোর্ট ও তথ্য</span>
+                </small>
+              </div>
+            </div>
+
+            <!-- FLOATING BADGE 4: Fees Received! (Bottom-Left) -->
+            <div class="floating-badge badge-received" aria-label="Fees Received">
+              <span class="float-badge-ico ico-received">✓</span>
+              <div class="float-badge-content">
+                <span class="float-badge-title">
+                  <span class="lang-en">Fees Received!</span>
+                  <span class="lang-bn hidden">ফি গ্রহণ সম্পন্ন!</span>
+                  <span class="plus-sparkle">+</span>
+                </span>
+                <small class="float-badge-sub float-amount">
+                  <span class="lang-en">৳ 2,500</span>
+                  <span class="lang-bn hidden">৳ ২,৫০০</span>
+                </small>
+              </div>
+            </div>
+
+            <!-- 3D LAPTOP HARDWARE CHASSIS & SCREEN -->
+            <div class="laptop-device-wrapper">
+              <div class="laptop-screen-frame">
+                <!-- Top Screen Bezel with Webcam Notch -->
+                <div class="laptop-camera-notch">
+                  <span class="camera-lens"></span>
+                  <span class="camera-sensor"></span>
+                </div>
+
+                <!-- Screen Glass Surface / Realistic YesEdu SaaS Dashboard -->
+                <div class="laptop-dashboard-surface">
+                  <!-- Dashboard Top App Navigation Bar -->
+                  <div class="dash-top-bar">
+                    <div class="dash-top-brand">
+                      <span class="dash-brand-icon">◈</span>
+                      <span class="dash-brand-text">YesEdu</span>
+                    </div>
+                    <div class="dash-top-search">
+                      <span class="dash-search-ico">🔍</span>
+                      <span class="dash-search-placeholder">
+                        <span class="lang-en">Search here...</span>
+                        <span class="lang-bn hidden">অনুসন্ধান করুন...</span>
+                      </span>
+                    </div>
+                    <div class="dash-top-actions">
+                      <span class="dash-action-bell" title="Notifications">🔔<span class="dash-bell-dot"></span></span>
+                      <div class="dash-admin-avatar" title="Principal Profile">
+                        <span class="dash-avatar-initials">AD</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Dashboard Main Split: Sidebar + Workspace -->
+                  <div class="dash-main-grid">
+                    <!-- Left Mini Navigation Sidebar -->
+                    <aside class="dash-sidebar" aria-label="Dashboard Navigation">
+                      <div class="dash-nav-item active">
+                        <span class="dash-item-ico">▦</span>
+                        <span class="dash-item-label">
+                          <span class="lang-en">Dashboard</span>
+                          <span class="lang-bn hidden">ড্যাশবোর্ড</span>
+                        </span>
+                      </div>
+                      <div class="dash-nav-item">
+                        <span class="dash-item-ico">👥</span>
+                        <span class="dash-item-label">
+                          <span class="lang-en">Students</span>
+                          <span class="lang-bn hidden">শিক্ষার্থী</span>
+                        </span>
+                      </div>
+                      <div class="dash-nav-item">
+                        <span class="dash-item-ico">🎓</span>
+                        <span class="dash-item-label">
+                          <span class="lang-en">Teachers</span>
+                          <span class="lang-bn hidden">শিক্ষকবৃন্দ</span>
+                        </span>
+                      </div>
+                      <div class="dash-nav-item">
+                        <span class="dash-item-ico">🕒</span>
+                        <span class="dash-item-label">
+                          <span class="lang-en">Attendance</span>
+                          <span class="lang-bn hidden">উপস্থিতি</span>
+                        </span>
+                      </div>
+                      <div class="dash-nav-item">
+                        <span class="dash-item-ico">💳</span>
+                        <span class="dash-item-label">
+                          <span class="lang-en">Fees</span>
+                          <span class="lang-bn hidden">ফি আদায়</span>
+                        </span>
+                      </div>
+                      <div class="dash-nav-item">
+                        <span class="dash-item-ico">📊</span>
+                        <span class="dash-item-label">
+                          <span class="lang-en">Reports</span>
+                          <span class="lang-bn hidden">রিপোর্ট</span>
+                        </span>
+                      </div>
+                    </aside>
+
+                    <!-- Right Main Operational Panel -->
+                    <div class="dash-workspace">
+                      <!-- 3 Top Metric Cards -->
+                      <div class="dash-metric-triad">
+                        <div class="dash-metric-card card-students">
+                          <div class="dash-card-icon-wrap ico-wrap-green">
+                            <span>🎓</span>
+                          </div>
+                          <div class="dash-card-text">
+                            <small>
+                              <span class="lang-en">Total Students</span>
+                              <span class="lang-bn hidden">মোট শিক্ষার্থী</span>
+                            </small>
+                            <div class="dash-card-val-row">
+                              <strong>
+                                <span class="lang-en">12,480</span>
+                                <span class="lang-bn hidden">১২,৪৮০</span>
+                              </strong>
+                              <span class="dash-growth-tag tag-green">
+                                <span class="lang-en">↑ 12%</span>
+                                <span class="lang-bn hidden">↑ ১২%</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dash-metric-card card-teachers">
+                          <div class="dash-card-icon-wrap ico-wrap-purple">
+                            <span>👥</span>
+                          </div>
+                          <div class="dash-card-text">
+                            <small>
+                              <span class="lang-en">Total Teachers</span>
+                              <span class="lang-bn hidden">মোট শিক্ষক</span>
+                            </small>
+                            <div class="dash-card-val-row">
+                              <strong>
+                                <span class="lang-en">624</span>
+                                <span class="lang-bn hidden">৬২৪</span>
+                              </strong>
+                              <span class="dash-growth-tag tag-purple">
+                                <span class="lang-en">↑ 8%</span>
+                                <span class="lang-bn hidden">↑ ৮%</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dash-metric-card card-classes">
+                          <div class="dash-card-icon-wrap ico-wrap-teal">
+                            <span>🏫</span>
+                          </div>
+                          <div class="dash-card-text">
+                            <small>
+                              <span class="lang-en">Total Classes</span>
+                              <span class="lang-bn hidden">মোট শ্রেণি</span>
+                            </small>
+                            <div class="dash-card-val-row">
+                              <strong>
+                                <span class="lang-en">210</span>
+                                <span class="lang-bn hidden">২১০</span>
+                              </strong>
+                              <span class="dash-growth-tag tag-teal">
+                                <span class="lang-en">↑ 5%</span>
+                                <span class="lang-bn hidden">↑ ৫%</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Lower Split: Attendance Wave Area Chart + Circular Gauge Card -->
+                      <div class="dash-lower-grid">
+                        <!-- Left Chart Card -->
+                        <div class="dash-chart-card">
+                          <div class="dash-chart-header">
+                            <span class="dash-chart-title">
+                              <span class="lang-en">Attendance Overview</span>
+                              <span class="lang-bn hidden">উপস্থিতি ওভারভিউ</span>
+                            </span>
+                            <span class="dash-chart-filter">
+                              <span class="lang-en">This Month ⌄</span>
+                              <span class="lang-bn hidden">চলতি মাস ⌄</span>
+                            </span>
+                          </div>
+                          <svg class="dash-wave-chart" viewBox="0 0 360 115" preserveAspectRatio="none" role="img" aria-label="Attendance trend chart">
+                            <defs>
+                              <linearGradient id="heroAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#079b61" stop-opacity="0.28"></stop>
+                                <stop offset="100%" stop-color="#079b61" stop-opacity="0.00"></stop>
+                              </linearGradient>
+                            </defs>
+                            <path d="M5 90 C35 70, 50 82, 75 78 C100 74, 115 50, 140 68 C165 86, 175 32, 205 52 C235 72, 250 22, 280 40 C310 58, 330 16, 355 10 L355 115 L5 115 Z" fill="url(#heroAreaGrad)"></path>
+                            <path d="M5 90 C35 70, 50 82, 75 78 C100 74, 115 50, 140 68 C165 86, 175 32, 205 52 C235 72, 250 22, 280 40 C310 58, 330 16, 355 10" fill="none" stroke="#079b61" stroke-width="3" stroke-linecap="round"></path>
+                            <!-- Animated Pulsing Data Nodes -->
+                            <circle cx="5" cy="90" r="3.5" fill="#079b61"></circle>
+                            <circle cx="75" cy="78" r="3.5" fill="#079b61"></circle>
+                            <circle cx="140" cy="68" r="3.5" fill="#079b61"></circle>
+                            <circle cx="205" cy="52" r="3.5" fill="#079b61"></circle>
+                            <circle cx="280" cy="40" r="3.5" fill="#079b61"></circle>
+                            <circle cx="355" cy="10" r="4.5" fill="#079b61" stroke="#ffffff" stroke-width="2"></circle>
+                          </svg>
+                        </div>
+
+                        <!-- Right Attendance Gauge Card -->
+                        <div class="dash-gauge-card">
+                          <div class="dash-gauge-ring">
+                            <svg class="gauge-svg" viewBox="0 0 80 80">
+                              <circle class="gauge-bg" cx="40" cy="40" r="32" fill="none" stroke="#E2F8EB" stroke-width="8"></circle>
+                              <circle class="gauge-fill" cx="40" cy="40" r="32" fill="none" stroke="#079b61" stroke-width="8" stroke-dasharray="201.06" stroke-dashoffset="16.08" stroke-linecap="round"></circle>
+                            </svg>
+                            <div class="gauge-center-text">
+                              <span class="lang-en">92%</span>
+                              <span class="lang-bn hidden">৯২%</span>
+                            </div>
+                          </div>
+                          <small class="dash-gauge-label">
+                            <span class="lang-en">Attendance Rate</span>
+                            <span class="lang-bn hidden">উপস্থিতির হার</span>
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LAPTOP METALLIC BASE & CHASSIS -->
+              <div class="laptop-metallic-base" aria-hidden="true">
+                <div class="laptop-chassis-indent"></div>
+              </div>
+              <div class="laptop-cast-shadow" aria-hidden="true"></div>
+            </div>
+
+            <!-- FLOATING TESTIMONIAL CARD (Bottom-Right) -->
+            <div class="floating-testimonial-card" aria-label="Customer Testimonial">
+              <span class="testimonial-quote-mark">“</span>
+              <p class="testimonial-quote-text">
+                <span class="lang-en">"YesEdu has completely transformed our institution's management. It's simple, powerful and incredibly reliable."</span>
+                <span class="lang-bn hidden">"YesEdu আমাদের প্রতিষ্ঠানের সামগ্রিক ব্যবস্থাপনা সম্পূর্ণ বদলে দিয়েছে। এটি অত্যন্ত সহজ, কার্যকর এবং নির্ভরযোগ্য।"</span>
+              </p>
+              <div class="testimonial-author-row">
+                <div class="testimonial-avatar-wrap">
+                  <span class="testimonial-avatar-fallback">DR</span>
+                </div>
+                <div class="testimonial-author-info">
+                  <strong class="author-name">
+                    <span class="lang-en">Dr. A. Rahman</span>
+                    <span class="lang-bn hidden">ড. এ. রহমান</span>
+                  </strong>
+                  <small class="author-title">
+                    <span class="lang-en">Principal, Al-Noor Academy</span>
+                    <span class="lang-bn hidden">অধ্যক্ষ, আল-নূর একাডেমি</span>
+                  </small>
+                </div>
+              </div>
+              <div class="testimonial-carousel-dots" aria-hidden="true">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="hero-visual reveal">
-          <!-- Ambient Glow behind Bento Grid -->
-          <div class="bento-ambient-glow"></div>
+        <!-- ================= FULL-WIDTH BOTTOM 6-FEATURE QUICK RIBBON ================= -->
+        <div class="hero-quick-ribbon reveal" id="heroQuickFeatures" role="navigation" aria-label="Quick Modules Navigation">
+          <a class="quick-ribbon-item" href="#modules">
+            <span class="quick-item-ico ico-academic">🎓</span>
+            <span class="quick-item-title">
+              <span class="lang-en">Academic<br>Management</span>
+              <span class="lang-bn hidden">একাডেমিক<br>ম্যানেজমেন্ট</span>
+            </span>
+          </a>
 
-          <!-- Structured Tactile Bento Deck (Hardware + Fintech + AI Studio) -->
-          <div class="hero-bento-grid tactile-deck">
+          <a class="quick-ribbon-item" href="#modules">
+            <span class="quick-item-ico ico-timetable">▦</span>
+            <span class="quick-item-title">
+              <span class="lang-en">Attendance &<br>Timetable</span>
+              <span class="lang-bn hidden">হাজিরা ও<br>রুটিন</span>
+            </span>
+          </a>
 
-            <!-- TACTILE CARD 1: IoT Biometric Gate Terminal -->
-            <article class="bento-card bento-wide tactile-terminal-card">
-              <!-- Terminal Hardware Top Bezel with Camera & Sensor Notch -->
-              <div class="terminal-bezel-bar">
-                <div class="terminal-sensor-notch" title="Optical Facial & RFID Reader">
-                  <span class="notch-camera-lens"></span>
-                  <span class="notch-ir-led"></span>
-                </div>
-                <div class="bento-badge-live">
-                  <span class="live-dot-green"></span>
-                  <span class="lang-en">Gate #02 • ZKTeco Sync</span>
-                  <span class="lang-bn hidden">মূল ফটক #০২ • লাইভ সিঙ্ক</span>
-                </div>
-                <span class="bento-latency-pill"><span class="lang-en">0.18s latency</span><span class="lang-bn hidden">০.১৮ সে. ল্যাটেন্সি</span></span>
-              </div>
+          <a class="quick-ribbon-item" href="#modules">
+            <span class="quick-item-ico ico-fintech">💳</span>
+            <span class="quick-item-title">
+              <span class="lang-en">Fee Collection<br>& Accounts</span>
+              <span class="lang-bn hidden">ফি কালেকশন<br>ও হিসাব</span>
+            </span>
+          </a>
 
-              <!-- Student Clock-in Punch Area -->
-              <div class="terminal-punch-surface">
-                <div class="bento-avatar avatar-emerald">FA</div>
-                <div class="bento-student-info">
-                  <div class="bento-student-name">
-                    <span><span class="lang-en">Farhan Ahmed</span><span class="lang-bn hidden">ফারহান আহমেদ</span></span>
-                    <span class="bento-student-roll"><span class="lang-en">Class 10-A • Roll 01</span><span class="lang-bn hidden">১০ম শ্রেণি-ক • রোল ০১</span></span>
-                  </div>
-                  <div class="bento-student-device">
-                    <span class="lang-en">RFID Smart Card Touch • Campus Gate</span>
-                    <span class="lang-bn hidden">আরএফআইডি স্মার্ট কার্ড পাঞ্চ • গেট ক্লক-ইন</span>
-                  </div>
-                </div>
-                <div class="bento-status-tag">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <span class="lang-en">Present</span>
-                  <span class="lang-bn hidden">উপস্থিত</span>
-                </div>
-              </div>
+          <a class="quick-ribbon-item" href="#modules">
+            <span class="quick-item-ico ico-comm">💬</span>
+            <span class="quick-item-title">
+              <span class="lang-en">Parent & Teacher<br>Communication</span>
+              <span class="lang-bn hidden">অভিভাবক ও শিক্ষক<br>যোগাযোগ</span>
+            </span>
+          </a>
 
-              <!-- Instant SMS Delivery Push Banner (Overlapping Glass Bubble) -->
-              <div class="tactile-sms-banner">
-                <div class="bento-sms-header">
-                  <div class="bento-sms-sender">
-                    <span class="sms-icon">💬</span>
-                    <span class="sms-tag">TELETALK_GOVT_DLR</span>
-                  </div>
-                  <span class="sms-time"><span class="lang-en">Just now</span><span class="lang-bn hidden">এইমাত্র</span></span>
-                </div>
-                <p class="bento-sms-text">
-                  <span class="lang-en">"Dear Guardian, your ward Farhan Ahmed (Class 10-A, Roll 01) safely checked in to campus at 08:58 AM. - YES EDU"</span>
-                  <span class="lang-bn hidden">"সম্মানিত অভিভাবক, আপনার সন্তান ফারহান আহমেদ (১০ম শ্রেণি, রোল ০১) আজ সকাল ০৮:৫৮ মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - YES EDU"</span>
-                </p>
-              </div>
-            </article>
+          <a class="quick-ribbon-item" href="#modules">
+            <span class="quick-item-ico ico-ai-chip">🤖</span>
+            <span class="quick-item-title">
+              <span class="lang-en">AI-Powered<br>Assistance</span>
+              <span class="lang-bn hidden">এআই চালিত<br>অ্যাসিস্ট্যান্ট</span>
+            </span>
+          </a>
 
-            <!-- TACTILE CARD 2: Executive Fintech Smart Card -->
-            <article class="bento-card bento-square tactile-fintech-card">
-              <!-- Holographic Sheen Layer -->
-              <div class="fintech-sheen"></div>
-
-              <!-- Card Top Header with EMV Chip & Contactless Waves -->
-              <div class="fintech-card-header">
-                <div class="fintech-chip-cluster">
-                  <!-- EMV Gold Microchip Graphic -->
-                  <div class="emv-chip" title="Smart EMV Security">
-                    <div class="chip-line chip-line-1"></div>
-                    <div class="chip-line chip-line-2"></div>
-                    <div class="chip-center"></div>
-                  </div>
-                  <!-- Contactless Wave Icon -->
-                  <svg class="contactless-wave" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-                    <path d="M8.5 16.5a5 5 0 0 1 0-7"></path>
-                    <path d="M12 19a8.5 8.5 0 0 0 0-12"></path>
-                    <path d="M15.5 21.5a12 12 0 0 0 0-17"></path>
-                  </svg>
-                </div>
-                <div class="bento-fintech-brands">
-                  <span class="brand-pill bkash-pill">bKash</span>
-                  <span class="brand-pill nagad-pill">Nagad</span>
-                </div>
-              </div>
-
-              <!-- Fintech Body with Foil Ledger Figures -->
-              <div class="fintech-body">
-                <span class="fintech-label">
-                  <span class="lang-en">Tuition & Exam Collection</span>
-                  <span class="lang-bn hidden">টিউশন ও পরীক্ষা ফি আদায়</span>
-                </span>
-                <div class="fintech-amount-row">
-                  <span class="fintech-currency">৳</span>
-                  <strong class="fintech-figure">2,450</strong>
-                  <span class="fintech-decimals">.00</span>
-                </div>
-              </div>
-
-              <!-- Fintech Footer with Zero Error Reconcile -->
-              <div class="fintech-footer">
-                <div class="fee-receipt-pill">
-                  <span class="receipt-icon">🧾</span>
-                  <span class="receipt-id"><span class="lang-en">Digital Receipt #892</span><span class="lang-bn hidden">ডিজিটাল রসিদ #৮৯২</span></span>
-                </div>
-                <span class="fintech-reconciled-badge">
-                  <span class="lang-en">✓ Auto Reconciled</span>
-                  <span class="lang-bn hidden">✓ অটো রিকনসাইল্ড</span>
-                </span>
-              </div>
-            </article>
-
-            <!-- TACTILE CARD 3: NCTB 2026 AI Cognitive Engine Lab Card -->
-            <article class="bento-card bento-square tactile-ai-card">
-              <!-- Asymmetric AI Top Bar -->
-              <div class="bento-card-top">
-                <div class="bento-ai-badge">
-                  <span class="sparkle-ico">✦</span>
-                  <span class="lang-en">Edu-AI V2 Engine</span>
-                  <span class="lang-bn hidden">এনসিটিবি এআই ইঞ্জিন</span>
-                </div>
-                <span class="bento-curriculum-chip">NCTB 2026</span>
-              </div>
-
-              <!-- Subject & Question Taxonomy Tokens -->
-              <div class="bento-ai-body">
-                <span class="bento-subject-title">
-                  <span class="lang-en">Physics & Math (Class 9-10)</span>
-                  <span class="lang-bn hidden">পদার্থবিজ্ঞান ও গণিত (৯ম-১০ম)</span>
-                </span>
-                <div class="bento-cq-tags">
-                  <span class="cq-pill cq-k"><span class="lang-en">A • Knowledge [1]</span><span class="lang-bn hidden">ক • জ্ঞান [১]</span></span>
-                  <span class="cq-pill cq-c"><span class="lang-en">B • Comprehension [2]</span><span class="lang-bn hidden">খ • অনুধাবন [২]</span></span>
-                  <span class="cq-pill cq-a"><span class="lang-en">C • Application [3]</span><span class="lang-bn hidden">গ • প্রয়োগ [৩]</span></span>
-                  <span class="cq-pill cq-h"><span class="lang-en">D • Higher Ability [4]</span><span class="lang-bn hidden">ঘ • উচ্চতর [৪]</span></span>
-                </div>
-              </div>
-
-              <!-- AI Footer with Print Ready & Bloom's Badge -->
-              <div class="bento-ai-footer">
-                <span class="bento-print-ready">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
-                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-                    <rect x="6" y="14" width="12" height="8"></rect>
-                  </svg>
-                  <span class="lang-en">1-Click Print PDF</span>
-                  <span class="lang-bn hidden">১-ক্লিকে প্রিন্ট রেডি</span>
-                </span>
-                <span class="bento-bloom-tag"><span class="lang-en">Bloom's Verified</span><span class="lang-bn hidden">ব্লুমস ভেরিফাইড</span></span>
-              </div>
-            </article>
-
-            <!-- TACTILE CARD 4: Floating Accent Trust Pill -->
-            <div class="bento-float-pill tactile-trust-pill">
-              <span class="float-pill-dot">✓</span>
-              <span class="float-pill-text">
-                <span class="lang-en"><strong>97% Attendance Today</strong> Across 42+ Districts</span>
-                <span class="lang-bn hidden"><strong>আজকের উপস্থিতি ৯৭%</strong> • ৪২+ জেলায় পরিচালিত</span>
-              </span>
-            </div>
-
-          </div>
-        </div></div>
+          <a class="quick-ribbon-item" href="#mobileApp">
+            <span class="quick-item-ico ico-mobile">📱</span>
+            <span class="quick-item-title">
+              <span class="lang-en">Mobile App<br>for Everyone</span>
+              <span class="lang-bn hidden">সবার জন্য<br>মোবাইল অ্যাপ</span>
+            </span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -2185,7 +2428,7 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=9.1"></script>
+  <script src="js/main.js?v=10.0"></script>
 </body>
 
 </html>
