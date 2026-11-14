@@ -42,7 +42,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=8.6">
+  <link rel="stylesheet" href="css/style.css?v=8.7">
 </head>
 
 <body>
@@ -158,377 +158,146 @@
         </div>
 
         <div class="hero-visual reveal">
-          <!-- Float 1: Top-Left Dynamic Status Badge (Synchronized with Active Role) -->
-          <div class="float-card float-one" id="heroFloatOne">
-            <div class="mini">
-              <span class="float-icon" id="floatOneIco">✓</span>
-              <span id="floatOneTitle">
-                <span class="lang-en">Attendance Today</span>
-                <span class="lang-bn hidden">আজকের উপস্থিতি</span>
-              </span>
-            </div>
-            <strong id="floatOneStat">97%</strong>
-            <span id="floatOneSub">
-              <span class="lang-en">Live Biometric • 115 Present</span>
-              <span class="lang-bn hidden">বায়োমেট্রিক • ১১৫ জন উপস্থিত</span>
-            </span>
-          </div>
+          <!-- Ambient Glow behind Bento Grid -->
+          <div class="bento-ambient-glow"></div>
 
-          <!-- Float 3: Top-Right Dynamic AI & Routine Badge (Synchronized with Active Role) -->
-          <div class="float-card float-three" id="heroFloatThree">
-            <div class="mini">
-              <span class="float-icon" id="floatThreeIco">✦</span>
-              <span id="floatThreeTitle">
-                <span class="lang-en">AI Teaching Assistant</span>
-                <span class="lang-bn hidden">এআই শিক্ষক সহকারী</span>
-              </span>
-            </div>
-            <strong id="floatThreeStat">
-              <span class="lang-en">Active & Ready</span>
-              <span class="lang-bn hidden">সক্রিয় ও প্রস্তুত</span>
-            </strong>
-            <span id="floatThreeSub">
-              <span class="lang-en">NCTB Syllabus V2 Engine</span>
-              <span class="lang-bn hidden">এনসিটিবি সিলেবাস V2</span>
-            </span>
-          </div>
+          <!-- Structured Bento Grid (Linear / Apple Human SaaS Style) -->
+          <div class="hero-bento-grid">
 
-          <!-- Modern macOS App Window Container with Real YES EDU Multi-Role Slides -->
-          <div class="dashboard" id="heroDashboardFrame" title="YES EDU Multi-Role Cockpit">
-            <div class="dash-top">
-              <div class="dash-dots">
-                <i class="dot-red"></i><i class="dot-yellow"></i><i class="dot-green"></i>
+            <!-- BENTO CARD 1: Wide Top Card (Biometric Attendance & Parent SMS) -->
+            <article class="bento-card bento-wide bento-gate-card">
+              <div class="bento-card-top">
+                <div class="bento-badge-live">
+                  <span class="live-dot-green"></span>
+                  <span class="lang-en">Gate #02 • ZKTeco Sync</span>
+                  <span class="lang-bn hidden">মূল ফটক #০২ • লাইভ সিঙ্ক</span>
+                </div>
+                <span class="bento-latency-pill">0.18s latency</span>
               </div>
-              <div class="dash-url-bar">
-                <span class="url-lock">🔒</span>
-                <span class="url-text" id="dashRoleUrl">admin.yesedu.cloud/cockpit</span>
+
+              <div class="bento-student-row">
+                <div class="bento-avatar avatar-emerald">FA</div>
+                <div class="bento-student-info">
+                  <div class="bento-student-name">
+                    <span>Farhan Ahmed</span>
+                    <span class="bento-student-roll">Class 10-A • Roll 01</span>
+                  </div>
+                  <div class="bento-student-device">
+                    <span class="lang-en">RFID Smart Card Touch • Campus Gate</span>
+                    <span class="lang-bn hidden">আরএফআইডি স্মার্ট কার্ড পাঞ্চ • গেট ক্লক-ইন</span>
+                  </div>
+                </div>
+                <div class="bento-status-tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span class="lang-en">Present</span>
+                  <span class="lang-bn hidden">উপস্থিত</span>
+                </div>
               </div>
-              <div class="dash-status-pill" id="dashStatusPill">
-                <span class="dash-status-dot"></span>
-                <span id="dashStatusText">
-                  <span class="lang-en">Live Cloud</span>
-                  <span class="lang-bn hidden">লাইভ ক্লাউড</span>
+
+              <!-- Instant SMS Delivery Preview Bubble -->
+              <div class="bento-sms-bubble">
+                <div class="bento-sms-header">
+                  <div class="bento-sms-sender">
+                    <span class="sms-icon">💬</span>
+                    <span class="sms-tag">TELETALK_GOVT_DLR</span>
+                  </div>
+                  <span class="sms-time">Just now</span>
+                </div>
+                <p class="bento-sms-text">
+                  <span class="lang-en">"Dear Guardian, your ward Farhan Ahmed (Class 10-A, Roll 01) safely checked in to campus at 08:58 AM. - YES EDU"</span>
+                  <span class="lang-bn hidden">"সম্মানিত অভিভাবক, আপনার সন্তান ফারহান আহমেদ (১০ম শ্রেণি, রোল ০১) আজ সকাল ০৮:৫৮ মিনিটে ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - YES EDU"</span>
+                </p>
+              </div>
+            </article>
+
+            <!-- BENTO CARD 2: Bottom-Left Bento (Fintech & 1-Tap bKash Collection) -->
+            <article class="bento-card bento-square bento-fee-card">
+              <div class="bento-card-top">
+                <div class="bento-fintech-brands">
+                  <span class="brand-pill bkash-pill">bKash</span>
+                  <span class="brand-pill nagad-pill">Nagad</span>
+                </div>
+                <span class="bento-tag-green">
+                  <span class="lang-en">Auto Reconciled</span>
+                  <span class="lang-bn hidden">অটো রিকনসাইল্ড</span>
                 </span>
               </div>
-            </div>
 
-            <!-- Role Navigation Segmented Bar INSIDE the app window (Zero-collision architecture) -->
-            <div class="dash-role-bar" id="heroRoleNav" role="tablist" aria-label="Select Role Dashboard">
-              <button class="hero-role-btn active" data-role="admin" type="button" role="tab" aria-selected="true"
-                title="Super Admin Cockpit">
-                <span class="role-btn-dot"></span>
-                <span class="role-btn-title">
-                  <span class="lang-en">Super Admin</span>
-                  <span class="lang-bn hidden">অ্যাডমিন ককপিট</span>
+              <div class="bento-fee-body">
+                <span class="bento-fee-label">
+                  <span class="lang-en">Tuition & Exam Collection</span>
+                  <span class="lang-bn hidden">টিউশন ও পরীক্ষা ফি আদায়</span>
                 </span>
-                <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
-              </button>
-              <button class="hero-role-btn" data-role="teacher" type="button" role="tab" aria-selected="false"
-                title="Teacher Workspace">
-                <span class="role-btn-dot"></span>
-                <span class="role-btn-title">
-                  <span class="lang-en">Teacher Workspace</span>
-                  <span class="lang-bn hidden">শিক্ষক ড্যাশবোর্ড</span>
-                </span>
-                <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
-              </button>
-              <button class="hero-role-btn" data-role="parent" type="button" role="tab" aria-selected="false"
-                title="Guardian Portal">
-                <span class="role-btn-dot"></span>
-                <span class="role-btn-title">
-                  <span class="lang-en">Guardian Portal</span>
-                  <span class="lang-bn hidden">অভিভাবক পোর্টাল</span>
-                </span>
-                <span class="role-progress-bar"><i class="role-progress-fill"></i></span>
-              </button>
-            </div>
-
-            <div class="dash-screen" id="dashScreenSlider">
-              <!-- Slide 1: Super Admin Cockpit (Authentic High-Res Dashboard) -->
-              <div class="dash-slide active" data-slide="admin">
-                <img src="images/admin-dashboard.png" alt="YES EDU Super Admin Dashboard" class="dash-img" width="1024"
-                  height="586" loading="eager" fetchpriority="high">
+                <div class="bento-fee-amount">
+                  <span class="currency">৳</span>
+                  <strong class="figure">2,450</strong>
+                  <span class="decimals">.00</span>
+                </div>
               </div>
 
-              <!-- Slide 2: Teacher Workspace (Authentic Dashboard) -->
-              <div class="dash-slide" data-slide="teacher">
-                <img src="images/teacher-dashboard.png" alt="YES EDU Teacher Workspace" class="dash-img" width="1024"
-                  height="528" loading="lazy">
+              <div class="bento-fee-footer">
+                <div class="fee-receipt-pill">
+                  <span class="receipt-icon">🧾</span>
+                  <span class="receipt-id">Digital Receipt #892</span>
+                </div>
+                <span class="fee-zero-error">
+                  <span class="lang-en">✓ Zero Error Ledger</span>
+                  <span class="lang-bn hidden">✓ নির্ভুল ক্যাশবুক লেজার</span>
+                </span>
+              </div>
+            </article>
+
+            <!-- BENTO CARD 3: Bottom-Right Bento (NCTB 2026 AI Assistant) -->
+            <article class="bento-card bento-square bento-ai-card">
+              <div class="bento-card-top">
+                <div class="bento-ai-badge">
+                  <span class="sparkle-ico">✦</span>
+                  <span class="lang-en">Edu-AI V2 Engine</span>
+                  <span class="lang-bn hidden">এনসিটিবি এআই ইঞ্জিন</span>
+                </div>
+                <span class="bento-curriculum-chip">NCTB 2026</span>
               </div>
 
-              <!-- Slide 3: Guardian Portal (Authentic Dashboard) -->
-              <div class="dash-slide" data-slide="parent">
-                <img src="images/parent-dashboard.png" alt="YES EDU Guardian Portal" class="dash-img" width="1024"
-                  height="525" loading="lazy">
+              <div class="bento-ai-body">
+                <span class="bento-subject-title">
+                  <span class="lang-en">Physics & Math (Class 9-10)</span>
+                  <span class="lang-bn hidden">পদার্থবিজ্ঞান ও গণিত (৯ম-১০ম)</span>
+                </span>
+                <div class="bento-cq-tags">
+                  <span class="cq-pill cq-k">ক • জ্ঞান [১]</span>
+                  <span class="cq-pill cq-c">খ • অনুধাবন [২]</span>
+                  <span class="cq-pill cq-a">গ • প্রয়োগ [৩]</span>
+                  <span class="cq-pill cq-h">ঘ • উচ্চতর [৪]</span>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Float 2: Bottom-Right Dynamic Collection/Due Badge (Synchronized with Active Role) -->
-          <div class="float-card float-two" id="heroFloatTwo">
-            <div class="mini">
-              <span class="float-icon" id="floatTwoIco">৳</span>
-              <span id="floatTwoTitle">
-                <span class="lang-en">Today's Collection</span>
-                <span class="lang-bn hidden">আজকের ফি আদায়</span>
+              <div class="bento-ai-footer">
+                <span class="bento-print-ready">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                  </svg>
+                  <span class="lang-en">1-Click Print PDF</span>
+                  <span class="lang-bn hidden">১-ক্লিকে প্রিন্ট রেডি</span>
+                </span>
+                <span class="bento-bloom-tag">Bloom's Taxonomy</span>
+              </div>
+            </article>
+
+            <!-- BENTO CARD 4: Floating Accent Trust Pill -->
+            <div class="bento-float-pill">
+              <span class="float-pill-dot">✓</span>
+              <span class="float-pill-text">
+                <span class="lang-en"><strong>97% Attendance Today</strong> Across 42+ Districts</span>
+                <span class="lang-bn hidden"><strong>আজকের উপস্থিতি ৯৭%</strong> • ৪২+ জেলায় পরিচালিত</span>
               </span>
             </div>
-            <strong id="floatTwoStat">৳ 6,350.00</strong>
-            <span id="floatTwoSub">
-              <span class="lang-en">bKash, Nagad & Cash Reconciled</span>
-              <span class="lang-bn hidden">বিকাশ ও নগদ অটো-রিকনসাইল</span>
-            </span>
-          </div>
 
-          <!-- Mobile KPI Stat Strip (Visible only on screens <= 768px where floating badges are hidden) -->
-          <div class="hero-mobile-kpi" id="heroMobileKpi">
-            <div class="kpi-card" id="mobileKpiOne">
-              <span id="mobKpiOneTitle"><span class="lang-en">Attendance</span><span
-                  class="lang-bn hidden">উপস্থিতি</span></span>
-              <strong id="mobKpiOneStat">97%</strong>
-              <small id="mobKpiOneSub"><span class="lang-en">Live Biometric</span><span
-                  class="lang-bn hidden">বায়োমেট্রিক</span></small>
-            </div>
-            <div class="kpi-card" id="mobileKpiTwo">
-              <span id="mobKpiTwoTitle"><span class="lang-en">Collection</span><span class="lang-bn hidden">ফি
-                  আদায়</span></span>
-              <strong id="mobKpiTwoStat">৳ 6,350</strong>
-              <small id="mobKpiTwoSub"><span class="lang-en">bKash Verified</span><span class="lang-bn hidden">বিকাশ
-                  ভেরিফাইড</span></small>
-            </div>
-            <div class="kpi-card" id="mobileKpiThree">
-              <span id="mobKpiThreeTitle"><span class="lang-en">AI Assistant</span><span class="lang-bn hidden">এআই
-                  সহকারী</span></span>
-              <strong id="mobKpiThreeStat"><span class="lang-en">Active</span><span
-                  class="lang-bn hidden">সক্রিয়</span></strong>
-              <small id="mobKpiThreeSub"><span class="lang-en">NCTB V2 Engine</span><span
-                  class="lang-bn hidden">এনসিটিবি V2</span></small>
-            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- ================= ALAXY-STYLE EXECUTIVE PROOF & METRIC BAR ================= -->
-      <div class="container hero-proof-bar reveal">
-        <!-- Dashed Client Institution Proof Card -->
-        <div class="alaxy-proof-card">
-          <div class="alaxy-avatar-stack">
-            <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah Int'l Madrasa" width="34" height="34" loading="lazy">
-            <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Madrasa" width="34" height="34" loading="lazy">
-            <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Institute" width="34" height="34"
-              loading="lazy">
-            <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Academy" width="34" height="34"
-              loading="lazy">
-            <span class="alaxy-avatar-plus">+150</span>
-          </div>
-          <div class="alaxy-proof-text">
-            <strong>
-              <span class="lang-en">150+ Leading Institutions</span>
-              <span class="lang-bn hidden">১৫০+ স্বনামধন্য প্রতিষ্ঠান</span>
-            </strong>
-            <p>
-              <span class="lang-en">85,000+ Active Students & Teachers</span>
-              <span class="lang-bn hidden">৮৫,০০০+ শিক্ষার্থী ও শিক্ষক যুক্ত</span>
-            </p>
-          </div>
-        </div>
-
-        <!-- 4 Bold Minimal Metric Counters -->
-        <div class="alaxy-stat-grid">
-          <div class="alaxy-stat-item">
-            <span class="alaxy-stat-num">0.18s</span>
-            <span class="alaxy-stat-label">
-              <span class="lang-en">Gate Cloud Latency</span>
-              <span class="lang-bn hidden">ক্লাউড গেট ল্যাটেন্সি</span>
-            </span>
-          </div>
-          <div class="alaxy-stat-item">
-            <span class="alaxy-stat-num">100%</span>
-            <span class="alaxy-stat-label">
-              <span class="lang-en">Shariah & Waqf Audited</span>
-              <span class="lang-bn hidden">শরীয়াহ ও ওয়াকফ অডিট</span>
-            </span>
-          </div>
-          <div class="alaxy-stat-item">
-            <span class="alaxy-stat-num">৳ 1.2 Cr+</span>
-            <span class="alaxy-stat-label">
-              <span class="lang-en">Monthly Fee Volume</span>
-              <span class="lang-bn hidden">মাসিক ফি আদায় ভলিউম</span>
-            </span>
-          </div>
-          <div class="alaxy-stat-item">
-            <span class="alaxy-stat-num">24/7</span>
-            <span class="alaxy-stat-label">
-              <span class="lang-en">Bangla SMS Alerts</span>
-              <span class="lang-bn hidden">বাংলা এসএমএস অ্যালার্ট</span>
-            </span>
-          </div>
-        </div>
-
-        <!-- MATHIM Minimal Scroll Down Guide -->
-        <a href="#demoStudio" class="hero-scroll-guide" aria-label="Scroll to explore interactive demo">
-          <span class="mouse-icon"><i class="mouse-wheel"></i></span>
-          <span class="scroll-text">
-            <span class="lang-en">Scroll to Explore</span>
-            <span class="lang-bn hidden">নিচে দেখুন</span>
-            <span class="scroll-arrow">↓</span>
-          </span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================= TRUST STRIP & CLIENT MARQUEE ================= -->
-    <section class="trust-strip">
-      <div class="container trust-inner">
-        <span class="trust-label">
-          <span class="lang-en">One connected ecosystem for</span>
-          <span class="lang-bn hidden">পরিপূর্ণ শিক্ষাব্যবস্থাপনা</span>
-        </span>
-        <span class="trust-item"><b>▥</b> <span class="lang-en">Schools</span><span
-            class="lang-bn hidden">স্কুল</span></span>
-        <span class="trust-item"><b>⌂</b> <span class="lang-en">Colleges</span><span
-            class="lang-bn hidden">কলেজ</span></span>
-        <span class="trust-item"><b>◈</b> <span class="lang-en">Madrasas</span><span
-            class="lang-bn hidden">মাদ্রাসা</span></span>
-        <span class="trust-item"><b>◎</b> <span class="lang-en">Education Groups</span><span
-            class="lang-bn hidden">এডুকেশন গ্রুপ</span></span>
-      </div>
-
-      <div class="container trust-head">
-        <span>
-          <span class="lang-en">Trusted by Leading Educational Institutions & Madrasas Across Bangladesh</span>
-          <span class="lang-bn hidden">বাংলাদেশের স্বনামধন্য স্কুল, কলেজ ও মাদ্রাসাসমূহে সফলভাবে পরিচালিত</span>
-        </span>
-      </div>
-
-      <div class="brand-marquee-wrapper">
-        <div class="brand-marquee-track">
-          <!-- Client 1 -->
-          <div class="brand-client-card" title="As-Sunnah International Madarsa">
-            <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah International Madarsa" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">As-Sunnah Int'l Madrasa</span>
-                <span class="lang-bn hidden">আস-সুন্নাহ ইন্টারন্যাশনাল মাদ্রাসা</span>
-              </span>
-              <span class="brand-client-meta">Dhaka • Dual Curriculum</span>
-            </div>
-          </div>
-
-          <!-- Client 2 -->
-          <div class="brand-client-card" title="Darul Arqam Madrasa Feni">
-            <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Madrasa Feni" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Darul Arqam Madrasa</span>
-                <span class="lang-bn hidden">দারুল আরক্বাম মাদ্রাসা</span>
-              </span>
-              <span class="brand-client-meta">Feni • Est. 2012</span>
-            </div>
-          </div>
-
-          <!-- Client 3 -->
-          <div class="brand-client-card" title="Fikrul Ummah Institute Feni">
-            <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Institute Feni" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Fikrul Ummah Institute</span>
-                <span class="lang-bn hidden">ফিকরুল উম্মাহ ইনস্টিটিউট</span>
-              </span>
-              <span class="brand-client-meta">Feni • Modern Campus</span>
-            </div>
-          </div>
-
-          <!-- Client 4 -->
-          <div class="brand-client-card" title="Intihadul Umam Alim Madrasah">
-            <img src="images/clients/intihadul-umam.jpg" alt="Intihadul Umam Alim Madrasah" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Intihadul Umam Alim Madrasah</span>
-                <span class="lang-bn hidden">ইত্তিহাদুল উমাম আলিম মাদ্রাসা</span>
-              </span>
-              <span class="brand-client-meta">Alim Board Verified</span>
-            </div>
-          </div>
-
-          <!-- Client 5 -->
-          <div class="brand-client-card" title="Wisdom Islamic Institute">
-            <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Institute" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Wisdom Islamic Academy</span>
-                <span class="lang-bn hidden">উইজডম ইসলামিক একাডেমি</span>
-              </span>
-              <span class="brand-client-meta">Integrated English Medium</span>
-            </div>
-          </div>
-
-          <!-- Loop duplicates for infinite marquee -->
-          <div class="brand-client-card" title="As-Sunnah International Madarsa">
-            <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah International Madarsa" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">As-Sunnah Int'l Madrasa</span>
-                <span class="lang-bn hidden">আস-সুন্নাহ ইন্টারন্যাশনাল মাদ্রাসা</span>
-              </span>
-              <span class="brand-client-meta">Dhaka • Dual Curriculum</span>
-            </div>
-          </div>
-
-          <div class="brand-client-card" title="Darul Arqam Madrasa Feni">
-            <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Madrasa Feni" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Darul Arqam Madrasa</span>
-                <span class="lang-bn hidden">দারুল আরক্বাম মাদ্রাসা</span>
-              </span>
-              <span class="brand-client-meta">Feni • Est. 2012</span>
-            </div>
-          </div>
-
-          <div class="brand-client-card" title="Fikrul Ummah Institute Feni">
-            <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Institute Feni" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Fikrul Ummah Institute</span>
-                <span class="lang-bn hidden">ফিকরুল উম্মাহ ইনস্টিটিউট</span>
-              </span>
-              <span class="brand-client-meta">Feni • Modern Campus</span>
-            </div>
-          </div>
-
-          <div class="brand-client-card" title="Intihadul Umam Alim Madrasah">
-            <img src="images/clients/intihadul-umam.jpg" alt="Intihadul Umam Alim Madrasah" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Intihadul Umam Alim Madrasah</span>
-                <span class="lang-bn hidden">ইত্তিহাদুল উমাম আলিম মাদ্রাসা</span>
-              </span>
-              <span class="brand-client-meta">Alim Board Verified</span>
-            </div>
-          </div>
-
-          <div class="brand-client-card" title="Wisdom Islamic Institute">
-            <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Institute" class="brand-client-logo"
-              loading="lazy">
-            <div class="brand-client-info">
-              <span class="brand-client-name">
-                <span class="lang-en">Wisdom Islamic Academy</span>
-                <span class="lang-bn hidden">উইজডম ইসলামিক একাডেমি</span>
-              </span>
-              <span class="brand-client-meta">Integrated English Medium</span>
-            </div>
-          </div>
-        </div>
+        </div></div>
       </div>
     </section>
 
@@ -2394,7 +2163,7 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=8.6"></script>
+  <script src="js/main.js?v=8.7"></script>
 </body>
 
 </html>

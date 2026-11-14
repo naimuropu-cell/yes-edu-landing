@@ -740,7 +740,7 @@ header.scrolled {
 }
 
 /* ==========================================================================
-   Hero Visual: Modern macOS Retina Cloud Window (Stripe / Apple Style)
+   Hero Visual: Structured Bento Grid (Linear / Apple Human SaaS Style)
    ========================================================================== */
 .hero-visual {
   position: relative;
@@ -748,126 +748,88 @@ header.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1200px;
 }
 
-/* Radiant Ambient Aura behind Window */
-.hero-visual::before {
-  content: "";
+/* Ambient Radial Aura behind Bento Grid */
+.bento-ambient-glow {
   position: absolute;
-  width: 95%;
-  height: 90%;
-  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.16) 0%, rgba(23, 75, 57, 0.04) 50%, transparent 75%);
-  filter: blur(48px);
-  z-index: 0;
-  pointer-events: none;
+  width: 520px;
+  height: 520px;
   border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(23, 75, 57, 0.03) 50%, transparent 72%);
+  filter: blur(52px);
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* macOS Window Shell */
-.dashboard {
-  width: min(100%, 610px);
-  background: #FFFFFF;
-  border: 1px solid #CBD5E1;
-  border-radius: 18px;
-  box-shadow:
-    0 1px 3px rgba(15, 23, 42, 0.04),
-    0 24px 60px -12px rgba(15, 23, 42, 0.18),
-    0 0 0 1px rgba(0, 0, 0, 0.03);
-  overflow: hidden;
+/* 2-Column Asymmetric Bento Grid */
+.hero-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 580px;
   position: relative;
   z-index: 2;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: rotateY(-3.5deg) rotateX(2deg);
 }
 
-.dashboard:hover {
-  transform: rotateY(0deg) rotateX(0deg) scale(1.015);
-  box-shadow:
-    0 1px 4px rgba(15, 23, 42, 0.05),
-    0 32px 75px -10px rgba(15, 23, 42, 0.22),
-    0 0 0 1px rgba(16, 185, 129, 0.3);
-}
-
-/* Window Chrome Top Header */
-.dash-top {
-  padding: 10px 16px;
-  border-bottom: 1px solid #E2E8F0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #F8FAFC;
-  gap: 10px;
-  user-select: none;
-}
-
-.dash-dots {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
-}
-
-.dash-dots i {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.dash-dots i.dot-red,
-.dash-dots i:nth-child(1) {
-  background: #EF4444;
-}
-
-.dash-dots i.dot-yellow,
-.dash-dots i:nth-child(2) {
-  background: #F59E0B;
-}
-
-.dash-dots i.dot-green,
-.dash-dots i:nth-child(3) {
-  background: #10B981;
-}
-
-.dash-url-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+/* Base Bento Card */
+.bento-card {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  padding: 3px 14px;
-  border-radius: 6px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: #475569;
-  max-width: 260px;
+  border: 1px solid #CBD5E1;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.03),
+    0 16px 36px -6px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
-.url-lock {
-  font-size: 10px;
-  color: #10B981;
+.bento-card:hover {
+  border-color: #10B981;
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 24px -2px rgba(15, 23, 42, 0.06),
+    0 24px 48px -8px rgba(16, 185, 129, 0.16),
+    0 0 0 1px rgba(16, 185, 129, 0.25);
 }
 
-.dash-status-pill {
+.bento-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Card 1: Wide Top Card (Biometric Attendance & Parent SMS) */
+.bento-wide {
+  grid-column: 1 / -1;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFA 100%);
+  border-color: #CBD5E1;
+  padding: 20px 22px;
+}
+
+.bento-badge-live {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 2.5px 10px;
+  gap: 7px;
   background: #ECFDF5;
   border: 1px solid #A7F3D0;
+  padding: 3px 10px;
   border-radius: 99px;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   color: #047857;
-  flex-shrink: 0;
 }
 
-.dash-status-dot {
+.live-dot-green {
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -876,208 +838,367 @@ header.scrolled {
   animation: pulseDot 1.8s infinite;
 }
 
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+.bento-latency-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #64748B;
+  background: #F1F5F9;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
 }
 
-/* Inside-Window Segmented Role Navigation Bar */
-.dash-role-bar {
+.bento-student-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 7px 12px;
-  background: #F1F5F9;
-  border-bottom: 1px solid #E2E8F0;
-  user-select: none;
-}
-
-.hero-role-btn {
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 6px 10px;
-  border-radius: 7px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: #475569;
-  font-family: var(--font-body);
-  font-size: 11.5px;
-  font-weight: 700;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.hero-role-btn:hover {
-  color: #0F172A;
-  background: rgba(255, 255, 255, 0.6);
-}
-
-.hero-role-btn.active {
+  gap: 12px;
   background: #FFFFFF;
-  color: #174B39;
-  border-color: #CBD5E1;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.role-btn-dot {
-  width: 6px;
-  height: 6px;
+.bento-avatar {
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: #94A3B8;
-  transition: all 0.2s ease;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 13px;
   flex-shrink: 0;
 }
 
-.hero-role-btn.active .role-btn-dot {
-  background: #10B981;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+.avatar-emerald {
+  background: #ECFDF5;
+  color: #059669;
+  border: 1.5px solid #A7F3D0;
 }
 
-.role-progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: rgba(16, 185, 129, 0.15);
-  display: none;
+.bento-student-info {
+  flex: 1;
+  min-width: 0;
 }
 
-.hero-role-btn.active .role-progress-bar {
-  display: block;
+.bento-student-name {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
 }
 
-.role-progress-fill {
-  display: block;
-  height: 100%;
-  width: 0%;
-  background: #10B981;
+.bento-student-roll {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748B;
 }
 
-.hero-role-btn.active.animating .role-progress-fill {
-  animation: roleProgress 5.5s linear forwards;
+.bento-student-device {
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 2px;
 }
 
-@keyframes roleProgress {
-  from { width: 0%; }
-  to { width: 100%; }
+.bento-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  color: #15803D;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
-/* Dashboard High-Res Screenshot Canvas */
-.dash-screen {
-  position: relative;
-  background: #0F172A;
-  overflow: hidden;
-  line-height: 0;
-  aspect-ratio: 16 / 9.6;
-  width: 100%;
+/* SMS Message Bubble */
+.bento-sms-bubble {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-left: 3px solid #10B981;
+  border-radius: 8px;
+  padding: 9px 12px;
 }
 
-.dash-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: scale(0.985);
-  pointer-events: none;
+.bento-sms-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
 }
 
-.dash-slide.active {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  pointer-events: auto;
-}
-
-.dash-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: top center;
-}
-
-/* Floating Glass KPI Badges (Safe Negative Offsets, Zero Overlap) */
-.float-card {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid #CBD5E1;
-  border-radius: 12px;
-  padding: 10px 14px;
-  box-shadow:
-    0 1px 3px rgba(15, 23, 42, 0.04),
-    0 16px 36px -4px rgba(15, 23, 42, 0.14);
-  z-index: 4;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  animation: heroFloat 5.5s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.float-one {
-  top: -16px;
-  left: -20px;
-}
-
-.float-two {
-  bottom: -18px;
-  right: -20px;
-  animation-delay: -2.5s;
-}
-
-.float-three {
-  display: none !important;
-}
-
-.float-card .mini {
+.bento-sms-sender {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #64748B;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
-.float-icon {
-  width: 17px;
-  height: 17px;
+.sms-icon {
+  font-size: 12px;
+}
+
+.sms-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #0F172A;
+  letter-spacing: 0.3px;
+}
+
+.sms-time {
+  font-size: 10px;
+  color: #64748B;
+}
+
+.bento-sms-text {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #334155;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Card 2: Square Card (1-Tap bKash Collection) */
+.bento-fee-card {
+  border-color: #CBD5E1;
+  background: #FFFFFF;
+}
+
+.bento-fintech-brands {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-pill {
+  padding: 2.5px 7px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.bkash-pill {
+  background: #E2136E;
+  color: #FFFFFF;
+}
+
+.nagad-pill {
+  background: #F7941D;
+  color: #FFFFFF;
+}
+
+.bento-tag-green {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #047857;
+  background: #ECFDF5;
+  padding: 2px 7px;
+  border-radius: 99px;
+  border: 1px solid #A7F3D0;
+}
+
+.bento-fee-body {
+  margin: 8px 0 14px;
+}
+
+.bento-fee-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748B;
+  margin-bottom: 4px;
+}
+
+.bento-fee-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.bento-fee-amount .currency {
+  font-size: 18px;
+  font-weight: 700;
+  color: #059669;
+}
+
+.bento-fee-amount .figure {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.bento-fee-amount .decimals {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.bento-fee-footer {
+  border-top: 1px solid #F1F5F9;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fee-receipt-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #334155;
+  font-weight: 600;
+}
+
+.fee-zero-error {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #059669;
+}
+
+/* Card 3: Square Card (NCTB 2026 AI Assistant) */
+.bento-ai-card {
+  border-color: #CBD5E1;
+  background: #FFFFFF;
+}
+
+.bento-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #6D28D9;
+  background: #F5F3FF;
+  border: 1px solid #DDD6FE;
+  padding: 2.5px 8px;
+  border-radius: 99px;
+}
+
+.sparkle-ico {
+  color: #8B5CF6;
+  font-size: 12px;
+}
+
+.bento-curriculum-chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #059669;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.bento-ai-body {
+  margin: 6px 0 12px;
+}
+
+.bento-subject-title {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.bento-cq-tags {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.cq-pill {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 4px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cq-k { background: #ECFDF5; color: #047857; }
+.cq-c { background: #EFF6FF; color: #1D4ED8; }
+.cq-a { background: #FFFBEB; color: #B45309; }
+.cq-h { background: #FAF5FF; color: #7E22CE; }
+
+.bento-ai-footer {
+  border-top: 1px solid #F1F5F9;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.bento-print-ready {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #174B39;
+}
+
+.bento-bloom-tag {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+/* Card 4: Floating Accent Trust Pill */
+.bento-float-pill {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #CBD5E1;
+  border-radius: 99px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.float-pill-dot {
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #ECFDF5;
   color: #059669;
+  font-size: 10px;
+  font-weight: 800;
   display: grid;
   place-items: center;
-  font-size: 9.5px;
-  font-weight: 800;
+  flex-shrink: 0;
 }
 
-.float-card strong {
-  display: block;
-  font: 800 17px var(--font-heading);
+.float-pill-text {
+  font-size: 12px;
+  color: #334155;
+}
+
+.float-pill-text strong {
   color: #0F172A;
-  margin-top: 2px;
-  line-height: 1.2;
-}
-
-.float-card span {
-  font-size: 10.5px;
-  color: #64748B;
-  display: block;
-  margin-top: 1px;
-}
-
-@keyframes heroFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
 }
 
 /* ==========================================================================
@@ -4343,22 +4464,60 @@ body {
     justify-content: center;
   }
 
+    /* Mobile Bento Grid Architecture */
   .hero-visual {
-    order: 2;
+    width: 100%;
     min-height: auto;
-    width: 100%;
-    max-width: 580px;
-    margin: 0 auto;
-    padding: 0 10px;
+    padding: 0;
+    order: 2;
   }
 
-  .dashboard {
-    transform: none !important;
+  .bento-ambient-glow {
     width: 100%;
+    height: 100%;
   }
 
-  .dashboard:hover {
-    transform: none !important;
+  .hero-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 100%;
+  }
+
+  .bento-wide,
+  .bento-square,
+  .bento-card {
+    grid-column: auto !important;
+    padding: 15px 16px;
+    border-radius: 14px;
+  }
+
+  .bento-student-row {
+    padding: 8px 10px;
+    gap: 10px;
+  }
+
+  .bento-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 11.5px;
+  }
+
+  .bento-student-name {
+    font-size: 12.5px;
+  }
+
+  .bento-fee-amount .figure {
+    font-size: 24px;
+  }
+
+  .bento-cq-tags {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-float-pill {
+    padding: 6px 12px;
+    font-size: 11px;
+    border-radius: 12px;
   }
 
   .hero-proof-bar {
