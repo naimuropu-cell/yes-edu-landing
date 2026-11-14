@@ -500,8 +500,8 @@ header.scrolled {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 52px;
+  grid-template-columns: 1fr 1.12fr;
+  gap: 48px;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -509,12 +509,15 @@ header.scrolled {
 
 .hero-copy h1 {
   color: #0E2A1F;
-  font-size: clamp(38px, 5.2vw, 64px);
+  font-size: clamp(30px, 3.5vw, 46px);
   font-weight: 800;
-  line-height: 1.06;
-  letter-spacing: -0.025em;
-  max-width: 680px;
-  margin: 20px 0 18px;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  max-width: 580px;
+  margin: 18px 0 16px;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
 }
 
 .hero-copy h1 span {
@@ -737,550 +740,344 @@ header.scrolled {
 }
 
 /* ==========================================================================
-   Hero Visual: Pure-Code Floating Metric Capsules (World-Class Clean UI)
+   Hero Visual: Modern macOS Retina Cloud Window (Stripe / Apple Style)
    ========================================================================== */
 .hero-visual {
   position: relative;
-  min-height: 520px;
+  min-height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0;
+  perspective: 1200px;
 }
 
-/* Subtle Ambient Radiant Aura */
-.capsule-ambient-glow {
+/* Radiant Ambient Aura behind Window */
+.hero-visual::before {
+  content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(35, 107, 78, 0.03) 50%, transparent 70%);
-  filter: blur(50px);
-  pointer-events: none;
+  width: 95%;
+  height: 90%;
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.16) 0%, rgba(23, 75, 57, 0.04) 50%, transparent 75%);
+  filter: blur(48px);
   z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
 }
 
-.capsule-stage {
-  position: relative;
-  width: 100%;
-  max-width: 530px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  z-index: 1;
-}
-
-/* Base Card Styling (Senior Human Designer Tactile Glass) */
-.cap-card {
+/* macOS Window Shell */
+.dashboard {
+  width: min(100%, 610px);
   background: #FFFFFF;
-  border: 1px solid rgba(210, 225, 216, 0.85);
-  border-radius: 20px;
-  padding: 18px 22px;
+  border: 1px solid #CBD5E1;
+  border-radius: 18px;
   box-shadow:
-    0 1px 3px rgba(20, 37, 31, 0.03),
-    0 16px 36px -8px rgba(20, 37, 31, 0.08),
-    0 0 0 1px rgba(20, 37, 31, 0.02);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 24px 60px -12px rgba(15, 23, 42, 0.18),
+    0 0 0 1px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
   position: relative;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  z-index: 2;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: rotateY(-3.5deg) rotateX(2deg);
 }
 
-.cap-card:hover {
-  border-color: #10B981;
+.dashboard:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.015);
   box-shadow:
-    0 8px 24px -2px rgba(20, 37, 31, 0.05),
-    0 28px 56px -10px rgba(16, 185, 129, 0.18),
-    0 0 0 1.5px rgba(16, 185, 129, 0.35);
-  transform: translateY(-3px);
-  z-index: 10;
+    0 1px 4px rgba(15, 23, 42, 0.05),
+    0 32px 75px -10px rgba(15, 23, 42, 0.22),
+    0 0 0 1px rgba(16, 185, 129, 0.3);
 }
 
-/* Card 1: Gate SMS Notification (Top Left Float) */
-.cap-gate {
-  width: 90%;
-  max-width: 440px;
-  margin-left: 0;
-  animation: capFloat1 6.5s ease-in-out infinite;
-}
-
-.cap-top {
+/* Window Chrome Top Header */
+.dash-top {
+  padding: 10px 16px;
+  border-bottom: 1px solid #E2E8F0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #F8FAFC;
+  gap: 10px;
+  user-select: none;
 }
 
-.cap-badge-pulse {
+.dash-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.dash-dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dash-dots i.dot-red,
+.dash-dots i:nth-child(1) {
+  background: #EF4444;
+}
+
+.dash-dots i.dot-yellow,
+.dash-dots i:nth-child(2) {
+  background: #F59E0B;
+}
+
+.dash-dots i.dot-green,
+.dash-dots i:nth-child(3) {
+  background: #10B981;
+}
+
+.dash-url-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 3px 14px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #475569;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.url-lock {
+  font-size: 10px;
+  color: #10B981;
+}
+
+.dash-status-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 10px;
+  padding: 2.5px 10px;
   background: #ECFDF5;
   border: 1px solid #A7F3D0;
-  border-radius: 999px;
+  border-radius: 99px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #047857;
+  flex-shrink: 0;
 }
 
-.cap-dot-live {
+.dash-status-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
   animation: pulseDot 1.8s infinite;
 }
 
-.cap-badge-txt {
-  font-size: 11px;
-  font-weight: 700;
-  color: #065F46;
-  letter-spacing: 0.02em;
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
 }
 
-.cap-time-pill {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  color: #64748B;
-  background: #F1F5F9;
-  padding: 2px 8px;
-  border-radius: 6px;
-}
-
-.cap-profile {
+/* Inside-Window Segmented Role Navigation Bar */
+.dash-role-bar {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 12px 0 10px;
-}
-
-.cap-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
-  border: 1.5px solid #FFFFFF;
-  box-shadow: 0 2px 6px rgba(14, 42, 31, 0.08);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
-
-.cap-avatar-initials {
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 800;
-  color: #0369A1;
-}
-
-.cap-profile-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.cap-name {
-  font-size: 13.5px;
-  font-weight: 800;
-  color: #0F172A;
-  line-height: 1.25;
-}
-
-.cap-desc {
-  font-size: 11.5px;
-  color: #64748B;
-  margin-top: 2px;
-  line-height: 1.35;
-}
-
-.cap-status-row {
-  display: flex;
-  align-items: center;
-}
-
-.cap-status-chip.success {
-  display: inline-flex;
-  align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 4px 10px;
-  background: #F0FDF4;
-  border: 1px solid #BBF7D0;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #15803D;
+  padding: 7px 12px;
+  background: #F1F5F9;
+  border-bottom: 1px solid #E2E8F0;
+  user-select: none;
 }
 
-.cap-status-chip svg {
-  color: #16A34A;
-  flex-shrink: 0;
-}
-
-/* Card 2: 1-Tap bKash Collection Ledger (Center Anchor - Prominent) */
-.cap-ledger {
-  width: 100%;
-  max-width: 530px;
-  padding: 20px 24px;
-  border-color: rgba(16, 185, 129, 0.35);
-  box-shadow:
-    0 1px 3px rgba(20, 37, 31, 0.04),
-    0 24px 45px -8px rgba(20, 37, 31, 0.10),
-    0 0 0 1px rgba(16, 185, 129, 0.15);
-  z-index: 2;
-  animation: capFloat2 7.5s ease-in-out infinite 0.5s;
-}
-
-.cap-ledger-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 14px;
-}
-
-.cap-eyebrow-mini {
-  display: block;
-  font-size: 10.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #64748B;
-  margin-bottom: 2px;
-}
-
-.cap-amount-wrap {
-  display: flex;
-  align-items: baseline;
-  gap: 1px;
-}
-
-.cap-amount-figure {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 800;
-  color: #0E2A1F;
-  letter-spacing: -0.025em;
-  line-height: 1;
-}
-
-.cap-amount-sub {
-  font-family: var(--font-heading);
-  font-size: 17px;
-  color: #64748B;
-  font-weight: 700;
-}
-
-.cap-growth-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
-  background: #ECFDF5;
-  border: 1px solid #A7F3D0;
-  border-radius: 999px;
-  color: #047857;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.growth-arrow {
-  color: #059669;
-  font-weight: 800;
-}
-
-.cap-growth-badge small {
-  font-weight: 600;
-  color: #4B665C;
-}
-
-/* Micro Transactions inside Ledger */
-.cap-tx-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
-.cap-tx-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 12px;
-  background: #F8FAF9;
-  border: 1px solid #E6EFE9;
-  border-radius: 10px;
-  transition: all 0.2s ease;
-}
-
-.cap-tx-item:hover {
-  background: #FFFFFF;
-  border-color: #C3DFCE;
-  transform: translateX(2px);
-}
-
-.cap-tx-brand {
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-}
-
-.bkash-brand {
-  background: #E2136E;
-  color: #FFFFFF;
-}
-
-.nagad-brand {
-  background: #F7941D;
-  color: #FFFFFF;
-}
-
-.cap-tx-details {
+.hero-role-btn {
   flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.cap-tx-details strong {
-  font-size: 12.5px;
-  font-weight: 800;
-  color: #0F172A;
-  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #475569;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
   overflow: hidden;
-  text-overflow: ellipsis;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-.cap-tx-details span {
-  font-size: 11px;
-  color: #64748B;
+.hero-role-btn:hover {
+  color: #0F172A;
+  background: rgba(255, 255, 255, 0.6);
 }
 
-.cap-tx-val {
-  text-align: right;
+.hero-role-btn.active {
+  background: #FFFFFF;
+  color: #174B39;
+  border-color: #CBD5E1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.role-btn-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #94A3B8;
+  transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
-.tx-amount {
-  font-family: var(--font-heading);
-  font-size: 13.5px;
-  font-weight: 800;
-  color: #0E2A1F;
+.hero-role-btn.active .role-btn-dot {
+  background: #10B981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+}
+
+.role-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(16, 185, 129, 0.15);
+  display: none;
+}
+
+.hero-role-btn.active .role-progress-bar {
   display: block;
 }
 
-.tx-tag.auto-sync {
-  font-size: 10px;
-  font-weight: 700;
-  color: #059669;
+.role-progress-fill {
   display: block;
-}
-
-/* Ledger Progress Footer */
-.cap-progress-box {
-  border-top: 1px solid #EDF4EF;
-  padding-top: 10px;
-}
-
-.cap-progress-bar {
-  height: 6px;
-  background: #E5EFE9;
-  border-radius: 999px;
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-
-.cap-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #10B981, #059669);
-  border-radius: 999px;
-}
-
-.cap-progress-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  color: #64748B;
-  font-weight: 600;
-}
-
-.cap-zero-dues {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: #065F46;
-  font-weight: 800;
-}
-
-.dot-green {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
+  width: 0%;
   background: #10B981;
 }
 
-/* Card 3: YesEdu Copilot & NCTB 2026 Engine (Bottom Right Float) */
-.cap-ai {
-  width: 92%;
-  max-width: 460px;
-  margin-left: auto;
-  border-color: rgba(139, 92, 246, 0.25);
+.hero-role-btn.active.animating .role-progress-fill {
+  animation: roleProgress 5.5s linear forwards;
+}
+
+@keyframes roleProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Dashboard High-Res Screenshot Canvas */
+.dash-screen {
+  position: relative;
+  background: #0F172A;
+  overflow: hidden;
+  line-height: 0;
+  aspect-ratio: 16 / 9.6;
+  width: 100%;
+}
+
+.dash-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.985);
+  pointer-events: none;
+}
+
+.dash-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.dash-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Floating Glass KPI Badges (Safe Negative Offsets, Zero Overlap) */
+.float-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #CBD5E1;
+  border-radius: 12px;
+  padding: 10px 14px;
   box-shadow:
-    0 1px 3px rgba(20, 37, 31, 0.03),
-    0 18px 38px -8px rgba(109, 40, 217, 0.08),
-    0 0 0 1px rgba(139, 92, 246, 0.1);
-  z-index: 3;
-  animation: capFloat3 6.8s ease-in-out infinite 1s;
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 16px 36px -4px rgba(15, 23, 42, 0.14);
+  z-index: 4;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: heroFloat 5.5s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.cap-ai-head {
+.float-one {
+  top: -16px;
+  left: -20px;
+}
+
+.float-two {
+  bottom: -18px;
+  right: -20px;
+  animation-delay: -2.5s;
+}
+
+.float-three {
+  display: none !important;
+}
+
+.float-card .mini {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.cap-ai-title {
-  display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #1E293B;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.cap-sparkle-icon {
-  color: #8B5CF6;
-  font-size: 14px;
-}
-
-.cap-nctb-pill {
   font-size: 10.5px;
-  font-weight: 800;
-  padding: 3px 9px;
-  background: #F5F3FF;
-  border: 1px solid #DDD6FE;
-  border-radius: 999px;
-  color: #6D28D9;
-}
-
-.cap-ai-prompt {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 10px;
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  display: flex;
-  gap: 6px;
-  align-items: flex-start;
-}
-
-.prompt-label {
-  font-size: 10.5px;
-  font-weight: 800;
-  color: #64748B;
-  text-transform: uppercase;
-  flex-shrink: 0;
-}
-
-.cap-ai-prompt p {
-  font-size: 11.5px;
-  color: #334155;
-  font-weight: 600;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.cap-ai-metrics {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding-top: 4px;
-}
-
-.ai-metric-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.ai-metric-item span {
-  font-size: 10px;
-  color: #64748B;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.ai-metric-item strong {
-  font-family: var(--font-heading);
-  font-size: 12.5px;
-  font-weight: 800;
-  color: #0F172A;
-}
-
-.ai-metric-item strong.highlight-green {
-  color: #059669;
-}
-
-.ai-metric-divider {
-  width: 1px;
-  height: 22px;
-  background: #E2E8F0;
-}
-
-.ai-export-btn {
-  padding: 5px 12px;
-  background: #174B39;
-  color: #FFFFFF;
-  border-radius: 8px;
-  font-size: 11px;
   font-weight: 700;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  white-space: nowrap;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.ai-export-btn:hover {
-  background: #059669;
-  transform: translateY(-1px);
+.float-icon {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #ECFDF5;
+  color: #059669;
+  display: grid;
+  place-items: center;
+  font-size: 9.5px;
+  font-weight: 800;
 }
 
-/* Float Keyframe Animations */
-@keyframes capFloat1 {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-7px);
-  }
+.float-card strong {
+  display: block;
+  font: 800 17px var(--font-heading);
+  color: #0F172A;
+  margin-top: 2px;
+  line-height: 1.2;
 }
 
-@keyframes capFloat2 {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
+.float-card span {
+  font-size: 10.5px;
+  color: #64748B;
+  display: block;
+  margin-top: 1px;
 }
 
-@keyframes capFloat3 {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
 }
 
 /* ==========================================================================

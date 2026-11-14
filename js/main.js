@@ -1149,7 +1149,17 @@
       slide.classList.toggle("active", isSlideActive);
     });
 
-    // 3. Update Title & Status
+    // 3. Update Title, Status & URL Bar
+    const roleUrls = {
+      admin: "admin.yesedu.cloud/cockpit",
+      teacher: "teacher.yesedu.cloud/workspace",
+      parent: "parent.yesedu.cloud/portal"
+    };
+    const urlEl = document.getElementById("dashRoleUrl");
+    if (urlEl && roleUrls[roleKey]) {
+      urlEl.textContent = roleUrls[roleKey];
+    }
+
     const titleEl = document.getElementById("dashRoleTitle");
     if (titleEl) updateHeroText(titleEl, data.roleTitle);
 
