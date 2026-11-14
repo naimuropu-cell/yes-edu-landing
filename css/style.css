@@ -766,8 +766,9 @@ header.scrolled {
   z-index: 0;
 }
 
-/* 2-Column Asymmetric Bento Grid */
-.hero-bento-grid {
+/* 2-Column Asymmetric Tactile Deck */
+.hero-bento-grid,
+.tactile-deck {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
@@ -777,17 +778,17 @@ header.scrolled {
   z-index: 2;
 }
 
-/* Base Bento Card */
+/* Base Bento & Tactile Card */
 .bento-card {
   background: #FFFFFF;
   border: 1px solid #CBD5E1;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 18px 20px;
   box-shadow:
     0 1px 3px rgba(15, 23, 42, 0.03),
     0 16px 36px -6px rgba(15, 23, 42, 0.08),
     0 0 0 1px rgba(0, 0, 0, 0.02);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -796,12 +797,10 @@ header.scrolled {
 }
 
 .bento-card:hover {
-  border-color: #10B981;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow:
     0 8px 24px -2px rgba(15, 23, 42, 0.06),
-    0 24px 48px -8px rgba(16, 185, 129, 0.16),
-    0 0 0 1px rgba(16, 185, 129, 0.25);
+    0 24px 48px -8px rgba(16, 185, 129, 0.16);
 }
 
 .bento-card-top {
@@ -812,12 +811,70 @@ header.scrolled {
   margin-bottom: 12px;
 }
 
-/* Card 1: Wide Top Card (Biometric Attendance & Parent SMS) */
+/* ==========================================================================
+   TACTILE CARD 1: IoT Biometric Gate Terminal (Top Wide)
+   ========================================================================== */
+.tactile-terminal-card,
 .bento-wide {
   grid-column: 1 / -1;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFA 100%);
-  border-color: #CBD5E1;
-  padding: 20px 22px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 22px;
+  padding: 18px 20px;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.03),
+    0 16px 36px -6px rgba(15, 23, 42, 0.07),
+    inset 0 1px 1px #FFFFFF;
+}
+
+.tactile-terminal-card:hover {
+  border-color: #10B981;
+  box-shadow:
+    0 10px 28px -4px rgba(15, 23, 42, 0.06),
+    0 24px 48px -8px rgba(16, 185, 129, 0.18),
+    0 0 0 1px rgba(16, 185, 129, 0.25);
+}
+
+/* Terminal Hardware Top Bezel Bar */
+.terminal-bezel-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* Sensor Notch with Camera Lens & IR LED */
+.terminal-sensor-notch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0F172A;
+  padding: 4px 10px;
+  border-radius: 99px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.notch-camera-lens {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #38BDF8 25%, #0F172A 85%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.notch-ir-led {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #EF4444;
+  box-shadow: 0 0 5px #EF4444;
+  animation: blinkIr 2s infinite ease-in-out;
+}
+
+@keyframes blinkIr {
+  0%, 100% { opacity: 0.35; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 4px #EF4444); }
 }
 
 .bento-badge-live {
@@ -852,16 +909,24 @@ header.scrolled {
   font-weight: 600;
 }
 
+/* Clock-in Punch Surface */
+.terminal-punch-surface,
 .bento-student-row {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #FFFFFF;
+  background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
   border: 1px solid #E2E8F0;
   border-radius: 12px;
   padding: 10px 14px;
   margin-bottom: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.015);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.tactile-terminal-card:hover .terminal-punch-surface {
+  border-color: #A7F3D0;
+  background: #FFFFFF;
 }
 
 .bento-avatar {
@@ -923,13 +988,15 @@ header.scrolled {
   flex-shrink: 0;
 }
 
-/* SMS Message Bubble */
+/* SMS Delivery Banner */
+.tactile-sms-banner,
 .bento-sms-bubble {
-  background: #F8FAFC;
+  background: #FFFFFF;
   border: 1px solid #E2E8F0;
-  border-left: 3px solid #10B981;
-  border-radius: 8px;
-  padding: 9px 12px;
+  border-left: 3.5px solid #10B981;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.05);
 }
 
 .bento-sms-header {
@@ -970,10 +1037,103 @@ header.scrolled {
   font-style: italic;
 }
 
-/* Card 2: Square Card (1-Tap bKash Collection) */
-.bento-fee-card {
-  border-color: #CBD5E1;
-  background: #FFFFFF;
+/* ==========================================================================
+   TACTILE CARD 2: Executive Fintech Smart Card (Bottom Left)
+   ========================================================================== */
+.tactile-fintech-card {
+  background: linear-gradient(135deg, #092017 0%, #133E2F 50%, #1A5440 100%);
+  border: 1.5px solid rgba(213, 232, 181, 0.35);
+  border-radius: 20px;
+  padding: 18px 20px;
+  color: #FFFFFF;
+  box-shadow:
+    0 14px 34px -8px rgba(9, 32, 23, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tactile-fintech-card:hover {
+  border-color: #D5E8B5;
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 40px -8px rgba(9, 32, 23, 0.55),
+    0 0 0 1px rgba(213, 232, 181, 0.4);
+}
+
+/* Holographic Metallic Sheen */
+.fintech-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.05) 40%, rgba(213, 232, 181, 0.12) 55%, transparent 75%);
+  pointer-events: none;
+  transition: transform 0.6s ease;
+}
+
+.tactile-fintech-card:hover .fintech-sheen {
+  transform: translateX(35%);
+}
+
+.fintech-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.fintech-chip-cluster {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Realistic Gold EMV Microchip */
+.emv-chip {
+  width: 30px;
+  height: 22px;
+  background: linear-gradient(135deg, #FFE49F 0%, #F5B041 50%, #DC7633 100%);
+  border: 1px solid #C06B15;
+  border-radius: 4.5px;
+  position: relative;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.25);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.emv-chip .chip-line-1 {
+  position: absolute;
+  width: 100%;
+  height: 0.5px;
+  background: rgba(100, 40, 0, 0.35);
+  top: 38%;
+}
+
+.emv-chip .chip-line-2 {
+  position: absolute;
+  width: 0.5px;
+  height: 100%;
+  background: rgba(100, 40, 0, 0.35);
+  left: 45%;
+}
+
+.emv-chip .chip-center {
+  width: 11px;
+  height: 8px;
+  border: 0.5px solid rgba(100, 40, 0, 0.35);
+  border-radius: 2px;
+  background: rgba(255, 220, 140, 0.4);
+}
+
+.contactless-wave {
+  color: rgba(213, 232, 181, 0.85);
+  flex-shrink: 0;
 }
 
 .bento-fintech-brands {
@@ -994,91 +1154,117 @@ header.scrolled {
 .bkash-pill {
   background: #E2136E;
   color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(226, 19, 110, 0.3);
 }
 
 .nagad-pill {
   background: #F7941D;
   color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(247, 148, 29, 0.3);
 }
 
-.bento-tag-green {
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #047857;
-  background: #ECFDF5;
-  padding: 2px 7px;
-  border-radius: 99px;
-  border: 1px solid #A7F3D0;
+.fintech-body {
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
 }
 
-.bento-fee-body {
-  margin: 8px 0 14px;
-}
-
-.bento-fee-label {
+.fintech-label {
   display: block;
-  font-size: 11px;
-  font-weight: 600;
-  color: #64748B;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #D5E8B5;
   margin-bottom: 4px;
 }
 
-.bento-fee-amount {
+.fintech-amount-row {
   display: flex;
   align-items: baseline;
   gap: 2px;
 }
 
-.bento-fee-amount .currency {
+.fintech-currency {
   font-size: 18px;
   font-weight: 700;
-  color: #059669;
+  color: #D5E8B5;
 }
 
-.bento-fee-amount .figure {
+.fintech-figure {
   font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 800;
-  color: #0F172A;
+  color: #FFFFFF;
   letter-spacing: -0.02em;
   line-height: 1;
 }
 
-.bento-fee-amount .decimals {
+.fintech-decimals {
   font-family: var(--font-heading);
   font-size: 15px;
   font-weight: 700;
-  color: #64748B;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.bento-fee-footer {
-  border-top: 1px solid #F1F5F9;
+.fintech-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 10px;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
 }
 
-.fee-receipt-pill {
+.tactile-fintech-card .fee-receipt-pill {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 11px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #F8FAFC;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 10px;
   font-family: var(--font-mono);
-  color: #334155;
   font-weight: 600;
 }
 
-.fee-zero-error {
+.fintech-reconciled-badge {
   font-size: 10.5px;
   font-weight: 700;
-  color: #059669;
+  color: #A7F3D0;
+  letter-spacing: 0.01em;
 }
 
-/* Card 3: Square Card (NCTB 2026 AI Assistant) */
-.bento-ai-card {
-  border-color: #CBD5E1;
-  background: #FFFFFF;
+/* ==========================================================================
+   TACTILE CARD 3: NCTB 2026 AI Cognitive Engine Lab Card (Bottom Right)
+   ========================================================================== */
+.tactile-ai-card {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFF 100%);
+  border: 1.5px solid #DDD6FE;
+  border-radius: 24px 8px 24px 8px;
+  padding: 18px 20px;
+  box-shadow:
+    0 1px 3px rgba(124, 58, 237, 0.04),
+    0 16px 36px -6px rgba(124, 58, 237, 0.09),
+    inset 0 1px 1px #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tactile-ai-card:hover {
+  border-color: #8B5CF6;
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 28px -4px rgba(124, 58, 237, 0.08),
+    0 24px 48px -8px rgba(124, 58, 237, 0.2),
+    0 0 0 1px rgba(139, 92, 246, 0.3);
 }
 
 .bento-ai-badge {
@@ -1126,22 +1312,27 @@ header.scrolled {
 .bento-cq-tags {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  gap: 5px;
 }
 
 .cq-pill {
   font-size: 10px;
   font-weight: 700;
-  padding: 3px 6px;
-  border-radius: 4px;
+  padding: 4px 6px;
+  border-radius: 6px;
   text-align: center;
   white-space: nowrap;
+  transition: transform 0.2s ease;
 }
 
-.cq-k { background: #ECFDF5; color: #047857; }
-.cq-c { background: #EFF6FF; color: #1D4ED8; }
-.cq-a { background: #FFFBEB; color: #B45309; }
-.cq-h { background: #FAF5FF; color: #7E22CE; }
+.cq-pill:hover {
+  transform: scale(1.04);
+}
+
+.cq-k { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+.cq-c { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+.cq-a { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+.cq-h { background: #FAF5FF; color: #7E22CE; border: 1px solid #E9D5FF; }
 
 .bento-ai-footer {
   border-top: 1px solid #F1F5F9;
@@ -1163,24 +1354,39 @@ header.scrolled {
 
 .bento-bloom-tag {
   font-size: 9.5px;
-  font-weight: 600;
-  color: #64748B;
+  font-weight: 700;
+  color: #6D28D9;
+  background: #F5F3FF;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid #DDD6FE;
 }
 
-/* Card 4: Floating Accent Trust Pill */
+/* ==========================================================================
+   TACTILE CARD 4: Floating Accent Trust Pill (Bottom Anchor)
+   ========================================================================== */
+.tactile-trust-pill,
 .bento-float-pill {
   grid-column: 1 / -1;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid #CBD5E1;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1.5px solid #CBD5E1;
   border-radius: 99px;
-  padding: 8px 16px;
+  padding: 9px 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.25s ease;
+}
+
+.tactile-trust-pill:hover,
+.bento-float-pill:hover {
+  border-color: #10B981;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(16, 185, 129, 0.15);
 }
 
 .float-pill-dot {
@@ -4481,7 +4687,8 @@ body {
     height: 100%;
   }
 
-  .hero-bento-grid {
+  .hero-bento-grid,
+  .tactile-deck {
     grid-template-columns: 1fr;
     gap: 12px;
     max-width: 100%;
@@ -4489,12 +4696,16 @@ body {
 
   .bento-wide,
   .bento-square,
-  .bento-card {
+  .bento-card,
+  .tactile-terminal-card,
+  .tactile-fintech-card,
+  .tactile-ai-card {
     grid-column: auto !important;
     padding: 15px 16px;
-    border-radius: 14px;
+    border-radius: 16px;
   }
 
+  .terminal-punch-surface,
   .bento-student-row {
     padding: 8px 10px;
     gap: 10px;
@@ -4510,7 +4721,8 @@ body {
     font-size: 12.5px;
   }
 
-  .bento-fee-amount .figure {
+  .bento-fee-amount .figure,
+  .fintech-figure {
     font-size: 24px;
   }
 
@@ -4518,10 +4730,11 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .tactile-trust-pill,
   .bento-float-pill {
     padding: 6px 12px;
     font-size: 11px;
-    border-radius: 12px;
+    border-radius: 99px;
   }
 
   .hero-proof-bar {

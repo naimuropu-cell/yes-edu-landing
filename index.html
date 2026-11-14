@@ -42,7 +42,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=8.8">
+  <link rel="stylesheet" href="css/style.css?v=8.9">
 </head>
 
 <body>
@@ -161,12 +161,17 @@
           <!-- Ambient Glow behind Bento Grid -->
           <div class="bento-ambient-glow"></div>
 
-          <!-- Structured Bento Grid (Linear / Apple Human SaaS Style) -->
-          <div class="hero-bento-grid">
+          <!-- Structured Tactile Bento Deck (Hardware + Fintech + AI Studio) -->
+          <div class="hero-bento-grid tactile-deck">
 
-            <!-- BENTO CARD 1: Wide Top Card (Biometric Attendance & Parent SMS) -->
-            <article class="bento-card bento-wide bento-gate-card">
-              <div class="bento-card-top">
+            <!-- TACTILE CARD 1: IoT Biometric Gate Terminal -->
+            <article class="bento-card bento-wide tactile-terminal-card">
+              <!-- Terminal Hardware Top Bezel with Camera & Sensor Notch -->
+              <div class="terminal-bezel-bar">
+                <div class="terminal-sensor-notch" title="Optical Facial & RFID Reader">
+                  <span class="notch-camera-lens"></span>
+                  <span class="notch-ir-led"></span>
+                </div>
                 <div class="bento-badge-live">
                   <span class="live-dot-green"></span>
                   <span class="lang-en">Gate #02 • ZKTeco Sync</span>
@@ -175,7 +180,8 @@
                 <span class="bento-latency-pill">0.18s latency</span>
               </div>
 
-              <div class="bento-student-row">
+              <!-- Student Clock-in Punch Area -->
+              <div class="terminal-punch-surface">
                 <div class="bento-avatar avatar-emerald">FA</div>
                 <div class="bento-student-info">
                   <div class="bento-student-name">
@@ -196,8 +202,8 @@
                 </div>
               </div>
 
-              <!-- Instant SMS Delivery Preview Bubble -->
-              <div class="bento-sms-bubble">
+              <!-- Instant SMS Delivery Push Banner (Overlapping Glass Bubble) -->
+              <div class="tactile-sms-banner">
                 <div class="bento-sms-header">
                   <div class="bento-sms-sender">
                     <span class="sms-icon">💬</span>
@@ -212,45 +218,62 @@
               </div>
             </article>
 
-            <!-- BENTO CARD 2: Bottom-Left Bento (Fintech & 1-Tap bKash Collection) -->
-            <article class="bento-card bento-square bento-fee-card">
-              <div class="bento-card-top">
+            <!-- TACTILE CARD 2: Executive Fintech Smart Card -->
+            <article class="bento-card bento-square tactile-fintech-card">
+              <!-- Holographic Sheen Layer -->
+              <div class="fintech-sheen"></div>
+
+              <!-- Card Top Header with EMV Chip & Contactless Waves -->
+              <div class="fintech-card-header">
+                <div class="fintech-chip-cluster">
+                  <!-- EMV Gold Microchip Graphic -->
+                  <div class="emv-chip" title="Smart EMV Security">
+                    <div class="chip-line chip-line-1"></div>
+                    <div class="chip-line chip-line-2"></div>
+                    <div class="chip-center"></div>
+                  </div>
+                  <!-- Contactless Wave Icon -->
+                  <svg class="contactless-wave" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                    <path d="M8.5 16.5a5 5 0 0 1 0-7"></path>
+                    <path d="M12 19a8.5 8.5 0 0 0 0-12"></path>
+                    <path d="M15.5 21.5a12 12 0 0 0 0-17"></path>
+                  </svg>
+                </div>
                 <div class="bento-fintech-brands">
                   <span class="brand-pill bkash-pill">bKash</span>
                   <span class="brand-pill nagad-pill">Nagad</span>
                 </div>
-                <span class="bento-tag-green">
-                  <span class="lang-en">Auto Reconciled</span>
-                  <span class="lang-bn hidden">অটো রিকনসাইল্ড</span>
-                </span>
               </div>
 
-              <div class="bento-fee-body">
-                <span class="bento-fee-label">
+              <!-- Fintech Body with Foil Ledger Figures -->
+              <div class="fintech-body">
+                <span class="fintech-label">
                   <span class="lang-en">Tuition & Exam Collection</span>
                   <span class="lang-bn hidden">টিউশন ও পরীক্ষা ফি আদায়</span>
                 </span>
-                <div class="bento-fee-amount">
-                  <span class="currency">৳</span>
-                  <strong class="figure">2,450</strong>
-                  <span class="decimals">.00</span>
+                <div class="fintech-amount-row">
+                  <span class="fintech-currency">৳</span>
+                  <strong class="fintech-figure">2,450</strong>
+                  <span class="fintech-decimals">.00</span>
                 </div>
               </div>
 
-              <div class="bento-fee-footer">
+              <!-- Fintech Footer with Zero Error Reconcile -->
+              <div class="fintech-footer">
                 <div class="fee-receipt-pill">
                   <span class="receipt-icon">🧾</span>
                   <span class="receipt-id">Digital Receipt #892</span>
                 </div>
-                <span class="fee-zero-error">
-                  <span class="lang-en">✓ Zero Error Ledger</span>
-                  <span class="lang-bn hidden">✓ নির্ভুল ক্যাশবুক লেজার</span>
+                <span class="fintech-reconciled-badge">
+                  <span class="lang-en">✓ Auto Reconciled</span>
+                  <span class="lang-bn hidden">✓ অটো রিকনসাইল্ড</span>
                 </span>
               </div>
             </article>
 
-            <!-- BENTO CARD 3: Bottom-Right Bento (NCTB 2026 AI Assistant) -->
-            <article class="bento-card bento-square bento-ai-card">
+            <!-- TACTILE CARD 3: NCTB 2026 AI Cognitive Engine Lab Card -->
+            <article class="bento-card bento-square tactile-ai-card">
+              <!-- Asymmetric AI Top Bar -->
               <div class="bento-card-top">
                 <div class="bento-ai-badge">
                   <span class="sparkle-ico">✦</span>
@@ -260,6 +283,7 @@
                 <span class="bento-curriculum-chip">NCTB 2026</span>
               </div>
 
+              <!-- Subject & Question Taxonomy Tokens -->
               <div class="bento-ai-body">
                 <span class="bento-subject-title">
                   <span class="lang-en">Physics & Math (Class 9-10)</span>
@@ -273,6 +297,7 @@
                 </div>
               </div>
 
+              <!-- AI Footer with Print Ready & Bloom's Badge -->
               <div class="bento-ai-footer">
                 <span class="bento-print-ready">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -283,12 +308,12 @@
                   <span class="lang-en">1-Click Print PDF</span>
                   <span class="lang-bn hidden">১-ক্লিকে প্রিন্ট রেডি</span>
                 </span>
-                <span class="bento-bloom-tag">Bloom's Taxonomy</span>
+                <span class="bento-bloom-tag">Bloom's Verified</span>
               </div>
             </article>
 
-            <!-- BENTO CARD 4: Floating Accent Trust Pill -->
-            <div class="bento-float-pill">
+            <!-- TACTILE CARD 4: Floating Accent Trust Pill -->
+            <div class="bento-float-pill tactile-trust-pill">
               <span class="float-pill-dot">✓</span>
               <span class="float-pill-text">
                 <span class="lang-en"><strong>97% Attendance Today</strong> Across 42+ Districts</span>
