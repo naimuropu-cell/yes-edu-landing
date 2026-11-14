@@ -237,6 +237,38 @@
         // Safe fallback if called before DOM nodes attach
       }
     }
+
+    // Translate modal form options
+    const roleSelect = document.getElementById("institutionRole");
+    if (roleSelect) {
+      const roleOptions = {
+        principal: { en: "Principal / Headmaster / Muhtamim", bn: "অধ্যক্ষ / প্রধান শিক্ষক / মুহতামিম" },
+        director: { en: "Chairman / Board Director / Trustee", bn: "চেয়ারম্যান / পরিচালনা পর্ষদ / ট্রাস্টি" },
+        teacher: { en: "Senior Teacher / IT Coordinator", bn: "সিনিয়র শিক্ষক / আইটি সমন্বয়ক" },
+        accounts: { en: "Accounts Officer / Bursar", bn: "হিসাব কর্মকর্তা / ক্যাশিয়ার" },
+        other: { en: "Other", bn: "অন্যান্য" }
+      };
+      Array.from(roleSelect.options).forEach((opt) => {
+        if (roleOptions[opt.value]) {
+          opt.textContent = lang === "bn" ? roleOptions[opt.value].bn : roleOptions[opt.value].en;
+        }
+      });
+    }
+
+    const studentsSelect = document.getElementById("approxStudents");
+    if (studentsSelect) {
+      const studentOptions = {
+        under500: { en: "Under 500 Students", bn: "৫০০ এর নিচে শিক্ষার্থী" },
+        "500to1500": { en: "500 – 1,500 Students", bn: "৫০০ – ১,৫০০ শিক্ষার্থী" },
+        "1500to3000": { en: "1,500 – 3,000 Students", bn: "১,৫০০ – ৩,০০০ শিক্ষার্থী" },
+        over3000: { en: "3,000+ Students", bn: "৩,০০০+ শিক্ষার্থী" }
+      };
+      Array.from(studentsSelect.options).forEach((opt) => {
+        if (studentOptions[opt.value]) {
+          opt.textContent = lang === "bn" ? studentOptions[opt.value].bn : studentOptions[opt.value].en;
+        }
+      });
+    }
   }
 
   function initLanguageSwitcher() {

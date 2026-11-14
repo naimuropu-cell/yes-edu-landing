@@ -4730,6 +4730,16 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .terminal-bezel-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .fintech-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
   .tactile-trust-pill,
   .bento-float-pill {
     padding: 6px 12px;
@@ -5160,6 +5170,7 @@ body {
     margin-bottom: 16px;
   }
 
+  
   .sme-card-stage {
     padding: 14px;
     border-radius: 12px;
@@ -5841,6 +5852,23 @@ body {
     width: 215px;
     padding: 12px 10px 16px;
     border-width: 7px;
+  }
+
+  .bento-cq-tags {
+    grid-template-columns: 1fr !important;
+    gap: 4px !important;
+  }
+
+  .fintech-figure {
+    font-size: 22px !important;
+  }
+
+  .fintech-card-header {
+    margin-bottom: 10px;
+  }
+
+  .terminal-sensor-notch {
+    padding: 3px 8px;
   }
 
   .hero-mobile-kpi {
