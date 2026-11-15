@@ -493,6 +493,7 @@
     {
       bn: {
         shortTab: "০১ বায়োমেট্রিক গেট",
+        mobileTab: "০১ গেট",
         badge: "০১ / ০৪ • লাইভ গেটওয়ে",
         title: "বায়োমেট্রিক গেট উপস্থিতি ও তাৎক্ষণিক অভিভাবক এসএমএস",
         points: [
@@ -534,6 +535,7 @@
       },
       en: {
         shortTab: "01 Biometric Gate",
+        mobileTab: "01 Gate",
         badge: "01 / 04 • Live Gateway",
         title: "Biometric Gate Attendance & Instant Guardian SMS",
         points: [
@@ -577,6 +579,7 @@
     {
       bn: {
         shortTab: "০২ বিকাশ পেমেন্ট",
+        mobileTab: "০২ বিকাশ",
         badge: "০২ / ০৪ • ১-ট্যাপ ফিনটেক",
         title: "বিকাশ ১-ট্যাপ ফি সংগ্রহ ও স্বয়ংক্রিয় ক্যাশবুক লেজার",
         points: [
@@ -609,6 +612,7 @@
       },
       en: {
         shortTab: "02 bKash Payment",
+        mobileTab: "02 bKash",
         badge: "02 / 04 • 1-Tap Fintech",
         title: "1-Tap bKash Fee Collection & Auto Cashbook Ledger",
         points: [
@@ -643,6 +647,7 @@
     {
       bn: {
         shortTab: "০৩ এআই প্রশ্ন",
+        mobileTab: "০৩ এআই",
         badge: "০৩ / ০৪ • Ustadh AI ইঞ্জিন",
         title: "এনসিটিবি ও মাদরাসা সিলেবাস অনুযায়ী প্রশ্নপত্র প্রণয়ন",
         points: [
@@ -675,6 +680,7 @@
       },
       en: {
         shortTab: "03 AI Question",
+        mobileTab: "03 AI",
         badge: "03 / 04 • Ustadh AI Engine",
         title: "Generate Exams via NCTB & Madrasah Syllabus AI",
         points: [
@@ -709,6 +715,7 @@
     {
       bn: {
         shortTab: "০৪ হোস্টেল ও ওয়াকফ",
+        mobileTab: "০৪ ওয়াকফ",
         badge: "০৪ / ০৪ • শরীয়াহ অডিট লেজার",
         title: "ছাত্রাবাস সিট বরাদ্দ ও ওয়াকফ-লিল্লাহ ফান্ড অডিট",
         points: [
@@ -741,6 +748,7 @@
       },
       en: {
         shortTab: "04 Hostel & Waqf",
+        mobileTab: "04 Waqf",
         badge: "04 / 04 • Shariah Audit Ledger",
         title: "Hostel Bed Allocation & Shariah Waqf Fund Audit",
         points: [
@@ -797,7 +805,8 @@
             <div id="playground-bar-${idx}" class="playground-bar-fill" style="width: ${barWidth}"></div>
           </div>
           <div class="playground-tab-label">
-            <span>${s.shortTab}</span>
+            <span class="tab-label-desktop">${s.shortTab}</span>
+            <span class="tab-label-mobile">${s.mobileTab}</span>
           </div>
         </button>
       `;
@@ -927,8 +936,30 @@
 
     cardEl.addEventListener("mouseenter", () => { isPlaygroundPaused = true; });
     cardEl.addEventListener("mouseleave", () => { isPlaygroundPaused = false; });
-    cardEl.addEventListener("touchstart", () => { isPlaygroundPaused = true; }, { passive: true });
-    cardEl.addEventListener("touchend", () => { isPlaygroundPaused = false; }, { passive: true });
+    let touchStartX = 0;
+    let touchStartY = 0;
+    cardEl.addEventListener("touchstart", (e) => {
+      isPlaygroundPaused = true;
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }
+    }, { passive: true });
+
+    cardEl.addEventListener("touchend", (e) => {
+      isPlaygroundPaused = false;
+      if (e.changedTouches && e.changedTouches[0]) {
+        const diffX = e.changedTouches[0].screenX - touchStartX;
+        const diffY = e.changedTouches[0].screenY - touchStartY;
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+          if (diffX < 0) {
+            window.nextPlaygroundSlide();
+          } else {
+            window.prevPlaygroundSlide();
+          }
+        }
+      }
+    }, { passive: true });
 
     if (playgroundTimer) clearInterval(playgroundTimer);
     playgroundTimer = setInterval(() => {

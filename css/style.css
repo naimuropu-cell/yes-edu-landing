@@ -2224,6 +2224,23 @@ header.scrolled {
   text-overflow: ellipsis;
 }
 
+.tab-label-desktop {
+  display: inline;
+}
+
+.tab-label-mobile {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .tab-label-desktop {
+    display: none;
+  }
+  .tab-label-mobile {
+    display: inline;
+  }
+}
+
 .playground-tab-btn:hover .playground-tab-label {
   color: #0f172a;
 }
@@ -2629,7 +2646,7 @@ header.scrolled {
     gap: 8px;
   }
   .playground-tab-label {
-    font-size: 11px;
+    font-size: 11.5px;
   }
   .playground-body {
     grid-template-columns: 1fr;
@@ -2646,10 +2663,12 @@ header.scrolled {
   .playground-action-row {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 12px;
   }
   .playground-btn-trigger {
     flex: 1;
     justify-content: center;
+    min-height: 44px;
   }
   .playground-right {
     padding: 24px 20px 20px;
@@ -2666,24 +2685,87 @@ header.scrolled {
 }
 
 @media (max-width: 480px) {
+  .playground-story-card {
+    border-radius: 16px;
+  }
   .playground-tabs-bar {
     padding: 12px 10px 10px;
   }
   .playground-tab-label {
-    font-size: 10px;
+    font-size: 11px;
+  }
+  .playground-left {
+    padding: 18px 14px;
+    gap: 14px;
+  }
+  .playground-step-badge {
+    font-size: 10.5px;
+    padding: 3.5px 10px;
   }
   .playground-slide-title {
     font-size: 17px;
+    line-height: 1.35;
+  }
+  .playground-point-item {
+    font-size: 12.5px;
+    gap: 8px;
+  }
+  .point-check-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
   }
   .stage-primary-card {
-    padding: 16px;
+    padding: 16px 14px;
+    border-radius: 14px;
+    gap: 10px;
   }
   .stage-subject-name {
     font-size: 16px;
   }
+  .stage-subject-meta {
+    font-size: 11.5px;
+  }
   .playground-btn-trigger {
     padding: 10px 16px;
     font-size: 12.5px;
+  }
+  .playground-right {
+    padding: 18px 14px 16px;
+  }
+  .stage-floating-popup {
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+  .popup-body-text {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  .playground-telemetry-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+    padding-top: 10px;
+  }
+  .telemetry-metric-pill {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .playground-action-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .playground-btn-trigger {
+    width: 100%;
+  }
+  .playground-nav-counter {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -5543,6 +5625,23 @@ body {
     border-radius: 8px;
   }
 
+  /* Pricing Calculator Mobile */
+  .pricing-calc-box {
+    padding: 20px 16px;
+    margin-bottom: 32px;
+    border-radius: 14px;
+  }
+
+  .calc-slider-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .calc-student-badge {
+    font-size: 15px;
+    padding: 3px 12px;
+  }
+
   /* Pricing */
   .price-grid {
     grid-template-columns: 1fr;
@@ -5931,6 +6030,14 @@ body {
    5. EXTRA-SMALL SCREENS (<= 380px)
    ========================================== */
 @media (max-width: 380px) {
+  .role-tab {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .role-tab-arrow {
+    display: none;
+  }
   .nav-actions .btn-primary {
     display: none;
     /* Clean uncluttered header on iPhone SE & extra-small screens */
