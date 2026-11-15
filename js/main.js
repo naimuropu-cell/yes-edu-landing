@@ -81,24 +81,24 @@
       }
     },
     accounts: {
-      url: "accounts.yesedu.cloud/ledger",
+      url: "finance.yesedu.cloud/accountant",
       badge: {
-        en: { icon: "💰", title: "Today's Collection", stat: "৳ 6,350.00", sub: "bKash, Nagad & Cash Reconciled" },
-        bn: { icon: "💰", title: "আজকের ফি আদায়", stat: "৳ ৬,৩৫০.০০", sub: "বিকাশ, নগদ ও ক্যাশ অটো সিঙ্ক" }
+        en: { icon: "💰", title: "Net Balance", stat: "৳ 2,292,200.99", sub: "Income ৳3.26M • Expenses ৳969K" },
+        bn: { icon: "💰", title: "নেট ব্যালেন্স", stat: "৳ ২২,৯২,২০০.৯৯", sub: "আয় ৳৩২.৬ লাখ • ব্যয় ৳৯.৬৯ লাখ" }
       },
       en: {
-        title: "Finance, Fees & Audit Ledger",
-        chip: "ACCOUNTS VIEW",
-        labels: ["Today Collection", "Total Dues", "Daily Vouchers"],
-        values: ["৳ 4.82L", "৳ 62.5K", "128 Verified"],
-        desc: "Automated double-entry cash book, multi-gateway digital fee reconciliation (bKash, Nagad, Sonali Bank), scholarship waivers and automated Waqf/Zakat fund accounting."
+        title: "Accountant Workspace & Financial Overview",
+        chip: "ACCOUNTANT VIEW",
+        labels: ["Total Income", "Total Expenses", "Net Balance"],
+        values: ["৳ 3,261,283.99", "৳ 969,083.00", "৳ 2,292,200.99"],
+        desc: "A centralized finance cockpit for tracking real-time institutional revenue, recording vouchers, automated fee reconciliation, managing invoices, and auditing cash flow."
       },
       bn: {
-        title: "হিসাবরক্ষণ, ফি কালেকশন ও অডিট খতিয়ান",
-        chip: "হিসাবরক্ষণ ভিউ",
-        labels: ["আজকের আদায়", "মোট বকেয়া", "দৈনিক ভাউচার"],
-        values: ["৳ ৪.৮২ লাখ", "৳ ৬২.৫ হাজার", "১২৮টি ভেরিফাইড"],
-        desc: "স্বয়ংক্রিয় ডাবল-এন্ট্রি ক্যাশবুক, বিকাশ-নগদ ফি অটো-রিকনসিলিয়েশন, বেতন-ভাতা প্রদান এবং ওয়াকফ-দান ফান্ডের স্বচ্ছ আর্থিক হিসাব।"
+        title: "অ্যাকাউন্ট্যান্ট ওয়ার্কস্পেস ও আর্থিক ড্যাশবোর্ড",
+        chip: "অ্যাকাউন্ট্যান্ট ভিউ",
+        labels: ["মোট আয়", "মোট ব্যয়", "নেট ব্যালেন্স"],
+        values: ["৳ ৩২,৬১,২৮৩.৯৯", "৳ ৯,৬৯,০৮৩.০০", "৳ ২২,৯২,২০০.৯৯"],
+        desc: "প্রতিষ্ঠানের সার্বিক আয়-ব্যয় ট্র্যাকিং, শিক্ষার্থী ফি কালেকশন, ইনভয়েস ম্যানেজমেন্ট, ডাবল-এন্ট্রি ক্যাশবুক এবং স্বয়ংক্রিয় আর্থিক অডিট রিপোর্ট।"
       }
     }
   };
