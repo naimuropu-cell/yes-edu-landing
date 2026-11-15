@@ -42,7 +42,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=10.0">
+  <link rel="stylesheet" href="css/style.css?v=10.1">
 </head>
 
 <body>
@@ -94,6 +94,34 @@
         <div class="hero-grid">
           <!-- LEFT COLUMN: Value Proposition, Trust Seal, Headline, CTAs, Stats -->
           <div class="hero-copy reveal">
+            <!-- Institution Segmenter Pill (Schools, Madrasahs, Cadets) -->
+            <div class="institution-segmenter" id="instSegmenter" role="tablist" aria-label="Select Institution Type">
+              <button class="inst-pill active" data-inst="general" type="button" role="tab" aria-selected="true">
+                <span class="inst-pill-ico">🏫</span>
+                <span class="lang-en">School & College</span>
+                <span class="lang-bn hidden">স্কুল ও কলেজ</span>
+              </button>
+              <button class="inst-pill" data-inst="madrasah" type="button" role="tab" aria-selected="false">
+                <span class="inst-pill-ico">🕌</span>
+                <span class="lang-en">Madrasah</span>
+                <span class="lang-bn hidden">কওমি ও আলিয়া মাদরাসা</span>
+              </button>
+              <button class="inst-pill" data-inst="cadet" type="button" role="tab" aria-selected="false">
+                <span class="inst-pill-ico">🎖️</span>
+                <span class="lang-en">Cadet & English Med.</span>
+                <span class="lang-bn hidden">ক্যাডেট ও ইংলিশ মিডিয়াম</span>
+              </button>
+            </div>
+
+            <!-- Dynamic Tailored Institution Feature Ribbon -->
+            <div class="inst-feature-tag" id="instFeatureTag">
+              <span class="inst-tag-dot">✦</span>
+              <span id="instTagText">
+                <span class="lang-en"><strong>Tailored for General Schools:</strong> NCTB 2026 Assessment • Auto GPA Report Card • 1-Tap bKash Fee • Biometric Gate SMS</span>
+                <span class="lang-bn hidden"><strong>স্কুল ও কলেজের জন্য:</strong> এনসিটিবি ২০২৬ নতুন মূল্যায়ন • অটো জিপিএ মার্কশিট • ১-ট্যাপে বিকাশ ফি • বায়োমেট্রিক গেট এসএমএস</span>
+              </span>
+            </div>
+
             <!-- Trust Pill with Client Crest Seals -->
             <div class="hero-trust-pill" role="status">
               <span class="trust-star">✦</span>
@@ -201,10 +229,16 @@
             </div>
           </div>
 
-          <!-- RIGHT COLUMN: 3D Perspective Laptop Mockup with Live Dashboard & Floating Badges -->
+          <!-- RIGHT COLUMN: 3D Glowing Podium Display with Live Dashboard & Floating Badges -->
           <div class="hero-visual reveal">
+            <!-- Sunny Educational Campus Architectural Backdrop (Top-Right) -->
+            <div class="hero-campus-backdrop" aria-hidden="true"></div>
+
             <!-- Organic Mint Radial Aura Blob -->
             <div class="visual-blob-aura" aria-hidden="true"></div>
+
+            <!-- Green Dynamic Spark Burst (Top-Left) -->
+            <div class="hero-spark-burst" aria-hidden="true">彡</div>
 
             <!-- FLOATING BADGE 1: AI Assistant (Top-Left) -->
             <div class="floating-badge badge-ai" aria-label="AI Assistant">
@@ -251,23 +285,7 @@
               </div>
             </div>
 
-            <!-- FLOATING BADGE 4: Fees Received! (Bottom-Left) -->
-            <div class="floating-badge badge-received" aria-label="Fees Received">
-              <span class="float-badge-ico ico-received">✓</span>
-              <div class="float-badge-content">
-                <span class="float-badge-title">
-                  <span class="lang-en">Fees Received!</span>
-                  <span class="lang-bn hidden">ফি গ্রহণ সম্পন্ন!</span>
-                  <span class="plus-sparkle">+</span>
-                </span>
-                <small class="float-badge-sub float-amount">
-                  <span class="lang-en">৳ 2,500</span>
-                  <span class="lang-bn hidden">৳ ২,৫০০</span>
-                </small>
-              </div>
-            </div>
-
-            <!-- 3D LAPTOP HARDWARE CHASSIS & SCREEN -->
+            <!-- 3D LAPTOP / TABLET DISPLAY CONTAINER -->
             <div class="laptop-device-wrapper">
               <div class="laptop-screen-frame">
                 <!-- Top Screen Bezel with Webcam Notch -->
@@ -301,7 +319,7 @@
 
                   <!-- Dashboard Main Split: Sidebar + Workspace -->
                   <div class="dash-main-grid">
-                    <!-- Left Mini Navigation Sidebar -->
+                    <!-- Left Mini Navigation Sidebar (7 Modules matching exact design) -->
                     <aside class="dash-sidebar" aria-label="Dashboard Navigation">
                       <div class="dash-nav-item active">
                         <span class="dash-item-ico">▦</span>
@@ -343,6 +361,13 @@
                         <span class="dash-item-label">
                           <span class="lang-en">Reports</span>
                           <span class="lang-bn hidden">রিপোর্ট</span>
+                        </span>
+                      </div>
+                      <div class="dash-nav-item">
+                        <span class="dash-item-ico">⚙</span>
+                        <span class="dash-item-label">
+                          <span class="lang-en">Settings</span>
+                          <span class="lang-bn hidden">সেটিংস</span>
                         </span>
                       </div>
                     </aside>
@@ -474,39 +499,12 @@
                 </div>
               </div>
 
-              <!-- LAPTOP METALLIC BASE & CHASSIS -->
-              <div class="laptop-metallic-base" aria-hidden="true">
-                <div class="laptop-chassis-indent"></div>
-              </div>
-              <div class="laptop-cast-shadow" aria-hidden="true"></div>
-            </div>
-
-            <!-- FLOATING TESTIMONIAL CARD (Bottom-Right) -->
-            <div class="floating-testimonial-card" aria-label="Customer Testimonial">
-              <span class="testimonial-quote-mark">“</span>
-              <p class="testimonial-quote-text">
-                <span class="lang-en">"YesEdu has completely transformed our institution's management. It's simple, powerful and incredibly reliable."</span>
-                <span class="lang-bn hidden">"YesEdu আমাদের প্রতিষ্ঠানের সামগ্রিক ব্যবস্থাপনা সম্পূর্ণ বদলে দিয়েছে। এটি অত্যন্ত সহজ, কার্যকর এবং নির্ভরযোগ্য।"</span>
-              </p>
-              <div class="testimonial-author-row">
-                <div class="testimonial-avatar-wrap">
-                  <span class="testimonial-avatar-fallback">DR</span>
-                </div>
-                <div class="testimonial-author-info">
-                  <strong class="author-name">
-                    <span class="lang-en">Dr. A. Rahman</span>
-                    <span class="lang-bn hidden">ড. এ. রহমান</span>
-                  </strong>
-                  <small class="author-title">
-                    <span class="lang-en">Principal, Al-Noor Academy</span>
-                    <span class="lang-bn hidden">অধ্যক্ষ, আল-নূর একাডেমি</span>
-                  </small>
-                </div>
-              </div>
-              <div class="testimonial-carousel-dots" aria-hidden="true">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+              <!-- 3D GLOWING GREEN CIRCULAR PODIUM & ORBIT PLATFORM -->
+              <div class="hero-podium-pedestal" aria-hidden="true">
+                <div class="podium-orbit-arc"></div>
+                <div class="podium-glowing-ring"></div>
+                <div class="podium-surface-disk"></div>
+                <div class="podium-ambient-light"></div>
               </div>
             </div>
           </div>
@@ -561,6 +559,375 @@
               <span class="lang-bn hidden">সবার জন্য<br>মোবাইল অ্যাপ</span>
             </span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= "TRUSTED BY" MOVING SCHOOL LOGOS (LEFT TO RIGHT MARQUEE) ================= -->
+    <section class="trusted-marquee-section" id="trustedBy" aria-label="Trusted by Educational Institutions Across Bangladesh">
+      <div class="container">
+        <div class="trusted-marquee-head reveal">
+          <span class="trusted-eyebrow-pill">
+            <span class="lang-en">✦ TRUSTED BY 1,200+ INSTITUTIONS</span>
+            <span class="lang-bn hidden">✦ ১,২০০+ শিক্ষাপ্রতিষ্ঠানের বিশ্বস্ত সঙ্গী</span>
+          </span>
+          <h2 class="trusted-marquee-title">
+            <span class="lang-en">Powering Premier Schools, Colleges & Madrasahs in Bangladesh</span>
+            <span class="lang-bn hidden">বাংলাদেশের শীর্ষস্থানীয় স্কুল, কলেজ ও মাদ্রাসার আস্থার প্রতীক</span>
+          </h2>
+          <p class="trusted-marquee-desc">
+            <span class="lang-en">Join the fastest-growing digital education network running attendance, fees, exams and parent communications on YesEdu.</span>
+            <span class="lang-bn hidden">হাজিরা, ফি আদায়, নতুন এনসিটিবি মূল্যায়ন এবং অভিভাবক যোগাযোগে YesEdu-এর সাথে যুক্ত শত শত প্রতিষ্ঠান।</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Moving Infinite Logo Marquee Track (Left to Right Movement: bam theke dan e) -->
+      <div class="marquee-scroller-viewport" aria-label="Educational Institutions Continuous Marquee">
+        <!-- Track 1 -->
+        <div class="marquee-track-strip move-left-to-right">
+          <!-- Logo 1: Ideal Model -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/ideal-model.svg" alt="Ideal Model School & College" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Ideal Model School & College</span>
+                <span class="lang-bn hidden">আইডিয়াল মডেল স্কুল ও কলেজ</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Dhaka • 6,200+ Students</span>
+                <span class="lang-bn hidden">ঢাকা • ৬,২০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 2: Cantonment Public -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/cantonment-public.svg" alt="Cantonment Public School & College" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Cantonment Public School & College</span>
+                <span class="lang-bn hidden">ক্যান্টনমেন্ট পাবলিক স্কুল ও কলেজ</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Rangpur & Bogura • 4,800+ Students</span>
+                <span class="lang-bn hidden">রংপুর ও বগুড়া • ৪,৮০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 3: City Model College -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/city-college.svg" alt="City Model College" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">City Model College</span>
+                <span class="lang-bn hidden">সিটি মডেল কলেজ</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Dhaka • 3,400+ Students</span>
+                <span class="lang-bn hidden">ঢাকা • ৩,৪০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 4: Scholars International -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/scholars-intl.svg" alt="Scholars International School" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Scholars International School</span>
+                <span class="lang-bn hidden">স্কলার্স ইন্টারন্যাশনাল স্কুল</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Uttara • Cambridge & Edexcel</span>
+                <span class="lang-bn hidden">উত্তরা • ক্যামব্রিজ ও এডেক্সেল</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 5: Apex Academy -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/apex-academy.svg" alt="Apex Model Academy" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Apex Model Academy</span>
+                <span class="lang-bn hidden">অ্যাপেক্স মডেল একাডেমি</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Chittagong • 2,900+ Students</span>
+                <span class="lang-bn hidden">চট্টগ্রাম • ২,৯০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 6: As-Sunnah Madrasah -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah Madrasah" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">As-Sunnah Complex & Madrasah</span>
+                <span class="lang-bn hidden">আস-সুন্নাহ কমপ্লেক্স ও মাদরাসা</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Dhaka • Hifz & Kitab Track</span>
+                <span class="lang-bn hidden">ঢাকা • হিফজ ও কিতাব বিভাগ</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 7: Darul Arqam -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Islamic Institute" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Darul Arqam Islamic Institute</span>
+                <span class="lang-bn hidden">দারুল আরকাম ইসলামিক ইনস্টিটিউট</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Sylhet • 1,800+ Students</span>
+                <span class="lang-bn hidden">সিলেট • ১,৮০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 8: Fikrul Ummah -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Model Madrasah" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Fikrul Ummah Model Madrasah</span>
+                <span class="lang-bn hidden">ফিকরুল উম্মাহ মডেল মাদরাসা</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Dhaka • Waqf & Boarding Sync</span>
+                <span class="lang-bn hidden">ঢাকা • বোর্ডিং ও ওয়াকফ হিসাব</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 9: Ittihadul Umam -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/intihadul-umam.jpg" alt="Ittihadul Umam Cadet Madrasah" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Ittihadul Umam Cadet Madrasah</span>
+                <span class="lang-bn hidden">ইত্তিহাদুল উমাম ক্যাডেট মাদরাসা</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Narayanganj • Dual Curriculum</span>
+                <span class="lang-bn hidden">নারায়ণগঞ্জ • দ্বিমুখী কারিকুলাম</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 10: Wisdom Islamic -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Academy" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Wisdom Islamic Academy</span>
+                <span class="lang-bn hidden">উইজডম ইসলামিক একাডেমি</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Gazipur • 2,100+ Students</span>
+                <span class="lang-bn hidden">গাজীপুর • ২,১০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 2 (Duplicate for Seamless Infinite Marquee Loop) -->
+        <div class="marquee-track-strip move-left-to-right" aria-hidden="true">
+          <!-- Logo 1: Ideal Model -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/ideal-model.svg" alt="Ideal Model School & College" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Ideal Model School & College</span>
+                <span class="lang-bn hidden">আইডিয়াল মডেল স্কুল ও কলেজ</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Dhaka • 6,200+ Students</span>
+                <span class="lang-bn hidden">ঢাকা • ৬,২০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 2: Cantonment Public -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/cantonment-public.svg" alt="Cantonment Public School & College" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Cantonment Public School & College</span>
+                <span class="lang-bn hidden">ক্যান্টনমেন্ট পাবলিক স্কুল ও কলেজ</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Rangpur & Bogura • 4,800+ Students</span>
+                <span class="lang-bn hidden">রংপুর ও বগুড়া • ৪,৮০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 3: City Model College -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/city-college.svg" alt="City Model College" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">City Model College</span>
+                <span class="lang-bn hidden">সিটি মডেল কলেজ</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Dhaka • 3,400+ Students</span>
+                <span class="lang-bn hidden">ঢাকা • ৩,৪০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 4: Scholars International -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/scholars-intl.svg" alt="Scholars International School" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Scholars International School</span>
+                <span class="lang-bn hidden">স্কলার্স ইন্টারন্যাশনাল স্কুল</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Uttara • Cambridge & Edexcel</span>
+                <span class="lang-bn hidden">উত্তরা • ক্যামব্রিজ ও এডেক্সেল</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 5: Apex Academy -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/apex-academy.svg" alt="Apex Model Academy" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Apex Model Academy</span>
+                <span class="lang-bn hidden">অ্যাপেক্স মডেল একাডেমি</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Chittagong • 2,900+ Students</span>
+                <span class="lang-bn hidden">চট্টগ্রাম • ২,৯০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 6: As-Sunnah Madrasah -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/as-sunnah.jpg" alt="As-Sunnah Madrasah" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">As-Sunnah Complex & Madrasah</span>
+                <span class="lang-bn hidden">আস-সুন্নাহ কমপ্লেক্স ও মাদরাসা</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Dhaka • Hifz & Kitab Track</span>
+                <span class="lang-bn hidden">ঢাকা • হিফজ ও কিতাব বিভাগ</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 7: Darul Arqam -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/darul-arqam.jpg" alt="Darul Arqam Islamic Institute" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Darul Arqam Islamic Institute</span>
+                <span class="lang-bn hidden">দারুল আরকাম ইসলামিক ইনস্টিটিউট</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Sylhet • 1,800+ Students</span>
+                <span class="lang-bn hidden">সিলেট • ১,৮০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 8: Fikrul Ummah -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/fikrul-ummah.jpg" alt="Fikrul Ummah Model Madrasah" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Fikrul Ummah Model Madrasah</span>
+                <span class="lang-bn hidden">ফিকরুল উম্মাহ মডেল মাদরাসা</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Dhaka • Waqf & Boarding Sync</span>
+                <span class="lang-bn hidden">ঢাকা • বোর্ডিং ও ওয়াকফ হিসাব</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 9: Ittihadul Umam -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/intihadul-umam.jpg" alt="Ittihadul Umam Cadet Madrasah" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Ittihadul Umam Cadet Madrasah</span>
+                <span class="lang-bn hidden">ইত্তিহাদুল উমাম ক্যাডেট মাদরাসা</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Narayanganj • Dual Curriculum</span>
+                <span class="lang-bn hidden">নারায়ণগঞ্জ • দ্বিমুখী কারিকুলাম</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Logo 10: Wisdom Islamic -->
+          <div class="inst-logo-card">
+            <div class="inst-logo-box">
+              <img src="images/clients/wisdom-islamic.jpg" alt="Wisdom Islamic Academy" class="inst-crest-img">
+            </div>
+            <div class="inst-meta">
+              <strong class="inst-name">
+                <span class="lang-en">Wisdom Islamic Academy</span>
+                <span class="lang-bn hidden">উইজডম ইসলামিক একাডেমি</span>
+              </strong>
+              <span class="inst-sub">
+                <span class="lang-en">Gazipur • 2,100+ Students</span>
+                <span class="lang-bn hidden">গাজীপুর • ২,১০০+ শিক্ষার্থী</span>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2428,7 +2795,7 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=10.0"></script>
+  <script src="js/main.js?v=10.1"></script>
 </body>
 
 </html>
