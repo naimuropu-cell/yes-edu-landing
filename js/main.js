@@ -269,10 +269,10 @@
       updateInstitutionFeature(activeInstitution);
     }
 
-    // Sync NCTB AI Simulator display
-    if (typeof renderNctbAiSimulator === "function") {
+    // Sync Playground Sandbox display
+    if (typeof renderPlaygroundAll === "function") {
       try {
-        renderNctbAiSimulator();
+        renderPlaygroundAll();
       } catch (err) {
         // Safe fallback if called before DOM nodes attach
       }
@@ -488,465 +488,463 @@
     }
   }
 
-  // 5. Interactive SME Peek Carousel (Live Campus OS Simulation)
-  function initDemoStudio() {
-    let currentSlide = 0;
-    const cards = Array.from(document.querySelectorAll(".sme-card"));
-    const totalSlides = cards.length || 4;
-    const container = document.getElementById("smeCarousel");
-    const track = document.getElementById("smeCarouselTrack");
-    const prevBtn = document.getElementById("smePrevBtn");
-    const nextBtn = document.getElementById("smeNextBtn");
-    const dots = Array.from(document.querySelectorAll(".sme-dot"));
-    const activeIndexEl = document.getElementById("smeActiveIndex");
-    const totalCountEl = document.getElementById("smeTotalCount");
-    const timerFill = document.getElementById("smeTimerFill");
-    const storyPill = document.getElementById("smeStoryPill");
-
-    if (totalCountEl) {
-      totalCountEl.textContent = totalSlides < 10 ? "0" + totalSlides : totalSlides;
-    }
-
-    let isAutoStoryPlaying = true;
-    let isUserInteracting = false;
-    let storyTimerInterval = null;
-    let progressPercentage = 0;
-    const storyDuration = 10000; // 10 seconds per slide
-    const intervalTick = 100; // update every 100ms
-
-    function updateCarouselPosition(animate = true) {
-      if (!container || !track || cards.length === 0) return;
-
-      if (!animate) {
-        track.style.transition = "none";
-      } else {
-        track.style.transition = "transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1)";
+  // 5. Interactive Playground Sandbox (Clean Story-Style Campus OS Simulation)
+  const playgroundSlides = [
+    {
+      bn: {
+        shortTab: "০১ বায়োমেট্রিক গেট",
+        badge: "০১ / ০৪ • লাইভ গেটওয়ে",
+        title: "বায়োমেট্রিক গেট উপস্থিতি ও তাৎক্ষণিক অভিভাবক এসএমএস",
+        points: [
+          "ZKTeco ও মুখমণ্ডল স্ক্যানারে রিয়েল-টাইম গেট পাঞ্চ লগ",
+          "পাঞ্চ হওয়া মাত্রই অভিভাবকের মোবাইলে বাংলা এসএমএস প্রেরণ"
+        ],
+        btnText: "পাঞ্চ টেস্ট করুন",
+        footerStatus: "ZKTeco গেট #০২ অনলাইন",
+        footerMetric: "০.১৮ সে. ল্যাটেন্সি",
+        samples: [
+          {
+            device: "ZKTeco Gate #02 • RFID",
+            time: "09:02:14 AM",
+            name: "তাহমিদ রহমান",
+            meta: "৯ম শ্রেণী-ক • রোল ০৪",
+            status: "Present • SMS Sent",
+            popupTitle: "প্যারেন্ট এসএমএস",
+            popupBody: "আসসালামু আলাইকুম। আপনার সন্তান তাহমিদ সকাল ০৯:০২ মিনিটে নিরাপদে ক্যাম্পাসে প্রবেশ করেছে।"
+          },
+          {
+            device: "FaceID Gate #01 • Biometric",
+            time: "09:04:38 AM",
+            name: "নুসরাত জাহান",
+            meta: "৮ম শ্রেণী-খ • রোল ০৯",
+            status: "Present • SMS Sent",
+            popupTitle: "প্যারেন্ট এসএমএস",
+            popupBody: "আসসালামু আলাইকুম। আপনার সন্তান নুসরাত সকাল ০৯:০৪ মিনিটে মাদরাসায় উপস্থিত হয়েছে।"
+          },
+          {
+            device: "ZKTeco Gate #02 • RFID",
+            time: "09:06:11 AM",
+            name: "আব্দুল্লাহ আল-মামুন",
+            meta: "হিফজ বিভাগ • গ্রুপ-এ",
+            status: "Present • SMS Sent",
+            popupTitle: "প্যারেন্ট এসএমএস",
+            popupBody: "আসসালামু আলাইকুম। হাফেজ আব্দুল্লাহ সকাল ০৯:০৬ মিনিটে হিফজ শাখায় উপস্থিত হয়েছে।"
+          }
+        ]
+      },
+      en: {
+        shortTab: "01 Biometric Gate",
+        badge: "01 / 04 • Live Gateway",
+        title: "Biometric Gate Attendance & Instant Guardian SMS",
+        points: [
+          "Real-time gate punch sync from ZKTeco & Facial Recognition hardware",
+          "Automated bilingual instant SMS delivered directly to guardian phone"
+        ],
+        btnText: "Test Gate Punch",
+        footerStatus: "ZKTeco Gate #02 Online",
+        footerMetric: "0.18s Latency",
+        samples: [
+          {
+            device: "ZKTeco Gate #02 • RFID",
+            time: "09:02:14 AM",
+            name: "Tahmid Rahman",
+            meta: "Class 9-A • Roll 04",
+            status: "Present • SMS Sent",
+            popupTitle: "Parent SMS Alert",
+            popupBody: "Dear Guardian, your ward Tahmid has safely entered the campus at 09:02 AM. - YesEdu"
+          },
+          {
+            device: "FaceID Gate #01 • Biometric",
+            time: "09:04:38 AM",
+            name: "Nusrat Jahan",
+            meta: "Class 8-B • Roll 09",
+            status: "Present • SMS Sent",
+            popupTitle: "Parent SMS Alert",
+            popupBody: "Dear Guardian, your ward Nusrat has safely entered the campus at 09:04 AM. - YesEdu"
+          },
+          {
+            device: "ZKTeco Gate #02 • RFID",
+            time: "09:06:11 AM",
+            name: "Abdullah Al-Mamun",
+            meta: "Hifz Section • Group A",
+            status: "Present • SMS Sent",
+            popupTitle: "Parent SMS Alert",
+            popupBody: "Dear Guardian, Hafez Abdullah has safely arrived at the Hifz section at 09:06 AM. - YesEdu"
+          }
+        ]
       }
+    },
+    {
+      bn: {
+        shortTab: "০২ বিকাশ পেমেন্ট",
+        badge: "০২ / ০৪ • ১-ট্যাপ ফিনটেক",
+        title: "বিকাশ ১-ট্যাপ ফি সংগ্রহ ও স্বয়ংক্রিয় ক্যাশবুক লেজার",
+        points: [
+          "অভিভাবক ঘরে বসেই বিকাশ বা নগদে মাসিক বেতন পরিশোধ করবেন",
+          "টাকা জমা হওয়ার সাথে সাথে অটো ভাউচার ও মূল খতিয়ান আপডেট"
+        ],
+        btnText: "পেমেন্ট টেস্ট করুন",
+        footerStatus: "bKash মার্চেন্ট ওয়েব হুক সক্রিয়",
+        footerMetric: "১০০% অটো-রিকনসাইলড",
+        samples: [
+          {
+            device: "bKash Merchant • TxID: 8NM9X72K",
+            time: "09:14:22 AM",
+            name: "তাহমিদ রহমান (মাসিক বেতন)",
+            meta: "রশিদ #VCR-2026 • ৳ ২,৫০০",
+            status: "Paid • Ledger Updated",
+            popupTitle: "ডিজিটাল মানি রিসিট",
+            popupBody: "ধন্যবাদ! নভেম্বর ২০২৬-এর বেতন ৳ ২,৫০০ সফলভাবে গৃহীত হয়েছে এবং ক্যাশবুকে জমা হয়েছে।"
+          },
+          {
+            device: "Nagad Pay • TxID: 4KP2L91M",
+            time: "09:18:05 AM",
+            name: "সাদমান সাকিব (আবাসিক ফি)",
+            meta: "রশিদ #VCR-2027 • ৳ ৩,৫০০",
+            status: "Paid • Ledger Updated",
+            popupTitle: "ডিজিটাল মানি রিসিট",
+            popupBody: "ধন্যবাদ! আবাসিক বোর্ডিং ও টিউশন ফি ৳ ৩,৫০০ পরিশোধিত হয়েছে। বকেয়া: ৳ ০.০০।"
+          }
+        ]
+      },
+      en: {
+        shortTab: "02 bKash Payment",
+        badge: "02 / 04 • 1-Tap Fintech",
+        title: "1-Tap bKash Fee Collection & Auto Cashbook Ledger",
+        points: [
+          "Parents pay monthly tuition securely via bKash or Nagad in seconds",
+          "Instant automated digital money receipts and cashbook ledger sync"
+        ],
+        btnText: "Test Fee Payment",
+        footerStatus: "bKash Webhook Live",
+        footerMetric: "100% Auto-Reconciled",
+        samples: [
+          {
+            device: "bKash Merchant • TxID: 8NM9X72K",
+            time: "09:14:22 AM",
+            name: "Tahmid Rahman (Tuition)",
+            meta: "Receipt #VCR-2026 • ৳ 2,500",
+            status: "Paid • Ledger Updated",
+            popupTitle: "Digital Money Receipt",
+            popupBody: "Thank you! November 2026 tuition fee of ৳ 2,500 has been received and credited to the cashbook."
+          },
+          {
+            device: "Nagad Pay • TxID: 4KP2L91M",
+            time: "09:18:05 AM",
+            name: "Sadman Sakib (Hostel Fee)",
+            meta: "Receipt #VCR-2027 • ৳ 3,500",
+            status: "Paid • Ledger Updated",
+            popupTitle: "Digital Money Receipt",
+            popupBody: "Thank you! Residential boarding fee of ৳ 3,500 has been received. Dues: ৳ 0.00."
+          }
+        ]
+      }
+    },
+    {
+      bn: {
+        shortTab: "০৩ এআই প্রশ্ন",
+        badge: "০৩ / ০৪ • Ustadh AI ইঞ্জিন",
+        title: "এনসিটিবি ও মাদরাসা সিলেবাস অনুযায়ী প্রশ্নপত্র প্রণয়ন",
+        points: [
+          "অধ্যায় সিলেক্ট করলেই মাত্র ৩ সেকেন্ডে সৃজনশীল ও বহুনির্বাচনি প্রশ্ন",
+          "প্রিন্ট-রেডি ফরম্যাটে উত্তরপত্র ও মূল্যায়ন নির্দেশিকা ডাউনলোড"
+        ],
+        btnText: "প্রশ্ন তৈরি করুন",
+        footerStatus: "NCTB ও বেফাক সিলেবাস রেডি",
+        footerMetric: "৩ সেকেন্ডে জেনারেটেড",
+        samples: [
+          {
+            device: "Ustadh AI v2 • পদার্থবিজ্ঞান (৯ম-১০ম)",
+            time: "Generated in 1.8s",
+            name: "অধ্যায় ৪: কাজ, ক্ষমতা ও শক্তি",
+            meta: "সৃজনশীল প্রশ্ন • পূর্ণমান: ১০",
+            status: "Print Ready • PDF/DOCX",
+            popupTitle: "নমুনা উদ্দীপক",
+            popupBody: "৪০ কেজি ভরের একজন শিক্ষার্থী ২০ কেজি ভরের বাক্স নিয়ে ২ মিনিটে ছাদে উঠল। (ক) ১ কিলোওয়াট-ঘণ্টা কাকে বলে?"
+          },
+          {
+            device: "Ustadh AI v2 • হিফজ ও তাজবীদ",
+            time: "Generated in 1.4s",
+            name: "সূরা বাকারা (আয়াত ১১০-১২০)",
+            meta: "মৌখিক ও লিখিত কুইজ • পূর্ণমান: ২০",
+            status: "Print Ready • PDF/DOCX",
+            popupTitle: "মূল্যায়ন প্রশ্ন",
+            popupBody: "১. প্রদত্ত আয়াতসমূহ থেকে ইখফা ও ইদগামের ৫টি উদাহরণ হরকতসহ চিহ্নিত করে খাতায় লেখ।"
+          }
+        ]
+      },
+      en: {
+        shortTab: "03 AI Question",
+        badge: "03 / 04 • Ustadh AI Engine",
+        title: "Generate Exams via NCTB & Madrasah Syllabus AI",
+        points: [
+          "Select chapter to generate creative & MCQ exam papers in under 3 seconds",
+          "Instant print-ready PDF/DOCX download with answer keys and rubric marking"
+        ],
+        btnText: "Generate AI Paper",
+        footerStatus: "NCTB & Befaq Ready",
+        footerMetric: "Generated in 1.8s",
+        samples: [
+          {
+            device: "Ustadh AI v2 • Physics (Grade 9-10)",
+            time: "Generated in 1.8s",
+            name: "Chapter 4: Work, Energy & Power",
+            meta: "Creative Question (CQ) • Full Marks: 10",
+            status: "Print Ready • PDF/DOCX",
+            popupTitle: "Stimulus Sample",
+            popupBody: "A 40kg student climbs to the roof carrying a 20kg box in 2 minutes. (a) Define 1 kilowatt-hour."
+          },
+          {
+            device: "Ustadh AI v2 • Hifz & Tajweed",
+            time: "Generated in 1.4s",
+            name: "Surah Al-Baqarah (110-120)",
+            meta: "Oral & Written Quiz • Marks: 20",
+            status: "Print Ready • PDF/DOCX",
+            popupTitle: "Assessment Question",
+            popupBody: "1. Identify and write down 5 examples of Ikhfa and Idgham with diacritics from the verses."
+          }
+        ]
+      }
+    },
+    {
+      bn: {
+        shortTab: "০৪ হোস্টেল ও ওয়াকফ",
+        badge: "০৪ / ০৪ • শরীয়াহ অডিট লেজার",
+        title: "ছাত্রাবাস সিট বরাদ্দ ও ওয়াকফ-লিল্লাহ ফান্ড অডিট",
+        points: [
+          "আবাসিক রুম, খালি সিট ও দৈনিক ডাইনিং মিল টোকেনের লাইভ হিসাব",
+          "লিল্লাহ বোর্ডিং ও যাকাত-ওয়াকফ তহবিলের শতভাগ স্বচ্ছ অডিট খতিয়ান"
+        ],
+        btnText: "সিট বরাদ্দ টেস্ট",
+        footerStatus: "আবাসিক ব্লক-বি • রুম ২০৪",
+        footerMetric: "১০০% শরীয়াহ সম্মত",
+        samples: [
+          {
+            device: "Dormitory Block-B • Room 204",
+            time: "Active Resident",
+            name: "সিট #০৩ • আব্দুল্লাহ আল-মনসুর",
+            meta: "লিল্লাহ বোর্ডিং শিক্ষার্থী (১০০% ফ্রি)",
+            status: "Waqf Verified • Meal ON",
+            popupTitle: "ওয়াকফ তহবিল লেজার",
+            popupBody: "তহবিল: আলহাজ্ব শামসুল হক ট্রাস্ট। চলতি মাসের ডাইনিং ও আবাসন ব্যয় স্বয়ংক্রিয়ভাবে সমন্বিত।"
+          },
+          {
+            device: "Dormitory Block-B • Room 204",
+            time: "Just Allocated",
+            name: "সিট #০৪ • জুবায়ের আহমেদ",
+            meta: "কিতাব বিভাগ • সিট বরাদ্দ সম্পন্ন",
+            status: "Seat Assigned • SMS Sent",
+            popupTitle: "হোস্টেল আপডেট",
+            popupBody: "রুম ২০৪-এর ৪নং সিটটি জুবায়ের আহমেদের নামে বরাদ্দ হয়েছে এবং মিল কার্ড চালু করা হয়েছে।"
+          }
+        ]
+      },
+      en: {
+        shortTab: "04 Hostel & Waqf",
+        badge: "04 / 04 • Shariah Audit Ledger",
+        title: "Hostel Bed Allocation & Shariah Waqf Fund Audit",
+        points: [
+          "Real-time hostel room occupancy, vacant bed status, and daily meal tokens",
+          "Transparent audit trail for Lillah boarding, Zakat, and Waqf trust accounts"
+        ],
+        btnText: "Allocate Test Bed",
+        footerStatus: "Hostel Block-B • Room 204",
+        footerMetric: "100% Shariah Compliant",
+        samples: [
+          {
+            device: "Dormitory Block-B • Room 204",
+            time: "Active Resident",
+            name: "Bed #03 • Abdullah Al-Mansur",
+            meta: "Lillah Boarding Scholar (100% Sponsored)",
+            status: "Waqf Verified • Meal ON",
+            popupTitle: "Waqf Trust Ledger",
+            popupBody: "Fund: Alhaj Shamsul Haque Trust. Monthly boarding & dining expenses reconciled automatically."
+          },
+          {
+            device: "Dormitory Block-B • Room 204",
+            time: "Just Allocated",
+            name: "Bed #04 • Zubair Ahmed",
+            meta: "Kitab Section • Allocation Complete",
+            status: "Seat Assigned • SMS Sent",
+            popupTitle: "Hostel Allocation Update",
+            popupBody: "Room 204 Bed #4 allocated to Zubair Ahmed with active dining pass and guardian SMS confirmed."
+          }
+        ]
+      }
+    }
+  ];
 
-      const activeCard = cards[currentSlide];
-      if (!activeCard) return;
+  let currentPlaygroundSlide = 0;
+  let playgroundSampleIndex = 0;
+  let playgroundProgress = 0;
+  let isPlaygroundPaused = false;
+  const PLAYGROUND_DURATION = 6000; // 6 seconds per story slide
+  const PLAYGROUND_TICK = 50;
+  let playgroundTimer = null;
 
-      const containerWidth = container.offsetWidth;
-      const cardCenter = activeCard.offsetLeft + (activeCard.offsetWidth / 2);
-      const targetOffset = (containerWidth / 2) - cardCenter;
+  function renderPlaygroundTabs() {
+    const tabsContainer = document.getElementById("story-tabs");
+    if (!tabsContainer) return;
+    const langKey = currentLang === "bn" ? "bn" : "en";
+    tabsContainer.innerHTML = playgroundSlides.map((slideObj, idx) => {
+      const s = slideObj[langKey];
+      const isActive = idx === currentPlaygroundSlide;
+      const isDone = idx < currentPlaygroundSlide;
+      const barWidth = isDone ? "100%" : (isActive ? `${playgroundProgress}%` : "0%");
+      return `
+        <button type="button" class="playground-tab-btn ${isActive ? 'active' : ''}" onclick="window.goToPlaygroundSlide(${idx})" role="tab" aria-selected="${isActive}">
+          <div class="playground-bar-track">
+            <div id="playground-bar-${idx}" class="playground-bar-fill" style="width: ${barWidth}"></div>
+          </div>
+          <div class="playground-tab-label">
+            <span>${s.shortTab}</span>
+          </div>
+        </button>
+      `;
+    }).join("");
+  }
 
-      track.style.transform = `translateX(${targetOffset}px)`;
+  function renderPlaygroundContent() {
+    const badgeEl = document.getElementById("slide-badge");
+    const titleEl = document.getElementById("slide-title");
+    const pointsEl = document.getElementById("slide-points");
+    const actionBtnText = document.getElementById("action-btn-text");
+    const counterEl = document.getElementById("slide-counter");
+    const stageEl = document.getElementById("simulation-stage");
+    const footerStatusEl = document.getElementById("footer-status");
+    const footerMetricEl = document.getElementById("footer-metric");
 
-      // Update card states
-      cards.forEach((card, idx) => {
-        const isActive = idx === currentSlide;
-        card.classList.toggle("active", isActive);
-        card.setAttribute("aria-hidden", isActive ? "false" : "true");
+    if (!badgeEl || !titleEl || !pointsEl || !stageEl) return;
+
+    const langKey = currentLang === "bn" ? "bn" : "en";
+    const slide = playgroundSlides[currentPlaygroundSlide][langKey];
+    const sample = slide.samples[playgroundSampleIndex % slide.samples.length];
+
+    badgeEl.textContent = slide.badge;
+    titleEl.textContent = slide.title;
+    if (actionBtnText) actionBtnText.textContent = slide.btnText;
+    if (counterEl) {
+      const slideNum = currentPlaygroundSlide + 1;
+      const totalNum = playgroundSlides.length;
+      counterEl.textContent = currentLang === "bn" 
+        ? `০${slideNum}/০${totalNum}` 
+        : `0${slideNum}/0${totalNum}`;
+    }
+    if (footerStatusEl) footerStatusEl.textContent = slide.footerStatus;
+    if (footerMetricEl) footerMetricEl.textContent = slide.footerMetric;
+
+    pointsEl.innerHTML = slide.points.map(pt => `
+      <li class="playground-point-item">
+        <span class="point-check-icon">✓</span>
+        <span>${pt}</span>
+      </li>
+    `).join("");
+
+    stageEl.innerHTML = `
+      <div class="animate-pop-stage">
+        <div class="stage-primary-card">
+          <div class="stage-card-header">
+            <span class="stage-device-tag">${sample.device}</span>
+            <span class="stage-time-val">${sample.time}</span>
+          </div>
+          <div class="stage-card-body">
+            <h4 class="stage-subject-name">${sample.name}</h4>
+            <p class="stage-subject-meta">${sample.meta}</p>
+          </div>
+          <div>
+            <span class="stage-status-badge">
+              <span class="badge-icon">✓</span>
+              <span>${sample.status}</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="stage-floating-popup">
+          <div class="popup-header">
+            <span class="popup-title-tag">
+              <span class="popup-dot"></span>
+              <span>${sample.popupTitle}</span>
+            </span>
+            <span class="popup-icon">💬</span>
+          </div>
+          <p class="popup-body-text">${sample.popupBody}</p>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderPlaygroundAll() {
+    renderPlaygroundTabs();
+    renderPlaygroundContent();
+  }
+
+  window.goToPlaygroundSlide = function(index) {
+    currentPlaygroundSlide = index;
+    playgroundSampleIndex = 0;
+    playgroundProgress = 0;
+    renderPlaygroundAll();
+  };
+
+  window.nextPlaygroundSlide = function() {
+    window.goToPlaygroundSlide((currentPlaygroundSlide + 1) % playgroundSlides.length);
+  };
+
+  window.prevPlaygroundSlide = function() {
+    window.goToPlaygroundSlide((currentPlaygroundSlide - 1 + playgroundSlides.length) % playgroundSlides.length);
+  };
+
+  window.triggerPlaygroundSimulation = function() {
+    playgroundSampleIndex++;
+    playgroundProgress = 0;
+    renderPlaygroundContent();
+  };
+
+  function initPlaygroundSandbox() {
+    const cardEl = document.getElementById("story-card");
+    const actionBtn = document.getElementById("action-btn");
+    const prevBtn = document.getElementById("btnPlaygroundPrev");
+    const nextBtn = document.getElementById("btnPlaygroundNext");
+
+    if (!cardEl) return;
+
+    if (actionBtn) {
+      actionBtn.addEventListener("click", () => {
+        window.triggerPlaygroundSimulation();
       });
-
-      // Update counter
-      if (activeIndexEl) {
-        activeIndexEl.textContent = (currentSlide + 1) < 10 ? "0" + (currentSlide + 1) : (currentSlide + 1);
-      }
-
-      // Update dots
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle("active", idx === currentSlide);
-      });
-
-      if (!animate) {
-        void track.offsetHeight;
-        track.style.transition = "transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1)";
-      }
     }
 
-    function goToSlide(index, manual = false) {
-      if (index < 0) {
-        currentSlide = totalSlides - 1;
-      } else if (index >= totalSlides) {
-        currentSlide = 0;
-      } else {
-        currentSlide = index;
-      }
-
-      updateCarouselPosition(true);
-
-      if (manual) {
-        resetStoryTimer();
-      }
-    }
-
-    function resetStoryTimer() {
-      progressPercentage = 0;
-      if (timerFill) {
-        timerFill.style.width = "0%";
-      }
-    }
-
-    function startStoryTimer() {
-      stopStoryTimer();
-      storyTimerInterval = setInterval(() => {
-        if (!isAutoStoryPlaying || isUserInteracting) return;
-
-        progressPercentage += (intervalTick / storyDuration) * 100;
-        if (progressPercentage >= 100) {
-          progressPercentage = 0;
-          goToSlide(currentSlide + 1, false);
-        }
-
-        if (timerFill) {
-          timerFill.style.width = Math.min(progressPercentage, 100) + "%";
-        }
-      }, intervalTick);
-    }
-
-    function stopStoryTimer() {
-      if (storyTimerInterval) {
-        clearInterval(storyTimerInterval);
-        storyTimerInterval = null;
-      }
-    }
-
-    // Toggle auto-story on clicking the 10s pill
-    if (storyPill) {
-      storyPill.addEventListener("click", () => {
-        isAutoStoryPlaying = !isAutoStoryPlaying;
-        storyPill.style.opacity = isAutoStoryPlaying ? "1" : "0.6";
-        const dot = storyPill.querySelector(".story-pulse-dot");
-        if (dot) {
-          dot.style.animationPlayState = isAutoStoryPlaying ? "running" : "paused";
-        }
-      });
-    }
-
-    // Pause on hover or focus
-    if (container) {
-      container.addEventListener("mouseenter", () => {
-        isUserInteracting = true;
-      });
-      container.addEventListener("mouseleave", () => {
-        isUserInteracting = false;
-      });
-    }
-
-    // Click on cards to bring them into view
-    cards.forEach((card, idx) => {
-      card.addEventListener("click", () => {
-        if (idx !== currentSlide) {
-          goToSlide(idx, true);
-        }
-      });
-    });
-
-    // Arrow buttons
     if (prevBtn) {
-      prevBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        goToSlide(currentSlide - 1, true);
+      prevBtn.addEventListener("click", () => {
+        window.prevPlaygroundSlide();
       });
     }
 
     if (nextBtn) {
-      nextBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        goToSlide(currentSlide + 1, true);
+      nextBtn.addEventListener("click", () => {
+        window.nextPlaygroundSlide();
       });
     }
 
-    // Dots indicator clicks
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const idx = parseInt(dot.dataset.index, 10);
-        goToSlide(idx, true);
-      });
-    });
+    cardEl.addEventListener("mouseenter", () => { isPlaygroundPaused = true; });
+    cardEl.addEventListener("mouseleave", () => { isPlaygroundPaused = false; });
+    cardEl.addEventListener("touchstart", () => { isPlaygroundPaused = true; }, { passive: true });
+    cardEl.addEventListener("touchend", () => { isPlaygroundPaused = false; }, { passive: true });
 
-    // Touch Swipe Support for Mobile & Tablet
-    if (container) {
-      let touchStartX = 0;
-      let touchStartY = 0;
-      let touchEndX = 0;
-      let touchEndY = 0;
-
-      container.addEventListener("touchstart", (e) => {
-        isUserInteracting = true;
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
-      }, { passive: true });
-
-      container.addEventListener("touchend", (e) => {
-        isUserInteracting = false;
-        touchEndX = e.changedTouches[0].screenX;
-        touchEndY = e.changedTouches[0].screenY;
-        const diffX = touchEndX - touchStartX;
-        const diffY = touchEndY - touchStartY;
-
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-          if (diffX < 0) {
-            goToSlide(currentSlide + 1, true);
-          } else {
-            goToSlide(currentSlide - 1, true);
-          }
+    if (playgroundTimer) clearInterval(playgroundTimer);
+    playgroundTimer = setInterval(() => {
+      if (!isPlaygroundPaused) {
+        playgroundProgress += (PLAYGROUND_TICK / PLAYGROUND_DURATION) * 100;
+        const activeBar = document.getElementById(`playground-bar-${currentPlaygroundSlide}`);
+        if (activeBar) {
+          activeBar.style.width = `${Math.min(playgroundProgress, 100)}%`;
         }
-      }, { passive: true });
-    }
-
-    // Window resize handler: recalculate exact track centering
-    window.addEventListener("resize", () => {
-      updateCarouselPosition(false);
-    });
-
-    // Initial position & timer boot
-    setTimeout(() => {
-      updateCarouselPosition(false);
-      startStoryTimer();
-    }, 50);
-  }
-
-  // ==========================================================================
-  // Live Biometric Gate Attendance Simulation & SMS Alert
-  // ==========================================================================
-  function convertToBanglaDigits(str) {
-    const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
-    return str.toString().replace(/[0-9]/g, (d) => bnDigits[parseInt(d, 10)]);
-  }
-
-  function initBiometricPunchSimulator() {
-    const btn = document.getElementById("btnSimGatePunch");
-    const feedList = document.getElementById("simFeedList");
-    const toast = document.getElementById("simSmsToast");
-    const toastTime = document.getElementById("smsToastTime");
-    const toastBody = document.getElementById("smsToastBody");
-    const toastClose = document.getElementById("smsToastClose");
-    const liveDot = document.getElementById("gateLiveDot");
-
-    if (!btn || !feedList) return;
-
-    let toastTimer = null;
-
-    const studentPool = [
-      {
-        nameEn: "Farhan Ahmed",
-        nameBn: "ফারহান আহমেদ",
-        rollEn: "Class 10-A • Roll 01",
-        rollBn: "১০ম শ্রেণি (ক শাখা) • রোল ০১",
-        avatar: "FA",
-        avatarCls: "avatar-blue",
-        methodEn: "RFID Smart Card Punch • Device #ZK-Gate2",
-        methodBn: "আরএফআইডি স্মার্ট কার্ড পাঞ্চ • গেট #০২"
-      },
-      {
-        nameEn: "Ayesha Siddiqua",
-        nameBn: "আয়েশা সিদ্দিকা",
-        rollEn: "Class 9-B • Roll 05",
-        rollBn: "৯ম শ্রেণি (খ শাখা) • রোল ০৫",
-        avatar: "AS",
-        avatarCls: "",
-        methodEn: "Facial Recognition • Device #FR-Gate1",
-        methodBn: "ফেসিয়াল রিকগনিশন স্ক্যান • গেট #০১"
-      },
-      {
-        nameEn: "Tanvir Hasan",
-        nameBn: "তানভীর হাসান",
-        rollEn: "Class 8-A • Roll 14",
-        rollBn: "৮ম শ্রেণি (ক শাখা) • রোল ১৪",
-        avatar: "TH",
-        avatarCls: "avatar-amber",
-        methodEn: "RFID Smart Card Punch • Device #ZK-Gate2",
-        methodBn: "আরএফআইডি স্মার্ট কার্ড পাঞ্চ • গেট #০২"
-      },
-      {
-        nameEn: "Mehnaz Parveen",
-        nameBn: "মেহনাজ পারভীন",
-        rollEn: "Class 10-C • Roll 02",
-        rollBn: "১০ম শ্রেণি (গ শাখা) • রোল ০২",
-        avatar: "MP",
-        avatarCls: "avatar-blue",
-        methodEn: "Facial Recognition • Device #FR-Gate2",
-        methodBn: "ফেসিয়াল রিকগনিশন স্ক্যান • গেট #০২"
-      }
-    ];
-
-    let poolIdx = 0;
-
-    btn.addEventListener("click", () => {
-      // Trigger scan pulse
-      btn.classList.add("scanning");
-      if (liveDot) {
-        liveDot.style.animation = "none";
-        void liveDot.offsetWidth;
-        liveDot.style.animation = "live-pulse 0.5s infinite";
-      }
-      setTimeout(() => btn.classList.remove("scanning"), 650);
-
-      const student = studentPool[poolIdx % studentPool.length];
-      poolIdx++;
-
-      const now = new Date();
-      const timeStr = now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-      const timeBn = convertToBanglaDigits(timeStr);
-
-      const isBn = currentLang === "bn";
-      const name = isBn ? student.nameBn : student.nameEn;
-      const roll = isBn ? student.rollBn : student.rollEn;
-      const method = isBn ? student.methodBn : student.methodEn;
-      const displayTime = isBn ? timeBn : timeStr;
-
-      // Create new feed row
-      const newRow = document.createElement("div");
-      newRow.className = "sme-feed-row newly-added";
-      newRow.innerHTML = `
-        <div class="sme-feed-avatar ${student.avatarCls}">${student.avatar}</div>
-        <div class="sme-feed-info">
-          <div class="sme-feed-name">
-            <span>${name}</span>
-            <span class="sme-feed-roll">${roll}</span>
-          </div>
-          <div class="sme-feed-sub">${method}</div>
-        </div>
-        <div class="sme-feed-action">
-          <span class="sme-time">${displayTime}</span>
-          <span class="sme-status-pill success">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="lang-en ${isBn ? 'hidden' : ''}">Present • SMS Sent</span>
-            <span class="lang-bn ${isBn ? '' : 'hidden'}">উপস্থিত • এসএমএস প্রেরিত</span>
-          </span>
-        </div>
-      `;
-
-      feedList.insertBefore(newRow, feedList.firstChild);
-
-      // Keep max 4 rows
-      const rows = feedList.querySelectorAll(".sme-feed-row");
-      if (rows.length > 4) {
-        for (let i = 4; i < rows.length; i++) {
-          rows[i].remove();
+        if (playgroundProgress >= 100) {
+          window.nextPlaygroundSlide();
         }
       }
+    }, PLAYGROUND_TICK);
 
-      // Show SMS Toast
-      if (toast && toastBody) {
-        if (toastTimer) clearTimeout(toastTimer);
-
-        if (toastTime) {
-          toastTime.textContent = isBn ? "এইমাত্র" : "Just now";
-        }
-
-        const smsTextBn = `সম্মানিত অভিভাবক, আপনার সন্তান <b>${student.nameBn}</b> (${student.rollBn}) আজ সকাল ${timeBn}-এ ক্যাম্পাসে নিরাপদে প্রবেশ করেছে। - YES EDU`;
-        const smsTextEn = `Dear Guardian, your ward <b>${student.nameEn}</b> (${student.rollEn}) has safely checked in to campus at ${timeStr}. - YES EDU`;
-
-        toastBody.innerHTML = isBn ? smsTextBn : smsTextEn;
-        toast.classList.add("active");
-        toast.setAttribute("aria-hidden", "false");
-
-        toastTimer = setTimeout(() => {
-          toast.classList.remove("active");
-          toast.setAttribute("aria-hidden", "true");
-        }, 5000);
-      }
-    });
-
-    if (toastClose && toast) {
-      toastClose.addEventListener("click", () => {
-        if (toastTimer) clearTimeout(toastTimer);
-        toast.classList.remove("active");
-        toast.setAttribute("aria-hidden", "true");
-      });
-    }
-  }
-
-
-  function renderNctbAiSimulator() {
-    const subjectChip = document.getElementById("aiSubjectChip");
-    const chapterChip = document.getElementById("aiChapterChip");
-    const codeChip = document.getElementById("aiCodeChip");
-    const stimulusText = document.getElementById("aiStimulusText");
-    const contentList = document.getElementById("aiContentList");
-    const stage = document.getElementById("smeAiCardStage");
-
-    if (!subjectChip || !chapterChip || !contentList) return;
-
-    const data = nctbKnowledgeBase[activeAiSub] || nctbKnowledgeBase.physics;
-    const isBn = currentLang === "bn";
-
-    subjectChip.textContent = isBn ? data.subjectBn : data.subjectEn;
-    chapterChip.textContent = isBn ? data.chapterBn : data.chapterEn;
-    if (codeChip) codeChip.textContent = data.code;
-    if (stimulusText) stimulusText.textContent = isBn ? data.stimulusBn : data.stimulusEn;
-
-    if (activeAiMode === "question") {
-      const qList = isBn ? data.questionsBn : data.questionsEn;
-      contentList.className = "sme-cq-list";
-      contentList.innerHTML = qList.map((q) => `
-        <div class="cq-item">
-          <span class="cq-badge">${q.badge}</span>
-          <span class="cq-text">${q.text}</span>
-        </div>
-      `).join("");
-    } else {
-      const rList = isBn ? data.rubricBn : data.rubricEn;
-      const pedAlert = isBn ? data.pedagogicalBn : data.pedagogicalEn;
-      contentList.className = "sme-rubric-card";
-      contentList.innerHTML = rList.map((r) => `
-        <div class="rubric-step-row">
-          <span class="rubric-step-points">${r.points}</span>
-          <span class="rubric-step-detail">${r.detail}</span>
-        </div>
-      `).join("") + `
-        <div class="pedagogical-alert">
-          <strong>ℹ️ ${isBn ? "শিক্ষক মূল্যায়ন নির্দেশিকা:" : "Pedagogical Note:"}</strong> ${pedAlert}
-        </div>
-      `;
-    }
-
-    if (stage) {
-      stage.style.opacity = "0.7";
-      stage.style.transform = "scale(0.99)";
-      setTimeout(() => {
-        stage.style.transition = "opacity 0.25s ease, transform 0.25s ease";
-        stage.style.opacity = "1";
-        stage.style.transform = "scale(1)";
-      }, 40);
-    }
-  }
-
-  function initNctbAiSimulator() {
-    const subTabs = document.querySelectorAll(".ai-sub-tab");
-    const modeBtns = document.querySelectorAll(".ai-mode-btn");
-    const regenBtn = document.getElementById("btnRegenAiQuestion");
-
-    subTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        subTabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        activeAiSub = tab.dataset.sub;
-        renderNctbAiSimulator();
-      });
-    });
-
-    modeBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        modeBtns.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        activeAiMode = btn.dataset.mode;
-        renderNctbAiSimulator();
-      });
-    });
-
-    if (regenBtn) {
-      regenBtn.addEventListener("click", () => {
-        regenBtn.style.transform = "rotate(180deg)";
-        regenBtn.style.transition = "transform 0.4s ease";
-        setTimeout(() => {
-          regenBtn.style.transform = "none";
-        }, 400);
-
-        activeAiSub = activeAiSub === "physics" ? "math" : "physics";
-        subTabs.forEach((t) => {
-          t.classList.toggle("active", t.dataset.sub === activeAiSub);
-        });
-        renderNctbAiSimulator();
-      });
-    }
-
-    renderNctbAiSimulator();
+    renderPlaygroundAll();
   }
 
   // 6. Interactive Pricing Calculator
@@ -1626,9 +1624,7 @@
     initHeroLaptopInteractive();
     initModuleToggle();
     initRoleShowcase();
-    initDemoStudio();
-    initBiometricPunchSimulator();
-    initNctbAiSimulator();
+    initPlaygroundSandbox();
     initPricingCalculator();
     initDemoModal();
     initFloatingActions();
