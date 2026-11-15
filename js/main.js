@@ -20,85 +20,125 @@
     admin: {
       url: "admin.yesedu.cloud/cockpit",
       badge: {
-        en: { icon: "✓", title: "Attendance Today", stat: "97%", sub: "Live Biometric • 115 Present" },
-        bn: { icon: "✓", title: "আজকের উপস্থিতি", stat: "৯৭%", sub: "বায়োমেট্রিক • ১১৫ জন উপস্থিত" }
+        en: { icon: "🏛️", title: "Pending Fees", stat: "115 Invoices", sub: "16 Institutional Modules Online" },
+        bn: { icon: "🏛️", title: "বকেয়া ফি নোটিশ", stat: "১১৫টি ইনভয়েস", sub: "১৬টি প্রাতিষ্ঠানিক মডিউল সক্রিয়" }
       },
       en: {
-        title: "Institution Overview & Control",
-        chip: "ADMIN VIEW",
-        labels: ["Active Students", "Today Attendance", "Campus Status"],
-        values: ["2,480", "96.8%", "Live & Active"],
-        desc: "A consolidated 360° cockpit of institutional operations, biometric logs, staff attendance and real-time revenue collection shaped by strict administrative permissions."
+        title: "Super Admin Mobile Cockpit",
+        chip: "SUPER ADMIN APP",
+        labels: ["Pending Fees", "Active Modules", "Today Collection"],
+        values: ["115", "16 Ready", "৳ 0.00"],
+        desc: "Complete administrative control directly from your pocket. Monitor live campus attendance, fee collections, biometric sync, and instant staff approvals from anywhere in Bangladesh.",
+        bullets: [
+          "Real-time biometric gate punch & staff attendance",
+          "16 specialized institutional modules & emergency alerts",
+          "Multi-branch financial oversight & audit-ready security"
+        ]
       },
       bn: {
-        title: "প্রাতিষ্ঠানিক সার্বিক নিয়ন্ত্রণ ও ড্যাশবোর্ড",
-        chip: "প্রশাসনিক ভিউ",
-        labels: ["বর্তমান শিক্ষার্থী", "আজকের উপস্থিতি", "ক্যাম্পাস স্ট্যাটাস"],
-        values: ["২,৪৮০", "৯৬.৮%", "সচল ও সক্রিয়"],
-        desc: "বায়োমেট্রিক উপস্থিতি, শিক্ষক-স্টাফ হাজিরা এবং ফি আদায়ের সার্বিক চিত্র এক নজরে দেখার জন্য আধুনিক প্রশাসনিক নিয়ন্ত্রণ ড্যাশবোর্ড।"
+        title: "সুপার অ্যাডমিন মোবাইল ককপিট",
+        chip: "সুপার অ্যাডমিন অ্যাপ",
+        labels: ["বকেয়া ফি", "সচল মডিউল", "আজকের আদায়"],
+        values: ["১১৫টি", "১৬টি প্রস্তুত", "৳ ০.০০"],
+        desc: "আপনার পকেটেই পুরো শিক্ষাপ্রতিষ্ঠানের পূর্ণ নিয়ন্ত্রণ। রিয়েল-টাইম বায়োমেট্রিক হাজিরা, ফি কালেকশন ওভারভিউ এবং জরুরি নোটিশ পুশ করুন যেকোনো স্থান থেকে।",
+        bullets: [
+          "রিয়েল-টাইম বায়োমেট্রিক গেট হাজিরা ও স্টাফ ট্র্যাকিং",
+          "১৬টি বিশেষায়িত প্রাতিষ্ঠানিক মডিউল ও জরুরি অ্যালার্ট",
+          "মাল্টি-ব্রাঞ্চ আর্থিক মনিটরিং ও অডিট সিকিউরিটি"
+        ]
       }
     },
     teacher: {
       url: "teacher.yesedu.cloud/workspace",
       badge: {
-        en: { icon: "📋", title: "Classes Today", stat: "3 Classes", sub: "Class 9-A, 10-B, 8-A" },
-        bn: { icon: "📋", title: "আজকের ক্লাস", stat: "৩টি ক্লাস", sub: "৯ম-ক, ১০ম-খ, ৮ম-ক" }
+        en: { icon: "🎓", title: "Today's Classroom", stat: "118 Students", sub: "22 Present • Teacher AI Active" },
+        bn: { icon: "🎓", title: "আজকের ক্লাসরুম", stat: "১১৮ শিক্ষার্থী", sub: "২২ জন উপস্থিত • শিক্ষক এআই সক্রিয়" }
       },
       en: {
-        title: "Teacher Workspace & Class Hub",
-        chip: "TEACHER VIEW",
-        labels: ["Assigned Classes", "Attendance Taken", "Pending Tasks"],
-        values: ["06", "28 / 30", "Ready"],
-        desc: "A focused daily workflow hub for lesson plans, instant 1-tap mobile attendance, grading rubrics, NCTB syllabus and student performance notes."
+        title: "Teacher AI & Classroom App",
+        chip: "TEACHER APP",
+        labels: ["Total Students", "Present Today", "Teacher AI"],
+        values: ["118 Enrolled", "22 Marked", "Active & Ready"],
+        desc: "1-tap student attendance, instant NCTB lesson planner, automated exam grading rubric, homework assignment dispatch, and AI question generator in one smooth mobile flow.",
+        bullets: [
+          "1-Tap mobile student attendance in under 30 seconds",
+          "NCTB 2026 AI question bank & smart exam rubrics",
+          "Direct assignment feedback & homework diary"
+        ]
       },
       bn: {
-        title: "শিক্ষক ওয়ার্কস্পেস ও ক্লাসরুম হাব",
-        chip: "শিক্ষক ভিউ",
-        labels: ["বরাদ্দকৃত ক্লাস", "উপস্থিতি গৃহীত", "আজকের করণীয়"],
-        values: ["০৬", "২৮ / ৩০", "সম্পন্ন"],
-        desc: "প্রতিদিনের ক্লাসরুটিন, মোবাইল অ্যাপে হাজিরা গ্রহণ, পরীক্ষার নম্বর প্রদান এবং এনসিটিবি পাঠপরিকল্পনা তৈরির সহজ সমাধান।"
+        title: "শিক্ষক এআই ও ক্লাসরুম অ্যাপ",
+        chip: "শিক্ষক অ্যাপ",
+        labels: ["মোট শিক্ষার্থী", "আজকের উপস্থিতি", "শিক্ষক এআই"],
+        values: ["১১৮ জন", "২২ জন", "সক্রিয় ও প্রস্তুত"],
+        desc: "মোবাইল থেকেই ১-ট্যাপে শিক্ষার্থীদের হাজিরা, এনসিটিবি কারিকুলাম প্রশ্ন জেনারেটর, মার্কশিট এন্ট্রি এবং হোমওয়ার্ক অ্যাসাইনমেন্ট প্রেরণের দ্রুততম মাধ্যম।",
+        bullets: [
+          "৩০ সেকেন্ডের মধ্যে ১-ট্যাপে শিক্ষার্থীদের মোবাইল হাজিরা",
+          "এনসিটিবি ২০২৬ এআই প্রশ্ন ব্যাংক ও স্মার্ট মার্কশিট রুব্রিক",
+          "সরাসরি বাড়ির কাজ বিতরণ ও ক্লাসরুটিন আপডেট"
+        ]
       }
     },
     parent: {
       url: "guardian.yesedu.cloud/portal",
       badge: {
-        en: { icon: "💳", title: "Tuition Fees", stat: "৳ 850 Due", sub: "1-Tap bKash Payment Ready" },
-        bn: { icon: "💳", title: "মাসিক বেতন", stat: "৳ ৮৫০ বকেয়া", sub: "১-ট্যাপে বিকাশ পেমেন্ট" }
+        en: { icon: "💳", title: "1-Tap Fee Payment", stat: "৳ 1,850 Due", sub: "Instant bKash / Nagad Pay Ready" },
+        bn: { icon: "💳", title: "১-ট্যাপে ফি পরিশোধ", stat: "৳ ১,৮৫০ বকেয়া", sub: "বিকাশ ও নগদ পেমেন্ট প্রস্তুত" }
       },
       en: {
-        title: "Parent Portal & Child Safety",
-        chip: "PARENT VIEW",
-        labels: ["Attendance Rate", "Latest Exam", "Institutional Notices"],
-        values: ["98.2%", "GPA 5.00", "03 New"],
-        desc: "Real-time gate punch SMS notifications, instant bKash/Nagad 1-tap fee payments, digital report cards, and direct secure messaging with class teachers."
+        title: "Guardian Portal & Child Safety",
+        chip: "PARENT APP",
+        labels: ["Monthly Attendance", "Homework Pending", "Tuition Due"],
+        values: ["75% (6/8 Days)", "04 Tasks", "৳ 1,850"],
+        desc: "Instant gate punch SMS notifications, 1-tap bKash/Nagad fee payment, child attendance tracking, daily homework diary, and direct confidential chat with class teachers.",
+        bullets: [
+          "Instant gate punch SMS when child enters/leaves campus",
+          "1-Tap bKash / Nagad fee payment with instant e-receipt",
+          "Digital progress report card & direct teacher messaging"
+        ]
       },
       bn: {
         title: "অভিভাবক পোর্টাল ও নিরাপত্তা ট্র্যাকিং",
-        chip: "অভিভাবক ভিউ",
-        labels: ["উপস্থিতির হার", "সর্বশেষ ফলাফল", "স্কুল নোটিশ"],
-        values: ["৯৮.২%", "জিপিএ ৫.০০", "০৩টি নতুন"],
-        desc: "গেটে কার্ড পাঞ্চের সাথে সাথে এসএমএস নোটিফিকেশন, ১-ট্যাপে বিকাশ ফি প্রদান, ডিজিটাল রিপোর্ট কার্ড এবং শিক্ষকদের সাথে সরাসরি যোগাযোগ।"
+        chip: "অভিভাবক অ্যাপ",
+        labels: ["চলতি মাসের হাজিরা", "বাড়ির কাজ", "টিউশন বকেয়া"],
+        values: ["৭৫% (৬/৮ দিন)", "০৪টি বাকি", "৳ ১,৮৫০"],
+        desc: "গেটে কার্ড পাঞ্চের সাথে সাথে লাইভ এসএমএস নোটিফিকেশন, ১-ট্যাপে বিকাশ ও নগদ ফি পরিশোধ, ক্লাসরুটিন, বাড়ির কাজ ট্র্যাকিং এবং ক্লাস শিক্ষকের সাথে সরাসরি চ্যাট।",
+        bullets: [
+          "সন্তান ক্যাম্পাসে প্রবেশ ও প্রস্থানে তাৎক্ষণিক গেট এসএমএস",
+          "১-ট্যাপে বিকাশ ও নগদ ফি পরিশোধ এবং ডিজিটাল রসিদ",
+          "ডিজিটাল রেজাল্ট কার্ড ও শ্রেণি শিক্ষকের সাথে সরাসরি চ্যাট"
+        ]
       }
     },
     accounts: {
       url: "finance.yesedu.cloud/accountant",
       badge: {
-        en: { icon: "💰", title: "Net Balance", stat: "৳ 2,292,200.99", sub: "Income ৳3.26M • Expenses ৳969K" },
+        en: { icon: "💰", title: "Net Campus Balance", stat: "৳ 2,292,200.99", sub: "Income ৳3.26M • Expenses ৳969K" },
         bn: { icon: "💰", title: "নেট ব্যালেন্স", stat: "৳ ২২,৯২,২০০.৯৯", sub: "আয় ৳৩২.৬ লাখ • ব্যয় ৳৯.৬৯ লাখ" }
       },
       en: {
-        title: "Accountant Workspace & Financial Overview",
-        chip: "ACCOUNTANT VIEW",
+        title: "Accountant Workspace & Financial Ledger",
+        chip: "ACCOUNTANT APP",
         labels: ["Total Income", "Total Expenses", "Net Balance"],
         values: ["৳ 3,261,283.99", "৳ 969,083.00", "৳ 2,292,200.99"],
-        desc: "A centralized finance cockpit for tracking real-time institutional revenue, recording vouchers, automated fee reconciliation, managing invoices, and auditing cash flow."
+        desc: "Complete mobile financial oversight: real-time institutional revenue reconciliation, instant voucher recording, automated bank/bKash payment audits, and verified cashbooks.",
+        bullets: [
+          "Automated student fee reconciliation via bKash & bank API",
+          "One-click voucher entries, expense tracking & cashbook",
+          "Real-time balance ledger & board audit financial reports"
+        ]
       },
       bn: {
-        title: "অ্যাকাউন্ট্যান্ট ওয়ার্কস্পেস ও আর্থিক ড্যাশবোর্ড",
+        title: "অ্যাকাউন্ট্যান্ট ওয়ার্কস্পেস ও আর্থিক লেজার",
         chip: "অ্যাকাউন্ট্যান্ট ভিউ",
         labels: ["মোট আয়", "মোট ব্যয়", "নেট ব্যালেন্স"],
         values: ["৳ ৩২,৬১,২৮৩.৯৯", "৳ ৯,৬৯,০৮৩.০০", "৳ ২২,৯২,২০০.৯৯"],
-        desc: "প্রতিষ্ঠানের সার্বিক আয়-ব্যয় ট্র্যাকিং, শিক্ষার্থী ফি কালেকশন, ইনভয়েস ম্যানেজমেন্ট, ডাবল-এন্ট্রি ক্যাশবুক এবং স্বয়ংক্রিয় আর্থিক অডিট রিপোর্ট।"
+        desc: "প্রতিষ্ঠানের সার্বিক আয়-ব্যয়ের লাইভ হিসাব, ফি কালেকশন রিকনসিলিয়েশন, ভাউচার রেকর্ডিং, ডাবল-এন্ট্রি ক্যাশবুক এবং স্বয়ংক্রিয় আর্থিক অডিট রিপোর্ট।",
+        bullets: [
+          "বিকাশ ও ব্যাংক এপিআই এর মাধ্যমে স্বয়ংক্রিয় ফি রিকনসিলিয়েশন",
+          "এক ক্লিকে ভাউচার এন্ট্রি, ব্যয় ট্র্যাকিং ও ক্যাশবুক লেজার",
+          "রিয়েল-টাইম ব্যালেন্স স্টেটমেন্ট ও বোর্ড অডিট ফাইন্যান্সিয়াল রিপোর্ট"
+        ]
       }
     }
   };
@@ -339,7 +379,7 @@
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
   }
 
-  // 4. Role Showcase Switcher
+  // 4. Role Showcase Switcher (Ultra-Modern 3D Phone Stage)
   function updateRolePreview(roleKey) {
     const roleConf = roleData[roleKey];
     if (!roleConf) return;
@@ -361,13 +401,30 @@
       const val = document.getElementById("metric" + name);
       if (lbl && d.labels[i]) lbl.textContent = d.labels[i];
       if (val && d.values[i]) val.textContent = d.values[i];
+
+      const bullet = document.getElementById("roleBullet" + name);
+      if (bullet && d.bullets && d.bullets[i]) bullet.textContent = d.bullets[i];
     });
 
-    // Cross-fade dashboard screenshot slide
-    const slides = document.querySelectorAll(".role-dash-img");
-    slides.forEach((slide) => {
+    // 3D Phone Swap animation trigger
+    const phoneDevice = document.getElementById("rolePhoneDevice");
+    if (phoneDevice) {
+      phoneDevice.classList.remove("phone-swap-anim");
+      void phoneDevice.offsetWidth; // force reflow for CSS animation re-trigger
+      phoneDevice.classList.add("phone-swap-anim");
+    }
+
+    // Cross-fade & 3D slide mobile screenshot
+    const mobileSlides = document.querySelectorAll(".role-mobile-img");
+    mobileSlides.forEach((slide) => {
       const isActive = slide.dataset.roleSlide === roleKey;
       slide.classList.toggle("active", isActive);
+    });
+
+    // Support legacy slides if present
+    const legacySlides = document.querySelectorAll(".role-dash-img");
+    legacySlides.forEach((slide) => {
+      slide.classList.toggle("active", slide.dataset.roleSlide === roleKey);
     });
 
     // Update Floating Badge
@@ -405,6 +462,30 @@
         updateRolePreview(tab.dataset.role);
       });
     });
+
+    // 3D Interactive Mouse Parallax on Desktop
+    const wrapper = document.querySelector(".role-phone-wrapper");
+    const phone = document.getElementById("rolePhoneDevice");
+    if (wrapper && phone && window.matchMedia("(min-width: 861px)").matches) {
+      wrapper.addEventListener("mousemove", (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotX = -(y / (rect.height / 2)) * 10;
+        const rotY = (x / (rect.width / 2)) * 12;
+        phone.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      wrapper.addEventListener("mouseleave", () => {
+        phone.style.transform = "";
+      });
+    }
+
+    // Ensure active role is synchronized on boot
+    const activeTab = document.querySelector(".role-tab.active");
+    if (activeTab) {
+      updateRolePreview(activeTab.dataset.role);
+    }
   }
 
   // 5. Interactive SME Peek Carousel (Live Campus OS Simulation)

@@ -42,7 +42,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=10.5">
+  <link rel="stylesheet" href="css/style.css?v=10.6">
 </head>
 
 <body>
@@ -1873,102 +1873,151 @@
             </button>
           </div>
 
-          <!-- Interactive macOS / Cloud App Window Preview (Right Column) -->
+          <!-- Interactive 3D Flagship Smartphone Showcase Stage (Right Column) -->
           <div class="role-preview reveal" id="rolePreviewWindow">
-            <div class="role-app-window">
-              <!-- Window Chrome Header -->
-              <div class="role-window-header">
-                <div class="role-window-dots">
-                  <span class="r-dot r-dot-red"></span>
-                  <span class="r-dot r-dot-yellow"></span>
-                  <span class="r-dot r-dot-green"></span>
-                </div>
-                <div class="role-window-url">
-                  <span class="role-url-lock">🔒</span>
-                  <span class="role-url-text" id="roleWindowUrl">admin.yesedu.cloud/cockpit</span>
-                </div>
-                <div class="role-window-actions">
-                  <span class="role-live-badge">
-                    <span class="role-live-dot"></span>
-                    <span class="lang-en">Live Cloud</span>
-                    <span class="lang-bn hidden">লাইভ ক্লাউড</span>
-                  </span>
-                  <span class="preview-chip" id="roleChip">ADMIN VIEW</span>
-                </div>
-              </div>
+            <div class="role-phone-stage" id="rolePhoneStage">
+              <!-- Left: 3D Smartphone Device Stage -->
+              <div class="role-phone-wrapper">
+                <!-- Ambient Aura Glow behind the phone -->
+                <div class="phone-ambient-aura" aria-hidden="true"></div>
 
-              <!-- Real Software Dashboard Screenshot Stage -->
-              <div class="role-screen-stage">
-                <div class="role-slides-container">
-                  <img src="images/admin-dashboard.png" 
-                       alt="YES EDU Super Admin Dashboard" 
-                       class="role-dash-img active" 
-                       data-role-slide="admin" 
-                       width="1024" 
-                       height="586"
-                       loading="eager"
-                       fetchpriority="high">
-                  <img src="images/teacher-dashboard.png" 
-                       alt="YES EDU Teacher Workspace" 
-                       class="role-dash-img" 
-                       data-role-slide="teacher" 
-                       width="1024" 
-                       height="528"
-                       loading="lazy">
-                  <img src="images/parent-dashboard.png" 
-                       alt="YES EDU Guardian Portal" 
-                       class="role-dash-img" 
-                       data-role-slide="parent" 
-                       width="1024" 
-                       height="525"
-                       loading="lazy">
-                  <img src="images/accountant-dashboard.png" 
-                       alt="YES EDU Accountant & Financial Overview Workspace" 
-                       class="role-dash-img" 
-                       data-role-slide="accounts" 
-                       width="1024" 
-                       height="532"
-                       loading="lazy">
+                <!-- Verified Native App Badge (Floating Top Pill) -->
+                <div class="role-store-pill">
+                  <span class="store-dot"></span>
+                  <span class="lang-en">Native Android &amp; iOS App</span>
+                  <span class="lang-bn hidden">নেটিভ অ্যান্ড্রয়েড ও আইওএস অ্যাপ</span>
                 </div>
 
-                <!-- Dynamic Floating KPI Badge Synchronized with Role -->
+                <!-- Realistic 3D Flagship Smartphone Frame -->
+                <div class="role-smartphone-device" id="rolePhoneDevice">
+                  <!-- Outer Metal Bezel & Physical Buttons -->
+                  <div class="phone-btn phone-btn-vol-up" aria-hidden="true"></div>
+                  <div class="phone-btn phone-btn-vol-down" aria-hidden="true"></div>
+                  <div class="phone-btn phone-btn-power" aria-hidden="true"></div>
+
+                  <!-- Inner Screen Viewport -->
+                  <div class="phone-screen-viewport">
+                    <!-- Dynamic Island Notch Cutout -->
+                    <div class="phone-dynamic-island" aria-hidden="true">
+                      <span class="island-camera"></span>
+                      <span class="island-sensor"></span>
+                    </div>
+
+                    <!-- Glass Reflection Sheen -->
+                    <div class="phone-glass-glare" aria-hidden="true"></div>
+
+                    <!-- 4 Mobile Screenshots Stack -->
+                    <div class="phone-slides-stack">
+                      <img src="images/mobile-admin.jpg" 
+                           alt="YES EDU Super Admin Mobile App" 
+                           class="role-mobile-img active" 
+                           data-role-slide="admin" 
+                           width="465" 
+                           height="1024"
+                           loading="eager"
+                           fetchpriority="high">
+                      <img src="images/mobile-teacher.jpg" 
+                           alt="YES EDU Teacher Mobile App" 
+                           class="role-mobile-img" 
+                           data-role-slide="teacher" 
+                           width="471" 
+                           height="1024"
+                           loading="lazy">
+                      <img src="images/mobile-parent.jpg" 
+                           alt="YES EDU Guardian Mobile App" 
+                           class="role-mobile-img" 
+                           data-role-slide="parent" 
+                           width="471" 
+                           height="1024"
+                           loading="lazy">
+                      <img src="images/mobile-accountant.jpg" 
+                           alt="YES EDU Accountant Mobile App" 
+                           class="role-mobile-img" 
+                           data-role-slide="accounts" 
+                           width="472" 
+                           height="1024"
+                           loading="lazy">
+                    </div>
+
+                    <!-- iOS Style Home Indicator Bar -->
+                    <div class="phone-home-indicator" aria-hidden="true"></div>
+                  </div>
+                </div>
+
+                <!-- Dynamic Floating Live KPI Badge Synchronized with Role -->
                 <div class="role-floating-badge badge-pop" id="roleFloatingBadge">
-                  <div class="role-badge-icon" id="roleBadgeIcon">✓</div>
+                  <div class="role-badge-icon" id="roleBadgeIcon">🏛️</div>
                   <div class="role-badge-content">
-                    <span class="role-badge-title" id="roleBadgeTitle">Attendance Today</span>
-                    <strong class="role-badge-stat" id="roleBadgeStat">97%</strong>
-                    <span class="role-badge-sub" id="roleBadgeSub">Live Biometric • 115 Present</span>
+                    <span class="role-badge-title" id="roleBadgeTitle">Pending Fees</span>
+                    <strong class="role-badge-stat" id="roleBadgeStat">115 Invoices</strong>
+                    <span class="role-badge-sub" id="roleBadgeSub">16 Institutional Modules Online</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Window Footer with Dynamic Metrics and Role Summary -->
-              <div class="role-window-footer">
-                <div class="role-footer-head">
-                  <h4 class="role-footer-title" id="roleTitle">Institution Overview & Control</h4>
-                  <a href="#contact" class="role-demo-link open-demo-modal">
-                    <span class="lang-en">Request Live Demo ↗</span>
-                    <span class="lang-bn hidden">লাইভ ডেমো দেখুন ↗</span>
-                  </a>
+              <!-- Right: Synchronized Role Details & Live Metrics Card -->
+              <div class="role-phone-details">
+                <div class="role-details-header">
+                  <div class="role-header-tags">
+                    <span class="preview-chip" id="roleChip">SUPER ADMIN APP</span>
+                    <span class="role-live-badge">
+                      <span class="role-live-dot"></span>
+                      <span class="lang-en">Live Cloud v3.8</span>
+                      <span class="lang-bn hidden">লাইভ ক্লাউড ৩.৮</span>
+                    </span>
+                  </div>
+                  <h3 class="role-details-title" id="roleTitle">Super Admin Mobile Cockpit</h3>
+                  <p class="role-details-desc" id="roleDescription">
+                    Complete administrative control directly from your pocket. Monitor live campus attendance, fee collections, biometric sync, and instant staff approvals from anywhere in Bangladesh.
+                  </p>
                 </div>
 
+                <!-- Synchronized Role Metrics Grid -->
                 <div class="preview-metrics">
                   <div class="preview-metric">
-                    <small id="metricOneLabel">Active Students</small>
-                    <b id="metricOne">2,480</b>
+                    <small id="metricOneLabel">Pending Fees</small>
+                    <b id="metricOne">115</b>
                   </div>
                   <div class="preview-metric">
-                    <small id="metricTwoLabel">Today Attendance</small>
-                    <b id="metricTwo">96.8%</b>
+                    <small id="metricTwoLabel">Active Modules</small>
+                    <b id="metricTwo">16 Ready</b>
                   </div>
                   <div class="preview-metric">
-                    <small id="metricThreeLabel">Campus Status</small>
-                    <b id="metricThree">Live & Active</b>
+                    <small id="metricThreeLabel">Today Collection</small>
+                    <b id="metricThree">৳ 0.00</b>
                   </div>
                 </div>
 
-                <div class="preview-note" id="roleDescription">
-                  A consolidated 360° cockpit of institutional operations, biometric logs, staff attendance and real-time revenue collection shaped by strict administrative permissions.
+                <!-- Feature Bullet Checklist for Active Role -->
+                <div class="role-feature-bullets">
+                  <div class="role-bullet-item">
+                    <span class="bullet-check">✓</span>
+                    <span class="bullet-text" id="roleBulletOne">Real-time biometric gate punch &amp; staff attendance</span>
+                  </div>
+                  <div class="role-bullet-item">
+                    <span class="bullet-check">✓</span>
+                    <span class="bullet-text" id="roleBulletTwo">16 specialized institutional modules &amp; emergency alerts</span>
+                  </div>
+                  <div class="role-bullet-item">
+                    <span class="bullet-check">✓</span>
+                    <span class="bullet-text" id="roleBulletThree">Multi-branch financial oversight &amp; audit-ready security</span>
+                  </div>
+                </div>
+
+                <!-- Role Details Footer with CTA & Store Badges -->
+                <div class="role-details-footer">
+                  <a href="#contact" class="role-demo-link open-demo-modal">
+                    <span class="lang-en">Request Live Demo ↗</span>
+                    <span class="lang-bn hidden">লাইভ ডেমো বুক করুন ↗</span>
+                  </a>
+                  <div class="role-store-badges">
+                    <span class="store-badge-mini" title="Google Play Store">
+                      <img src="images/google-play-get.svg" alt="Google Play" width="105" height="31">
+                    </span>
+                    <span class="store-badge-mini" title="Apple App Store">
+                      <img src="images/app-store-download.svg" alt="App Store" width="94" height="31">
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2777,7 +2826,7 @@
   </div>
 
   <!-- JavaScript Engine -->
-  <script src="js/main.js?v=10.5"></script>
+  <script src="js/main.js?v=10.6"></script>
 </body>
 
 </html>

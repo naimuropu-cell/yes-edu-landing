@@ -3631,90 +3631,67 @@ header.scrolled {
 
 /* Role Preview Outer Canvas */
 .role-preview {
-  background: linear-gradient(145deg, #E8F2EC 0%, #D8E6DE 100%);
-  border: 1px solid #C5DAD0;
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 20px 48px -12px rgba(14, 42, 31, 0.1);
+  background: linear-gradient(145deg, #F0FDF4 0%, #E6F4ED 100%);
+  border: 1px solid #C4D9CE;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 48px -12px rgba(14, 42, 31, 0.08);
+  position: relative;
 }
 
-/* App Window Frame */
-.role-app-window {
-  background: #FFFFFF;
-  border: 1px solid #CBD5E1;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.14);
-}
-
-/* Window Chrome Header */
-.role-window-header {
-  display: flex;
+/* 3D Smartphone Stage Layout */
+.role-phone-stage {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
   align-items: center;
-  justify-content: space-between;
-  background: #F8FAFC;
-  border-bottom: 1px solid #E2E8F0;
-  padding: 10px 16px;
-  gap: 12px;
-  flex-wrap: wrap;
+  position: relative;
 }
 
-.role-window-dots {
+/* Left: 3D Smartphone Device Stage */
+.role-phone-wrapper {
+  position: relative;
   display: flex;
-  gap: 6px;
+  justify-content: center;
   align-items: center;
+  padding: 16px 0;
+  perspective: 1200px;
 }
 
-.r-dot {
-  width: 10px;
-  height: 10px;
+/* Ambient Radial Aura behind Phone */
+.phone-ambient-aura {
+  position: absolute;
+  width: 250px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.28) 0%, rgba(20, 184, 166, 0.12) 45%, transparent 72%);
+  filter: blur(34px);
   border-radius: 50%;
-  display: inline-block;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.r-dot-red { background: #EF4444; }
-.r-dot-yellow { background: #F59E0B; }
-.r-dot-green { background: #10B981; }
-
-.role-window-url {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+/* Verified Native App Floating Pill */
+.role-store-pill {
+  position: absolute;
+  top: 4px;
+  left: -8px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #D1FAE5;
   border-radius: 999px;
-  padding: 3px 12px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: #475569;
-  letter-spacing: -0.01em;
-}
-
-.role-url-lock {
-  font-size: 10px;
-  line-height: 1;
-}
-
-.role-window-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.role-live-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  padding: 5px 12px;
   font-size: 11px;
   font-weight: 700;
   color: #047857;
-  background: #ECFDF5;
-  border: 1px solid #A7F3D0;
-  border-radius: 999px;
-  padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 8px 20px -4px rgba(16, 185, 129, 0.2);
+  z-index: 15;
 }
 
-.role-live-dot {
+.store-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -3722,34 +3699,129 @@ header.scrolled {
   animation: pulseDot 2s infinite;
 }
 
-.preview-chip {
-  font: 800 10.5px var(--font-body);
-  color: #174B39;
-  background: #E8F5EE;
-  padding: 3px 9px;
-  border-radius: 999px;
-  border: 1px solid #C4D9CE;
-  letter-spacing: 0.04em;
+/* Realistic 3D Flagship Smartphone Frame */
+.role-smartphone-device {
+  position: relative;
+  width: 248px;
+  aspect-ratio: 9 / 19.5;
+  background: #0f172a;
+  border-radius: 44px;
+  border: 8px solid #1e293b;
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 24px 50px -12px rgba(15, 23, 42, 0.38),
+    0 10px 22px -6px rgba(16, 185, 129, 0.16);
+  transform: perspective(1000px) rotateY(-7deg) rotateX(3deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+  z-index: 2;
+  cursor: grab;
 }
 
-/* Dashboard Screenshot Stage */
-.role-screen-stage {
+.role-smartphone-device:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.22) inset,
+    0 30px 60px -10px rgba(15, 23, 42, 0.42),
+    0 16px 28px -6px rgba(16, 185, 129, 0.24);
+}
+
+@keyframes phoneSwapPerspective {
+  0% { transform: perspective(1000px) rotateY(-18deg) rotateX(6deg) scale(0.96); }
+  60% { transform: perspective(1000px) rotateY(2deg) rotateX(-1deg) scale(1.02); }
+  100% { transform: perspective(1000px) rotateY(-7deg) rotateX(3deg) scale(1); }
+}
+
+.role-smartphone-device.phone-swap-anim {
+  animation: phoneSwapPerspective 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Metal Side Buttons */
+.phone-btn {
+  position: absolute;
+  background: #334155;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.phone-btn-vol-up {
+  left: -11px;
+  top: 75px;
+  width: 3px;
+  height: 36px;
+}
+
+.phone-btn-vol-down {
+  left: -11px;
+  top: 120px;
+  width: 3px;
+  height: 36px;
+}
+
+.phone-btn-power {
+  right: -11px;
+  top: 95px;
+  width: 3px;
+  height: 48px;
+}
+
+/* Screen Viewport */
+.phone-screen-viewport {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9.4;
-  max-height: 460px;
+  height: 100%;
+  border-radius: 36px;
   overflow: hidden;
   background: #0B1C15;
 }
 
-.role-slides-container {
+/* Dynamic Island Notch */
+.phone-dynamic-island {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76px;
+  height: 18px;
+  background: #000000;
+  border-radius: 12px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.island-camera {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #111827;
+  border: 1px solid #1f2937;
+  box-shadow: 0 0 2px rgba(16, 185, 129, 0.6);
+}
+
+/* Glass Reflection Sheen */
+.phone-glass-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.03) 38%, transparent 55%);
+  pointer-events: none;
+  z-index: 8;
+}
+
+/* Mobile Slides Container */
+.phone-slides-stack {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
-.role-dash-img {
+.role-mobile-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -3758,34 +3830,47 @@ header.scrolled {
   object-fit: cover;
   object-position: top center;
   opacity: 0;
-  transform: scale(0.985);
-  transition: opacity 0.38s ease, transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.96) translateY(6px);
+  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
 
-.role-dash-img.active {
+.role-mobile-img.active {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateY(0);
   pointer-events: auto;
   z-index: 2;
 }
 
-/* Dynamic Floating KPI Badge */
+/* Home Indicator Bar */
+.phone-home-indicator {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  z-index: 10;
+}
+
+/* Dynamic Floating Live KPI Badge */
 .role-floating-badge {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
+  bottom: 18px;
+  right: -16px;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.95);
+  border: 1px solid rgba(209, 250, 229, 0.9);
   border-radius: 12px;
-  padding: 10px 14px;
+  padding: 9px 13px;
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 10px 28px -4px rgba(15, 23, 42, 0.22);
-  z-index: 8;
+  box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.18);
+  z-index: 15;
 }
 
 .role-badge-icon {
@@ -3837,53 +3922,82 @@ header.scrolled {
   animation: badgePop 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Window Footer with Synchronized Metrics & Value */
-.role-window-footer {
-  padding: 18px 20px;
+/* Right: Role Details & Live Metrics Card */
+.role-phone-details {
   background: #FFFFFF;
-  border-top: 1px solid #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.role-footer-head {
+.role-details-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.role-header-tags {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
-.role-footer-title {
-  font: 800 16px var(--font-heading);
+.preview-chip {
+  font: 800 10.5px var(--font-body);
+  color: #174B39;
+  background: #E8F5EE;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid #C4D9CE;
+  letter-spacing: 0.04em;
+}
+
+.role-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #047857;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.role-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  animation: pulseDot 2s infinite;
+}
+
+.role-details-title {
+  font: 800 18px var(--font-heading);
   color: #0E2A1F;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.role-details-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #475569;
   margin: 0;
 }
 
-.role-demo-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #059669;
-  text-decoration: none;
-  padding: 4px 10px;
-  background: #ECFDF5;
-  border: 1px solid #A7F3D0;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.role-demo-link:hover {
-  background: #059669;
-  color: #FFFFFF;
-}
-
+/* Synchronized Metrics Grid */
 .preview-metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-bottom: 12px;
 }
 
 .preview-metric {
@@ -3896,7 +4010,7 @@ header.scrolled {
 .preview-metric small {
   display: block;
   color: #64748B;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -3905,18 +4019,95 @@ header.scrolled {
 .preview-metric b {
   display: block;
   color: #0F172A;
-  font: 800 18px var(--font-heading);
+  font: 800 16px var(--font-heading);
   margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.preview-note {
-  background: #F0FDF4;
-  border: 1px solid #DCFCE7;
-  padding: 11px 14px;
-  border-radius: 8px;
-  color: #166534;
+/* Feature Bullet Checklist */
+.role-feature-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+}
+
+.role-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   font-size: 12px;
-  line-height: 1.55;
+  color: #1E293B;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.bullet-check {
+  color: #059669;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+/* Details Footer with CTA & Store Badges */
+.role-details-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.role-demo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #059669;
+  text-decoration: none;
+  padding: 6px 12px;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.role-demo-link:hover {
+  background: #059669;
+  color: #FFFFFF;
+}
+
+.role-store-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.store-badge-mini {
+  display: inline-flex;
+  align-items: center;
+}
+
+.store-badge-mini img {
+  height: 28px;
+  width: auto;
+  opacity: 0.88;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.store-badge-mini img:hover {
+  opacity: 1;
+  transform: translateY(-1px);
 }
 
 /* ==========================================================================
@@ -5878,18 +6069,37 @@ body {
   }
 
   .role-preview {
-    padding: 10px;
-    border-radius: 14px;
+    padding: 16px 12px;
+    border-radius: 16px;
   }
 
-  .role-screen-stage {
-    aspect-ratio: 16 / 10;
-    max-height: 280px;
+  .role-phone-stage {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    justify-items: center;
+  }
+
+  .role-phone-wrapper {
+    width: 100%;
+    max-width: 260px;
+    padding: 10px 0;
+  }
+
+  .role-smartphone-device {
+    width: min(230px, 78vw);
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  }
+
+  .role-store-pill {
+    top: 0;
+    left: 2px;
+    font-size: 10px;
+    padding: 4px 10px;
   }
 
   .role-floating-badge {
     bottom: 8px;
-    right: 8px;
+    right: 2px;
     padding: 6px 10px;
     gap: 8px;
     border-radius: 8px;
@@ -5914,14 +6124,23 @@ body {
     display: none;
   }
 
-  .role-window-footer {
-    padding: 14px 12px;
+  .role-phone-details {
+    padding: 18px 14px;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .role-details-title {
+    font-size: 16px;
+  }
+
+  .role-details-desc {
+    font-size: 12px;
   }
 
   .preview-metrics {
     grid-template-columns: repeat(3, 1fr);
     gap: 6px;
-    margin-bottom: 10px;
   }
 
   .preview-metric {
@@ -5935,14 +6154,32 @@ body {
   }
 
   .preview-metric b {
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 2px;
   }
 
-  .preview-note {
+  .role-feature-bullets {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .role-bullet-item {
     font-size: 11.5px;
-    padding: 9px 12px;
-    line-height: 1.45;
+  }
+
+  .role-details-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .role-demo-link {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .role-store-badges {
+    justify-content: center;
   }
 
   /* AI Section */
