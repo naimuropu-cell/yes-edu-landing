@@ -871,25 +871,25 @@ header.scrolled {
   -webkit-mask-image: radial-gradient(ellipse at 60% 50%, black 40%, transparent 80%);
 }
 
-/* Green Dynamic Spark Burst (Top-Left) */
+/* Green Dynamic Spark Burst (Positioned cleanly to the left of tablet frame) */
 .hero-spark-burst {
   position: absolute;
-  top: 14px;
-  left: 6%;
-  z-index: 5;
+  top: 80px;
+  left: -28px;
+  z-index: 4;
   font-size: 32px;
   line-height: 1;
   color: #10b981;
   font-weight: 800;
-  transform: rotate(-15deg);
+  transform: rotate(-12deg);
   text-shadow: 0 0 16px rgba(16, 185, 129, 0.55);
   pointer-events: none;
   animation: sparkFloat 3.2s ease-in-out infinite alternate;
 }
 
 @keyframes sparkFloat {
-  0% { transform: rotate(-15deg) translateY(0); }
-  100% { transform: rotate(-10deg) translateY(-4px); }
+  0% { transform: rotate(-12deg) translateY(0); }
+  100% { transform: rotate(-8deg) translateY(-4px); }
 }
 
 .visual-blob-aura {
@@ -909,11 +909,12 @@ header.scrolled {
 /* 3D Perspective Laptop Hardware Container */
 .laptop-device-wrapper {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: min(100%, 640px);
-  transform: perspective(1200px) rotateY(-5deg) rotateX(2deg);
+  transform: perspective(1200px) rotateY(-4deg) rotateX(1deg);
   transform-style: preserve-3d;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: 24px;
 }
 
 .laptop-device-wrapper:hover {
@@ -922,12 +923,13 @@ header.scrolled {
 
 .laptop-screen-frame {
   background: #0f172a;
-  border-radius: 18px 18px 3px 3px;
+  border-radius: 18px;
   padding: 10px 10px 12px;
   box-shadow:
-    0 24px 60px -10px rgba(15, 23, 42, 0.22),
+    0 24px 60px -10px rgba(15, 23, 42, 0.32),
     0 0 0 1px rgba(255, 255, 255, 0.08) inset;
   position: relative;
+  z-index: 3;
 }
 
 .laptop-camera-notch {
@@ -1275,11 +1277,12 @@ header.scrolled {
 /* 3D Glowing Green Circular Podium & Torus Platform */
 .hero-podium-pedestal {
   position: absolute;
-  bottom: -32px;
+  bottom: -36px;
   left: 50%;
   transform: translateX(-50%);
-  width: 108%;
-  height: 120px;
+  width: 110%;
+  max-width: 680px;
+  height: 140px;
   pointer-events: none;
   z-index: 1;
   display: flex;
@@ -1287,59 +1290,59 @@ header.scrolled {
   justify-content: center;
 }
 
+.podium-ambient-light {
+  position: absolute;
+  width: 100%;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(16, 185, 129, 0.45) 0%, rgba(5, 150, 105, 0.2) 48%, transparent 72%);
+  filter: blur(24px);
+  transform: rotateX(68deg);
+}
+
+.podium-surface-disk {
+  position: absolute;
+  width: 86%;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 28%, #34d399 0%, #10b981 36%, #059669 70%, #047857 100%);
+  transform: rotateX(68deg);
+  box-shadow:
+    inset 0 4px 14px rgba(255, 255, 255, 0.5),
+    0 18px 42px rgba(4, 120, 87, 0.35);
+}
+
+.podium-glowing-ring {
+  position: absolute;
+  width: 95%;
+  height: 155px;
+  border-radius: 50%;
+  border: 2px solid rgba(52, 211, 153, 0.8);
+  box-shadow: 0 0 42px rgba(16, 185, 129, 0.5);
+  transform: rotateX(68deg) rotateY(-2deg);
+}
+
 .podium-orbit-arc {
   position: absolute;
-  width: 580px;
+  width: 92%;
   height: 150px;
   border-radius: 50%;
-  border: 4.5px solid #10b981;
+  border: 4px solid #10b981;
   box-shadow:
-    0 0 28px #10b981,
-    inset 0 0 20px #34d399,
-    0 0 65px rgba(16, 185, 129, 0.45);
-  transform: rotateX(68deg) rotateY(-3deg);
+    0 0 26px #10b981,
+    inset 0 0 18px #34d399,
+    0 0 60px rgba(16, 185, 129, 0.45);
+  transform: rotateX(68deg) rotateY(-2deg);
   animation: orbitPulse 3s ease-in-out infinite alternate;
 }
 
 @keyframes orbitPulse {
   0% {
-    box-shadow: 0 0 24px #10b981, inset 0 0 16px #34d399, 0 0 50px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 0 22px #10b981, inset 0 0 14px #34d399, 0 0 45px rgba(16, 185, 129, 0.35);
   }
   100% {
-    box-shadow: 0 0 36px #10b981, inset 0 0 26px #34d399, 0 0 80px rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 34px #10b981, inset 0 0 24px #34d399, 0 0 75px rgba(16, 185, 129, 0.6);
   }
-}
-
-.podium-glowing-ring {
-  position: absolute;
-  width: 630px;
-  height: 175px;
-  border-radius: 50%;
-  border: 2px solid rgba(52, 211, 153, 0.75);
-  box-shadow: 0 0 45px rgba(16, 185, 129, 0.55);
-  transform: rotateX(68deg) rotateY(-3deg);
-}
-
-.podium-surface-disk {
-  position: absolute;
-  width: 520px;
-  height: 125px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 32%, #34d399 0%, #10b981 38%, #059669 72%, #047857 100%);
-  transform: rotateX(68deg);
-  box-shadow:
-    inset 0 4px 14px rgba(255, 255, 255, 0.45),
-    0 20px 48px rgba(4, 120, 87, 0.4);
-}
-
-.podium-ambient-light {
-  position: absolute;
-  width: 680px;
-  height: 190px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 50%, rgba(16, 185, 129, 0.48) 0%, rgba(5, 150, 105, 0.22) 50%, transparent 75%);
-  filter: blur(24px);
-  transform: rotateX(68deg);
 }
 
 /* ==========================================================================
@@ -1347,7 +1350,7 @@ header.scrolled {
    ========================================================================== */
 .floating-badge {
   position: absolute;
-  z-index: 4;
+  z-index: 10;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(220, 235, 228, 0.95);
   border-radius: 14px;
@@ -1406,8 +1409,9 @@ header.scrolled {
 
 /* Individual Badge Placement & Colors */
 .badge-ai {
-  top: 8px;
-  left: -12px;
+  top: -24px;
+  left: 36px;
+  z-index: 10;
 }
 
 .ico-ai {
@@ -1416,8 +1420,9 @@ header.scrolled {
 }
 
 .badge-fee {
-  top: 14px;
+  top: -12px;
   right: -24px;
+  z-index: 10;
 }
 
 .ico-fee {
@@ -1426,8 +1431,9 @@ header.scrolled {
 }
 
 .badge-report {
-  top: 47%;
+  top: 48%;
   right: -28px;
+  z-index: 10;
 }
 
 .ico-report {
@@ -5123,13 +5129,18 @@ body {
   }
 
   .badge-ai {
-    top: -6px;
-    left: -6px;
+    top: -18px;
+    left: 20px;
+  }
+
+  .hero-spark-burst {
+    top: 60px;
+    left: -20px;
   }
 
   .badge-fee {
-    top: -6px;
-    right: -12px;
+    top: -10px;
+    right: -10px;
   }
 
   .badge-report {
