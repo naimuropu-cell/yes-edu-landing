@@ -473,10 +473,9 @@ header.scrolled {
   overflow: hidden;
   color: #082e33;
   background:
-    radial-gradient(ellipse at 78% 25%, rgba(160, 239, 197, 0.42) 0%, transparent 42%),
-    radial-gradient(ellipse at 98% 8%, rgba(194, 225, 255, 0.48) 0%, transparent 35%),
-    radial-gradient(ellipse at 8% 70%, rgba(208, 249, 226, 0.52) 0%, transparent 36%),
-    linear-gradient(180deg, #f9fdfb 0%, #f4faf6 68%, #ffffff 100%);
+    radial-gradient(ellipse at 78% 30%, rgba(167, 243, 208, 0.45) 0%, rgba(209, 250, 229, 0.28) 45%, transparent 70%),
+    radial-gradient(ellipse at 15% 25%, rgba(209, 250, 229, 0.38) 0%, transparent 48%),
+    linear-gradient(180deg, #f2fbf7 0%, #edf9f2 45%, #f6fcf8 80%, #ffffff 100%);
   padding: 56px 0 42px;
   border-bottom: 1px solid #dcebe4;
   isolation: isolate;
@@ -853,14 +852,17 @@ header.scrolled {
 
 .visual-blob-aura {
   position: absolute;
-  width: 95%;
-  height: 90%;
-  right: -4%;
-  top: 5%;
+  width: 104%;
+  height: 98%;
+  right: -2%;
+  top: 1%;
   z-index: 0;
-  background: radial-gradient(circle at 60% 50%, rgba(160, 239, 197, 0.45) 0%, rgba(219, 250, 232, 0.2) 65%, transparent 75%);
-  border-radius: 50%;
-  filter: blur(40px);
+  background:
+    radial-gradient(circle at 62% 48%, rgba(167, 243, 208, 0.5) 0%, rgba(209, 250, 229, 0.28) 48%, transparent 72%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.65) 0%, rgba(236, 253, 245, 0.35) 100%);
+  border: 1px solid rgba(167, 243, 208, 0.45);
+  border-radius: 40px;
+  box-shadow: 0 16px 44px rgba(16, 185, 129, 0.07);
   pointer-events: none;
 }
 
