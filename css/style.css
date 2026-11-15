@@ -889,6 +889,7 @@ header.scrolled {
   display: block;
   user-select: none;
   filter: drop-shadow(0 24px 44px rgba(6, 78, 59, 0.12)) drop-shadow(0 8px 18px rgba(6, 78, 59, 0.08));
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* ==========================================================================
