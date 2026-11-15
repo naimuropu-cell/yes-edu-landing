@@ -839,714 +839,56 @@ header.scrolled {
 }
 
 /* ==========================================================================
-   Hero Right Column: 3D Perspective Laptop & Floating Micro-Cards
+   Hero Right Column: 3D Perspective Laptop Showcase
    ========================================================================== */
 .hero-visual {
   position: relative;
-  min-height: 490px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Sunny Educational Campus Architectural Backdrop (Top-Right) */
-.hero-campus-backdrop {
-  position: absolute;
-  top: -24px;
-  right: -28px;
-  width: 320px;
-  height: 260px;
-  z-index: 1;
-  pointer-events: none;
-  background: 
-    radial-gradient(ellipse at 70% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 60%),
-    linear-gradient(135deg, rgba(224, 242, 254, 0.82) 0%, rgba(209, 250, 229, 0.65) 50%, rgba(255, 255, 255, 0.1) 100%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23bae6fd'/%3E%3Cstop offset='100%25' stop-color='%23e0f2fe'/%3E%3C/linearGradient%3E%3ClinearGradient id='facade' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%23f8fafc'/%3E%3Cstop offset='100%25' stop-color='%23e2e8f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23sky)'/%3E%3Cpath d='M60 80 L340 80 L340 300 L60 300 Z' fill='url(%23facade)' opacity='0.9'/%3E%3Cg fill='%2338bdf8' opacity='0.7'%3E%3Crect x='85' y='110' width='35' height='26' rx='3'/%3E%3Crect x='135' y='110' width='35' height='26' rx='3'/%3E%3Crect x='185' y='110' width='35' height='26' rx='3'/%3E%3Crect x='235' y='110' width='35' height='26' rx='3'/%3E%3Crect x='285' y='110' width='35' height='26' rx='3'/%3E%3Crect x='85' y='155' width='35' height='26' rx='3'/%3E%3Crect x='135' y='155' width='35' height='26' rx='3'/%3E%3Crect x='185' y='155' width='35' height='26' rx='3'/%3E%3Crect x='235' y='155' width='35' height='26' rx='3'/%3E%3Crect x='285' y='155' width='35' height='26' rx='3'/%3E%3Crect x='85' y='200' width='35' height='26' rx='3'/%3E%3Crect x='135' y='200' width='35' height='26' rx='3'/%3E%3Crect x='185' y='200' width='35' height='26' rx='3'/%3E%3Crect x='235' y='200' width='35' height='26' rx='3'/%3E%3Crect x='285' y='200' width='35' height='26' rx='3'/%3E%3C/g%3E%3Ccircle cx='30' cy='260' r='55' fill='%2310b981' opacity='0.85'/%3E%3Ccircle cx='80' cy='280' r='45' fill='%23059669' opacity='0.9'/%3E%3Ccircle cx='350' cy='250' r='60' fill='%2334d399' opacity='0.8'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-position: center;
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  filter: blur(1px);
-  opacity: 0.92;
-  mask-image: radial-gradient(ellipse at 60% 50%, black 40%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at 60% 50%, black 40%, transparent 80%);
-}
-
-/* Green Dynamic Spark Burst (Positioned cleanly to the left of tablet frame) */
-.hero-spark-burst {
-  position: absolute;
-  top: 80px;
-  left: -28px;
-  z-index: 4;
-  font-size: 32px;
-  line-height: 1;
-  color: #10b981;
-  font-weight: 800;
-  transform: rotate(-12deg);
-  text-shadow: 0 0 16px rgba(16, 185, 129, 0.55);
-  pointer-events: none;
-  animation: sparkFloat 3.2s ease-in-out infinite alternate;
-}
-
-@keyframes sparkFloat {
-  0% { transform: rotate(-12deg) translateY(0); }
-  100% { transform: rotate(-8deg) translateY(-4px); }
+  width: 100%;
+  padding: 10px 0;
+  perspective: 1200px;
 }
 
 .visual-blob-aura {
   position: absolute;
-  width: 98%;
-  height: 94%;
-  right: -6%;
-  top: -2%;
-  z-index: 0;
-  background: linear-gradient(135deg, rgba(160, 239, 197, 0.72) 0%, rgba(219, 250, 232, 0.35) 100%);
-  border-radius: 48% 36% 42% 48%;
-  transform: rotate(-6deg);
-  filter: blur(28px);
-  pointer-events: none;
-}
-
-/* 3D Perspective Laptop Hardware Container */
-.laptop-device-wrapper {
-  position: relative;
-  z-index: 3;
-  width: min(100%, 640px);
-  transform: perspective(1200px) rotateY(-4deg) rotateX(1deg);
-  transform-style: preserve-3d;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-bottom: 24px;
-}
-
-.laptop-device-wrapper:hover {
-  transform: perspective(1200px) rotateY(-2deg) rotateX(1deg) translateY(-4px);
-}
-
-.laptop-screen-frame {
-  background: #0f172a;
-  border-radius: 18px;
-  padding: 10px 10px 12px;
-  box-shadow:
-    0 24px 60px -10px rgba(15, 23, 42, 0.32),
-    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
-  position: relative;
-  z-index: 3;
-}
-
-.laptop-camera-notch {
-  height: 9px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-
-.camera-lens {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #1e293b;
-  border: 1px solid #334155;
-  display: block;
-}
-
-.camera-sensor {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: #0ea5e9;
-  opacity: 0.7;
-  display: block;
-}
-
-/* Laptop Surface Glass & Dashboard Workspace */
-.laptop-dashboard-surface {
-  background: #ffffff;
-  border-radius: 11px;
-  overflow: hidden;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-  font-family: inherit;
-  font-size: 11px;
-}
-
-.dash-top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 12px;
-  background: #ffffff;
-  border-bottom: 1px solid #f0f4f2;
-  gap: 10px;
-}
-
-.dash-top-brand {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: 800;
-  font-size: 13px;
-  color: #07834f;
-}
-
-.dash-brand-icon {
-  font-size: 15px;
-}
-
-.dash-top-search {
-  flex: 1;
-  max-width: 210px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: #f5f8fa;
-  border: 1px solid #e8eef1;
-  border-radius: 20px;
-  padding: 4px 11px;
-  font-size: 10px;
-  color: #64748b;
-}
-
-.dash-search-ico {
-  font-size: 10px;
-}
-
-.dash-top-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #64748b;
-}
-
-.dash-action-bell {
-  position: relative;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.dash-bell-dot {
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #ef4444;
-}
-
-.dash-admin-avatar {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #079b61;
-  color: #ffffff;
-  font-size: 9px;
-  font-weight: 800;
-  display: grid;
-  place-items: center;
-}
-
-/* Dashboard Body Split: Sidebar + Main Content */
-.dash-main-grid {
-  display: grid;
-  grid-template-columns: 114px 1fr;
-  background: #fbfdfc;
-  min-height: 260px;
-}
-
-.dash-sidebar {
-  background: #07553f;
-  padding: 10px 8px;
-  color: #e6fff2;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.dash-nav-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 7px 8px;
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 600;
-  color: rgba(230, 255, 242, 0.86);
-  cursor: pointer;
-  transition: all 0.18s ease;
-}
-
-.dash-nav-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-}
-
-.dash-nav-item.active {
-  background: #0a9c65;
-  color: #ffffff;
-  font-weight: 700;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-}
-
-.dash-item-ico {
-  font-size: 11px;
-}
-
-.dash-workspace {
-  padding: 10px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* 3 Mini KPI Cards inside Dashboard */
-.dash-metric-triad {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 7px;
-}
-
-.dash-metric-card {
-  background: #ffffff;
-  border: 1px solid #e9eff1;
-  border-radius: 9px;
-  padding: 8px 9px;
-  box-shadow: 0 2px 6px rgba(20, 60, 50, 0.03);
-}
-
-.dash-card-icon-wrap {
-  font-size: 13px;
-  margin-bottom: 2px;
-}
-
-.ico-wrap-green {
-  color: #079b61;
-}
-
-.ico-wrap-purple {
-  color: #8a55dc;
-}
-
-.ico-wrap-teal {
-  color: #0d9488;
-}
-
-.dash-metric-card small {
-  display: block;
-  font-size: 8.5px;
-  color: #64748b;
-  line-height: 1.2;
-}
-
-.dash-card-val-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 4px;
-  margin-top: 3px;
-}
-
-.dash-card-val-row strong {
-  font-size: 14.5px;
-  font-weight: 800;
-  color: #082e33;
-}
-
-.dash-growth-tag {
-  font-size: 8.5px;
-  font-weight: 700;
-}
-
-.tag-green {
-  color: #079b61;
-}
-
-.tag-purple {
-  color: #8a55dc;
-}
-
-.tag-teal {
-  color: #0d9488;
-}
-
-/* Lower Split: Attendance Graph + Ring Gauge */
-.dash-lower-grid {
-  display: grid;
-  grid-template-columns: 1.48fr 0.82fr;
-  gap: 7px;
-}
-
-.dash-chart-card {
-  background: #ffffff;
-  border: 1px solid #e9eff1;
-  border-radius: 9px;
-  padding: 9px;
-}
-
-.dash-chart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 9px;
-  font-weight: 700;
-  color: #082e33;
-  margin-bottom: 5px;
-}
-
-.dash-chart-filter {
-  color: #64748b;
-  font-weight: 500;
-  font-size: 8.5px;
-}
-
-.dash-wave-chart {
-  width: 100%;
-  height: 98px;
-  display: block;
-}
-
-.dash-gauge-card {
-  background: #ffffff;
-  border: 1px solid #e9eff1;
-  border-radius: 9px;
-  padding: 9px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.dash-gauge-ring {
-  position: relative;
-  width: 72px;
-  height: 72px;
-  display: grid;
-  place-items: center;
-}
-
-.gauge-svg {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-}
-
-.gauge-center-text {
-  position: absolute;
-  font-size: 16px;
-  font-weight: 800;
-  color: #082e33;
-}
-
-.dash-gauge-label {
-  display: block;
-  font-size: 8.5px;
-  color: #64748b;
-  font-weight: 600;
-  margin-top: 5px;
-}
-
-/* Laptop Hardware Base & Realistic Depth Shadows */
-.laptop-metallic-base {
-  height: 14px;
-  background: linear-gradient(180deg, #d1d5db 0%, #9ca3af 60%, #6b7280 100%);
-  border-radius: 0 0 16px 16px;
-  position: relative;
-  margin: 0 -4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
-}
-
-.laptop-chassis-indent {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 72px;
-  height: 5px;
-  background: #4b5563;
-  border-radius: 0 0 5px 5px;
-}
-
-.laptop-cast-shadow {
-  height: 18px;
-  width: 92%;
-  margin: 0 auto;
-  background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.28) 0%, transparent 72%);
-  filter: blur(6px);
-}
-
-/* 3D Glowing Green Circular Podium & Torus Platform */
-.hero-podium-pedestal {
-  position: absolute;
-  bottom: -36px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 110%;
-  max-width: 680px;
-  height: 140px;
-  pointer-events: none;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.podium-ambient-light {
-  position: absolute;
-  width: 100%;
-  height: 180px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 50%, rgba(16, 185, 129, 0.45) 0%, rgba(5, 150, 105, 0.2) 48%, transparent 72%);
-  filter: blur(24px);
-  transform: rotateX(68deg);
-}
-
-.podium-surface-disk {
-  position: absolute;
-  width: 86%;
-  height: 130px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 28%, #34d399 0%, #10b981 36%, #059669 70%, #047857 100%);
-  transform: rotateX(68deg);
-  box-shadow:
-    inset 0 4px 14px rgba(255, 255, 255, 0.5),
-    0 18px 42px rgba(4, 120, 87, 0.35);
-}
-
-.podium-glowing-ring {
-  position: absolute;
   width: 95%;
-  height: 155px;
+  height: 90%;
+  right: -4%;
+  top: 5%;
+  z-index: 0;
+  background: radial-gradient(circle at 60% 50%, rgba(160, 239, 197, 0.45) 0%, rgba(219, 250, 232, 0.2) 65%, transparent 75%);
   border-radius: 50%;
-  border: 2px solid rgba(52, 211, 153, 0.8);
-  box-shadow: 0 0 42px rgba(16, 185, 129, 0.5);
-  transform: rotateX(68deg) rotateY(-2deg);
+  filter: blur(40px);
+  pointer-events: none;
 }
 
-.podium-orbit-arc {
-  position: absolute;
-  width: 92%;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid #10b981;
-  box-shadow:
-    0 0 26px #10b981,
-    inset 0 0 18px #34d399,
-    0 0 60px rgba(16, 185, 129, 0.45);
-  transform: rotateX(68deg) rotateY(-2deg);
-  animation: orbitPulse 3s ease-in-out infinite alternate;
-}
-
-@keyframes orbitPulse {
-  0% {
-    box-shadow: 0 0 22px #10b981, inset 0 0 14px #34d399, 0 0 45px rgba(16, 185, 129, 0.35);
-  }
-  100% {
-    box-shadow: 0 0 34px #10b981, inset 0 0 24px #34d399, 0 0 75px rgba(16, 185, 129, 0.6);
-  }
-}
-
-/* ==========================================================================
-   Tactile Floating Micro-Cards (AI, Fee, Reports, Received)
-   ========================================================================== */
-.floating-badge {
-  position: absolute;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(220, 235, 228, 0.95);
-  border-radius: 14px;
-  padding: 9px 13px;
-  box-shadow: 0 12px 30px rgba(17, 73, 53, 0.12);
+.hero-laptop-stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 660px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+  will-change: transform;
 }
 
-.floating-badge:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 16px 36px rgba(17, 73, 53, 0.18);
+.hero-laptop-stage:hover {
+  transform: translateY(-5px) scale(1.015);
 }
 
-.float-badge-ico {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 17px;
-  flex-shrink: 0;
-}
-
-.float-badge-title {
+.hero-laptop-img {
+  width: 100%;
+  height: auto;
+  max-height: 580px;
+  object-fit: contain;
   display: block;
-  font-size: 11.5px;
-  font-weight: 800;
-  color: #082e33;
-  line-height: 1.2;
-}
-
-.float-badge-sub {
-  display: block;
-  font-size: 10px;
-  color: #64748b;
-  font-weight: 600;
-  margin-top: 1px;
-}
-
-.plus-sparkle {
-  color: #f0524d;
-  font-size: 12px;
-  margin-left: 2px;
-  font-weight: 800;
-}
-
-.float-amount {
-  color: #079b61;
-  font-weight: 800;
-}
-
-/* Individual Badge Placement & Colors */
-.badge-ai {
-  top: -24px;
-  left: 36px;
-  z-index: 10;
-}
-
-.ico-ai {
-  background: #e6f4ff;
-  color: #2676e8;
-}
-
-.badge-fee {
-  top: -12px;
-  right: -24px;
-  z-index: 10;
-}
-
-.ico-fee {
-  background: #e2f9ed;
-  color: #079b61;
-}
-
-.badge-report {
-  top: 48%;
-  right: -28px;
-  z-index: 10;
-}
-
-.ico-report {
-  background: #e2f9ed;
-  color: #079b61;
-}
-
-.badge-received {
-  bottom: 46px;
-  left: -28px;
-}
-
-.ico-received {
-  background: #e2f9ed;
-  color: #079b61;
-  font-size: 19px;
-  font-weight: 800;
-}
-
-/* Floating Testimonial Card (Bottom-Right) */
-.floating-testimonial-card {
-  position: absolute;
-  z-index: 5;
-  right: -20px;
-  bottom: -22px;
-  background: rgba(240, 253, 244, 0.96);
-  border: 1px solid #bbf7d0;
-  border-radius: 18px;
-  padding: 13px 17px;
-  box-shadow: 0 16px 40px rgba(22, 101, 52, 0.14);
-  max-width: 295px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform 0.25s ease;
-}
-
-.floating-testimonial-card:hover {
-  transform: translateY(-2px);
-}
-
-.testimonial-quote-mark {
-  font-size: 26px;
-  line-height: 1;
-  color: #16a34a;
-  font-weight: 800;
-  display: block;
-  margin-bottom: 2px;
-}
-
-.testimonial-quote-text {
-  font-size: 11px;
-  line-height: 1.45;
-  color: #14532d;
-  font-style: italic;
-  margin: 0 0 9px;
-}
-
-.testimonial-author-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.testimonial-avatar-wrap {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #166534;
-  color: #ffffff;
-  font-size: 9.5px;
-  font-weight: 800;
-  display: grid;
-  place-items: center;
-  border: 1.5px solid #86efac;
-  flex-shrink: 0;
-}
-
-.testimonial-author-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.author-name {
-  font-size: 11px;
-  font-weight: 800;
-  color: #0f3d32;
-  line-height: 1.2;
-}
-
-.author-title {
-  font-size: 9.5px;
-  color: #15803d;
-  font-weight: 600;
-}
-
-.testimonial-carousel-dots {
-  display: flex;
-  gap: 4px;
-  justify-content: flex-end;
-  margin-top: 4px;
-}
-
-.testimonial-carousel-dots .dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #bbf7d0;
-}
-
-.testimonial-carousel-dots .dot.active {
-  background: #16a34a;
-  width: 14px;
-  border-radius: 4px;
+  user-select: none;
+  filter: drop-shadow(0 24px 44px rgba(6, 78, 59, 0.12)) drop-shadow(0 8px 18px rgba(6, 78, 59, 0.08));
 }
 
 /* ==========================================================================
@@ -4745,92 +4087,9 @@ body {
     padding: 10px 0;
   }
 
-  .laptop-device-wrapper {
-    transform: none;
-    max-width: 560px;
+  .hero-laptop-stage {
+    max-width: 540px;
     margin: 0 auto;
-  }
-
-  .laptop-device-wrapper:hover {
-    transform: none;
-  }
-
-  .dash-main-grid {
-    grid-template-columns: 95px 1fr;
-    min-height: 220px;
-  }
-
-  .dash-sidebar {
-    padding: 8px 5px;
-  }
-
-  .dash-nav-item {
-    font-size: 9px;
-    padding: 5px 6px;
-    gap: 5px;
-  }
-
-  .dash-metric-card {
-    padding: 6px 7px;
-  }
-
-  .dash-metric-card small {
-    font-size: 7.5px;
-  }
-
-  .dash-card-val-row strong {
-    font-size: 12px;
-  }
-
-  .dash-wave-chart {
-    height: 80px;
-  }
-
-  .dash-gauge-ring {
-    width: 60px;
-    height: 60px;
-  }
-
-  .gauge-center-text {
-    font-size: 13px;
-  }
-
-  .floating-badge {
-    transform: scale(0.88);
-  }
-
-  .badge-ai {
-    top: -18px;
-    left: 20px;
-  }
-
-  .hero-spark-burst {
-    top: 60px;
-    left: -20px;
-  }
-
-  .badge-fee {
-    top: -10px;
-    right: -10px;
-  }
-
-  .badge-report {
-    top: 45%;
-    right: -14px;
-  }
-
-  .badge-received {
-    bottom: 24px;
-    left: -14px;
-  }
-
-  .floating-testimonial-card {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin: 22px auto 0;
-    max-width: 360px;
-    width: 100%;
   }
 
   .hero-quick-ribbon {
@@ -5829,27 +5088,15 @@ body {
     font-size: 10px;
   }
 
-  /* Dashboard on <= 540px */
-  .dash-main-grid {
-    grid-template-columns: 80px 1fr;
+  /* Hero 3D Laptop Showcase on <= 540px */
+  .hero-laptop-stage {
+    max-width: 100%;
+    width: min(440px, 94vw);
+    margin: 0 auto;
   }
 
-  .dash-top-search {
-    display: none;
-  }
-
-  .dash-metric-triad {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-
-  .dash-lower-grid {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-
-  .floating-badge {
-    display: none; /* Hide floating badges on narrow phones to avoid layout clutter */
+  .hero-laptop-stage:hover {
+    transform: none;
   }
 
   .hero-quick-ribbon {
@@ -5858,10 +5105,7 @@ body {
     padding: 8px;
   }
 
-  .hero-podium-pedestal {
-    transform: translateX(-50%) scale(0.55);
-    bottom: -12px;
-  }
+
 
   .trusted-marquee-section {
     padding: 38px 0 46px;
