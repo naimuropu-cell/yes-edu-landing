@@ -1686,15 +1686,23 @@ header.scrolled {
   overflow: hidden;
   width: 100%;
   position: relative;
-  padding: 12px 0;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
   mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .marquee-track-strip {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
   gap: 20px;
   width: max-content;
+  will-change: transform;
 }
 
 .marquee-track-strip.move-left-to-right {
